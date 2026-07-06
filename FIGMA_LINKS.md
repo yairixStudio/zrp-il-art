@@ -202,7 +202,7 @@ works v2 מובייל ישן (390 — legacy content): Implement this design fro
 node-ids פר-אומן (כולם ב-`XhGH289YTRcW811wrufRJz`):
 | אומן | node | הערות |
 |---|---|---|
-| jessica-tabarovsky | `560:4910` | קנוני; `560:4678` variant ישן עם leftover של hila-loterstein |
+| jessica-tabarovsky | `560:4910` | קנוני-ישן; `560:4678` variant ישן עם leftover של hila-loterstein. **frame מעודכן 2026-07-06:** ביו `668:11042`, סטייטמנט הקולפן `668:13235`, יצירה חדשה "בחורה ממתינה לרכבת של 6:48" `1050:16` (גריד `668:13241`) |
 | chen-ziv | `560:5552` | 2 פסקאות סיום הן leftover של ג'סיקה ("התנערות") — הושמטו |
 | baruch-torgeman | `560:5637` | |
 | noemi-safir | `560:4741` | ביו חדש (קולפן) |
