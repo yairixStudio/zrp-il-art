@@ -226,6 +226,13 @@ gal-rotem מובייל: Implement this design from Figma.
 raz-ronen מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=605-7995&m=dev
 
+### hadas-tuval — דף אומנית מלא (2026-07-06, `landing`)
+
+> אומנית חדשה (הקולפן) — ביו+פורטרט+2 יצירות. מובייל 390px. סקשן היצירות בפריים = `797:146`; קבוצת הקולפן אצלה בלי סטייטמנט ("חסר מידע" ב-Figma).
+
+hadas-tuval מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=797-106&m=dev
+
 ### zohar ron × dandan nusha (שיתוף — `artist.html?slug=zohar-ron-dan-ben-ari`)
 
 מובייל (קנוני ב-`landing`, לא ב-`artist-pages`): Implement this design from Figma.

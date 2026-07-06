@@ -571,7 +571,8 @@
         {
           "name_en": "hadas\ntuval",
           "thumb": "images/exhibitions/the-peeler/artists/hadas-tuval.webp",
-          "focus": "50% 45%"
+          "focus": "50% 45%",
+          "slug": "hadas-tuval"
         }
       ],
       "figma_node_desktop": "XhGH289YTRcW811wrufRJz::721:14300",
