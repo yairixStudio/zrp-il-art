@@ -323,7 +323,7 @@ event how-many opening מובייל (`event-opening how many-mobile`): Implement
 | alice-debellis | `849:963` | חדש (2 יצירות, ציור דיגיטלי על בד) |
 | amnon-lipkin | `798:173` | חדש (11 יצירות ריקמה/תפר) |
 | aharon-bas | `781:9` | קיים — variant ניגודים של היצירה המשותפת |
-| bar-cohen | `798:307` | קיים — variant במקרה (+instagram @akra_e_) |
+| bar-cohen | `798:307` | קיים — variant במקרה (+instagram @akra.studioz) |
 
 ---
 
