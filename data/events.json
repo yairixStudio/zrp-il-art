@@ -20,15 +20,39 @@
         "event with our artists gal pollak and elsa ers brosh in our gallery"
       ],
       "gallery_videos": [
-        { "src": "images/events/artist-talk/clip-01.mp4", "poster": "images/events/artist-talk/clip-01-poster.webp", "alt": "תיעוד מתוך האירוע" },
-        { "src": "images/events/artist-talk/clip-02.mp4", "poster": "images/events/artist-talk/clip-02-poster.webp", "alt": "תיעוד מתוך האירוע" },
-        { "src": "images/events/artist-talk/clip-03.mp4", "poster": "images/events/artist-talk/clip-03-poster.webp", "alt": "תיעוד מתוך האירוע" },
-        { "src": "images/events/artist-talk/clip-04.mp4", "poster": "images/events/artist-talk/clip-04-poster.webp", "alt": "תיעוד מתוך האירוע" }
+        {
+          "src": "images/events/artist-talk/clip-01.mp4",
+          "poster": "images/events/artist-talk/clip-01-poster.webp",
+          "alt": "תיעוד מתוך האירוע"
+        },
+        {
+          "src": "images/events/artist-talk/clip-02.mp4",
+          "poster": "images/events/artist-talk/clip-02-poster.webp",
+          "alt": "תיעוד מתוך האירוע"
+        },
+        {
+          "src": "images/events/artist-talk/clip-03.mp4",
+          "poster": "images/events/artist-talk/clip-03-poster.webp",
+          "alt": "תיעוד מתוך האירוע"
+        },
+        {
+          "src": "images/events/artist-talk/clip-04.mp4",
+          "poster": "images/events/artist-talk/clip-04-poster.webp",
+          "alt": "תיעוד מתוך האירוע"
+        }
       ],
       "_image_note": "hero = storefront window (6fb63f12) — דסקטופ ומובייל זהים (cover + OG). הוסרו תמונות הקליגרפיה (97bfe6a2/2ae67900/a9cb03d4) — הן מהמיצג החי של זוהר רון, לא מאירוע זה. גלריית ה-triptych הוחלפה ב-4 סרטוני וידאו (clip-01..04.mp4, מקור WhatsApp 18.6, רימוקס h264+faststart, פוסטר webp+avif) — מנגן רק המרכזי. Artist strip reuses existing portraits (gal-polk/portrait-v2, elsa-ars-brush/portrait).",
       "artists": [
-        { "name_en": "gal pollak", "slug": "gal-polk", "image": "images/artists/gal-polk/portrait-v2.webp" },
-        { "name_en": "elsa ers brosh", "slug": "elsa-ars-brush", "image": "images/artists/elsa-ars-brush/portrait.webp" }
+        {
+          "name_en": "gal pollak",
+          "slug": "gal-polk",
+          "image": "images/artists/gal-polk/portrait-v2.webp"
+        },
+        {
+          "name_en": "elsa ers brosh",
+          "slug": "elsa-ars-brush",
+          "image": "images/artists/elsa-ars-brush/portrait.webp"
+        }
       ],
       "route": "events/artist-talk/",
       "homepage_visible": true,
@@ -289,6 +313,223 @@
       "homepage_visible": true,
       "figma_node_desktop": "1213:1873",
       "figma_node_mobile": "1213:2099"
+    },
+    {
+      "id": "natasha-zeriker",
+      "slug": "natasha-zeriker",
+      "title_he": "ערב עם נטאשה זריקר",
+      "title_en": "save the date — an evening with natasha zeriker",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-07-09",
+      "date_he": "9 יולי 2026",
+      "time_start": "19:00",
+      "time_end": "21:30",
+      "time_label": "21:30-19:00",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/natasha-zeriker/hero.webp",
+      "description_he": [
+        "join me for a special evening around my work"
+      ],
+      "statement_title_en": "LINGER",
+      "statement_he": [
+        "עבודתה של נטאשה חוקרת את התנאים שבהם מתרחשת התהוות. היא בוחנת את המתח שבין שליטה לכניעה, בין אחיזה להרפיה, ובין אמון להתמסרות.",
+        "העבודה אינה מבקשת לפתור את המתח שהיא מעוררת, אלא לאפשר לו להמשיך ולהדהד - כרטט שנשאר בגוף גם לאחר שהמבט עוזב את הדימוי."
+      ],
+      "note_en": [
+        "an evening with natasha zeriker",
+        "rsvp via dm"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 jabotinski st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "natasha zeriker",
+          "slug": "natasha-zeriker",
+          "image": "images/artists/grid/natasha-zeriker.webp"
+        }
+      ],
+      "route": "events/natasha-zeriker/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1055:615",
+      "figma_node_mobile": "1055:519",
+      "figma_file": "XhGH289YTRcW811wrufRJz"
+    },
+    {
+      "id": "liel-salman",
+      "slug": "liel-salman",
+      "title_he": "פופ אפ קעקועים",
+      "title_en": "pop up tattoos",
+      "subtitle_he": "how many partners have you had?",
+      "exhibition_id": "how-many",
+      "exhibition_volume": 2,
+      "date": "2026-07-16",
+      "date_he": "16 יולי 2026",
+      "time_start": "16:00",
+      "time_end": "20:00",
+      "time_label": "20:00-16:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/liel-salman/hero.webp",
+      "description_he": [
+        "פופ אפ קעקועים",
+        "של סטודיו elline",
+        "מגיעים לקעקועים קטנטנים וספונטנים",
+        "שיבוצעו על ידי אחד מחברי הצוות לבחירתכם",
+        "יין ובירות עלינו"
+      ],
+      "note_he": [
+        "בהרשמה מראש / על בסיס מקום פנוי"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Raines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "liel salman noam",
+          "slug": "liel-salman",
+          "image": "images/artists/grid/liel-salman.webp"
+        }
+      ],
+      "route": "events/liel-salman/",
+      "homepage_visible": false,
+      "_note": "שם הפריים ב-Figma: 'artist talk with liel salman noam'; הכותרת הנראית בעמוד היא 'Pop up tattoos'. הכרטיס ברצועה מציג 'liel salman noam' verbatim מ-Figma, ומקשר ל-artists/liel-salman (name_en ב-artists.json = 'liel salman').",
+      "figma_node_desktop": "1055:927",
+      "figma_node_mobile": "1055:813",
+      "figma_file": "XhGH289YTRcW811wrufRJz"
+    },
+    {
+      "id": "nir-giorgio-levin",
+      "slug": "nir-giorgio-levin",
+      "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין",
+      "title_en": "artist talk with nir  giorgio levin",
+      "subtitle_he": "how many partners have you had?",
+      "exhibition_id": "how-many",
+      "exhibition_volume": 2,
+      "date": "2026-07-17",
+      "date_he": "17 יולי 2026",
+      "time_start": "12:00",
+      "time_end": "14:00",
+      "time_label": "14:00-12:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/nir-giorgio-levin/hero.webp",
+      "description_he": [
+        "מפגש עם האמן | ניר ג’ורג’יו לוין",
+        "מוזמנים למפגש פתוח ואינטימי עם האמן ניר ג’ורג’יו לוין במסגרת התערוכה “כמה פרטנרים היו לך?”.",
+        "במהלך המפגש תוכלו לשוחח עם האמן על העבודות המוצגות, על תהליך היצירה, על הרעיונות שמאחורי התערוכה, ולשאול כל שאלה באווירה נינוחה, לצד יין וכיבוד קל.",
+        "בנוסף, יוצגו עבודות טקסטיל קטנות ועבודות נוספות שאינן חלק מהתערוכה, אשר יהיו זמינות לרכישה במחירי סטודיו מיוחדים במהלך האירוע בלבד."
+      ],
+      "note_he": [
+        "כניסה בהרשמה מראש"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Raines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "nir giorgio levin",
+          "slug": "nir-giorgio-levin",
+          "image": "images/artists/grid/nir-giorgio-levin.webp"
+        }
+      ],
+      "route": "events/nir-giorgio-levin/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1083:1289",
+      "figma_node_mobile": "1083:1180",
+      "figma_file": "XhGH289YTRcW811wrufRJz"
+    },
+    {
+      "id": "risa-and-noemi",
+      "slug": "risa-and-noemi",
+      "title_he": "שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר",
+      "title_en": "artist talk with risa brooke oze and noemi safir",
+      "subtitle_he": "how many partners have you had?",
+      "exhibition_id": "how-many",
+      "exhibition_volume": 2,
+      "date": "2026-07-24",
+      "date_he": "24 יולי 2026",
+      "time_start": "11:00",
+      "time_end": null,
+      "time_label": "11:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/risa-and-noemi/hero.webp",
+      "description_he": [
+        "מה שנשאר",
+        "אירוע אינטימי בתערוכה,",
+        "המזמין את המבקרים לסיור בין העבודות דרך מילים ושאלות מתוך עולם התערוכה,",
+        "לחיבור אישי עם ציור נבחר ולכתיבת תגובה סביב עקבות רגשיים קשרים בלתי נראים, תפקידים ופחדים."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Raines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "risa brooke oze",
+          "slug": "risa-oz",
+          "image": "images/artists/grid/risa-oz.webp"
+        },
+        {
+          "name_en": "noemi safir",
+          "slug": "noemi-safir",
+          "image": "images/artists/grid/noemi-safir.webp"
+        }
+      ],
+      "route": "events/risa-and-noemi/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1083:1543",
+      "figma_node_mobile": "1083:1432",
+      "figma_file": "XhGH289YTRcW811wrufRJz"
+    },
+    {
+      "id": "zohar-ron",
+      "slug": "zohar-ron",
+      "title_he": "שיחת אמנים עם זוהר רון",
+      "title_en": "artist talk with zohar ron",
+      "subtitle_he": "how many partners have you had?",
+      "exhibition_id": "how-many",
+      "exhibition_volume": 2,
+      "date": "2026-07-19",
+      "date_he": "19 יולי 2026",
+      "time_start": "19:30",
+      "time_end": "21:30",
+      "time_label": "21:30-19:30",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/zohar-ron/hero.webp",
+      "description_he": [
+        "לא על סקס. על בני אדם.",
+        "מוזמנים לשיח גלריה עם האומן זוהר רון על התערוכה SEX? מפגש פתוח על צילום, אומנות, תשוקה, אהבה, כוח, פגיעוּת, ועל האופן שבו הגוף הופך לשפה והאמנות הופכת לשאלה. שיחה על הסיפורים שמאחורי העבודות ועל תהליך היצירה."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Raines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "zohar ron",
+          "slug": "zohar-ron",
+          "image": "images/artists/grid/zohar-ron.webp"
+        }
+      ],
+      "route": "events/zohar-ron/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1083:1817",
+      "figma_node_mobile": "1083:1704",
+      "figma_file": "XhGH289YTRcW811wrufRJz"
     }
   ]
 }

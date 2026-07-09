@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Up Tattoos with Liel Salman Noam — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="פופ אפ קעקועים של סטודיו elline בגלריית כיכר דיזינגוף, במסגרת התערוכה How Many Partners Have You Had?, 16 ביולי 2026, 16:00–20:00.">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Solway";src:url("../../פונטים/Solway-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Solway";src:url("../../פונטים/Solway-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;
+  --artist:#828282;--icon-grey:#707070;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --sol:"Solway","Copperplate","Times New Roman",serif;
+  --pad-x:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase}
+
+/* ===== EVENT PAGE — artist-talk family (Figma: tinted panel, text left / portrait right) ===== */
+.event{display:flex;flex-direction:column;background:var(--white)}
+
+/* HERO BAND — tinted #EEF0EF panel, two columns (Figma "Main container", padding 48/96/32) */
+.event-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.event-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.event-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:0 16px}
+
+/* Title — Copperplate, centered. Figma is 80/72; our Copperplate webfont sets ~28% wider than
+   Figma's, so 64/58 reproduces the drawn width and the same line breaks (optical match,
+   docs/conventions.md §5.2). Padding-top guards the caps against the tight line-height. */
+.h-title{font-family:var(--cop);font-weight:400;font-size:64px;line-height:58px;text-align:center;color:var(--ink);width:100%;padding-top:.14em}
+.h-title .artist-link{color:inherit;text-decoration:none}
+
+/* Meta — gallery, then date · time (1×1 dot, Figma) */
+.h-meta{display:flex;flex-direction:column;gap:8px;align-items:center;padding:0 10px 8px}
+.h-meta .row-1,.h-meta .row-2{display:flex;align-items:center;gap:8px;justify-content:center}
+.h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl}
+.h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl}
+.h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
+
+/* Body — Hebrew (FbEzmel) or English (Copperplate) variant; Figma text box 358px */
+.h-body{width:358px;max-width:100%;font-size:18px;line-height:20px;text-align:center;color:var(--ink)}
+.h-body.heb{font-family:var(--heb);font-weight:300;direction:rtl}
+.h-body.en{font-family:var(--cop);font-weight:300}
+.h-body.en b,.h-body.en strong{font-weight:400}
+.h-body p+p{margin-top:20px}
+
+/* "presented as part of" — exhibition attribution (Figma: label, Solway bar, exhibition name) */
+.h-presented{display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0}
+.h-presented .pre-label{font-family:var(--cop);font-weight:300;font-size:18px;line-height:20px;text-align:center}
+.ex-bar{display:flex;align-items:center;justify-content:center;gap:13px;flex-wrap:nowrap}
+.ex-bar .lbl{font-family:var(--sol);font-weight:300;font-size:26px;line-height:1.35;text-align:center;white-space:nowrap}
+.ex-bar .bdot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
+.ex-name{font-family:var(--cop);font-weight:400;font-size:29px;line-height:1.2;text-align:center;max-width:100%}
+.ex-name.heb{font-family:var(--heb);font-weight:400;direction:rtl}
+a.ex-link{display:flex;flex-direction:column;align-items:center;gap:16px;transition:opacity .2s}
+a.ex-link:hover{opacity:.7}
+
+/* Venue address — Copperplate Light, 3 explicit lines (no auto-wrap) */
+.h-address{font-family:var(--cop);font-weight:300;font-size:16px;line-height:20px;text-align:center;max-width:100%}
+
+/* Registration / RSVP note */
+.h-note{font-size:16px;line-height:20px;text-align:center;max-width:100%}
+.h-note.heb{font-family:var(--heb);font-weight:300;direction:rtl}
+.h-note.en{font-family:var(--cop);font-weight:300}
+
+/* Hero card — 492×744 portrait, bottom-up gradient scrim, white overlay stack */
+.event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
+.event-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
+/* picture-upgrade.js wraps the <img> in a <picture> at runtime — size both, or the image
+   collapses to its intrinsic height and the card's black background shows through. */
+.event-hero .card>picture{display:contents}
+.event-hero .card img{width:100%;height:100%;object-fit:cover;display:block}
+.event-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%);pointer-events:none}
+/* Overlay: the exhibition bar sets its own width (never wraps); only the exhibition name is
+   clamped to the Figma 313px text box so it breaks onto two lines exactly as drawn. */
+.event-hero .card .center-text{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:313px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff;z-index:2;text-align:center}
+/* Title and bar overhang the 313px text box rather than wrapping, exactly as drawn. */
+.event-hero .card .center-text .en{font-family:var(--cop);font-weight:700;font-size:36px;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
+.event-hero .card .center-text .ex-name{font-size:23px;width:100%}
+
+/* ARTISTS strip */
+.event-artists{padding:32px var(--pad-x);display:flex;justify-content:center}
+.event-artists .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-artists .head{display:flex;justify-content:space-between;align-items:center}
+.event-artists .head .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
+.event-artists .head .more{display:flex;align-items:flex-start;padding-top:4px;color:#1A1C1C;transition:opacity .2s}
+.event-artists .head .more:hover{opacity:.6}
+.event-artists .head .more svg{width:10.33px;height:10.33px;display:block}
+.event-artists .strip{display:flex;flex-direction:row;gap:6px}
+.event-artists .strip>a.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
+.event-artists .strip .img{width:178px;height:148px;overflow:hidden;background:#f3f1ee}
+.event-artists .strip .img picture{display:contents}
+.event-artists .strip .img img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;transition:filter .25s}
+.event-artists .strip .name{font-family:var(--cop);font-weight:300;font-size:18px;line-height:18px;color:var(--artist);text-align:center;letter-spacing:.04em}
+a.artist-card:hover .img img{filter:brightness(.92)}
+a.artist-card:hover .name{color:var(--ink)}
+
+/* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
+a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+
+/* LINGER statement card — 1px black frame (natasha zeriker only, Figma 1078:1174) */
+.linger{border:1px solid #000;background:var(--white);padding:16px;display:flex;flex-direction:column;gap:16px;width:394px;max-width:100%;text-align:center}
+.linger .t{font-family:var(--cop);font-weight:300;font-size:18px;line-height:20px;letter-spacing:.12em}
+.linger p{font-family:var(--heb);font-weight:400;font-size:16px;line-height:20px;direction:rtl;text-transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1320px){ :root{--pad-x:96px} }
+
+/* Narrow desktop / tablet — shrink the portrait and the display title together */
+@media (max-width:1319px) and (min-width:769px){
+  .event-hero .row{gap:32px;min-width:0}
+  .event-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .event-hero .card{width:100%;max-width:400px;height:640px}
+  .h-title{font-size:44px;line-height:42px}
+  .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:22px}
+  .ex-name{font-size:24px}
+  .event-hero .card .center-text{width:260px}
+  .event-hero .card .center-text .ex-name{font-size:20px}
+  .event-hero .card .center-text .en{font-size:30px}
+  .ex-bar .lbl{font-size:22px}
+}
+@media (max-width:1050px) and (min-width:769px){
+  .h-title{font-size:34px;line-height:34px}
+}
+
+/* Mobile (Figma 390): hero photo first, then each block on white, full-width */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  .event-hero{display:contents}
+  .event-hero .row,.event-hero .text-col{display:contents}
+
+  .event-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
+  .h-title{order:2}
+  .h-meta{order:3}
+  .h-body{order:4}
+  .h-presented{order:5}
+  .h-address{order:6}
+  .linger{order:7}
+  .h-note{order:8}
+  .event-artists{order:9}
+
+  /* Hero card — full-bleed 520h with a flat 40% scrim (Figma mobile fill) */
+  .event-hero .card{width:100%;max-width:none;height:520px}
+  .event-hero .card::after{background:rgba(27,27,27,.4)}
+  .event-hero .card .center-text{top:39%;width:auto;max-width:calc(100% - 32px)}
+
+  /* Text blocks — white background, 16px padding (Figma mobile sections) */
+  .h-title{background:var(--white);padding:32px 16px 0;font-size:20px;line-height:1.35;width:100%}
+  .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
+  .h-meta .gallery{font-size:14px}
+  .h-meta .date,.h-meta .time{font-size:14px}
+  .h-body{background:var(--white);padding:16px;width:100%;font-size:16px}
+  .h-presented{background:var(--white);padding:16px;width:100%}
+  .h-presented .pre-label{font-size:16px}
+  .ex-name{font-size:24px;max-width:358px}
+  .h-address{background:var(--white);padding:16px;width:100%;font-size:14px}
+  .h-note{background:var(--white);padding:16px;width:100%}
+  .linger{align-self:center;margin:0 16px;width:calc(100% - 32px)}
+
+  .event-hero .card .center-text .en{font-size:30px}
+  .event-hero .card .center-text .ex-name{font-size:23px}
+  .ex-bar .lbl{font-size:22px}
+
+  /* Artists strip (Figma mobile 96×80 thumbs) */
+  .event-artists{padding:32px 16px;background:var(--white)}
+  .event-artists .head .label{font-size:20px}
+  .event-artists .strip>a.artist-card{flex-basis:96px}
+  .event-artists .strip .img{width:96px;height:80px}
+  .event-artists .strip .name{font-size:16px;line-height:18px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/events/liel-salman/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pop Up Tattoos with Liel Salman Noam — Zielinski &amp; Rozen">
+<meta property="og:description" content="פופ אפ קעקועים של סטודיו elline בגלריית כיכר דיזינגוף, במסגרת התערוכה How Many Partners Have You Had?, 16 ביולי 2026, 16:00–20:00.">
+<meta property="og:url" content="https://art.zrp.co.il/events/liel-salman/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-liel-salman-hero.jpg">
+<meta property="og:image:alt" content="Pop Up Tattoos with Liel Salman Noam">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pop Up Tattoos with Liel Salman Noam — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="פופ אפ קעקועים של סטודיו elline בגלריית כיכר דיזינגוף, במסגרת התערוכה How Many Partners Have You Had?, 16 ביולי 2026, 16:00–20:00.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-liel-salman-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/liel-salman/#event","url":"https://art.zrp.co.il/events/liel-salman/","name":"Pop Up Tattoos with Liel Salman Noam","image":"https://art.zrp.co.il/og/events-liel-salman-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-07-16T16:00","description":"פופ אפ קעקועים של סטודיו elline בגלריית כיכר דיזינגוף, במסגרת התערוכה How Many Partners Have You Had?, 16 ביולי 2026, 16:00–20:00."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Press & Events","item":"https://art.zrp.co.il/press/"},{"@type":"ListItem","position":2,"name":"Pop Up Tattoos with Liel Salman Noam","item":"https://art.zrp.co.il/events/liel-salman/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="event">
+
+  <!-- HERO BAND — tinted panel: text column left, portrait card right (Figma 1055:927 desktop / 1055:813 mobile) -->
+  <section class="event-hero">
+    <div class="row">
+
+      <div class="text-col">
+        <h1 class="h-title">Pop up tattoos</h1>
+
+        <div class="h-meta">
+          <div class="row-1"><span class="gallery heb">גלריית כיכר דיזינגוף</span></div>
+          <div class="row-2">
+            <span class="date heb"><bdi>16 יולי 2026</bdi></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="time"><bdi>20:00-16:00</bdi></span>
+          </div>
+        </div>
+
+        <div class="h-body heb">
+          <p>פופ אפ קעקועים<br>של סטודיו <span class="lat">elline</span><br>מגיעים לקעקועים קטנטנים וספונטנים<br>שיבוצעו על ידי אחד מחברי הצוות לבחירתכם<br>יין ובירות עלינו</p>
+        </div>
+
+        <div class="h-presented">
+          <div class="pre-label">presented as part of</div>
+          <a class="ex-link" href="../../exhibitions/how-many/">
+            <div class="ex-bar"><span class="lbl">the EXHIBITION</span></div>
+            <div class="ex-name">how many partners have you had?</div>
+          </a>
+        </div>
+
+        <div class="h-address">
+          THE art GALLERY by erez ZiELINSKI &amp; ROZEN<br>
+          Dizengoff Square<br>
+          1 Raines st. tel aviv
+        </div>
+
+        <div class="h-note heb">
+          בהרשמה מראש / על בסיס מקום פנוי
+        </div>
+      </div>
+
+      <div class="img-col">
+        <div class="card">
+          <img src="../../images/events/liel-salman/hero.webp" srcset="../../images/events/liel-salman/hero-480w.webp 480w, ../../images/events/liel-salman/hero-768w.webp 768w, ../../images/events/liel-salman/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1749" alt="עבודות ממוסגרות של ליאל סלמן נועם בגלריית כיכר דיזינגוף" decoding="async" fetchpriority="high">
+          <div class="center-text">
+            <div class="en">Pop up tattoos</div>
+            <div class="ex-bar"><span class="lbl">the EXHIBITION</span></div>
+            <div class="ex-name">how many partners have you had?</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="event-artists" aria-label="האומנים באירוע">
+    <div class="inner">
+      <div class="head">
+        <div class="label">artists</div>
+        <a class="more" href="../../exhibitions/how-many/" aria-label="לעמוד התערוכה">
+          <svg viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M0.926778 11.0004L0 10.0736L8.73379 1.33128H0.793662V0H11.0004V10.2067H9.6691V2.2666L0.926778 11.0004Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../artists/liel-salman/" aria-label="liel salman noam">
+          <div class="img"><img src="../../images/artists/grid/liel-salman.webp" width="810" height="810" alt="liel salman noam" decoding="async" loading="lazy"></div>
+          <div class="name">liel salman<br>noam</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/site-chrome.js?v=5" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>

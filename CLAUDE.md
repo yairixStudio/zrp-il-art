@@ -98,12 +98,32 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `/events/close-look/` | Event (מבט מקרוב — open meeting, tanya shin, how-many) | `XhGH...::420:1520` | `XhGH...::420:1625` | ✅ `events/close-look/index.html` |
 | `/events/artist-talk/` | Event (artist talk — gal pollak + elsa ers brosh, how-many, 11.6.26 11:00, גלריית כיכר המדינה) | `XhGH...::818:159` | `XhGH...::818:17` | ✅ `events/artist-talk/index.html` — מבוסס על תבנית `close-look`. **כותרת ראשית באנגלית** (Copperplate UPPER, לא עברית כמו close-look). Hero **שונה בין breakpoints** (`<picture>` עם `media`): דסקטופ = חלון ראווה (6fb63f12), מובייל = מיצג קליגרפיה חיה (97bfe6a2). Overlay = "artist talk" + "how many partners have you had?". טריפטיך מ-6 תמונות `images/events/artist-talk/`. שני אומנים מארחים (gal-polk, elsa-ars-brush) — strip מ-portraits קיימים, חץ →`/exhibitions/how-many/`. הומפייג': כרטיס `#press` במקום **שני** (`event-how-many-artist-talk` ב-press.json + homepage.json). |
 | `/events/how-many/` | Event (opening — how many, 15 artists, korin avraham) | `XhGH...::433:2` | `XhGH...::433:179` | ✅ `events/how-many/index.html` |
+| `/events/natasha-zeriker/` | Event (save the date — נטאשה זריקר, **הקולפן**, 9.7.26, כיכר המדינה) | `XhGH...::1055:615` | `XhGH...::1055:519` | ✅ **משפחת עמודים חדשה (2026-07-09) — ראה הערה מתחת לטבלה.** ייחודי: כותרת `save the date`, גוף באנגלית (Copperplate), ו**כרטיס LINGER ממוסגר** (`.linger`, border 1px שחור) עם סטייטמנט עברי; פס תערוכה = `EXHIBITION • VOLUME 2` + `הקולפן` → `/exhibitions/the-peeler/`. |
+| `/events/liel-salman/` | Event (**pop up tattoos** — ליאל סלמן נועם + סטודיו elline, how-many, 16.7.26, דיזינגוף) | `XhGH...::1055:927` | `XhGH...::1055:813` | ✅ ⚠️ שם ה-frame ב-Figma הוא "artist talk with liel salman noam" אבל **הכותרת הנראית = "Pop up tattoos"** — ה-slug נבחר לפי שם האומן (החלטת המשתמש). גיבור = `f14d30bd…` (שכבת `3f0a517d…` שמתחת מוסתרת). ספן לטיני `elline` בתוך העברית. הכרטיס ברצועה = "liel salman noam" verbatim, מקשר ל-`artists/liel-salman/`. |
+| `/events/nir-giorgio-levin/` | Event (artist talk — ניר ג׳ורג׳יו לוין, how-many, 17.7.26, דיזינגוף) | `XhGH...::1083:1289` | `XhGH...::1083:1180` | ✅ סטייטמנט עברי בן 4 פסקאות; זמן `14:00-12:00` verbatim מ-Figma; כותרת עם רווח כפול "nir&nbsp; giorgio levin". |
+| `/events/risa-and-noemi/` | Event (artist talk — ריסה ברוק עוז + נעמי ספיר, how-many, 24.7.26, דיזינגוף) | `XhGH...::1083:1543` | `XhGH...::1083:1432` | ✅ היחיד עם **שני** אומנים ברצועה (`risa-oz`, `noemi-safir`). אין הערת הרשמה. |
+| `/events/zohar-ron/` | Event (artist talk — זוהר רון, SEX?, how-many, 19.7.26, דיזינגוף) | `XhGH...::1083:1817` | `XhGH...::1083:1704` | ✅ ספן לטיני `SEX?` בתוך העברית; גיבור = `d64bdefda…` עם cropTransform (שכבת בסיס `9f6efde…` מוסתרת). |
 | `/opencalls/` | Index | — | — | ⏳ |
 | `/opencalls/the-peeler/` | Single | `Zn3N...::1213:2417` | `Zn3N...::1213:2518` | ✅ |
 | `/opencalls/how-many/` | Single | `Zn3N...::1213:2340` | `Zn3N...::1213:2263` | ✅ |
 | `/contact/` | Form | — | — | ✅ `contact/index.html` |
 | `/accessibility/` | Statement | — | — | ✅ `accessibility/index.html` |
 | `/privacy/` | Privacy policy | — | — | ✅ `privacy/index.html` |
+
+### 🆕 משפחת עמודי האירוע "artist talk" (2026-07-09, 5 עמודים)
+
+`natasha-zeriker`, `liel-salman`, `nir-giorgio-levin`, `risa-and-noemi`, `zohar-ron` — **חמישה עמודים סטטיים עצמאיים** עם CSS זהה. **הם לא נבנים מהתבנית של `events/artist-talk/`** (שם יש triptych/וידאו; כאן אין בכלל סקשן artworks).
+
+- **מבנה:** פאנל `#EEF0EF` עם 2 עמודות — טקסט משמאל, פורטרט `492×744` מימין; ואז רצועת `artists`. סדר הבלוקים: כותרת → meta → גוף → `presented as part of` → כתובת → [כרטיס LINGER] → [הערת הרשמה].
+- **מובייל (390):** `display:contents` + `order:` — התמונה ראשונה, וכל בלוק טקסט על רקע לבן.
+- **Scrim:** דסקטופ = `linear-gradient(0deg, rgba(0,0,0,.8), transparent)`; מובייל = `rgba(27,27,27,.4)` שטוח.
+- **פונט Solway** (`--sol`, כבר ב-`פונטים/`) — רק לתווית `THE EXHIBITION` / `EXHIBITION • VOLUME 2`. **אין קווים מלווים לפס** (אומת ברינדור מ-Figma; אל תסתמך על ה-layout data).
+- **🔴 התאמת גודל אופטית:** ה-Copperplate שלנו רחב ~28% מזה שב-Figma. לכן כותרת 80px ב-Figma = **64px/58** בקוד, ו-`ex-name` באוברליי 29px = **23px**. זה מה שמשחזר את שבירות השורות של Figma.
+- **🔴 `picture-upgrade.js` עוטף `<img>` ב-`<picture>` בזמן ריצה** — ולכן `.card>img` מפסיק להתאים. חייבים `.card>picture{display:contents}` + `.card img{height:100%}`, אחרת התמונה מתכווצת לגובה הטבעי שלה ורקע הכרטיס השחור נחשף.
+- **תמונות גיבור:** `images/events/<slug>/hero.{webp,avif}` (984w + 480/768w). לגיבורים עם שתי שכבות תמונה ב-Figma — רק העליונה נראית (רונדר את ה-node כדי לוודא, אל תנחש מסדר ה-fills).
+- **רצועת האומנים** ממחזרת את `images/artists/grid/<slug>.{webp,avif}`.
+- **גנרטור:** `/tmp/.../gen_event_pages.py` (לא בריפו) — CSS משותף + בלוקי תוכן לכל עמוד.
+- `homepage_visible:false` בכל החמישה — **אין להם כרטיס בגריד של עמוד הבית** (החלטת המשתמש 2026-07-09).
 
 **סטטי (shell):** brand, nav, footer, newsletter copy, copyright, palette + typography. ב-`data/site.json` או CSS.
 **דינמי (JSON):** galleries, artists, exhibitions, events, press, opencalls, works, instagram, homepage curation, announcement, **curators**.

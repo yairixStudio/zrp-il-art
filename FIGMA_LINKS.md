@@ -302,6 +302,50 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 
 ## 📅 אירועי גלריה (/events/:slug)
 
+### artist talk family (5 events, 2026-07-09)
+
+> כל החמישה בקובץ `landing`. **אין להם סקשן artworks/triptych.** ראה CLAUDE.md §4 להערת המשפחה.
+
+**artist talk — natasha zeriker (save the date, הקולפן)**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1055-615&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1055-519&m=dev
+
+**pop up tattoos — liel salman noam**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1055-927&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1055-813&m=dev
+
+**artist talk — nir giorgio levin**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1289&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1180&m=dev
+
+**artist talk — risa brooke oze & noemi safir**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1543&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1432&m=dev
+
+**artist talk — zohar ron**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1817&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1704&m=dev
+
 ### loneliness event
 
 event loneliness דסקטופ: Implement this design from Figma.
@@ -433,4 +477,4 @@ lightbox state 3 (mobile no-caption): Implement this design from Figma.
 
 ---
 
-*Last review: 2026-05-11 (ktuba event agent — landing-file move for ktuba).*
+*Last review: 2026-07-09 (artist-talk family — 5 new event pages).*
