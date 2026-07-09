@@ -279,6 +279,25 @@ press the-sixth-scent מובייל: Implement this design from Figma.
 homepage `#press` כרטיס חדש (the sixth scent) + גריד מעודכן: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=551-371&m=dev
 
+### manicure-against-darkness — time out | תרבות (1.7.2026, על תערוכת הקולפן)
+
+press manicure-against-darkness דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1051-291&m=dev
+
+press manicure-against-darkness מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1051-396&m=dev
+
+### peeling-a-layer — רשת 13 | אמנות (1.7.2026, על תערוכת הקולפן)
+
+press peeling-a-layer דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1051-26&m=dev
+
+press peeling-a-layer מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1051-154&m=dev
+
+homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי artist-talk): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=551-371&m=dev
+
 ---
 
 ## 📅 אירועי גלריה (/events/:slug)
