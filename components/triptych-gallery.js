@@ -85,7 +85,7 @@
 
     dots.forEach(function(d,i){ d.addEventListener('click', function(){ go(i); }); });
 
-    section.tabIndex = section.tabIndex || 0;
+    if (!section.hasAttribute('tabindex')) section.tabIndex = 0;
     section.addEventListener('keydown', function(e){
       if(e.key === 'ArrowLeft'){ e.preventDefault(); go(idx - 1); }
       else if(e.key === 'ArrowRight'){ e.preventDefault(); go(idx + 1); }

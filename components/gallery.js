@@ -48,8 +48,10 @@
     _build() {
       // Collect child <img> elements before wiping innerHTML.
       const imgs = Array.from(this.querySelectorAll(':scope > img'));
-      // If there are direct <img> children, use them. Otherwise look for any img in subtree.
-      const sourceImgs = imgs.length ? imgs : Array.from(this.querySelectorAll('img'));
+      // If there are direct <img> children, use them. Otherwise look for any img in subtree,
+      // excluding clone slides (.gal-clone) so refresh() doesn't duplicate looped slides.
+      const sourceImgs = (imgs.length ? imgs : Array.from(this.querySelectorAll('img')))
+        .filter((img) => !img.closest('.gal-clone'));
       if (sourceImgs.length === 0) return; // nothing to render
 
       const loop    = this.dataset.loop    !== 'false';
@@ -79,7 +81,7 @@
         slide.setAttribute('role', 'group');
         slide.setAttribute('aria-roledescription', 'slide');
         slide.setAttribute('aria-label', (i + 1) + ' / ' + sourceImgs.length);
-        if (i > 0 && !img.loading) img.loading = 'lazy';
+        if (i > 0 && !img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
         img.draggable = false;
         slide.appendChild(img);
         track.appendChild(slide);
@@ -92,8 +94,14 @@
       if (infinite) {
         const firstSlide = track.firstElementChild;
         const lastSlide = track.lastElementChild;
-        track.insertBefore(lastSlide.cloneNode(true), firstSlide);
-        track.appendChild(firstSlide.cloneNode(true));
+        const cloneOfLast = lastSlide.cloneNode(true);
+        cloneOfLast.classList.add('gal-clone');
+        cloneOfLast.setAttribute('aria-hidden', 'true');
+        const cloneOfFirst = firstSlide.cloneNode(true);
+        cloneOfFirst.classList.add('gal-clone');
+        cloneOfFirst.setAttribute('aria-hidden', 'true');
+        track.insertBefore(cloneOfLast, firstSlide);
+        track.appendChild(cloneOfFirst);
       }
 
       viewport.appendChild(track);

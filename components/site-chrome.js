@@ -383,12 +383,14 @@
     // Returns one of: home, opencall, exhibitions, works,
     // galleries, about, press — or null if no match.
     const path = location.pathname;
+    // Normalize trailing index.html so /works/index.html matches like /works/.
+    const cleaned = path.replace(/\/index\.html$/, '/');
     // Strip trailing slash for matching; consider /about/ same as /about.
-    const trimmed = path.replace(/\/+$/, '');
+    const trimmed = cleaned.replace(/\/+$/, '');
     const last = trimmed.split('/').pop() || '';
     let key = null;
     // Home: empty path or root-level index.html (legacy)
-    if (path === '/' || path === '' || last === '' || last === 'index.html') {
+    if (cleaned === '/' || cleaned === '' || last === '') {
       key = 'home';
     } else if (path.indexOf('/exhibitions/') !== -1) {
       key = 'exhibitions';
