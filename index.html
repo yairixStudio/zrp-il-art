@@ -229,6 +229,9 @@ body{text-transform:uppercase}
 .ex-now .card .ttl-en--stack .ttl-en-row1{white-space:nowrap}
 .ex-now .card .ttl-en--stack .ttl-en-row2{letter-spacing:.025em;opacity:.96;white-space:normal}
 .ex-now .card .ttl-he{font-family:var(--heb);font-weight:300;font-size:clamp(14px,1.25vw + 10px,36px);direction:rtl;text-align:left;line-height:1.15;text-transform:none}
+.ex-now .card .title-bar{display:flex;align-items:center;gap:13px;flex-wrap:nowrap;white-space:nowrap;margin-bottom:2px}
+.ex-now .card .title-bar .lbl{font-family:var(--cop);font-weight:300;font-size:clamp(11px,.9vw + 7px,26px);letter-spacing:.04em;white-space:nowrap;flex-shrink:0}
+.ex-now .card .title-bar .dot{display:block;width:6px;height:6px;border-radius:300px;background:#fff;flex-shrink:0}
 .ex-now .artists-bar{display:flex;justify-content:space-between;align-items:center;padding:0;text-decoration:none;color:inherit;cursor:pointer}
 .ex-now .artists-bar .lbl{font-family:var(--cop);font-weight:300;font-size:28px;direction:rtl;text-align:right}
 .ex-now .artists-bar svg{width:11px;height:11px;flex-shrink:0}
@@ -615,6 +618,7 @@ body{text-transform:uppercase}
   .ex-now .card .stat{font-size:20px}
   .ex-now .card .ttl-en{font-size:13px;line-height:1.2;letter-spacing:.02em}
   .ex-now .card .ttl-he{font-weight:300;font-size:14px;line-height:1.25}
+  .ex-now .card .title-bar{display:none}
   .ex-now .artists-bar .lbl{font-size:20px}
   .ex-now .artists-bar svg{width:16px;height:16px}
   .ex-now .artists-list{padding-right:16px;margin-top:0}
@@ -986,10 +990,11 @@ body{text-transform:uppercase}
           <div class="gname">גלריית כיכר המדינה</div>
           <div class="img">
             <img class="ex-now-photo ex-now-photo--mob" src="images/exhibitions/peeler-mobile.webp" srcset="images/exhibitions/peeler-mobile-480w.webp 480w, images/exhibitions/peeler-mobile.webp 620w" sizes="100vw" width="177" height="214" alt="" decoding="async" loading="lazy">
-            <img class="ex-now-photo ex-now-photo--desk" src="images/exhibitions/peeler-mobile.webp" srcset="images/exhibitions/peeler-mobile-480w.webp 480w, images/exhibitions/peeler-mobile.webp 620w" sizes="100vw" width="177" height="214" alt="" decoding="async" loading="lazy">
+            <img class="ex-now-photo ex-now-photo--desk" src="images/exhibitions/peeler-desktop.webp" srcset="images/exhibitions/peeler-desktop-480w.webp 480w, images/exhibitions/peeler-desktop.webp 807w" sizes="50vw" width="807" height="902" alt="" decoding="async" loading="lazy">
             <div class="ovr">
               <div class="stat">current</div>
               <div class="ovr-titles">
+                <div class="title-bar"><span class="lbl">exhibition</span><span class="dot"></span><span class="lbl">volume 2</span></div>
                 <div class="ttl-he">הקולפן</div>
               </div>
             </div>
@@ -1302,13 +1307,13 @@ porta</div></a>
       <div class="img"><img src="images/homepage/x-our-artists/work-24.webp" alt="" loading="lazy" decoding="async"></div>
       <div class="name">noemi safir</div>
     </a>
-    <a class="x-artists-card" href="artists/yarden-amir/">
-      <div class="img"><img src="images/homepage/x-our-artists/work-25.webp" alt="" loading="lazy" decoding="async"></div>
-      <div class="name">yarden amir</div>
-    </a>
     <a class="x-artists-card" href="artists/zohar-ron/">
       <div class="img"><img src="images/homepage/x-our-artists/work-26.webp" alt="" loading="lazy" decoding="async"></div>
       <div class="name">zohar ron</div>
+    </a>
+    <a class="x-artists-card" href="artists/yarden-amir/">
+      <div class="img"><img src="images/homepage/x-our-artists/work-25.webp" alt="" loading="lazy" decoding="async"></div>
+      <div class="name">yarden amir</div>
     </a>
   </div>
   <!-- MOBILE — triptych coverflow (shared component) -->
@@ -1339,8 +1344,8 @@ porta</div></a>
         <img class="tri-slide" src="images/homepage/x-our-artists/work-22.webp" alt="" data-caption="gilad kenan" data-artist-href="artists/gilad-kenan/">
         <img class="tri-slide" src="images/homepage/x-our-artists/work-23.webp" alt="" data-caption="yarden amir" data-artist-href="artists/yarden-amir/">
         <img class="tri-slide" src="images/homepage/x-our-artists/work-24.webp" alt="" data-caption="noemi safir" data-artist-href="artists/noemi-safir/">
-        <img class="tri-slide" src="images/homepage/x-our-artists/work-25.webp" alt="" data-caption="yarden amir" data-artist-href="artists/yarden-amir/">
         <img class="tri-slide" src="images/homepage/x-our-artists/work-26.webp" alt="" data-caption="zohar ron" data-artist-href="artists/zohar-ron/">
+        <img class="tri-slide" src="images/homepage/x-our-artists/work-25.webp" alt="" data-caption="yarden amir" data-artist-href="artists/yarden-amir/">
       </div>
       <div class="tri-dots" role="tablist">
         <button class="tri-dot is-on" type="button" aria-label="1"></button>
@@ -1450,21 +1455,21 @@ porta</div></a>
   </div>
   <div class="press-rows">
     <div class="press-row press-row--swap">
-      <a class="press-card" href="press/the-sixth-scent/">
+      <a class="press-card" href="press/manicure-against-darkness/">
         <div class="info">
-          <span class="tag en">ora magazine | issue 02</span>
-          <p class="desc desc-lat desc-lat-sm">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
-          <span class="date">7.6.2026</span>
+          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+          <p class="desc">מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ"ש</p>
+          <span class="date">1.7.2026</span>
         </div>
-        <div class="img"><img src="images/press/the-sixth-scent/home-card.webp" srcset="images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w" sizes="100vw" width="1079" height="599" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/press/manicure-against-darkness/home-card.webp" width="1000" height="555" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/artist-talk/">
+      <a class="press-card" href="press/peeling-a-layer/">
         <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat desc-lat-sm">artist talk with gal pollak<br>and elsa ers brosh</p>
-          <span class="date">11.6.2026</span>
+          <span class="tag"><span>רשת 13</span><span class="tag-sep">|</span><span>אמנות</span></span>
+          <p class="desc">מה נפגוש כשנקלף שכבה מהזיכרון שלנו? לתערוכה הבאה יש תשובה</p>
+          <span class="date">1.7.2026</span>
         </div>
-        <div class="img"><img src="images/events/artist-talk/hero-desktop.webp" srcset="images/events/artist-talk/hero-desktop-480w.webp 480w, images/events/artist-talk/hero-desktop-768w.webp 768w, images/events/artist-talk/hero-desktop.webp 984w" sizes="100vw" width="984" height="1312" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/press/peeling-a-layer/01-hitnaarut.webp" width="750" height="422" alt="" decoding="async" loading="lazy"></div>
       </a>
     </div>
     <div class="press-row press-row--swap">
@@ -1476,13 +1481,13 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/events/close-look/intro-photo.webp" width="292" height="162" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="press/the-last-station/">
+      <a class="press-card" href="press/the-sixth-scent/">
         <div class="info">
-          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">התחנה האחרונה: 25 תערוכות מומלצות לעצור בהן את הכל בסופ"ש</p>
-          <span class="date">27.5.2026</span>
+          <span class="tag en">ora magazine | issue 02</span>
+          <p class="desc desc-lat desc-lat-sm">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
+          <span class="date">7.6.2026</span>
         </div>
-        <div class="img"><img src="images/press/time-out/home-card-2026-05-27.webp" srcset="images/press/time-out/home-card-2026-05-27-480w.webp 480w, images/press/time-out/home-card-2026-05-27-768w.webp 768w, images/press/time-out/home-card-2026-05-27.webp 1000w" sizes="100vw" width="1000" height="1246" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/press/the-sixth-scent/home-card.webp" srcset="images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w" sizes="100vw" width="1079" height="599" alt="" decoding="async" loading="lazy"></div>
       </a>
     </div>
     <div class="press-row press-row--swap">
@@ -1494,13 +1499,13 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/events/event-how-many-2026-05-26-cover.webp" srcset="images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="100vw" width="3058" height="4096" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/ktuba/">
+      <a class="press-card" href="press/the-last-station/">
         <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc">כְּתוּבָּה | <span class="lat">QTUBA</span></p>
-          <span class="date">25.2.2026</span>
+          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+          <p class="desc">התחנה האחרונה: 25 תערוכות מומלצות לעצור בהן את הכל בסופ"ש</p>
+          <span class="date">27.5.2026</span>
         </div>
-        <div class="img"><img src="images/events/event-3-cover-v2.webp" srcset="images/events/event-3-cover-v2-480w.webp 480w, images/events/event-3-cover-v2-768w.webp 768w, images/events/event-3-cover-v2-1080w.webp 1080w, images/events/event-3-cover-v2.webp 1500w" sizes="100vw" width="1500" height="2000" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/press/time-out/home-card-2026-05-27.webp" srcset="images/press/time-out/home-card-2026-05-27-480w.webp 480w, images/press/time-out/home-card-2026-05-27-768w.webp 768w, images/press/time-out/home-card-2026-05-27.webp 1000w" sizes="100vw" width="1000" height="1246" alt="" decoding="async" loading="lazy"></div>
       </a>
     </div>
     <div class="press-row press-row--swap">
@@ -1512,13 +1517,13 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/press/press-1/00-home-card.webp" width="171" height="108" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/loneliness/">
+      <a class="press-card" href="events/ktuba/">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">בדידות בתוך סביבה תוססת</p>
-          <span class="date">19.1.2026</span>
+          <p class="desc">כְּתוּבָּה | <span class="lat">QTUBA</span></p>
+          <span class="date">25.2.2026</span>
         </div>
-        <div class="img"><img src="images/events/event-4-cover.webp" srcset="images/events/event-4-cover-480w.webp 480w, images/events/event-4-cover-768w.webp 768w, images/events/event-4-cover-1080w.webp 1080w, images/events/event-4-cover.webp 1435w" sizes="100vw" width="1435" height="1600" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/event-3-cover-v2.webp" srcset="images/events/event-3-cover-v2-480w.webp 480w, images/events/event-3-cover-v2-768w.webp 768w, images/events/event-3-cover-v2-1080w.webp 1080w, images/events/event-3-cover-v2.webp 1500w" sizes="100vw" width="1500" height="2000" alt="" decoding="async" loading="lazy"></div>
       </a>
     </div>
     <div class="press-row press-row--swap">
@@ -1530,9 +1535,19 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/press/walla-cover.webp" width="462" height="626" alt="" decoding="async" loading="lazy"></div>
       </a>
+      <a class="press-card" href="events/loneliness/">
+        <div class="info">
+          <span class="tag en">gallery event</span>
+          <p class="desc">בדידות בתוך סביבה תוססת</p>
+          <span class="date">19.1.2026</span>
+        </div>
+        <div class="img"><img src="images/events/event-4-cover.webp" srcset="images/events/event-4-cover-480w.webp 480w, images/events/event-4-cover-768w.webp 768w, images/events/event-4-cover-1080w.webp 1080w, images/events/event-4-cover.webp 1435w" sizes="100vw" width="1435" height="1600" alt="" decoding="async" loading="lazy"></div>
+      </a>
+    </div>
+    <div class="press-row press-row--swap press-row--right">
       <a class="press-card" href="press/time-out/">
         <div class="info">
-          <span class="tag"><span class="heb">מגזין</span> <span class="tag-lat">TIMEOUT</span></span>
+          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
           <p class="desc">דה פיינל קאונטדאון: 18 תערוכות לחגוג בהן סופ"ש ראשון של 2026</p>
           <span class="date">31.12.2025</span>
         </div>
