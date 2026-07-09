@@ -3,6 +3,61 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-risa-and-noemi",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר",
+      "date": "2026-07-24",
+      "cover_image": "images/events/risa-and-noemi/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/risa-and-noemi/"
+    },
+    {
+      "id": "event-zohar-ron-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם זוהר רון",
+      "date": "2026-07-19",
+      "cover_image": "images/events/zohar-ron/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/zohar-ron/"
+    },
+    {
+      "id": "event-nir-giorgio-levin-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין",
+      "date": "2026-07-17",
+      "cover_image": "images/events/nir-giorgio-levin/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/nir-giorgio-levin/"
+    },
+    {
+      "id": "event-liel-salman-popup",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "פופ אפ קעקועים | ליאל סלמן",
+      "date": "2026-07-16",
+      "cover_image": "images/events/liel-salman/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/liel-salman/"
+    },
+    {
+      "id": "event-natasha-zeriker-evening",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "ערב עם נטאשה זריקר",
+      "date": "2026-07-09",
+      "cover_image": "images/events/natasha-zeriker/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/natasha-zeriker/"
+    },
+    {
       "id": "timeout-manicure-against-darkness",
       "type": "press",
       "source_he": null,
