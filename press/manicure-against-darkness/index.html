@@ -98,13 +98,13 @@ body{text-transform:uppercase}
   /* article */
   .article-head{padding:32px 0 0}
   .meta-line .tag,.meta-line .src{font-size:16px}
-  .article-title{font-size:36px;line-height:1.15}
-  .article-subtitle{font-size:16px;line-height:1.15}
+  .article-title{font-size:clamp(26px, 8.8vw, 36px);line-height:1.12;padding:0 10px}
+  .article-subtitle{font-size:clamp(12px, 4.2vw, 16px);line-height:1.12;padding:0 10px}
   .byline{font-size:14px}
 
   .article-figure{padding:16px}
   .article-figure .img{aspect-ratio:358/542.74}
-  .article-figure .cap{width:100%;max-width:331px}
+  .article-figure .cap{width:100%;max-width:331px;font-size:14px}
 
   .body-block{padding:16px}
   .body-section-h{font-size:18px}
@@ -117,6 +117,7 @@ body{text-transform:uppercase}
 /* artist-link injected: every artist mention in copy/captions/figures links to its page */
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+a.location-link{color:#D60000;text-decoration-color:rgba(214,0,0,.35)}
 a.artist-figure-link{display:block;color:inherit;text-decoration:none}
 a.artist-figure-link:hover img{filter:brightness(.96)}
 a.artist-figure-link img{transition:filter .25s}
@@ -143,7 +144,7 @@ a.artist-figure-link img{transition:filter .25s}
 <meta name="twitter:title" content="Time Out — מניקור נגד האפלה וגוף אנושי שמתפרק: 18 תערוכות לסופ״ש | Zielinski &amp; Rozen">
 <meta name="twitter:description" content="כתבת Time Out על 18 תערוכות מומלצות לסופ״ש, ובהן ״הקולפן״ — תערוכה קבוצתית של 20 אמנים ואמניות בגלריה ארז זילינסקי רוזן, כיכר המדינה, תל אביב.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/press-manicure-against-darkness-home-card.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://art.zrp.co.il/press/manicure-against-darkness/#article","url":"https://art.zrp.co.il/press/manicure-against-darkness/","headline":"מניקור נגד האפלה וגוף אנושי שמתפרק: 18 תערוכות לסופ\"ש","image":"https://art.zrp.co.il/images/press/manicure-against-darkness/hero.webp","publisher":{"@id":"https://art.zrp.co.il/#org"},"mainEntityOfPage":"https://art.zrp.co.il/press/manicure-against-darkness/","datePublished":"2026-07-01","author":{"@type":"Person","name":"רעות ברנע"},"sourceOrganization":{"@type":"Organization","name":"Time Out"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Press & Events","item":"https://art.zrp.co.il/press/"},{"@type":"ListItem","position":2,"name":"מניקור נגד האפלה וגוף אנושי שמתפרק: 18 תערוכות לסופ\"ש","item":"https://art.zrp.co.il/press/manicure-against-darkness/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://art.zrp.co.il/press/manicure-against-darkness/#article","url":"https://art.zrp.co.il/press/manicure-against-darkness/","headline":"מניקור נגד האפלה וגוף אנושי שמתפרק: 18 תערוכות לסופ\"ש","image":"https://art.zrp.co.il/images/press/manicure-against-darkness/hero.webp","publisher":{"@id":"https://art.zrp.co.il/#org"},"mainEntityOfPage":"https://art.zrp.co.il/press/manicure-against-darkness/","datePublished":"2026-07-01","author":{"@type":"Person","name":"רעות ברנע"},"sourceOrganization":{"@type":"Organization","name":"Time Out"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"מניקור נגד האפלה וגוף אנושי שמתפרק: 18 תערוכות לסופ\"ש","item":"https://art.zrp.co.il/press/manicure-against-darkness/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -186,7 +187,7 @@ a.artist-figure-link img{transition:filter .25s}
   <section class="body-block">
     <div class="col">
       <h2 class="body-section-h"><a class="artist-link" href="../../exhibitions/the-peeler/">הקולפן</a> // גלריה ארז זילינסקי רוזן</h2>
-      <p class="body-text">תערוכה שמאגדת 20 אמנים ואמניות סביב פעולה פשוטה לכאורה: לעצור לרגע מול סיפור שאנחנו נושאים בתוכנו, ולהסכים להתבונן בו מחדש. <a class="artist-link" href="../../#galleries">גלריה ארז זילינסקי רוזן, ז׳בוטינסקי 131 כיכר המדינה</a></p>
+      <p class="body-text">תערוכה שמאגדת 20 אמנים ואמניות סביב פעולה פשוטה לכאורה: לעצור לרגע מול סיפור שאנחנו נושאים בתוכנו, ולהסכים להתבונן בו מחדש. <a class="artist-link location-link" href="../../#galleries">גלריה ארז זילינסקי רוזן, ז׳בוטינסקי 131 כיכר המדינה</a></p>
     </div>
   </section>
 

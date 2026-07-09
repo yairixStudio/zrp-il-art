@@ -147,7 +147,7 @@ a.aw-ex-title:hover{opacity:.6}
   </div>
 </main>
 
-<script type="application/json" id="artwork-data">{"id":"hadas-tuval-2","artist_slug":"hadas-tuval","artist_he":"הדס טובל","artist_en":"hadas tuval","gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"exhibition_title_he":"הקולפן | מעורר רגש: החזקה והרפיה","exhibition_slug":"the-peeler","exhibition_route":"opencalls/the-peeler","page":true,"title_he":"סף","title_en":null,"details_he":"קוטר 21 ס\"מ, גובה 144 ס\"מ\nחומר: חבל וחוטים\nטכניקה: פרימה, שזירה וקליעה","img":"hadas-tuval-2","w":900,"h":1747,"widths":[480,768,900],"artist_page_pos":2,"statement_he":["היצירות המוצגות בתערוכה נובעות מהתמסרות לדרך וממוקמות ברגע של מעבר – בהתהוות שלפני נביעה חדשה או בחיבור מחדש של חלקים שנפרדו. מתוך הסכמה לשהות בנוכחות על הסף ולשאת אי-וודאות ברגעים שבהם מבנים מתפרקים והקרקע נפערת, העבודות בוחנות את הבחירה להישען אל הנפילה מתוך אמון במציאות חדשה המתגלה מתוך האובדן.","בתהליך יצירה איטי וסיזיפי של פרימת החומר ואריגתו מחדש, החומר נע מגולמיות גסה אל מלאכת יד עדינה, ומגלם את המתח והדיאלוג המתמיד שבין עיטוף לכבילה, ושליטה לשחרור."]}</script>
+<script type="application/json" id="artwork-data">{"id":"hadas-tuval-2","artist_slug":"hadas-tuval","artist_he":"הדס טובל","artist_en":"hadas tuval","gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"exhibition_title_he":"הקולפן | מעורר רגש: החזקה והרפיה","exhibition_slug":"the-peeler","exhibition_route":"exhibitions/the-peeler","page":true,"title_he":"סף","title_en":null,"details_he":"קוטר 21 ס\"מ, גובה 144 ס\"מ\nחומר: חבל וחוטים\nטכניקה: פרימה, שזירה וקליעה","img":"hadas-tuval-2","w":900,"h":1747,"widths":[480,768,900],"artist_page_pos":2,"statement_he":["היצירות המוצגות בתערוכה נובעות מהתמסרות לדרך וממוקמות ברגע של מעבר – בהתהוות שלפני נביעה חדשה או בחיבור מחדש של חלקים שנפרדו. מתוך הסכמה לשהות בנוכחות על הסף ולשאת אי-וודאות ברגעים שבהם מבנים מתפרקים והקרקע נפערת, העבודות בוחנות את הבחירה להישען אל הנפילה מתוך אמון במציאות חדשה המתגלה מתוך האובדן.","בתהליך יצירה איטי וסיזיפי של פרימת החומר ואריגתו מחדש, החומר נע מגולמיות גסה אל מלאכת יד עדינה, ומגלם את המתח והדיאלוג המתמיד שבין עיטוף לכבילה, ושליטה לשחרור."]}</script>
 
 <script>
 (function(){
@@ -255,8 +255,8 @@ a.aw-ex-title:hover{opacity:.6}
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
 
   var exHeadInner = latHtml(w.exhibition_title_he||'');
-  var exHead = w.exhibition_slug
-    ? '<a class="aw-ex-title" href="../../opencalls/'+w.exhibition_slug+'/">'+exHeadInner+'</a>'
+  var exHead = w.exhibition_route
+    ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
   var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)

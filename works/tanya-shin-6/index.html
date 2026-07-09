@@ -245,8 +245,8 @@ a.aw-ex-title:hover{opacity:.6}
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
 
   var exHeadInner = latHtml(w.exhibition_title_he||'');
-  var exHead = w.exhibition_slug
-    ? '<a class="aw-ex-title" href="../../opencalls/'+w.exhibition_slug+'/">'+exHeadInner+'</a>'
+  var exHead = w.exhibition_route
+    ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
   var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)

@@ -81,7 +81,8 @@ form#contact-form{display:flex;flex-direction:column;gap:24px}
 .field.has-error input,
 .field.has-error textarea{border-bottom-color:var(--red);box-shadow:0 1px 0 0 var(--red)}
 .field input[type=email],
-.field input[dir="ltr"]{direction:ltr;text-align:left}
+.field input[dir="ltr"]{direction:ltr;text-align:left;font-family:var(--cop);font-weight:300;letter-spacing:.02em}
+.field input[type=email]::placeholder{font-family:var(--cop);font-weight:300}
 
 /* Consent */
 .consent{display:flex;flex-direction:row-reverse;align-items:flex-start;gap:12px;direction:rtl;margin-top:4px}
@@ -424,6 +425,13 @@ form#contact-form{display:flex;flex-direction:column;gap:24px}
       var w = el.closest('.field');
       if (w) w.classList.remove('has-error');
     });
+  });
+
+  // Email is Latin-only: strip Hebrew characters as they are typed/pasted
+  var emailEl = document.getElementById('c-email');
+  if (emailEl) emailEl.addEventListener('input', function(){
+    var clean = emailEl.value.replace(/[֐-׿]/g, '');
+    if (clean !== emailEl.value) emailEl.value = clean;
   });
 })();
 </script>

@@ -147,7 +147,7 @@ a.aw-ex-title:hover{opacity:.6}
   </div>
 </main>
 
-<script type="application/json" id="artwork-data">{"id":"aharon-bas-1","artist_slug":"aharon-bas","artist_he":"אהרן בס","artist_en":"aharon bas","title_he":"ניגודים","title_en":null,"gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"שירה","img":"aharon-bas-1","w":596,"h":1600,"widths":[480,596],"artist_page_pos":1,"page":true,"exhibition_title_he":"הקולפן","exhibition_slug":"the-peeler","exhibition_route":"opencalls/the-peeler","statement_he":["היצירה \"ניגודים\" מבטאת את לב עולמו היצירתי: ההבנה שהאדם אינו עשוי מקו אחד ברור, אלא מריבוי כוחות, מאבקים, אהבות ופחדים. דווקא הניגודים שבתוכנו הם שמרכיבים את האנושיות שלנו — ומגלים שגם האחר, בפנים אחרות ובשם אחר, נושא בתוכו את אותה מלחמה, באותו הלב."]}</script>
+<script type="application/json" id="artwork-data">{"id":"aharon-bas-1","artist_slug":"aharon-bas","artist_he":"אהרן בס","artist_en":"aharon bas","title_he":"ניגודים","title_en":null,"gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"שירה","img":"aharon-bas-1","w":596,"h":1600,"widths":[480,596],"artist_page_pos":1,"page":true,"exhibition_title_he":"הקולפן","exhibition_slug":"the-peeler","exhibition_route":"exhibitions/the-peeler","statement_he":["היצירה \"ניגודים\" מבטאת את לב עולמו היצירתי: ההבנה שהאדם אינו עשוי מקו אחד ברור, אלא מריבוי כוחות, מאבקים, אהבות ופחדים. דווקא הניגודים שבתוכנו הם שמרכיבים את האנושיות שלנו — ומגלים שגם האחר, בפנים אחרות ובשם אחר, נושא בתוכו את אותה מלחמה, באותו הלב."]}</script>
 
 <script>
 (function(){
@@ -255,8 +255,8 @@ a.aw-ex-title:hover{opacity:.6}
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
 
   var exHeadInner = latHtml(w.exhibition_title_he||'');
-  var exHead = w.exhibition_slug
-    ? '<a class="aw-ex-title" href="../../opencalls/'+w.exhibition_slug+'/">'+exHeadInner+'</a>'
+  var exHead = w.exhibition_route
+    ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
   var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)

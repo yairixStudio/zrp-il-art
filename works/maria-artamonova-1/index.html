@@ -147,7 +147,7 @@ a.aw-ex-title:hover{opacity:.6}
   </div>
 </main>
 
-<script type="application/json" id="artwork-data">{"id":"maria-artamonova-1","artist_slug":"maria-artamonova","artist_he":"מריה ארטמונובה","artist_en":"maria artamonova","title_he":null,"title_en":"Freedom","gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"115x175 ס\"מ\nחוטים סינתטיים (פוליאסטר)","img":"maria-artamonova-1","w":900,"h":1600,"widths":[480,768,900],"artist_page_pos":1,"page":true,"exhibition_title_he":"הקולפן","exhibition_slug":"the-peeler","exhibition_route":"opencalls/the-peeler","statement_he":["העבודה \"Freedom\" מהווה התגלמות של מושג החופש, כפי שהוא משתקף בצבעוניות עשירה ובצורות מגוונות. היצירה נולדה מתוך תהליך שבו הזמן עוצר מלכת והאמנית שוקעת בעולם של השראה נטול מסגרות, המאפשר ביטוי טהור של רגשות ורעיונות.\nהעבודה מזמינה את הצופה להשהות את המציאות היומיומית, ומזכירה את החשיבות של מתן רשות עצמית לגלות, להשתחרר ולהתמזג באופן מלא עם רגע היצירה והגילוי."]}</script>
+<script type="application/json" id="artwork-data">{"id":"maria-artamonova-1","artist_slug":"maria-artamonova","artist_he":"מריה ארטמונובה","artist_en":"maria artamonova","title_he":null,"title_en":"Freedom","gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"115x175 ס\"מ\nחוטים סינתטיים (פוליאסטר)","img":"maria-artamonova-1","w":900,"h":1600,"widths":[480,768,900],"artist_page_pos":1,"page":true,"exhibition_title_he":"הקולפן","exhibition_slug":"the-peeler","exhibition_route":"exhibitions/the-peeler","statement_he":["העבודה \"Freedom\" מהווה התגלמות של מושג החופש, כפי שהוא משתקף בצבעוניות עשירה ובצורות מגוונות. היצירה נולדה מתוך תהליך שבו הזמן עוצר מלכת והאמנית שוקעת בעולם של השראה נטול מסגרות, המאפשר ביטוי טהור של רגשות ורעיונות.\nהעבודה מזמינה את הצופה להשהות את המציאות היומיומית, ומזכירה את החשיבות של מתן רשות עצמית לגלות, להשתחרר ולהתמזג באופן מלא עם רגע היצירה והגילוי."]}</script>
 
 <script>
 (function(){
@@ -255,8 +255,8 @@ a.aw-ex-title:hover{opacity:.6}
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
 
   var exHeadInner = latHtml(w.exhibition_title_he||'');
-  var exHead = w.exhibition_slug
-    ? '<a class="aw-ex-title" href="../../opencalls/'+w.exhibition_slug+'/">'+exHeadInner+'</a>'
+  var exHead = w.exhibition_route
+    ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
   var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)

@@ -147,7 +147,7 @@ a.aw-ex-title:hover{opacity:.6}
   </div>
 </main>
 
-<script type="application/json" id="artwork-data">{"id":"alice-debellis-2","artist_slug":"alice-debellis","artist_he":"אליס דה בליס","artist_en":"alice de bellis","title_he":"החופש מתחיל במקום שבו הסיפור נגמר","title_en":null,"gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"2 פנלים 121x108 ס\"מ כל אחד\nציור דיגיטלי, הדפסה על בד","img":"alice-debellis-2","w":1600,"h":711,"widths":[480,768,1080,1600],"artist_page_pos":2,"page":true,"exhibition_title_he":"הקולפן | מעורר רגש: געגוע לשייכות","exhibition_slug":"the-peeler","exhibition_route":"opencalls/the-peeler","statement_he":["בלב היצירה פועם געגוע עמוק לשייכות – לא אל מקום גיאוגרפי או זהות מוגדרת, אלא אל תחושת הבית הפנימי שאבדה תחת שכבות החיים. העבודה נולדה מתוך התבוננות בילדה הפנימית כנוכחות נצחית ומקום מוגן החופשי ממסכות ותפקידים.","לאורך השנים, זיכרונות ואמונות מצטברים זה על גבי זה והופכים לזהות המגנה עלינו, אך לעיתים מרחיקה אותנו מהמהות האותנטית שלנו. היצירה מבקשת להתבונן בשכבות הללו מבלי להסירן, מתוך תפיסה שהחירות אינה טמונה בהגדרה עצמית חדשה, אלא בהכרה בכך שאנחנו רחבים בהרבה מהזהות שבנינו.","עבור האמנית, פעולת הציור היא ניסיון לחזור אל אותו מרחב ראשוני של תמימות וביטחון – מקום שבו אין צורך להוכיח דבר כדי להיות שייכים. באמצעות סמלים מיסטיים וארכיטיפיים – עיניים, כוכבים, ציפורים וחוטים המחברים בין עולמות – היא עוסקת בכמיהה המתמדת לשוב אל המקור. כל סמל וקו הם צעד במסע אל הילדה הפנימית, ותזכורת לכך שהגעגוע העמוק ביותר אינו למקום שעזבנו, אלא לעצמנו – כפי שהיינו לפני שלמדנו מי עלינו להיות."]}</script>
+<script type="application/json" id="artwork-data">{"id":"alice-debellis-2","artist_slug":"alice-debellis","artist_he":"אליס דה בליס","artist_en":"alice de bellis","title_he":"החופש מתחיל במקום שבו הסיפור נגמר","title_en":null,"gallery_slug":"medina","gallery_en":"Hamedina Square Gallery","sold":false,"details_he":"2 פנלים 121x108 ס\"מ כל אחד\nציור דיגיטלי, הדפסה על בד","img":"alice-debellis-2","w":1600,"h":711,"widths":[480,768,1080,1600],"artist_page_pos":2,"page":true,"exhibition_title_he":"הקולפן | מעורר רגש: געגוע לשייכות","exhibition_slug":"the-peeler","exhibition_route":"exhibitions/the-peeler","statement_he":["בלב היצירה פועם געגוע עמוק לשייכות – לא אל מקום גיאוגרפי או זהות מוגדרת, אלא אל תחושת הבית הפנימי שאבדה תחת שכבות החיים. העבודה נולדה מתוך התבוננות בילדה הפנימית כנוכחות נצחית ומקום מוגן החופשי ממסכות ותפקידים.","לאורך השנים, זיכרונות ואמונות מצטברים זה על גבי זה והופכים לזהות המגנה עלינו, אך לעיתים מרחיקה אותנו מהמהות האותנטית שלנו. היצירה מבקשת להתבונן בשכבות הללו מבלי להסירן, מתוך תפיסה שהחירות אינה טמונה בהגדרה עצמית חדשה, אלא בהכרה בכך שאנחנו רחבים בהרבה מהזהות שבנינו.","עבור האמנית, פעולת הציור היא ניסיון לחזור אל אותו מרחב ראשוני של תמימות וביטחון – מקום שבו אין צורך להוכיח דבר כדי להיות שייכים. באמצעות סמלים מיסטיים וארכיטיפיים – עיניים, כוכבים, ציפורים וחוטים המחברים בין עולמות – היא עוסקת בכמיהה המתמדת לשוב אל המקור. כל סמל וקו הם צעד במסע אל הילדה הפנימית, ותזכורת לכך שהגעגוע העמוק ביותר אינו למקום שעזבנו, אלא לעצמנו – כפי שהיינו לפני שלמדנו מי עלינו להיות."]}</script>
 
 <script>
 (function(){
@@ -255,8 +255,8 @@ a.aw-ex-title:hover{opacity:.6}
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
 
   var exHeadInner = latHtml(w.exhibition_title_he||'');
-  var exHead = w.exhibition_slug
-    ? '<a class="aw-ex-title" href="../../opencalls/'+w.exhibition_slug+'/">'+exHeadInner+'</a>'
+  var exHead = w.exhibition_route
+    ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
   var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)
