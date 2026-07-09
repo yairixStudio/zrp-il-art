@@ -125,6 +125,8 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 - **גנרטור:** `/tmp/.../gen_event_pages.py` (לא בריפו) — CSS משותף + בלוקי תוכן לכל עמוד.
 - `homepage_visible:false` בכל החמישה — **אין להם כרטיס בגריד של עמוד הבית** (החלטת המשתמש 2026-07-09).
 
+**🔎 Audit רוחבי 2026-07-09 (קומיטים `b18bacc`+`0ab21e0`) — הכרעות state שחשוב להכיר:** (1) **כותרת loneliness הרשמית = "בדידות בתוך סביבה תוססת"** (תוקן כפל-ב' שהיה ב-Figma/JSON; אם ב-Figma עדיין "בתוך בסביבה" — זו טעות מוכרעת, לא לשחזר). (2) **`exhibition_route` של כל יצירות הקולפן = `exhibitions/the-peeler`** (לא `opencalls/the-peeler`), וה-renderer בעמודי `works/<id>` בונה עכשיו את קישור התערוכה מ-`w.exhibition_route` (לא hardcode `opencalls/`). (3) **איות אנגלי קנוני: "adi duek", "zohar shitrit"** (הכרעת משתמש; ה-slugs נשארו `adi-duak`, `zohar-shtrit` — כלל-זהב 6). (4) פירורי-לחם JSON-LD לא מפנים יותר לעמודי אינדקס שלא נבנו (`/press/` וכו') — כשבונים את עמודי האינדקס, אפשר להחזיר. (5) 5 דפי האירועים החדשים (liel-salman וכו') **בכוונה לא ב-sitemap.xml ובלי קישורים פנימיים** עד חשיפה (הכרעת משתמש 2026-07-09).
+
 **סטטי (shell):** brand, nav, footer, newsletter copy, copyright, palette + typography. ב-`data/site.json` או CSS.
 **דינמי (JSON):** galleries, artists, exhibitions, events, press, opencalls, works, instagram, homepage curation, announcement, **curators**.
 
