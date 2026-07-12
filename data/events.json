@@ -58,7 +58,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "818:159",
       "figma_node_mobile": "818:17",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
     },
     {
       "id": "close-look",
@@ -134,7 +135,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "420:1520",
       "figma_node_mobile": "420:1625",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "close look"
     },
     {
       "id": "how-many",
@@ -173,7 +175,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "433:2",
       "figma_node_mobile": "433:179",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "opening"
     },
     {
       "id": "ktuba",
@@ -280,7 +283,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "119:1651",
       "figma_node_mobile": "119:1509",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "live art performance"
     },
     {
       "id": "loneliness",
@@ -312,7 +316,8 @@
       "route": "events/loneliness/",
       "homepage_visible": true,
       "figma_node_desktop": "1213:1873",
-      "figma_node_mobile": "1213:2099"
+      "figma_node_mobile": "1213:2099",
+      "card_title_en": "opening"
     },
     {
       "id": "natasha-zeriker",
@@ -358,7 +363,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "1055:615",
       "figma_node_mobile": "1055:519",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "save the date"
     },
     {
       "id": "liel-salman",
@@ -403,7 +409,8 @@
       "_note": "שם הפריים ב-Figma: 'artist talk with liel salman noam'; הכותרת הנראית בעמוד היא 'Pop up tattoos'. הכרטיס ברצועה מציג 'liel salman noam' verbatim מ-Figma, ומקשר ל-artists/liel-salman (name_en ב-artists.json = 'liel salman').",
       "figma_node_desktop": "1055:927",
       "figma_node_mobile": "1055:813",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "pop up tattoos"
     },
     {
       "id": "nir-giorgio-levin",
@@ -446,7 +453,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "1083:1289",
       "figma_node_mobile": "1083:1180",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
     },
     {
       "id": "risa-and-noemi",
@@ -491,7 +499,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "1083:1543",
       "figma_node_mobile": "1083:1432",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
     },
     {
       "id": "zohar-ron",
@@ -529,7 +538,8 @@
       "homepage_visible": true,
       "figma_node_desktop": "1083:1817",
       "figma_node_mobile": "1083:1704",
-      "figma_file": "XhGH289YTRcW811wrufRJz"
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
     }
   ]
 }
