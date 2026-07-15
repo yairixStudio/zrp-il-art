@@ -31,6 +31,16 @@
 עמוד בית מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-2&m=dev
 
+### Homepage — "BIG BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; בין `#artworks` ל-`#perfume-promo`)
+
+סקשן news דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1011&m=dev
+
+סקשן news מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-240&m=dev
+
+> ⚠️ ה-frames האלה יושבים בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21` (עותקי homepage מעודכנים). ה-node `1124:1030` (דסקטופ) / `1124:256` (מובייל) שם = סקשן ה-perfume promo שכבר בנוי.
+
 ### Homepage — "Loneliness × the tribe" (מעל Press)
 
 בלוק כותרת דסקטופ (מעל `#press`): Implement this design from Figma.
