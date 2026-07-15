@@ -275,32 +275,37 @@ body{text-transform:uppercase}
 .ex-now .artist[href$="/maya-nachum-levy/"] img{object-position:50% 25%}
 .ex-now .artist[href$="/la-raz-porta/"] img{object-position:50% 50%}
 
-/* ===== EVENTS / UPCOMING — Figma landing::1057:97 (desktop; no mobile frame — mobile follows the ex-now card scale) ===== */
-.ev-up{padding:64px var(--pad-x);display:flex;flex-direction:column;gap:64px;align-items:stretch;background:var(--white);width:100%;max-width:var(--max);margin:0 auto}
+/* ===== EVENTS / UPCOMING — Figma landing::1124:901 (desktop) / 1124:133 (mobile).
+   Circular "upcoming events" title (outlined SVG, green #2B4C39) on the left; infinite-loop
+   carousel of tall gradient cards (3-up desktop); thin 48px chevrons below, right-aligned.
+   Mobile: circle bleeds off the left edge, 200×301 cards, swipe only (no arrows — per Figma). */
+.ev-up{padding:64px var(--pad-x);display:flex;flex-direction:column;gap:24px;align-items:stretch;background:var(--white);width:100%;max-width:var(--max);margin:0 auto;box-sizing:border-box}
 .ev-up[hidden]{display:none}
-.ev-up-titles{text-align:center;line-height:1.05}
-.ev-up-titles .b,.ev-up-titles .l{font-family:var(--cop);font-size:36px;display:block;letter-spacing:.02em}
-.ev-up-titles .b{font-weight:700}
-.ev-up-titles .l{font-weight:300}
-/* Cards — Figma row of 2 (620px each, gap 8). More than 2 events wrap to further rows. */
-.ev-up-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 8px;width:100%}
-.ev-up .card-link{display:block;color:inherit;text-decoration:none;min-width:0}
-.ev-up .card{display:flex;flex-direction:column;gap:18px;min-width:0}
-.ev-up .gname{font-family:var(--heb);font-weight:300;font-size:36px;direction:rtl;text-align:right;color:var(--ink);padding:0 8px 0 0;line-height:1.1}
-.ev-up .img{position:relative;width:100%;height:693px;overflow:hidden;background:#222}
-.ev-up .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.ev-up .img picture{display:contents}
-.ev-up .card-link:hover .img img{transform:scale(1.04)}
-.ev-up .img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%);pointer-events:none;z-index:0}
-.ev-up .stat{position:absolute;top:16px;left:16px;z-index:1;color:#fff;font-family:var(--cop);font-weight:700;font-size:clamp(20px,1.35vw + 12px,36px);line-height:1.1;letter-spacing:.02em}
-.ev-up .ovr{position:absolute;left:16px;right:16px;top:50%;transform:translateY(-50%);z-index:1;display:flex;flex-direction:column;align-items:center;gap:16px;color:#fff;text-align:center}
-.ev-up .ttl{font-family:var(--cop);font-weight:700;font-size:clamp(18px,1.35vw + 12px,36px);line-height:1.15;letter-spacing:.02em}
-.ev-up .ex{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%}
-.ev-up .title-bar{display:flex;justify-content:center;align-items:center;gap:13px;white-space:nowrap}
-.ev-up .title-bar .lbl{font-family:var(--sol);font-weight:300;font-size:clamp(13px,.9vw + 7px,26px);letter-spacing:.04em}
-.ev-up .title-bar .dot{display:block;width:6px;height:6px;border-radius:300px;background:#fff;flex-shrink:0}
-.ev-up .ex-name{font-family:var(--cop);font-weight:400;font-size:clamp(14px,1vw + 8px,29px);line-height:1.2;letter-spacing:.02em}
-.ev-up .ex-name--he{font-family:var(--heb);direction:rtl;text-transform:none}
+.ev-up-body{display:grid;grid-template-columns:1fr 3.1fr;gap:16px;align-items:center;width:100%;min-width:0}
+.ev-up-circle{display:flex;align-items:center;justify-content:center;min-width:0}
+.ev-up-circle img{width:min(238px,100%);height:auto;display:block}
+.ev-up-viewport{overflow:hidden;width:100%;min-width:0}
+.ev-up-cards{display:flex;gap:16px;width:100%;will-change:transform;touch-action:pan-y}
+.ev-up .card-link{flex:0 0 calc((100% - 32px) / 3);display:block;color:inherit;text-decoration:none;min-width:0}
+.ev-up .card-link--soon{cursor:default}
+.ev-up .card{position:relative;width:100%;aspect-ratio:300/592;overflow:hidden;background:#222}
+.ev-up .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.ev-up .card picture{display:contents}
+.ev-up .card-link:hover .card img{transform:scale(1.04)}
+.ev-up .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(102,102,102,.2) 0%,rgba(0,0,0,.8) 81%);pointer-events:none}
+.ev-up .ovr{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding:16px;color:#fff}
+.ev-up .ovr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.ev-up .gname{font-family:var(--cop);font-weight:700;font-size:20px;line-height:1.4;letter-spacing:.02em}
+.ev-up .date{font-family:var(--cop);font-weight:300;font-size:20px;line-height:1.4;letter-spacing:.02em;white-space:nowrap}
+.ev-up .ovr-bot{display:flex;flex-direction:column;gap:4px}
+.ev-up .ttl{font-family:var(--cop);font-weight:700;font-size:14px;line-height:1.45;letter-spacing:.02em}
+.ev-up .ex-name{font-family:var(--cop);font-weight:300;font-size:14px;line-height:1.45;letter-spacing:.02em}
+.ev-up .ex-name--he{font-family:var(--heb);text-transform:none;letter-spacing:0}
+.ev-up-nav{display:flex;justify-content:flex-end;align-items:center;gap:16px}
+.ev-up-nav button{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;color:var(--ink);border:0;background:none;cursor:pointer;transition:opacity .2s}
+.ev-up-nav button:hover{opacity:.4}
+.ev-up-nav button:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.ev-up-nav svg{width:48px;height:48px;display:block;fill:currentColor}
 
 /* ===== EXHIBITIONS ARCHIVE — Figma landing::474:97 (desktop) / 467:45 (mobile) ===== */
 .ex-archive{padding:48px var(--pad-x) 96px;display:flex;flex-direction:column;gap:40px;align-items:center;background:var(--white);width:100%;max-width:var(--max);margin:0 auto}
@@ -716,22 +721,21 @@ body{text-transform:uppercase}
   .ex-now .artist img,.ex-now .artist .portrait-placeholder{width:96px;height:80px}
   .ex-now .artist .nm{font-size:11px;line-height:18px}
 
-  /* EVENTS / UPCOMING — no mobile Figma frame; scaled like the ex-now cards (390 width, 2-up) */
-  .ev-up{padding:32px 16px;gap:32px}
-  /* "upcoming" is a long word — cap it to the 358px content width instead of the 70px the shorter
-     ex-now headings use, so it never runs past the card grid. */
-  .ev-up-titles{text-align:left;line-height:.95;overflow-x:clip}
-  .ev-up-titles .b{font-size:44px;letter-spacing:-.01em}
-  .ev-up-titles .l{font-size:min(70px,12vw);margin-top:-6px;letter-spacing:-.01em}
-  .ev-up-cards{gap:16px 4px}
-  .ev-up .card{gap:8px}
-  .ev-up .gname{font-weight:400;font-size:14px;text-align:left;padding:0}
-  .ev-up .img{height:214.55px}
-  .ev-up .stat{top:8px;left:8px;font-size:16px}
-  .ev-up .ovr{left:8px;right:8px;gap:6px}
-  .ev-up .ttl{font-size:14px;line-height:1.2}
-  .ev-up .title-bar{display:none}
-  .ev-up .ex-name{font-size:12px;line-height:1.25}
+  /* EVENTS / UPCOMING — Figma 1124:133: circle title bleeds off the left edge, 200×301 cards,
+     swipe only (no arrows on mobile per Figma) */
+  .ev-up{padding:32px 0;gap:56px}
+  .ev-up-body{display:flex;flex-direction:column;gap:32px;align-items:stretch}
+  .ev-up-circle{justify-content:flex-start;height:242px;position:relative;overflow:hidden}
+  .ev-up-circle img{position:absolute;left:-93px;top:33px;width:175px}
+  .ev-up-viewport{padding-left:16px;box-sizing:border-box}
+  .ev-up-cards{gap:8px}
+  .ev-up .card-link{flex:0 0 200px}
+  .ev-up .card{aspect-ratio:200/301}
+  .ev-up .ovr{padding:8px}
+  .ev-up .gname,.ev-up .date{font-size:14px}
+  .ev-up .ttl{font-size:12px}
+  .ev-up .ex-name{font-size:12px}
+  .ev-up-nav{display:none}
 
   /* EXHIBITIONS ARCHIVE */
   .ex-archive{padding:32px 16px;gap:128px;align-items:stretch}
@@ -1164,11 +1168,18 @@ porta</div></a>
 <!-- EVENTS / UPCOMING — Figma landing::1057:97. Cards are rendered client-side from #events-upcoming-data
      so that events whose date has passed drop out on their own, and the whole section hides when none are left. -->
 <section class="ev-up" id="events-upcoming" aria-label="upcoming events" hidden>
-  <div class="ev-up-titles">
-    <span class="b">events</span>
-    <span class="l">upcoming</span>
+  <div class="ev-up-body">
+    <div class="ev-up-circle">
+      <img src="images/homepage/upcoming-events-circle.svg" width="239" height="239" alt="upcoming events" decoding="async" loading="lazy">
+    </div>
+    <div class="ev-up-viewport">
+      <div class="ev-up-cards"></div>
+    </div>
   </div>
-  <div class="ev-up-cards"></div>
+  <div class="ev-up-nav" role="group" aria-label="upcoming events navigation">
+    <button type="button" class="ev-up-prev" aria-label="previous"><svg viewBox="0 0 48 48"><path d="M16.7031 24L28.7031 12L30.3831 13.68L20.0631 24L30.3831 34.32L28.7031 36L16.7031 24Z"/></svg></button>
+    <button type="button" class="ev-up-next" aria-label="next"><svg viewBox="0 0 48 48"><path d="M31.2969 24L19.2969 12L17.6169 13.68L27.9369 24L17.6169 34.32L19.2969 36L31.2969 24Z"/></svg></button>
+  </div>
 </section>
 <script type="application/json" id="events-upcoming-data">
 [
@@ -1186,7 +1197,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "שיחת אמנים עם גל פולק ואלסה ארס ברוש — גלריית כיכר המדינה",
-  "srcset": "images/events/artist-talk/hero-desktop-480w.webp 480w, images/events/artist-talk/hero-desktop-768w.webp 768w, images/events/artist-talk/hero-desktop.webp 984w"
+  "srcset": "images/events/artist-talk/hero-desktop-480w.webp 480w, images/events/artist-talk/hero-desktop-768w.webp 768w, images/events/artist-talk/hero-desktop.webp 984w",
+  "gallery_en": [
+   "medina",
+   "square"
+  ]
  },
  {
   "route": "events/close-look/",
@@ -1202,7 +1217,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "מבט מקרוב — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/close-look/hero-480w.webp 480w, images/events/close-look/hero-768w.webp 768w, images/events/close-look/hero.webp 1125w"
+  "srcset": "images/events/close-look/hero-480w.webp 480w, images/events/close-look/hero-768w.webp 768w, images/events/close-look/hero.webp 1125w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
  },
  {
   "route": "events/how-many/",
@@ -1218,7 +1237,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "אירוע הפתיחה — כמה שותפים היו לך? — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover.webp 3058w"
+  "srcset": "images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover.webp 3058w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
  },
  {
   "route": "events/ktuba/",
@@ -1235,7 +1258,11 @@ porta</div></a>
   "ex_name": "בדידות בסביבה תוססת",
   "ex_he": true,
   "alt": "כתובה — מיצג חי — גלריית כיכר המדינה",
-  "srcset": "images/events/ktuba/hero-480w.webp 480w, images/events/ktuba/hero-768w.webp 768w, images/events/ktuba/hero.webp 1500w"
+  "srcset": "images/events/ktuba/hero-480w.webp 480w, images/events/ktuba/hero-768w.webp 768w, images/events/ktuba/hero.webp 1500w",
+  "gallery_en": [
+   "medina",
+   "square"
+  ]
  },
  {
   "route": "events/loneliness/",
@@ -1251,7 +1278,11 @@ porta</div></a>
   ],
   "ex_name": "בדידות בסביבה תוססת",
   "ex_he": true,
-  "alt": "אירוע הפתיחה — בדידות בתוך סביבה תוססת — גלריית כיכר המדינה"
+  "alt": "אירוע הפתיחה — בדידות בתוך סביבה תוססת — גלריית כיכר המדינה",
+  "gallery_en": [
+   "medina",
+   "square"
+  ]
  },
  {
   "route": "events/natasha-zeriker/",
@@ -1268,7 +1299,11 @@ porta</div></a>
   "ex_name": "הקולפן",
   "ex_he": true,
   "alt": "ערב עם נטאשה זריקר — גלריית כיכר המדינה",
-  "srcset": "images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w"
+  "srcset": "images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w",
+  "gallery_en": [
+   "medina",
+   "square"
+  ]
  },
  {
   "route": "events/liel-salman/",
@@ -1284,7 +1319,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "פופ אפ קעקועים — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/liel-salman/hero-480w.webp 480w, images/events/liel-salman/hero-768w.webp 768w, images/events/liel-salman/hero.webp 984w"
+  "srcset": "images/events/liel-salman/hero-480w.webp 480w, images/events/liel-salman/hero-768w.webp 768w, images/events/liel-salman/hero.webp 984w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
  },
  {
   "route": "events/nir-giorgio-levin/",
@@ -1300,7 +1339,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/nir-giorgio-levin/hero-480w.webp 480w, images/events/nir-giorgio-levin/hero-768w.webp 768w, images/events/nir-giorgio-levin/hero.webp 984w"
+  "srcset": "images/events/nir-giorgio-levin/hero-480w.webp 480w, images/events/nir-giorgio-levin/hero-768w.webp 768w, images/events/nir-giorgio-levin/hero.webp 984w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
  },
  {
   "route": "events/risa-and-noemi/",
@@ -1316,7 +1359,11 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/risa-and-noemi/hero-480w.webp 480w, images/events/risa-and-noemi/hero-768w.webp 768w, images/events/risa-and-noemi/hero.webp 984w"
+  "srcset": "images/events/risa-and-noemi/hero-480w.webp 480w, images/events/risa-and-noemi/hero-768w.webp 768w, images/events/risa-and-noemi/hero.webp 984w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
  },
  {
   "route": "events/zohar-ron/",
@@ -1332,7 +1379,32 @@ porta</div></a>
   "ex_name": "how many partners have you had?",
   "ex_he": false,
   "alt": "שיחת אמנים עם זוהר רון — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/zohar-ron/hero-480w.webp 480w, images/events/zohar-ron/hero-768w.webp 768w, images/events/zohar-ron/hero.webp 984w"
+  "srcset": "images/events/zohar-ron/hero-480w.webp 480w, images/events/zohar-ron/hero-768w.webp 768w, images/events/zohar-ron/hero.webp 984w",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ]
+ },
+ {
+  "route": null,
+  "soon": true,
+  "date": "2026-08-07",
+  "title_en": "artist talk",
+  "gallery_he": "גלריית כיכר דיזינגוף",
+  "gallery_en": [
+   "dizengoff",
+   "square"
+  ],
+  "img": "images/events/anat-wegier/upcoming.webp",
+  "w": 984,
+  "h": 1187,
+  "ex_bar": [
+   "the exhibition"
+  ],
+  "ex_name": "how many partners have you had?",
+  "ex_he": false,
+  "alt": "שיחת אמנים עם ענת ויז׳ייה — גלריית כיכר דיזינגוף",
+  "srcset": "images/events/anat-wegier/upcoming-480w.webp 480w, images/events/anat-wegier/upcoming-768w.webp 768w, images/events/anat-wegier/upcoming.webp 984w"
  }
 ]
 </script>
@@ -1350,21 +1422,43 @@ porta</div></a>
   if(!up.length){sec.remove();return;}
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   sec.querySelector('.ev-up-cards').innerHTML=up.map(function(e){
-    var bar=e.ex_bar.map(function(l){return '<span class="lbl">'+esc(l)+'</span>';}).join('<span class="dot"></span>');
-    return '<a class="card-link" href="'+esc(e.route)+'">'
-      +'<article class="card">'
-      +'<div class="gname" dir="rtl">'+esc(e.gallery_he)+'</div>'
-      +'<div class="img">'
-      +'<img src="'+esc(e.img)+'"'+(e.srcset?' srcset="'+esc(e.srcset)+'" sizes="50vw"':'')
+    var d=String(e.date).split('-'), dateTxt=d[2]+'.'+d[1];
+    var gl=(e.gallery_en||[]).map(esc).join('<br>');
+    var inner='<article class="card">'
+      +'<img src="'+esc(e.img)+'"'+(e.srcset?' srcset="'+esc(e.srcset)+'" sizes="(max-width:768px) 200px, 25vw"':'')
       +' width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'" decoding="async" loading="lazy">'
-      +'<div class="stat">upcoming</div>'
       +'<div class="ovr">'
-      +'<div class="ttl">'+esc(e.title_en)+'</div>'
-      +'<div class="ex"><div class="title-bar">'+bar+'</div>'
+      +'<div class="ovr-top"><div class="gname">'+gl+'</div><div class="date">'+esc(dateTxt)+'</div></div>'
+      +'<div class="ovr-bot"><div class="ttl">'+esc(e.title_en)+'</div>'
       +'<div class="ex-name'+(e.ex_he?' ex-name--he':'')+'"'+(e.ex_he?' dir="rtl"':'')+'>'+esc(e.ex_name)+'</div></div>'
-      +'</div></div></article></a>';
+      +'</div></article>';
+    return e.soon
+      ? '<a class="card-link card-link--soon press-card--soon" href="#">'+inner+'</a>'
+      : '<a class="card-link" href="'+esc(e.route)+'">'+inner+'</a>';
   }).join('');
   sec.hidden=false;
+
+  // Infinite-loop carousel over the upcoming cards (arrows top-right, touch swipe, keyboard-free).
+  var track=sec.querySelector('.ev-up-cards');
+  var prevBtn=sec.querySelector('.ev-up-prev'), nextBtn=sec.querySelector('.ev-up-next');
+  var originals=Array.prototype.slice.call(track.children), N=originals.length;
+  if(N>0 && prevBtn && nextBtn){
+    for(var ci=0;ci<N;ci++) track.appendChild(originals[ci].cloneNode(true));
+    for(var cj=N-1;cj>=0;cj--) track.insertBefore(originals[cj].cloneNode(true), track.firstChild);
+    var idx=N, animating=false;
+    var step=function(){ var f=track.children[0]; if(!f) return 0; var s=getComputedStyle(track); var g=parseFloat(s.columnGap||s.gap||'8')||8; return f.getBoundingClientRect().width+g; };
+    var apply=function(a){ track.style.transition=a?'transform .45s cubic-bezier(.4,0,.2,1)':'none'; track.style.transform='translate3d('+(-idx*step())+'px,0,0)'; };
+    requestAnimationFrame(function(){ apply(false); });
+    window.addEventListener('load',function(){ apply(false); });
+    track.addEventListener('transitionend',function(){ animating=false; if(idx>=2*N){idx-=N;apply(false);} else if(idx<N){idx+=N;apply(false);} });
+    var nx=function(){ if(animating)return; animating=true; idx++; apply(true); };
+    var pv=function(){ if(animating)return; animating=true; idx--; apply(true); };
+    nextBtn.addEventListener('click',nx); prevBtn.addEventListener('click',pv);
+    var sx=0,dg=false;
+    track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;dg=true;},{passive:true});
+    track.addEventListener('touchend',function(e){ if(!dg)return; dg=false; var dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>30){ if(dx<0)nx(); else pv(); } });
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ apply(false); },150); });
+  }
 })();
 </script>
 
@@ -2101,6 +2195,8 @@ porta</div></a>
   function step(){ var f=track.children[0]; if(!f) return 0; var s=getComputedStyle(track); var gap=parseFloat(s.columnGap||s.gap||'48')||48; return f.getBoundingClientRect().width+gap; }
   function apply(a){ track.style.transition=a?'transform .45s cubic-bezier(.4,0,.2,1)':'none'; track.style.transform='translate3d('+(-idx*step())+'px,0,0)'; }
   requestAnimationFrame(function(){ apply(false); });
+  // Fallback: if rAF was throttled (e.g. tab loaded in background) re-apply once fully loaded.
+  window.addEventListener('load',function(){ apply(false); });
   track.addEventListener('transitionend',function(){ animating=false; if(idx>=2*N){idx-=N;apply(false);} else if(idx<N){idx+=N;apply(false);} });
   function next(){ if(animating)return; animating=true; idx++; apply(true); }
   function prev(){ if(animating)return; animating=true; idx--; apply(true); }

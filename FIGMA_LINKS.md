@@ -41,6 +41,22 @@
 
 > ⚠️ ה-frames האלה יושבים בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21` (עותקי homepage מעודכנים). ה-node `1124:1030` (דסקטופ) / `1124:256` (מובייל) שם = סקשן ה-perfume promo שכבר בנוי.
 
+### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15)
+
+סקשן upcoming events דסקטופ (עיגול ירוק + 3 כרטיסים + חיצים): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-901&m=dev
+
+סקשן upcoming events מובייל (עיגול זולג שמאלה, כרטיסי 200×301, בלי חיצים): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-133&m=dev
+
+### Homepage — `#press` redesign v3 (רשימת הכרטיסים, 2026-07-14)
+
+press & events דסקטופ (19 כרטיסים, 2 עמודות): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1354&m=dev
+
+press & events מובייל (אותם כרטיסים, עמודה אחת): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-439&m=dev
+
 ### Homepage — "Loneliness × the tribe" (מעל Press)
 
 בלוק כותרת דסקטופ (מעל `#press`): Implement this design from Figma.
