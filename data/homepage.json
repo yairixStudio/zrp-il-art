@@ -1,313 +1,400 @@
 {
-  "$schema": "./_schema/homepage.schema.json",
-  "hero": {
-    "title_line_1": "THE ART GALLERIES",
-    "title_line_2": "ZIELINSKI & ROZEN",
-    "image": "images/homepage/hero.webp",
-    "description_he": "ארז זילינסקי־רוזן, קודם כול אמן.\nעולם הבישום עבורו הוא קנבס בלתי נראה שנבנה משכבות של רגש וזיכרון."
-  },
-  "mobile_cta": {
-    "_note": "Mobile only — Figma section #3",
-    "label_he": "קול קורא",
-    "info": [
-      {
-        "label": "online"
-      },
-      {
-        "label": "23.4.2026"
-      },
-      {
-        "label": "tel aviv"
-      }
-    ],
-    "linked_opencall_id": null
-  },
-  "open_call_section": {
-    "_note": "Desktop primary — 'the open call' grid with two cards",
-    "header_en": "the open call",
-    "header_he_mobile": "קול קורא",
-    "card_ids": [
-      "the-peeler",
-      "how-many"
-    ]
-  },
-  "exhibitions_now": {
-    "_note": "Figma 'exhibitions/now' — current/upcoming cards + artists row. loneliness stays visible with status_label_en previous.",
-    "title_b": "exhibitions",
-    "title_l": "now",
-    "exhibition_ids": [
-      "how-many",
-      "loneliness"
-    ],
-    "artists_label": "our artists",
-    "artist_ids": [
-      "zohar-ron",
-      "eitan-goldson",
-      "tanya-shin",
-      "nir-giorgio-levin",
-      "elsa-ars-brush",
-      "gal-polk",
-      "zohar-shtrit",
-      "hila-loterstein",
-      "sami-david",
-      "risa-oz",
-      "zohar-ron-dan-ben-ari",
-      "adi-duak",
-      "alon",
-      "noemi-safir",
-      "yarden-amir",
-      "anat-wegier",
-      "liel-salman",
-      "tal-nehoray",
-      "holy-kadosh",
-      "costa-magarakis",
-      "maya-nachum-levy",
-      "la-raz-porta"
-    ]
-  },
-  "exhibitions_archive": {
-    "title_b": "exhibitions",
-    "title_l": "archive",
-    "active_gallery_id": "medina",
-    "thumbs_ref": "exhibitions.archive_thumbnails"
-  },
-  "art_works_words": [
-    "the",
-    "art",
-    "works"
+ "$schema": "./_schema/homepage.schema.json",
+ "hero": {
+  "title_line_1": "THE ART GALLERIES",
+  "title_line_2": "ZIELINSKI & ROZEN",
+  "image": "images/homepage/hero.webp",
+  "description_he": "ארז זילינסקי־רוזן, קודם כול אמן.\nעולם הבישום עבורו הוא קנבס בלתי נראה שנבנה משכבות של רגש וזיכרון."
+ },
+ "mobile_cta": {
+  "_note": "Mobile only — Figma section #3",
+  "label_he": "קול קורא",
+  "info": [
+   {
+    "label": "online"
+   },
+   {
+    "label": "23.4.2026"
+   },
+   {
+    "label": "tel aviv"
+   }
   ],
-  "art_works_words_mobile": [
-    "the",
-    "ART",
-    "works"
+  "linked_opencall_id": null
+ },
+ "open_call_section": {
+  "_note": "Desktop primary — 'the open call' grid with two cards",
+  "header_en": "the open call",
+  "header_he_mobile": "קול קורא",
+  "card_ids": [
+   "the-peeler",
+   "how-many"
+  ]
+ },
+ "exhibitions_now": {
+  "_note": "Figma 'exhibitions/now' — current/upcoming cards + artists row. loneliness stays visible with status_label_en previous.",
+  "title_b": "exhibitions",
+  "title_l": "now",
+  "exhibition_ids": [
+   "how-many",
+   "loneliness"
   ],
-  "social_section": {
-    "title_lines": [
-      "follow us",
-      "on instagram"
-    ],
-    "feed_ref": "instagram.posts"
+  "artists_label": "our artists",
+  "artist_ids": [
+   "zohar-ron",
+   "eitan-goldson",
+   "tanya-shin",
+   "nir-giorgio-levin",
+   "elsa-ars-brush",
+   "gal-polk",
+   "zohar-shtrit",
+   "hila-loterstein",
+   "sami-david",
+   "risa-oz",
+   "zohar-ron-dan-ben-ari",
+   "adi-duak",
+   "alon",
+   "noemi-safir",
+   "yarden-amir",
+   "anat-wegier",
+   "liel-salman",
+   "tal-nehoray",
+   "holy-kadosh",
+   "costa-magarakis",
+   "maya-nachum-levy",
+   "la-raz-porta"
+  ]
+ },
+ "exhibitions_archive": {
+  "title_b": "exhibitions",
+  "title_l": "archive",
+  "active_gallery_id": "medina",
+  "thumbs_ref": "exhibitions.archive_thumbnails"
+ },
+ "art_works_words": [
+  "the",
+  "art",
+  "works"
+ ],
+ "art_works_words_mobile": [
+  "the",
+  "ART",
+  "works"
+ ],
+ "social_section": {
+  "title_lines": [
+   "follow us",
+   "on instagram"
+  ],
+  "feed_ref": "instagram.posts"
+ },
+ "galleries_section": {
+  "title_b": "the galleries",
+  "title_l": "tel aviv",
+  "gallery_ids": [
+   "medina",
+   "dizengoff",
+   "flea-market"
+  ]
+ },
+ "x_our_artists": {
+  "_note": "Above press section — \"Zielinski Rozen x our artists\" featured grid. items[] = Figma \"mobile order\" (1124:1181, canonical 2026-07-15), 38 items row-major (3 cols x 13 rows). Desktop 3-col grid and Mobile triptych coverflow both render all 38 in this order. Images node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). Captions verbatim from Figma. work-N.webp maps 1:1 to item position N.",
+  "title_b": "Zielinski Rozen",
+  "title_l": "x our artists",
+  "items": [
+   {
+    "name_en": "lahav barak",
+    "image": "images/homepage/x-our-artists/work-1.webp",
+    "slug": "lahav-barak"
+   },
+   {
+    "name_en": "alice de bellis",
+    "image": "images/homepage/x-our-artists/work-2.webp",
+    "slug": "alice-debellis"
+   },
+   {
+    "name_en": "elsa ars brush",
+    "image": "images/homepage/x-our-artists/work-3.webp",
+    "slug": "elsa-ars-brush"
+   },
+   {
+    "name_en": "livay levi",
+    "image": "images/homepage/x-our-artists/work-4.webp",
+    "slug": "livay-levi"
+   },
+   {
+    "name_en": "amnon lipkin",
+    "image": "images/homepage/x-our-artists/work-5.webp",
+    "slug": "amnon-lipkin"
+   },
+   {
+    "name_en": "jessica tabarovsky",
+    "image": "images/homepage/x-our-artists/work-6.webp",
+    "slug": "jessica-tabarovsky"
+   },
+   {
+    "name_en": "talia zoref",
+    "image": "images/homepage/x-our-artists/work-7.webp",
+    "slug": "talia-zoref"
+   },
+   {
+    "name_en": "michael konovalenko",
+    "image": "images/homepage/x-our-artists/work-8.webp",
+    "slug": "michael-konovalenko"
+   },
+   {
+    "name_en": "hadas tuval",
+    "image": "images/homepage/x-our-artists/work-9.webp",
+    "slug": "hadas-tuval"
+   },
+   {
+    "name_en": "maria artamonova",
+    "image": "images/homepage/x-our-artists/work-10.webp",
+    "slug": "maria-artamonova"
+   },
+   {
+    "name_en": "nir giorgio levin",
+    "image": "images/homepage/x-our-artists/work-11.webp",
+    "slug": "nir-giorgio-levin"
+   },
+   {
+    "name_en": "bar cohen",
+    "image": "images/homepage/x-our-artists/work-12.webp",
+    "slug": "bar-cohen"
+   },
+   {
+    "name_en": "zohar ron",
+    "image": "images/homepage/x-our-artists/work-13.webp",
+    "slug": "zohar-ron"
+   },
+   {
+    "name_en": "nir giorgio levin",
+    "image": "images/homepage/x-our-artists/work-14.webp",
+    "slug": "nir-giorgio-levin"
+   },
+   {
+    "name_en": "gilad kenan",
+    "image": "images/homepage/x-our-artists/work-15.webp",
+    "slug": "gilad-kenan"
+   },
+   {
+    "name_en": "baruch torgeman",
+    "image": "images/homepage/x-our-artists/work-16.webp",
+    "slug": "baruch-torgeman"
+   },
+   {
+    "name_en": "gal pollak",
+    "image": "images/homepage/x-our-artists/work-17.webp",
+    "slug": "gal-polk"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-18.webp",
+    "slug": "noemi-safir"
+   },
+   {
+    "name_en": "natasha zeriker",
+    "image": "images/homepage/x-our-artists/work-19.webp",
+    "slug": "natasha-zeriker"
+   },
+   {
+    "name_en": "maya nachum levy",
+    "image": "images/homepage/x-our-artists/work-20.webp",
+    "slug": "maya-nachum-levy"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-21.webp",
+    "slug": "noemi-safir"
+   },
+   {
+    "name_en": "tanya shin",
+    "image": "images/homepage/x-our-artists/work-22.webp",
+    "slug": "tanya-shin"
+   },
+   {
+    "name_en": "yarden amir",
+    "image": "images/homepage/x-our-artists/work-23.webp",
+    "slug": "yarden-amir"
+   },
+   {
+    "name_en": "alon manjoch",
+    "image": "images/homepage/x-our-artists/work-24.webp",
+    "slug": "alon"
+   },
+   {
+    "name_en": "maya nachum levy",
+    "image": "images/homepage/x-our-artists/work-25.webp",
+    "slug": "maya-nachum-levy"
+   },
+   {
+    "name_en": "zohar ron",
+    "image": "images/homepage/x-our-artists/work-26.webp",
+    "slug": "zohar-ron"
+   },
+   {
+    "name_en": "maya nachum levy",
+    "image": "images/homepage/x-our-artists/work-27.webp",
+    "slug": "maya-nachum-levy"
+   },
+   {
+    "name_en": "gilad kenan",
+    "image": "images/homepage/x-our-artists/work-28.webp",
+    "slug": "gilad-kenan"
+   },
+   {
+    "name_en": "baruch torgeman",
+    "image": "images/homepage/x-our-artists/work-29.webp",
+    "slug": "baruch-torgeman"
+   },
+   {
+    "name_en": "yarden amir",
+    "image": "images/homepage/x-our-artists/work-30.webp",
+    "slug": "yarden-amir"
+   },
+   {
+    "name_en": "gal pollak",
+    "image": "images/homepage/x-our-artists/work-31.webp",
+    "slug": "gal-polk"
+   },
+   {
+    "name_en": "zohar ron",
+    "image": "images/homepage/x-our-artists/work-32.webp",
+    "slug": "zohar-ron"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-33.webp",
+    "slug": "noemi-safir"
+   },
+   {
+    "name_en": "gilad kenan",
+    "image": "images/homepage/x-our-artists/work-34.webp",
+    "slug": "gilad-kenan"
+   },
+   {
+    "name_en": "yarden amir",
+    "image": "images/homepage/x-our-artists/work-35.webp",
+    "slug": "yarden-amir"
+   },
+   {
+    "name_en": "zohar ron",
+    "image": "images/homepage/x-our-artists/work-36.webp",
+    "slug": "zohar-ron"
+   },
+   {
+    "name_en": "yarden amir",
+    "image": "images/homepage/x-our-artists/work-37.webp",
+    "slug": "yarden-amir"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-38.webp",
+    "slug": "noemi-safir"
+   }
+  ],
+  "figma_node_desktop": "412:334",
+  "figma_node_mobile": "640:249"
+ },
+ "tribe_teaser": {
+  "_note": "Above #press — desktop 250:87 + sponsor 361:393 + gallery 361:420; mobile 363:618 + sponsor 363:622 + strip 363:649. Thumbs: lightbox only. thumb-5 = duplicate of thumb-4 until video asset.",
+  "exhibition_href": "exhibitions/loneliness/",
+  "title_line_1": "loneliness",
+  "title_line_2": "in a bubbling environment",
+  "subtitle": "x the tribe",
+  "sponsor": {
+   "lockup": {
+    "src": "images/homepage/tribe-teaser/sponsored-by-moet.webp",
+    "width": 840,
+    "height": 41,
+    "alt": "sponsored by Moët & Chandon"
+   },
+   "figma_node_desktop": "361:393",
+   "figma_node_mobile": "363:622"
   },
-  "galleries_section": {
-    "title_b": "the galleries",
-    "title_l": "tel aviv",
-    "gallery_ids": [
-      "medina",
-      "dizengoff",
-      "flea-market"
-    ]
-  },
-  "x_our_artists": {
-    "_note": "Above press section — 'Zielinski Rozen × our artists' featured grid. items[] = mobile order (640:249, canonical), 20 items: 17 originals + 3× noemi safir (work-18/19/20) added at positions 5, 15 & 20 per Figma 2026-06-15 (FIT/contain on #FAFAFA → \"contain\":true → object-fit:contain). baruch torgeman at positions 3 & 13. Desktop = 3-col grid and Mobile = triptych coverflow both render all 20 in this order. Captions verbatim from Figma; gal pollak work-4 = blue-bottle close-up cropped to hide the cap.",
-    "title_b": "Zielinski Rozen",
-    "title_l": "x our artists",
-    "items": [
-      {
-        "name_en": "nir giorgio levin",
-        "image": "images/homepage/x-our-artists/work-1.webp",
-        "slug": "nir-giorgio-levin"
-      },
-      {
-        "name_en": "gilad kenan",
-        "image": "images/homepage/x-our-artists/work-2.webp",
-        "slug": "gilad-kenan"
-      },
-      {
-        "name_en": "baruch torgeman",
-        "image": "images/homepage/x-our-artists/work-3.webp",
-        "slug": "baruch-torgeman"
-      },
-      {
-        "name_en": "gal pollak",
-        "image": "images/homepage/x-our-artists/work-4.webp",
-        "slug": "gal-polk"
-      },
-      {
-        "name_en": "noemi safir",
-        "image": "images/homepage/x-our-artists/work-18.webp",
-        "slug": "noemi-safir",
-        "contain": true
-      },
-      {
-        "name_en": "maya nachum levy",
-        "image": "images/homepage/x-our-artists/work-5.webp",
-        "slug": "maya-nachum-levy"
-      },
-      {
-        "name_en": "yarden amir",
-        "image": "images/homepage/x-our-artists/work-6.webp",
-        "slug": "yarden-amir"
-      },
-      {
-        "name_en": "maya nachum levy",
-        "image": "images/homepage/x-our-artists/work-7.webp",
-        "slug": "maya-nachum-levy"
-      },
-      {
-        "name_en": "tanya shin",
-        "image": "images/homepage/x-our-artists/work-8.webp",
-        "slug": "tanya-shin"
-      },
-      {
-        "name_en": "maya nachum levy",
-        "image": "images/homepage/x-our-artists/work-9.webp",
-        "slug": "maya-nachum-levy"
-      },
-      {
-        "name_en": "alon manjoch",
-        "image": "images/homepage/x-our-artists/work-10.webp",
-        "slug": "alon"
-      },
-      {
-        "name_en": "gilad kenan",
-        "image": "images/homepage/x-our-artists/work-11.webp",
-        "slug": "gilad-kenan"
-      },
-      {
-        "name_en": "baruch torgeman",
-        "image": "images/homepage/x-our-artists/work-12.webp",
-        "slug": "baruch-torgeman"
-      },
-      {
-        "name_en": "gal pollak",
-        "image": "images/homepage/x-our-artists/work-13.webp",
-        "slug": "gal-polk"
-      },
-      {
-        "name_en": "noemi safir",
-        "image": "images/homepage/x-our-artists/work-19.webp",
-        "slug": "noemi-safir",
-        "contain": true
-      },
-      {
-        "name_en": "yarden amir",
-        "image": "images/homepage/x-our-artists/work-14.webp",
-        "slug": "yarden-amir"
-      },
-      {
-        "name_en": "gilad kenan",
-        "image": "images/homepage/x-our-artists/work-15.webp",
-        "slug": "gilad-kenan"
-      },
-      {
-        "name_en": "yarden amir",
-        "image": "images/homepage/x-our-artists/work-16.webp",
-        "slug": "yarden-amir"
-      },
-      {
-        "name_en": "yarden amir",
-        "image": "images/homepage/x-our-artists/work-17.webp",
-        "slug": "yarden-amir"
-      },
-      {
-        "name_en": "noemi safir",
-        "image": "images/homepage/x-our-artists/work-20.webp",
-        "slug": "noemi-safir",
-        "contain": true
-      }
-    ],
-    "figma_node_desktop": "412:334",
-    "figma_node_mobile": "640:249"
-  },
-  "tribe_teaser": {
-    "_note": "Above #press — desktop 250:87 + sponsor 361:393 + gallery 361:420; mobile 363:618 + sponsor 363:622 + strip 363:649. Thumbs: lightbox only. thumb-5 = duplicate of thumb-4 until video asset.",
-    "exhibition_href": "exhibitions/loneliness/",
-    "title_line_1": "loneliness",
-    "title_line_2": "in a bubbling environment",
-    "subtitle": "x the tribe",
-    "sponsor": {
-      "lockup": {
-        "src": "images/homepage/tribe-teaser/sponsored-by-moet.webp",
-        "width": 840,
-        "height": 41,
-        "alt": "sponsored by Moët & Chandon"
-      },
-      "figma_node_desktop": "361:393",
-      "figma_node_mobile": "363:622"
+  "credit_rows": [
+   [
+    {
+     "slug": "maya-nachum-levy",
+     "name_en": "maya nachum levy"
     },
-    "credit_rows": [
-      [
-        {
-          "slug": "maya-nachum-levy",
-          "name_en": "maya nachum levy"
-        },
-        {
-          "slug": "holy-kadosh",
-          "name_en": "tal holy kadosh"
-        }
-      ],
-      [
-        {
-          "slug": "zohar-ron",
-          "name_en": "zohar ron"
-        },
-        {
-          "slug": "tal-nehoray",
-          "name_en": "tal nehoray"
-        },
-        {
-          "slug": "gal-polk",
-          "name_en": "gal pollak"
-        }
-      ]
-    ],
-    "gallery_images": [
-      {
-        "src": "images/homepage/tribe-teaser/thumb-1.webp",
-        "width": 158,
-        "height": 192,
-        "alt": ""
-      },
-      {
-        "src": "images/homepage/tribe-teaser/thumb-2.webp",
-        "width": 158,
-        "height": 192,
-        "alt": ""
-      },
-      {
-        "src": "images/homepage/tribe-teaser/thumb-3.webp",
-        "width": 158,
-        "height": 192,
-        "alt": ""
-      },
-      {
-        "src": "images/homepage/tribe-teaser/thumb-4.webp",
-        "width": 158,
-        "height": 192,
-        "alt": ""
-      },
-      {
-        "src": "images/homepage/tribe-teaser/thumb-5.webp",
-        "width": 158,
-        "height": 192,
-        "alt": "",
-        "video": "images/homepage/tribe-teaser/video.mp4",
-        "poster": "images/homepage/tribe-teaser/thumb-5.webp"
-      }
-    ],
-    "figma_node_desktop": "250:87",
-    "figma_node_mobile": "363:618",
-    "figma_gallery_strip_desktop": "361:420",
-    "figma_gallery_strip_mobile": "363:649"
-  },
-  "press_section": {
-    "title_b": "press",
-    "title_l": "& events",
-    "item_ids": [
-      "event-risa-and-noemi",
-      "event-zohar-ron-talk",
-      "event-nir-giorgio-levin-talk",
-      "event-liel-salman-popup",
-      "event-natasha-zeriker-evening",
-      "event-how-many-close-look-1",
-      "event-how-many-artist-talk",
-      "time-out",
-      "event-how-many-2026-05-26",
-      "event-loneliness-3",
-      "portfolio-loneliness",
-      "event-loneliness-4",
-      "walla-medina",
-      "time-out-final-countdown-2025"
-    ]
-  }
+    {
+     "slug": "holy-kadosh",
+     "name_en": "tal holy kadosh"
+    }
+   ],
+   [
+    {
+     "slug": "zohar-ron",
+     "name_en": "zohar ron"
+    },
+    {
+     "slug": "tal-nehoray",
+     "name_en": "tal nehoray"
+    },
+    {
+     "slug": "gal-polk",
+     "name_en": "gal pollak"
+    }
+   ]
+  ],
+  "gallery_images": [
+   {
+    "src": "images/homepage/tribe-teaser/thumb-1.webp",
+    "width": 158,
+    "height": 192,
+    "alt": ""
+   },
+   {
+    "src": "images/homepage/tribe-teaser/thumb-2.webp",
+    "width": 158,
+    "height": 192,
+    "alt": ""
+   },
+   {
+    "src": "images/homepage/tribe-teaser/thumb-3.webp",
+    "width": 158,
+    "height": 192,
+    "alt": ""
+   },
+   {
+    "src": "images/homepage/tribe-teaser/thumb-4.webp",
+    "width": 158,
+    "height": 192,
+    "alt": ""
+   },
+   {
+    "src": "images/homepage/tribe-teaser/thumb-5.webp",
+    "width": 158,
+    "height": 192,
+    "alt": "",
+    "video": "images/homepage/tribe-teaser/video.mp4",
+    "poster": "images/homepage/tribe-teaser/thumb-5.webp"
+   }
+  ],
+  "figma_node_desktop": "250:87",
+  "figma_node_mobile": "363:618",
+  "figma_gallery_strip_desktop": "361:420",
+  "figma_gallery_strip_mobile": "363:649"
+ },
+ "press_section": {
+  "title_b": "press",
+  "title_l": "& events",
+  "item_ids": [
+   "event-risa-and-noemi",
+   "event-zohar-ron-talk",
+   "event-nir-giorgio-levin-talk",
+   "event-liel-salman-popup",
+   "event-natasha-zeriker-evening",
+   "event-how-many-close-look-1",
+   "event-how-many-artist-talk",
+   "time-out",
+   "event-how-many-2026-05-26",
+   "event-loneliness-3",
+   "portfolio-loneliness",
+   "event-loneliness-4",
+   "walla-medina",
+   "time-out-final-countdown-2025"
+  ]
+ }
 }
