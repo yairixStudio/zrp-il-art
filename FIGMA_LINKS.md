@@ -93,6 +93,11 @@
 כרטיס חדש במובייל (`Event Info 4`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=435-3&m=dev
 
+### Homepage — `#press` גריד מלא v3 (2026-07-15 — 19 כרטיסים, 10 שורות, +anat wégier +tal nehoray +החזרת artist-talk)
+
+הגריד המלא (דסקטופ; המובייל = אותו סדר בעמודה אחת): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1354&m=dev
+
 ### Homepage — `#press` סקשן מלא (סדר + מדיה מעודכנים)
 
 סקשן מלא בדסקטופ (8 כרטיסים): Implement this design from Figma.

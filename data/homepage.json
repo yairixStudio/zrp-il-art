@@ -390,23 +390,29 @@
   "figma_gallery_strip_mobile": "363:649"
  },
  "press_section": {
+  "_note": "סדר הכרטיסים = Figma 1124:1354 (2026-07-15), קריאה שורה-שורה ימין→שמאל (col1 ואז col2). זהה לסדר העמודה היחידה במובייל.",
   "title_b": "press",
   "title_l": "& events",
   "item_ids": [
-   "event-risa-and-noemi",
-   "event-zohar-ron-talk",
-   "event-nir-giorgio-levin-talk",
-   "event-liel-salman-popup",
-   "event-natasha-zeriker-evening",
+   "the-sixth-scent",
+   "event-anat-wegier-talk",
    "event-how-many-close-look-1",
-   "event-how-many-artist-talk",
+   "event-risa-and-noemi",
    "time-out",
+   "event-zohar-ron-talk",
    "event-how-many-2026-05-26",
+   "event-nir-giorgio-levin-talk",
    "event-loneliness-3",
-   "portfolio-loneliness",
+   "event-liel-salman-popup",
    "event-loneliness-4",
+   "event-natasha-zeriker-evening",
+   "press-1",
+   "13tv-peeling-a-layer",
    "walla-medina",
-   "time-out-final-countdown-2025"
+   "timeout-manicure-against-darkness",
+   "time-out-final-countdown-2025",
+   "event-tal-nehoray-talk",
+   "event-how-many-artist-talk"
   ]
  }
 }

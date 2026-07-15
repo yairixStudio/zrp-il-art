@@ -542,17 +542,28 @@ body{text-transform:uppercase}
 }
 .tribe-teaser-gallery-wrap{display:flex;justify-content:center;overflow-x:visible;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 
-/* ===== PRESS & EVENTS ===== */
-.press{padding:32px var(--pad-x) 48px;display:flex;flex-direction:column;gap:24px;background:var(--white)}
+/* ===== PRESS & EVENTS — Figma landing::1124:1354 (desktop) / 1124:439 (mobile).
+   Static card design by the redesign pass; this layer turns the strip into an
+   infinite-loop carousel (arrows top-right, touch swipe, keyboard). Only press
+   articles + PAST events show — the press carousel JS drops event cards whose
+   data-date is still in the future (those live in #events-upcoming), so a passed
+   event auto-migrates into this strip on next load. */
+.press{padding:32px var(--pad-x) 48px;display:flex;flex-direction:column;gap:16px;background:var(--white)}
+.press-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
 .press-title{display:flex;flex-direction:column;gap:3px;line-height:1.05}
 .press-title .b{font-family:var(--cop);font-weight:700;font-size:36px;display:block}
 .press-title .l{font-family:var(--cop);font-weight:300;font-size:36px;display:block}
-.press-rows{display:flex;flex-direction:column;gap:48px}
-.press-row{display:flex;gap:32px}
-.press-row.press-row--swap{flex-direction:row}
-.press-row.press-row--right{justify-content:flex-end}
-.press-card{flex:0 1 calc(50% - 16px);min-width:0;display:flex;gap:16px;align-items:stretch;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
+.press-nav{display:flex;justify-content:flex-end;align-items:center;gap:2px}
+.press-nav button{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;color:var(--ink);border:0;background:none;cursor:pointer;transition:opacity .2s}
+.press-nav button:hover{opacity:.55}
+.press-nav button:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
+.press-nav svg{width:24px;height:16px;display:block;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.press-viewport{overflow:hidden;width:100%}
+.press-track{display:flex;gap:48px;will-change:transform;touch-action:pan-y}
+.press-card{flex:0 0 calc((100% - 48px) / 2);min-width:0;display:flex;gap:16px;align-items:stretch;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .press-card:hover{opacity:.75}
+.press-card--soon{cursor:default}
+.press-card--soon:hover{opacity:1}
 .press-card .img img{transition:transform .6s}
 .press-card:hover .img img{transform:scale(1.04)}
 .press-card .info{flex:1;display:flex;flex-direction:column;justify-content:space-between;text-align:right;min-width:0;padding:0 0 8px;gap:8px}
@@ -584,11 +595,17 @@ body{text-transform:uppercase}
 }
 .press-card .desc{font-family:var(--heb);font-size:16px;font-weight:400;line-height:1.4;text-align:right}
 .press-card .desc .lat{font-size:0.88em;letter-spacing:normal}
-.press-card .desc.desc-lat{font-family:var(--cop);direction:ltr;unicode-bidi:embed}
-.press-card .desc.desc-lat-sm{font-size:10px;font-weight:400;line-height:1.55;letter-spacing:.02em}
+.press-card .desc.desc-lat{font-family:var(--cop);direction:ltr;unicode-bidi:embed;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:.02em;text-align:right}
+.press-card .desc.desc-lat .heb{font-family:var(--heb);font-size:1.23em;font-weight:400;letter-spacing:normal}
 .press-card .date{font-family:var(--cop);font-size:14px;font-weight:300;text-align:right;direction:ltr;align-self:flex-start}
-.press-card .img{flex:0 0 178px;width:178px;height:112px;overflow:hidden;background:#f3f1ee;order:-1}
+.press-card .img{flex:0 0 292px;width:292px;height:162px;overflow:hidden;background:#f3f1ee;order:-1}
 .press-card .img img{width:100%;height:100%;object-fit:cover}
+.press-card .img.img--contain{background:#FAFAFA}
+.press-card .img.img--contain.img--white{background:#fff}
+.press-card .img.img--contain img{object-fit:contain}
+/* "בקרוב" toast — כרטיסי אירוע שעדיין אין להם דף (anat wégier, tal nehoray) */
+.soon-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(8px);background:var(--ink,#1b1b1b);color:#fff;font-family:var(--heb);font-size:16px;font-weight:400;padding:10px 28px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:300}
+.soon-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
 /* ===== FOOTER moved to components/site-chrome.css ===== */
 
@@ -854,16 +871,14 @@ body{text-transform:uppercase}
     .tribe-gallery-track .tribe-thumb-card{width:25.641025641cqi}
   }
 
-  /* PRESS & EVENTS — fluid card: image shrinks on narrow rows so .desc stays ≤~5 lines */
-  .press{padding:32px 16px}
-  .press-rows{gap:24px;align-items:center}
-  .press-row{flex-direction:column;gap:24px;align-items:center;width:100%}
-  .press-row.press-row--swap{flex-direction:column}
+  /* PRESS & EVENTS — carousel: 1 card per view + peek; container-query image sizing */
+  .press{padding:32px 16px;gap:16px}
+  .press-track{gap:16px}
   .press-card{
-    flex:1 1 auto;
-    width:100%;
-    max-width:360px;
-    margin-inline:auto;
+    flex:0 0 86%;
+    width:auto;
+    max-width:none;
+    margin-inline:0;
     direction:rtl;
     container-type:inline-size;
     container-name:press-card;
@@ -873,7 +888,7 @@ body{text-transform:uppercase}
     flex:0 1 clamp(88px,calc((100vw - 32px) * 0.36),178px);
     width:clamp(88px,calc((100vw - 32px) * 0.36),178px);
     height:auto;
-    aspect-ratio:178/112;
+    aspect-ratio:292/162;
   }
   .press-card .info{flex:1 1 0;min-width:0}
   .press-card .tag{
@@ -888,10 +903,9 @@ body{text-transform:uppercase}
     font-size:clamp(12px,calc((100vw - 32px) * 0.038),14px);
     line-height:1.25;
   }
-  .press-card .desc.desc-lat-sm{
-    font-size:clamp(10px,calc((100vw - 32px) * 0.03),11px);
-    font-weight:400;
-    line-height:1.55;
+  .press-card .desc.desc-lat{
+    font-size:clamp(11px,calc((100vw - 32px) * 0.032),13px);
+    line-height:1.5;
   }
   .press-card .date{font-size:clamp(11px,calc((100vw - 32px) * 0.034),14px)}
   @supports (width:1cqi){
@@ -911,7 +925,7 @@ body{text-transform:uppercase}
       width:clamp(80px,34cqi,130px);
     }
     .press-card .desc{font-size:clamp(11px,3.9cqi,13px)}
-    .press-card .desc.desc-lat-sm{font-size:clamp(10px,3.4cqi,11px);line-height:1.55}
+    .press-card .desc.desc-lat{font-size:clamp(10px,3.4cqi,12px);line-height:1.5}
     .press-card .tag{font-size:clamp(10px,3.8cqi,13px)}
     .press-card .date{font-size:clamp(10px,3.6cqi,13px)}
   }
@@ -1850,67 +1864,67 @@ porta</div></a>
 
 <!-- PRESS & EVENTS -->
 <section class="press" id="press">
-  <div class="press-title">
-    <span class="b">press</span>
-    <span class="l">&amp; events</span>
+  <div class="press-head">
+    <div class="press-title">
+      <span class="b">press</span>
+      <span class="l">&amp; events</span>
+    </div>
+    <div class="press-nav" role="group" aria-label="press navigation">
+      <button type="button" class="press-prev" aria-label="previous"><svg viewBox="0 0 24 16"><path d="M22 8H2M2 8l6-6M2 8l6 6"/></svg></button>
+      <button type="button" class="press-next" aria-label="next"><svg viewBox="0 0 24 16"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg></button>
+    </div>
   </div>
-  <div class="press-rows">
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/risa-and-noemi/">
+  <div class="press-viewport">
+    <div class="press-track" id="pressTrack">
+      <a data-kind="event" data-date="2026-08-07" class="press-card press-card--soon" href="#">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר</p>
+          <p class="desc desc-lat">artist talk<br>with anat wégier</p>
+          <span class="date">7.8.2026</span>
+        </div>
+        <div class="img"><img src="images/events/anat-wegier/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="event" data-date="2026-07-24" class="press-card" href="events/risa-and-noemi/">
+        <div class="info">
+          <span class="tag en">gallery event</span>
+          <p class="desc desc-lat">artists talk<br>with risa brooke oze and<br>noemi safir</p>
           <span class="date">24.7.2026</span>
         </div>
-        <div class="img"><img src="images/events/risa-and-noemi/hero.webp" srcset="images/events/risa-and-noemi/hero-480w.webp 480w, images/events/risa-and-noemi/hero-768w.webp 768w, images/events/risa-and-noemi/hero.webp 984w" sizes="100vw" width="984" height="1321" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/risa-and-noemi/card.webp" width="584" height="324" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/zohar-ron/">
+      <a data-kind="event" data-date="2026-07-19" class="press-card" href="events/zohar-ron/">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">שיחת אמנים עם זוהר רון</p>
+          <p class="desc desc-lat">artist talk<br>with zohar ron</p>
           <span class="date">19.7.2026</span>
         </div>
-        <div class="img"><img src="images/events/zohar-ron/hero.webp" srcset="images/events/zohar-ron/hero-480w.webp 480w, images/events/zohar-ron/hero-768w.webp 768w, images/events/zohar-ron/hero.webp 984w" sizes="100vw" width="984" height="1488" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/zohar-ron/card.webp" width="590" height="328" alt="" decoding="async" loading="lazy"></div>
       </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/nir-giorgio-levin/">
+      <a data-kind="event" data-date="2026-07-17" class="press-card" href="events/nir-giorgio-levin/">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">שיחת אמנים עם ניר ג׳ורג׳יו לוין</p>
+          <p class="desc desc-lat">artist talk<br>with nir giorgio levin</p>
           <span class="date">17.7.2026</span>
         </div>
-        <div class="img"><img src="images/events/nir-giorgio-levin/hero.webp" srcset="images/events/nir-giorgio-levin/hero-480w.webp 480w, images/events/nir-giorgio-levin/hero-768w.webp 768w, images/events/nir-giorgio-levin/hero.webp 984w" sizes="100vw" width="984" height="1194" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/nir-giorgio-levin/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/liel-salman/">
+      <a data-kind="event" data-date="2026-07-16" class="press-card" href="events/liel-salman/">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">פופ אפ קעקועים | ליאל סלמן</p>
+          <p class="desc desc-lat">pop up tattoos<br>liel salman noam<br><span class="heb">סטודיו</span> elline</p>
           <span class="date">16.7.2026</span>
         </div>
-        <div class="img"><img src="images/events/liel-salman/hero.webp" srcset="images/events/liel-salman/hero-480w.webp 480w, images/events/liel-salman/hero-768w.webp 768w, images/events/liel-salman/hero.webp 984w" sizes="100vw" width="984" height="1749" alt="" decoding="async" loading="lazy"></div>
+        <div class="img img--contain img--white"><img src="images/events/liel-salman/logo.webp" width="486" height="648" alt="" decoding="async" loading="lazy"></div>
       </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/natasha-zeriker/">
+      <a data-kind="event" data-date="2026-07-09" class="press-card" href="events/natasha-zeriker/">
         <div class="info">
           <span class="tag en">gallery event</span>
-          <p class="desc">ערב עם נטאשה זריקר</p>
+          <p class="desc desc-lat">artist talk<br>with natasha zeriker</p>
           <span class="date">9.7.2026</span>
         </div>
         <div class="img"><img src="images/events/natasha-zeriker/hero.webp" srcset="images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w" sizes="100vw" width="984" height="1403" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="press/manicure-against-darkness/">
-        <div class="info">
-          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ"ש</p>
-          <span class="date">1.7.2026</span>
-        </div>
-        <div class="img"><img src="images/press/manicure-against-darkness/home-card.webp" width="1000" height="555" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="press/peeling-a-layer/">
+      <a data-kind="press" data-date="2026-07-01" class="press-card" href="press/peeling-a-layer/">
         <div class="info">
           <span class="tag"><span>רשת 13</span><span class="tag-sep">|</span><span>אמנות</span></span>
           <p class="desc">מה נפגוש כשנקלף שכבה מהזיכרון שלנו? לתערוכה הבאה יש תשובה</p>
@@ -1918,35 +1932,47 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/press/peeling-a-layer/01-hitnaarut.webp" width="750" height="422" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="events/close-look/">
+      <a data-kind="press" data-date="2026-07-01" class="press-card" href="press/manicure-against-darkness/">
+        <div class="info">
+          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+          <p class="desc">מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ"ש</p>
+          <span class="date">1.7.2026</span>
+        </div>
+        <div class="img"><img src="images/press/manicure-against-darkness/home-card.webp" width="1000" height="555" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="event" data-date="2026-06-29" class="press-card press-card--soon" href="#">
+        <div class="info">
+          <span class="tag en">gallery event</span>
+          <p class="desc desc-lat">how many partners have you had?<br>with tal nehoray</p>
+          <span class="date">29.6.2026</span>
+        </div>
+        <div class="img"><img src="images/events/artist-talk/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="event" data-date="2026-06-11" class="press-card" href="events/artist-talk/">
+        <div class="info">
+          <span class="tag en">gallery event</span>
+          <p class="desc desc-lat">artist talk<br>with gal pollak and elsa ers brosh</p>
+          <span class="date">11.6.2026</span>
+        </div>
+        <div class="img"><img src="images/events/artist-talk/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="press" data-date="2026-06-07" class="press-card" href="press/the-sixth-scent/">
+        <div class="info">
+          <span class="tag en">ora magazine | issue 02</span>
+          <p class="desc desc-lat">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
+          <span class="date">7.6.2026</span>
+        </div>
+        <div class="img"><img src="images/press/the-sixth-scent/home-card.webp" srcset="images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w" sizes="100vw" width="1079" height="599" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="event" data-date="2026-06-02" class="press-card" href="events/close-look/">
         <div class="info">
           <span class="tag en">gallery event</span>
           <p class="desc">מבט מקרוב: מפגש פתוח בתוך התערוכה | טניה שין</p>
           <span class="date">2.6.2026</span>
         </div>
-        <div class="img"><img src="images/events/close-look/intro-photo.webp" width="292" height="162" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/close-look/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
       </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="press/the-sixth-scent/">
-        <div class="info">
-          <span class="tag en">ora magazine | issue 02</span>
-          <p class="desc desc-lat desc-lat-sm">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
-          <span class="date">7.6.2026</span>
-        </div>
-        <div class="img"><img src="images/press/the-sixth-scent/home-card.webp" srcset="images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w" sizes="100vw" width="1079" height="599" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="events/how-many/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat desc-lat-sm">how many partners<br>have you had?</p>
-          <span class="date">26.5.2026</span>
-        </div>
-        <div class="img"><img src="images/events/event-how-many-2026-05-26-cover.webp" srcset="images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="100vw" width="3058" height="4096" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="press/the-last-station/">
+      <a data-kind="press" data-date="2026-05-27" class="press-card" href="press/the-last-station/">
         <div class="info">
           <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
           <p class="desc">התחנה האחרונה: 25 תערוכות מומלצות לעצור בהן את הכל בסופ"ש</p>
@@ -1954,35 +1980,23 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/press/time-out/home-card-2026-05-27.webp" srcset="images/press/time-out/home-card-2026-05-27-480w.webp 480w, images/press/time-out/home-card-2026-05-27-768w.webp 768w, images/press/time-out/home-card-2026-05-27.webp 1000w" sizes="100vw" width="1000" height="1246" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="press/press-1/">
+      <a data-kind="event" data-date="2026-05-26" class="press-card" href="events/how-many/">
         <div class="info">
-          <span class="tag">מגזין פורטפוליו</span>
-          <p class="desc">איך מרגישה בדידות בתוך סביבה תוססת: תערוכה חדשה בגלריית זילינסקי רוזן</p>
-          <span class="date">19.1.2026</span>
+          <span class="tag en">gallery event</span>
+          <p class="desc desc-lat">how many partners have you had?</p>
+          <span class="date">26.5.2026</span>
         </div>
-        <div class="img"><img src="images/press/press-1/00-home-card.webp" width="171" height="108" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/event-how-many-2026-05-26-cover.webp" srcset="images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="100vw" width="3058" height="4096" alt="" decoding="async" loading="lazy"></div>
       </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/ktuba/">
+      <a data-kind="event" data-date="2026-02-25" class="press-card" href="events/ktuba/">
         <div class="info">
           <span class="tag en">gallery event</span>
           <p class="desc">כְּתוּבָּה | <span class="lat">QTUBA</span></p>
           <span class="date">25.2.2026</span>
         </div>
-        <div class="img"><img src="images/events/event-3-cover-v2.webp" srcset="images/events/event-3-cover-v2-480w.webp 480w, images/events/event-3-cover-v2-768w.webp 768w, images/events/event-3-cover-v2-1080w.webp 1080w, images/events/event-3-cover-v2.webp 1500w" sizes="100vw" width="1500" height="2000" alt="" decoding="async" loading="lazy"></div>
+        <div class="img"><img src="images/events/ktuba/card.webp" width="584" height="324" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="press/walla/">
-        <div class="info">
-          <span class="tag"><span>וואלה</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">מותג הבישום פתח גלריה בכיכר המדינה: 100% מהרווחים הולכים לאמנים</p>
-          <span class="date">5.1.2026</span>
-        </div>
-        <div class="img"><img src="images/press/walla-cover.webp" width="462" height="626" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/loneliness/">
+      <a data-kind="event" data-date="2026-01-19" class="press-card" href="events/loneliness/">
         <div class="info">
           <span class="tag en">gallery event</span>
           <p class="desc">בדידות בתוך סביבה תוססת</p>
@@ -1990,13 +2004,29 @@ porta</div></a>
         </div>
         <div class="img"><img src="images/events/event-4-cover.webp" srcset="images/events/event-4-cover-480w.webp 480w, images/events/event-4-cover-768w.webp 768w, images/events/event-4-cover-1080w.webp 1080w, images/events/event-4-cover.webp 1435w" sizes="100vw" width="1435" height="1600" alt="" decoding="async" loading="lazy"></div>
       </a>
-      <a class="press-card" href="press/time-out/">
+      <a data-kind="press" data-date="2026-01-19" class="press-card" href="press/press-1/">
+        <div class="info">
+          <span class="tag">מגזין פורטפוליו</span>
+          <p class="desc">איך מרגישה בדידות בתוך סביבה תוססת: תערוכה חדשה בגלריית זילינסקי רוזן</p>
+          <span class="date">19.1.2026</span>
+        </div>
+        <div class="img"><img src="images/press/press-1/00-home-card.webp" width="171" height="108" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="press" data-date="2026-01-05" class="press-card" href="press/walla/">
+        <div class="info">
+          <span class="tag"><span>וואלה</span><span class="tag-sep">|</span><span>תרבות</span></span>
+          <p class="desc">מותג הבישום פתח גלריה בכיכר המדינה: 100% מהרווחים הולכים לאמנים</p>
+          <span class="date">5.1.2026</span>
+        </div>
+        <div class="img"><img src="images/press/walla-cover.webp" width="462" height="626" alt="" decoding="async" loading="lazy"></div>
+      </a>
+      <a data-kind="press" data-date="2025-12-31" class="press-card" href="press/time-out/">
         <div class="info">
           <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
           <p class="desc">דה פיינל קאונטדאון: 18 תערוכות לחגוג בהן סופ"ש ראשון של 2026</p>
           <span class="date">31.12.2025</span>
         </div>
-        <div class="img"><img src="images/press/time-out/home-card-2025-12-31.webp" srcset="images/press/time-out/home-card-2025-12-31-480w.webp 480w, images/press/time-out/home-card-2025-12-31-768w.webp 768w, images/press/time-out/home-card-2025-12-31.webp 1160w" sizes="100vw" width="1160" height="1066" alt="" decoding="async" loading="lazy"></div>
+        <div class="img img--contain"><img src="images/press/time-out/home-card-2025-12-31.webp" srcset="images/press/time-out/home-card-2025-12-31-480w.webp 480w, images/press/time-out/home-card-2025-12-31-768w.webp 768w, images/press/time-out/home-card-2025-12-31.webp 1160w" sizes="100vw" width="1160" height="1066" alt="" decoding="async" loading="lazy"></div>
       </a>
     </div>
   </div>
@@ -2015,6 +2045,28 @@ porta</div></a>
 <!-- Stacked gallery component (homepage mobile-cta uses sg-mode-swap) -->
 <script src="components/stacked-gallery.js" defer></script>
 <script src="components/triptych-gallery.js" defer></script>
+
+<!-- "בקרוב" toast — כרטיסי #press לאירועים שעדיין אין להם דף -->
+<script>
+(function(){
+  var cards=document.querySelectorAll('.press-card--soon');
+  if(!cards.length) return;
+  var toast=document.createElement('div');
+  toast.className='soon-toast';
+  toast.textContent='בקרוב';
+  toast.setAttribute('role','status');
+  document.body.appendChild(toast);
+  var t;
+  cards.forEach(function(c){
+    c.addEventListener('click',function(e){
+      e.preventDefault();
+      toast.classList.add('show');
+      clearTimeout(t);
+      t=setTimeout(function(){toast.classList.remove('show')},1800);
+    });
+  });
+})();
+</script>
 
 <!-- Instagram carousel — infinite loop, arrow nav, touch swipe (Figma XhGH:144:431) -->
 <script>

@@ -3,12 +3,26 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-anat-wegier-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ענת ויז׳ייה",
+      "title_en": "artist talk with anat wégier",
+      "date": "2026-08-07",
+      "cover_image": "images/events/anat-wegier/card.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": null,
+      "_route_note": "אין דף אירוע עדיין — הכרטיס בהומפייג' מציג טוסט 'בקרוב' בלחיצה (Figma 1124:1354, 2026-07-15)",
+      "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1366"
+    },
+    {
       "id": "event-risa-and-noemi",
       "type": "event",
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר",
       "date": "2026-07-24",
-      "cover_image": "images/events/risa-and-noemi/hero.webp",
+      "cover_image": "images/events/risa-and-noemi/card.webp",
       "exhibition_id": null,
       "homepage_visible": true,
       "route": "events/risa-and-noemi/"
@@ -19,7 +33,7 @@
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם זוהר רון",
       "date": "2026-07-19",
-      "cover_image": "images/events/zohar-ron/hero.webp",
+      "cover_image": "images/events/zohar-ron/card.webp",
       "exhibition_id": null,
       "homepage_visible": true,
       "route": "events/zohar-ron/"
@@ -30,7 +44,7 @@
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין",
       "date": "2026-07-17",
-      "cover_image": "images/events/nir-giorgio-levin/hero.webp",
+      "cover_image": "images/events/nir-giorgio-levin/card.webp",
       "exhibition_id": null,
       "homepage_visible": true,
       "route": "events/nir-giorgio-levin/"
@@ -41,7 +55,7 @@
       "tag_en": "gallery event",
       "title_he": "פופ אפ קעקועים | ליאל סלמן",
       "date": "2026-07-16",
-      "cover_image": "images/events/liel-salman/hero.webp",
+      "cover_image": "images/events/liel-salman/logo.webp",
       "exhibition_id": null,
       "homepage_visible": true,
       "route": "events/liel-salman/"
@@ -98,6 +112,20 @@
       "figma_article_mobile": "XhGH289YTRcW811wrufRJz::1051:154"
     },
     {
+      "id": "event-tal-nehoray-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם טל נהוראי",
+      "title_en": "how many partners have you had? with tal nehoray",
+      "date": "2026-06-29",
+      "cover_image": "images/events/artist-talk/card.webp",
+      "exhibition_id": "how-many",
+      "homepage_visible": true,
+      "route": null,
+      "_route_note": "אין דף אירוע עדיין — הכרטיס בהומפייג' מציג טוסט 'בקרוב' בלחיצה (Figma 1124:1354, 2026-07-15). התמונה = חלון הראווה, אותה תמונה כמו כרטיס artist-talk",
+      "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1389"
+    },
+    {
       "id": "event-how-many-artist-talk",
       "type": "event",
       "tag_en": "gallery event",
@@ -105,8 +133,8 @@
       "date": "2026-06-11",
       "cover_image": "images/events/artist-talk/hero-desktop.webp",
       "exhibition_id": "how-many",
-      "_homepage_visible_note": "Removed from the homepage grid per Figma 551:371 (2026-07-09). The event page stays published.",
-      "homepage_visible": false,
+      "_homepage_visible_note": "Restored to the homepage grid per Figma 1124:1354 (2026-07-15) — single card, last row, left side.",
+      "homepage_visible": true,
       "route": "events/artist-talk/",
       "figma_home_card_desktop": "XhGH289YTRcW811wrufRJz::818:159",
       "figma_home_card_mobile": "XhGH289YTRcW811wrufRJz::818:17"
@@ -212,7 +240,7 @@
       "tag_en": "gallery event",
       "title_he": "מבט מקרוב: מפגש פתוח בתוך התערוכה | טניה שין",
       "date": "2026-06-02",
-      "cover_image": "images/events/close-look/intro-photo.webp",
+      "cover_image": "images/events/close-look/card.webp",
       "exhibition_id": "how-many",
       "homepage_visible": true,
       "route": "events/close-look/",
@@ -238,7 +266,7 @@
       "tag_en": "gallery event",
       "title_he": "כְּתוּבָּה | QTUBA",
       "date": "2026-02-25",
-      "cover_image": "images/events/event-3-cover-v2.webp",
+      "cover_image": "images/events/ktuba/card.webp",
       "exhibition_id": "loneliness",
       "event_id": "ktuba",
       "homepage_visible": true,
