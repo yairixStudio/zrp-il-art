@@ -2068,6 +2068,56 @@ porta</div></a>
 })();
 </script>
 
+<!-- Press & events carousel — infinite loop, arrow nav, touch swipe; drops future events
+     (they live in #events-upcoming) so the strip shows press + PAST events only (Figma landing::1124:1354) -->
+<script>
+(function(){
+  var track=document.getElementById('pressTrack');
+  if(!track) return;
+  var sec=document.getElementById('press');
+  // Past-only: remove event cards whose date is still in the future — upcoming events belong to #events-upcoming.
+  var n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
+  Array.prototype.slice.call(track.querySelectorAll('.press-card')).forEach(function(c){
+    if(c.getAttribute('data-kind')!=='event') return;
+    var d=c.getAttribute('data-date'); if(!d) return;
+    var p=d.split('-');
+    if(new Date(+p[0],+p[1]-1,+p[2]).getTime()>=today && c.parentNode) c.parentNode.removeChild(c);
+  });
+  // Cloned "בקרוב" cards lose their toast listener — just stop the '#' jump on any soon card.
+  track.addEventListener('click',function(e){ if(e.target.closest('.press-card--soon')) e.preventDefault(); });
+
+  var prevBtn=document.querySelector('.press-prev');
+  var nextBtn=document.querySelector('.press-next');
+  var originals=Array.prototype.slice.call(track.children);
+  var N=originals.length;
+  if(N===0){ if(sec&&sec.parentNode) sec.parentNode.removeChild(sec); return; }
+  if(!prevBtn||!nextBtn) return;
+
+  // Clone the full set before and after (3× total). Start index = N (first real card).
+  for(var i=0;i<N;i++) track.appendChild(originals[i].cloneNode(true));
+  for(var j=N-1;j>=0;j--) track.insertBefore(originals[j].cloneNode(true), track.firstChild);
+
+  var idx=N, animating=false;
+  function step(){ var f=track.children[0]; if(!f) return 0; var s=getComputedStyle(track); var gap=parseFloat(s.columnGap||s.gap||'48')||48; return f.getBoundingClientRect().width+gap; }
+  function apply(a){ track.style.transition=a?'transform .45s cubic-bezier(.4,0,.2,1)':'none'; track.style.transform='translate3d('+(-idx*step())+'px,0,0)'; }
+  requestAnimationFrame(function(){ apply(false); });
+  track.addEventListener('transitionend',function(){ animating=false; if(idx>=2*N){idx-=N;apply(false);} else if(idx<N){idx+=N;apply(false);} });
+  function next(){ if(animating)return; animating=true; idx++; apply(true); }
+  function prev(){ if(animating)return; animating=true; idx--; apply(true); }
+  nextBtn.addEventListener('click',next);
+  prevBtn.addEventListener('click',prev);
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight') return;
+    var r=track.getBoundingClientRect(); if(r.bottom<0||r.top>window.innerHeight) return;
+    if(document.activeElement===prevBtn||document.activeElement===nextBtn){ if(e.key==='ArrowRight') next(); else prev(); }
+  });
+  var startX=0,dragging=false;
+  track.addEventListener('touchstart',function(e){ startX=e.touches[0].clientX; dragging=true; },{passive:true});
+  track.addEventListener('touchend',function(e){ if(!dragging)return; dragging=false; var dx=e.changedTouches[0].clientX-startX; if(Math.abs(dx)>30){ if(dx<0) next(); else prev(); } });
+  var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ apply(false); },150); });
+})();
+</script>
+
 <!-- Instagram carousel — infinite loop, arrow nav, touch swipe (Figma XhGH:144:431) -->
 <script>
 (function(){
