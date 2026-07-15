@@ -797,8 +797,10 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
   }
 
   /* INLINE FIRST — works on file:// without a server. */
-  if(window.__ARTISTS_INLINE__ && window.__ARTISTS_INLINE__.length){
-    findAndRender(window.__ARTISTS_INLINE__);
+  var __AI=window.__ARTISTS_INLINE__;
+  if(__AI && __AI.artists){__AI=__AI.artists;}
+  if(__AI && __AI.length){
+    findAndRender(__AI);
     return;
   }
 
