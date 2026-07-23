@@ -337,6 +337,14 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 
 > כל החמישה בקובץ `landing`. **אין להם סקשן artworks/triptych.** ראה CLAUDE.md §4 להערת המשפחה.
 
+**artist talk — alice de bellis (הקולפן, 6.8.2026; נוסף 2026-07-23)**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1237-518&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1237-185&m=dev
+
 **artist talk — natasha zeriker (save the date, הקולפן)**
 
 דסקטופ: Implement this design from Figma.

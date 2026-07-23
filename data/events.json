@@ -510,11 +510,8 @@
       "subtitle_he": "how many partners have you had?",
       "exhibition_id": "how-many",
       "exhibition_volume": 2,
-      "date": "2026-07-19",
-      "date_he": "19 יולי 2026",
-      "time_start": "19:30",
-      "time_end": "21:30",
-      "time_label": "21:30-19:30",
+      "date": null,
+      "date_he": "פרטים בהמשך...",
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/zohar-ron/hero.webp",
@@ -538,6 +535,87 @@
       "homepage_visible": true,
       "figma_node_desktop": "1083:1817",
       "figma_node_mobile": "1083:1704",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "date_tbd": true
+    },
+    {
+      "id": "amnon-lipkin",
+      "slug": "amnon-lipkin",
+      "title_he": "שיחת אמנים עם אמנון ליפקין",
+      "title_en": "artist talk with amnon lipkin",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": null,
+      "date_he": "פרטים בהמשך...",
+      "date_tbd": true,
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/amnon-lipkin/hero.webp",
+      "description_he": [
+        "ערב רישום ספונטני במכונת תפירה. אגיע עם הזינגר של סבתא. לשבת לתפור ציורים בלייב ולחפור על העבודות המוצגות בתערוכה."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 jabotinski st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "amnon lipkin",
+          "slug": "amnon-lipkin",
+          "image": "images/artists/grid/amnon-lipkin.webp"
+        }
+      ],
+      "route": "events/amnon-lipkin/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1145:1124",
+      "figma_node_mobile": null,
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
+    },
+    {
+      "id": "alice-debellis",
+      "slug": "alice-debellis",
+      "title_he": "שיחת אמנים עם אליס דה בליס",
+      "title_en": "artist talk with alice debellis",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-06",
+      "date_he": "6 אוגוסט 2026",
+      "time_start": "19:00",
+      "time_end": "20:30",
+      "time_label": "20:30-19:00",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/alice-debellis/hero.webp",
+      "description_he": [
+        "ALICE DEBELLIS מציגה את עבודותיה",
+        "בשיתוף עם BENEDETTA מייסדת SolarLunar @solarlunarbloom",
+        "Chakra Union Spiral Workshop",
+        "מסע חווייתי דרך הצ’אקרות – תרגול של איחוד פנימי, בו מבנה וזרימה נפגשים.",
+        "בואי לגלות את הקצב הפנימי שלך במרחב של נוכחות, תנועה וחיבור.",
+        "הסדנה תתקיים באנגלית."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "_image_note": "hero = ציור של אליס (מקור WhatsApp נמוך-רזולוציה 238×1118 ב-Figma; הקרופ 6d053e נמתח ל-984×1488 בדיוק כמו ב-Figma STRETCH). השכבה השנייה (165831…) מוסתרת מתחת — אומת ברינדור node 1237:580.",
+      "artists": [
+        {
+          "name_en": "alice de bellis",
+          "slug": "alice-debellis",
+          "image": "images/artists/grid/alice-debellis.webp"
+        }
+      ],
+      "route": "events/alice-debellis/",
+      "homepage_visible": true,
+      "figma_node_desktop": "1237:518",
+      "figma_node_mobile": "1237:185",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk"
     }

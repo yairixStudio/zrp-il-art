@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artist Talk with Zohar Ron — Zielinski &amp; Rozen</title>
+<title>Artist Talk with Alice De Bellis — Zielinski &amp; Rozen</title>
 <link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="../../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
-<meta name="description" content="שיח גלריה עם האומן זוהר רון על התערוכה SEX?, במסגרת How Many Partners Have You Had?, גלריית כיכר דיזינגוף, 19 ביולי 2026, 19:30–21:30.">
+<meta name="description" content="שיחת אמנים עם אליס דה בליס וסדנת Chakra Union Spiral בשיתוף BENEDETTA מייסדת SolarLunar, במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 6 באוגוסט 2026, 19:00–20:30.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -62,17 +62,16 @@ body{text-transform:uppercase}
 .h-meta{display:flex;flex-direction:column;gap:8px;align-items:center;padding:0 10px 8px}
 .h-meta .row-1,.h-meta .row-2{display:flex;align-items:center;gap:8px;justify-content:center}
 .h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
-.h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
 .h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
 
-/* Body — Hebrew (FbEzmel) or English (Copperplate) variant; Figma text box 358px */
-.h-body{width:358px;max-width:100%;font-size:18px;line-height:20px;text-align:center;color:var(--ink)}
+/* Body — Hebrew (FbEzmel) mixed with Copperplate Latin lines; Figma text box 390px, 16/20 */
+.h-body{width:390px;max-width:100%;font-size:16px;line-height:20px;text-align:center;color:var(--ink)}
 .h-body.heb{font-family:var(--heb);font-weight:300;direction:rtl}
-.h-body.en{font-family:var(--cop);font-weight:300}
-.h-body.en b,.h-body.en strong{font-weight:400}
+.h-body.heb .lat{font-size:13px;letter-spacing:.02em}
 .h-body p+p{margin-top:20px}
 
-/* "presented as part of" — exhibition attribution (Figma: label, Solway bar, exhibition name) */
+/* "presented as part of" — exhibition attribution (Figma: label, Solway bar, exhibition name 36) */
 .h-presented{display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0}
 .h-presented .pre-label{font-family:var(--cop);font-weight:300;font-size:18px;line-height:20px;text-align:center}
 .ex-bar{display:flex;align-items:center;justify-content:center;gap:clamp(8px,3vw,13px);flex-wrap:nowrap;max-width:100%}
@@ -80,16 +79,12 @@ body{text-transform:uppercase}
 .ex-bar .bdot{width:6px;height:6px;border-radius:50%;background:currentColor;flex:none}
 .ex-name{font-family:var(--cop);font-weight:400;font-size:29px;line-height:1.2;text-align:center;max-width:100%}
 .ex-name.heb{font-family:var(--heb);font-weight:400;direction:rtl}
+.h-presented .ex-name.heb{font-size:36px;font-weight:300}
 a.ex-link{display:flex;flex-direction:column;align-items:center;gap:16px;transition:opacity .2s}
 a.ex-link:hover{opacity:.7}
 
 /* Venue address — Copperplate Light, 3 explicit lines (no auto-wrap) */
 .h-address{font-family:var(--cop);font-weight:300;font-size:16px;line-height:20px;text-align:center;max-width:100%}
-
-/* Registration / RSVP note */
-.h-note{font-size:16px;line-height:20px;text-align:center;max-width:100%}
-.h-note.heb{font-family:var(--heb);font-weight:300;direction:rtl}
-.h-note.en{font-family:var(--cop);font-weight:300}
 
 /* Hero card — 492×744 portrait, bottom-up gradient scrim, white overlay stack */
 .event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
@@ -101,10 +96,10 @@ a.ex-link:hover{opacity:.7}
 .event-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%);pointer-events:none}
 /* Overlay: the exhibition bar sets its own width (never wraps); only the exhibition name is
    clamped to the Figma 313px text box so it breaks onto two lines exactly as drawn. */
-.event-hero .card .center-text{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);width:313px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff;z-index:2;text-align:center}
+.event-hero .card .center-text{position:absolute;left:50%;top:48%;transform:translate(-50%,-50%);width:313px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff;z-index:2;text-align:center}
 /* Title and bar overhang the 313px text box rather than wrapping, exactly as drawn. */
 .event-hero .card .center-text .en{font-family:var(--cop);font-weight:700;font-size:36px;line-height:1.1;letter-spacing:.02em;white-space:nowrap}
-.event-hero .card .center-text .ex-name{font-size:23px;width:100%}
+.event-hero .card .center-text .ex-name{font-size:29px;width:100%;line-height:1}
 
 /* ARTISTS strip */
 .event-artists{padding:32px var(--pad-x);display:flex;justify-content:center}
@@ -127,11 +122,6 @@ a.artist-card:hover .name{color:var(--ink)}
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
-/* LINGER statement card — 1px black frame (natasha zeriker only, Figma 1078:1174) */
-.linger{border:1px solid #000;background:var(--white);padding:16px;display:flex;flex-direction:column;gap:16px;width:394px;max-width:100%;text-align:center}
-.linger .t{font-family:var(--cop);font-weight:300;font-size:18px;line-height:20px;letter-spacing:.12em}
-.linger p{font-family:var(--heb);font-weight:400;font-size:16px;line-height:20px;direction:rtl;text-transform:none}
-
 /* ===== RESPONSIVE ===== */
 @media (min-width:1320px){ :root{--pad-x:96px} }
 
@@ -143,8 +133,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-title{font-size:44px;line-height:42px}
   .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:22px}
   .ex-name{font-size:24px}
+  .h-presented .ex-name.heb{font-size:30px}
   .event-hero .card .center-text{width:260px}
-  .event-hero .card .center-text .ex-name{font-size:20px}
+  .event-hero .card .center-text .ex-name{font-size:24px}
   .event-hero .card .center-text .en{font-size:30px}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
 }
@@ -166,9 +157,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-body{order:4}
   .h-presented{order:5}
   .h-address{order:6}
-  .linger{order:7}
-  .h-note{order:8}
-  .event-artists{order:9}
+  .event-artists{order:7}
 
   /* Hero card — full-bleed 520h with a flat 40% scrim (Figma mobile fill) */
   .event-hero .card{width:100%;max-width:none;height:520px}
@@ -179,17 +168,14 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-title{background:var(--white);padding:32px 16px 0;font-size:18px;line-height:1.5;width:100%}
   .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
   .h-meta .gallery{font-size:14px}
-  .h-meta .date,.h-meta .time{font-size:14px}
+  .h-meta .date,.h-meta .time{font-size:14px;font-weight:300}
   .h-body{background:var(--white);padding:16px;width:100%;font-size:16px}
-  .h-body.en{font-size:13px;letter-spacing:.06em}
-  .h-note.en{font-size:14px;letter-spacing:.04em}
   .h-presented{background:var(--white);padding:16px;width:100%}
   .h-presented .pre-label{font-size:14px;letter-spacing:.04em}
   .ex-name{font-size:19px;letter-spacing:.12em;max-width:358px}
   .ex-name.heb{font-size:29px;letter-spacing:0}
+  .h-presented .ex-name.heb{font-size:36px}
   .h-address{background:var(--white);padding:16px;width:100%;font-size:14px}
-  .h-note{background:var(--white);padding:16px;width:100%}
-  .linger{align-self:center;margin:0 16px;width:calc(100% - 32px)}
 
   .event-hero .card .center-text .en{font-size:22px;letter-spacing:.2em}
   .event-hero .card .center-text .ex-name{font-size:17px;width:313px;max-width:calc(100vw - 64px)}
@@ -205,7 +191,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 }
 </style>
 <!-- SEO:auto:start -->
-<link rel="canonical" href="https://art.zrp.co.il/events/zohar-ron/">
+<link rel="canonical" href="https://art.zrp.co.il/events/alice-debellis/">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -215,16 +201,16 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Artist Talk with Zohar Ron — Zielinski &amp; Rozen">
-<meta property="og:description" content="שיח גלריה עם האומן זוהר רון על התערוכה SEX?, במסגרת How Many Partners Have You Had?, גלריית כיכר דיזינגוף, 19 ביולי 2026, 19:30–21:30.">
-<meta property="og:url" content="https://art.zrp.co.il/events/zohar-ron/">
-<meta property="og:image" content="https://art.zrp.co.il/og/events-zohar-ron-hero.jpg">
-<meta property="og:image:alt" content="Artist Talk with Zohar Ron">
+<meta property="og:title" content="Artist Talk with Alice De Bellis — Zielinski &amp; Rozen">
+<meta property="og:description" content="שיחת אמנים עם אליס דה בליס וסדנת Chakra Union Spiral בשיתוף BENEDETTA מייסדת SolarLunar, במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 6 באוגוסט 2026, 19:00–20:30.">
+<meta property="og:url" content="https://art.zrp.co.il/events/alice-debellis/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-alice-debellis-hero.jpg">
+<meta property="og:image:alt" content="Artist Talk with Alice De Bellis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Artist Talk with Zohar Ron — Zielinski &amp; Rozen">
-<meta name="twitter:description" content="שיח גלריה עם האומן זוהר רון על התערוכה SEX?, במסגרת How Many Partners Have You Had?, גלריית כיכר דיזינגוף, 19 ביולי 2026, 19:30–21:30.">
-<meta name="twitter:image" content="https://art.zrp.co.il/og/events-zohar-ron-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/zohar-ron/#event","url":"https://art.zrp.co.il/events/zohar-ron/","name":"Artist Talk with Zohar Ron","image":"https://art.zrp.co.il/og/events-zohar-ron-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-07-19T19:30","description":"שיח גלריה עם האומן זוהר רון על התערוכה SEX?, במסגרת How Many Partners Have You Had?, גלריית כיכר דיזינגוף, 19 ביולי 2026, 19:30–21:30."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Zohar Ron","item":"https://art.zrp.co.il/events/zohar-ron/"}]}]}</script>
+<meta name="twitter:title" content="Artist Talk with Alice De Bellis — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="שיחת אמנים עם אליס דה בליס וסדנת Chakra Union Spiral בשיתוף BENEDETTA מייסדת SolarLunar, במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 6 באוגוסט 2026, 19:00–20:30.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-alice-debellis-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/alice-debellis/#event","url":"https://art.zrp.co.il/events/alice-debellis/","name":"Artist Talk with Alice De Bellis","image":"https://art.zrp.co.il/og/events-alice-debellis-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-08-06T19:00","description":"שיחת אמנים עם אליס דה בליס וסדנת Chakra Union Spiral בשיתוף BENEDETTA מייסדת SolarLunar, במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 6 באוגוסט 2026, 19:00–20:30."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Alice De Bellis","item":"https://art.zrp.co.il/events/alice-debellis/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -233,45 +219,53 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 <main class="event">
 
-  <!-- HERO BAND — tinted panel: text column left, portrait card right (Figma 1083:1817 desktop / 1083:1704 mobile) -->
+  <!-- HERO BAND — tinted panel: text column left, portrait card right (Figma 1237:518 desktop / 1237:185 mobile) -->
   <section class="event-hero">
     <div class="row">
 
       <div class="text-col">
-        <h1 class="h-title">artist talk with<br class="mbr"> <a class="artist-link" href="../../artists/zohar-ron/">zohar ron</a></h1>
+        <h1 class="h-title">artist talk with<br class="mbr"> <a class="artist-link" href="../../artists/alice-debellis/">alice debellis</a></h1>
 
         <div class="h-meta">
-          <div class="row-1"><span class="gallery heb">גלריית כיכר דיזינגוף</span></div>
-          <div class="row-2"><span class="date heb">פרטים בהמשך...</span></div>
+          <div class="row-1"><span class="gallery heb">גלריית כיכר המדינה</span></div>
+          <div class="row-2">
+            <span class="date heb"><bdi>6 אוגוסט 2026</bdi></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="time"><bdi>20:30-19:00</bdi></span>
+          </div>
         </div>
 
         <div class="h-body heb">
-          <p>לא על סקס. על בני אדם.</p>
-          <p>מוזמנים לשיח גלריה עם האומן <a class="artist-link" href="../../artists/zohar-ron/">זוהר רון</a> על התערוכה<br><span class="lat">SEX?</span><br>מפגש פתוח על צילום, אומנות, תשוקה, אהבה, כוח, פגיעוּת, ועל האופן שבו הגוף הופך לשפה והאמנות הופכת לשאלה.<br>שיחה על הסיפורים שמאחורי העבודות ועל תהליך היצירה.</p>
+          <p><a class="artist-link" href="../../artists/alice-debellis/"><span class="lat">alice debellis</span></a><br>מציגה את עבודותיה</p>
+          <p>בשיתוף עם <span class="lat">benedetta</span><br>מייסדת <span class="lat">SolarLunar</span><br><a href="https://www.instagram.com/solarlunarbloom/" target="_blank" rel="noopener"><span class="lat">@solarlunarbloom</span></a></p>
+          <p><span class="lat">chakra union spiral workshop</span></p>
+          <p>מסע חווייתי דרך הצ’אקרות –<br>תרגול של איחוד פנימי, בו מבנה וזרימה נפגשים.</p>
+          <p>בואי לגלות את הקצב הפנימי שלך<br>במרחב של נוכחות, תנועה וחיבור.</p>
+          <p>הסדנה תתקיים באנגלית.</p>
         </div>
 
         <div class="h-presented">
           <div class="pre-label">presented as part of</div>
-          <a class="ex-link" href="../../exhibitions/how-many/">
-            <div class="ex-bar"><span class="lbl">the EXHIBITION</span></div>
-            <div class="ex-name">how many partners<br class="mbr"> have you had?</div>
+          <a class="ex-link" href="../../exhibitions/the-peeler/">
+            <div class="ex-bar"><span class="lbl">EXHIBITION</span><span class="bdot" aria-hidden="true"></span><span class="lbl">VOLUME 2</span></div>
+            <div class="ex-name heb"><span>הקולפן</span></div>
           </a>
         </div>
 
         <div class="h-address">
           THE art GALLERY by erez ZiELINSKI &amp; ROZEN<br>
-          Dizengoff Square<br>
-          1 Raines st. tel aviv
+          kikar hamedina<br>
+          131 Jabotinsky st. tel aviv
         </div>
       </div>
 
       <div class="img-col">
         <div class="card">
-          <img src="../../images/events/zohar-ron/hero.webp" srcset="../../images/events/zohar-ron/hero-480w.webp 480w, ../../images/events/zohar-ron/hero-768w.webp 768w, ../../images/events/zohar-ron/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1488" alt="חלון הראווה של גלריית כיכר דיזינגוף — SEX?" decoding="async" fetchpriority="high">
+          <img src="../../images/events/alice-debellis/hero.webp" srcset="../../images/events/alice-debellis/hero-480w.webp 480w, ../../images/events/alice-debellis/hero-768w.webp 768w, ../../images/events/alice-debellis/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1488" alt="ציור של אליס דה בליס — שיחת אמנים בגלריית כיכר המדינה" decoding="async" fetchpriority="high">
           <div class="center-text">
             <div class="en">artist talk</div>
-            <div class="ex-bar"><span class="lbl">the EXHIBITION</span></div>
-            <div class="ex-name">how many partners<br class="mbr"> have you had?</div>
+            <div class="ex-bar"><span class="lbl">EXHIBITION</span><span class="bdot" aria-hidden="true"></span><span class="lbl">VOLUME 2</span></div>
+            <div class="ex-name heb"><span>הקולפן</span></div>
           </div>
         </div>
       </div>
@@ -288,9 +282,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
         </span>
       </div>
       <div class="strip" role="list">
-        <a class="artist-card" role="listitem" href="../../artists/zohar-ron/" aria-label="zohar ron">
-          <div class="img"><img src="../../images/events/zohar-ron/artist-thumb.webp" width="810" height="664" alt="zohar ron" decoding="async" loading="lazy"></div>
-          <div class="name">zohar<br>ron</div>
+        <a class="artist-card" role="listitem" href="../../artists/alice-debellis/" aria-label="alice de bellis">
+          <div class="img"><img src="../../images/artists/grid/alice-debellis.webp" width="810" height="810" alt="alice de bellis" decoding="async" loading="lazy"></div>
+          <div class="name">alice<br>de bellis</div>
         </a>
       </div>
     </div>

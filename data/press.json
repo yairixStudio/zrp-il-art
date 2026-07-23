@@ -17,6 +17,18 @@
       "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1366"
     },
     {
+      "id": "event-alice-debellis-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם אליס דה בליס",
+      "title_en": "artist talk with alice debellis",
+      "date": "2026-08-06",
+      "cover_image": "images/events/alice-debellis/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": true,
+      "route": "events/alice-debellis/"
+    },
+    {
       "id": "event-risa-and-noemi",
       "type": "event",
       "tag_en": "gallery event",

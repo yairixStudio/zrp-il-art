@@ -259,6 +259,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://art.zrp.co.il/events/alice-debellis/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://art.zrp.co.il/events/nir-giorgio-levin/</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -272,7 +278,13 @@
   </url>
   <url>
     <loc>https://art.zrp.co.il/events/zohar-ron/</loc>
-    <lastmod>2026-07-09</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://art.zrp.co.il/events/amnon-lipkin/</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
