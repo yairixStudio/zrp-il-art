@@ -573,6 +573,12 @@
           "thumb": "images/exhibitions/the-peeler/artists/hadas-tuval.webp",
           "focus": "50% 45%",
           "slug": "hadas-tuval"
+        },
+        {
+          "name_en": "tali\nzelnik",
+          "thumb": "images/artists/grid/tali-zelnik.webp",
+          "slug": "tali-zelnik",
+          "focus": "50% 40%"
         }
       ],
       "figma_node_desktop": "XhGH289YTRcW811wrufRJz::721:14300",
