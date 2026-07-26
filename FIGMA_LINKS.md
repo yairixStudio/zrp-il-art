@@ -264,6 +264,13 @@ raz-ronen מובייל: Implement this design from Figma.
 hadas-tuval מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=797-106&m=dev
 
+### tali-zelnik — דף אומנית מלא (2026-06-24; נחשפה 2026-07-26, `landing`)
+
+> אומנית חדשה (הקולפן) — ביו+פורטרט+2 יצירות (ענבר/inbar, סלע/sella). פריים מובייל 390px ("artist5"). ⚠️ בפיגמה השם כתוב "טלי **צ**לניק" — הקנוני באתר "טלי **ז**לניק" (הכרעת משתמש). תוכן אומת מול הפריים ב-2026-07-26 (ביו `854:1071`, סטייטמנט `854:1083`, כרטיסי יצירות).
+
+tali-zelnik מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=854-1040&m=dev
+
 ### zohar ron × dandan nusha (שיתוף — `artist.html?slug=zohar-ron-dan-ben-ari`)
 
 מובייל (קנוני ב-`landing`, לא ב-`artist-pages`): Implement this design from Figma.
