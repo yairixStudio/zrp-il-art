@@ -345,6 +345,14 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1237-185&m=dev
 
+**artist talk — anat wégier (how-many, 7.8.2026, דיזינגוף; נוסף 2026-07-24)**
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1107-2090&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1107-1981&m=dev
+
 **artist talk — natasha zeriker (save the date, הקולפן)**
 
 דסקטופ: Implement this design from Figma.

@@ -6,7 +6,7 @@
 
 ## פתוח
 
-- [ ] **2 דפי אירוע חסרים — כרטיסי "בקרוב" בהומפייג' `#press` (2026-07-15):** `event-anat-wegier-talk` (artist talk with anat wégier, 7.8.2026) + `event-tal-nehoray-talk` (how many... with tal nehoray, 29.6.2026). שניהם `route:null` ב-`press.json`; הכרטיסים `press-card--soon` מציגים טוסט "בקרוב" בלחיצה. כשיהיו frames בפיגמה — לבנות דפים, לעדכן `route` ולהחליף `href="#"` בכרטיסים. לשקול גם הוספת אירוע anat ל-`events.json` + מירור `#events-upcoming-data` (אירוע עתידי — יופיע אוטומטית ב-`#events-upcoming`).
+- [ ] **דף אירוע חסר — כרטיס "בקרוב" בהומפייג' `#press`:** `event-tal-nehoray-talk` (how many... with tal nehoray, 29.6.2026), `route:null` ב-`press.json`; הכרטיס `press-card--soon` מציג טוסט "בקרוב" בלחיצה. כשיהיה frame בפיגמה — לבנות דף, לעדכן `route` ולהחליף `href="#"`. (~~event-anat-wegier-talk~~ ✅ נבנה 2026-07-24 — `events/anat-wegier/`, Figma `1107:2090`/`1107:1981`.)
 - [ ] **Dizengoff archive thumbs** — `archive_thumbnails.tabs[0]` עדיין `_placeholder:true`. כשהגלריה תיפתח ויהיו צילומים מהתערוכה — לעדכן את 4 ה-`image` paths ב-`data/exhibitions.json` *ובמקביל* ב-fallback inline JSON ב-`index.html` (id=`fallback-archive`).
 - [ ] `images/brand/logo.svg` עוד לא קיים.
 - [ ] `images/galleries/flea-market/hero.png` — placeholder (עותק של dizengoff).

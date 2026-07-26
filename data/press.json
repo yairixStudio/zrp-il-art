@@ -12,8 +12,7 @@
       "cover_image": "images/events/anat-wegier/card.webp",
       "exhibition_id": null,
       "homepage_visible": true,
-      "route": null,
-      "_route_note": "אין דף אירוע עדיין — הכרטיס בהומפייג' מציג טוסט 'בקרוב' בלחיצה (Figma 1124:1354, 2026-07-15)",
+      "route": "events/anat-wegier/",
       "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1366"
     },
     {
@@ -44,7 +43,8 @@
       "type": "event",
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם זוהר רון",
-      "date": "2026-07-19",
+      "date": null,
+      "date_tbd": true,
       "cover_image": "images/events/zohar-ron/card.webp",
       "exhibition_id": null,
       "homepage_visible": true,

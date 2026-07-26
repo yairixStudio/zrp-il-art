@@ -793,5 +793,10 @@
 "jpg": "og/works-v2-zohar-shtrit-1.jpg",
 "w": 690,
 "h": 1044
+},
+"images/events/anat-wegier/hero.webp": {
+"jpg": "og/events-anat-wegier-hero.jpg",
+"w": 1200,
+"h": 1815
 }
 }

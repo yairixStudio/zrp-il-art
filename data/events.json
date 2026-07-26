@@ -618,6 +618,47 @@
       "figma_node_mobile": "1237:185",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk"
+    },
+    {
+      "id": "anat-wegier",
+      "slug": "anat-wegier",
+      "title_he": "שיחת אמנים עם ענת ויז׳ייה",
+      "title_en": "artist talk with anat wégier",
+      "subtitle_he": "how many partners have you had?",
+      "exhibition_id": "how-many",
+      "exhibition_volume": 2,
+      "date": "2026-08-07",
+      "date_he": "7 אוגוסט 2026",
+      "time_start": "11:00",
+      "time_end": "13:00",
+      "time_label": "13:00-11:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/anat-wegier/hero.webp",
+      "description_he": [
+        "הופכים היסטוריה לאמנות",
+        "סדנת העברת דימוי באמצעות צילומים היסטוריים של כיכר דיזינגוף",
+        "ללא תשלום | בהזמנה מראש"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Raines st. tel aviv"
+      ],
+      "_image_note": "hero = imageRef 615a95e0… (אותו מקור כמו upcoming.*) — נאפה עם ה-crop/STRETCH מ-Figma ל-984×1488; אומת RMSE 0.38% מול רינדור node 1107:2003",
+      "artists": [
+        {
+          "name_en": "anat wégier",
+          "slug": "anat-wegier",
+          "image": "images/artists/anat-wegier/portrait.webp"
+        }
+      ],
+      "route": "events/anat-wegier/",
+      "homepage_visible": true,
+      "figma_node_desktop": "1107:2090",
+      "figma_node_mobile": "1107:1981",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk"
     }
   ]
 }
