@@ -296,16 +296,22 @@ body{text-transform:uppercase}
 .ev-up .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .ev-up .card picture{display:contents}
 .ev-up .card-link:hover .card img{transform:scale(1.04)}
-.ev-up .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(102,102,102,.2) 0%,rgba(0,0,0,.8) 81%);pointer-events:none}
-.ev-up .ovr{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(8px,5.34cqw,16px);color:#fff}
-.ev-up .ovr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(4px,2.67cqw,8px)}
-.ev-up .gname{font-family:var(--cop);font-weight:700;font-size:clamp(10px,6.67cqw,20px);line-height:1.4;letter-spacing:.02em;overflow-wrap:anywhere}
-.ev-up .date{font-family:var(--cop);font-weight:300;font-size:clamp(10px,6.67cqw,20px);line-height:1.4;letter-spacing:.02em;white-space:nowrap}
-.ev-up .date--tbd{font-family:var(--heb);font-weight:400;font-size:clamp(9px,4.67cqw,15px);white-space:normal;text-align:right;flex:0 0 auto;max-width:45%}
-.ev-up .ovr-bot{display:flex;flex-direction:column;gap:clamp(2px,1.34cqw,4px)}
-.ev-up .ttl{font-family:var(--cop);font-weight:700;font-size:clamp(9px,4.67cqw,14px);line-height:1.45;letter-spacing:.02em;overflow-wrap:anywhere}
-.ev-up .ex-name{font-family:var(--cop);font-weight:300;font-size:clamp(9px,4.67cqw,14px);line-height:1.45;letter-spacing:.02em;overflow-wrap:anywhere}
-.ev-up .ex-name--he{font-family:var(--heb);text-transform:none;letter-spacing:0}
+/* Overlay — Figma landing::1258:746 (200×301). cqw calibrated so 200px card = Figma px;
+   narrower desktop 3-up cards (~183) scale down slightly so Copperplate doesn't collide with the date. */
+.ev-up .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);pointer-events:none}
+.ev-up .ovr{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(6px,4cqw,8px);color:#fff;box-sizing:border-box}
+.ev-up .ovr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(8px,4cqw,12px);width:100%}
+.ev-up .gname{font-family:var(--cop);font-weight:700;font-size:clamp(12px,8cqw,16px);line-height:1.15;letter-spacing:.02em;white-space:normal;overflow-wrap:anywhere;flex:1 1 0;min-width:0}
+.ev-up .date{font-family:var(--cop);font-weight:700;font-size:clamp(10px,7cqw,14px);line-height:1.1;letter-spacing:.02em;white-space:nowrap;padding:clamp(2px,2cqw,4px) 0;flex:0 0 auto}
+.ev-up .date--tbd{font-family:var(--heb);font-weight:400;font-size:clamp(9px,6cqw,12px);white-space:normal;text-align:right;flex:0 1 auto;max-width:42%;padding:2px 0;text-transform:none;letter-spacing:0}
+.ev-up .ovr-bot{display:flex;flex-direction:column;gap:clamp(2px,2cqw,4px);align-items:flex-start;width:100%}
+.ev-up .ttl{font-family:var(--cop);font-weight:700;font-size:clamp(10px,7cqw,14px);line-height:1.1;letter-spacing:.02em}
+.ev-up .ex{display:flex;flex-direction:column;gap:clamp(1px,.8cqw,1.6px);align-items:flex-start;max-width:100%}
+.ev-up .ex-bar{display:flex;align-items:center;justify-content:flex-start;gap:clamp(3px,2.65cqw,5.3px);flex-wrap:nowrap;max-width:100%}
+.ev-up .ex-bar .lbl{font-family:var(--sol);font-weight:300;font-size:clamp(8px,5.25cqw,10.5px);line-height:normal;text-transform:uppercase;letter-spacing:0;white-space:nowrap;color:#fff}
+.ev-up .ex-bar .bdot{width:clamp(2px,1.2cqw,2.4px);height:clamp(2px,1.2cqw,2.4px);border-radius:50%;background:#fff;flex:none}
+.ev-up .ex-name{font-family:var(--cop);font-weight:300;font-size:clamp(9px,6cqw,12px);line-height:1.15;letter-spacing:.02em;overflow-wrap:anywhere;max-width:100%}
+.ev-up .ex-name--he{font-family:var(--heb);font-weight:400;font-size:clamp(9px,5.85cqw,11.7px);text-transform:none;letter-spacing:0}
 .ev-up-nav{display:flex;justify-content:flex-end;align-items:center;gap:16px}
 .ev-up.ev-up--single .ev-up-nav{display:none}
 .ev-up-nav button{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;color:var(--ink);border:0;background:none;cursor:pointer;transition:opacity .2s}
@@ -730,7 +736,6 @@ body{text-transform:uppercase}
   .ev-up .card-link{flex:0 0 min(200px,calc((100% - 8px) / 2))}
   .ev-up .ev-up-cards.has-1 .card-link{flex-basis:100%}
   .ev-up .card{aspect-ratio:2/3}
-  .ev-up .ovr{padding:8px}
   .ev-up-nav{display:none}
 
   /* EXHIBITIONS ARCHIVE */
@@ -1197,7 +1202,7 @@ porta</div></a>
   "alt": "שיחת אמנים עם גל פולק ואלסה ארס ברוש — גלריית כיכר המדינה",
   "srcset": "images/events/artist-talk/hero-desktop-480w.webp 480w, images/events/artist-talk/hero-desktop-768w.webp 768w, images/events/artist-talk/hero-desktop.webp 984w",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  },
@@ -1258,7 +1263,7 @@ porta</div></a>
   "alt": "כתובה — מיצג חי — גלריית כיכר המדינה",
   "srcset": "images/events/ktuba/hero-480w.webp 480w, images/events/ktuba/hero-768w.webp 768w, images/events/ktuba/hero.webp 1500w",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  },
@@ -1278,7 +1283,7 @@ porta</div></a>
   "ex_he": true,
   "alt": "אירוע הפתיחה — בדידות בתוך סביבה תוססת — גלריית כיכר המדינה",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  },
@@ -1299,7 +1304,7 @@ porta</div></a>
   "alt": "ערב עם נטאשה זריקר — גלריית כיכר המדינה",
   "srcset": "images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  },
@@ -1421,7 +1426,7 @@ porta</div></a>
   "alt": "שיחת אמנים עם אליס דה בליס — גלריית כיכר המדינה",
   "srcset": "images/events/alice-debellis/hero-480w.webp 480w, images/events/alice-debellis/hero-768w.webp 768w, images/events/alice-debellis/hero.webp 984w",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  },
@@ -1442,7 +1447,7 @@ porta</div></a>
   "ex_he": true,
   "alt": "שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה",
   "gallery_en": [
-   "medina",
+   "hamedina",
    "square"
   ]
  }
@@ -1472,13 +1477,24 @@ porta</div></a>
       ? '<div class="date date--tbd" dir="rtl">פרטים בהמשך</div>'
       : (function(){var d=String(e.date).split('-');return '<div class="date">'+esc(d[2]+'.'+d[1])+'</div>';})();
     var gl=(e.gallery_en||[]).map(esc).join('<br>');
+    // Solway bar only for volume-style labels (e.g. exhibition • volume 2).
+    // Plain "the exhibition" is redundant above the exhibition title — omit it.
+    var barParts=(e.ex_bar||[]).filter(function(p){
+      return String(p).toLowerCase().trim()!=='the exhibition';
+    });
+    var barHtml=barParts.length
+      ? '<div class="ex-bar">'+barParts.map(function(p,i){
+          return (i?'<span class="bdot" aria-hidden="true"></span>':'')+'<span class="lbl">'+esc(p)+'</span>';
+        }).join('')+'</div>'
+      : '';
     var inner='<article class="card">'
       +'<img src="'+esc(e.img)+'"'+(e.srcset?' srcset="'+esc(e.srcset)+'" sizes="(max-width:768px) 200px, 25vw"':'')
       +' width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'" decoding="async" loading="lazy">'
       +'<div class="ovr">'
       +'<div class="ovr-top"><div class="gname">'+gl+'</div>'+dateHtml+'</div>'
       +'<div class="ovr-bot"><div class="ttl">'+esc(e.title_en)+'</div>'
-      +'<div class="ex-name'+(e.ex_he?' ex-name--he':'')+'"'+(e.ex_he?' dir="rtl"':'')+'>'+esc(e.ex_name)+'</div></div>'
+      +'<div class="ex">'+barHtml
+      +'<div class="ex-name'+(e.ex_he?' ex-name--he':'')+'"'+(e.ex_he?' dir="rtl"':'')+'>'+esc(e.ex_name)+'</div></div></div>'
       +'</div></article>';
     return e.soon
       ? '<a class="card-link card-link--soon press-card--soon" href="#">'+inner+'</a>'

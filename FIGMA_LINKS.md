@@ -49,6 +49,9 @@
 סקשן upcoming events מובייל (עיגול זולג שמאלה, כרטיסי 200×301, בלי חיצים): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-133&m=dev
 
+כרטיס בודד — אוברליי טקסט מעודכן (2026-07-30, `1258:746`, 200×301): Solway `EXHIBITION • VOLUME 2` + תאריך Bold 14 + `HAMEDINA`:
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1258-746&m=dev
+
 ### Homepage — `#press` redesign v3 (רשימת הכרטיסים, 2026-07-14)
 
 press & events דסקטופ (19 כרטיסים, 2 עמודות): Implement this design from Figma.
