@@ -1,0 +1,25 @@
+{
+  "_note": "Sponsor / collaboration pages (route sponsors/<slug>/). Meta only — the page body stays in HTML (long-form precedent, like press articles). case_exception lists brand strings that the user decreed stay lowercase (Figma textCase:LOWER — brand identity), overriding the global Copperplate-UPPERCASE rule via a targeted text-transform:none class.",
+  "sponsors": [
+    {
+      "id": "soos",
+      "slug": "soos",
+      "name": "soos.sound",
+      "founder_he": "דן סרוסי",
+      "title_lockup": "הקולפן X soos",
+      "exhibition_slug": "the-peeler",
+      "exhibition_route": "exhibitions/the-peeler",
+      "gallery_id": "medina",
+      "website": "https://www.soos.audio",
+      "model_credit": "Bella",
+      "route": "sponsors/soos/",
+      "cover_image": "images/sponsors/soos/hero.webp",
+      "logo": "images/sponsors/soos/soos-logo.svg",
+      "case_exception": ["soos.sound", "www.soos.audio", "Bella"],
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "1318:3287",
+      "figma_node_mobile": "1318:3480",
+      "figma_logo_node": "1323:1013"
+    }
+  ]
+}

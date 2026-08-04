@@ -591,6 +591,8 @@ soos דסקטופ: Implement this design from Figma.
 soos מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3480&m=dev
 
+> לוגו soos הוקטורי = node `1323:1013` (88×21.59, 4 vector paths — הורדה כ-SVG בלי imageRef; בעמוד הוא inline עם `fill:currentColor`). ⚠️ בפריים המובייל יש frames ריקים — `1318:3523` (Banner Text Container) + wrappers ריקים בשורות הקרדיט (`1318:3617`/`3621`) — שרידי תבנית ה-artist-talk, לא לבנות.
+
 ### עמוד אירוע The Space Between (`/events/the-space-between/`, מור צופיה געש 3.9.2026)
 
 the space between דסקטופ: Implement this design from Figma.

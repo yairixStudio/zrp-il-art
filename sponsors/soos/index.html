@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Peeler X soos.sound — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Light.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="הקולפן X soos.sound — שיתוף פעולה בין תערוכת הקולפן לסטודיו הרמקולים הפיסוליים של דן סרוסי. הרמקולים של soos מעצבים את הזהות הוויזואלית והאקוסטית של גלריית כיכר המדינה, תל אביב.">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;
+  --divider:#D2D2D2;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase}
+/* 🔴 חריגת-איות מוכרעת (מותג, Figma textCase:LOWER): soos.sound / www.soos.audio / Bella
+   נשארים lowercase — text-transform:none נקודתי. כל שאר האנגלית באתר UPPERCASE כרגיל. */
+.brand{font-family:var(--cop);font-weight:300;text-transform:none;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+
+/* ===== SPONSOR PAGE — soos.sound ("הקולפן X soos"), artist-talk-family panel + gallery strip ===== */
+.sponsor{display:flex;flex-direction:column;background:var(--white)}
+
+/* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
+   (Figma "Main container" 1318:3313: padding 48/96/32, content 1248, gap 48; left col top-aligned) */
+.sp-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.sp-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.sp-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px}
+
+/* Chip — bordered gallery tag, right edge (Figma 1318:3317: 1px #1B1B1B, padding 4/8, no fill) */
+.chip-row{width:100%;display:flex;justify-content:flex-end}
+a.chip{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--ink);font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);direction:rtl;transition:opacity .2s}
+a.chip:hover{opacity:.65}
+
+/* Lockup — [soos logo] X הקולפן, row gap 16, right-aligned (Figma 1323:1010).
+   X נשאר 36 verbatim: כיול ה-~28% של Copperplate הוא על רוחב טקסט רץ; לגליף בודד גובה-הקאפ תואם. */
+.lockup{display:flex;align-items:center;gap:16px}
+.lockup .x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
+.lockup a.name{font-family:var(--heb);font-weight:300;font-size:36px;line-height:38.936px;direction:rtl;transition:opacity .2s}
+.lockup a.name:hover,.lockup a.logo-link:hover{opacity:.65}
+/* soos-logo (לא "logo" — site-chrome.css מזריק ‎.logo‎ גלובלי לכותרת האתר ומתנגש) */
+.lockup .soos-logo,.center-text .soos-logo{width:88px;height:21.59px;display:block;color:currentColor;transition:opacity .2s}
+.lockup a.logo-link{display:block;color:#000}
+
+/* Body + divider + credit group (Figma "Frame 346": gap 16; divider section padding 24/16/16) */
+.sp-main{display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
+.sp-body{width:358px;max-width:100%;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;text-align:right;direction:rtl;color:var(--ink)}
+.sp-body p+p{margin-top:19.468px}
+.sp-body .brand{font-size:.82em}
+/* Divider 72×1 #D2D2D2 — desktop only (Figma 1318:3327, right inset 16px) */
+.sp-divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
+.sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
+.sp-credit{display:flex;flex-direction:column;align-items:flex-end;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);text-align:right}
+.sp-credit .line{direction:ltr;unicode-bidi:isolate}
+.sp-credit a.line:hover{opacity:.65}
+
+/* Hero card — 492×744, bottom-up gradient scrim, centered white lockup (column, gap 8) */
+.sp-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
+.sp-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
+/* picture-upgrade.js wraps the <img> in a <picture> at runtime — size both, or the image
+   collapses to its intrinsic height and the card's black background shows through. */
+.sp-hero .card>picture{display:contents}
+.sp-hero .card img{width:100%;height:100%;object-fit:cover;display:block}
+.sp-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 100%);pointer-events:none}
+.sp-hero .card .center-text{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:358px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;z-index:2;text-align:center}
+.center-text .name{font-family:var(--heb);font-weight:300;font-size:36px;line-height:38.936px;direction:rtl}
+.center-text .x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
+
+/* GALLERY STRIP — on white, 4 images gap 8: 3 equal-flex + 1 narrow fixed (Figma 1329:190:
+   1248×389.80853271484375; 3×321.397 + 259.80889892578125 + 3×8 = 1248) */
+.sp-gallery{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
+.sp-gallery .strip{display:flex;gap:8px;width:100%;max-width:var(--max);aspect-ratio:1248/389.80853271484375}
+.sp-gallery .g{flex:1 1 0;min-width:0;overflow:hidden}
+.sp-gallery .g--narrow{flex:0 0 20.8181%}
+.sp-gallery .g picture{display:contents}
+.sp-gallery .g img{width:100%;height:100%;object-fit:cover}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1320px){ :root{--pad-x:96px} }
+
+/* Narrow desktop / tablet — shrink the hero card, keep composition */
+@media (max-width:1319px) and (min-width:769px){
+  .sp-hero .row{gap:32px;min-width:0}
+  .sp-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .sp-hero .card{width:100%;max-width:400px;height:640px}
+}
+
+/* Mobile (Figma 1318:3480): hero full-bleed 390×520 under the header, then white content.
+   Order: chip → lockup → body → gallery → credit (הגלריה נכנסת בין הגוף לקרדיט — שונה מהדסקטופ). */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  .sp-hero,.sp-hero .row,.sp-hero .text-col,.chip-row,.sp-main{display:contents}
+
+  .sp-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
+  a.chip{order:2}
+  .lockup{order:3}
+  .sp-body{order:4}
+  .sp-gallery{order:5}
+  .sp-credit{order:6}
+  .sp-divider{display:none}
+
+  /* Hero — flat 40% scrim (Figma mobile fill rgba(27,27,27,.4)), lockup centered */
+  .sp-hero .card{width:100%;max-width:none;height:520px}
+  .sp-hero .card::after{background:rgba(27,27,27,.4)}
+
+  /* Info blocks — white background, padding 16, 24px rhythm (Figma info section: padding 24/16, gap 24) */
+  a.chip{margin:24px 16px 0 auto;font-size:16px;line-height:17.305px}
+  .lockup{background:var(--white);padding:24px 16px 0;width:100%;justify-content:flex-end}
+  .sp-body{background:var(--white);padding:24px 16px 0;width:100%;font-size:16px;line-height:17.305px}
+  .sp-body p+p{margin-top:17.305px}
+  .sp-gallery{padding:24px 16px 0}
+  .sp-gallery .strip{aspect-ratio:358/106.5}
+  .sp-gallery .g--narrow{flex:0 0 70.48px}
+  .sp-credit{background:var(--white);padding:24px 16px;width:100%;align-items:center;text-align:center;font-size:16px;line-height:17.305px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/sponsors/soos/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Peeler X soos.sound — Zielinski &amp; Rozen">
+<meta property="og:description" content="הקולפן X soos.sound — שיתוף פעולה בין תערוכת הקולפן לסטודיו הרמקולים הפיסוליים של דן סרוסי. הרמקולים של soos מעצבים את הזהות הוויזואלית והאקוסטית של גלריית כיכר המדינה, תל אביב.">
+<meta property="og:url" content="https://art.zrp.co.il/sponsors/soos/">
+<meta property="og:image" content="https://art.zrp.co.il/og/sponsors-soos-hero.jpg">
+<meta property="og:image:alt" content="The Peeler X soos.sound">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Peeler X soos.sound — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="הקולפן X soos.sound — שיתוף פעולה בין תערוכת הקולפן לסטודיו הרמקולים הפיסוליים של דן סרוסי. הרמקולים של soos מעצבים את הזהות הוויזואלית והאקוסטית של גלריית כיכר המדינה, תל אביב.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/sponsors-soos-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/soos/#page","url":"https://art.zrp.co.il/sponsors/soos/","name":"The Peeler X soos.sound","inLanguage":"he-IL","image":"https://art.zrp.co.il/og/sponsors-soos-hero.jpg","description":"הקולפן X soos.sound — שיתוף פעולה בין תערוכת הקולפן לסטודיו הרמקולים הפיסוליים של דן סרוסי, בגלריית כיכר המדינה תל אביב.","about":{"@type":"Organization","name":"soos.sound","url":"https://www.soos.audio"},"publisher":{"@id":"https://art.zrp.co.il/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Peeler X soos.sound","item":"https://art.zrp.co.il/sponsors/soos/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="sponsor">
+
+  <!-- PANEL — text column left (right-aligned content), hero card right (Figma 1318:3287 desktop / 1318:3480 mobile) -->
+  <section class="sp-hero">
+    <div class="row">
+
+      <div class="text-col">
+        <div class="chip-row">
+          <a class="chip heb" href="../../#galleries">גלריית כיכר המדינה</a>
+        </div>
+
+        <h1 class="lockup">
+          <a class="logo-link" href="https://www.soos.audio" target="_blank" rel="noopener" aria-label="soos.sound">
+            <svg class="soos-logo" viewBox="0 0 88 22" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <path d="M10.7928 5.69011H20.3046C18.4836 2.30309 14.9076 0 10.7928 0C4.83226 0 0 4.83226 0 10.7928C0 12.1514 0.252917 13.449 0.711264 14.6465H10.4284V16.5841H1.6868C3.60277 19.5902 6.96295 21.5857 10.7928 21.5857C16.7534 21.5857 21.5857 16.7534 21.5857 10.7928C21.5857 9.69136 21.4195 8.62911 21.1129 7.62776H10.7928V5.69011Z" fill="currentColor"/>
+              <path d="M77.2069 15.8956H67.6952C69.5162 19.2826 73.0921 21.5857 77.2069 21.5857C83.1675 21.5857 87.9997 16.7534 87.9997 10.7928C87.9997 9.43431 87.7468 8.13669 87.2885 6.93921H77.5713V5.00156H86.3119C84.397 1.99546 81.0357 0 77.2069 0C71.2463 0 66.4141 4.83226 66.4141 10.7928C66.4141 11.8943 66.5803 12.9566 66.8869 13.9579H77.2069V15.8956Z" fill="currentColor"/>
+              <path d="M55.0682 21.5857C61.029 21.5857 65.8611 16.7535 65.8611 10.7928C65.8611 4.83211 61.029 0 55.0682 0C49.1075 0 44.2754 4.83211 44.2754 10.7928C44.2754 16.7535 49.1075 21.5857 55.0682 21.5857Z" fill="currentColor"/>
+              <path d="M32.9315 21.5857C38.8923 21.5857 43.7243 16.7535 43.7243 10.7928C43.7243 4.83211 38.8923 0 32.9315 0C26.9708 0 22.1387 4.83211 22.1387 10.7928C22.1387 16.7535 26.9708 21.5857 32.9315 21.5857Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <span class="x">X</span>
+          <a class="name heb" href="../../exhibitions/the-peeler/">הקולפן</a>
+        </h1>
+
+        <div class="sp-main">
+          <div class="sp-body heb">
+            <p><span class="brand">soos.sound</span> מגדיר מחדש את תפקידו של הצליל בתוך חלל. הסטודיו נוסד ומעוצב על ידי דן סרוסי, מעצב מוצר בעל תשוקה עמוקה ורגישות יוצאת דופן לעולם הסאונד.</p>
+            <p>במקום להסתיר את הרמקולים, הסטודיו מביא אותם אל קדמת הבמה והופך אותם לאובייקטים פיסוליים, המעצבים הן את הזהות הוויזואלית והן את הזהות האקוסטית של החלל.</p>
+            <p>בלב כל יצירה נמצא מערך אקוסטי שפותח בקפידה, שבו הצורה, החומר והמבנה הפנימי מתוכננים ביחס ישיר  לביצועי הצליל.</p>
+          </div>
+
+          <div class="sp-divider" aria-hidden="true"><i></i></div>
+
+          <div class="sp-credit heb">
+            <div class="line"><span class="brand">soos.sound</span> | מודל : <span class="brand">Bella</span></div>
+            <a class="line brand" href="https://www.soos.audio" target="_blank" rel="noopener">www.soos.audio</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="img-col">
+        <div class="card">
+          <img src="../../images/sponsors/soos/hero.webp" srcset="../../images/sponsors/soos/hero-480w.webp 480w, ../../images/sponsors/soos/hero-768w.webp 768w, ../../images/sponsors/soos/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1476" alt="רמקול פיסולי בשמנת של soos.sound על סטנד מתכת בחלל תערוכת הקולפן, גלריית כיכר המדינה" decoding="async" fetchpriority="high">
+          <div class="center-text">
+            <div class="name heb">הקולפן</div>
+            <div class="x">X</div>
+            <svg class="soos-logo" viewBox="0 0 88 22" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="soos.sound">
+              <path d="M10.7928 5.69011H20.3046C18.4836 2.30309 14.9076 0 10.7928 0C4.83226 0 0 4.83226 0 10.7928C0 12.1514 0.252917 13.449 0.711264 14.6465H10.4284V16.5841H1.6868C3.60277 19.5902 6.96295 21.5857 10.7928 21.5857C16.7534 21.5857 21.5857 16.7534 21.5857 10.7928C21.5857 9.69136 21.4195 8.62911 21.1129 7.62776H10.7928V5.69011Z" fill="currentColor"/>
+              <path d="M77.2069 15.8956H67.6952C69.5162 19.2826 73.0921 21.5857 77.2069 21.5857C83.1675 21.5857 87.9997 16.7534 87.9997 10.7928C87.9997 9.43431 87.7468 8.13669 87.2885 6.93921H77.5713V5.00156H86.3119C84.397 1.99546 81.0357 0 77.2069 0C71.2463 0 66.4141 4.83226 66.4141 10.7928C66.4141 11.8943 66.5803 12.9566 66.8869 13.9579H77.2069V15.8956Z" fill="currentColor"/>
+              <path d="M55.0682 21.5857C61.029 21.5857 65.8611 16.7535 65.8611 10.7928C65.8611 4.83211 61.029 0 55.0682 0C49.1075 0 44.2754 4.83211 44.2754 10.7928C44.2754 16.7535 49.1075 21.5857 55.0682 21.5857Z" fill="currentColor"/>
+              <path d="M32.9315 21.5857C38.8923 21.5857 43.7243 16.7535 43.7243 10.7928C43.7243 4.83211 38.8923 0 32.9315 0C26.9708 0 22.1387 4.83211 22.1387 10.7928C22.1387 16.7535 26.9708 21.5857 32.9315 21.5857Z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY STRIP — soos in the gallery space (Figma 1329:188; ה-crops של 01/03 נאפו מ-Figma) -->
+  <section class="sp-gallery" aria-label="הרמקולים של soos בגלריה">
+    <div class="strip">
+      <div class="g"><img src="../../images/sponsors/soos/gallery-01.webp" width="643" height="779" alt="רמקול פיסולי של soos.sound בין שני פדסטלים עם עבודות בתערוכת הקולפן" loading="lazy" decoding="async"></div>
+      <div class="g"><img src="../../images/sponsors/soos/gallery-02.webp" width="660" height="880" alt="רמקול פיסולי של soos.sound על סטנד מול קיר עבודות בגלריה" loading="lazy" decoding="async"></div>
+      <div class="g"><img src="../../images/sponsors/soos/gallery-03.webp" width="643" height="780" alt="רמקול soos.sound לצד פדסטל עץ ושולחן תצוגה עם עבודות" loading="lazy" decoding="async"></div>
+      <div class="g g--narrow"><img src="../../images/sponsors/soos/gallery-04.webp" width="520" height="780" alt="תקריב של רמקול soos.sound לצד כרטיס המידע של הסטודיו בתערוכה" loading="lazy" decoding="async"></div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/site-chrome.js?v=5" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>
