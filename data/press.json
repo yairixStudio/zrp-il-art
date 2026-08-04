@@ -24,7 +24,7 @@
       "date": "2026-08-07",
       "cover_image": "images/events/anat-wegier/card.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/anat-wegier/",
       "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1366"
     },
@@ -37,7 +37,7 @@
       "date": "2026-08-06",
       "cover_image": "images/events/alice-debellis/hero.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/alice-debellis/"
     },
     {
@@ -48,7 +48,7 @@
       "date": "2026-07-24",
       "cover_image": "images/events/risa-and-noemi/card.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/risa-and-noemi/"
     },
     {
@@ -60,7 +60,7 @@
       "date_tbd": true,
       "cover_image": "images/events/zohar-ron/card.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/zohar-ron/"
     },
     {
@@ -71,7 +71,7 @@
       "date": "2026-07-17",
       "cover_image": "images/events/nir-giorgio-levin/card.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/nir-giorgio-levin/"
     },
     {
@@ -82,7 +82,7 @@
       "date": "2026-07-16",
       "cover_image": "images/events/liel-salman/logo.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/liel-salman/"
     },
     {
@@ -93,7 +93,7 @@
       "date": "2026-07-09",
       "cover_image": "images/events/natasha-zeriker/hero.webp",
       "exhibition_id": null,
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/natasha-zeriker/"
     },
     {
@@ -145,7 +145,7 @@
       "date": "2026-06-29",
       "cover_image": "images/events/artist-talk/card.webp",
       "exhibition_id": "how-many",
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": null,
       "_route_note": "אין דף אירוע עדיין — הכרטיס בהומפייג' מציג טוסט 'בקרוב' בלחיצה (Figma 1124:1354, 2026-07-15). התמונה = חלון הראווה, אותה תמונה כמו כרטיס artist-talk",
       "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1389"
@@ -159,7 +159,7 @@
       "cover_image": "images/events/artist-talk/hero-desktop.webp",
       "exhibition_id": "how-many",
       "_homepage_visible_note": "Restored to the homepage grid per Figma 1124:1354 (2026-07-15) — single card, last row, left side.",
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/artist-talk/",
       "figma_home_card_desktop": "XhGH289YTRcW811wrufRJz::818:159",
       "figma_home_card_mobile": "XhGH289YTRcW811wrufRJz::818:17"
@@ -194,7 +194,7 @@
       "date": "2026-01-19",
       "cover_image": "images/press/portfolio-cover.webp",
       "exhibition_id": "loneliness",
-      "homepage_visible": true,
+      "homepage_visible": false,
       "_alias": "press-1"
     },
     {
@@ -267,7 +267,7 @@
       "date": "2026-06-02",
       "cover_image": "images/events/close-look/card.webp",
       "exhibition_id": "how-many",
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/close-look/",
       "figma_home_card_desktop": "XhGH289YTRcW811wrufRJz::428:445",
       "figma_home_card_mobile": "XhGH289YTRcW811wrufRJz::435:3"
@@ -294,7 +294,7 @@
       "cover_image": "images/events/ktuba/card.webp",
       "exhibition_id": "loneliness",
       "event_id": "ktuba",
-      "homepage_visible": true,
+      "homepage_visible": false,
       "route": "events/ktuba/"
     },
     {

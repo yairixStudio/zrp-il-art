@@ -86,7 +86,12 @@ legacy — מובייל:
 כרטיס בודד — אוברליי טקסט מעודכן (2026-07-30, `1258:746`, 200×301): Solway `EXHIBITION • VOLUME 2` + תאריך Bold 14 + `HAMEDINA`:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1258-746&m=dev
 
-### Homepage — `#press` redesign v3 (רשימת הכרטיסים, 2026-07-14)
+### Homepage — `#press` press-9 (רה-דיזיין אוגוסט 2026, 2026-08-04) ✅ המצב הנוכחי
+
+הסקשן המצומצם — 9 כרטיסים (כל העיתונות + 2 פתיחות) + כפתור "more press & events" (מובייל; דסקטופ = אנטומיית `/press/`): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1322-258&m=dev
+
+### Homepage — `#press` redesign v3 (רשימת הכרטיסים, 2026-07-14) — legacy, הוחלף ב-press-9
 
 press & events דסקטופ (19 כרטיסים, 2 עמודות): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1354&m=dev

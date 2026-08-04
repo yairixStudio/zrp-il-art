@@ -445,30 +445,20 @@
   "figma_gallery_strip_mobile": "363:649"
  },
  "press_section": {
-  "_note": "2026-08-04 — הגריד דינמי ב-index.html: תמיד 2 האירועים האחרונים לפי תאריך (date_tbd לא נספר כ'אחרון') ואז כל כתבות העיתונות (type:press). מקור: #press-data. כותרת PRESS + EVENTS → /press/ (עמוד press & events; /events/ = upcoming בלבד).",
+  "_note": "רה-דיזיין 2026-08 (Figma 1322:258): 9 כרטיסים בלבד — כל כתבות העיתונות + שני אירועי הפתיחה (בקשת קורין); שאר האירועים בעמוד /press/. הסדר כרונולוגי חדש→ישן = סדר ה-DOM (מובייל עמודה אחת; דסקטופ שתי ריצות-עמודה). כפתור more press & events → /press/.",
   "title_b": "press",
   "title_l": "& events",
   "item_ids": [
-   "the-sixth-scent",
-   "event-anat-wegier-talk",
-   "event-how-many-close-look-1",
-   "event-risa-and-noemi",
-   "time-out",
-   "event-zohar-ron-talk",
-   "event-how-many-2026-05-26",
-   "event-nir-giorgio-levin-talk",
-   "event-loneliness-3",
-   "event-liel-salman-popup",
-   "event-loneliness-4",
-   "event-natasha-zeriker-evening",
-   "press-1",
    "13tv-peeling-a-layer",
-   "walla-medina",
    "timeout-manicure-against-darkness",
-   "time-out-final-countdown-2025",
-   "event-tal-nehoray-talk",
-   "event-alice-debellis-talk",
-   "event-how-many-artist-talk"
-  ]
+   "the-sixth-scent",
+   "time-out",
+   "event-how-many-2026-05-26",
+   "event-loneliness-4",
+   "press-1",
+   "walla-medina",
+   "time-out-final-countdown-2025"
+  ],
+  "view_all_route": "press/"
  }
 }
