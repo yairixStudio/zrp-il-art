@@ -16,6 +16,14 @@
 
     var count = slides.length;
     var idx   = 0;
+    if(section.dataset.triStart !== undefined){
+      var start = parseInt(section.dataset.triStart, 10);
+      if(!isNaN(start)) idx = Math.max(0, Math.min(count - 1, start));
+    } else {
+      for(var di = 0; di < dots.length; di++){
+        if(dots[di].classList.contains('is-on')){ idx = di; break; }
+      }
+    }
     var loop  = section.dataset.triLoop !== 'false';
 
     /* Caption element — auto-created if any slide has data-caption */
