@@ -478,39 +478,20 @@ body{text-transform:uppercase}
   .pp-sub-en{font-weight:300}
 }
 
-/* ===== BIG BIG NEWS (new sales point — shop inside medina gallery) — Figma 1124:1011 desktop / 1124:240 mobile ===== */
-.news-promo{background:var(--white);padding:48px var(--pad-x) 32px;max-width:var(--max);margin:0 auto;box-sizing:border-box}
-.news-promo-inner{display:flex;gap:48px;align-items:stretch}
-.nb-info{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px;text-align:center}
-.nb-title{font-family:var(--heb);font-weight:400;font-size:clamp(48px,5.56vw,80px);line-height:1.25;color:var(--ink)}
-.nb-sub{display:flex;flex-direction:column;align-items:center;gap:16px}
-.nb-sub-main{font-family:var(--heb);font-weight:300;font-size:28px;line-height:1.4;color:var(--ink)}
-.nb-sub-addr{font-family:var(--heb);font-weight:300;font-size:20px;line-height:1.4;color:var(--ink)}
+/* ===== BIG NEWS (new sales point — shop inside medina gallery) — Figma 1318:583 mobile; desktop = adaptation (redesign 2026-08) ===== */
+.news-promo{background:var(--white);padding:72px var(--pad-x);max-width:var(--max);margin:0 auto;box-sizing:border-box}
+.news-promo-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
+.nb-head{font-family:var(--cop);font-weight:700;font-size:clamp(26px,3.06vw,44px);line-height:1.1;color:var(--ink)}
+.nb-title{font-family:var(--heb);font-weight:400;font-size:clamp(36px,4.45vw,64px);line-height:1.25;color:var(--ink)}
+.nb-sub{display:flex;flex-direction:column;align-items:center;gap:12px}
+.nb-sub-main{font-family:var(--heb);font-weight:300;font-size:clamp(24px,1.95vw,28px);line-height:1.4;color:var(--ink)}
+.nb-sub-addr{font-family:var(--heb);font-weight:300;font-size:clamp(18px,1.4vw,20px);line-height:1.4;color:var(--ink)}
 .nb-sub-addr a{color:inherit;text-decoration:none}
 .nb-sub-addr a:hover{text-decoration:underline}
-.nb-media{position:relative;flex:0 0 492px;width:492px;aspect-ratio:1/1;overflow:hidden}
-.nb-media picture{display:contents}
-.nb-media img{width:100%;height:100%;object-fit:cover;display:block}
-.nb-media::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.33);pointer-events:none}
-.nb-overlay{position:absolute;inset:0;z-index:1;display:grid;place-items:center;pointer-events:none}
-.nb-overlay>*{grid-area:1/1}
-.nb-ring{width:248px;height:248px;overflow:visible;justify-self:center;align-self:center}
-.nb-ring text{font-family:var(--cop);font-weight:400;font-size:36px;letter-spacing:.09em;fill:var(--white)}
-.nb-news{font-family:var(--cop);font-weight:400;font-size:40px;line-height:1;color:var(--white);justify-self:center;align-self:center}
-@media (max-width:1199px){
-  .news-promo-inner{flex-direction:column-reverse;align-items:center;gap:40px}
-  .nb-media{flex:0 0 auto;width:100%;max-width:492px}
-  .nb-info{width:100%;gap:32px}
-  .nb-title{font-size:clamp(36px,7vw,56px)}
-}
 @media (max-width:768px){
-  .news-promo{padding:32px var(--pad-x)}
+  .news-promo{padding:52px var(--pad-x)}
   .news-promo-inner{gap:24px}
-  .nb-info{gap:24px}
   .nb-sub{gap:8px}
-  .nb-title{font-size:36px}
-  .nb-sub-main{font-size:24px}
-  .nb-sub-addr{font-size:18px}
 }
 
 /* ===== TRIBE TEASER (loneliness × the tribe) — Figma 250:87 desktop / 363:618 mobile; data: homepage.json :: tribe_teaser ===== */
@@ -1608,34 +1589,14 @@ porta</div></a>
   </div>
 </section>
 
-<!-- BIG BIG NEWS — new sales point (shop inside medina gallery) · Figma 1124:1011 (desktop) / 1124:240 (mobile) · data: homepage.json :: big_news -->
-<section class="news-promo" id="big-news" aria-label="big big news — new sales point">
+<!-- BIG NEWS — new sales point (shop inside medina gallery) · Figma 1318:583 (mobile; desktop = adaptation, redesign 2026-08) · data: homepage.json :: big_news -->
+<section class="news-promo" id="big-news" aria-label="big news — new sales point">
   <div class="news-promo-inner">
-    <div class="nb-info">
-      <h2 class="nb-title heb" dir="rtl">פתחנו לכם נקודת<br>מכירה נוספת!</h2>
-      <div class="nb-sub">
-        <p class="nb-sub-main heb" dir="rtl">חנות חדשה בתוך הגלריה</p>
-        <p class="nb-sub-addr heb" dir="rtl"><a href="#galleries">כיכר המדינה, רח׳ ז׳בוטינסקי 131, תל אביב</a></p>
-      </div>
-    </div>
-    <div class="nb-media">
-      <img src="images/homepage/big-news/shop.webp" srcset="images/homepage/big-news/shop-480w.webp 480w, images/homepage/big-news/shop-768w.webp 768w, images/homepage/big-news/shop.webp 984w" sizes="(max-width:768px) 100vw, 492px" width="984" height="1312" alt="החנות החדשה בתוך גלריית כיכר המדינה" loading="lazy" decoding="async">
-      <div class="nb-overlay" aria-hidden="true">
-        <svg class="nb-ring" viewBox="0 0 248 248" role="presentation" focusable="false">
-          <defs>
-            <path id="nbRingPath" d="M124,23 a101,101 0 1,1 -0.01,0" fill="none"/>
-          </defs>
-          <text>
-            <textPath href="#nbRingPath" startOffset="0%">BIG</textPath>
-            <textPath href="#nbRingPath" startOffset="16.666%">BIG</textPath>
-            <textPath href="#nbRingPath" startOffset="33.333%">BIG</textPath>
-            <textPath href="#nbRingPath" startOffset="50%">BIG</textPath>
-            <textPath href="#nbRingPath" startOffset="66.666%">BIG</textPath>
-            <textPath href="#nbRingPath" startOffset="83.333%">BIG</textPath>
-          </text>
-        </svg>
-        <span class="nb-news">news</span>
-      </div>
+    <h2 class="nb-head">big news</h2>
+    <p class="nb-title heb" dir="rtl">פתחנו לכם נקודת<br>מכירה נוספת!</p>
+    <div class="nb-sub">
+      <p class="nb-sub-main heb" dir="rtl">חנות חדשה בתוך הגלריה</p>
+      <p class="nb-sub-addr heb" dir="rtl"><a href="#galleries">כיכר המדינה, רח׳ ז׳בוטינסקי 131, תל אביב</a></p>
     </div>
   </div>
 </section>

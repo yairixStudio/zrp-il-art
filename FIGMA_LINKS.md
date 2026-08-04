@@ -31,15 +31,18 @@
 עמוד בית מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-2&m=dev
 
-### Homepage — "BIG BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; בין `#artworks` ל-`#perfume-promo`)
+### Homepage — "BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; בין `#artworks` ל-`#perfume-promo`)
 
-סקשן news דסקטופ: Implement this design from Figma.
+סקשן news מובייל **(עיצוב נוכחי, רה-דיזיין 2026-08 — טקסט בלבד; אין frame דסקטופ, האתר = אדפטציה)**: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-583&m=dev
+
+legacy (העיצוב הישן עם תמונה+טבעת BIG, הוחלף 2026-08-04) — דסקטופ:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1011&m=dev
 
-סקשן news מובייל: Implement this design from Figma.
+legacy — מובייל:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-240&m=dev
 
-> ⚠️ ה-frames האלה יושבים בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21` (עותקי homepage מעודכנים). ה-node `1124:1030` (דסקטופ) / `1124:256` (מובייל) שם = סקשן ה-perfume promo שכבר בנוי.
+> ⚠️ ה-frames הישנים יושבים בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21`. ה-node החדש `1318:583` יושב בתוך עמוד הבית המובייל החדש `1318:363` (רה-דיזיין אוגוסט 2026); שם ה-node שלו ב-Figma הוא "Exhibitions Archive" — משקר.
 
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15)
 

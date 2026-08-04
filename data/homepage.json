@@ -82,15 +82,13 @@
   "works"
  ],
  "big_news": {
-  "ring_text_en": "big big big big big big",
-  "badge_en": "news",
+  "heading_en": "big news",
   "title_he": "פתחנו לכם נקודת\nמכירה נוספת!",
   "subtitle_he": "חנות חדשה בתוך הגלריה",
   "address_he": "כיכר המדינה, רח׳ ז׳בוטינסקי 131, תל אביב",
   "gallery_id": "medina",
-  "image": "images/homepage/big-news/shop.webp",
-  "figma_node_desktop": "1124:1011",
-  "figma_node_mobile": "1124:240",
+  "figma_node_desktop": null,
+  "figma_node_mobile": "1318:583",
   "figma_file": "XhGH289YTRcW811wrufRJz"
  },
  "social_section": {
