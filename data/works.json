@@ -1,36 +1,24 @@
 {
   "$schema": "./_schema/works.schema.json",
-  "_note": "Inventory of art works. `works` = the 4 homepage tiles. `art_works` = full Art Works page grid (Figma mobile 489:4 = content source, desktop 491:928 = layout). Each art_work: artist link, optional bilingual title, gallery link (→ homepage #galleries), sold flag, optional gray details, image + responsive variant widths. Page embeds this inline (file:// can't fetch); keep both in sync.",
+  "_note": "Inventory of art works. `works` = the 3 homepage checkerboard image tiles (redesign 2026-08, Figma mobile 1318:560; text cells the/ART works/more are static HTML). `art_works` = full Art Works page grid (Figma mobile 489:4 = content source, desktop 491:928 = layout). Each art_work: artist link, optional bilingual title, gallery link (→ homepage #galleries), sold flag, optional gray details, image + responsive variant widths. Page embeds this inline (file:// can't fetch); keep both in sync.",
   "works": [
     {
-      "id": "tile-the",
-      "title": "the",
-      "homepage_word": "the",
-      "image": "images/works/tile-the.webp",
+      "id": "aw-1",
+      "image": "images/homepage/artworks/aw-1.webp",
+      "figma_image_ref": "2baf9d2e891f0960f8b059425a320558cb844f3f",
       "artist_id": null
     },
     {
-      "id": "tile-art",
-      "title": "art",
-      "homepage_word": "art",
-      "homepage_word_mobile": "ART",
-      "image": "images/works/tile-art.webp",
+      "id": "aw-2",
+      "image": "images/homepage/artworks/aw-2.webp",
+      "figma_image_ref": "3f0a517da4e3c1e2efe50226a6313364f007dbbe",
       "artist_id": null
     },
     {
-      "id": "tile-works",
-      "title": "works",
-      "homepage_word": "works",
-      "image": "images/works/tile-works.webp",
+      "id": "aw-3",
+      "image": "images/homepage/artworks/aw-3.webp",
+      "figma_image_ref": "99bbf47bcaa88f239bad7133b1c4e6623b74fb10",
       "artist_id": null
-    },
-    {
-      "id": "tile-more",
-      "title": "more",
-      "homepage_word": "more",
-      "is_cta": true,
-      "image": "images/works/tile-more.webp",
-      "href": "/works"
     }
   ],
   "art_works": [
