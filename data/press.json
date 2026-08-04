@@ -3,6 +3,19 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-the-space-between",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "ערב שיח עם מור צופיה געש",
+      "title_en": "the space between — a conversation about art, materials and human experience",
+      "date": "2026-09-03",
+      "cover_image": "images/events/the-space-between/hero.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "_note": "לא בגריד #press בהומפייג' (הנחיית רה-דיזיין 2026-08: שם רק כתבות + 2 פתיחות). כשעמוד /press/ ייבנה — כרטיס בראש הרשימה (תג gallery event | kikar hamedina).",
+      "route": "events/the-space-between/"
+    },
+    {
       "id": "event-anat-wegier-talk",
       "type": "event",
       "tag_en": "gallery event",

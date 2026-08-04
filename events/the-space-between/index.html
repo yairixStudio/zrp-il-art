@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Space Between — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Light.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="ערב שיח עם מור צופיה געש — The Space Between: a conversation about art, materials and human experience. גלריית כיכר המדינה, יום חמישי 3 בספטמבר 2026 — 19:30 התכנסות וכוס יין, 20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה. כיכר המדינה, ז׳בוטינסקי 131, תל אביב.">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;
+  --icon-grey:#707070;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+/* .dbr — desktop-only line break (the Figma desktop headline hard-breaks lines that flow naturally on mobile) */
+.dbr{display:inline}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase}
+
+/* ===== EVENT PAGE — artist-talk family (Figma: tinted panel, text left / photo right).
+   the-space-between variant: no exhibition attribution, no artists strip, no registration note
+   (the Figma exhibition-bar containers are deliberately empty — verified in both frames). ===== */
+.event{display:flex;flex-direction:column;background:var(--white)}
+
+/* HERO BAND — tinted #EEF0EF panel, two columns (Figma "Main container", padding 48/96/32) */
+.event-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.event-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.event-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:0 16px}
+
+/* Title — Copperplate, centered. Figma is 80/72; our Copperplate webfont sets ~28% wider than
+   Figma's, so 64/58 reproduces the drawn width and the same line wraps (optical match,
+   docs/conventions.md §5.2). Padding-top guards the caps against the tight line-height. */
+.h-title{font-family:var(--cop);font-weight:400;font-size:64px;line-height:58px;text-align:center;color:var(--ink);width:100%;padding-top:.14em}
+
+/* Meta — gallery, then date · weekday (1×1 dot, Figma) */
+.h-meta{display:flex;flex-direction:column;gap:8px;align-items:center;padding:0 10px 8px}
+.h-meta .row-1,.h-meta .row-2{display:flex;align-items:center;gap:8px;justify-content:center}
+.h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
+
+/* Body — Hebrew (FbEzmel), Figma text box 358px, 16/20, centered */
+.h-body{width:358px;max-width:100%;font-size:16px;line-height:20px;text-align:center;color:var(--ink)}
+.h-body.heb{font-family:var(--heb);font-weight:300;direction:rtl}
+.h-body p+p{margin-top:20px}
+
+/* Venue address — Copperplate Light, 3 explicit lines (no auto-wrap) */
+.h-address{font-family:var(--cop);font-weight:300;font-size:16px;line-height:20px;text-align:center;max-width:100%}
+
+/* Hero card — 492×744 photo; the Figma scrim layers sank below the image by mistake, the
+   verified intent (render RMSE 0.5%) is a TOP-anchored gradient — the title sits at the top. */
+.event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
+.event-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
+/* picture-upgrade.js wraps the <img> in a <picture> at runtime — size both, or the image
+   collapses to its intrinsic height and the card's black background shows through. */
+.event-hero .card>picture{display:contents}
+.event-hero .card img{width:100%;height:100%;object-fit:cover;display:block}
+.event-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.8) 0%,rgba(0,0,0,0) 100%);pointer-events:none}
+/* Overlay: multi-line title block in the upper third (Figma box 402w, center y≈202/744) */
+.event-hero .card .center-text{position:absolute;left:50%;top:27.2%;transform:translate(-50%,-50%);width:402px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:10px;color:#fff;z-index:2;text-align:center}
+.event-hero .card .center-text .en{font-family:var(--cop);font-weight:700;font-size:30px;line-height:1.3;letter-spacing:.02em}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1320px){ :root{--pad-x:96px} }
+
+/* Narrow desktop / tablet — shrink the photo and the display title together */
+@media (max-width:1319px) and (min-width:769px){
+  .event-hero .row{gap:32px;min-width:0}
+  .event-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .event-hero .card{width:100%;max-width:400px;height:640px}
+  .h-title{font-size:44px;line-height:42px}
+  .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:22px}
+  .event-hero .card .center-text{width:327px}
+  .event-hero .card .center-text .en{font-size:24px}
+}
+@media (max-width:1050px) and (min-width:769px){
+  .h-title{font-size:34px;line-height:34px}
+}
+
+/* Mobile (Figma 390): hero photo first, then each block on white, full-width */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .dbr{display:none}
+
+  .event-hero{display:contents}
+  .event-hero .row,.event-hero .text-col{display:contents}
+
+  .event-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
+  .h-title{order:2}
+  .h-meta{order:3}
+  .h-body{order:4}
+  .h-address{order:5}
+
+  /* Hero card — full-bleed 520h with a flat 40% scrim (Figma mobile fill) */
+  .event-hero .card{width:100%;max-width:none;height:520px}
+  .event-hero .card::after{background:rgba(27,27,27,.4)}
+  .event-hero .card .center-text{top:28%;width:353px;max-width:calc(100% - 24px);gap:16px}
+  .event-hero .card .center-text .en{font-size:23px}
+
+  /* Text blocks — white background, 16px padding (Figma mobile sections) */
+  .h-title{background:var(--white);padding:32px 16px 0;font-size:18px;line-height:1.5;width:100%}
+  .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
+  .h-meta .gallery{font-size:14px}
+  .h-meta .date,.h-meta .time{font-size:14px}
+  .h-meta .dot{display:none}
+  .h-body{background:var(--white);padding:16px;width:100%;font-size:16px}
+  .h-address{background:var(--white);padding:16px 16px 32px;width:100%;font-size:14px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/events/the-space-between/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Space Between — Zielinski &amp; Rozen">
+<meta property="og:description" content="ערב שיח עם מור צופיה געש — The Space Between: a conversation about art, materials and human experience. גלריית כיכר המדינה, יום חמישי 3 בספטמבר 2026 — 19:30 התכנסות וכוס יין, 20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה.">
+<meta property="og:url" content="https://art.zrp.co.il/events/the-space-between/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-the-space-between-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1815">
+<meta property="og:image:alt" content="The Space Between — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Space Between — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="ערב שיח עם מור צופיה געש — The Space Between: a conversation about art, materials and human experience. גלריית כיכר המדינה, יום חמישי 3 בספטמבר 2026 — 19:30 התכנסות וכוס יין, 20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-the-space-between-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/the-space-between/#event","url":"https://art.zrp.co.il/events/the-space-between/","name":"The Space Between — A Conversation About Art, Materials and Human Experience","image":"https://art.zrp.co.il/og/events-the-space-between-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-09-03T19:30","description":"ערב שיח עם מור צופיה געש — The Space Between: שיחה על אמנות, חומרים וחוויה אנושית. גלריית כיכר המדינה, יום חמישי 3 בספטמבר 2026 — 19:30 התכנסות וכוס יין, 20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Space Between","item":"https://art.zrp.co.il/events/the-space-between/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="event">
+
+  <!-- HERO BAND — tinted panel: text column left, photo card right (Figma 1361:434 desktop / 1361:232 mobile) -->
+  <section class="event-hero">
+    <div class="row">
+
+      <div class="text-col">
+        <h1 class="h-title">the space between<br>a conversation<br class="dbr"> about art,<br class="dbr"> materials and human experience.</h1>
+
+        <div class="h-meta">
+          <div class="row-1"><span class="gallery heb">גלריית כיכר המדינה</span></div>
+          <div class="row-2">
+            <span class="date heb"><bdi>3 ספטמבר 2026</bdi></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="time heb"><bdi>יום חמישי</bdi></span>
+          </div>
+        </div>
+
+        <div class="h-body heb">
+          <p>19:30 התכנסות וכוס יין<br>20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה</p>
+          <p>על האירוע:<br>מה אנחנו באמת זוכרים ממקום?<br>האם זו הצורה שלו, החומרים, או דווקא התחושה שנשארת איתנו הרבה אחרי שעזבנו?<br>בערב זה נצא למסע בין אמנות, עיצוב וחומר, ונחקור כיצד בחירות חומריות, אור, צבע וטקסטורה יוצרות חוויה אנושית ומשפיעות על הדרך שבה אנחנו מרגישים, זוכרים ומתחברים למרחב.</p>
+          <p>על מנחת הערב:<br>מור צופיה געש היא מעצבת פנים לחללים מסחריים ואמנית יוצרת.<br>בעבודתה היא נעה בין שני עולמות: יצירה אמנותית ועיצוב מרחבים, מתוך חיפוש אחר הדרך שבה חומר, צבע וטקסטורה יכולים לעורר רגש ולספר סיפור.<br>העבודות שלה בוחנות את המרחב שבין הפיזי לרגשי, בין רעיון לחומר, ובין אסתטיקה לחוויה אנושית.</p>
+        </div>
+
+        <div class="h-address">
+          THE art GALLERY by erez ZiELINSKI &amp; ROZEN<br>
+          kikar hamedina<br>
+          131 Jabotinsky st. tel aviv
+        </div>
+      </div>
+
+      <div class="img-col">
+        <div class="card">
+          <img src="../../images/events/the-space-between/hero.webp" srcset="../../images/events/the-space-between/hero-480w.webp 480w, ../../images/events/the-space-between/hero-768w.webp 768w, ../../images/events/the-space-between/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1488" alt="מור צופיה געש בגלריית כיכר המדינה — ערב The Space Between" decoding="async" fetchpriority="high">
+          <div class="center-text">
+            <div class="en">the space between<br>a conversation<br> about art,<br> materials and human experience.</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/site-chrome.js?v=5" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>

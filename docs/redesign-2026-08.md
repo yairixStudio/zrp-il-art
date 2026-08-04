@@ -236,7 +236,7 @@ hero: גם באוברליי על התמונה מופיע הלוקאפ (הקול�
 | 1 | עמוד ‎/events/‎ | ⏳ |
 | 2 | עמוד ‎/press/‎ + nav | ⏳ |
 | 3 | עמוד ‎/sponsors/soos/‎ | ⏳ |
-| 4 | עמוד ‎/events/the-space-between/‎ | ⏳ |
+| 4 | עמוד ‎/events/the-space-between/‎ | ✅ 2026-08-04 — הדף + `events.json` (שדות חדשים `day_he`/`host_he`) + `press.json` (`homepage_visible:false`) + sitemap + OG + שורת CLAUDE.md §4. **בנוסף (מחוץ לפרומפט):** רשומה ב-`#events-upcoming-data` (הקרוסלה הנוכחית) — בקשת משתמש לקישור מההומפייג'; פרומפט 6 שמחליף את הסקשן יכול למחוק אותה בבטחה (האירוע יופיע ב-`/events/`). כרטיס `/press/` ממתין לפרומפט 2 (רשומת ה-meta כבר ב-`press.json`). |
 | 5 | בשמים (עדכון + חדש) | ⏳ |
 | 6 | upcoming section חדש | ⏳ |
 | 7 | big news חדש | ⏳ |

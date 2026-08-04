@@ -659,6 +659,50 @@
       "figma_node_mobile": "1107:1981",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk"
+    },
+    {
+      "id": "the-space-between",
+      "slug": "the-space-between",
+      "title_he": "ערב שיח עם מור צופיה געש",
+      "title_en": "the space between — a conversation about art, materials and human experience",
+      "host_he": "מור צופיה געש",
+      "exhibition_id": null,
+      "date": "2026-09-03",
+      "date_he": "3 ספטמבר 2026",
+      "day_he": "יום חמישי",
+      "time_start": "19:30",
+      "time_end": null,
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/the-space-between/hero.webp",
+      "description_he": [
+        "19:30 התכנסות וכוס יין",
+        "20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה",
+        "",
+        "על האירוע:",
+        "מה אנחנו באמת זוכרים ממקום?",
+        "האם זו הצורה שלו, החומרים, או דווקא התחושה שנשארת איתנו הרבה אחרי שעזבנו?",
+        "בערב זה נצא למסע בין אמנות, עיצוב וחומר, ונחקור כיצד בחירות חומריות, אור, צבע וטקסטורה יוצרות חוויה אנושית ומשפיעות על הדרך שבה אנחנו מרגישים, זוכרים ומתחברים למרחב.",
+        "",
+        "על מנחת הערב:",
+        "מור צופיה געש היא מעצבת פנים לחללים מסחריים ואמנית יוצרת.",
+        "בעבודתה היא נעה בין שני עולמות: יצירה אמנותית ועיצוב מרחבים, מתוך חיפוש אחר הדרך שבה חומר, צבע וטקסטורה יכולים לעורר רגש ולספר סיפור.",
+        "העבודות שלה בוחנות את המרחב שבין הפיזי לרגשי, בין רעיון לחומר, ובין אסתטיקה לחוויה אנושית."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [],
+      "_note": "מור צופיה געש = מעצבת פנים אורחת, לא אומנית של האתר — אין דף אומן, אין רצועת אומנים. אין שיוך תערוכה (קונטיינרי פס-התערוכה בפיגמה ריקים בכוונה), אין הערת הרשמה. השדות day_he/host_he חדשים (המטא מציג יום-בשבוע במקום שעה; השעות בתוך הגוף).",
+      "_image_note": "hero = imageRef 8ad5c38a… (מור בגלריית המדינה, \"ניגודים\" של אהרן בס ברקע; מקור 2268×4033) — cover ממורכז 984×1488, אומת RMSE 0.5% מול רינדור node 1361:498 כולל הגרדיאנט העליון. ה-fill הנוסף d64bdefda… (crop 5bc24f = ההירו של zohar-ron) הוא leftover מוסתר — לא בשימוש. scrim: דסקטופ גרדיאנט 180deg כהה-למעלה (הכותרת בראש התמונה), מובייל rgba(27,27,27,.4) שטוח — בפיגמה שכבות ה-scrim שקעו בטעות מתחת לתמונה.",
+      "route": "events/the-space-between/",
+      "homepage_visible": true,
+      "figma_node_desktop": "1361:434",
+      "figma_node_mobile": "1361:232",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "the space between"
     }
   ]
 }
