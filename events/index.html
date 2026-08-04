@@ -66,12 +66,15 @@ body{text-transform:uppercase}
 .ev-card .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
 .ev-card picture{display:contents}
 .ev-card:hover .im img{transform:scale(1.04)}
-/* tag chip — grey pill, one line with pipe on desktop, two lines on mobile (per Figma) */
+/* tag chip — always two lines (event / gallery); font shrinks to fit; long names may wrap */
 .ev-card .tag{
   background:var(--bg-grey);padding:4px 8px;
   font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.35;letter-spacing:.02em;
+  max-width:100%;width:max-content;box-sizing:border-box;
 }
-.ev-card .tag .t1,.ev-card .tag .t2{display:inline}
+.ev-card .tag .t1,.ev-card .tag .t2{display:block;white-space:nowrap}
+.ev-card .tag .sep{display:none}
+.ev-card .tag.tag--wrap .t2{white-space:normal}
 .ev-card .ttl{font-family:var(--cop);font-weight:400;font-size:13px;line-height:1.5;letter-spacing:.02em}
 .ev-card .date{font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.2;letter-spacing:.02em}
 .ev-card .date--tbd{font-family:var(--heb);font-weight:400;font-size:14px;direction:rtl;text-transform:none;letter-spacing:0}
@@ -99,9 +102,6 @@ body{text-transform:uppercase}
   .hero h1{font-size:27px;line-height:1.1}
   .ev-list{grid-template-columns:1fr;gap:24px;padding:24px 16px 32px}
   .ev-card .im{flex:0 0 171px;aspect-ratio:171/108}
-  /* tag splits to two lines, no pipe — per Figma mobile */
-  .ev-card .tag .t1,.ev-card .tag .t2{display:block}
-  .ev-card .tag .sep{display:none}
 }
 </style>
 <!-- SEO:auto:start -->
@@ -202,6 +202,39 @@ body{text-transform:uppercase}
       +'</a>';
   }).join('');
   if(window.PictureUpgrade) PictureUpgrade.refresh(list);
+
+  /* Shrink tag font so line 1 + line 2 fit; allow extra wraps only for unusually long gallery names */
+  function fitEventTags(){
+    var MIN=8,MAX=11.5,LONG_T2=20;
+    list.querySelectorAll('.ev-card .tag').forEach(function(tag){
+      var t1=tag.querySelector('.t1'),t2=tag.querySelector('.t2');
+      if(!t1||!t2) return;
+      var avail=tag.parentElement.clientWidth;
+      var t2len=(t2.textContent||'').trim().length;
+      tag.classList.remove('tag--wrap');
+      t1.style.whiteSpace='nowrap';
+      t2.style.whiteSpace='nowrap';
+      tag.style.fontSize=MAX+'px';
+      tag.style.maxWidth=avail+'px';
+      var px=MAX;
+      while(px>MIN){
+        tag.style.fontSize=px+'px';
+        if(tag.scrollWidth<=avail) break;
+        px-=0.5;
+      }
+      if(t2len>LONG_T2||(px<=MIN&&tag.scrollWidth>avail)){
+        tag.classList.add('tag--wrap');
+        t2.style.whiteSpace='normal';
+      }
+    });
+  }
+  fitEventTags();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitEventTags);
+  var fitTimer;
+  window.addEventListener('resize',function(){
+    clearTimeout(fitTimer);
+    fitTimer=setTimeout(fitEventTags,100);
+  });
 })();
 </script>
 </main>
