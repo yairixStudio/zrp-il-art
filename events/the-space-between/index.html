@@ -97,8 +97,12 @@ body{text-transform:uppercase}
   .event-hero .card .center-text{width:327px}
   .event-hero .card .center-text .en{font-size:24px}
 }
+/* Fluid title in the squeezed tier: the text column bottoms out near 210px while
+   "A CONVERSATION" must stay on one line (fixed break) — 34px overflows below ~1000px
+   (orphan "A" + the word spilling past the column). (100vw − 560px) tracks the column
+   width (paddings + gap + 400px image), /10.6 = the line's width in em. */
 @media (max-width:1050px) and (min-width:769px){
-  .h-title{font-size:34px;line-height:34px}
+  .h-title{font-size:min(34px,calc((100vw - 560px)/10.6));line-height:1.08}
 }
 
 /* Mobile (Figma 390): hero photo first, then each block on white, full-width */
