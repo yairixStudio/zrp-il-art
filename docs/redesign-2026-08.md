@@ -233,7 +233,7 @@ hero: גם באוברליי על התמונה מופיע הלוקאפ (הקול�
 
 | # | משימה | סטטוס |
 |---|---|---|
-| 1 | עמוד ‎/events/‎ | ⏳ |
+| 1 | עמוד ‎/events/‎ | ✅ 2026-08-04 — `events/index.html` + מירור `#events-list-data` (סינון תאריכים, TBD בסוף, empty-state), שדה חדש `list_image` ב-`events.json`, קרופי כרטיס אפויים `list-card.{webp,avif}` (alice/zohar/amnon; anat ממחזרת `card.webp`, RMSE 0.9%), **the-space-between נכלל** (hero-480w cover). כיול כותרת נמדד מול רינדור: 60px דסקטופ / 27px מובייל. sitemap + CLAUDE.md §4+§6 + OG `og/events-index.jpg`. ה-nav יעודכן בפרומפט 2. |
 | 2 | עמוד ‎/press/‎ + nav | ⏳ |
 | 3 | עמוד ‎/sponsors/soos/‎ | ⏳ |
 | 4 | עמוד ‎/events/the-space-between/‎ | ✅ 2026-08-04 — הדף + `events.json` (שדות חדשים `day_he`/`host_he`) + `press.json` (`homepage_visible:false`) + sitemap + OG + שורת CLAUDE.md §4. **בנוסף (מחוץ לפרומפט):** רשומה ב-`#events-upcoming-data` (הקרוסלה הנוכחית) — בקשת משתמש לקישור מההומפייג'; פרומפט 6 שמחליף את הסקשן יכול למחוק אותה בבטחה (האירוע יופיע ב-`/events/`). כרטיס `/press/` ממתין לפרומפט 2 (רשומת ה-meta כבר ב-`press.json`). |

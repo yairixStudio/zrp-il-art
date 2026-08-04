@@ -515,6 +515,7 @@
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/zohar-ron/hero.webp",
+      "list_image": "images/events/zohar-ron/list-card.webp",
       "description_he": [
         "לא על סקס. על בני אדם.",
         "מוזמנים לשיח גלריה עם האומן זוהר רון על התערוכה SEX? מפגש פתוח על צילום, אומנות, תשוקה, אהבה, כוח, פגיעוּת, ועל האופן שבו הגוף הופך לשפה והאמנות הופכת לשאלה. שיחה על הסיפורים שמאחורי העבודות ועל תהליך היצירה."
@@ -553,6 +554,7 @@
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/amnon-lipkin/hero.webp",
+      "list_image": "images/events/amnon-lipkin/list-card.webp",
       "description_he": [
         "ערב רישום ספונטני במכונת תפירה. אגיע עם הזינגר של סבתא. לשבת לתפור ציורים בלייב ולחפור על העבודות המוצגות בתערוכה."
       ],
@@ -591,6 +593,7 @@
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/alice-debellis/hero.webp",
+      "list_image": "images/events/alice-debellis/list-card.webp",
       "description_he": [
         "ALICE DEBELLIS מציגה את עבודותיה",
         "בשיתוף עם BENEDETTA מייסדת SolarLunar @solarlunarbloom",
@@ -635,6 +638,7 @@
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/anat-wegier/hero.webp",
+      "list_image": "images/events/anat-wegier/card.webp",
       "description_he": [
         "הופכים היסטוריה לאמנות",
         "סדנת העברת דימוי באמצעות צילומים היסטוריים של כיכר דיזינגוף",

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upcoming Events — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../components/site-boot.css">
+<meta name="description" content="האירועים הקרובים בגלריות זילינסקי רוזן בתל אביב: שיחות אמנים, סדנאות, מיצגים ומפגשים פתוחים בגלריית כיכר המדינה ובגלריית כיכר דיזינגוף.">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2"),url("../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate.woff2") format("woff2"),url("../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* GLOBAL CASING RULE — all English text renders UPPERCASE (project-wide).
+   Hebrew is exempt. See CLAUDE.md §8.3 / conventions.md §5. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* ===== HERO (upcoming events) — Figma desktop 1318:1754 (grey band) / mobile 1318:2033 (white) =====
+   Figma title is 80px; our Copperplate runs ~28% wider → 64px optical match (lessons 2026-07-09). */
+.hero{background:var(--bg-grey);padding:48px 112px 40px}
+.hero-inner{width:100%;max-width:var(--max);margin:0 auto;text-align:right}
+.hero h1{font-family:var(--cop);font-size:60px;line-height:.98;color:var(--ink);letter-spacing:.02em}
+.hero h1 .hb{display:block;font-weight:700}
+.hero h1 .hl{display:block;font-weight:300}
+
+/* ===== EVENTS LIST — Figma grid 1318:1761 (2×2, gap 48, card 600×162.25) =====
+   Cards render client-side from #events-list-data: past dates drop out on their own
+   (same pattern as homepage #events-upcoming). Text column left, image right — per Figma. */
+.ev-list{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:48px;
+  padding:48px var(--pad-x);background:var(--white);
+}
+.ev-card{display:flex;gap:16px;direction:ltr;min-width:0}
+.ev-card .txt{
+  flex:1 1 0;min-width:0;
+  display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;
+  text-align:right;
+}
+.ev-card .im{flex:1 1 0;min-width:0;aspect-ratio:292/162.25;overflow:hidden;background:#FAFAFA}
+.ev-card .im img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.ev-card picture{display:contents}
+.ev-card:hover .im img{transform:scale(1.04)}
+/* tag chip — grey pill, one line with pipe on desktop, two lines on mobile (per Figma) */
+.ev-card .tag{
+  background:var(--bg-grey);padding:4px 8px;
+  font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.35;letter-spacing:.02em;
+}
+.ev-card .tag .t1,.ev-card .tag .t2{display:inline}
+.ev-card .ttl{font-family:var(--cop);font-weight:400;font-size:13px;line-height:1.5;letter-spacing:.02em}
+.ev-card .date{font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.2;letter-spacing:.02em}
+.ev-card .date--tbd{font-family:var(--heb);font-weight:400;font-size:14px;direction:rtl;text-transform:none;letter-spacing:0}
+
+/* empty state — shown only when no upcoming events remain */
+.ev-none{max-width:var(--max);margin:0 auto;padding:64px var(--pad-x);font-family:var(--heb);font-weight:400;font-size:18px;color:var(--ink);direction:rtl;text-align:right;text-transform:none}
+.ev-none[hidden]{display:none}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100px) — stays 2-up
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .hero{padding:48px 64px 40px}
+  .hero h1{font-size:46px}
+  .ev-list{gap:32px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768px) — single column per Figma 1318:2012 (white hero)
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .hero{background:var(--white);padding:32px 16px 8px}
+  .hero h1{font-size:27px;line-height:1.1}
+  .ev-list{grid-template-columns:1fr;gap:24px;padding:24px 16px 32px}
+  .ev-card .im{flex:0 0 171px;aspect-ratio:171/108}
+  /* tag splits to two lines, no pipe — per Figma mobile */
+  .ev-card .tag .t1,.ev-card .tag .t2{display:block}
+  .ev-card .tag .sep{display:none}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/events/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Upcoming Events — Zielinski &amp; Rozen">
+<meta property="og:description" content="האירועים הקרובים בגלריות זילינסקי רוזן בתל אביב: שיחות אמנים, סדנאות, מיצגים ומפגשים פתוחים בגלריית כיכר המדינה ובגלריית כיכר דיזינגוף.">
+<meta property="og:url" content="https://art.zrp.co.il/events/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-index.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Upcoming Events">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Upcoming Events — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="האירועים הקרובים בגלריות זילינסקי רוזן בתל אביב: שיחות אמנים, סדנאות, מיצגים ומפגשים פתוחים בגלריית כיכר המדינה ובגלריית כיכר דיזינגוף.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-index.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://art.zrp.co.il/events/#page","url":"https://art.zrp.co.il/events/","name":"Upcoming Events — Zielinski & Rozen","description":"האירועים הקרובים בגלריות זילינסקי רוזן בתל אביב: שיחות אמנים, סדנאות, מיצגים ומפגשים פתוחים בגלריית כיכר המדינה ובגלריית כיכר דיזינגוף.","isPartOf":{"@id":"https://art.zrp.co.il/#website"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Upcoming Events","item":"https://art.zrp.co.il/events/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<!-- HEADER (site chrome) -->
+<site-header></site-header>
+
+<main>
+<!-- HERO — upcoming / events -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1><span class="hb">upcoming</span><span class="hl">events</span></h1>
+  </div>
+</section>
+
+<!-- EVENTS LIST — rendered from inline data (file:// can't fetch JSON).
+     Mirrors data/events.json; date >= today (or date_tbd) survives the filter,
+     sorted ascending with TBD events last — matches Figma desktop 1318:1760 order. -->
+<section class="ev-list" id="events-list" aria-label="upcoming events"></section>
+<p class="ev-none" id="events-none" hidden>אין אירועים קרובים כרגע. עקבו אחרינו — עדכונים בקרוב.</p>
+
+<script type="application/json" id="events-list-data">
+[
+ {"slug":"loneliness","date":"2026-01-19","title_en":"opening — loneliness in a bubbling environment","gallery_id":"medina","img":"images/events/loneliness/hero.webp","w":768,"h":1254,"alt":"אירוע הפתיחה — בדידות בתוך סביבה תוססת — גלריית כיכר המדינה"},
+ {"slug":"ktuba","date":"2026-02-25","title_en":"live art performance by zohar ron","gallery_id":"medina","img":"images/events/ktuba/hero.webp","w":1500,"h":2000,"alt":"כתובה — מיצג חי — גלריית כיכר המדינה"},
+ {"slug":"how-many","date":"2026-05-26","title_en":"opening — how many partners have you had?","gallery_id":"dizengoff","img":"images/events/event-how-many-2026-05-26-cover.webp","w":3058,"h":4096,"alt":"אירוע הפתיחה — כמה שותפים היו לך? — גלריית כיכר דיזינגוף"},
+ {"slug":"close-look","date":"2026-06-02","title_en":"close look — open meeting with tanya shin","gallery_id":"dizengoff","img":"images/events/close-look/hero.webp","w":1125,"h":1500,"alt":"מבט מקרוב — גלריית כיכר דיזינגוף"},
+ {"slug":"artist-talk","date":"2026-06-11","title_en":"artist talk with gal pollak and elsa ers brosh","gallery_id":"medina","img":"images/events/artist-talk/hero-desktop.webp","w":984,"h":1312,"alt":"שיחת אמנים עם גל פולק ואלסה ארס ברוש — גלריית כיכר המדינה"},
+ {"slug":"natasha-zeriker","date":"2026-07-09","title_en":"save the date — an evening with natasha zeriker","gallery_id":"medina","img":"images/events/natasha-zeriker/hero.webp","w":984,"h":1403,"alt":"ערב עם נטאשה זריקר — גלריית כיכר המדינה"},
+ {"slug":"liel-salman","date":"2026-07-16","title_en":"pop up tattoos","gallery_id":"dizengoff","img":"images/events/liel-salman/hero.webp","w":984,"h":1749,"alt":"פופ אפ קעקועים — גלריית כיכר דיזינגוף"},
+ {"slug":"nir-giorgio-levin","date":"2026-07-17","title_en":"artist talk with nir giorgio levin","gallery_id":"dizengoff","img":"images/events/nir-giorgio-levin/hero.webp","w":984,"h":1194,"alt":"שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר דיזינגוף"},
+ {"slug":"risa-and-noemi","date":"2026-07-24","title_en":"artists talk with risa brooke oze and noemi safir","gallery_id":"dizengoff","img":"images/events/risa-and-noemi/hero.webp","w":984,"h":1321,"alt":"שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר — גלריית כיכר דיזינגוף"},
+ {"slug":"alice-debellis","date":"2026-08-06","title_en":"artist talk with alice debellis","gallery_id":"medina","img":"images/events/alice-debellis/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אליס דה בליס — גלריית כיכר המדינה"},
+ {"slug":"anat-wegier","date":"2026-08-07","title_en":"artist talk with anat wégier","gallery_id":"dizengoff","img":"images/events/anat-wegier/card.webp","w":584,"h":325,"alt":"שיחת אמנים עם ענת ויז׳ייה — גלריית כיכר דיזינגוף"},
+ {"slug":"the-space-between","date":"2026-09-03","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
+ {"slug":"zohar-ron","date":null,"date_tbd":true,"title_en":"artist talk with zohar ron","gallery_id":"dizengoff","img":"images/events/zohar-ron/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר דיזינגוף"},
+ {"slug":"amnon-lipkin","date":null,"date_tbd":true,"title_en":"artist talk with amnon lipkin","gallery_id":"medina","img":"images/events/amnon-lipkin/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה"}
+]
+</script>
+<script>
+(function(){
+  var list=document.getElementById('events-list');
+  var none=document.getElementById('events-none');
+  var src=document.getElementById('events-list-data');
+  if(!list||!src) return;
+  var all; try{all=JSON.parse(src.textContent);}catch(e){return;}
+  var GALLERY={medina:'kikar hamedina',dizengoff:'dizengoff square','flea-market':'flea market'};
+  var n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
+  var up=all.filter(function(e){
+    if(e.date_tbd) return true;               // date TBD ("פרטים ותאריך בהמשך") — always upcoming
+    var p=String(e.date).split('-');
+    return new Date(+p[0],+p[1]-1,+p[2]).getTime()>=today;
+  }).sort(function(a,b){
+    if(a.date_tbd&&b.date_tbd) return 0;       // dated events first (ascending), TBD events last
+    if(a.date_tbd) return 1;
+    if(b.date_tbd) return -1;
+    return a.date<b.date?-1:a.date>b.date?1:0;
+  });
+  if(!up.length){ if(none) none.hidden=false; return; }
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  list.innerHTML=up.map(function(e,i){
+    var dateHtml=e.date_tbd
+      ? '<div class="date date--tbd">פרטים ותאריך בהמשך</div>'
+      : (function(){var d=String(e.date).split('-');return '<div class="date">'+esc((+d[2])+'.'+(+d[1])+'.'+d[0])+'</div>';})();
+    var load=i?' loading="lazy" decoding="async"':' fetchpriority="high" decoding="async"';
+    return '<a class="ev-card" href="'+esc(e.slug)+'/">'
+      +'<div class="txt">'
+      +'<div class="tag"><span class="t1">gallery event</span><span class="sep"> | </span><span class="t2">'+esc(GALLERY[e.gallery_id]||'')+'</span></div>'
+      +'<div class="ttl">'+esc(e.title_en)+'</div>'
+      +dateHtml
+      +'</div>'
+      +'<div class="im"><img src="../'+esc(e.img)+'" width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'"'+load+'></div>'
+      +'</a>';
+  }).join('');
+  if(window.PictureUpgrade) PictureUpgrade.refresh(list);
+})();
+</script>
+</main>
+
+<!-- FOOTER -->
+<site-footer></site-footer>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../components/site-chrome.js?v=5" defer></script>
+<script src="../components/analytics.js" defer></script>
+<script src="../components/picture-upgrade.js" defer></script>
+<script src="../components/embed-iframe.js" defer></script>
+</body>
+</html>
