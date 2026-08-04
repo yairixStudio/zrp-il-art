@@ -495,6 +495,8 @@ body{text-transform:uppercase}
 .soos-logo{width:88px;height:21.59px;display:block;color:currentColor}
 .soos-credits{display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;color:var(--ink);text-align:center}
 .soos-credits .soos-line{direction:ltr;unicode-bidi:isolate;color:inherit;text-decoration:none}
+/* שורת המודל = RTL: ״מודל: Bella | soos.sound״ (הכרעת משתמש 2026-08-04; ה-LTR של Figma הפך את הסדר) */
+.soos-credits .soos-line--model{direction:rtl}
 a.soos-line:hover{opacity:.65}
 /* 🔴 חריגת-איות מוכרעת (מותג, Figma textCase:LOWER): soos.sound / www.soos.audio / Bella נשארים lowercase */
 .soos-brand{font-family:var(--cop);font-weight:300;text-transform:none;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
@@ -1490,7 +1492,7 @@ porta</div></a>
     </a>
   </div>
   <div class="soos-credits heb">
-    <div class="soos-line"><span class="soos-brand">soos.sound</span> | מודל : <span class="soos-brand">Bella</span></div>
+    <div class="soos-line soos-line--model">מודל: <span class="soos-brand">Bella</span> | <span class="soos-brand">soos.sound</span></div>
     <a class="soos-line soos-brand" href="https://www.soos.audio" target="_blank" rel="noopener">www.soos.audio</a>
   </div>
   <div class="soos-strip">
