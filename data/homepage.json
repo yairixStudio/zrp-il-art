@@ -345,6 +345,24 @@
   "figma_node_desktop": "412:334",
   "figma_node_mobile": "640:249"
  },
+ "soos_sponsor": {
+  "_note": "Section #soos above #tribe-teaser (user decision 2026-08-04; redesign prompt 11). Mobile = Figma 1318:316 verbatim; desktop = adaptation (thumbs in tribe-teaser geometry 158px/gap 16). Images + logo reused from sponsor page. case_exception strings stay lowercase (.soos-brand).",
+  "sponsor_id": "soos",
+  "title_he": "הקולפן",
+  "x_en": "x",
+  "exhibition_route": "exhibitions/the-peeler/",
+  "sponsor_route": "sponsors/soos/",
+  "website": "https://www.soos.audio",
+  "credit_line": "soos.sound | מודל : Bella",
+  "cta_en": "read more",
+  "images": [
+   "images/sponsors/soos/gallery-01.webp",
+   "images/sponsors/soos/gallery-02.webp",
+   "images/sponsors/soos/gallery-03.webp"
+  ],
+  "figma_node_mobile": "1318:316",
+  "figma_node_desktop": null
+ },
  "tribe_teaser": {
   "_note": "Above #press — desktop 250:87 + sponsor 361:393 + gallery 361:420; mobile 363:618 + sponsor 363:622 + strip 363:649. Thumbs: lightbox only. thumb-5 = duplicate of thumb-4 until video asset.",
   "exhibition_href": "exhibitions/loneliness/",

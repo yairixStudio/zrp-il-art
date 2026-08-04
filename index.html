@@ -483,6 +483,34 @@ body{text-transform:uppercase}
   .nb-sub{gap:2px}
 }
 
+/* ===== SOOS TEASER (הקולפן X soos.sound — חסות רמקולים) — Figma 1318:316 (מובייל; דסקטופ = אדפטציה: thumbs בגאומטריית tribe-teaser 158px/gap 16) · data: homepage.json :: soos_sponsor ===== */
+.soos-teaser{padding:48px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:40px;max-width:1440px;margin:0 auto;box-sizing:border-box}
+.soos-lockup{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.soos-lockup .soos-name{font-family:var(--heb);font-weight:300;font-size:36px;line-height:38.936px;color:inherit;text-decoration:none;transition:opacity .2s}
+.soos-lockup .soos-name:hover{opacity:.65}
+.soos-lockup .soos-x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
+/* לא "logo" — site-chrome.css מזריק .logo גלובלי בזמן ריצה (לקח 2026-08-04 ב-lessons) */
+.soos-logo-link{display:block;color:#000;transition:opacity .2s}
+.soos-logo-link:hover{opacity:.65}
+.soos-logo{width:88px;height:21.59px;display:block;color:currentColor}
+.soos-credits{display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;color:var(--ink);text-align:center}
+.soos-credits .soos-line{direction:ltr;unicode-bidi:isolate;color:inherit;text-decoration:none}
+.soos-credits .soos-line .credit-he{direction:rtl;unicode-bidi:isolate}
+a.soos-line:hover{opacity:.65}
+/* 🔴 חריגת-איות מוכרעת (מותג, Figma textCase:LOWER): soos.sound / www.soos.audio / Bella נשארים lowercase */
+.soos-brand{font-family:var(--cop);font-weight:300;text-transform:none;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+.soos-strip{display:flex;gap:16px;justify-content:center}
+.soos-thumb{width:158px;aspect-ratio:100.25/121.52;overflow:hidden;background:#f3f1ee}
+.soos-thumb picture{display:contents}
+.soos-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.soos-more{display:inline-flex;align-items:center;justify-content:center;padding:4px 16px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:16px;line-height:1.3;color:var(--ink);text-decoration:none;transition:opacity .2s}
+.soos-more:hover{opacity:.65}
+@media (max-width:768px){
+  .soos-teaser{padding:32px 16px}
+  .soos-strip{gap:4px}
+  .soos-thumb{width:100.25px}
+}
+
 /* ===== TRIBE TEASER (loneliness × the tribe) — Figma 250:87 desktop / 363:618 mobile; data: homepage.json :: tribe_teaser ===== */
 .tribe-teaser{padding:48px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:40px;max-width:1440px;margin:0 auto;min-width:0;box-sizing:border-box}
 .tribe-teaser-intro{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:1248px}
@@ -1518,6 +1546,32 @@ porta</div></a>
       <div class="img dim dim--green"><picture><img src="images/galleries/flea-market/hero.webp" srcset="images/galleries/flea-market/hero-480w.webp 480w, images/galleries/flea-market/hero-768w.webp 768w, images/galleries/flea-market/hero.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></picture><span class="coming">coming soon</span></div>
     </article>
   </div>
+</section>
+
+<!-- הקולפן × SOOS — sponsor teaser (soos.sound speakers) · Figma 1318:316 (mobile; desktop = adaptation) · data: homepage.json :: soos_sponsor · מיקום מעל tribe-teaser = הכרעת משתמש 2026-08-04 -->
+<section class="soos-teaser" id="soos" aria-label="הקולפן x soos.sound — חסות">
+  <div class="soos-lockup">
+    <a class="soos-name heb" href="exhibitions/the-peeler/">הקולפן</a>
+    <span class="soos-x">X</span>
+    <a class="soos-logo-link" href="sponsors/soos/" aria-label="soos.sound — עמוד החסות">
+      <svg class="soos-logo" viewBox="0 0 88 22" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+        <path d="M10.7928 5.69011H20.3046C18.4836 2.30309 14.9076 0 10.7928 0C4.83226 0 0 4.83226 0 10.7928C0 12.1514 0.252917 13.449 0.711264 14.6465H10.4284V16.5841H1.6868C3.60277 19.5902 6.96295 21.5857 10.7928 21.5857C16.7534 21.5857 21.5857 16.7534 21.5857 10.7928C21.5857 9.69136 21.4195 8.62911 21.1129 7.62776H10.7928V5.69011Z" fill="currentColor"/>
+        <path d="M77.2069 15.8956H67.6952C69.5162 19.2826 73.0921 21.5857 77.2069 21.5857C83.1675 21.5857 87.9997 16.7534 87.9997 10.7928C87.9997 9.43431 87.7468 8.13669 87.2885 6.93921H77.5713V5.00156H86.3119C84.397 1.99546 81.0357 0 77.2069 0C71.2463 0 66.4141 4.83226 66.4141 10.7928C66.4141 11.8943 66.5803 12.9566 66.8869 13.9579H77.2069V15.8956Z" fill="currentColor"/>
+        <path d="M55.0682 21.5857C61.029 21.5857 65.8611 16.7535 65.8611 10.7928C65.8611 4.83211 61.029 0 55.0682 0C49.1075 0 44.2754 4.83211 44.2754 10.7928C44.2754 16.7535 49.1075 21.5857 55.0682 21.5857Z" fill="currentColor"/>
+        <path d="M32.9315 21.5857C38.8923 21.5857 43.7243 16.7535 43.7243 10.7928C43.7243 4.83211 38.8923 0 32.9315 0C26.9708 0 22.1387 4.83211 22.1387 10.7928C22.1387 16.7535 26.9708 21.5857 32.9315 21.5857Z" fill="currentColor"/>
+      </svg>
+    </a>
+  </div>
+  <div class="soos-credits heb">
+    <div class="soos-line"><span class="credit-he">מודל :</span> <span class="soos-brand">Bella</span> | <span class="soos-brand">soos.sound</span></div>
+    <a class="soos-line soos-brand" href="https://www.soos.audio" target="_blank" rel="noopener">www.soos.audio</a>
+  </div>
+  <div class="soos-strip">
+    <div class="soos-thumb"><img src="images/sponsors/soos/gallery-01.webp" width="643" height="779" alt="רמקול פיסולי של soos.sound בין עבודות בתערוכת הקולפן" loading="lazy" decoding="async"></div>
+    <div class="soos-thumb"><img src="images/sponsors/soos/gallery-02.webp" width="660" height="880" alt="רמקול פיסולי של soos.sound מול קיר עבודות בגלריה" loading="lazy" decoding="async"></div>
+    <div class="soos-thumb"><img src="images/sponsors/soos/gallery-03.webp" width="643" height="780" alt="רמקול soos.sound לצד פדסטל ושולחן תצוגה בגלריה" loading="lazy" decoding="async"></div>
+  </div>
+  <a class="soos-more" href="sponsors/soos/">read more</a>
 </section>
 
 <!-- LONELINESS × THE TRIBE — Figma 250:87 (desktop title) / 363:618 (mobile + sponsor + credits + gallery). Data: data/homepage.json :: tribe_teaser -->
