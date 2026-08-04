@@ -361,6 +361,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://art.zrp.co.il/press/</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://art.zrp.co.il/press/press-1/</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>

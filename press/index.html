@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press &amp; Events — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../פונטים/Copperplate-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../פונטים/CopperplateCC-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../פונטים/Copperplate.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../פונטים/FbEzmel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../components/site-boot.css">
+<meta name="description" content="כל הכתבות והאירועים של גלריות זילינסקי רוזן בתל אביב: עיתונות, שיחות אמנים, פתיחות תערוכות, מיצגים וסדנאות — הארכיון המלא, מהחדש לישן.">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2"),url("../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate.woff2") format("woff2"),url("../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Heavy.woff2") format("woff2"),url("../פונטים/CopperplateCC-Heavy.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* GLOBAL CASING RULE — all English text renders UPPERCASE (project-wide).
+   Hebrew is exempt. See CLAUDE.md §8.3 / conventions.md §5. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* ===== HERO (press / & events) — Figma desktop 1323:270 (grey band) / mobile 1323:549 (white) =====
+   Figma 80px Copperplate → 60px in code (measured optical calibration, same as events/index.html). */
+.hero{background:var(--bg-grey);padding:48px 112px 40px}
+.hero-inner{width:100%;max-width:var(--max);margin:0 auto;text-align:right}
+.hero h1{font-family:var(--cop);font-size:60px;line-height:.98;color:var(--ink);letter-spacing:.02em}
+.hero h1 .hb{display:block;font-weight:700}
+.hero h1 .hl{display:block;font-weight:300}
+
+/* ===== CARD LIST — Figma desktop grid 1323:277 (2×10, 1248w, gap 48, card 600×162, image 292×162)
+   / mobile 1323:554 (single column, gap 24, image 171×108).
+   DOM order = chronological, newest→oldest (= the mobile column order).
+   Desktop: grid-auto-flow:column + direction:rtl → cards 1-10 run down the RIGHT column,
+   11-20 down the LEFT column — exactly the Figma placement (chronology flows down each column).
+   ⚠️ Adding a card: bump the row count in grid-template-rows to ceil(cards/2), else a 3rd column appears. */
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(11,auto);grid-auto-flow:column;gap:48px;direction:rtl}
+.pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
+.pcard:hover{opacity:.75}
+.pcard--soon{cursor:default}
+.pcard--soon:hover{opacity:1}
+.pcard .img img{transition:transform .6s}
+.pcard:hover .img img{transform:scale(1.04)}
+.pcard--soon:hover .img img{transform:none}
+
+.pcard .img{position:relative;flex:0 0 292px;aspect-ratio:292/162;overflow:hidden;background:#f3f1ee}
+.pcard .img picture{display:contents}
+.pcard .img img{width:100%;height:100%;object-fit:cover}
+.pcard .img.img--contain{background:#FAFAFA}
+.pcard .img.img--contain.img--white{background:#fff}
+.pcard .img.img--contain img{object-fit:contain}
+
+.pcard .info{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;gap:8px;text-align:right;padding:2px 0}
+
+/* tag chip — Figma EL-9a583d21: #EEF0EF, padding 4px 8px.
+   Latin 14 Figma → 11.5px optical (matches events/index.html); Hebrew stays 14. */
+.pcard .tag{display:inline-flex;align-items:center;gap:6px;background:var(--bg-grey);padding:4px 8px;font-family:var(--heb);font-size:14px;font-weight:400;line-height:1.25;color:var(--ink)}
+.pcard .tag.en{font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.35;direction:ltr;unicode-bidi:embed;letter-spacing:.02em}
+.pcard .tag .tag-lat{font-family:var(--cop);font-weight:300;font-size:.82em;direction:ltr;unicode-bidi:embed;line-height:1}
+.pcard .tag .tag-sep{line-height:1;flex:0 0 auto}
+
+/* title — Figma 16px; English Copperplate → 13px optical (homepage #press precedent) */
+.pcard .ttl{font-family:var(--heb);font-size:16px;font-weight:400;line-height:1.4;color:var(--ink);text-align:right}
+.pcard .ttl .lat{font-family:var(--cop);font-size:.88em;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
+.pcard .ttl.en{font-family:var(--cop);direction:ltr;unicode-bidi:embed;font-size:13px;line-height:1.5;letter-spacing:.02em}
+.pcard .ttl.en .heb{font-family:var(--heb);font-size:1.23em;font-weight:400;letter-spacing:normal}
+
+.pcard .date{font-family:var(--cop);font-size:11.5px;font-weight:300;line-height:1.2;letter-spacing:.02em;direction:ltr;unicode-bidi:embed}
+.pcard .date.date--tbd{font-family:var(--heb);direction:rtl;font-weight:400;font-size:14px;letter-spacing:0}
+
+/* close-look live overlay — Figma 1323:419: scrim rgba(27,27,27,.3) + centered white text
+   (Copperplate Bold 18.06 → 14px optical / FbEzmel 16.05 → 16px) */
+.pcard .img-ovr{position:absolute;inset:0;background:rgba(27,27,27,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:8px;text-align:center;color:#fff;pointer-events:none}
+.pcard .img-ovr .ov-en{font-family:var(--cop);font-weight:700;font-size:14px;line-height:1.35;letter-spacing:.02em;max-width:170px;direction:ltr;unicode-bidi:isolate}
+.pcard .img-ovr .ov-he{font-family:var(--heb);font-weight:400;font-size:16px;line-height:1.2}
+
+/* "בקרוב" toast — card without a page yet (tal nehoray), homepage precedent */
+.soon-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(8px);background:var(--ink);color:#fff;font-family:var(--heb);font-size:16px;font-weight:400;padding:10px 28px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:300}
+.soon-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100px)
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .hero{padding:48px 64px 40px}
+  .hero h1{font-size:46px}
+  .cards{gap:40px 32px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768px) — Figma 1323:528: white hero,
+   single column, card image 171×108, list gap 24
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .hero{background:var(--white);padding:32px 16px 8px}
+  .hero h1{font-size:27px;line-height:1.1}
+  .cards{display:flex;flex-direction:column;gap:24px;padding:16px 16px 32px}
+  .pcard .img{flex:0 0 171px;aspect-ratio:171/108}
+  .pcard .info{gap:6px;padding:0}
+  .pcard--ora .ttl.en{font-size:10px;line-height:1.5}
+  .pcard .img-ovr{gap:10px}
+  .pcard .img-ovr .ov-en{font-size:11px;max-width:130px}
+  .pcard .img-ovr .ov-he{font-size:13px}
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (≤390px)
+   ============================================================ */
+@media (max-width:390px){
+  .pcard{gap:12px}
+  .pcard .img{flex-basis:150px}
+  .pcard .ttl{font-size:15px}
+  .pcard .ttl.en{font-size:12px}
+}
+</style>
+<!-- SEO:start -->
+<link rel="canonical" href="https://art.zrp.co.il/press/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Press &amp; Events — Zielinski &amp; Rozen">
+<meta property="og:description" content="כל הכתבות והאירועים של גלריות זילינסקי רוזן בתל אביב: עיתונות, שיחות אמנים, פתיחות תערוכות, מיצגים וסדנאות — הארכיון המלא, מהחדש לישן.">
+<meta property="og:url" content="https://art.zrp.co.il/press/">
+<meta property="og:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="995">
+<meta property="og:image:alt" content="Press &amp; Events — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Press &amp; Events — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="כל הכתבות והאירועים של גלריות זילינסקי רוזן בתל אביב: עיתונות, שיחות אמנים, פתיחות תערוכות, מיצגים וסדנאות — הארכיון המלא, מהחדש לישן.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://art.zrp.co.il/press/#webpage","url":"https://art.zrp.co.il/press/","name":"Press & Events — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"}}</script>
+<!-- SEO:end -->
+</head>
+<body>
+
+<!-- NAV -->
+<site-header></site-header>
+
+<!-- HERO — Figma 1323:270 (desktop) / 1323:549 (mobile) -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1><span class="hb">press</span><span class="hl">&amp; events</span></h1>
+  </div>
+</section>
+
+<!-- PRESS & EVENTS — full archive, chronological (newest→oldest).
+     Figma desktop 1323:277 / mobile 1323:554. DOM order = mobile column order;
+     desktop places the first half down the RIGHT column, the rest down the LEFT (grid-auto-flow:column + rtl).
+     alice-debellis (6.8) is not in the Figma frame (empty grid cell — designer omission,
+     see docs/redesign-2026-08.md) and was added at its chronological slot;
+     the-space-between (3.9) postdates the frame and was added at the top. -->
+<section class="cards" id="press-list" aria-label="press and events archive">
+
+  <a class="pcard" href="../events/the-space-between/">
+    <div class="img"><img src="../images/events/the-space-between/hero.webp" srcset="../images/events/the-space-between/hero-480w.webp 480w, ../images/events/the-space-between/hero-768w.webp 768w, ../images/events/the-space-between/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1488" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">the space between — a conversation about art, materials and human experience</p>
+      <span class="date">3.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/anat-wegier/">
+    <div class="img"><img src="../images/events/anat-wegier/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with anat wégier</p>
+      <span class="date">7.8.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/alice-debellis/">
+    <div class="img"><img src="../images/events/alice-debellis/hero.webp" srcset="../images/events/alice-debellis/hero-480w.webp 480w, ../images/events/alice-debellis/hero-768w.webp 768w, ../images/events/alice-debellis/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1488" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with alice debellis</p>
+      <span class="date">6.8.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/risa-and-noemi/">
+    <div class="img"><img src="../images/events/risa-and-noemi/card.webp" width="584" height="324" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artists talk<br>with risa brooke oze and<br>noemi safir</p>
+      <span class="date">24.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/zohar-ron/">
+    <div class="img"><img src="../images/events/zohar-ron/card.webp" width="590" height="328" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with zohar ron</p>
+      <span class="date date--tbd" dir="rtl">פרטים בהמשך</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/nir-giorgio-levin/">
+    <div class="img"><img src="../images/events/nir-giorgio-levin/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with nir giorgio levin</p>
+      <span class="date">17.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/liel-salman/">
+    <div class="img img--contain img--white"><img src="../images/events/liel-salman/logo.webp" width="486" height="648" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">pop up tattoos<br>liel salman noam<br><span class="heb">סטודיו</span> elline</p>
+      <span class="date">16.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/natasha-zeriker/">
+    <div class="img"><img src="../images/events/natasha-zeriker/hero.webp" srcset="../images/events/natasha-zeriker/hero-480w.webp 480w, ../images/events/natasha-zeriker/hero-768w.webp 768w, ../images/events/natasha-zeriker/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1403" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with natasha zeriker</p>
+      <span class="date">9.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="peeling-a-layer/">
+    <div class="img"><img src="../images/press/peeling-a-layer/01-hitnaarut.webp" width="750" height="422" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span>רשת 13</span><span class="tag-sep">|</span><span>אמנות</span></span>
+      <p class="ttl">מה נפגוש כשנקלף שכבה מהזיכרון שלנו? לתערוכה הבאה יש תשובה</p>
+      <span class="date">1.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="manicure-against-darkness/">
+    <div class="img"><img src="../images/press/manicure-against-darkness/home-card.webp" width="1000" height="555" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+      <p class="ttl">מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ"ש</p>
+      <span class="date">1.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard pcard--soon" href="#">
+    <div class="img"><img src="../images/events/artist-talk/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">how many partners have you had? with tal nehoray</p>
+      <span class="date">29.6.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/artist-talk/">
+    <div class="img"><img src="../images/events/artist-talk/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with gal pollak and elsa ers brosh</p>
+      <span class="date">11.6.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard pcard--ora" href="the-sixth-scent/">
+    <div class="img"><img src="../images/press/the-sixth-scent/home-card.webp" srcset="../images/press/the-sixth-scent/home-card-480w.webp 480w, ../images/press/the-sixth-scent/home-card-768w.webp 768w, ../images/press/the-sixth-scent/home-card.webp 1079w" sizes="(max-width:768px) 171px, 292px" width="1079" height="599" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">ora magazine | issue 02</span>
+      <p class="ttl en">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
+      <span class="date">7.6.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/close-look/">
+    <div class="img">
+      <img src="../images/events/close-look/card-photo.webp" width="584" height="324" alt="" loading="lazy" decoding="async">
+      <div class="img-ovr" aria-hidden="true">
+        <span class="ov-en">how many partners have u had?</span>
+        <span class="ov-he">מבט מקרוב</span>
+      </div>
+    </div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl">מבט מקרוב: מפגש פתוח בתוך התערוכה | טניה שין</p>
+      <span class="date">2.6.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="the-last-station/">
+    <div class="img"><img src="../images/press/time-out/home-card-2026-05-27.webp" srcset="../images/press/time-out/home-card-2026-05-27-480w.webp 480w, ../images/press/time-out/home-card-2026-05-27-768w.webp 768w, ../images/press/time-out/home-card-2026-05-27.webp 1000w" sizes="(max-width:768px) 171px, 292px" width="1000" height="1246" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+      <p class="ttl">התחנה האחרונה:<br>25 תערוכות מומלצות לעצור בהן את הכל בסופ"ש</p>
+      <span class="date">27.5.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/how-many/">
+    <div class="img"><img src="../images/events/event-how-many-2026-05-26-cover.webp" srcset="../images/events/event-how-many-2026-05-26-cover-480w.webp 480w, ../images/events/event-how-many-2026-05-26-cover-768w.webp 768w, ../images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, ../images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="(max-width:768px) 171px, 292px" width="3058" height="4096" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">how many partners have you had?</p>
+      <span class="date">26.5.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/ktuba/">
+    <div class="img"><img src="../images/events/ktuba/card.webp" width="584" height="324" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl">כְּתוּבָּה | <span class="lat">QTUBA</span></p>
+      <span class="date">25.2.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="../events/loneliness/">
+    <div class="img"><img src="../images/events/event-4-cover.webp" srcset="../images/events/event-4-cover-480w.webp 480w, ../images/events/event-4-cover-768w.webp 768w, ../images/events/event-4-cover-1080w.webp 1080w, ../images/events/event-4-cover.webp 1435w" sizes="(max-width:768px) 171px, 292px" width="1435" height="1600" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl">בדידות בתוך סביבה תוססת</p>
+      <span class="date">19.1.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="press-1/">
+    <div class="img"><img src="../images/press/press-1/00-home-card-v2.webp" width="584" height="370" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag">מגזין פורטפוליו</span>
+      <p class="ttl">איך מרגישה בדידות בתוך סביבה תוססת: תערוכה חדשה בגלריית זילינסקי רוזן</p>
+      <span class="date">19.1.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="walla/">
+    <div class="img"><img src="../images/press/walla-cover.webp" width="462" height="626" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span>וואלה</span><span class="tag-sep">|</span><span>תרבות</span></span>
+      <p class="ttl">מותג הבישום פתח גלריה בכיכר המדינה: 100% מהרווחים הולכים לאמנים</p>
+      <span class="date">5.1.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="time-out/">
+    <div class="img img--contain"><img src="../images/press/time-out/home-card-2025-12-31.webp" srcset="../images/press/time-out/home-card-2025-12-31-480w.webp 480w, ../images/press/time-out/home-card-2025-12-31-768w.webp 768w, ../images/press/time-out/home-card-2025-12-31.webp 1160w" sizes="(max-width:768px) 171px, 292px" width="1160" height="1066" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
+      <p class="ttl">דה פיינל קאונטדאון: 18 תערוכות לחגוג בהן סופ"ש ראשון של 2026</p>
+      <span class="date">31.12.2025</span>
+    </div>
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+<site-footer></site-footer>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../components/site-chrome.js?v=5" defer></script>
+
+<!-- "בקרוב" toast — cards for events without a page yet (homepage precedent) -->
+<script>
+(function(){
+  var cards=document.querySelectorAll('.pcard--soon');
+  if(!cards.length) return;
+  var toast=document.createElement('div');
+  toast.className='soon-toast';
+  toast.textContent='בקרוב';
+  toast.setAttribute('role','status');
+  document.body.appendChild(toast);
+  var t;
+  cards.forEach(function(c){
+    c.addEventListener('click',function(e){
+      e.preventDefault();
+      toast.classList.add('show');
+      clearTimeout(t);
+      t=setTimeout(function(){toast.classList.remove('show')},1800);
+    });
+  });
+})();
+</script>
+
+<script src="../components/analytics.js" defer></script>
+<script src="../components/picture-upgrade.js" defer></script>
+<script src="../components/embed-iframe.js" defer></script>
+</body>
+</html>

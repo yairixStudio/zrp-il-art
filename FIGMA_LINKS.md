@@ -512,7 +512,7 @@ lightbox state 3 (mobile no-caption): Implement this design from Figma.
 | `/galleries/medina`, `/galleries/dizengoff`, `/galleries/flea-market` | ❌ אין עיצוב | (`1213:2725/2820/2854` היו lightbox states, לא דפי גלריה — ראה §15) |
 | `/galleries` (index) | ❌ אין | אולי anchor בהומפייג' (`#galleries`) |
 | `/exhibitions` (index) | ❌ אין | אולי anchor (`#exhibitions`) |
-| `/press` (index) | ❌ אין | אולי anchor (`#press`) |
+| `/press` (index) | ✅ נבנה 2026-08-04 — canonical: `XhGH...::1323:244` דסקטופ (שם ה-node "phone" משקר) / `1323:528` מובייל (ראה סקשן הרה-דיזיין למטה) | `press/index.html` |
 | `/opencall` (index) | ❌ אין | אולי anchor (`#opencall`) |
 | `/artists` (index) | ✅ canonical: landing `XhGH...::523:107` (desktop) / `523:2` (mobile) — גריד 28 אומנים. (`1213:4547` הישן = תווית טקסט בלבד) | `artists/index.html` |
 | `/contact` | ❌ אין | תכנון נדרש מאפס |
