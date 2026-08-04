@@ -38,7 +38,7 @@
 
 legacy (4 שורות aw-row מתחלפות, הוחלף 2026-08-04): הסקשן בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21`; curator ישן `710:177`/`710:117`.
 
-### Homepage — "BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; בין `#artworks` ל-`#perfume-promo`)
+### Homepage — "BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; אחרי `#events-upcoming`, לפני `#artworks`)
 
 סקשן news מובייל **(עיצוב נוכחי, רה-דיזיין 2026-08 — טקסט בלבד; אין frame דסקטופ, האתר = אדפטציה)**: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-583&m=dev
@@ -67,7 +67,12 @@ legacy (העיצוב הישן — גלריית 5 thumbs + pp-bio, הוחלף 202
 legacy — מובייל:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=386-806&m=dev
 
-### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15)
+### Homepage — `#events-upcoming` redesign v3 (רה-דיזיין אוגוסט 2026 — כותרת מוערמת + 2 פוסטרים + view all, 2026-08-04) ✅ המצב הנוכחי
+
+סקשן upcoming events (מובייל בלבד — frame `1318:476` בתוך פריים ההומפייג' `1318:363`; דסקטופ = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-476&m=dev
+
+### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
 
 סקשן upcoming events דסקטופ (עיגול ירוק + 3 כרטיסים + חיצים): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-901&m=dev
