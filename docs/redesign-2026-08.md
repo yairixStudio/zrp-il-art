@@ -237,10 +237,10 @@ hero: גם באוברליי על התמונה מופיע הלוקאפ (הקול�
 | 2 | עמוד ‎/press/‎ + nav | ✅ 2026-08-04 — `press/index.html`, 21 כרטיסים סטטיים (19 מהפריים + alice-debellis בהשלמה מומלצת + the-space-between בראש), CSS מיושר לכיולי `events/index.html` (60/46/27, תג/תאריך 11.5, כותרת EN 13). דסקטופ = שתי ריצות כרונולוגיות בעמודות (`grid-auto-flow:column`+rtl). close-look עם אוברליי חי (`card-photo.{webp,avif}` חדש); פורטפוליו `00-home-card-v2` (584px). התיקונים המוכרעים יושמו (zohar "פרטים בהמשך", ktuba, תג timeout). **ה-nav שונה** ב-`site-chrome.js` → `press/`. sitemap + CLAUDE.md §4 + FIGMA_LINKS. |
 | 3 | עמוד ‎/sponsors/soos/‎ | ⏳ |
 | 4 | עמוד ‎/events/the-space-between/‎ | ✅ 2026-08-04 — הדף + `events.json` (שדות חדשים `day_he`/`host_he`) + `press.json` (`homepage_visible:false`) + sitemap + OG + שורת CLAUDE.md §4. **בנוסף (מחוץ לפרומפט):** רשומה ב-`#events-upcoming-data` (הקרוסלה הנוכחית) — בקשת משתמש לקישור מההומפייג'; פרומפט 6 שמחליף את הסקשן יכול למחוק אותה בבטחה (האירוע יופיע ב-`/events/`). כרטיס `/press/` ממתין לפרומפט 2 (רשומת ה-meta כבר ב-`press.json`). |
-| 5 | בשמים (עדכון + חדש) | ⏳ |
+| 5 | בשמים (עדכון + חדש) | ✅ 2026-08-04 — `#perfume-promo` עוצב מחדש (תמונה אחת `how-many-v2.{webp,avif}` +480/768, הוסרו 5 ה-thumbs + סקריפט ההחלפה + `pp-bio`; perfume-1..5 בדיסק) + סקשן חדש `#perfume-savlanut` ("סבלנות"/הקולפן, `savlanut.{webp,avif}` 931×934, פס EXHIBITION•VOLUME 2, קו 32×1, "בלעדי לרכישה בגלריה בכיכר המדינה" — בלי כפתור/קישור; "תערוכת הקולפן" מקושרת). דסקטופ = two-col, savlanut ב-`row-reverse`. כיול מובייל 36→26/20→16 + `.mbr`. דאטה: `homepage.json::perfume_promo`. אומת מול רינדורי frames + צילומי headless 1440/390. |
 | 6 | upcoming section חדש | ⏳ |
 | 7 | big news חדש | ✅ 2026-08-04 — טקסט-בלבד ממורכז per Figma `1318:583`; דסקטופ = clamp מוגדל (44/64/28/20); `homepage.json::big_news` עודכן (הוסרו image/ring/badge, נוסף `heading_en`); קבצי `images/homepage/big-news/` נשארו בדיסק. |
-| 8 | the art works שחמט | ⏳ |
+| 8 | the art works שחמט | ✅ 2026-08-04 — `.aw-grid` שחמט: מובייל 2×3 זרימה טבעית (תאים ~179px), דסקטופ 3×2 (`grid-area` ב-`min-width:769px`, I·T·I/T·I·T); 3 תמונות `images/homepage/artworks/aw-{1,2,3}` contain (+480w, avif); טקסטים 36→26px מובייל / clamp→64 דסקטופ; chevron ימינה אחרי "more"; curator: role מעל name + "read more" (4px 16px, border 1px); `works.json works[]` 4→3; tiles ישנים בדיסק. אומת בצילומי headless (⚠️ ל-Chrome headless מינימום רוחב חלון 500 — לצלם מובייל ב-500, לא 390). |
 | 9 | x our artists קרוסלת פוקוס | ⏳ |
 | 10 | press-9 + כפתור | ⏳ |
 | 11 | סקשן soos בהומפייג' | ⏳ |

@@ -91,6 +91,45 @@
   "figma_node_mobile": "1318:583",
   "figma_file": "XhGH289YTRcW811wrufRJz"
  },
+ "perfume_promo": {
+  "perfumes": [
+   {
+    "id": "how-many",
+    "title_en": "new perfume",
+    "name_he": null,
+    "subtitle_he": "בושם הנושא של תערוכת",
+    "exhibition_id": "how-many",
+    "exhibition_title_en": "HOW MANY PARTNERS HAVE YOU HAD?",
+    "exhibition_bar_en": null,
+    "image": "images/homepage/perfume-promo/how-many-v2.webp",
+    "exclusive_he": null,
+    "cta_he": "עוד על הבושם באתר",
+    "cta_url": "https://www.zrp.co.il/product/how-many-partners-have-you-had",
+    "figma_node_desktop": null,
+    "figma_node_mobile": "1318:599",
+    "figma_file": "XhGH289YTRcW811wrufRJz"
+   },
+   {
+    "id": "savlanut",
+    "title_en": "new perfume",
+    "name_he": "סבלנות",
+    "subtitle_he": "בושם הנושא של תערוכת הקולפן",
+    "exhibition_id": "the-peeler",
+    "exhibition_title_en": null,
+    "exhibition_bar_en": [
+     "EXHIBITION",
+     "VOLUME 2"
+    ],
+    "image": "images/homepage/perfume-promo/savlanut.webp",
+    "exclusive_he": "בלעדי לרכישה בגלריה בכיכר המדינה",
+    "cta_he": null,
+    "cta_url": null,
+    "figma_node_desktop": null,
+    "figma_node_mobile": "1318:1169",
+    "figma_file": "XhGH289YTRcW811wrufRJz"
+   }
+  ]
+ },
  "social_section": {
   "title_lines": [
    "follow us",
@@ -388,7 +427,7 @@
   "figma_gallery_strip_mobile": "363:649"
  },
  "press_section": {
-  "_note": "סדר הכרטיסים = Figma 1124:1354 (2026-07-15), קריאה שורה-שורה ימין→שמאל (col1 ואז col2). זהה לסדר העמודה היחידה במובייל.",
+  "_note": "2026-08-04 — הגריד דינמי ב-index.html: תמיד 2 האירועים האחרונים לפי תאריך (date_tbd לא נספר כ'אחרון') ואז כל כתבות העיתונות (type:press). מקור: #press-data. כותרת PRESS + EVENTS → /press/ (עמוד press & events; /events/ = upcoming בלבד).",
   "title_b": "press",
   "title_l": "& events",
   "item_ids": [

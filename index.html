@@ -45,16 +45,6 @@
   font-weight:400;font-style:normal;font-display:swap;
 }
 @font-face{
-  font-family:"Solway";
-  src:url("פונטים/Solway-Light.woff2") format("woff2");
-  font-weight:300;font-style:normal;font-display:swap;
-}
-@font-face{
-  font-family:"Solway";
-  src:url("פונטים/Solway-Regular.woff2") format("woff2");
-  font-weight:400;font-style:normal;font-display:swap;
-}
-@font-face{
   font-family:"Noto Sans Arabic";
   src:url("פונטים/NotoSansArabic-Light.woff2") format("woff2");
   font-weight:300;font-style:normal;font-display:swap;
@@ -78,7 +68,6 @@
   --max:1440px;
   --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
   --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
-  --sol:"Solway","Copperplate","Times New Roman",serif;
   --pad-x:96px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -275,49 +264,26 @@ body{text-transform:uppercase}
 .ex-now .artist[href$="/maya-nachum-levy/"] img{object-position:50% 25%}
 .ex-now .artist[href$="/la-raz-porta/"] img{object-position:50% 50%}
 
-/* ===== EVENTS / UPCOMING — Figma landing::1124:901 (desktop) / 1124:133 (mobile).
-   Circular "upcoming events" title (outlined SVG, green #2B4C39) on the left; infinite-loop
-   carousel of tall gradient cards (3-up desktop); thin 48px chevrons below, right-aligned.
-   Mobile: circle bleeds off the left edge, 2:3 cards, swipe only (no arrows — per Figma). */
-.ev-up{padding:64px var(--pad-x);display:flex;flex-direction:column;gap:24px;align-items:stretch;background:var(--white);width:100%;max-width:var(--max);margin:0 auto;box-sizing:border-box}
-.ev-up[hidden]{display:none}
-.ev-up-body{display:grid;grid-template-columns:1fr 3.1fr;gap:16px;align-items:center;width:100%;min-width:0}
-.ev-up-circle{display:flex;align-items:center;justify-content:center;min-width:0}
-.ev-up-circle img{width:min(238px,100%);height:auto;display:block;animation:ev-up-spin 48s linear infinite}
-@keyframes ev-up-spin{to{transform:rotate(-360deg)}}
-.ev-up-viewport{overflow:hidden;width:100%;min-width:0}
-.ev-up-cards{display:flex;gap:16px;width:100%;will-change:transform;touch-action:pan-y;user-select:none}
-.ev-up-cards.is-dragging{cursor:grabbing}
-.ev-up .card-link{flex:0 0 calc((100% - 32px) / 3);display:block;color:inherit;text-decoration:none;min-width:0;cursor:pointer}
-.ev-up .ev-up-cards.has-2 .card-link{flex-basis:calc((100% - 16px) / 2)}
-.ev-up .ev-up-cards.has-1 .card-link{flex-basis:100%}
-.ev-up .card-link--soon{cursor:default}
-.ev-up .card{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;background:#222;container-type:inline-size}
-.ev-up .card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
-.ev-up .card picture{display:contents}
-.ev-up .card-link:hover .card img{transform:scale(1.04)}
-/* Overlay — Figma landing::1258:746 (200×301). cqw calibrated so 200px card = Figma px;
-   narrower desktop 3-up cards (~183) scale down slightly so Copperplate doesn't collide with the date. */
-.ev-up .card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.8) 100%);pointer-events:none}
-.ev-up .ovr{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(6px,4cqw,8px);color:#fff;box-sizing:border-box}
-.ev-up .ovr-top{display:flex;justify-content:space-between;align-items:flex-start;gap:clamp(8px,4cqw,12px);width:100%}
-.ev-up .gname{font-family:var(--cop);font-weight:700;font-size:clamp(12px,8cqw,16px);line-height:1.15;letter-spacing:.02em;white-space:normal;overflow-wrap:anywhere;flex:1 1 0;min-width:0}
-.ev-up .date{font-family:var(--cop);font-weight:700;font-size:clamp(10px,7cqw,14px);line-height:1.1;letter-spacing:.02em;white-space:nowrap;padding:clamp(2px,2cqw,4px) 0;flex:0 0 auto}
-.ev-up .date--tbd{font-family:var(--heb);font-weight:400;font-size:clamp(9px,6cqw,12px);white-space:normal;text-align:right;flex:0 1 auto;max-width:42%;padding:2px 0;text-transform:none;letter-spacing:0}
-.ev-up .ovr-bot{display:flex;flex-direction:column;gap:clamp(2px,2cqw,4px);align-items:flex-start;width:100%}
-.ev-up .ttl{font-family:var(--cop);font-weight:700;font-size:clamp(10px,7cqw,14px);line-height:1.1;letter-spacing:.02em}
-.ev-up .ex{display:flex;flex-direction:column;gap:clamp(1px,.8cqw,1.6px);align-items:flex-start;max-width:100%}
-.ev-up .ex-bar{display:flex;align-items:center;justify-content:flex-start;gap:clamp(3px,2.65cqw,5.3px);flex-wrap:nowrap;max-width:100%}
-.ev-up .ex-bar .lbl{font-family:var(--sol);font-weight:300;font-size:clamp(8px,5.25cqw,10.5px);line-height:normal;text-transform:uppercase;letter-spacing:0;white-space:nowrap;color:#fff}
-.ev-up .ex-bar .bdot{width:clamp(2px,1.2cqw,2.4px);height:clamp(2px,1.2cqw,2.4px);border-radius:50%;background:#fff;flex:none}
-.ev-up .ex-name{font-family:var(--cop);font-weight:300;font-size:clamp(9px,6cqw,12px);line-height:1.15;letter-spacing:.02em;overflow-wrap:anywhere;max-width:100%}
-.ev-up .ex-name--he{font-family:var(--heb);font-weight:400;font-size:clamp(9px,5.85cqw,11.7px);text-transform:none;letter-spacing:0}
-.ev-up-nav{display:flex;justify-content:flex-end;align-items:center;gap:16px}
-.ev-up.ev-up--single .ev-up-nav{display:none}
-.ev-up-nav button{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;color:var(--ink);border:0;background:none;cursor:pointer;transition:opacity .2s}
-.ev-up-nav button:hover{opacity:.4}
-.ev-up-nav button:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
-.ev-up-nav svg{width:48px;height:48px;display:block;fill:currentColor}
+/* ===== EVENTS / UPCOMING — Figma landing::1318:476 (redesign 2026-08; mobile frame is the source,
+   desktop = adaptation). Stacked title ("upcoming" Bold over "events" Light, slight overlap) above two
+   static poster cards — the posters are designer-maintained images (images/homepage/upcoming/), text is
+   baked into them. FIT fills in Figma → object-fit:contain; the Dizengoff card has a collage backdrop
+   behind the poster (second fill) covering the contain slivers. Everything links to events/. */
+.ev-up{padding:64px var(--pad-x);display:flex;flex-direction:column;align-items:center;gap:56px;background:var(--white);width:100%;max-width:var(--max);margin:0 auto;box-sizing:border-box}
+.ev-up-title{align-self:stretch;font-weight:400}
+.ev-up-title a{display:block;color:var(--ink);transition:opacity .2s}
+.ev-up-title a:hover{opacity:.6}
+.ev-up-title .tb{display:block;font-family:var(--cop);font-weight:700;font-size:58px;line-height:1.05;letter-spacing:.02em}
+.ev-up-title .tl{display:block;font-family:var(--cop);font-weight:300;font-size:91px;line-height:1;letter-spacing:.02em;margin-top:-16px}
+.ev-up-posters{display:flex;justify-content:center;align-items:stretch;gap:16px;width:100%}
+.ev-up-poster{position:relative;display:block;width:min(380px,calc((100% - 16px) / 2));aspect-ratio:175/301;overflow:hidden;background:var(--white)}
+.ev-up-poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;transition:transform .6s ease}
+.ev-up-poster picture{display:contents}
+.ev-up-poster .bg{object-fit:cover}
+.ev-up-poster:hover img{transform:scale(1.03)}
+.ev-up-viewall{display:inline-flex;justify-content:center;align-items:center;padding:4px 16px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:16px;line-height:normal;letter-spacing:.02em;color:var(--ink);transition:opacity .2s}
+.ev-up-viewall:hover{opacity:.5}
+.ev-up-viewall:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
 
 /* ===== EXHIBITIONS ARCHIVE — Figma landing::474:97 (desktop) / 467:45 (mobile) ===== */
 .ex-archive{padding:48px var(--pad-x) 96px;display:flex;flex-direction:column;gap:40px;align-items:center;background:var(--white);width:100%;max-width:var(--max);margin:0 auto}
@@ -337,22 +303,28 @@ body{text-transform:uppercase}
 .ex-archive-title .he{font-family:var(--heb);font-weight:300;font-size:36px;direction:rtl;text-align:left;line-height:1.15}
 .ex-archive-badge{font-family:var(--heb);font-weight:300;font-size:36px;color:#fff;background:#1B1B1B;padding:8px 16px;direction:rtl;white-space:nowrap;line-height:1;flex-shrink:0}
 
-/* ===== ART WORKS ===== */
+/* ===== ART WORKS — checkerboard (redesign 2026-08, Figma mobile 1318:560; desktop = adaptation 3×2) ===== */
 .artworks{display:flex;flex-direction:column;background:var(--white)}
-.aw-row{display:flex;gap:48px;padding:32px var(--pad-x);align-items:center;justify-content:center}
-.aw-img{width:600px;height:600px;flex-shrink:0;overflow:hidden;background:#f3f1ee}
-.aw-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.aw-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:64px var(--pad-x) 0}
+.aw-img{aspect-ratio:1/1;overflow:hidden}
+.aw-img img{width:100%;height:100%;object-fit:contain;transition:transform .8s}
 .aw-img:hover img{transform:scale(1.04)}
-.aw-text{width:596px;height:596px;display:flex;align-items:center;justify-content:center;position:relative;flex-shrink:0}
-.aw-text .word{font-family:var(--cop);font-weight:700;font-size:80px;line-height:1;color:var(--ink);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
-.aw-text .more{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:8px;font-family:var(--cop);font-weight:300;font-size:80px;line-height:1;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.aw-text{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;text-align:center}
+/* desktop checkerboard I·T·I / T·I·T — source order = mobile 2×3 flow; scoped ≥769px so mobile keeps natural flow */
+@media (min-width:769px){
+  .aw-grid>:nth-child(1){grid-area:1/1}
+  .aw-grid>:nth-child(2){grid-area:1/2}
+  .aw-grid>:nth-child(3){grid-area:2/1}
+  .aw-grid>:nth-child(4){grid-area:1/3}
+  .aw-grid>:nth-child(5){grid-area:2/2}
+  .aw-grid>:nth-child(6){grid-area:2/3}
+}
+.aw-text .word{font-family:var(--cop);font-weight:700;font-size:clamp(30px,4.45vw,64px);line-height:1.05;color:var(--ink)}
+.aw-text .more{display:inline-flex;align-items:center;gap:8px;font-family:var(--cop);font-weight:300;font-size:clamp(30px,4.45vw,64px);line-height:1;color:var(--ink);cursor:pointer;transition:opacity .2s;white-space:nowrap}
 .aw-text .more:hover{opacity:.7}
-.aw-text .more svg{width:32px;height:32px}
-/* desktop: lowercase 'art' */
-.aw-text .word.art-text::before{content:"art"}
-/* mobile: uppercase 'ART' (per Figma mobile) */
+.aw-text .more svg{width:32px;height:32px;flex-shrink:0}
 
-/* curator footer of art-works section (Figma 710:177 desktop / 710:117 mobile) */
+/* curator footer of art-works section (redesign 2026-08: role above name, "read more" button) */
 .aw-curator{display:flex;flex-direction:column;align-items:center;gap:32px;padding:96px var(--pad-x);background:var(--white);text-align:center}
 .aw-curator-titles{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;min-width:0}
 .awc-name,.awc-role{font-family:var(--cop);line-height:1;color:var(--ink);white-space:nowrap;max-width:100%}
@@ -440,50 +412,58 @@ body{text-transform:uppercase}
 .x-artists-card .name{font-family:var(--cop);font-weight:400;font-size:16px;text-align:center;color:var(--ink)}
 .x-artists-tri{display:none}
 
-/* ===== PERFUME PROMO (How Many Partners) — Figma 386:232 desktop / 386:806 mobile. Link → zrp.co.il product ===== */
+/* ===== PERFUME PROMO ×2 (how many + סבלנות/the peeler) — Figma 1318:599 / 1318:1169 mobile; desktop = adaptation (redesign 2026-08) ===== */
 .perfume-promo{background:var(--white);padding:56px var(--pad-x) 40px;max-width:var(--max);margin:0 auto;box-sizing:border-box}
+.perfume-promo--savlanut{padding-top:40px}
 .perfume-promo-inner{display:flex;gap:48px;align-items:center}
-.pp-media{flex:0 0 492px;width:492px;display:flex;flex-direction:column;gap:4px;min-width:0}
-.pp-main{width:100%;aspect-ratio:1/1;overflow:hidden}
-.pp-main img{width:100%;height:100%;object-fit:cover;display:block}
-.pp-thumbs{display:flex;gap:4px}
-.pp-thumb{flex:1 1 0;min-width:0;aspect-ratio:95/115;padding:0;border:0;background:none;cursor:pointer;overflow:hidden;display:block}
-.pp-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.pp-thumb:hover img{transform:scale(1.05)}
-.pp-thumb.is-active{outline:2px solid var(--ink);outline-offset:-2px}
+.perfume-promo--savlanut .perfume-promo-inner{flex-direction:row-reverse}
+.pp-media{flex:0 0 492px;width:492px;min-width:0}
+.pp-media img{width:100%;height:auto;display:block}
 .pp-info{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;text-align:center}
+.perfume-promo--savlanut .pp-info{gap:32px}
 .pp-logo{width:214px;height:64px;flex:0 0 auto;display:block}
 .pp-text{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
 .pp-head{display:flex;flex-direction:column;align-items:center;gap:24px;width:100%}
+.pp-lines{display:flex;flex-direction:column;align-items:center;gap:8px}
 .pp-title{font-family:var(--cop);font-weight:700;font-size:clamp(48px,5.56vw,80px);line-height:1;letter-spacing:.02em;color:var(--ink)}
-.pp-sub-he{font-family:var(--heb);font-weight:400;font-size:20px;line-height:1.4;color:var(--ink)}
-.pp-sub-en{font-family:var(--cop);font-weight:400;font-size:20px;line-height:1.15;letter-spacing:.04em;color:var(--ink)}
-.pp-bio{font-family:var(--heb);font-weight:400;font-size:18px;line-height:1.4;color:var(--ink);text-align:center}
+.pp-name{font-family:var(--heb);font-weight:400;font-size:20px;line-height:1.4;color:var(--ink)}
+.pp-sub-he{font-family:var(--heb);font-weight:300;font-size:20px;line-height:1.4;color:var(--ink)}
+.pp-sub-he a{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s}
+.pp-sub-he a:hover{text-decoration-color:rgba(27,27,27,.7)}
+.mbr{display:none}
+.pp-sub-en{font-family:var(--cop);font-weight:300;font-size:20px;line-height:1.15;letter-spacing:.04em;color:var(--ink)}
+.pp-exbar{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--cop);font-weight:300;font-size:20px;line-height:1.15;letter-spacing:.04em;color:var(--ink)}
+.pp-exbar .dot{width:4px;height:4px;border-radius:50%;background:var(--ink)}
+.pp-exclusive{display:flex;flex-direction:column;align-items:center;gap:8px}
+.pp-exclusive .rule{width:32px;height:1px;background:var(--ink)}
+.pp-excl-txt{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.4;color:var(--ink)}
 .pp-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:16px 24px;border:1.4px solid var(--ink);font-family:var(--heb);font-weight:400;font-size:18px;line-height:1;color:var(--ink);transition:background .2s,color .2s}
 .pp-cta:hover{background:var(--ink);color:var(--white)}
 @media (max-width:1199px){
-  .perfume-promo-inner{flex-direction:column;align-items:center;gap:40px}
+  .perfume-promo-inner,.perfume-promo--savlanut .perfume-promo-inner{flex-direction:column;align-items:center;gap:40px}
   .pp-media{flex:0 0 auto;width:100%;max-width:492px}
   .pp-info{width:100%;max-width:560px;gap:32px}
   .pp-logo{display:none}
   .pp-title{font-size:clamp(36px,7vw,56px)}
 }
 @media (max-width:768px){
-  .perfume-promo{padding:40px var(--pad-x)}
+  .perfume-promo{padding:32px var(--pad-x)}
   .perfume-promo-inner{gap:40px}
   .pp-info{gap:40px}
+  .perfume-promo--savlanut .pp-info{gap:16px}
   .pp-text{gap:8px}
   .pp-head{gap:8px}
-  .pp-title{font-size:36px}
-  .pp-sub-en{font-weight:300}
+  .pp-title{font-size:26px}
+  .pp-sub-en,.pp-exbar{font-size:16px}
+  .mbr{display:inline}
 }
 
 /* ===== BIG NEWS (new sales point — shop inside medina gallery) — Figma 1318:583 mobile; desktop = adaptation (redesign 2026-08) ===== */
 .news-promo{background:var(--white);padding:72px var(--pad-x);max-width:var(--max);margin:0 auto;box-sizing:border-box}
 .news-promo-inner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:32px}
 .nb-head{font-family:var(--cop);font-weight:700;font-size:clamp(26px,3.06vw,44px);line-height:1.1;color:var(--ink)}
-.nb-title{font-family:var(--heb);font-weight:400;font-size:clamp(36px,4.45vw,64px);line-height:1.25;color:var(--ink)}
-.nb-sub{display:flex;flex-direction:column;align-items:center;gap:12px}
+.nb-title{font-family:var(--heb);font-weight:400;font-size:clamp(36px,4.45vw,64px);line-height:1.05;color:var(--ink)}
+.nb-sub{display:flex;flex-direction:column;align-items:center;gap:4px}
 .nb-sub-main{font-family:var(--heb);font-weight:300;font-size:clamp(24px,1.95vw,28px);line-height:1.4;color:var(--ink)}
 .nb-sub-addr{font-family:var(--heb);font-weight:300;font-size:clamp(18px,1.4vw,20px);line-height:1.4;color:var(--ink)}
 .nb-sub-addr a{color:inherit;text-decoration:none}
@@ -491,7 +471,7 @@ body{text-transform:uppercase}
 @media (max-width:768px){
   .news-promo{padding:52px var(--pad-x)}
   .news-promo-inner{gap:24px}
-  .nb-sub{gap:8px}
+  .nb-sub{gap:2px}
 }
 
 /* ===== TRIBE TEASER (loneliness × the tribe) — Figma 250:87 desktop / 363:618 mobile; data: homepage.json :: tribe_teaser ===== */
@@ -540,11 +520,13 @@ body{text-transform:uppercase}
 }
 .tribe-teaser-gallery-wrap{display:flex;justify-content:center;overflow-x:visible;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
 
-/* ===== PRESS & EVENTS — Figma landing::1124:1354 (desktop) / 1124:439 (mobile). Static 2-col grid (not a carousel). ===== */
+/* ===== PRESS & EVENTS — Figma landing::1124:1354 (desktop) / 1124:439 (mobile). 2-col grid; content = 2 latest events + all press (JS). ===== */
 .press{padding:32px var(--pad-x) 48px;display:flex;flex-direction:column;gap:24px;background:var(--white)}
 .press-title{display:flex;flex-direction:column;gap:3px;line-height:1.05}
-.press-title .b{font-family:var(--cop);font-weight:700;font-size:36px;display:block}
-.press-title .l{font-family:var(--cop);font-weight:300;font-size:36px;display:block}
+.press-title .b,.press-title .l{font-family:var(--cop);font-size:36px;display:block;color:inherit;text-decoration:none}
+.press-title .b{font-weight:700}
+.press-title .l{font-weight:300}
+.press-title a:hover{opacity:.55}
 .press-rows{display:flex;flex-direction:column;gap:48px}
 .press-row{display:flex;gap:48px}
 .press-row.press-row--swap{flex-direction:row}
@@ -612,9 +594,6 @@ body{text-transform:uppercase}
   .hero-titles h1,.hero-titles h2{font-size:clamp(40px,5.5vw,56px)}
   .hero-desc{padding:0}
   .hero-image .img-frame{width:min(560px,100%)}
-  .aw-img,.aw-text{width:50%;height:auto;aspect-ratio:1/1}
-  .aw-text .word{left:50%;top:50%;transform:translate(-50%,-50%);font-size:60px}
-  .aw-text .more{left:50%;top:50%;transform:translate(-50%,-50%);font-size:60px}
   .opencall-card{width:280px}
   .opencall-card .img{height:420px}
 }
@@ -706,18 +685,13 @@ body{text-transform:uppercase}
   .ex-now .artist img,.ex-now .artist .portrait-placeholder{width:96px;height:80px}
   .ex-now .artist .nm{font-size:11px;line-height:18px}
 
-  /* EVENTS / UPCOMING — Figma 1124:133: circle title bleeds off the left edge, 200×301 cards,
-     swipe only (no arrows on mobile per Figma) */
-  .ev-up{padding:32px 0;gap:56px}
-  .ev-up-body{display:flex;flex-direction:column;gap:32px;align-items:stretch}
-  .ev-up-circle{justify-content:flex-start;height:242px;position:relative;overflow:hidden}
-  .ev-up-circle img{position:absolute;left:-78px;top:33px;width:175px}
-  .ev-up-viewport{margin-left:16px;padding-left:0;width:calc(100% - 16px);box-sizing:border-box}
-  .ev-up-cards{gap:8px}
-  .ev-up .card-link{flex:0 0 min(200px,calc((100% - 8px) / 2))}
-  .ev-up .ev-up-cards.has-1 .card-link{flex-basis:100%}
-  .ev-up .card{aspect-ratio:2/3}
-  .ev-up-nav{display:none}
+  /* EVENTS / UPCOMING — Figma 1318:476 verbatim: padding 32/16, gap 56, title 58/91 Figma →
+     46/72 optical (Copperplate ~28% wider), posters 2-up gap 8 → 175×301 at 390 */
+  .ev-up{padding:32px 16px;gap:56px}
+  .ev-up-title .tb{font-size:clamp(30px,11.8vw,46px)}
+  .ev-up-title .tl{font-size:clamp(46px,18.46vw,72px);margin-top:-12px}
+  .ev-up-posters{gap:8px}
+  .ev-up-poster{width:calc((100% - 8px) / 2)}
 
   /* EXHIBITIONS ARCHIVE */
   .ex-archive{padding:32px 16px;gap:128px;align-items:stretch}
@@ -731,31 +705,15 @@ body{text-transform:uppercase}
   .ex-archive-title .he{font-size:14px;font-weight:300;line-height:1.25}
   .ex-archive-badge{font-size:14px;padding:4px 8px}
 
-  /* ART WORKS — 2x2 grid; mobile ART = uppercase per Figma */
-  .artworks{padding:32px 16px;display:grid;grid-template-columns:repeat(2,1fr);gap:8px;align-content:start}
-  .aw-row{display:contents}
-  .aw-img{width:100%;height:auto;aspect-ratio:1/1;padding:0;margin:0}
-  .aw-row:nth-child(1) .aw-img{grid-column:1;grid-row:1}
-  .aw-row:nth-child(2) .aw-img{grid-column:2;grid-row:2}
-  .aw-row:nth-child(3) .aw-img{grid-column:1;grid-row:3}
-  .aw-row:nth-child(4) .aw-img{grid-column:2;grid-row:4}
-  .aw-text{width:100%;height:auto;aspect-ratio:1/1;position:relative}
-  .aw-row:nth-child(1) .aw-text{grid-column:2;grid-row:1}
-  .aw-row:nth-child(2) .aw-text{grid-column:1;grid-row:2}
-  .aw-row:nth-child(3) .aw-text{grid-column:2;grid-row:3}
-  .aw-row:nth-child(4) .aw-text{grid-column:1;grid-row:4}
-  .aw-text .word,.aw-text .more{position:absolute;font-size:36px;left:50%;top:50%;transform:translate(-50%,-50%);padding:0;line-height:1;font-family:var(--cop)}
+  /* ART WORKS — checkerboard 2×3 per Figma 1318:560 (cells ~179px, images contain) */
+  .artworks{padding:32px 16px;gap:24px}
+  .aw-grid{grid-template-columns:repeat(2,1fr);padding:0}
+  .aw-text .word,.aw-text .more{font-size:26px}
   .aw-text .more svg{width:24px;height:24px}
-  .aw-text .word.art-mobile-up{font-weight:700}
-  /* Show "ART" uppercase on mobile only (per Figma mobile design) */
-  .aw-text .word.art{visibility:hidden}
-  .aw-text .word.art::after{content:"ART";visibility:visible;position:absolute;left:0;top:0;font-weight:700}
 
-  /* curator footer — mobile: role above name, smaller (Figma 710:117) */
-  .aw-curator{grid-column:1/-1;padding:48px;gap:16px}
-  .awc-name,.awc-role{font-size:clamp(16px,7.2vw,36px)}
-  .awc-name{order:2}
-  .awc-role{order:1}
+  /* curator — centered block (Figma 1318:575) */
+  .aw-curator{min-height:179px;justify-content:center;padding:0 48px;gap:16px}
+  .awc-name,.awc-role{font-size:clamp(16px,7.2vw,28px)}
   .awc-view{font-size:16px;border-width:1px;padding:4px 16px}
 
   /* INSTAGRAM — ~3.5 cards visible @390 (viewport minus --pad-x) */
@@ -930,8 +888,7 @@ body{text-transform:uppercase}
   .social-title .b,.social-title .l{font-size:30px}
   .galleries-title .b,.galleries-title .l,
   .tribe-teaser-head .b,.tribe-teaser-head .l,
-  .press-title .b,.press-title .l{font-size:30px}
-  .aw-text .word,.aw-text .more{font-size:28px}
+.press-title .b,.press-title .l{font-size:30px}
   .gallery-card{grid-template-columns:140px 1fr}
   .gallery-card > .img{width:140px;height:170px}
   .gallery-card .name{font-size:18px}
@@ -1149,548 +1106,50 @@ porta</div></a>
   </div>
 </section>
 
-<!-- EVENTS / UPCOMING — Figma landing::1057:97. Cards are rendered client-side from #events-upcoming-data
-     so that events whose date has passed drop out on their own, and the whole section hides when none are left. -->
-<section class="ev-up" id="events-upcoming" aria-label="upcoming events" hidden>
-  <div class="ev-up-body">
-    <div class="ev-up-circle">
-      <img src="images/homepage/upcoming-events-circle.svg" width="239" height="239" alt="upcoming events" decoding="async" loading="lazy">
-    </div>
-    <div class="ev-up-viewport">
-      <div class="ev-up-cards"></div>
-    </div>
-  </div>
-  <div class="ev-up-nav" role="group" aria-label="upcoming events navigation">
-    <button type="button" class="ev-up-prev" aria-label="previous"><svg viewBox="0 0 48 48"><path d="M16.7031 24L28.7031 12L30.3831 13.68L20.0631 24L30.3831 34.32L28.7031 36L16.7031 24Z"/></svg></button>
-    <button type="button" class="ev-up-next" aria-label="next"><svg viewBox="0 0 48 48"><path d="M31.2969 24L19.2969 12L17.6169 13.68L27.9369 24L17.6169 34.32L19.2969 36L31.2969 24Z"/></svg></button>
-  </div>
-</section>
-<script type="application/json" id="events-upcoming-data">
-[
- {
-  "route": "events/artist-talk/",
-  "date": "2026-06-11",
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/artist-talk/hero-desktop.webp",
-  "w": 984,
-  "h": 1312,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "שיחת אמנים עם גל פולק ואלסה ארס ברוש — גלריית כיכר המדינה",
-  "srcset": "images/events/artist-talk/hero-desktop-480w.webp 480w, images/events/artist-talk/hero-desktop-768w.webp 768w, images/events/artist-talk/hero-desktop.webp 984w",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- },
- {
-  "route": "events/close-look/",
-  "date": "2026-06-02",
-  "title_en": "close look",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/close-look/hero.webp",
-  "w": 1125,
-  "h": 1500,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "מבט מקרוב — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/close-look/hero-480w.webp 480w, images/events/close-look/hero-768w.webp 768w, images/events/close-look/hero.webp 1125w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/how-many/",
-  "date": "2026-05-26",
-  "title_en": "opening",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/event-how-many-2026-05-26-cover.webp",
-  "w": 3058,
-  "h": 4096,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "אירוע הפתיחה — כמה שותפים היו לך? — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover.webp 3058w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/ktuba/",
-  "date": "2026-02-25",
-  "title_en": "live art performance",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/ktuba/hero.webp",
-  "w": 1500,
-  "h": 2000,
-  "ex_bar": [
-   "exhibition",
-   "volume 1"
-  ],
-  "ex_name": "בדידות בסביבה תוססת",
-  "ex_he": true,
-  "alt": "כתובה — מיצג חי — גלריית כיכר המדינה",
-  "srcset": "images/events/ktuba/hero-480w.webp 480w, images/events/ktuba/hero-768w.webp 768w, images/events/ktuba/hero.webp 1500w",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- },
- {
-  "route": "events/loneliness/",
-  "date": "2026-01-19",
-  "title_en": "opening",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/loneliness/hero.webp",
-  "w": 768,
-  "h": 1254,
-  "ex_bar": [
-   "exhibition",
-   "volume 1"
-  ],
-  "ex_name": "בדידות בסביבה תוססת",
-  "ex_he": true,
-  "alt": "אירוע הפתיחה — בדידות בתוך סביבה תוססת — גלריית כיכר המדינה",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- },
- {
-  "route": "events/natasha-zeriker/",
-  "date": "2026-07-09",
-  "title_en": "save the date",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/natasha-zeriker/hero.webp",
-  "w": 984,
-  "h": 1403,
-  "ex_bar": [
-   "exhibition",
-   "volume 2"
-  ],
-  "ex_name": "הקולפן",
-  "ex_he": true,
-  "alt": "ערב עם נטאשה זריקר — גלריית כיכר המדינה",
-  "srcset": "images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- },
- {
-  "route": "events/liel-salman/",
-  "date": "2026-07-16",
-  "title_en": "pop up tattoos",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/liel-salman/hero.webp",
-  "w": 984,
-  "h": 1749,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "פופ אפ קעקועים — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/liel-salman/hero-480w.webp 480w, images/events/liel-salman/hero-768w.webp 768w, images/events/liel-salman/hero.webp 984w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/nir-giorgio-levin/",
-  "date": "2026-07-17",
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/nir-giorgio-levin/hero.webp",
-  "w": 984,
-  "h": 1194,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/nir-giorgio-levin/hero-480w.webp 480w, images/events/nir-giorgio-levin/hero-768w.webp 768w, images/events/nir-giorgio-levin/hero.webp 984w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/risa-and-noemi/",
-  "date": "2026-07-24",
-  "title_en": "artists talk",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/risa-and-noemi/hero.webp",
-  "w": 984,
-  "h": 1321,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "שיחת אמנים עם ריסה ברוק עוז ונעמי ספיר — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/risa-and-noemi/hero-480w.webp 480w, images/events/risa-and-noemi/hero-768w.webp 768w, images/events/risa-and-noemi/hero.webp 984w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/zohar-ron/",
-  "date": null,
-  "date_tbd": true,
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "img": "images/events/zohar-ron/hero.webp",
-  "w": 984,
-  "h": 1488,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "שיחת אמנים עם זוהר רון — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/zohar-ron/hero-480w.webp 480w, images/events/zohar-ron/hero-768w.webp 768w, images/events/zohar-ron/hero.webp 984w",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ]
- },
- {
-  "route": "events/anat-wegier/",
-  "date": "2026-08-07",
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר דיזינגוף",
-  "gallery_en": [
-   "dizengoff",
-   "square"
-  ],
-  "img": "images/events/anat-wegier/upcoming.webp",
-  "w": 984,
-  "h": 1187,
-  "ex_bar": [
-   "the exhibition"
-  ],
-  "ex_name": "how many partners have you had?",
-  "ex_he": false,
-  "alt": "שיחת אמנים עם ענת ויז׳ייה — גלריית כיכר דיזינגוף",
-  "srcset": "images/events/anat-wegier/upcoming-480w.webp 480w, images/events/anat-wegier/upcoming-768w.webp 768w, images/events/anat-wegier/upcoming.webp 984w"
- },
- {
-  "route": "events/alice-debellis/",
-  "date": "2026-08-06",
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/alice-debellis/hero.webp",
-  "w": 984,
-  "h": 1488,
-  "ex_bar": [
-   "exhibition",
-   "volume 2"
-  ],
-  "ex_name": "הקולפן",
-  "ex_he": true,
-  "alt": "שיחת אמנים עם אליס דה בליס — גלריית כיכר המדינה",
-  "srcset": "images/events/alice-debellis/hero-480w.webp 480w, images/events/alice-debellis/hero-768w.webp 768w, images/events/alice-debellis/hero.webp 984w",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- },
- {
-  "route": "events/amnon-lipkin/",
-  "date": null,
-  "date_tbd": true,
-  "title_en": "artist talk",
-  "gallery_he": "גלריית כיכר המדינה",
-  "img": "images/events/amnon-lipkin/hero.webp",
-  "w": 390,
-  "h": 520,
-  "ex_bar": [
-   "exhibition",
-   "volume 2"
-  ],
-  "ex_name": "הקולפן",
-  "ex_he": true,
-  "alt": "שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה",
-  "gallery_en": [
-   "hamedina",
-   "square"
-  ]
- }
-]
-</script>
-<script>
-(function(){
-  var sec=document.getElementById('events-upcoming');
-  var src=document.getElementById('events-upcoming-data');
-  if(!sec||!src) return;
-  var all; try{all=JSON.parse(src.textContent);}catch(e){sec.remove();return;}
-  var n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
-  var up=all.filter(function(e){
-    if(e.date_tbd) return true;               // date TBD ("פרטים בהמשך") — always upcoming
-    var p=String(e.date).split('-');
-    return new Date(+p[0],+p[1]-1,+p[2]).getTime()>=today;
-  }).sort(function(a,b){
-    if(a.date_tbd&&b.date_tbd) return 0;       // dated events first (ascending), TBD events last
-    if(a.date_tbd) return 1;
-    if(b.date_tbd) return -1;
-    return a.date<b.date?-1:a.date>b.date?1:0;
-  });
-  if(!up.length){sec.remove();return;}
-  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-  sec.querySelector('.ev-up-cards').innerHTML=up.map(function(e){
-    var dateHtml=e.date_tbd
-      ? '<div class="date date--tbd" dir="rtl">פרטים בהמשך</div>'
-      : (function(){var d=String(e.date).split('-');return '<div class="date">'+esc(d[2]+'.'+d[1])+'</div>';})();
-    var gl=(e.gallery_en||[]).map(esc).join('<br>');
-    // Solway bar only for volume-style labels (e.g. exhibition • volume 2).
-    // Plain "the exhibition" is redundant above the exhibition title — omit it.
-    var barParts=(e.ex_bar||[]).filter(function(p){
-      return String(p).toLowerCase().trim()!=='the exhibition';
-    });
-    var barHtml=barParts.length
-      ? '<div class="ex-bar">'+barParts.map(function(p,i){
-          return (i?'<span class="bdot" aria-hidden="true"></span>':'')+'<span class="lbl">'+esc(p)+'</span>';
-        }).join('')+'</div>'
-      : '';
-    var inner='<article class="card">'
-      +'<img src="'+esc(e.img)+'"'+(e.srcset?' srcset="'+esc(e.srcset)+'" sizes="(max-width:768px) 200px, 25vw"':'')
-      +' width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'" decoding="async" loading="lazy">'
-      +'<div class="ovr">'
-      +'<div class="ovr-top"><div class="gname">'+gl+'</div>'+dateHtml+'</div>'
-      +'<div class="ovr-bot"><div class="ttl">'+esc(e.title_en)+'</div>'
-      +'<div class="ex">'+barHtml
-      +'<div class="ex-name'+(e.ex_he?' ex-name--he':'')+'"'+(e.ex_he?' dir="rtl"':'')+'>'+esc(e.ex_name)+'</div></div></div>'
-      +'</div></article>';
-    return e.soon
-      ? '<a class="card-link card-link--soon press-card--soon" href="#">'+inner+'</a>'
-      : '<a class="card-link" href="'+esc(e.route)+'">'+inner+'</a>';
-  }).join('');
-  sec.hidden=false;
-
-  // Infinite-loop carousel over the upcoming cards. Never expose one event twice
-  // in the same viewport: one/two source events render one/two cards per view.
-  var track=sec.querySelector('.ev-up-cards');
-  var prevBtn=sec.querySelector('.ev-up-prev'), nextBtn=sec.querySelector('.ev-up-next');
-  var originals=Array.prototype.slice.call(track.children), N=originals.length;
-  if(N>0 && prevBtn && nextBtn){
-    track.classList.add(N===1?'has-1':N===2?'has-2':'has-3');
-    if(N===1) sec.classList.add('ev-up--single');
-    for(var ci=0;ci<N;ci++) track.appendChild(originals[ci].cloneNode(true));
-    for(var cj=N-1;cj>=0;cj--) track.insertBefore(originals[cj].cloneNode(true), track.firstChild);
-    var idx=N, animating=false;
-    var step=function(){ var f=track.children[0]; if(!f) return 0; var s=getComputedStyle(track); var g=parseFloat(s.columnGap||s.gap||'8')||8; return f.getBoundingClientRect().width+g; };
-    var apply=function(a){ track.style.transition=a?'transform .45s cubic-bezier(.4,0,.2,1)':'none'; track.style.transform='translate3d('+(-idx*step())+'px,0,0)'; };
-    requestAnimationFrame(function(){ apply(false); });
-    window.addEventListener('load',function(){ apply(false); });
-    track.addEventListener('transitionend',function(){ animating=false; if(idx>=2*N){idx-=N;apply(false);} else if(idx<N){idx+=N;apply(false);} });
-    var nx=function(){ if(animating)return; animating=true; idx++; apply(true); };
-    var pv=function(){ if(animating)return; animating=true; idx--; apply(true); };
-    nextBtn.addEventListener('click',nx); prevBtn.addEventListener('click',pv);
-    // Pointer drag (finger + mouse). Capture only after a real drag so clicks still open links.
-    var sx=0,dg=false,swiped=false,captured=false,pid=null;
-    track.addEventListener('pointerdown',function(e){
-      if(e.pointerType==='mouse' && e.button!==0) return;
-      sx=e.clientX; dg=true; swiped=false; captured=false; pid=e.pointerId;
-    });
-    track.addEventListener('pointermove',function(e){
-      if(!dg||e.pointerId!==pid) return;
-      var dx=e.clientX-sx;
-      if(!captured && Math.abs(dx)>10){
-        captured=true;
-        try{track.setPointerCapture(pid);}catch(_){}
-        track.classList.add('is-dragging');
-      }
-    });
-    var endDrag=function(e){
-      if(!dg||(e&&e.pointerId!==pid)) return;
-      var dx=e.clientX-sx;
-      dg=false; pid=null; track.classList.remove('is-dragging');
-      if(captured && Math.abs(dx)>30){ swiped=true; if(dx<0)nx(); else pv(); }
-      captured=false;
-    };
-    track.addEventListener('pointerup',endDrag);
-    track.addEventListener('pointercancel',endDrag);
-    track.addEventListener('click',function(e){
-      if(!swiped) return;
-      e.preventDefault(); e.stopPropagation();
-      swiped=false;
-    },true);
-    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ apply(false); },150); });
-  }
-})();
-</script>
-
-<!-- EXHIBITIONS ARCHIVE — Figma landing::474:97 (desktop) / 467:45 (mobile) -->
-<section class="ex-archive" id="exhibitions" aria-label="exhibitions archive">
-  <div class="ex-archive-titles">
-    <span class="b">exhibitions</span>
-    <span class="l">archive</span>
-  </div>
-  <div class="ex-archive-list">
-    <a class="ex-archive-card" href="exhibitions/loneliness/">
-      <img class="ex-archive-photo" src="images/exhibitions/loneliness-mobile.webp" srcset="images/exhibitions/loneliness-mobile-480w.webp 480w, images/exhibitions/loneliness-mobile.webp 800w" sizes="100vw" width="800" height="1067" alt="" decoding="async" loading="lazy">
-      <div class="ex-archive-ovr">
-        <div class="ex-archive-title">
-          <span class="en">exhibition volume 1</span>
-          <span class="he" dir="rtl">בדידות בסביבה תוססת</span>
-        </div>
-        <span class="ex-archive-badge" dir="rtl">גלריית כיכר המדינה</span>
-      </div>
+<!-- EVENTS / UPCOMING — Figma landing::1318:476 (redesign 2026-08; mobile frame is the source, desktop = adaptation).
+     Static section: the two posters ("הרשימות") are designer-maintained images — swapping the files in
+     images/homepage/upcoming/ is how the schedule gets updated (content process, not code).
+     Title, posters and the view-all button all lead to events/ (designer's brief — not to a specific event). -->
+<section class="ev-up" id="events-upcoming" aria-label="upcoming events">
+  <h2 class="ev-up-title"><a href="events/"><span class="tb">upcoming</span><span class="tl">events</span></a></h2>
+  <div class="ev-up-posters">
+    <a class="ev-up-poster" href="events/">
+      <img class="bg" src="images/homepage/upcoming/poster-bg.webp" srcset="images/homepage/upcoming/poster-bg-480w.webp 480w, images/homepage/upcoming/poster-bg-768w.webp 768w, images/homepage/upcoming/poster-bg.webp 941w" sizes="(max-width:768px) 46vw, 380px" width="941" height="1672" alt="" aria-hidden="true" decoding="async" loading="lazy">
+      <img src="images/homepage/upcoming/poster-dizengoff.webp" srcset="images/homepage/upcoming/poster-dizengoff-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-768w.webp 768w, images/homepage/upcoming/poster-dizengoff.webp 941w" sizes="(max-width:768px) 46vw, 380px" width="941" height="1672" alt="לוח האירועים יולי–אוגוסט בגלריית כיכר דיזינגוף" decoding="async" loading="lazy">
+    </a>
+    <a class="ev-up-poster" href="events/">
+      <img src="images/homepage/upcoming/poster-hamedina.webp" srcset="images/homepage/upcoming/poster-hamedina-480w.webp 480w, images/homepage/upcoming/poster-hamedina-768w.webp 768w, images/homepage/upcoming/poster-hamedina-1080w.webp 1080w, images/homepage/upcoming/poster-hamedina.webp 1620w" sizes="(max-width:768px) 46vw, 380px" width="1620" height="2880" alt="לוח האירועים אוגוסט בגלריית כיכר המדינה" decoding="async" loading="lazy">
     </a>
   </div>
+  <a class="ev-up-viewall" href="events/">view all</a>
 </section>
-
-<!-- ART WORKS -->
+<!-- ART WORKS — checkerboard 2×3 mobile (Figma 1318:560, redesign 2026-08) / 3×2 desktop adaptation.
+     Images (object-fit:contain per Figma FIT): aw-1 = 2baf9d2e…, aw-2 = 3f0a517d… (natasha-zeriker hero imageRef, full uncropped), aw-3 = 99bbf47b…. Old tile-*.webp left on disk. -->
 <section class="artworks" id="artworks">
-  <div class="aw-row">
-    <div class="aw-img"><img src="images/works/tile-the.webp" srcset="images/works/tile-the-480w.webp 480w, images/works/tile-the-768w.webp 768w, images/works/tile-the.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></div>
-    <div class="aw-text"><span class="word the">the</span></div>
-  </div>
-  <div class="aw-row">
-    <div class="aw-text"><span class="word art">art</span></div>
-    <div class="aw-img"><img src="images/works/tile-art.webp" srcset="images/works/tile-art-480w.webp 480w, images/works/tile-art-768w.webp 768w, images/works/tile-art-1080w.webp 1080w, images/works/tile-art.webp 1500w" sizes="100vw" width="3024" height="4032" alt="" decoding="async" loading="lazy"></div>
-  </div>
-  <div class="aw-row">
-    <div class="aw-img"><img src="images/works/tile-works.webp" srcset="images/works/tile-works-480w.webp 480w, images/works/tile-works-768w.webp 768w, images/works/tile-works-1080w.webp 1080w, images/works/tile-works.webp 1500w" sizes="100vw" width="3072" height="4096" alt="" decoding="async" loading="lazy"></div>
-    <div class="aw-text"><span class="word works">works</span></div>
-  </div>
-  <div class="aw-row">
+  <div class="aw-grid">
+    <div class="aw-img"><img src="images/homepage/artworks/aw-1.webp" srcset="images/homepage/artworks/aw-1-480w.webp 480w, images/homepage/artworks/aw-1.webp 600w" sizes="(max-width:768px) 50vw, 33vw" width="600" height="900" alt="" decoding="async" loading="lazy"></div>
+    <div class="aw-text"><span class="word">the</span></div>
+    <div class="aw-text"><span class="word">art<br>works</span></div>
+    <div class="aw-img"><img src="images/homepage/artworks/aw-2.webp" srcset="images/homepage/artworks/aw-2-480w.webp 480w, images/homepage/artworks/aw-2.webp 631w" sizes="(max-width:768px) 50vw, 33vw" width="631" height="900" alt="" decoding="async" loading="lazy"></div>
+    <div class="aw-img"><img src="images/homepage/artworks/aw-3.webp" srcset="images/homepage/artworks/aw-3-480w.webp 480w, images/homepage/artworks/aw-3.webp 595w" sizes="(max-width:768px) 50vw, 33vw" width="595" height="900" alt="" decoding="async" loading="lazy"></div>
     <div class="aw-text">
       <a href="works/" class="more">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 8l-8 8 8 8"/></svg>
         more
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8l8 8-8 8"/></svg>
       </a>
     </div>
-    <div class="aw-img"><img src="images/works/tile-more.webp" srcset="images/works/tile-more-480w.webp 480w, images/works/tile-more-768w.webp 768w, images/works/tile-more-1080w.webp 1080w, images/works/tile-more.webp 1500w" sizes="100vw" width="3024" height="4032" alt="" decoding="async" loading="lazy"></div>
   </div>
-  <!-- curator footer · Figma 710:177 (desktop) / 710:117 (mobile) -->
+  <!-- curator footer · redesign 2026-08 (Figma 1318:575): role above name + "read more" -->
   <div class="aw-curator">
     <div class="aw-curator-titles">
-      <span class="awc-name">korin avraham</span>
       <span class="awc-role">the curator</span>
+      <span class="awc-name">korin avraham</span>
     </div>
-    <a class="awc-view" href="curators/korin-avraham/">view</a>
+    <a class="awc-view" href="curators/korin-avraham/">read more</a>
   </div>
 </section>
 
-<!-- BIG NEWS — new sales point (shop inside medina gallery) · Figma 1318:583 (mobile; desktop = adaptation, redesign 2026-08) · data: homepage.json :: big_news -->
-<section class="news-promo" id="big-news" aria-label="big news — new sales point">
-  <div class="news-promo-inner">
-    <h2 class="nb-head">big news</h2>
-    <p class="nb-title heb" dir="rtl">פתחנו לכם נקודת<br>מכירה נוספת!</p>
-    <div class="nb-sub">
-      <p class="nb-sub-main heb" dir="rtl">חנות חדשה בתוך הגלריה</p>
-      <p class="nb-sub-addr heb" dir="rtl"><a href="#galleries">כיכר המדינה, רח׳ ז׳בוטינסקי 131, תל אביב</a></p>
-    </div>
-  </div>
-</section>
 
-<!-- PERFUME PROMO — How Many Partners Have You Had? · Figma 386:232 / 386:806 -->
-<section class="perfume-promo" id="perfume-promo" aria-label="new perfume — how many partners have you had?">
-  <div class="perfume-promo-inner">
-    <div class="pp-media">
-      <div class="pp-main">
-        <img id="ppMain" src="images/homepage/perfume-promo/perfume-1.webp" srcset="images/homepage/perfume-promo/perfume-1-480w.webp 480w, images/homepage/perfume-promo/perfume-1-768w.webp 768w, images/homepage/perfume-promo/perfume-1.webp 960w" sizes="100vw" width="1200" height="1200" alt="HOW MANY PARTNERS HAVE YOU HAD? perfume" decoding="async" loading="lazy">
-      </div>
-      <div class="pp-thumbs" role="group" aria-label="perfume gallery thumbnails">
-        <button type="button" class="pp-thumb is-active" data-full="images/homepage/perfume-promo/perfume-1.webp" aria-label="view image 1"><img src="images/homepage/perfume-promo/perfume-1.webp" srcset="images/homepage/perfume-promo/perfume-1-480w.webp 480w, images/homepage/perfume-promo/perfume-1-768w.webp 768w, images/homepage/perfume-promo/perfume-1.webp 960w" sizes="100vw" width="960" height="1200" alt="" decoding="async" loading="lazy"></button>
-        <button type="button" class="pp-thumb" data-full="images/homepage/perfume-promo/perfume-2.webp" aria-label="view image 2"><img src="images/homepage/perfume-promo/perfume-2.webp" width="960" height="1200" alt="" decoding="async" loading="lazy"></button>
-        <button type="button" class="pp-thumb" data-full="images/homepage/perfume-promo/perfume-3.webp" aria-label="view image 3"><img src="images/homepage/perfume-promo/perfume-3.webp" width="381" height="462" alt="" decoding="async" loading="lazy"></button>
-        <button type="button" class="pp-thumb" data-full="images/homepage/perfume-promo/perfume-4.webp" aria-label="view image 4"><img src="images/homepage/perfume-promo/perfume-4.webp" width="900" height="1200" alt="" decoding="async" loading="lazy"></button>
-        <button type="button" class="pp-thumb" data-full="images/homepage/perfume-promo/perfume-5.webp" aria-label="view image 5"><img src="images/homepage/perfume-promo/perfume-5.webp" srcset="images/homepage/perfume-promo/perfume-5-480w.webp 480w, images/homepage/perfume-promo/perfume-5-768w.webp 768w, images/homepage/perfume-promo/perfume-5.webp 960w" sizes="100vw" width="960" height="1200" alt="" decoding="async" loading="lazy"></button>
-      </div>
-    </div>
-    <div class="pp-info">
-      <img class="pp-logo" src="images/header:footer:general/sponsor-logo.svg" width="214" height="64" alt="Zielinski &amp; Rozen" decoding="async" loading="lazy">
-      <div class="pp-text">
-        <div class="pp-head">
-          <h2 class="pp-title">new perfume</h2>
-          <p class="pp-sub-he heb" dir="rtl">בושם הנושא של תערוכת</p>
-        </div>
-        <p class="pp-sub-en">how many partners have you had?</p>
-      </div>
-      <p class="pp-bio heb" dir="rtl">בושם רענן עם עומק, הים פוגש וויסקי איכותי.<br>בהתחלה הוא מריח קריר, מלוח ונקי<br>אבל אז משהו משתנה<br>הריח נהיה עמוק, מתובל וסקסי.<br>ריח של ניגודים</p>
-      <a class="pp-cta heb" dir="rtl" href="https://www.zrp.co.il/product/how-many-partners-have-you-had" target="_blank" rel="noopener">עוד על הבושם באתר</a>
-    </div>
-  </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section class="social">
-  <h2 class="social-title">
-    <span class="b">follow us</span>
-    <span class="l">on instagram</span>
-  </h2>
-  <div class="ig-nav" role="group" aria-label="instagram navigation">
-    <button type="button" class="ig-prev" aria-label="previous"><svg viewBox="0 0 24 16"><path d="M22 8H2M2 8l6-6M2 8l6 6"/></svg></button>
-    <button type="button" class="ig-next" aria-label="next"><svg viewBox="0 0 24 16"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg></button>
-  </div>
-  <div class="ig-viewport">
-    <div class="ig-track" id="igTrack">
-      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 1)"><img src="images/instagram/1.webp" srcset="images/instagram/1-480w.webp 480w, images/instagram/1-768w.webp 768w, images/instagram/1.webp 1126w" sizes="100vw" width="2306" height="4096" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 2)"><img src="images/instagram/2.webp" srcset="images/instagram/2-480w.webp 480w, images/instagram/2-768w.webp 768w, images/instagram/2-1080w.webp 1080w, images/instagram/2.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 3)"><img src="images/instagram/3.webp" srcset="images/instagram/3-480w.webp 480w, images/instagram/3-768w.webp 768w, images/instagram/3-1080w.webp 1080w, images/instagram/3.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 4)"><img src="images/instagram/4.webp" srcset="images/instagram/4-480w.webp 480w, images/instagram/4-768w.webp 768w, images/instagram/4.webp 1080w" sizes="100vw" width="1080" height="1350" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 5)"><img src="images/instagram/5.webp" srcset="images/instagram/5-480w.webp 480w, images/instagram/5-768w.webp 768w, images/instagram/5.webp 1080w" sizes="100vw" width="1080" height="1350" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 6)"><img src="images/instagram/6.webp" srcset="images/instagram/6-480w.webp 480w, images/instagram/6-768w.webp 768w, images/instagram/6.webp 1126w" sizes="100vw" width="2306" height="4096" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 7)"><img src="images/instagram/7.webp" srcset="images/instagram/7-480w.webp 480w, images/instagram/7-768w.webp 768w, images/instagram/7-1080w.webp 1080w, images/instagram/7.webp 1440w" sizes="100vw" width="1440" height="1919" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 8)"><img src="images/instagram/8.webp" srcset="images/instagram/8-480w.webp 480w, images/instagram/8-768w.webp 768w, images/instagram/8-1080w.webp 1080w, images/instagram/8.webp 1440w" sizes="100vw" width="1440" height="1801" alt="" decoding="async" loading="lazy"></a>
-      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 9)"><img src="images/instagram/9.webp" srcset="images/instagram/9-480w.webp 480w, images/instagram/9-768w.webp 768w, images/instagram/9-1080w.webp 1080w, images/instagram/9.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERIES -->
-<section class="galleries" id="galleries">
-  <div class="galleries-title">
-    <span class="b">the galleries</span>
-    <span class="l">tel aviv</span>
-  </div>
-  <div class="gallery-cards">
-    <article class="gallery-card">
-      <div class="info"><div class="name">גלריית כיכר המדינה</div></div>
-      <div class="img"><picture><img src="images/galleries/medina/hero.webp" width="411" height="498" alt="" decoding="async" loading="lazy"></picture></div>
-      <div class="details">
-        <div class="addr">ז'בוטינסקי 131, תל אביב</div>
-        <div class="hours">
-          <span>א'-ה' 10:00-19:00</span>
-          <span>ו' 10:00-14:00</span>
-          <span>שבת סגור</span>
-        </div>
-      </div>
-    </article>
-    <article class="gallery-card">
-      <div class="info"><div class="name">גלריית כיכר דיזינגוף</div></div>
-      <div class="img"><picture><img src="images/galleries/dizengoff/hero.webp" width="411" height="498" alt="" decoding="async" loading="lazy"></picture></div>
-      <div class="details"><div class="addr">כיכר דיזינגוף, תל אביב</div></div>
-    </article>
-    <article class="gallery-card gallery-card--flea">
-      <div class="info">
-        <div class="name">גלריית יפו, שוק הפשפשים</div>
-        <div class="addr">שוק הפשפשים, יפו</div>
-        <div class="sub-en">in store gallery by erez zielinski rozen</div>
-        <div class="sub-en-loc">jaffa market</div>
-      </div>
-      <div class="img dim dim--green"><picture><img src="images/galleries/flea-market/hero.webp" srcset="images/galleries/flea-market/hero-480w.webp 480w, images/galleries/flea-market/hero-768w.webp 768w, images/galleries/flea-market/hero.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></picture><span class="coming">coming soon</span></div>
-    </article>
-  </div>
-</section>
 
 <!-- X OUR ARTISTS — Figma landing::1124:1181 "mobile order" (desktop grid + mobile carousel share this order), 38 items row-major.
      Data source: data/homepage.json :: x_our_artists -->
@@ -1942,6 +1401,99 @@ porta</div></a>
   </div>
 </section>
 
+<!-- BIG NEWS — new sales point (shop inside medina gallery) · Figma 1318:583 (mobile; desktop = adaptation, redesign 2026-08) · data: homepage.json :: big_news -->
+<section class="news-promo" id="big-news" aria-label="big news — new sales point">
+  <div class="news-promo-inner">
+    <h2 class="nb-head">big news</h2>
+    <p class="nb-title heb" dir="rtl">פתחנו לכם נקודת<br>מכירה נוספת!</p>
+    <div class="nb-sub">
+      <p class="nb-sub-main heb" dir="rtl">חנות חדשה בתוך הגלריה</p>
+      <p class="nb-sub-addr heb" dir="rtl"><a href="#galleries">כיכר המדינה, רח׳ ז׳בוטינסקי 131, תל אביב</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PERFUME PROMO — How Many Partners Have You Had? · Figma 1318:599 (mobile; desktop = adaptation, redesign 2026-08) -->
+<section class="perfume-promo" id="perfume-promo" aria-label="new perfume — how many partners have you had?">
+  <div class="perfume-promo-inner">
+    <div class="pp-media">
+      <img src="images/homepage/perfume-promo/how-many-v2.webp" srcset="images/homepage/perfume-promo/how-many-v2-480w.webp 480w, images/homepage/perfume-promo/how-many-v2-768w.webp 768w, images/homepage/perfume-promo/how-many-v2.webp 1200w" sizes="100vw" width="1200" height="1200" alt="HOW MANY PARTNERS HAVE YOU HAD? perfume" decoding="async" loading="lazy">
+    </div>
+    <div class="pp-info">
+      <img class="pp-logo" src="images/header:footer:general/sponsor-logo.svg" width="214" height="64" alt="Zielinski &amp; Rozen" decoding="async" loading="lazy">
+      <div class="pp-text">
+        <div class="pp-head">
+          <h2 class="pp-title">new perfume</h2>
+          <p class="pp-sub-he heb" dir="rtl">בושם הנושא של תערוכת</p>
+        </div>
+        <p class="pp-sub-en">how many partners <br class="mbr">have you had?</p>
+      </div>
+      <a class="pp-cta heb" dir="rtl" href="https://www.zrp.co.il/product/how-many-partners-have-you-had" target="_blank" rel="noopener">עוד על הבושם באתר</a>
+    </div>
+  </div>
+</section>
+
+<!-- PERFUME PROMO — סבלנות (the peeler) · Figma 1318:1169 (mobile; desktop = adaptation). אין עמוד מוצר — מכירה בגלריה בלבד, בלי כפתור/קישור רכישה -->
+<section class="perfume-promo perfume-promo--savlanut" id="perfume-savlanut" aria-label="new perfume — בושם סבלנות — תערוכת הקולפן">
+  <div class="perfume-promo-inner">
+    <div class="pp-media">
+      <img src="images/homepage/perfume-promo/savlanut.webp" srcset="images/homepage/perfume-promo/savlanut-480w.webp 480w, images/homepage/perfume-promo/savlanut-768w.webp 768w, images/homepage/perfume-promo/savlanut.webp 931w" sizes="100vw" width="931" height="934" alt="בושם סבלנות — בושם הנושא של תערוכת הקולפן" decoding="async" loading="lazy">
+    </div>
+    <div class="pp-info">
+      <div class="pp-text">
+        <div class="pp-head">
+          <h2 class="pp-title">new perfume</h2>
+          <div class="pp-lines">
+            <p class="pp-name heb" dir="rtl">סבלנות</p>
+            <p class="pp-sub-he heb" dir="rtl">בושם הנושא של <a href="exhibitions/the-peeler/">תערוכת הקולפן</a></p>
+          </div>
+        </div>
+        <p class="pp-exbar" aria-label="exhibition — volume 2"><span>exhibition</span><span class="dot" aria-hidden="true"></span><span>volume 2</span></p>
+      </div>
+      <div class="pp-exclusive">
+        <span class="rule" aria-hidden="true"></span>
+        <p class="pp-excl-txt heb" dir="rtl">בלעדי לרכישה בגלריה בכיכר המדינה</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERIES -->
+<section class="galleries" id="galleries">
+  <div class="galleries-title">
+    <span class="b">the galleries</span>
+    <span class="l">tel aviv</span>
+  </div>
+  <div class="gallery-cards">
+    <article class="gallery-card">
+      <div class="info"><div class="name">גלריית כיכר המדינה</div></div>
+      <div class="img"><picture><img src="images/galleries/medina/hero.webp" width="411" height="498" alt="" decoding="async" loading="lazy"></picture></div>
+      <div class="details">
+        <div class="addr">ז'בוטינסקי 131, תל אביב</div>
+        <div class="hours">
+          <span>א'-ה' 10:00-19:00</span>
+          <span>ו' 10:00-14:00</span>
+          <span>שבת סגור</span>
+        </div>
+      </div>
+    </article>
+    <article class="gallery-card">
+      <div class="info"><div class="name">גלריית כיכר דיזינגוף</div></div>
+      <div class="img"><picture><img src="images/galleries/dizengoff/hero.webp" width="411" height="498" alt="" decoding="async" loading="lazy"></picture></div>
+      <div class="details"><div class="addr">כיכר דיזינגוף, תל אביב</div></div>
+    </article>
+    <article class="gallery-card gallery-card--flea">
+      <div class="info">
+        <div class="name">גלריית יפו, שוק הפשפשים</div>
+        <div class="addr">שוק הפשפשים, יפו</div>
+        <div class="sub-en">in store gallery by erez zielinski rozen</div>
+        <div class="sub-en-loc">jaffa market</div>
+      </div>
+      <div class="img dim dim--green"><picture><img src="images/galleries/flea-market/hero.webp" srcset="images/galleries/flea-market/hero-480w.webp 480w, images/galleries/flea-market/hero-768w.webp 768w, images/galleries/flea-market/hero.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></picture><span class="coming">coming soon</span></div>
+    </article>
+  </div>
+</section>
+
 <!-- LONELINESS × THE TRIBE — Figma 250:87 (desktop title) / 363:618 (mobile + sponsor + credits + gallery). Data: data/homepage.json :: tribe_teaser -->
 <section class="tribe-teaser" id="tribe-teaser" aria-label="loneliness in a bubbling environment, x the tribe">
   <div class="tribe-teaser-intro">
@@ -2010,214 +1562,447 @@ porta</div></a>
   </div>
 </section>
 
-<!-- PRESS & EVENTS -->
-<section class="press" id="press">
-  <div class="press-title">
-    <span class="b">press</span>
-    <span class="l">&amp; events</span>
+<!-- EXHIBITIONS ARCHIVE — Figma landing::474:97 (desktop) / 467:45 (mobile) -->
+<section class="ex-archive" id="exhibitions" aria-label="exhibitions archive">
+  <div class="ex-archive-titles">
+    <span class="b">exhibitions</span>
+    <span class="l">archive</span>
   </div>
-  <div class="press-rows">
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/zohar-ron/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with zohar ron</p>
-          <span class="date date--tbd" dir="rtl">פרטים בהמשך...</span>
+  <div class="ex-archive-list">
+    <a class="ex-archive-card" href="exhibitions/loneliness/">
+      <img class="ex-archive-photo" src="images/exhibitions/loneliness-mobile.webp" srcset="images/exhibitions/loneliness-mobile-480w.webp 480w, images/exhibitions/loneliness-mobile.webp 800w" sizes="100vw" width="800" height="1067" alt="" decoding="async" loading="lazy">
+      <div class="ex-archive-ovr">
+        <div class="ex-archive-title">
+          <span class="en">exhibition volume 1</span>
+          <span class="he" dir="rtl">בדידות בסביבה תוססת</span>
         </div>
-        <div class="img"><img src="images/events/zohar-ron/card.webp" width="590" height="328" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="events/anat-wegier/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with anat wégier</p>
-          <span class="date">7.8.2026</span>
-        </div>
-        <div class="img"><img src="images/events/anat-wegier/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/alice-debellis/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with alice debellis</p>
-          <span class="date">6.8.2026</span>
-        </div>
-        <div class="img"><img src="images/events/alice-debellis/hero.webp" srcset="images/events/alice-debellis/hero-480w.webp 480w, images/events/alice-debellis/hero-768w.webp 768w, images/events/alice-debellis/hero.webp 984w" sizes="100vw" width="984" height="1488" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="events/risa-and-noemi/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artists talk<br>with risa brooke oze and<br>noemi safir</p>
-          <span class="date">24.7.2026</span>
-        </div>
-        <div class="img"><img src="images/events/risa-and-noemi/card.webp" width="584" height="324" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/nir-giorgio-levin/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with nir giorgio levin</p>
-          <span class="date">17.7.2026</span>
-        </div>
-        <div class="img"><img src="images/events/nir-giorgio-levin/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="events/liel-salman/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">pop up tattoos<br>liel salman noam<br><span class="heb">סטודיו</span> elline</p>
-          <span class="date">16.7.2026</span>
-        </div>
-        <div class="img img--contain img--white"><img src="images/events/liel-salman/logo.webp" width="486" height="648" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/natasha-zeriker/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with natasha zeriker</p>
-          <span class="date">9.7.2026</span>
-        </div>
-        <div class="img"><img src="images/events/natasha-zeriker/hero.webp" srcset="images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w" sizes="100vw" width="984" height="1403" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="press/peeling-a-layer/">
-        <div class="info">
-          <span class="tag"><span>רשת 13</span><span class="tag-sep">|</span><span>אמנות</span></span>
-          <p class="desc">מה נפגוש כשנקלף שכבה מהזיכרון שלנו? לתערוכה הבאה יש תשובה</p>
-          <span class="date">1.7.2026</span>
-        </div>
-        <div class="img"><img src="images/press/peeling-a-layer/01-hitnaarut.webp" width="750" height="422" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="press/manicure-against-darkness/">
-        <div class="info">
-          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ"ש</p>
-          <span class="date">1.7.2026</span>
-        </div>
-        <div class="img"><img src="images/press/manicure-against-darkness/home-card.webp" width="1000" height="555" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card press-card--soon" href="#">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">how many partners have you had?<br>with tal nehoray</p>
-          <span class="date">29.6.2026</span>
-        </div>
-        <div class="img"><img src="images/events/artist-talk/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/artist-talk/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">artist talk<br>with gal pollak and elsa ers brosh</p>
-          <span class="date">11.6.2026</span>
-        </div>
-        <div class="img"><img src="images/events/artist-talk/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="press/the-sixth-scent/">
-        <div class="info">
-          <span class="tag en">ora magazine | issue 02</span>
-          <p class="desc desc-lat">the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen</p>
-          <span class="date">7.6.2026</span>
-        </div>
-        <div class="img"><img src="images/press/the-sixth-scent/home-card.webp" srcset="images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w" sizes="100vw" width="1079" height="599" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/close-look/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc">מבט מקרוב: מפגש פתוח בתוך התערוכה | טניה שין</p>
-          <span class="date">2.6.2026</span>
-        </div>
-        <div class="img"><img src="images/events/close-look/card.webp" width="584" height="325" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="press/the-last-station/">
-        <div class="info">
-          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">התחנה האחרונה: 25 תערוכות מומלצות לעצור בהן את הכל בסופ"ש</p>
-          <span class="date">27.5.2026</span>
-        </div>
-        <div class="img"><img src="images/press/time-out/home-card-2026-05-27.webp" srcset="images/press/time-out/home-card-2026-05-27-480w.webp 480w, images/press/time-out/home-card-2026-05-27-768w.webp 768w, images/press/time-out/home-card-2026-05-27.webp 1000w" sizes="100vw" width="1000" height="1246" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/how-many/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc desc-lat">how many partners have you had?</p>
-          <span class="date">26.5.2026</span>
-        </div>
-        <div class="img"><img src="images/events/event-how-many-2026-05-26-cover.webp" srcset="images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="100vw" width="3058" height="4096" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="events/ktuba/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc">כְּתוּבָּה | <span class="lat">QTUBA</span></p>
-          <span class="date">25.2.2026</span>
-        </div>
-        <div class="img"><img src="images/events/ktuba/card.webp" width="584" height="324" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="events/loneliness/">
-        <div class="info">
-          <span class="tag en">gallery event</span>
-          <p class="desc">בדידות בתוך סביבה תוססת</p>
-          <span class="date">19.1.2026</span>
-        </div>
-        <div class="img"><img src="images/events/event-4-cover.webp" srcset="images/events/event-4-cover-480w.webp 480w, images/events/event-4-cover-768w.webp 768w, images/events/event-4-cover-1080w.webp 1080w, images/events/event-4-cover.webp 1435w" sizes="100vw" width="1435" height="1600" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="press/press-1/">
-        <div class="info">
-          <span class="tag">מגזין פורטפוליו</span>
-          <p class="desc">איך מרגישה בדידות בתוך סביבה תוססת: תערוכה חדשה בגלריית זילינסקי רוזן</p>
-          <span class="date">19.1.2026</span>
-        </div>
-        <div class="img"><img src="images/press/press-1/00-home-card.webp" width="171" height="108" alt="" decoding="async" loading="lazy"></div>
-      </a>
-    </div>
-    <div class="press-row press-row--swap">
-      <a class="press-card" href="press/walla/">
-        <div class="info">
-          <span class="tag"><span>וואלה</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">מותג הבישום פתח גלריה בכיכר המדינה: 100% מהרווחים הולכים לאמנים</p>
-          <span class="date">5.1.2026</span>
-        </div>
-        <div class="img"><img src="images/press/walla-cover.webp" width="462" height="626" alt="" decoding="async" loading="lazy"></div>
-      </a>
-      <a class="press-card" href="press/time-out/">
-        <div class="info">
-          <span class="tag"><span class="tag-lat">TIME OUT</span><span class="tag-sep">|</span><span>תרבות</span></span>
-          <p class="desc">דה פיינל קאונטדאון: 18 תערוכות לחגוג בהן סופ"ש ראשון של 2026</p>
-          <span class="date">31.12.2025</span>
-        </div>
-        <div class="img img--contain"><img src="images/press/time-out/home-card-2025-12-31.webp" srcset="images/press/time-out/home-card-2025-12-31-480w.webp 480w, images/press/time-out/home-card-2025-12-31-768w.webp 768w, images/press/time-out/home-card-2025-12-31.webp 1160w" sizes="100vw" width="1160" height="1066" alt="" decoding="async" loading="lazy"></div>
-      </a>
+        <span class="ex-archive-badge" dir="rtl">גלריית כיכר המדינה</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="social">
+  <h2 class="social-title">
+    <span class="b">follow us</span>
+    <span class="l">on instagram</span>
+  </h2>
+  <div class="ig-nav" role="group" aria-label="instagram navigation">
+    <button type="button" class="ig-prev" aria-label="previous"><svg viewBox="0 0 24 16"><path d="M22 8H2M2 8l6-6M2 8l6 6"/></svg></button>
+    <button type="button" class="ig-next" aria-label="next"><svg viewBox="0 0 24 16"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg></button>
+  </div>
+  <div class="ig-viewport">
+    <div class="ig-track" id="igTrack">
+      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 1)"><img src="images/instagram/1.webp" srcset="images/instagram/1-480w.webp 480w, images/instagram/1-768w.webp 768w, images/instagram/1.webp 1126w" sizes="100vw" width="2306" height="4096" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 2)"><img src="images/instagram/2.webp" srcset="images/instagram/2-480w.webp 480w, images/instagram/2-768w.webp 768w, images/instagram/2-1080w.webp 1080w, images/instagram/2.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 3)"><img src="images/instagram/3.webp" srcset="images/instagram/3-480w.webp 480w, images/instagram/3-768w.webp 768w, images/instagram/3-1080w.webp 1080w, images/instagram/3.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 4)"><img src="images/instagram/4.webp" srcset="images/instagram/4-480w.webp 480w, images/instagram/4-768w.webp 768w, images/instagram/4.webp 1080w" sizes="100vw" width="1080" height="1350" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 5)"><img src="images/instagram/5.webp" srcset="images/instagram/5-480w.webp 480w, images/instagram/5-768w.webp 768w, images/instagram/5.webp 1080w" sizes="100vw" width="1080" height="1350" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 6)"><img src="images/instagram/6.webp" srcset="images/instagram/6-480w.webp 480w, images/instagram/6-768w.webp 768w, images/instagram/6.webp 1126w" sizes="100vw" width="2306" height="4096" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 7)"><img src="images/instagram/7.webp" srcset="images/instagram/7-480w.webp 480w, images/instagram/7-768w.webp 768w, images/instagram/7-1080w.webp 1080w, images/instagram/7.webp 1440w" sizes="100vw" width="1440" height="1919" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram — @erezzielinskirozen (post 8)"><img src="images/instagram/8.webp" srcset="images/instagram/8-480w.webp 480w, images/instagram/8-768w.webp 768w, images/instagram/8-1080w.webp 1080w, images/instagram/8.webp 1440w" sizes="100vw" width="1440" height="1801" alt="" decoding="async" loading="lazy"></a>
+      <a class="ig-item" href="https://www.instagram.com/zielinskiandrozen_official/" target="_blank" rel="noopener" aria-label="Instagram — @zielinskiandrozen_official (post 9)"><img src="images/instagram/9.webp" srcset="images/instagram/9-480w.webp 480w, images/instagram/9-768w.webp 768w, images/instagram/9-1080w.webp 1080w, images/instagram/9.webp 1440w" sizes="100vw" width="1440" height="1920" alt="" decoding="async" loading="lazy"></a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<site-footer></site-footer>
+<!-- PRESS & EVENTS
+     Logic (2026-08-04): always show the 2 latest events first, then all press articles.
+     Source: #press-data (mirror of data/press.json + card display fields). Rendered by JS below.
+     Title (PRESS + & EVENTS): both link to /press/ — the press & events index page. -->
+<section class="press" id="press">
+  <div class="press-title">
+    <!-- Both → /press/ (press & events index). Sibling agent builds press/index.html. -->
+    <a class="b" href="press/">press</a>
+    <a class="l" href="press/">&amp; events</a>
+  </div>
+  <div class="press-rows" id="press-rows"></div>
+</section>
 
-
-<!-- Artwork Lightbox component (shared) — see CLAUDE.md §15 -->
-<script src="components/artwork-lightbox.js?v=5" defer></script>
-
-<!-- Site chrome: shared header + footer (single source of truth) -->
-<script src="components/site-chrome.js?v=5" defer></script>
-
-<!-- Stacked gallery component (homepage mobile-cta uses sg-mode-swap) -->
-<script src="components/stacked-gallery.js" defer></script>
-<script src="components/triptych-gallery.js" defer></script>
-
-<!-- "בקרוב" toast — כרטיסי #press לאירועים שעדיין אין להם דף -->
+<script type="application/json" id="press-data">
+[
+ {
+  "id": "event-anat-wegier-talk",
+  "type": "event",
+  "date": "2026-08-07",
+  "date_tbd": false,
+  "route": "events/anat-wegier/",
+  "cover": "images/events/anat-wegier/card.webp",
+  "desc_html": "artist talk<br>with anat wégier",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 325
+ },
+ {
+  "id": "event-alice-debellis-talk",
+  "type": "event",
+  "date": "2026-08-06",
+  "date_tbd": false,
+  "route": "events/alice-debellis/",
+  "cover": "images/events/alice-debellis/hero.webp",
+  "desc_html": "artist talk<br>with alice debellis",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": "images/events/alice-debellis/hero-480w.webp 480w, images/events/alice-debellis/hero-768w.webp 768w, images/events/alice-debellis/hero.webp 984w",
+  "w": 984,
+  "h": 1488
+ },
+ {
+  "id": "event-risa-and-noemi",
+  "type": "event",
+  "date": "2026-07-24",
+  "date_tbd": false,
+  "route": "events/risa-and-noemi/",
+  "cover": "images/events/risa-and-noemi/card.webp",
+  "desc_html": "artists talk<br>with risa brooke oze and<br>noemi safir",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 324
+ },
+ {
+  "id": "event-zohar-ron-talk",
+  "type": "event",
+  "date": null,
+  "date_tbd": true,
+  "route": "events/zohar-ron/",
+  "cover": "images/events/zohar-ron/card.webp",
+  "desc_html": "artist talk<br>with zohar ron",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 590,
+  "h": 328
+ },
+ {
+  "id": "event-nir-giorgio-levin-talk",
+  "type": "event",
+  "date": "2026-07-17",
+  "date_tbd": false,
+  "route": "events/nir-giorgio-levin/",
+  "cover": "images/events/nir-giorgio-levin/card.webp",
+  "desc_html": "artist talk<br>with nir giorgio levin",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 325
+ },
+ {
+  "id": "event-liel-salman-popup",
+  "type": "event",
+  "date": "2026-07-16",
+  "date_tbd": false,
+  "route": "events/liel-salman/",
+  "cover": "images/events/liel-salman/logo.webp",
+  "desc_html": "pop up tattoos<br>liel salman noam<br><span class=\"heb\">סטודיו</span> elline",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": "img--contain img--white",
+  "srcset": null,
+  "w": 486,
+  "h": 648
+ },
+ {
+  "id": "event-natasha-zeriker-evening",
+  "type": "event",
+  "date": "2026-07-09",
+  "date_tbd": false,
+  "route": "events/natasha-zeriker/",
+  "cover": "images/events/natasha-zeriker/hero.webp",
+  "desc_html": "artist talk<br>with natasha zeriker",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": "images/events/natasha-zeriker/hero-480w.webp 480w, images/events/natasha-zeriker/hero-768w.webp 768w, images/events/natasha-zeriker/hero.webp 984w",
+  "w": 984,
+  "h": 1403
+ },
+ {
+  "id": "timeout-manicure-against-darkness",
+  "type": "press",
+  "date": "2026-07-01",
+  "date_tbd": false,
+  "route": "press/manicure-against-darkness/",
+  "cover": "images/press/manicure-against-darkness/home-card.webp",
+  "desc_html": "מניקור נגד האפלה וגוף אנושי שמתפרק:<br>18 תערוכות לסופ\"ש",
+  "desc_lat": false,
+  "tag_html": "<span class=\"tag-lat\">TIME OUT</span><span class=\"tag-sep\">|</span><span>תרבות</span>",
+  "tag_en": null,
+  "img_class": null,
+  "srcset": null,
+  "w": 1000,
+  "h": 555
+ },
+ {
+  "id": "13tv-peeling-a-layer",
+  "type": "press",
+  "date": "2026-07-01",
+  "date_tbd": false,
+  "route": "press/peeling-a-layer/",
+  "cover": "images/press/peeling-a-layer/01-hitnaarut.webp",
+  "desc_html": "מה נפגוש כשנקלף שכבה מהזיכרון שלנו? לתערוכה הבאה יש תשובה",
+  "desc_lat": false,
+  "tag_html": "<span>רשת 13</span><span class=\"tag-sep\">|</span><span>אמנות</span>",
+  "tag_en": null,
+  "img_class": null,
+  "srcset": null,
+  "w": 750,
+  "h": 422
+ },
+ {
+  "id": "event-tal-nehoray-talk",
+  "type": "event",
+  "date": "2026-06-29",
+  "date_tbd": false,
+  "route": null,
+  "cover": "images/events/artist-talk/card.webp",
+  "desc_html": "how many partners have you had?<br>with tal nehoray",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 325
+ },
+ {
+  "id": "event-how-many-artist-talk",
+  "type": "event",
+  "date": "2026-06-11",
+  "date_tbd": false,
+  "route": "events/artist-talk/",
+  "cover": "images/events/artist-talk/card.webp",
+  "desc_html": "artist talk<br>with gal pollak and elsa ers brosh",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 325
+ },
+ {
+  "id": "the-sixth-scent",
+  "type": "press",
+  "date": "2026-06-07",
+  "date_tbd": false,
+  "route": "press/the-sixth-scent/",
+  "cover": "images/press/the-sixth-scent/home-card.webp",
+  "desc_html": "the sixth scent | from polish roots to a global empire: the alchemical vision of erez zielinski rozen",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "ora magazine | issue 02",
+  "img_class": null,
+  "srcset": "images/press/the-sixth-scent/home-card-480w.webp 480w, images/press/the-sixth-scent/home-card-768w.webp 768w, images/press/the-sixth-scent/home-card.webp 1079w",
+  "w": 1079,
+  "h": 599
+ },
+ {
+  "id": "walla-medina",
+  "type": "press",
+  "date": "2026-01-05",
+  "date_tbd": false,
+  "route": "press/walla/",
+  "cover": "images/press/walla-cover.webp",
+  "desc_html": "מותג הבישום פתח גלריה בכיכר המדינה: 100% מהרווחים הולכים לאמנים",
+  "desc_lat": false,
+  "tag_html": "<span>וואלה</span><span class=\"tag-sep\">|</span><span>תרבות</span>",
+  "tag_en": null,
+  "img_class": null,
+  "srcset": null,
+  "w": 462,
+  "h": 626
+ },
+ {
+  "id": "press-1",
+  "type": "press",
+  "date": "2026-01-19",
+  "date_tbd": false,
+  "route": "press/press-1/",
+  "cover": "images/press/press-1/00-home-card.webp",
+  "desc_html": "איך מרגישה בדידות בתוך סביבה תוססת: תערוכה חדשה בגלריית זילינסקי רוזן",
+  "desc_lat": false,
+  "tag_html": "מגזין פורטפוליו",
+  "tag_en": null,
+  "img_class": null,
+  "srcset": null,
+  "w": 171,
+  "h": 108
+ },
+ {
+  "id": "time-out",
+  "type": "press",
+  "date": "2026-05-27",
+  "date_tbd": false,
+  "route": "press/the-last-station/",
+  "cover": "images/press/time-out/home-card-2026-05-27.webp",
+  "desc_html": "התחנה האחרונה: 25 תערוכות מומלצות לעצור בהן את הכל בסופ\"ש",
+  "desc_lat": false,
+  "tag_html": "<span class=\"tag-lat\">TIME OUT</span><span class=\"tag-sep\">|</span><span>תרבות</span>",
+  "tag_en": null,
+  "img_class": null,
+  "srcset": "images/press/time-out/home-card-2026-05-27-480w.webp 480w, images/press/time-out/home-card-2026-05-27-768w.webp 768w, images/press/time-out/home-card-2026-05-27.webp 1000w",
+  "w": 1000,
+  "h": 1246
+ },
+ {
+  "id": "event-how-many-close-look-1",
+  "type": "event",
+  "date": "2026-06-02",
+  "date_tbd": false,
+  "route": "events/close-look/",
+  "cover": "images/events/close-look/card.webp",
+  "desc_html": "מבט מקרוב: מפגש פתוח בתוך התערוכה | טניה שין",
+  "desc_lat": false,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 325
+ },
+ {
+  "id": "event-how-many-2026-05-26",
+  "type": "event",
+  "date": "2026-05-26",
+  "date_tbd": false,
+  "route": "events/how-many/",
+  "cover": "images/events/event-how-many-2026-05-26-cover.webp",
+  "desc_html": "how many partners have you had?",
+  "desc_lat": true,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": "images/events/event-how-many-2026-05-26-cover-480w.webp 480w, images/events/event-how-many-2026-05-26-cover-768w.webp 768w, images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, images/events/event-how-many-2026-05-26-cover.webp 3058w",
+  "w": 3058,
+  "h": 4096
+ },
+ {
+  "id": "event-loneliness-3",
+  "type": "event",
+  "date": "2026-02-25",
+  "date_tbd": false,
+  "route": "events/ktuba/",
+  "cover": "images/events/ktuba/card.webp",
+  "desc_html": "כְּתוּבָּה | <span class=\"lat\">QTUBA</span>",
+  "desc_lat": false,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": null,
+  "w": 584,
+  "h": 324
+ },
+ {
+  "id": "event-loneliness-4",
+  "type": "event",
+  "date": "2026-01-19",
+  "date_tbd": false,
+  "route": "events/loneliness/",
+  "cover": "images/events/event-4-cover.webp",
+  "desc_html": "בדידות בתוך סביבה תוססת",
+  "desc_lat": false,
+  "tag_html": null,
+  "tag_en": "gallery event",
+  "img_class": null,
+  "srcset": "images/events/event-4-cover-480w.webp 480w, images/events/event-4-cover-768w.webp 768w, images/events/event-4-cover-1080w.webp 1080w, images/events/event-4-cover.webp 1435w",
+  "w": 1435,
+  "h": 1600
+ },
+ {
+  "id": "time-out-final-countdown-2025",
+  "type": "press",
+  "date": "2025-12-31",
+  "date_tbd": false,
+  "route": "press/time-out/",
+  "cover": "images/press/time-out/home-card-2025-12-31.webp",
+  "desc_html": "דה פיינל קאונטדאון: 18 תערוכות לחגוג בהן סופ\"ש ראשון של 2026",
+  "desc_lat": false,
+  "tag_html": "<span class=\"tag-lat\">TIME OUT</span><span class=\"tag-sep\">|</span><span>תרבות</span>",
+  "tag_en": null,
+  "img_class": "img--contain",
+  "srcset": "images/press/time-out/home-card-2025-12-31-480w.webp 480w, images/press/time-out/home-card-2025-12-31-768w.webp 768w, images/press/time-out/home-card-2025-12-31.webp 1160w",
+  "w": 1160,
+  "h": 1066
+ }
+]
+</script>
 <script>
 (function(){
-  var cards=document.querySelectorAll('.press-card--soon');
+  /* #press grid — 2 latest events (by date desc), then all press articles (by date desc).
+     date_tbd / missing date sort last among events (not counted as "latest").
+     Cards with route:null get press-card--soon + toast. */
+  var rowsEl=document.getElementById('press-rows');
+  var src=document.getElementById('press-data');
+  if(!rowsEl||!src) return;
+  var all; try{all=JSON.parse(src.textContent);}catch(e){return;}
+
+  function sortKey(it){
+    if(it.date_tbd||!it.date) return '0000-00-00';
+    return String(it.date);
+  }
+  function byDateDesc(a,b){
+    var ka=sortKey(a), kb=sortKey(b);
+    return ka<kb?1:ka>kb?-1:0;
+  }
+
+  var events=all.filter(function(it){return it.type==='event';}).sort(byDateDesc).slice(0,2);
+  var articles=all.filter(function(it){return it.type==='press';}).sort(byDateDesc);
+  var list=events.concat(articles);
+
+  function fmtDate(it){
+    if(it.date_tbd||!it.date) return '<span class="date date--tbd" dir="rtl">פרטים בהמשך...</span>';
+    var p=String(it.date).split('-');
+    return '<span class="date">'+(+p[2])+'.'+(+p[1])+'.'+p[0]+'</span>';
+  }
+  function tagHtml(it){
+    if(it.tag_html) return '<span class="tag">'+it.tag_html+'</span>';
+    if(it.tag_en) return '<span class="tag en">'+it.tag_en+'</span>';
+    return '';
+  }
+  function cardHtml(it){
+    var soon=!it.route;
+    var href=soon?'#':it.route;
+    var cls='press-card'+(soon?' press-card--soon':'');
+    var descCls='desc'+(it.desc_lat?' desc-lat':'');
+    var imgCls='img'+(it.img_class?' '+it.img_class:'');
+    var wh=(it.w?' width="'+it.w+'"':'')+(it.h?' height="'+it.h+'"':'');
+    var srcset=it.srcset?' srcset="'+it.srcset+'" sizes="100vw"':'';
+    return '<a class="'+cls+'" href="'+href+'">'
+      +'<div class="info">'+tagHtml(it)
+      +'<p class="'+descCls+'">'+it.desc_html+'</p>'
+      +fmtDate(it)+'</div>'
+      +'<div class="'+imgCls+'"><img src="'+it.cover+'"'+srcset+wh+' alt="" decoding="async" loading="lazy"></div>'
+      +'</a>';
+  }
+
+  var html='';
+  for(var i=0;i<list.length;i+=2){
+    var a=list[i], b=list[i+1];
+    var rowCls='press-row press-row--swap'+(b?'':' press-row--right');
+    html+='<div class="'+rowCls+'">'+cardHtml(a)+(b?cardHtml(b):'')+'</div>';
+  }
+  rowsEl.innerHTML=html;
+
+  // "בקרוב" toast for cards without a page yet
+  var cards=rowsEl.querySelectorAll('.press-card--soon');
   if(!cards.length) return;
   var toast=document.createElement('div');
   toast.className='soon-toast';
@@ -2235,6 +2020,20 @@ porta</div></a>
   });
 })();
 </script>
+
+<!-- FOOTER -->
+<site-footer></site-footer>
+
+
+<!-- Artwork Lightbox component (shared) — see CLAUDE.md §15 -->
+<script src="components/artwork-lightbox.js?v=5" defer></script>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="components/site-chrome.js?v=5" defer></script>
+
+<!-- Stacked gallery component (homepage mobile-cta uses sg-mode-swap) -->
+<script src="components/stacked-gallery.js" defer></script>
+<script src="components/triptych-gallery.js" defer></script>
 
 <!-- Instagram carousel — infinite loop, arrow nav, touch swipe (Figma XhGH:144:431) -->
 <script>
@@ -2310,27 +2109,6 @@ porta</div></a>
   window.addEventListener('resize', function(){
     clearTimeout(rt);
     rt = setTimeout(function(){ apply(false); }, 80);
-  });
-})();
-</script>
-
-<script>
-/* PERFUME PROMO — click a thumbnail to swap it into the main image */
-(function(){
-  var main = document.getElementById('ppMain');
-  if(!main) return;
-  var thumbs = document.querySelectorAll('.perfume-promo .pp-thumb');
-  if(!thumbs.length) return;
-  thumbs.forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var full = btn.getAttribute('data-full');
-      if(!full || btn.classList.contains('is-active')) return;
-      main.removeAttribute('srcset');
-      main.removeAttribute('sizes');
-      main.setAttribute('src', full);
-      thumbs.forEach(function(b){ b.classList.remove('is-active'); });
-      btn.classList.add('is-active');
-    });
   });
 })();
 </script>

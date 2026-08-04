@@ -31,6 +31,13 @@
 עמוד בית מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-2&m=dev
 
+### Homepage — `#artworks` "the art works" — גריד שחמט (רה-דיזיין 2026-08, פרומפט 8)
+
+סקשן the art works מובייל **(עיצוב נוכחי — שחמט 2×3, 3 תמונות contain + curator עם "read more"; אין frame דסקטופ, האתר = אדפטציה 3×2)**: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-560&m=dev
+
+legacy (4 שורות aw-row מתחלפות, הוחלף 2026-08-04): הסקשן בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21`; curator ישן `710:177`/`710:117`.
+
 ### Homepage — "BIG NEWS" (נקודת מכירה חדשה — חנות בתוך גלריית כיכר המדינה; בין `#artworks` ל-`#perfume-promo`)
 
 סקשן news מובייל **(עיצוב נוכחי, רה-דיזיין 2026-08 — טקסט בלבד; אין frame דסקטופ, האתר = אדפטציה)**: Implement this design from Figma.
@@ -43,6 +50,22 @@ legacy — מובייל:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-240&m=dev
 
 > ⚠️ ה-frames הישנים יושבים בתוך `homepage-desktop` `1124:754` / `homepage-mobile` `1124:21`. ה-node החדש `1318:583` יושב בתוך עמוד הבית המובייל החדש `1318:363` (רה-דיזיין אוגוסט 2026); שם ה-node שלו ב-Figma הוא "Exhibitions Archive" — משקר.
+
+### Homepage — סקשן הבשמים `#perfume-promo` + `#perfume-savlanut` (רה-דיזיין 2026-08 — מובייל בלבד; דסקטופ = אדפטציה)
+
+בושם how many (עיצוב נוכחי — תמונה אחת, בלי thumbs): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-599&m=dev
+
+בושם "סבלנות" (הקולפן — סקשן חדש; אין עמוד מוצר, מכירה בגלריה בלבד): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-1169&m=dev
+
+> ⚠️ שני ה-nodes יושבים בתוך עמוד הבית המובייל החדש `1318:363`; שמות ה-nodes ב-Figma ("Exhibitions Archive") משקרים.
+
+legacy (העיצוב הישן — גלריית 5 thumbs + pp-bio, הוחלף 2026-08-04) — דסקטופ:
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=386-232&m=dev
+
+legacy — מובייל:
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=386-806&m=dev
 
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15)
 
