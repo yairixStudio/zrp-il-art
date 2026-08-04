@@ -36,8 +36,9 @@ body{text-transform:uppercase}
 .heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
 .heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase}
 /* 🔴 חריגת-איות מוכרעת (מותג, Figma textCase:LOWER): soos.sound / www.soos.audio / Bella
-   נשארים lowercase — text-transform:none נקודתי. כל שאר האנגלית באתר UPPERCASE כרגיל. */
-.brand{font-family:var(--cop);font-weight:300;text-transform:none;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+   נשארים lowercase — text-transform:none נקודתי. כל שאר האנגלית באתר UPPERCASE כרגיל.
+   .heb .brand — specificity above .heb * so Latin brand strings use Copperplate Light, not FbEzmel fallback. */
+.heb .brand{font-family:var(--cop);font-weight:300;text-transform:none;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate;font-synthesis:none}
 
 /* ===== SPONSOR PAGE — soos.sound ("הקולפן X soos"), artist-talk-family panel + gallery strip ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
@@ -67,12 +68,15 @@ a.chip:hover{opacity:.65}
 .sp-main{display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
 .sp-body{width:358px;max-width:100%;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;text-align:right;direction:rtl;color:var(--ink)}
 .sp-body p+p{margin-top:19.468px}
-.sp-body .brand{font-size:.82em}
+/* .brand בגוף = 1em (הכרעת משתמש 2026-08-04): lowercase ב-Copperplate מרונדר כ-small-caps,
+   שכבר קטנים אופטית מהעברית — הקטנת .82em נראתה קטנה מדי */
 /* Divider 72×1 #D2D2D2 — desktop only (Figma 1318:3327, right inset 16px) */
 .sp-divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
 .sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
 .sp-credit{display:flex;flex-direction:column;align-items:flex-end;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);text-align:right}
 .sp-credit .line{direction:ltr;unicode-bidi:isolate}
+/* שורת המודל = RTL: ״מודל: Bella | soos.sound״ (הכרעת משתמש 2026-08-04; ה-LTR של Figma הפך את הסדר) */
+.sp-credit .line--model{direction:rtl}
 .sp-credit a.line:hover{opacity:.65}
 
 /* Hero card — 492×744, bottom-up gradient scrim, centered white lockup (column, gap 8) */
@@ -197,7 +201,7 @@ a.chip:hover{opacity:.65}
           <div class="sp-divider" aria-hidden="true"><i></i></div>
 
           <div class="sp-credit heb">
-            <div class="line"><span class="brand">soos.sound</span> | מודל : <span class="brand">Bella</span></div>
+            <div class="line line--model">מודל: <span class="brand">Bella</span> | <span class="brand">soos.sound</span></div>
             <a class="line brand" href="https://www.soos.audio" target="_blank" rel="noopener">www.soos.audio</a>
           </div>
         </div>
