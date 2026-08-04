@@ -316,6 +316,9 @@ body{text-transform:uppercase}
 @media (min-width:769px){
   .aw-img,.aw-text{aspect-ratio:624/600}
   .aw-img img{object-fit:cover}
+  /* crop focus: keep the sculpture's head (cell 1) and the face's crown (cell 4) in frame */
+  .aw-grid>:nth-child(1) img{object-position:50% 10%}
+  .aw-grid>:nth-child(4) img{object-position:50% 18%}
   .aw-text .word{text-align:left}
   .aw-text .more{flex-direction:row-reverse}
   .aw-text .more svg{transform:scaleX(-1)}
@@ -1147,30 +1150,26 @@ porta</div></a>
     </div>
   </div>
 </section>
-<!-- ART WORKS — checkerboard 2×3, both breakpoints (Figma mobile 1318:560 / desktop 1124:988 "Work Section").
-     Mobile images (contain per Figma FIT): aw-1 = 2baf9d2e…, aw-2 = 3f0a517d… (natasha-zeriker hero imageRef, full uncropped), aw-3 = 99bbf47b….
-     Desktop images (cover per Figma FILL, different imageRefs): aw-{1,2,3}-desktop = node-renders of 1124:991/996/997 (cell 1 is a multi-fill stack — only the render is trustworthy), served via <picture media> (picture-upgrade.js skips imgs already inside <picture> — all sources authored manually). Old tile-*.webp left on disk. -->
+<!-- ART WORKS — checkerboard 2×3, both breakpoints (Figma mobile 1318:560 layout+images / desktop 1124:988 layout only).
+     Images = the NEW trio on both breakpoints (user decision 2026-08-04 — the 1124:988 cells still held the old tiles; layout kept, images swapped):
+     aw-1 = 2baf9d2e…, aw-2 = 3f0a517d… (natasha-zeriker hero imageRef, full uncropped), aw-3 = 99bbf47b….
+     Mobile renders contain (Figma FIT), desktop cover via CSS (624×600 cells); 1248w/690w variants feed desktop retina.
+     picture-upgrade.js skips imgs already inside <picture> — sources authored manually. Old tile-*.webp + aw-*-desktop* left on disk. -->
 <section class="artworks" id="artworks">
   <div class="aw-grid">
     <div class="aw-img"><picture>
-      <source media="(min-width:769px)" type="image/avif" srcset="images/homepage/artworks/aw-1-desktop-480w.avif 480w, images/homepage/artworks/aw-1-desktop-768w.avif 768w, images/homepage/artworks/aw-1-desktop-1080w.avif 1080w, images/homepage/artworks/aw-1-desktop.avif 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source media="(min-width:769px)" srcset="images/homepage/artworks/aw-1-desktop-480w.webp 480w, images/homepage/artworks/aw-1-desktop-768w.webp 768w, images/homepage/artworks/aw-1-desktop-1080w.webp 1080w, images/homepage/artworks/aw-1-desktop.webp 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source type="image/avif" srcset="images/homepage/artworks/aw-1-480w.avif 480w, images/homepage/artworks/aw-1.avif 600w" sizes="50vw">
-      <img src="images/homepage/artworks/aw-1.webp" srcset="images/homepage/artworks/aw-1-480w.webp 480w, images/homepage/artworks/aw-1.webp 600w" sizes="50vw" width="600" height="900" alt="" decoding="async" loading="lazy">
+      <source type="image/avif" srcset="images/homepage/artworks/aw-1-480w.avif 480w, images/homepage/artworks/aw-1.avif 600w, images/homepage/artworks/aw-1-1248w.avif 1248w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw">
+      <img src="images/homepage/artworks/aw-1.webp" srcset="images/homepage/artworks/aw-1-480w.webp 480w, images/homepage/artworks/aw-1.webp 600w, images/homepage/artworks/aw-1-1248w.webp 1248w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw" width="600" height="900" alt="" decoding="async" loading="lazy">
     </picture></div>
     <div class="aw-text"><span class="word">the</span></div>
     <div class="aw-text"><span class="word">art<br>works</span></div>
     <div class="aw-img"><picture>
-      <source media="(min-width:769px)" type="image/avif" srcset="images/homepage/artworks/aw-2-desktop-480w.avif 480w, images/homepage/artworks/aw-2-desktop-768w.avif 768w, images/homepage/artworks/aw-2-desktop-1080w.avif 1080w, images/homepage/artworks/aw-2-desktop.avif 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source media="(min-width:769px)" srcset="images/homepage/artworks/aw-2-desktop-480w.webp 480w, images/homepage/artworks/aw-2-desktop-768w.webp 768w, images/homepage/artworks/aw-2-desktop-1080w.webp 1080w, images/homepage/artworks/aw-2-desktop.webp 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source type="image/avif" srcset="images/homepage/artworks/aw-2-480w.avif 480w, images/homepage/artworks/aw-2.avif 631w" sizes="50vw">
-      <img src="images/homepage/artworks/aw-2.webp" srcset="images/homepage/artworks/aw-2-480w.webp 480w, images/homepage/artworks/aw-2.webp 631w" sizes="50vw" width="631" height="900" alt="" decoding="async" loading="lazy">
+      <source type="image/avif" srcset="images/homepage/artworks/aw-2-480w.avif 480w, images/homepage/artworks/aw-2.avif 631w, images/homepage/artworks/aw-2-1248w.avif 1248w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw">
+      <img src="images/homepage/artworks/aw-2.webp" srcset="images/homepage/artworks/aw-2-480w.webp 480w, images/homepage/artworks/aw-2.webp 631w, images/homepage/artworks/aw-2-1248w.webp 1248w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw" width="631" height="900" alt="" decoding="async" loading="lazy">
     </picture></div>
     <div class="aw-img"><picture>
-      <source media="(min-width:769px)" type="image/avif" srcset="images/homepage/artworks/aw-3-desktop-480w.avif 480w, images/homepage/artworks/aw-3-desktop-768w.avif 768w, images/homepage/artworks/aw-3-desktop-1080w.avif 1080w, images/homepage/artworks/aw-3-desktop.avif 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source media="(min-width:769px)" srcset="images/homepage/artworks/aw-3-desktop-480w.webp 480w, images/homepage/artworks/aw-3-desktop-768w.webp 768w, images/homepage/artworks/aw-3-desktop-1080w.webp 1080w, images/homepage/artworks/aw-3-desktop.webp 1248w" sizes="(min-width:1440px) 624px, calc(50vw - 96px)">
-      <source type="image/avif" srcset="images/homepage/artworks/aw-3-480w.avif 480w, images/homepage/artworks/aw-3.avif 595w" sizes="50vw">
-      <img src="images/homepage/artworks/aw-3.webp" srcset="images/homepage/artworks/aw-3-480w.webp 480w, images/homepage/artworks/aw-3.webp 595w" sizes="50vw" width="595" height="900" alt="" decoding="async" loading="lazy">
+      <source type="image/avif" srcset="images/homepage/artworks/aw-3-480w.avif 480w, images/homepage/artworks/aw-3.avif 595w, images/homepage/artworks/aw-3-690w.avif 690w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw">
+      <img src="images/homepage/artworks/aw-3.webp" srcset="images/homepage/artworks/aw-3-480w.webp 480w, images/homepage/artworks/aw-3.webp 595w, images/homepage/artworks/aw-3-690w.webp 690w" sizes="(min-width:769px) min(624px, calc(50vw - 96px)), 50vw" width="595" height="900" alt="" decoding="async" loading="lazy">
     </picture></div>
     <div class="aw-text">
       <a href="works/" class="more">

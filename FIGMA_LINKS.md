@@ -36,7 +36,7 @@
 סקשן the art works מובייל **(עיצוב נוכחי — שחמט 2×3, 3 תמונות contain + curator role→name עם "read more")**: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-560&m=dev
 
-סקשן the art works דסקטופ **(עיצוב נוכחי — אותו שחמט 2×3, תאי 624×600, תמונות cover נפרדות, "‹ more", curator name→role 80px עם "view"; הפריים יושב ב-`homepage-desktop 1124:754` הישן אך המשתמש הצביע עליו כמקור הדסקטופ — 2026-08-04)**: Implement this design from Figma.
+סקשן the art works דסקטופ **(מקור ל-layout בלבד — שחמט 2×3, תאי 624×600, cover, "‹ more", curator name→role עם "view"; הפריים יושב ב-`homepage-desktop 1124:754` הישן והתאים שלו מכילים את התמונות הישנות — לכן התמונות בדסקטופ הוחלפו 2026-08-04 לטריו החדש של פריים המובייל, בקשת משתמש)**: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-988&m=dev
 
 legacy (4 שורות aw-row מתחלפות, הוחלף 2026-08-04): curator ישן `710:177`/`710:117`.
