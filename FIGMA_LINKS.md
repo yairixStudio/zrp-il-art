@@ -534,4 +534,45 @@ lightbox state 3 (mobile no-caption): Implement this design from Figma.
 
 ---
 
-*Last review: 2026-07-09 (artist-talk family — 5 new event pages).*
+## 🆕 רה-דיזיין אוגוסט 2026 (מפת שינויים + פרומפטים: `docs/redesign-2026-08.md`)
+
+### עמוד הבית — עיצוב מעודכן (⚠️ מובייל בלבד; דסקטופ = אדפטציה של המפתח)
+
+עמוד בית מובייל חדש: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-363&m=dev
+
+### עמוד upcoming events (`/events/`)
+
+upcoming events דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-1728&m=dev
+
+upcoming events מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-2012&m=dev
+
+### עמוד press & events (`/press/`)
+
+press & events דסקטופ (⚠️ שם ה-node "phone" — משקר, זה ה-1440): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1323-244&m=dev
+
+press & events מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1323-528&m=dev
+
+### עמוד ספונסר soos (`/sponsors/soos/`)
+
+soos דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3287&m=dev
+
+soos מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3480&m=dev
+
+### עמוד אירוע The Space Between (`/events/the-space-between/`, מור צופיה געש 3.9.2026)
+
+the space between דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1361-434&m=dev
+
+the space between מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1361-232&m=dev
+
+---
+
+*Last review: 2026-08-04 (רה-דיזיין אוגוסט — homepage חדש + 4 עמודים חדשים).*
