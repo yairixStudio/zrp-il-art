@@ -28,7 +28,10 @@
 עמוד בית דסקטופ: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-317&m=dev
 
-עמוד בית מובייל: Implement this design from Figma.
+עמוד בית מובייל **(המקור הסמכותי הנוכחי — רה-דיזיין אוגוסט 2026, "homepage-mobileNew"; הדסקטופ = אדפטציה, אין frame דסקטופ חדש)**: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-363&m=dev
+
+עמוד בית מובייל legacy (לפני רה-דיזיין אוגוסט): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-2&m=dev
 
 ### Homepage — `#artworks` "the art works" — גריד שחמט (רה-דיזיין 2026-08, פרומפט 8)
