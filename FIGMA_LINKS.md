@@ -99,6 +99,14 @@ press & events דסקטופ (19 כרטיסים, 2 עמודות): Implement this 
 press & events מובייל (אותם כרטיסים, עמודה אחת): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-439&m=dev
 
+### Homepage — `#x-our-artists` קרוסלת פוקוס (רה-דיזיין 2026-08, פרומפט 9) ✅ המצב הנוכחי
+
+סקשן x our artists מובייל (יצירה מרכזית + הצצות צד; אין frame דסקטופ, האתר = אדפטציה מוגדלת + חיצים): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-695&m=dev
+
+legacy (גריד 38 דסקטופ / קרוסלה+נקודות מובייל, "mobile order", הוחלף 2026-08-05):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-1181&m=dev
+
 ### Homepage — "Loneliness × the tribe" (מעל Press)
 
 בלוק כותרת דסקטופ (מעל `#press`): Implement this design from Figma.
