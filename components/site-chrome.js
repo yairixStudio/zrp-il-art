@@ -208,7 +208,9 @@
   }
 
   // ---- Logo destination chooser ------------------------------
-  // Clicking the header logo opens a small, friendly chooser:
+  // Off the homepage: the logo is a plain "go home" link (navigates to the
+  // gallery homepage, no chooser).
+  // On the homepage: clicking the logo opens a small, friendly chooser:
   //   "art gallery home"  (this site)   |   "perfume brand home" (zrp.co.il)
   // Progressive enhancement: the logo stays a real <a href> to the gallery
   // home, so with JS off (or modifier-click) it just navigates there.
@@ -236,6 +238,13 @@
         '</div>' +
       '</div>'
     );
+  }
+
+  // Home = site root index (this page, or any /<dir>/ whose href resolves to root).
+  function isHomePage() {
+    var homePath = new URL(abs(''), location.href).pathname;
+    var herePath = location.pathname;
+    return herePath === homePath || herePath === homePath + 'index.html';
   }
 
   function wireLogoChooser(root) {
@@ -306,6 +315,8 @@
     logo.addEventListener('click', function (e) {
       // Respect modifier-clicks / middle-click → let the browser do its thing.
       if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+      // Off the homepage, the logo is just a "go home" link — no chooser.
+      if (!isHomePage()) return;
       e.preventDefault();
       open();
     });
