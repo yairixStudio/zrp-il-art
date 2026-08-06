@@ -41,8 +41,8 @@ site-header{display:block;position:sticky;top:0;z-index:100}
    - nav-links uses nowrap + tight clamped gap so it never breaks into two rows. */
 .nav{background:var(--bg-grey);padding:8px 32px;min-height:53px;display:flex;align-items:center;position:sticky;top:0;z-index:100;width:100%;box-sizing:border-box}
 .nav-inner{display:flex;align-items:center;width:100%;max-width:var(--max);margin:0 auto;gap:clamp(16px,2.4vw,32px);flex-wrap:nowrap;min-width:0}
-.logo{display:flex;align-items:center;gap:8px;font-family:var(--cop);flex-shrink:1;min-width:0}
-.logo .logo-svg{display:block;width:177px;height:auto;object-fit:contain;flex-shrink:0}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--cop);flex-shrink:1;min-width:0;cursor:pointer}
+.logo .logo-svg{display:block;width:177px;height:auto;object-fit:contain;flex-shrink:0;cursor:pointer}
 .nav-links{display:flex;align-items:center;gap:clamp(12px,1.5vw,20px);list-style:none;flex-wrap:nowrap;min-width:0}
 /* Copperplate 400 (.active) has abnormally tight vertical metrics with line-height:normal
    (e.g. 24px type → ~14.5px box on iOS/Android) — explicit line-height prevents top clipping. */
