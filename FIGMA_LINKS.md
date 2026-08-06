@@ -453,6 +453,14 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1083-1704&m=dev
 
+**artist talk — amnon lipkin** (ערב רישום ספונטני במכונת תפירה, הקולפן, כיכר המדינה)
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1145-1124&m=dev
+
+מובייל (נוסף בפיגמה, התגלה 2026-08-06): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1145-1009&m=dev
+
 ### loneliness event
 
 event loneliness דסקטופ: Implement this design from Figma.

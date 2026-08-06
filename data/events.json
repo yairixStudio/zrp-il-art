@@ -510,8 +510,11 @@
       "subtitle_he": "how many partners have you had?",
       "exhibition_id": "how-many",
       "exhibition_volume": 2,
-      "date": null,
-      "date_he": "פרטים בהמשך...",
+      "date": "2026-08-10",
+      "date_he": "10 אוגוסט 2026",
+      "time_start": "19:00",
+      "time_end": "20:30",
+      "time_label": "20:30-19:00",
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/zohar-ron/hero.webp",
@@ -537,8 +540,7 @@
       "figma_node_desktop": "1083:1817",
       "figma_node_mobile": "1083:1704",
       "figma_file": "XhGH289YTRcW811wrufRJz",
-      "card_title_en": "artist talk",
-      "date_tbd": true
+      "card_title_en": "artist talk"
     },
     {
       "id": "amnon-lipkin",
@@ -548,9 +550,11 @@
       "subtitle_he": "הקולפן",
       "exhibition_id": "the-peeler",
       "exhibition_volume": 2,
-      "date": null,
-      "date_he": "פרטים בהמשך...",
-      "date_tbd": true,
+      "date": "2026-09-08",
+      "date_he": "8 ספטמבר 2026",
+      "time_start": "18:30",
+      "time_end": "20:30",
+      "time_label": "20:30-18:30",
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/amnon-lipkin/hero.webp",
@@ -573,9 +577,38 @@
       "route": "events/amnon-lipkin/",
       "homepage_visible": false,
       "figma_node_desktop": "1145:1124",
-      "figma_node_mobile": null,
+      "figma_node_mobile": "1145:1009",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk"
+    },
+    {
+      "id": "zohar-ron-medina",
+      "slug": "zohar-ron-medina",
+      "title_he": "שיחת אמנים עם זוהר רון",
+      "title_en": "artist talk with zohar ron",
+      "subtitle_he": null,
+      "exhibition_id": null,
+      "date": "2026-09-09",
+      "date_he": "9 ספטמבר 2026",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/zohar-ron-medina/list-card.webp",
+      "list_image": "images/events/zohar-ron-medina/list-card.webp",
+      "description_he": [],
+      "artists": [
+        {
+          "name_en": "zohar ron",
+          "slug": "zohar-ron",
+          "image": "images/artists/grid/zohar-ron.webp"
+        }
+      ],
+      "route": null,
+      "homepage_visible": false,
+      "figma_node_desktop": null,
+      "figma_node_mobile": null,
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "אירוע חדש שקיים בפיגמה רק ככרטיס בפריימי אינדקס האירועים (דסקטופ 1318:3218 / מובייל 1403:999, תמונה imageRef 951e06ff — צילום דג של זוהר רון) — אין עדיין דף אירוע בפיגמה, לכן route:null והכרטיס ב-/events/ לא-קליקאבילי עם טוסט בקרוב (soon במירור)"
     },
     {
       "id": "alice-debellis",
