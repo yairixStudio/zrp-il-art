@@ -10,7 +10,8 @@
 - [ ] **`tools/seo/inject.py` מיושן מול ה-HTML המקומיט (התגלה 2026-07-26):** `og-dims.json` חלקי (160/209 — ההשלמה חיה ב-`/tmp/og_dims.json` שאבד) ו-`breadcrumb()` עדיין מפנה ל-`/press/` ו-`/curators/` שלא נבנו. הרצה גורפת = רגרסיה של ~70 דפים. לתקן: לג'נרט og-dims מלא מ-`og/` + פילטר crumbs לפי קיום הדף. עד אז — להריץ רק על דפים חדשים ולשחזר את השאר (ראה lessons 2026-07-26).
 - [ ] **Dizengoff archive thumbs** — `archive_thumbnails.tabs[0]` עדיין `_placeholder:true`. כשהגלריה תיפתח ויהיו צילומים מהתערוכה — לעדכן את 4 ה-`image` paths ב-`data/exhibitions.json` *ובמקביל* ב-fallback inline JSON ב-`index.html` (id=`fallback-archive`).
 - [ ] `images/brand/logo.svg` עוד לא קיים.
-- [ ] `images/galleries/flea-market/hero.png` — placeholder (עותק של dizengoff).
+- [ ] **גלריית הפשפשים — אין צילום:** מאז 2026-08-06 כרטיס ההומפייג' = ירוק שטוח `#2B4C39` per Figma `1318:686` (שכבות התמונה מוסתרות); קבצי `flea-market/hero.*` בדיסק הם עדיין עותק-placeholder של dizengoff, לא מקושרים. כשיהיה צילום אמיתי — לאפות hero חדש ולהחזיר `<picture>` לכרטיס + `image_hero` ב-`galleries.json`.
+- [ ] **פערי טקסט בסקשן `#galleries` מול Figma `1318:657` (התגלו 2026-08-06, לא סונכרנו — המשתמש ביקש עדכון תמונות בלבד; דורש הכרעה):** (1) שעות מדינה בפיגמה "א'-ה' 11:00-18:00" מול "א'-ה' 10:00-19:00" באתר; (2) בפיגמה נוספו שעות לדיזינגוף ("א'-ה' 10:00-18:00" + ו' + שבת) — באתר אין; (3) כתובת פשפשים בפיגמה "שוק הפשפשים, תל אביב" מול "שוק הפשפשים, יפו" באתר; (4) בכרטיס מדינה בפיגמה אין שורת כתובת. לוודא מול הלקוח אם אלו עדכונים אמיתיים או רשלנות-פריים, ואז לסנכרן גם את `galleries.json`.
 - [ ] 5 דפי-אומן (`zohar-ron`, `eitan-goldson`, `zohar-shtrit`, `hila-loterstein`, `adi-duak`) — placeholder בלי Figma design.
 - [ ] Newsletter form — `event.preventDefault()` בלבד (אין backend).
 - [ ] Contact + Accessibility — אין Figma.
