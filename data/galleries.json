@@ -11,13 +11,25 @@
       "city": "tel aviv",
       "status": "open",
       "hours": [
-        { "days_he": "א'-ה'",   "days_en": "Sun-Thu",  "time": "10:00-19:00" },
-        { "days_he": "ו'",       "days_en": "Fri",      "time": "10:00-14:00" },
-        { "days_he": "שבת סגור", "days_en": "Sat closed", "time": null }
+        {
+          "days_he": "א'-ה'",
+          "days_en": "Sun-Thu",
+          "time": "10:00-19:00"
+        },
+        {
+          "days_he": "ו'",
+          "days_en": "Fri",
+          "time": "10:00-14:00"
+        },
+        {
+          "days_he": "שבת סגור",
+          "days_en": "Sat closed",
+          "time": null
+        }
       ],
-      "image_hero": "images/galleries/medina/hero.webp",
+      "image_hero": "images/galleries/medina/hero-v2.webp",
       "figma_node_desktop": null,
-      "figma_node_mobile": null
+      "figma_node_mobile": "1318:663"
     },
     {
       "id": "dizengoff",
@@ -29,9 +41,9 @@
       "city": "tel aviv",
       "status": "open",
       "hours": [],
-      "image_hero": "images/galleries/dizengoff/hero.webp",
+      "image_hero": "images/galleries/dizengoff/hero-v2.webp",
       "figma_node_desktop": "237:1465",
-      "figma_node_mobile": null
+      "figma_node_mobile": "1318:674"
     },
     {
       "id": "flea-market",
@@ -43,10 +55,10 @@
       "city": "tel aviv",
       "status": "coming-soon",
       "hours": [],
-      "image_hero": "images/galleries/flea-market/hero.webp",
-      "note": "Hero image is currently a placeholder reusing dizengoff image — needs unique photo.",
+      "image_hero": null,
+      "note": "Homepage card (redesign 2026-08, Figma 1318:686) renders as a flat #2B4C39 block with \"coming soon\" — image fills are hidden in Figma, no photo. Old hero.* files remain on disk, unlinked.",
       "figma_node_desktop": null,
-      "figma_node_mobile": null
+      "figma_node_mobile": "1318:686"
     }
   ]
 }
