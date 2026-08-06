@@ -405,6 +405,14 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1237-185&m=dev
 
+**artist talk — קָמִיעַ \| zohar ron (הקולפן, 9.9.2026, כיכר המדינה; נוסף 2026-08-06)** — ⚠️ **לא** לבלבל עם אירוע ה-how-many/דיזינגוף שלו (`1083:1817`/`1083:1704`); ה-slug כאן `zohar-ron-medina`.
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1399-801&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1399-691&m=dev
+
 **artist talk — anat wégier (how-many, 7.8.2026, דיזינגוף; נוסף 2026-07-24)**
 
 דסקטופ: Implement this design from Figma.

@@ -584,31 +584,48 @@
     {
       "id": "zohar-ron-medina",
       "slug": "zohar-ron-medina",
-      "title_he": "שיחת אמנים עם זוהר רון",
+      "title_he": "קָמִיעַ — שיח גלריה עם זוהר רון",
       "title_en": "artist talk with zohar ron",
-      "subtitle_he": null,
-      "exhibition_id": null,
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
       "date": "2026-09-09",
       "date_he": "9 ספטמבר 2026",
+      "time_start": "19:00",
+      "time_end": "20:30",
+      "time_label": "20:30-19:00",
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
-      "cover_image": "images/events/zohar-ron-medina/list-card.webp",
+      "cover_image": "images/events/zohar-ron-medina/hero.webp",
       "list_image": "images/events/zohar-ron-medina/list-card.webp",
-      "description_he": [],
+      "description_he": [
+        "קָמִיעַ | שיח גלריה עם הצלם זוהר רון",
+        "",
+        "לכל אחד מאיתנו יש קָמִיעַ, חפץ שנושא סיפור גדול.",
+        "אני מזמין אתכן/ם למפגש פתוח בתערוכה, לשיחה על תהליך היצירה ועל הסיפורים שמאחורי העבודות.",
+        "מוזמנים/ות להביא איתכן/ם חפץ שמסמל עבורכם זיכרון משמעותי בחיים.",
+        "בסיום המפגש, מי שירצה, מוזמן להצטלם עם החפץ כחלק מפרויקט צילום לספר הצילומים הבא של הצלם זוהר רון"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
       "artists": [
         {
           "name_en": "zohar ron",
           "slug": "zohar-ron",
-          "image": "images/artists/grid/zohar-ron.webp"
+          "image": "images/events/zohar-ron/artist-thumb.webp"
         }
       ],
-      "route": null,
+      "route": "events/zohar-ron-medina/",
       "homepage_visible": false,
-      "figma_node_desktop": null,
-      "figma_node_mobile": null,
+      "figma_node_desktop": "1399:801",
+      "figma_node_mobile": "1399:691",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
-      "_note": "אירוע חדש שקיים בפיגמה רק ככרטיס בפריימי אינדקס האירועים (דסקטופ 1318:3218 / מובייל 1403:999, תמונה imageRef 951e06ff — צילום דג של זוהר רון) — אין עדיין דף אירוע בפיגמה, לכן route:null והכרטיס ב-/events/ לא-קליקאבילי עם טוסט בקרוב (soon במירור)"
+      "_note": "האירוע השני של זוהר רון (הראשון — slug `zohar-ron` — הוא how-many/דיזינגוף). כאן: תערוכת הקולפן, גלריית כיכר המדינה. ה-slug נבחר לפי הגלריה כי שם האומן כבר תפוס (כלל-זהב 6 — לא לשנות slugs קיימים). הכרטיס ב-/events/ היה `soon` עד שהמעצבת מסרה את פריימי הדף (1399:801/691) ב-2026-08-06.",
+      "_image_note": "hero = imageRef 951e06ff… (צילום דג של זוהר רון, מקור 1380×2048 עם פרופיל Adobe98) → cover ממורכז 984×1488 + וריאנטים 480/768. **ה-scrim השטוח rgba(27,27,27,.4) כן מוחל בשני הפריימים** — אומת מול רינדורי ה-nodes (ממוצע אפור 0.358 ברינדור מול 0.352 בחישוב מקומי; RMSE 5.9% מוסבר בטקסט האוברליי הלבן). ⚠️ `%[fx:mean]` על PNG עם ערוץ אלפא מכליל את האלפא בממוצע ולכן נראה 'בהיר יותר' — למדוד רק אחרי `-alpha remove`. thumb האומן = מיחזור images/events/zohar-ron/artist-thumb.webp (imageRef 889e3ab7, אומת RMSE 2.5%); ה-fill השני בכרטיס בדסקטופ (36e2f912 — צילום אומנית בסטודיו) הוא leftover שלא נראה ברינדור."
     },
     {
       "id": "alice-debellis",

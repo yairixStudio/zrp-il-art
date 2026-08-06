@@ -3,6 +3,19 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-zohar-ron-medina-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "קָמִיעַ — שיח גלריה עם זוהר רון",
+      "title_en": "artist talk with zohar ron",
+      "date": "2026-09-09",
+      "cover_image": "images/events/zohar-ron-medina/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "האירוע השני של זוהר רון (הקולפן / כיכר המדינה) — כרטיס בראש /press/. לא בגריד #press בהומפייג' (רה-דיזיין 2026-08: שם רק כתבות + 2 פתיחות).",
+      "route": "events/zohar-ron-medina/"
+    },
+    {
       "id": "event-the-space-between",
       "type": "event",
       "tag_en": "gallery event",

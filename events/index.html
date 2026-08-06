@@ -83,7 +83,9 @@ body{text-transform:uppercase}
 .ev-card .date{font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.2;letter-spacing:.02em}
 .ev-card .date--tbd{font-family:var(--heb);font-weight:400;font-size:14px;direction:rtl;text-transform:none;letter-spacing:0}
 
-/* card without a page yet (zohar-ron @ kikar hamedina) — non-clickable + "בקרוב" toast (press/homepage precedent) */
+/* `soon:true` in the mirror — event without a page yet: non-clickable + "בקרוב" toast
+   (press/homepage precedent). No card uses it right now (zohar-ron-medina got its page
+   on 2026-08-06); kept for the next event announced before its page exists. */
 .ev-card--soon{cursor:default}
 .ev-card--soon:hover .im img{transform:none}
 .soon-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(8px);background:var(--ink);color:#fff;font-family:var(--heb);font-size:16px;font-weight:400;text-transform:none;padding:10px 28px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:300}
@@ -176,7 +178,7 @@ body{text-transform:uppercase}
  {"slug":"zohar-ron","date":"2026-08-10","title_en":"artist talk with zohar ron","gallery_id":"dizengoff","img":"images/events/zohar-ron/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר דיזינגוף"},
  {"slug":"the-space-between","date":"2026-09-03","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
  {"slug":"amnon-lipkin","date":"2026-09-08","title_en":"artist talk with amnon lipkin","gallery_id":"medina","img":"images/events/amnon-lipkin/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה"},
- {"slug":"zohar-ron-medina","soon":true,"date":"2026-09-09","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"}
+ {"slug":"zohar-ron-medina","date":"2026-09-09","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"}
 ]
 </script>
 <script>
@@ -277,7 +279,7 @@ body{text-transform:uppercase}
 <site-footer></site-footer>
 
 <!-- Site chrome: shared header + footer (single source of truth) -->
-<script src="../components/site-chrome.js?v=5" defer></script>
+<script src="../components/site-chrome.js?v=6" defer></script>
 <script src="../components/analytics.js" defer></script>
 <script src="../components/picture-upgrade.js" defer></script>
 <script src="../components/embed-iframe.js" defer></script>
