@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gala Night — The Peeler | Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/Copperplate-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="ערב הגאלה של תערוכת הקולפן בגלריית כיכר המדינה, תל אביב — 29 ביולי 2026, 19:30–21:30. עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.">
+<link rel="stylesheet" href="../../components/triptych-gallery.css">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;--copy-grey:#6B7280;
+  --artist:#828282;--icon-grey:#707070;
+  --slide-active:#515151;--divider:#D8D8D8;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+/* Horizontal clipping lives on <html> only — overflow-x on <body> breaks the sticky
+   header and clips Copperplate caps vertically (lessons 2026-06-15 / 2026-06-16). */
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:400;text-transform:uppercase;direction:ltr;unicode-bidi:isolate}
+
+/* Line breaks / separators differ per frame (desktop 1451:1901 vs mobile 1451:2070):
+   .dbr/.dsep render only on desktop, .mbr/.msep only on mobile. */
+.mbr,.msep{display:none}
+.dbr,.dsep{display:inline}
+
+/* Desktop header — white strip on this page (Figma 1451:1903; hero band stays grey) */
+@media (min-width:769px){
+  body.page-event-gala-night site-header .nav{background:var(--white)}
+  body.page-event-gala-night site-header .nav :focus-visible{outline-color:var(--ink)}
+}
+
+/* ===== EVENT PAGE — GALA NIGHT (ערב הגאלה של הקולפן) — sibling of events/how-many ===== */
+.event{display:flex;flex-direction:column;background:var(--white)}
+
+/* === HERO BAND (grey) — title + meta + curator letter left, photo right (Figma 1451:1927) === */
+.event-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.event-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.event-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:0 16px}
+
+/* Title — Copperplate Regular. Figma 80/72 ls .1em; our Copperplate sets ~28% wider than
+   Figma's, so 64/58 reproduces the drawn width (optical match, docs/conventions.md §5.2).
+   Padding-top guards the caps against paint-clip (lessons 2026-06-16). */
+.event-hero .h-title-block{display:flex;flex-direction:column;align-items:center;width:100%}
+.event-hero .h-title{font-family:var(--cop);font-weight:400;font-size:64px;line-height:58px;letter-spacing:.1em;text-align:center;width:100%;color:var(--ink);padding-top:.14em}
+
+/* Meta — gallery (Regular) then date · time (Light); 1×1 dot per Figma 1451:1942 */
+.event-hero .h-meta{display:flex;flex-direction:column;gap:8px;align-items:center;padding:10px 10px 8px}
+.event-hero .h-meta .row-1,.event-hero .h-meta .row-2{display:flex;align-items:center;gap:8px;justify-content:center}
+.event-hero .h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.event-hero .h-meta .date,.event-hero .h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.event-hero .h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
+
+/* Curator letter — FbEzmel Light 18/20 centered (Figma 1451:1952); "Welcome aboard." =
+   Copperplate run (18 Figma → 14 optical); closing curator line = Regular. */
+.event-hero .h-body{font-family:var(--heb);font-weight:300;font-size:18px;line-height:20px;text-align:center;color:var(--ink);direction:rtl;padding:16px 0}
+.event-hero .h-body p+p{margin-top:20px}
+.event-hero .h-body .strong{font-weight:400}
+.event-hero .h-body > p:first-child .lat{font-size:14px;letter-spacing:.04em}
+
+/* Hero photo — clean 492×744, no scrim/overlay (verified against node render) */
+.event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end}
+.event-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000}
+.event-hero .card>picture{display:contents}
+.event-hero .card img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* artist-link — every artist mention links to its page (docs/artist-linking.md) */
+a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+
+/* === GALLERIES — two triptych slideshows, bar dots, no labels (Figma 1451:1956 / 1451:1986) === */
+.event-gallery{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-gallery .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:1248px}
+.event-tri{--tri-max-w:1248px;--tri-bg:transparent;--tri-dot-color:#EEF0EF;--tri-dot-active:#515151;width:100%}
+.event-tri .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.event-tri .tri-slide.is-center{width:481px;height:841px}
+.event-tri .tri-slide.is-prev,.event-tri .tri-slide.is-next{width:302px;height:528px;opacity:.6}
+.event-tri .tri-slide.is-prev{left:calc(50% - 473px)}
+.event-tri .tri-slide.is-next{left:calc(50% + 472.5px)}
+.event-tri .tri-slide.is-hidden{width:481px;height:841px}
+
+/* === PRESENTING ARTISTS — photo left + linked list right (Figma 1451:1974) === */
+.event-atmosphere{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-atmosphere .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-atmosphere .atm-row{display:flex;gap:48px;align-items:stretch}
+.event-atmosphere .atm-img{flex:0 0 492px;display:flex;justify-content:flex-end}
+.event-atmosphere .atm-img .frame{position:relative;width:492px;height:744px;overflow:hidden}
+.event-atmosphere .atm-img .frame>picture{display:contents}
+.event-atmosphere .atm-img .frame img{width:100%;height:100%;object-fit:cover}
+.event-atmosphere .atm-artists{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:32px;padding:0 16px}
+/* Artists list — FbEzmel Light 28/32 centered, width 590 (Figma 1451:1985); NNBSP around pipes */
+.event-atmosphere .artists-text{font-family:var(--heb);font-weight:300;font-size:28px;line-height:32px;color:var(--ink);text-align:center;direction:rtl;max-width:590px}
+.event-atmosphere .artists-text .lead{font-weight:400;display:block;margin-bottom:.286em}
+
+/* === MOMENTS FROM THE OPENING — uniform-crop thumbs strip (Figma 1451:1995) === */
+.event-moments{padding:32px var(--pad-x) 48px;background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:1248px}
+.event-moments .head{display:flex;justify-content:space-between;align-items:center}
+.event-moments .section-label{font-family:var(--cop);font-weight:300;font-size:28px;line-height:1.15;letter-spacing:.04em;color:var(--ink);text-align:left}
+.event-moments .head .more{display:flex;align-items:flex-start;padding-top:4px;color:#1A1C1C;transition:opacity .2s}
+.event-moments .head .more:hover{opacity:.6}
+.event-moments .head .more svg{width:10.33px;height:10.33px;display:block}
+/* Mobile swipe cue — horizontal arrows (Figma 1451:2186) */
+.event-moments .scroll-cue{display:none;justify-content:flex-end;gap:2px;color:var(--ink)}
+.event-moments .scroll-cue button{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;padding:0;color:inherit;border:0;background:none;cursor:pointer;transition:opacity .2s}
+.event-moments .scroll-cue button:hover{opacity:.55}
+.event-moments .scroll-cue button:disabled{opacity:.25;cursor:default;pointer-events:none}
+.event-moments .scroll-cue svg{width:24px;height:16px;display:block;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.event-moments .strip{display:flex;flex-direction:row;gap:6px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.event-moments .strip::-webkit-scrollbar{height:6px}
+.event-moments .strip::-webkit-scrollbar-thumb{background:var(--divider);border-radius:0}
+.event-moments .strip .cell{flex:0 0 178px;width:178px;height:148px;overflow:hidden;background:#f3f1ee;scroll-snap-align:start}
+.event-moments .strip .cell>picture{display:contents}
+/* Figma crops the 178×178 square from its top (y:0) — keep heads in frame */
+.event-moments .strip .cell img{width:178px;height:148px;object-fit:cover;object-position:50% 0;transition:transform .8s ease}
+.event-moments .strip .cell:hover img{transform:scale(1.05)}
+
+/* === RESPONSIVE === */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .event-hero .img-col{flex-basis:380px}
+  .event-hero .card{width:380px;height:580px}
+  .event-hero .h-title{font-size:44px;line-height:1.1}
+  .event-hero .h-meta .gallery,.event-hero .h-meta .date,.event-hero .h-meta .time{font-size:22px}
+  .event-tri .tri-frame{height:560px}
+  .event-tri .tri-slide.is-center{width:360px;height:560px}
+  .event-tri .tri-slide.is-prev,.event-tri .tri-slide.is-next{width:220px;height:380px}
+  .event-tri .tri-slide.is-prev{left:calc(50% - 326px)}
+  .event-tri .tri-slide.is-next{left:calc(50% + 326px)}
+  .event-tri .tri-slide.is-hidden{width:360px;height:560px}
+  .event-atmosphere .atm-img{flex-basis:380px}
+  .event-atmosphere .atm-img .frame{width:380px;height:580px}
+  .event-atmosphere .artists-text{font-size:22px;line-height:1.2}
+}
+
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .mbr,.msep{display:inline}
+  .dbr,.dsep{display:none}
+
+  /* Mobile re-order (Figma 1451:2070): hero photo → title+meta → gallery 1 → letter →
+     gallery 2 → presenting artists → moments. Hero wrappers become display:contents
+     so their children interleave with the sibling sections. */
+  .event-hero,.event-hero .row,.event-hero .text-col{display:contents}
+  .event-hero .img-col{order:1}
+  .event-hero .h-title-block{order:2}
+  .event-hero .h-meta{order:3}
+  .event-gal-a{order:4}
+  .event-hero .h-body{order:5}
+  .event-gal-b{order:6}
+  .event-atmosphere{order:7}
+  .event-moments{order:8}
+
+  /* Hero photo — full-bleed 390×520 crop (Figma 1451:2091) */
+  .event-hero .img-col{flex:none;width:100%;justify-content:stretch;align-self:stretch}
+  .event-hero .card{width:100%;max-width:none;height:520px}
+
+  /* Title + meta band on white (Figma 1451:2114): Copperplate 24 → 18 optical */
+  .event-hero .h-title-block{padding:32px 0 0;background:var(--white);align-items:center}
+  .event-hero .h-title{font-size:18px;line-height:1.5;padding:0 16px}
+  .event-hero .h-meta{background:var(--white);margin-top:0;gap:8px;padding:0 10px 8px}
+  .event-hero .h-meta .gallery,.event-hero .h-meta .date,.event-hero .h-meta .time{font-size:14px}
+
+  /* Galleries: stage 443h, center 216×378, peeks bleed off-screen (Figma 1451:2136) */
+  .event-gallery{padding:8px 16px}
+  .event-tri{--tri-max-w:none;width:100%}
+  .event-tri .tri-frame{height:443px;max-width:none;width:100%}
+  .event-tri .tri-slide.is-center{width:216px;height:378px}
+  .event-tri .tri-slide.is-prev,.event-tri .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .event-tri .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .event-tri .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .event-tri .tri-slide.is-hidden{width:216px;height:378px}
+
+  /* Letter — after gallery 1, on white (Figma 1451:2150): 16/20 */
+  .event-hero .h-body{background:var(--white);padding:16px;width:100%;font-size:16px}
+  .event-hero .h-body > p:first-child .lat{font-size:13px}
+
+  /* Presenting artists — photo full-width 638h, then the list (Figma 1451:2167/2175) */
+  .event-atmosphere{padding:32px 16px 16px}
+  .event-atmosphere .atm-row{flex-direction:column;gap:16px}
+  .event-atmosphere .atm-img{flex:none;width:100%}
+  .event-atmosphere .atm-img .frame{width:100%;height:638px}
+  .event-atmosphere .atm-artists{padding:16px 0 0}
+  .event-atmosphere .artists-text{font-size:16px;line-height:20px;max-width:358px}
+
+  /* Moments — label 24 → 19 optical, swipe arrows, 100.25×121.52 cells (Figma 1451:2177) */
+  .event-moments{padding:16px}
+  .event-moments .inner{gap:15px}
+  .event-moments .section-label{font-weight:400;font-size:19px;letter-spacing:.02em}
+  .event-moments .scroll-cue{display:flex}
+  .event-moments .strip{gap:4px;padding-bottom:16px}
+  .event-moments .strip .cell{flex:0 0 100.25px;width:100.25px;height:121.52px}
+  .event-moments .strip .cell img{width:100.25px;height:121.52px}
+}
+
+@media (max-width:400px){
+  .event-hero .h-title{font-size:17px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/events/gala-night/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gala Night — The Peeler | Zielinski &amp; Rozen">
+<meta property="og:description" content="ערב הגאלה של תערוכת הקולפן בגלריית כיכר המדינה, תל אביב — 29 ביולי 2026, 19:30–21:30. עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.">
+<meta property="og:url" content="https://art.zrp.co.il/events/gala-night/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-gala-night-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1815">
+<meta property="og:image:alt" content="Gala Night — The Peeler | Kikar Hamedina">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gala Night — The Peeler | Zielinski &amp; Rozen">
+<meta name="twitter:description" content="ערב הגאלה של תערוכת הקולפן בגלריית כיכר המדינה, תל אביב — 29 ביולי 2026, 19:30–21:30. עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-gala-night-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/gala-night/#event","url":"https://art.zrp.co.il/events/gala-night/","name":"Gala Night — The Peeler","image":"https://art.zrp.co.il/og/events-gala-night-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-07-29T19:30","endDate":"2026-07-29T21:30","description":"ערב הגאלה של תערוכת הקולפן בגלריית כיכר המדינה, תל אביב — 29 ביולי 2026, 19:30–21:30. עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Gala Night — The Peeler","item":"https://art.zrp.co.il/events/gala-night/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body class="page-event-gala-night">
+
+<site-header></site-header>
+
+<main class="event">
+
+  <!-- HERO BAND (grey) — title + meta + curator letter left, photo right
+       (Figma 1451:1927 desktop / 1451:2091+2114 mobile) -->
+  <section class="event-hero">
+    <div class="row">
+
+      <!-- Text column -->
+      <div class="text-col">
+        <div class="h-title-block">
+          <h1 class="h-title">gala night</h1>
+        </div>
+
+        <div class="h-meta">
+          <div class="row-1"><span class="gallery heb">גלריית כיכר המדינה</span></div>
+          <div class="row-2">
+            <span class="date heb"><bdi>29 יולי 2026</bdi></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="time heb"><bdi>19:30-21:30</bdi></span>
+          </div>
+        </div>
+
+        <!-- Curator letter — verbatim from Figma (long-form stays in HTML; excerpt in data/events.json).
+             .dbr breaks are desktop-only (mobile frame merges those lines). -->
+        <div class="h-body heb">
+          <p><span class="lat">welcome aboard.</span></p>
+          <p>לא כל שכבה מבקשת לרדת. <br>לפעמים היא נשארת איתנו שנים.<br>היא מתחילה כזיכרון, הופכת לפרשנות, <br>אחר כך לאמונה, ובהמשך לזהות. <br>עד שקשה להבחין בין מה שקרה לבין הסיפור שנבנה סביבו.<br>שכבה היא סיפור שנבנה על אמונה, שיוצר זהות, שמשמש כהגנה, שהוא פרשנות שלנו, <br class="dbr">ומישהו שם משחק תפקיד <br>כדי שזה יתאים.</p>
+          <p><a class="artist-link" href="../../exhibitions/the-peeler/">הקולפן</a> אינה תערוכה על קילוף. היא תערוכה על האמצעי.<br>על האפשרות לעצור מול סיפור מוכר, להחזיק אותו לרגע ביד, <br>ולשאול אם הוא עדיין הדבר היחיד שאפשר לראות.<br>אין כאן הבטחה לשינוי. אין הבטחה לריפוי. <br>אין הבטחה לסגירת מעגל.</p>
+          <p>אין פה מצפן. יש פה קולפן.</p>
+          <p>עשרים ושניים אמנים ואמניות בחרו לקראת התערוכה מעורר רגש מתוך רשימה שנבנתה במיוחד עבור הפרויקט ויצרו עבור התערוכה עבודות חדשות מתוך מפגש עם זיכרונות אישיים, רגשות, <br class="dbr">שאלות וסיפורים שנשאו איתם.<br>לא מתוך ניסיון לספר את אותו הסיפור מחדש, <br class="dbr">אלא מתוך האפשרות להתבונן בו מהמקום שבו הם נמצאים היום.<br>כל אחד מהם יצא ממקום אחר. <br>כל אחד מהם חזר עם עולם שלם.<br>יחד הם יוצרים מרחב שאין בו תשובה אחת, <br>מסלול אחד או דרך אחת להרגיש.</p>
+          <p>לצד כל עבודה מוצג גם בושם שנבחר עבורה, ובקבוק שעוצב על ידי האמן עצמו. <br class="dbr">הבושם אינו מסביר את העבודה. <br>הוא לא נותן לה פתרון. הוא פותח אליה כניסה נוספת. <br>דרך ריח. דרך זיכרון. <br>דרך משהו שלא תמיד אפשר להסביר במילים.</p>
+          <p>הקולפן אינה מבקשת ללמד דבר. <br>היא מחזיקה אפשרות. <br>להתעכב. להרגיש. להיזכר.</p>
+          <p>ואולי לפתוח זוג עיניים פנימה. <br>יכול להיות שתוריד שכבה. <br>יכול להיות שתבנה עוד שלוש מעליה.<br>אבל עכשיו אתה יודע שהיא שם.</p>
+          <p class="strong">אוצרת התערוכה - <a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></p>
+        </div>
+      </div>
+
+      <!-- Hero photo — clean, no overlay (Figma 1451:1955; mobile shares the same fill — verified) -->
+      <div class="img-col">
+        <div class="card">
+          <img src="../../images/events/gala-night/hero.webp" srcset="../../images/events/gala-night/hero-480w.webp 480w, ../../images/events/gala-night/hero-768w.webp 768w, ../../images/events/gala-night/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1100px) 380px, 492px" width="984" height="1488" alt="ערב הגאלה של תערוכת הקולפן — גלריית כיכר המדינה" decoding="async" fetchpriority="high">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GALLERY 1 — triptych slideshow (Figma 1451:1962 desktop / 1451:2136 mobile) -->
+  <section class="event-gallery event-gal-a" aria-label="צילומים מערב הגאלה">
+    <div class="inner">
+      <div class="tri event-tri" data-tri-loop="true">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-01.webp" srcset="../../images/events/gala-night/gallery1-01-480w.webp 480w, ../../images/events/gala-night/gallery1-01-768w.webp 768w, ../../images/events/gala-night/gallery1-01-1080w.webp 1080w, ../../images/events/gala-night/gallery1-01.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-02.webp" srcset="../../images/events/gala-night/gallery1-02-480w.webp 480w, ../../images/events/gala-night/gallery1-02-768w.webp 768w, ../../images/events/gala-night/gallery1-02-1080w.webp 1080w, ../../images/events/gala-night/gallery1-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-03.webp" srcset="../../images/events/gala-night/gallery1-03-480w.webp 480w, ../../images/events/gala-night/gallery1-03-768w.webp 768w, ../../images/events/gala-night/gallery1-03-1080w.webp 1080w, ../../images/events/gala-night/gallery1-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+        </div>
+        <div class="tri-dots" role="tablist" aria-label="gallery navigation">
+          <button type="button" class="tri-dot is-on" aria-label="slide 1" role="tab" aria-selected="true"></button>
+          <button type="button" class="tri-dot" aria-label="slide 2" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="slide 3" role="tab" aria-selected="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESENTING ARTISTS — photo + linked list (Figma 1451:1974 desktop / 1451:2167+2175 mobile) -->
+  <section class="event-atmosphere" aria-label="האומנים המציגים">
+    <div class="inner">
+      <div class="atm-row">
+        <div class="atm-img">
+          <div class="frame">
+            <img src="../../images/events/gala-night/atmosphere.webp" srcset="../../images/events/gala-night/atmosphere-480w.webp 480w, ../../images/events/gala-night/atmosphere-768w.webp 768w, ../../images/events/gala-night/atmosphere.webp 984w" sizes="(max-width:768px) 100vw, 492px" width="984" height="1488" alt="אווירת ערב הגאלה בגלריית כיכר המדינה" decoding="async" loading="lazy">
+          </div>
+        </div>
+        <div class="atm-artists">
+          <div class="artists-text">
+            <span class="lead">אומנים מציגים:</span>
+            <a class="artist-link" href="../../artists/zohar-ron/">זוהר רון</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/jessica-tabarovsky/">ג׳סיקה טברובסקי</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/noemi-safir/">נעמי ספיר</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/elsa-ars-brush/">אלסה ארס ברוש</a><span class="dsep">&#8239;|&#8239;</span><br class="mbr"><a class="artist-link" href="../../artists/chen-ziv/">חן זיו</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/baruch-torgeman/">ברוך תורג׳מן</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/anat-wegier/">ענת ויז׳ייה</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/yarden-amir/">ירדן אמיר</a><span class="dsep">&#8239;|&#8239;</span><br class="mbr"><a class="artist-link" href="../../artists/gilad-kenan/">גלעד קינן</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/lahav-barak/">להב ברק</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/livay-levi/">ליוואי לוי</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/natasha-zeriker/">נטאשה זריקר</a><span class="dsep">&#8239;|&#8239;</span><br class="mbr"><a class="artist-link" href="../../artists/talia-zoref/">טליה צורף</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/nir-giorgio-levin/">ניר ג׳ורג׳יו לוין</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/amnon-lipkin/">אמנון ליפקין</a><span class="dsep">&#8239;|&#8239;</span><br class="mbr"><a class="artist-link" href="../../artists/maria-artamonova/">מריה ארטמונובה</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/hadas-tuval/">הדס טובל</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/bar-cohen/">בר כהן</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/michael-konovalenko/">מיכאל קונובלנקו</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/aharon-bas/">אהרן בס</a>&#8239;|&#8239;<a class="artist-link" href="../../artists/alice-debellis/">אליס דה בליס</a><br class="dbr"><span class="msep">&#8239;|&#8239;</span><a class="artist-link" href="../../artists/tali-zelnik/">טלי זלניק - סטודיו פיס אוף מיין</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY 2 — triptych slideshow (Figma 1451:1987 desktop / 1451:2153 mobile) -->
+  <section class="event-gallery event-gal-b" aria-label="צילומים נוספים מערב הגאלה">
+    <div class="inner">
+      <div class="tri event-tri" data-tri-loop="true">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-01.webp" srcset="../../images/events/gala-night/gallery2-01-480w.webp 480w, ../../images/events/gala-night/gallery2-01-768w.webp 768w, ../../images/events/gala-night/gallery2-01-1080w.webp 1080w, ../../images/events/gala-night/gallery2-01.webp 1815w" sizes="(max-width:768px) 60vw, 481px" width="1815" height="2723" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-02.webp" srcset="../../images/events/gala-night/gallery2-02-480w.webp 480w, ../../images/events/gala-night/gallery2-02-768w.webp 768w, ../../images/events/gala-night/gallery2-02-1080w.webp 1080w, ../../images/events/gala-night/gallery2-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-03.webp" srcset="../../images/events/gala-night/gallery2-03-480w.webp 480w, ../../images/events/gala-night/gallery2-03-768w.webp 768w, ../../images/events/gala-night/gallery2-03-1080w.webp 1080w, ../../images/events/gala-night/gallery2-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+        </div>
+        <div class="tri-dots" role="tablist" aria-label="gallery navigation">
+          <button type="button" class="tri-dot is-on" aria-label="slide 1" role="tab" aria-selected="true"></button>
+          <button type="button" class="tri-dot" aria-label="slide 2" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="slide 3" role="tab" aria-selected="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOMENTS FROM THE OPENING — 14-thumb horizontal scroll strip (Figma 1451:1995 / 1451:2177) -->
+  <section class="event-moments" aria-label="רגעים מערב הגאלה">
+    <div class="inner">
+      <div class="head">
+        <div class="section-label">moments from the opening</div>
+        <a class="more" href="../../exhibitions/the-peeler/" aria-label="לדף התערוכה — הקולפן">
+          <svg viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M0.926778 11.0004L0 10.0736L8.73379 1.33128H0.793662V0H11.0004V10.2067H9.6691V2.2666L0.926778 11.0004Z" fill="currentColor"/></svg>
+        </a>
+      </div>
+      <div class="scroll-cue">
+        <button type="button" class="strip-prev" aria-label="previous">
+          <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M22 8H2M2 8l6-6M2 8l6 6"/></svg>
+        </button>
+        <button type="button" class="strip-next" aria-label="next">
+          <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg>
+        </button>
+      </div>
+      <div class="strip" role="list">
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-01.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-02.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-03.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-04.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-05.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-06.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-07.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-08.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-09.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-10.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-11.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-12.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-13.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-14.webp" width="534" height="534" alt="" decoding="async" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/triptych-gallery.js" defer></script>
+
+<script>
+(function(){
+  var section = document.querySelector('.event-moments');
+  if(!section) return;
+  var strip = section.querySelector('.strip');
+  var prevBtn = section.querySelector('.strip-prev');
+  var nextBtn = section.querySelector('.strip-next');
+  if(!strip || !prevBtn || !nextBtn) return;
+
+  function step(){
+    var cell = strip.querySelector('.cell');
+    if(!cell) return strip.clientWidth;
+    var gap = parseFloat(getComputedStyle(strip).columnGap || getComputedStyle(strip).gap) || 0;
+    return cell.getBoundingClientRect().width + gap;
+  }
+
+  function atStart(){ return strip.scrollLeft <= 1; }
+  function atEnd(){
+    return strip.scrollLeft + strip.clientWidth >= strip.scrollWidth - 1;
+  }
+
+  function syncButtons(){
+    prevBtn.disabled = atStart();
+    nextBtn.disabled = atEnd();
+  }
+
+  function scrollStrip(dir){
+    strip.scrollBy({left: dir * step(), behavior: 'smooth'});
+  }
+
+  prevBtn.addEventListener('click', function(){ scrollStrip(-1); });
+  nextBtn.addEventListener('click', function(){ scrollStrip(1); });
+  strip.addEventListener('scroll', syncButtons, {passive: true});
+  window.addEventListener('resize', syncButtons);
+  syncButtons();
+})();
+</script>
+
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>
