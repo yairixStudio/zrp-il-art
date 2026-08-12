@@ -54,8 +54,13 @@ body{text-transform:uppercase}
    DOM order = chronological, newest→oldest (= the mobile column order).
    Desktop: grid-auto-flow:column + direction:rtl → cards 1-10 run down the RIGHT column,
    11-20 down the LEFT column — exactly the Figma placement (chronology flows down each column).
-   ⚠️ Adding a card: bump the row count in grid-template-rows to ceil(cards/2), else a 3rd column appears. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(11,auto);grid-auto-flow:column;gap:48px;direction:rtl}
+   This page is the ARCHIVE: event cards dated today or later are dropped at runtime — those
+   live on /events/ (upcoming). The filter is the exact complement of the one there (`date>=today`),
+   so an event moves from /events/ to /press/ on its own the day after it happens.
+   The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
+   the static repeat(13,…) is only the no-JS fallback for all 25 cards.
+   ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(13,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -181,7 +186,7 @@ body{text-transform:uppercase}
      the-space-between (3.9) postdates the frame and was added at the top. -->
 <section class="cards" id="press-list" aria-label="press and events archive">
 
-  <a class="pcard" href="../events/zohar-ron-medina/">
+  <a class="pcard" data-kind="event" data-date="2026-09-09" href="../events/zohar-ron-medina/">
     <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -190,7 +195,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/the-space-between/">
+  <a class="pcard" data-kind="event" data-date="2026-09-03" href="../events/the-space-between/">
     <div class="img"><img src="../images/events/the-space-between/hero.webp" srcset="../images/events/the-space-between/hero-480w.webp 480w, ../images/events/the-space-between/hero-768w.webp 768w, ../images/events/the-space-between/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1488" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -199,7 +204,25 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/zohar-ron/">
+  <a class="pcard" data-kind="event" data-date="2026-08-28" href="../events/hadas-tuval/">
+    <div class="img"><img src="../images/events/hadas-tuval/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with hadas tuval</p>
+      <span class="date">28.8.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-08-19" href="../events/noemi-safir/">
+    <div class="img"><img src="../images/events/noemi-safir/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with noemi safir</p>
+      <span class="date">19.8.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-08-10" href="../events/zohar-ron/">
     <div class="img"><img src="../images/events/zohar-ron/card.webp" width="590" height="328" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -208,7 +231,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/anat-wegier/">
+  <a class="pcard" data-kind="event" data-date="2026-08-07" href="../events/anat-wegier/">
     <div class="img"><img src="../images/events/anat-wegier/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -217,7 +240,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/alice-debellis/">
+  <a class="pcard" data-kind="event" data-date="2026-08-06" href="../events/alice-debellis/">
     <div class="img"><img src="../images/events/alice-debellis/hero.webp" srcset="../images/events/alice-debellis/hero-480w.webp 480w, ../images/events/alice-debellis/hero-768w.webp 768w, ../images/events/alice-debellis/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1488" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -226,7 +249,16 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/risa-and-noemi/">
+  <a class="pcard" data-kind="event" data-date="2026-07-29" href="../events/gala-night/">
+    <div class="img"><img src="../images/events/gala-night/card.webp" width="584" height="369" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">gala night - <span class="heb">הקולפן</span></p>
+      <span class="date">29.7.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-07-24" href="../events/risa-and-noemi/">
     <div class="img"><img src="../images/events/risa-and-noemi/card.webp" width="584" height="324" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -235,7 +267,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/nir-giorgio-levin/">
+  <a class="pcard" data-kind="event" data-date="2026-07-17" href="../events/nir-giorgio-levin/">
     <div class="img"><img src="../images/events/nir-giorgio-levin/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -244,7 +276,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/liel-salman/">
+  <a class="pcard" data-kind="event" data-date="2026-07-16" href="../events/liel-salman/">
     <div class="img img--contain img--white"><img src="../images/events/liel-salman/logo.webp" width="486" height="648" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -253,7 +285,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/natasha-zeriker/">
+  <a class="pcard" data-kind="event" data-date="2026-07-09" href="../events/natasha-zeriker/">
     <div class="img"><img src="../images/events/natasha-zeriker/hero.webp" srcset="../images/events/natasha-zeriker/hero-480w.webp 480w, ../images/events/natasha-zeriker/hero-768w.webp 768w, ../images/events/natasha-zeriker/hero.webp 984w" sizes="(max-width:768px) 171px, 292px" width="984" height="1403" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -280,7 +312,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard pcard--soon" href="#">
+  <a class="pcard pcard--soon" data-kind="event" data-date="2026-06-29" href="#">
     <div class="img"><img src="../images/events/artist-talk/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -289,7 +321,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/artist-talk/">
+  <a class="pcard" data-kind="event" data-date="2026-06-11" href="../events/artist-talk/">
     <div class="img"><img src="../images/events/artist-talk/card.webp" width="584" height="325" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -307,7 +339,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/close-look/">
+  <a class="pcard" data-kind="event" data-date="2026-06-02" href="../events/close-look/">
     <div class="img">
       <img src="../images/events/close-look/card-photo.webp" width="584" height="324" alt="" loading="lazy" decoding="async">
       <div class="img-ovr" aria-hidden="true">
@@ -331,7 +363,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/how-many/">
+  <a class="pcard" data-kind="event" data-date="2026-05-26" href="../events/how-many/">
     <div class="img"><img src="../images/events/event-how-many-2026-05-26-cover.webp" srcset="../images/events/event-how-many-2026-05-26-cover-480w.webp 480w, ../images/events/event-how-many-2026-05-26-cover-768w.webp 768w, ../images/events/event-how-many-2026-05-26-cover-1080w.webp 1080w, ../images/events/event-how-many-2026-05-26-cover.webp 3058w" sizes="(max-width:768px) 171px, 292px" width="3058" height="4096" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -340,7 +372,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/ktuba/">
+  <a class="pcard" data-kind="event" data-date="2026-02-25" href="../events/ktuba/">
     <div class="img"><img src="../images/events/ktuba/card.webp" width="584" height="324" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -349,7 +381,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" href="../events/loneliness/">
+  <a class="pcard" data-kind="event" data-date="2026-01-19" href="../events/loneliness/">
     <div class="img"><img src="../images/events/event-4-cover.webp" srcset="../images/events/event-4-cover-480w.webp 480w, ../images/events/event-4-cover-768w.webp 768w, ../images/events/event-4-cover-1080w.webp 1080w, ../images/events/event-4-cover.webp 1435w" sizes="(max-width:768px) 171px, 292px" width="1435" height="1600" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -392,6 +424,26 @@ body{text-transform:uppercase}
 
 <!-- Site chrome: shared header + footer (single source of truth) -->
 <script src="../components/site-chrome.js?v=6" defer></script>
+
+<!-- ARCHIVE FILTER — /press/ shows PAST events only; today's and upcoming ones live on /events/.
+     Exact complement of the `date >= today` filter in events/index.html, so an event crosses over
+     by itself the day after it happens. Press articles carry no data-kind and are never filtered.
+     Runs before the toast binder so it never binds a card that is about to be removed. -->
+<script>
+(function(){
+  var grid=document.getElementById('press-list');
+  if(!grid) return;
+  var today=new Date(); today.setHours(0,0,0,0);
+  Array.prototype.forEach.call(grid.querySelectorAll('.pcard[data-kind="event"][data-date]'),function(c){
+    var p=c.getAttribute('data-date').split('-');
+    var d=new Date(+p[0],+p[1]-1,+p[2]);
+    if(d>=today) c.remove();
+  });
+  // grid-auto-flow:column needs an explicit row count, or the survivors spill into a 3rd column
+  var n=grid.querySelectorAll('.pcard').length;
+  grid.style.setProperty('--pc-rows','repeat('+Math.max(1,Math.ceil(n/2))+',auto)');
+})();
+</script>
 
 <!-- "בקרוב" toast — cards for events without a page yet (homepage precedent) -->
 <script>
