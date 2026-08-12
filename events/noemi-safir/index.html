@@ -71,6 +71,10 @@ body{text-transform:uppercase}
 .h-body.heb{font-family:var(--heb);font-weight:300;direction:rtl}
 .h-body p+p{margin-top:20px}
 .h-body .lead{font-weight:400}
+/* Latin runs inside the Hebrew body: our Copperplate is ~28% wider than Figma's, so 16px
+   would push "בשיתוף עם IDIT KLAIMAN…" onto a second line. 13px keeps Figma's single line
+   at the same optical weight (docs/conventions.md §5.2; same value as alice-debellis). */
+.h-body.heb .lat{font-size:13px;letter-spacing:.02em}
 
 /* "presented as part of" — exhibition attribution (Figma: label, Solway bar, exhibition name 36) */
 .h-presented{display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0}
