@@ -413,6 +413,14 @@ homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי a
 מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1399-691&m=dev
 
+**artist talk — לקלף את הקוד \| noemi safir (הקולפן, 19.8.2026, כיכר המדינה; נוסף 2026-08-12)** — ⚠️ **לא** לבלבל עם `risa-and-noemi` (how-many/דיזינגוף, `1083:1543`/`1083:1432`); ה-slug כאן `noemi-safir`.
+
+דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1450-1762&m=dev
+
+מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1450-1648&m=dev
+
 **artist talk — anat wégier (how-many, 7.8.2026, דיזינגוף; נוסף 2026-07-24)**
 
 דסקטופ: Implement this design from Figma.
@@ -640,6 +648,16 @@ the space between דסקטופ: Implement this design from Figma.
 
 the space between מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1361-232&m=dev
+
+### עמוד אירוע Gala Night (`/events/gala-night/`, ערב הגאלה של הקולפן 29.7.2026)
+
+gala night דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1451-1901&m=dev
+
+gala night מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1451-2070&m=dev
+
+> כרטיס האירוע לעמוד `/press/` ולהומפייג' = node `1323:570` (בתוך פריים ה-press הדסקטופי).
 
 ---
 

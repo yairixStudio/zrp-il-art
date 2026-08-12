@@ -757,6 +757,53 @@
       "figma_node_mobile": "1361:232",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "the space between"
+    },
+    {
+      "id": "noemi-safir",
+      "slug": "noemi-safir",
+      "title_he": "לקלף את הקוד — שיחת אמנים עם נעמי ספיר",
+      "title_en": "artist talk with noemi safir",
+      "subtitle_he": "הקולפן",
+      "host_he": "Idit Klaiman",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-19",
+      "date_he": "19 אוגוסט 2026",
+      "time_start": "18:00",
+      "time_end": "19:30",
+      "time_label": "19:30-18:00",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/noemi-safir/hero.webp",
+      "list_image": "images/events/noemi-safir/list-card.webp",
+      "description_he": [
+        "Noemi Safir מציגה את יצירותיה",
+        "בשיתוף עם Idit Klaiman - יזמת, הייטקיסטית ומנטורית",
+        "",
+        "לקלף את הקוד",
+        "ערב נשים אינטימי בין אמנות לחיים.",
+        "ציור, ריח ושיחה על קרבה, מרחק, הדפוסים שאנחנו מביאות לתוך מערכות יחסים והאפשרות לבחור אחרת."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "noemi safir",
+          "slug": "noemi-safir",
+          "image": "images/artists/noemi-safir/portrait-v2.webp"
+        }
+      ],
+      "route": "events/noemi-safir/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1450:1762",
+      "figma_node_mobile": "1450:1648",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "האירוע השני של נעמי ספיר (הראשון — slug `risa-and-noemi` — הוא how-many/דיזינגוף, במשותף עם ריסה ברוק עוז). כאן: תערוכת הקולפן, גלריית כיכר המדינה. `host_he` = עידית קלייman, יזמת אורחת שאינה אומנית של האתר — מוזכרת בגוף בלטינית ובלי קישור (תקדים the-space-between).",
+      "_image_note": "hero = imageRef 5c64359f… (ציור של נעמי ספיר, מקור 2897×3621). **שני קרופים**: דסקטופ 984×1488 cover ממורכז (RMSE 5.6% מול רינדור node 1450:1824 — הפרש מוסבר בטקסט האוברליי הלבן), מובייל 780×1040 cover ממורכז (RMSE 7.5% מול 1450:1669) — הפריים המוביילי שומר את כל הציור בעוד הדסקטופ חותך את הצדדים, ולכן <picture> ידני עם media. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (אומת: ממוצע אפור 0.382 ברינדור מול 0.374 בחישוב). thumb האומנית = מיחזור images/artists/noemi-safir/portrait-v2.webp (אומת RMSE 2.9% מול imageRef 1214412249; ⚠️ **לא** תמונת הגריד שלה — צילום אחר, RMSE 27%), מיושר לראש (object-position 50% 0%) כמו ב-Figma."
     }
   ]
 }
