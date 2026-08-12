@@ -374,6 +374,8 @@ body{text-transform:uppercase}
 .gallery-cards{display:flex;gap:8px;align-items:stretch;justify-content:center}
 /* Desktop: 3-row grid — image (top) → name → details (addr+hours, right-aligned) */
 .gallery-card{flex:0 0 calc((100% - 16px) / 3);display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"img" "name" "details";gap:8px;min-width:0;max-width:410.667px;align-content:start}
+/* medina/dizengoff cards are links to their gallery pages (flea = coming soon, stays non-clickable) */
+a.gallery-card{color:inherit;text-decoration:none}
 .gallery-card > .info{grid-area:name;display:flex;flex-direction:column;gap:4px;font-family:var(--heb);direction:rtl;text-align:right;padding:0 8px}
 .gallery-card > .img{grid-area:img;position:relative;width:100%;aspect-ratio:33/40;height:auto;overflow:hidden;background:#f3f1ee}
 .gallery-card > .img picture{display:block;width:100%;height:100%}
@@ -546,7 +548,7 @@ a.soos-line:hover{opacity:.65}
 /* ===== PRESS & EVENTS — redesign 2026-08 (Figma 1322:258 mobile; desktop = card anatomy of /press/ index).
    9 static cards: all press articles + the 2 exhibition-opening events only (Korin's rule, prompt 10).
    DOM order = chronological newest→oldest (= mobile column). Desktop: grid-auto-flow:column + rtl →
-   cards 1-5 run down the RIGHT column, 6-9 down the LEFT (same two-run pattern as /press/).
+   cards 1-5 run down the RIGHT column, 6-10 down the LEFT (same two-run pattern as /press/).
    ⚠️ Adding a card: bump grid-template-rows to ceil(n/2). Full archive lives at /press/. ===== */
 .press{padding:32px var(--pad-x) 48px;display:flex;flex-direction:column;gap:24px;background:var(--white)}
 .press-title{display:flex;flex-direction:column;gap:3px;line-height:1.05}
@@ -554,7 +556,7 @@ a.soos-line:hover{opacity:.65}
 .press-title .b{font-weight:700}
 .press-title .l{font-weight:300}
 .press-title a:hover{opacity:.55}
-.press-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(5,auto);grid-auto-flow:column;gap:48px;direction:rtl}
+.press-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:48px;direction:rtl}
 .press-card{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .press-card:hover{opacity:.75}
 .press-card .img img{transition:transform .6s}
@@ -574,6 +576,8 @@ a.soos-line:hover{opacity:.65}
 .press-card .ttl{font-family:var(--heb);font-size:16px;font-weight:400;line-height:1.4;color:var(--ink);text-align:right}
 .press-card .ttl .lat{font-family:var(--cop);font-size:.88em;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
 .press-card .ttl.en{font-family:var(--cop);direction:ltr;unicode-bidi:embed;font-size:13px;line-height:1.5;letter-spacing:.02em}
+/* Hebrew run inside an English title (gala night - הקולפן) — optical match, same as /press/ */
+.press-card .ttl.en .heb{font-family:var(--heb);font-size:1.23em;font-weight:400;letter-spacing:normal}
 .press-card .date{font-family:var(--cop);font-size:11.5px;font-weight:300;line-height:1.2;letter-spacing:.02em;direction:ltr;unicode-bidi:embed}
 /* "more press & events" button → /press/ (Figma 1323:923; same recipe as .ev-up-viewall) */
 .press-viewall{display:inline-flex;justify-content:center;align-items:center;align-self:center;margin-top:8px;padding:4px 16px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:16px;line-height:normal;letter-spacing:.02em;color:var(--ink);text-decoration:none;transition:opacity .2s}
@@ -1111,7 +1115,7 @@ porta</div></a>
       <img src="images/homepage/upcoming/poster-dizengoff-v2.webp" srcset="images/homepage/upcoming/poster-dizengoff-v2-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v2-768w.webp 768w, images/homepage/upcoming/poster-dizengoff-v2.webp 941w" sizes="(max-width:768px) 76vw, 380px" width="941" height="1672" alt="לוח האירועים אוגוסט בגלריית כיכר דיזינגוף" decoding="async" loading="lazy">
     </a>
     <a class="ev-up-poster" href="events/">
-      <img src="images/homepage/upcoming/poster-hamedina.webp" srcset="images/homepage/upcoming/poster-hamedina-480w.webp 480w, images/homepage/upcoming/poster-hamedina-768w.webp 768w, images/homepage/upcoming/poster-hamedina-1080w.webp 1080w, images/homepage/upcoming/poster-hamedina.webp 1620w" sizes="(max-width:768px) 76vw, 380px" width="1620" height="2880" alt="לוח האירועים אוגוסט בגלריית כיכר המדינה" decoding="async" loading="lazy">
+      <img src="images/homepage/upcoming/poster-hamedina-v2.webp" srcset="images/homepage/upcoming/poster-hamedina-v2-480w.webp 480w, images/homepage/upcoming/poster-hamedina-v2-768w.webp 768w, images/homepage/upcoming/poster-hamedina-v2-1080w.webp 1080w, images/homepage/upcoming/poster-hamedina-v2.webp 1620w" sizes="(max-width:768px) 76vw, 380px" width="1620" height="2880" alt="לוח האירועים אוגוסט בגלריית כיכר המדינה" decoding="async" loading="lazy">
     </a>
   </div>
   <a class="ev-up-viewall" href="events/">view all</a>
@@ -1274,23 +1278,30 @@ porta</div></a>
     <span class="l">tel aviv</span>
   </div>
   <div class="gallery-cards">
-    <article class="gallery-card">
+    <a class="gallery-card" href="galleries/medina/" aria-label="גלריית כיכר המדינה — לעמוד הגלריה">
       <div class="info"><div class="name">גלריית כיכר המדינה</div></div>
       <div class="img"><picture><img src="images/galleries/medina/hero-v2.webp" srcset="images/galleries/medina/hero-v2-480w.webp 480w, images/galleries/medina/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 33vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
       <div class="details">
         <div class="addr">ז'בוטינסקי 131, תל אביב</div>
         <div class="hours">
-          <span>א'-ה' 10:00-19:00</span>
-          <span>ו' 10:00-14:00</span>
+          <span>א'-ה' 18:00-11:00</span>
+          <span>ו' 14:00-11:00</span>
           <span>שבת סגור</span>
         </div>
       </div>
-    </article>
-    <article class="gallery-card">
+    </a>
+    <a class="gallery-card" href="galleries/dizengoff/" aria-label="גלריית כיכר דיזינגוף — לעמוד הגלריה">
       <div class="info"><div class="name">גלריית כיכר דיזינגוף</div></div>
       <div class="img"><picture><img src="images/galleries/dizengoff/hero-v2.webp" srcset="images/galleries/dizengoff/hero-v2-480w.webp 480w, images/galleries/dizengoff/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 33vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
-      <div class="details"><div class="addr">כיכר דיזינגוף, תל אביב</div></div>
-    </article>
+      <div class="details">
+        <div class="addr">כיכר דיזינגוף, תל אביב</div>
+        <div class="hours">
+          <span>א'-ה' 18:00-11:00</span>
+          <span>ו' 14:00-11:00</span>
+          <span>שבת סגור</span>
+        </div>
+      </div>
+    </a>
     <article class="gallery-card gallery-card--flea">
       <div class="info">
         <div class="name">גלריית יפו, שוק הפשפשים</div>
@@ -1452,9 +1463,34 @@ porta</div></a>
     <a class="b" href="press/">press</a>
     <a class="l" href="press/">&amp; events</a>
   </div>
-  <!-- 9 cards — chronological newest→oldest (Figma 1322:258): all press + the two exhibition openings.
-       Desktop: cards 1-5 down the RIGHT column, 6-9 down the LEFT. Full archive → /press/. -->
+  <!-- 12 cards — chronological newest→oldest (Figma 1322:258): all press + the two exhibition openings,
+       plus the gala night evening (Figma 1323:570, added on user request 2026-08-12).
+       Desktop: cards 1-6 down the RIGHT column, 7-12 down the LEFT. Full archive → /press/. -->
   <div class="press-rows">
+    <a class="press-card" href="events/hadas-tuval/">
+      <div class="img"><img src="images/events/hadas-tuval/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+      <div class="info">
+        <span class="tag en">gallery event</span>
+        <p class="ttl en">artist talk<br>with hadas tuval</p>
+        <span class="date">28.8.2026</span>
+      </div>
+    </a>
+    <a class="press-card" href="events/livay-levi/">
+      <div class="img"><img src="images/events/livay-levi/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+      <div class="info">
+        <span class="tag en">gallery event</span>
+        <p class="ttl en">artist talk<br>with livay levi</p>
+        <span class="date">18.8.2026</span>
+      </div>
+    </a>
+    <a class="press-card" href="events/gala-night/">
+      <div class="img"><img src="images/events/gala-night/card.webp" width="584" height="369" alt="" loading="lazy" decoding="async"></div>
+      <div class="info">
+        <span class="tag en">gallery event</span>
+        <p class="ttl en">gala night - <span class="heb">הקולפן</span></p>
+        <span class="date">29.7.2026</span>
+      </div>
+    </a>
     <a class="press-card" href="press/peeling-a-layer/">
       <div class="img"><img src="images/press/peeling-a-layer/01-hitnaarut.webp" width="750" height="422" alt="" loading="lazy" decoding="async"></div>
       <div class="info">

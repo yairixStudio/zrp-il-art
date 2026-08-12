@@ -247,6 +247,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://art.zrp.co.il/galleries/medina/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://art.zrp.co.il/galleries/dizengoff/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://art.zrp.co.il/events/</loc>
     <lastmod>2026-08-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -319,7 +331,25 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://art.zrp.co.il/events/livay-levi/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://art.zrp.co.il/events/hadas-tuval/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://art.zrp.co.il/events/noemi-safir/</loc>
+    <lastmod>2026-08-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://art.zrp.co.il/events/gala-night/</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -705,6 +735,12 @@
   <url>
     <loc>https://art.zrp.co.il/works/livay-levi-2/</loc>
     <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://art.zrp.co.il/works/livay-levi-3/</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

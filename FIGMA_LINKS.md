@@ -574,13 +574,36 @@ lightbox state 3 (mobile no-caption): Implement this design from Figma.
 
 ---
 
+## 🏛 דפי גלריה (/galleries/:slug) — נוסף 2026-08-12
+
+> שני הדפים בקובץ `landing`. ⚠️ **שמות ה-nodes משקרים** ("event-hmp1-desktop"/"event-hmp1-mobile") — זוהו לפי רוחב (1440/390) + תוכן. blueprints מלאים נכתבו ב-scratchpad של סשן 2026-08-12; רינדורי אימות ב-`_originals/figma-checks/galleries/`.
+
+### גלריית כיכר המדינה (/galleries/medina/)
+
+galleries medina דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1468-305&m=dev
+
+galleries medina מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1467-840&m=dev
+
+### גלריית כיכר דיזינגוף (/galleries/dizengoff/)
+
+galleries dizengoff דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1473-311&m=dev
+
+galleries dizengoff מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1473-447&m=dev
+
+---
+
 ## ❌ ללא Figma (לא קיים עיצוב)
 
 הדפים הבאים מופיעים ב-sitemap (CLAUDE.md §3.1) אך **אין להם עיצוב Figma**:
 
 | Route | סטטוס | הערות |
 |---|---|---|
-| `/galleries/medina`, `/galleries/dizengoff`, `/galleries/flea-market` | ❌ אין עיצוב | (`1213:2725/2820/2854` היו lightbox states, לא דפי גלריה — ראה §15) |
+| `/galleries/medina`, `/galleries/dizengoff` | ✅ נבנו (2026-08-12) | canonical: medina `XhGH...::1468:305` דסקטופ / `1467:840` מובייל; dizengoff `1473:311` / `1473:447` — ראה סקשן "דפי גלריה" למעלה. ⚠️ שמות ה-nodes "event-hmp1-*" משקרים. סקשן the artworks באתר = יצירות הגלרייה מ-works.json (הכרעת משתמש 2026-08-12), לא צילומי-החלל שבפריימים. (`1213:2725/2820/2854` היו lightbox states, לא דפי גלריה — ראה §15) |
+| `/galleries/flea-market` | ❌ אין עיצוב | coming-soon; בהומפייג' = כרטיס ירוק שטוח (`1318:686`) |
 | `/galleries` (index) | ❌ אין | אולי anchor בהומפייג' (`#galleries`) |
 | `/exhibitions` (index) | ❌ אין | אולי anchor (`#exhibitions`) |
 | `/press` (index) | ✅ נבנה 2026-08-04 — canonical: `XhGH...::1323:244` דסקטופ (שם ה-node "phone" משקר) / `1323:528` מובייל (ראה סקשן הרה-דיזיין למטה) | `press/index.html` |
@@ -659,6 +682,33 @@ gala night מובייל: Implement this design from Figma.
 
 > כרטיס האירוע לעמוד `/press/` ולהומפייג' = node `1323:570` (בתוך פריים ה-press הדסקטופי).
 
+### עמוד אירוע Artist Talk with Hadas Tuval (`/events/hadas-tuval/`, הקולפן / כיכר המדינה 28.8.2026)
+
+hadas tuval דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1468-1324&m=dev
+
+hadas tuval מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1468-1211&m=dev
+
+> ⚠️ ה-scrim על תמונת הגיבור כאן הוא `rgba(27,27,27,.7)` — כפול מהמקובל במשפחה (.4), ואומת שהוא באמת מרונדר (אלפא נגזרת 0.698 מול רינדורי ה-nodes). ה-fill השני בכרטיס האומנית (`1214412249…`) = הפורטרט של נעמי ספיר, leftover מוסתר.
+
+### עמוד אירוע Artist Talk with Livay Levi (`/events/livay-levi/`, הקולפן / כיכר המדינה 18.8.2026)
+
+livay levi דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1496-413&m=dev
+
+livay levi מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1496-300&m=dev
+
+> שם ה-frame בפיגמה בעברית ("event- artist talk with ליוואי"). אין frame לכרטיס הרשימה — ה-`list-card` נחתך מתמונת הגיבור.
+
+### יצירה משותפת — interdependence (ליוואי לוי × הדס טובל, `/works/livay-levi-3/`)
+
+בלוק קבוצת התערוכה + כרטיס היצירה (בתוך פריים דף אומן, מובייל 390):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=668-13584&m=dev
+
+> ההכרעה שנגזרה מהפריים: קבוצה ייעודית "הקולפן | interdependence" עם סטייטמנט משותף + כרטיס יחיד שהקרדיט שלו "ליוואי לוי × הדס טובל". המימוש = רשומה אחת עם `artist_pages`+`collab` (ראה CLAUDE.md §6).
+
 ---
 
-*Last review: 2026-08-04 (רה-דיזיין אוגוסט — homepage חדש + 4 עמודים חדשים).*
+*Last review: 2026-08-12 (אירועי אוגוסט–ספטמבר + היצירה המשותפת הראשונה).*

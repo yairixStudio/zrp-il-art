@@ -445,10 +445,13 @@
   "figma_gallery_strip_mobile": "363:649"
  },
  "press_section": {
-  "_note": "רה-דיזיין 2026-08 (Figma 1322:258): 9 כרטיסים בלבד — כל כתבות העיתונות + שני אירועי הפתיחה (בקשת קורין); שאר האירועים בעמוד /press/. הסדר כרונולוגי חדש→ישן = סדר ה-DOM (מובייל עמודה אחת; דסקטופ שתי ריצות-עמודה). כפתור more press & events → /press/.",
+  "_note": "רה-דיזיין 2026-08 (Figma 1322:258): כל כתבות העיתונות + שני אירועי הפתיחה (בקשת קורין); שאר האירועים בעמוד /press/. חריג: ערב הגאלה (event-gala-night, Figma 1323:570) נוסף בבקשת המשתמש 2026-08-12, ואיתו שיחת האמנים של הדס טובל (event-hadas-tuval-talk, Figma 1468:1324) ושיחת האמנים של ליוואי לוי (event-livay-levi-talk, Figma 1496:413) → 12 כרטיסים. הסדר כרונולוגי חדש→ישן = סדר ה-DOM (מובייל עמודה אחת; דסקטופ שתי ריצות-עמודה). כפתור more press & events → /press/.",
   "title_b": "press",
   "title_l": "& events",
   "item_ids": [
+   "event-hadas-tuval-talk",
+   "event-livay-levi-talk",
+   "event-gala-night",
    "13tv-peeling-a-layer",
    "timeout-manicure-against-darkness",
    "the-sixth-scent",

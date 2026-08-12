@@ -804,6 +804,126 @@
       "card_title_en": "artist talk",
       "_note": "האירוע השני של נעמי ספיר (הראשון — slug `risa-and-noemi` — הוא how-many/דיזינגוף, במשותף עם ריסה ברוק עוז). כאן: תערוכת הקולפן, גלריית כיכר המדינה. `host_he` = עידית קלייman, יזמת אורחת שאינה אומנית של האתר — מוזכרת בגוף בלטינית ובלי קישור (תקדים the-space-between).",
       "_image_note": "hero = imageRef 5c64359f… (ציור של נעמי ספיר, מקור 2897×3621). **שני קרופים**: דסקטופ 984×1488 cover ממורכז (RMSE 5.6% מול רינדור node 1450:1824 — הפרש מוסבר בטקסט האוברליי הלבן), מובייל 780×1040 cover ממורכז (RMSE 7.5% מול 1450:1669) — הפריים המוביילי שומר את כל הציור בעוד הדסקטופ חותך את הצדדים, ולכן <picture> ידני עם media. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (אומת: ממוצע אפור 0.382 ברינדור מול 0.374 בחישוב). thumb האומנית = מיחזור images/artists/noemi-safir/portrait-v2.webp (אומת RMSE 2.9% מול imageRef 1214412249; ⚠️ **לא** תמונת הגריד שלה — צילום אחר, RMSE 27%), מיושר לראש (object-position 50% 0%) כמו ב-Figma."
+    },
+    {
+      "id": "hadas-tuval",
+      "slug": "hadas-tuval",
+      "title_he": "שיחת אמנים עם הדס טובל",
+      "title_en": "artist talk with hadas tuval",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-28",
+      "date_he": "28 אוגוסט 2026",
+      "time_start": "11:30",
+      "time_end": "13:00",
+      "time_label": "13:00-11:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/hadas-tuval/hero.webp",
+      "list_image": "images/events/hadas-tuval/list-card.webp",
+      "description_he": [
+        "מפגש אינטימי בו תחשוף האמנית הדס טובל התנסות בתהליך יצירה חי.",
+        "במיצב פרפורמטיבי בהשתתפות פרפורמרים נוספים נתכנס במהלך של קשירה והתרה בהשראת שיבארי.",
+        "נסיים את המפגש בשיחה וכוס יין."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "hadas tuval",
+          "slug": "hadas-tuval",
+          "image": "images/artists/grid/hadas-tuval.webp"
+        }
+      ],
+      "route": "events/hadas-tuval/",
+      "homepage_visible": true,
+      "figma_node_desktop": "1468:1324",
+      "figma_node_mobile": "1468:1211",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina: פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה). שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ולכן <br> רגיל, בלי .dbr/.mbr. במטא של המובייל התאריך והשעה ב-FbEzmel Light (בשאר המשפחה Regular).",
+      "_image_note": "hero = imageRef bcfaadef… (מיצב שיבארי של הדס טובל; המקור 945×2048 עם פסים שחורים למעלה/למטה — תצלום מסך). נאפה חלון ה-cover של הדסקטופ (y 309..1738 מהמקור, מחוץ לפסים) ל-984×1488, ולכן object-fit:cover משחזר גם את קרופ המובייל (390×520) בדיוק. **scrim rgba(27,27,27,.7) — כבד מהרגיל במשפחה (.4) ואומת שהוא באמת מרונדר**: אלפא נגזרת 0.698 בשתי רצועות מדידה מול רינדורי ה-nodes. thumb האומנית = מיחזור images/artists/grid/hadas-tuval.webp (אומת RMSE 0.5% מול imageRef 2249c4b3), מיושר לראש (object-position 50% 0%) כמו ב-Figma; ה-fill השני בכרטיס הדסקטופ (1214412249 — הפורטרט של נעמי ספיר) הוא leftover מוסתר מתחת."
+    },
+    {
+      "id": "gala-night",
+      "slug": "gala-night",
+      "title_he": "ערב הגאלה של תערוכת הקולפן",
+      "title_en": "gala night",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-07-29",
+      "date_he": "29 יולי 2026",
+      "time_start": "19:30",
+      "time_end": "21:30",
+      "time_label": "19:30-21:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/gala-night/hero.webp",
+      "description_he": [
+        "ערב הגאלה של תערוכת הקולפן — עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.",
+        "המכתב האוצרותי המלא, גלריות הצילומים ורגעי הפתיחה — בדף האירוע."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [],
+      "route": "events/gala-night/",
+      "homepage_visible": true,
+      "figma_node_desktop": "1451:1901",
+      "figma_node_mobile": "1451:2070",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "gala night",
+      "_note": "עמוד סטטי במבנה אירוע-פתיחה (תבנית events/how-many, לא משפחת ה-artist-talk): מכתב אוצרת ארוך (נשאר ב-HTML, תקדים long-form) + שתי גלריות טריפטיך (3 שקופיות כ\"א, פסי-dots 32×2) + רשימת 22 אומנים מקושרים (הפרדת | ; תוקנו: פייפ חסר בין מיכאל קונובלנקו לאהרן בס, \"אליצ׳ה דבליס\"→\"אליס דה בליס\", \"טלי צלניק\"→\"טלי זלניק\" — כתיב קנוני) + רצועת moments (14 תאים 178×148). אין פס presented ואין רצועת artist-cards. שעות בפיגמה \"19:30-21:30\" (התחלה-סיום, הפוך משאר המשפחה) — verbatim. התאריך עבר — הכרטיס נושר אוטומטית מ-/events/ אך קיים ב-/press/ ובגריד #press בהומפייג' (הכרעת משתמש 2026-08-12).",
+      "_image_note": "hero = imageRef 93313e4b… (מקור 1268×1600) — cover ממורכז 984×1488, זהה בשני ה-breakpoints (ה-fill הנוסף במובייל a7f588ed = leftover מוסתר; הזיהוי אומת ברינדור node 1451:2092 — RMSE 1.5% מול 93313e4b לעומת 56% מול a7f588ed). תמונת סקשן האומנים atmosphere.webp = imageRef b8f85e72 (מקור 1600×1066 לרוחב) בקרופ מרכזי 984×1488 — אומת RMSE 1.6% מול רינדור node 1451:1981 (שכבת ה-SVG והלבן שבפריים לא נראות). 14 תמונות ה-moments = רינדורי-node אפויים 534×534 (pngScale 3) — פותרים fills כפולים בשני תאים ואת ה-cropTransform בתא 10. card.webp 584×369 (כרטיס /press/+הומפייג') נאפה ע\"י הסוכן המקביל מ-node 1323:570."
+    },
+    {
+      "id": "livay-levi",
+      "slug": "livay-levi",
+      "title_he": "שיחת אמנים עם ליוואי לוי",
+      "title_en": "artist talk with livay levi",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-18",
+      "date_he": "18 אוגוסט 2026",
+      "time_start": "18:30",
+      "time_end": "20:30",
+      "time_label": "20:30-18:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/livay-levi/hero.webp",
+      "list_image": "images/events/livay-levi/list-card.webp",
+      "description_he": [
+        "ערב פתוח ואישי אל תוך העולם שלי — יצירות, חומרים, תהליכי עבודה ואובייקטים שנוצרו מתוך החיבור שלי בין אמנות, חומר ובנייה.",
+        "אני מזמין אתכם לערב של מפגש, מוזיקה, יצירה ואנשים טובים, ולפגוש מקרוב את מה שאני יוצר."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "livay levi",
+          "slug": "livay-levi",
+          "image": "images/artists/grid/livay-levi.webp"
+        }
+      ],
+      "route": "events/livay-levi/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1496:413",
+      "figma_node_mobile": "1496:300",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina/alice-debellis): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"livay levi\").",
+      "_image_note": "hero = imageRef 0b7f23e3… (מקור 2244×2804 — יצירה פיסולית בחלל מגורים) בקרופ cover ממורכז 984×1488 + וריאנטים 480/768. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (fill על הרקטנגל, כמו zohar-ron-medina). list-card 876×487 = קרופ רוחבי מאותו מקור (אין frame רשימה בפיגמה לאירוע הזה). thumb האומן = מיחזור images/artists/grid/livay-levi.webp; ב-Figma הריבוע יושב ב-y:0 בתוך חלון נמוך יותר ⇒ object-position 50% 0%."
     }
   ]
 }

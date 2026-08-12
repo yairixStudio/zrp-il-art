@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kikar Dizengoff Gallery — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/CopperplateCC-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/triptych-gallery.css">
+<meta name="description" content="גלריית כיכר דיזינגוף — גלריית האמנות של זילינסקי רוזן בכיכר דיזינגוף, תל אביב. התערוכה הנוכחית, צילומי החלל, שעות פתיחה ופרטי מנהלת הגלריה.">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Solway";src:url("../../פונטים/Solway-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --divider:#D8D8D8;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --sol:"Solway","Copperplate","Times New Roman",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+/* GLOBAL CASING RULE — all English renders Copperplate UPPERCASE (conventions §5). Hebrew exempt. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* square-dot separator (4×4 ink square, homepage address-row pattern) */
+.sq{display:inline-block;width:4px;height:4px;background:var(--ink);flex:0 0 auto;font-style:normal}
+
+/* ============================================================
+   HERO — gallery name / address / hours + storefront photo
+   (Figma desktop 1473:337: #EEF0EF band, padding 48/96/40, content
+   right-aligned, photo 204.34×309 at the right; gap 48)
+   ============================================================ */
+.g-hero{background:var(--bg-grey);padding:48px var(--pad-x) 40px}
+.g-hero__inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:flex-end;align-items:center;gap:48px}
+.g-hero__text{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:flex-end}
+/* Hebrew title = Figma px verbatim (80) */
+.g-hero__title{font-family:var(--heb);font-weight:400;font-size:80px;line-height:1.1;color:var(--ink);direction:rtl;text-align:right}
+/* Address — Copperplate 28 Figma → 22px optical (our Copperplate runs ~28% wider) */
+.g-hero__addr{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:16px;font-family:var(--cop);font-weight:400;font-size:22px;letter-spacing:.02em;color:var(--ink)}
+.g-hero__divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
+.g-hero__divider i{display:block;width:72px;height:1px;background:var(--divider)}
+/* Hours — FbEzmel 18 verbatim; RTL row so א'-ה' reads first from the right (Figma order) */
+.g-hero__hours{display:flex;align-items:center;gap:10px;direction:rtl;font-weight:400;font-size:18px;line-height:1.2;color:var(--ink)}
+.g-hero__img{flex:0 0 204.34px}
+.g-hero__img picture{display:contents}
+.g-hero__img img{width:204.34px;height:309px;object-fit:cover}
+
+/* ============================================================
+   GALLERY EXHIBITIONS — data-driven cards (Figma 1473:360:
+   centered wrap grid, gap 64/16, card 394×592, scrim + date +
+   Solway title overlay). Hidden until the renderer finds items.
+   ============================================================ */
+.g-ex{padding:64px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:24px}
+.g-ex[hidden]{display:none}
+.g-sec-head{width:100%;max-width:var(--max);font-family:var(--cop);font-weight:300;font-size:22px;letter-spacing:.02em;color:var(--ink);text-align:left}
+.g-ex__grid{width:100%;max-width:var(--max);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;column-gap:16px;row-gap:64px}
+.gx-card{position:relative;width:394px;height:592px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;isolation:isolate;background:#000}
+/* picture-upgrade.js wraps the <img> in <picture> at runtime — style both states */
+.gx-card>picture,.gx-card>img{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.gx-card picture img{position:static;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gx-card>img{object-fit:cover;transition:transform .6s ease}
+.gx-card:hover img{transform:scale(1.04)}
+.gx-card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(102,102,102,.2) 0%,rgba(0,0,0,.8) 81%);pointer-events:none}
+.gx-ov{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;text-align:center;max-width:100%}
+/* Date — Copperplate Bold 28 Figma → 22 optical; LTR so it reads start → end */
+.gx-date{font-family:var(--cop);font-weight:700;font-size:22px;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate;white-space:nowrap}
+/* Exhibition title — Solway = the same font as Figma ⇒ 26px verbatim (site exception, exhibition-overlay convention) */
+.gx-ttl{display:block;font-family:var(--sol);font-weight:300;font-size:26px;line-height:31px;max-width:313px;text-wrap:balance}
+
+/* ============================================================
+   THE ARTWORKS — shared .tri triptych (components/triptych-gallery),
+   3 interior photos. Figma 1473:394: center 481×841, peeks 302×528
+   at opacity .6, no dots/arrows (swipe / peek-click / keyboard).
+   ============================================================ */
+.g-art{padding:64px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:16px}
+.g-art .tri{--tri-max-w:var(--max);--tri-aspect:auto;--tri-center-w:481px;--tri-center-h:841px;--tri-peek-w:302px;--tri-peek-h:528px;--tri-peek-left:calc(50% - 473px);--tri-peek-right:calc(50% + 473px);--tri-peek-opacity:.6;--tri-peek-opacity-hover:.85;--tri-bg:var(--white);width:100%}
+.g-art .tri-frame{aspect-ratio:auto;height:841px}
+.g-art .tri-dots{display:none}
+.g-art .tri-slide{object-fit:contain;background:#F9F9F9}
+.g-art .tri-caption{font-family:var(--cop);font-weight:300;font-size:16px;color:#989898;direction:ltr;text-align:center;padding:0 16px}
+.g-art .tri-caption a{color:inherit;text-decoration:none;transition:opacity .2s}
+.g-art .tri-caption a:hover{opacity:.65}
+
+/* ============================================================
+   THE GALLERY MANAGER — name column + portrait (Figma 1473:404;
+   the fixed-1440 inner container overflows its 1248 parent by 96
+   each side, so its 96px padding lands the content back on the
+   normal 96px page inset — i.e., full --max width, measured on the
+   frame render)
+   ============================================================ */
+.g-mgr{padding:64px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:16px}
+.g-mgr__inner{width:100%;max-width:var(--max);padding:48px 0 32px;display:flex;align-items:center;gap:48px}
+.g-mgr__info{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:0 16px}
+/* natalie Bold / Zigel Light — Copperplate 80 Figma → 64 optical (artist-talk-family precedent) */
+.g-mgr__names{display:flex;flex-direction:column;align-items:center;gap:20px}
+.g-mgr__names .fn{font-family:var(--cop);font-weight:700;font-size:64px;line-height:1.1;letter-spacing:.02em;text-align:center}
+.g-mgr__names .ln{font-family:var(--cop);font-weight:300;font-size:64px;line-height:1.1;letter-spacing:.02em;text-align:center}
+/* email — Copperplate 28 Figma → 22 optical; UPPERCASE display (golden rule 3), real mailto value */
+.g-mgr__email a{font-family:var(--cop);font-weight:300;font-size:22px;letter-spacing:.02em;transition:opacity .2s}
+.g-mgr__email a:hover{opacity:.65}
+.g-mgr__pic{flex:0 0 492px;display:flex;justify-content:flex-end}
+/* 492×744 box, photo 492×652 vertically centered (46px air above/below — Figma y:46) */
+.g-mgr__pic .ph{width:492px;aspect-ratio:492/744;display:flex;align-items:center}
+.g-mgr__pic .ph picture{display:contents}
+.g-mgr__pic .ph img{width:100%;height:87.634%;object-fit:cover}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100)
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .g-hero__title{font-size:64px}
+  .g-art .tri{--tri-center-w:380px;--tri-center-h:665px;--tri-peek-w:239px;--tri-peek-h:418px;--tri-peek-left:calc(50% - 374px);--tri-peek-right:calc(50% + 374px)}
+  .g-art .tri-frame{height:665px}
+  .g-mgr__inner{padding:32px 0 24px}
+  .g-mgr__names .fn,.g-mgr__names .ln{font-size:48px}
+  .g-mgr__pic{flex:0 0 380px}
+  .g-mgr__pic .ph{width:380px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768) — per Figma 1473:447 (not a shrunk
+   desktop): full-bleed hero photo first on white, centered info
+   block, 177×214.55 exhibition cards, edge-bleeding tri peeks,
+   portrait-first manager block.
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  /* HERO — image full-bleed 390×520 on top, then white info block (Figma 1473:469) */
+  .g-hero{background:var(--white);padding:0}
+  .g-hero__inner{flex-direction:column-reverse;gap:0;max-width:none}
+  .g-hero__img{flex:none;width:100%}
+  .g-hero__img img{width:100%;height:520px;object-fit:cover}
+  .g-hero__text{width:100%;align-items:center;padding:32px 16px 0}
+  .g-hero__title{font-size:32px;text-align:center}
+  .g-hero__addr{justify-content:center;flex-wrap:wrap;font-size:13px}
+  .g-hero__divider{display:none}
+  .g-hero__hours{margin-top:16px;justify-content:center;flex-wrap:wrap;font-weight:300;font-size:16px}
+
+  /* section rhythm — Figma main column gap 48 */
+  .g-ex{padding:48px 16px 0;gap:16px}
+  .g-art{padding:48px 16px 0;gap:16px}
+  .g-mgr{padding:48px 16px;gap:16px}
+  .g-sec-head{font-size:16px}
+
+  /* exhibition cards — 177×214.55 (homepage .ex-now geometry), scrim starts transparent */
+  .g-ex__grid{column-gap:8px;row-gap:8px}
+  .gx-card{width:177px;height:214.55px;padding:8px}
+  .gx-card::after{background:linear-gradient(180deg,rgba(102,102,102,0) 0%,rgba(0,0,0,.8) 81%)}
+  .gx-ov{gap:3.757px}
+  .gx-date{font-size:10.5px;letter-spacing:.01em}
+  .gx-ttl{font-size:12px;line-height:14.56px;max-width:147px}
+
+  /* triptych — center 216×378, peeks 117×204.75 bleeding past the viewport edges (Figma 1473:550) */
+  .g-art .tri{width:calc(100% + 32px);margin:0 -16px;--tri-center-w:216px;--tri-center-h:378px;--tri-peek-w:117px;--tri-peek-h:204.75px;--tri-peek-left:calc(50% - 194.5px);--tri-peek-right:calc(50% + 194.5px)}
+  .g-art .tri-frame{height:443px}
+
+  /* manager — portrait first (358×448 cover), centered name block (Figma 1473:564) */
+  .g-mgr__inner{flex-direction:column-reverse;align-items:stretch;gap:16px;padding:0}
+  .g-mgr__pic{flex:none;width:100%;justify-content:center}
+  .g-mgr__pic .ph{width:100%;aspect-ratio:358/448;display:block}
+  .g-mgr__pic .ph img{width:100%;height:100%;object-fit:cover}
+  .g-mgr__info{padding:8px 0 0;gap:8px}
+  .g-mgr__names{gap:8px}
+  .g-mgr__names .fn{font-size:26px;line-height:1.15}
+  .g-mgr__names .ln{font-size:26px;line-height:1.15;font-weight:400}
+  .g-mgr__email a{font-size:13px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/galleries/dizengoff/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kikar Dizengoff Gallery — Zielinski &amp; Rozen">
+<meta property="og:description" content="גלריית כיכר דיזינגוף — גלריית האמנות של זילינסקי רוזן בכיכר דיזינגוף, תל אביב. התערוכה הנוכחית, צילומי החלל, שעות פתיחה ופרטי מנהלת הגלריה.">
+<meta property="og:url" content="https://art.zrp.co.il/galleries/dizengoff/">
+<meta property="og:image" content="https://art.zrp.co.il/og/galleries-dizengoff-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kikar Dizengoff Gallery">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kikar Dizengoff Gallery — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="גלריית כיכר דיזינגוף — גלריית האמנות של זילינסקי רוזן בכיכר דיזינגוף, תל אביב. התערוכה הנוכחית, צילומי החלל, שעות פתיחה ופרטי מנהלת הגלריה.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/galleries-dizengoff-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/dizengoff/#gallery","name":"Kikar Dizengoff Gallery","alternateName":"גלריית כיכר דיזינגוף","url":"https://art.zrp.co.il/galleries/dizengoff/","image":"https://art.zrp.co.il/og/galleries-dizengoff-hero.jpg","address":{"@type":"PostalAddress","streetAddress":"1 Raines st.","addressLocality":"Tel Aviv","addressCountry":"IL"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"11:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"11:00","closes":"14:00"}],"parentOrganization":{"@id":"https://art.zrp.co.il/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Kikar Dizengoff Gallery","item":"https://art.zrp.co.il/galleries/dizengoff/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="gpage">
+
+  <!-- HERO — name / address / hours pulled from data/galleries.json (renderer below; no double-embedding) -->
+  <section class="g-hero">
+    <div class="g-hero__inner">
+      <div class="g-hero__text">
+        <h1 class="g-hero__title heb" id="g-title"></h1>
+        <div class="g-hero__addr" id="g-addr"></div>
+        <div class="g-hero__divider" aria-hidden="true"><i></i></div>
+        <div class="g-hero__hours heb" id="g-hours"></div>
+      </div>
+      <div class="g-hero__img">
+        <img src="../../images/galleries/dizengoff/hero-v2.webp" srcset="../../images/galleries/dizengoff/hero-v2-480w.webp 480w, ../../images/galleries/dizengoff/hero-v2.webp 822w" sizes="(max-width:768px) 100vw, 205px" width="822" height="996" alt="פנים גלריית כיכר דיזינגוף — קיר התלייה של תערוכת How Many, פטיפון וחלון הראווה" fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY EXHIBITIONS — rendered from #g-exhibitions-data (hidden until items exist) -->
+  <section class="g-ex" id="g-ex" hidden>
+    <h2 class="g-sec-head">gallery exhibitions</h2>
+    <div class="g-ex__grid" id="g-ex-grid"></div>
+  </section>
+
+  <!-- THE ARTWORKS — shared triptych component; slides = all works shown at this gallery, rendered from #g-artworks-data (works.json slice). User decision 2026-08-12 — replaces the Figma interior photos (files kept on disk, unlinked). -->
+  <section class="g-art">
+    <h2 class="g-sec-head">the artworks</h2>
+    <div class="tri" data-tri-loop="true" data-tri-start="0">
+      <div class="tri-frame"></div>
+    </div>
+  </section>
+
+  <!-- THE GALLERY MANAGER — natalie zigel (gallery manager, not an artist — no artist-linking) -->
+  <section class="g-mgr" id="g-mgr">
+    <h2 class="g-sec-head">the gallery manager</h2>
+    <div class="g-mgr__inner">
+      <div class="g-mgr__info">
+        <div class="g-mgr__names">
+          <span class="fn" id="mgr-fn"></span>
+          <span class="ln" id="mgr-ln"></span>
+        </div>
+        <p class="g-mgr__email"><a id="mgr-email" href="mailto:nataliesiegel8@gmail.com"></a></p>
+      </div>
+      <div class="g-mgr__pic">
+        <div class="ph">
+          <img id="mgr-img" src="../../images/galleries/managers/natalie-zigel.webp" srcset="../../images/galleries/managers/natalie-zigel-480w.webp 480w, ../../images/galleries/managers/natalie-zigel-768w.webp 768w, ../../images/galleries/managers/natalie-zigel.webp 1080w" sizes="(max-width:768px) 100vw, 492px" width="1080" height="1206" alt="פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה" loading="lazy" decoding="async">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<!-- MIRROR — data/galleries.json (file:// can't fetch; fetch-first with this fallback, curator-page pattern).
+     ⚠️ כל שינוי ב-data/galleries.json חייב סנכרון לכאן (וגם למירור בעמוד האוצרת). -->
+<script type="application/json" id="fallback-galleries">{"$schema":"./_schema/galleries.schema.json","galleries":[{"id":"medina","slug":"medina","name_he":"גלריית כיכר המדינה","name_en":"Kikar Hamedina Gallery","address_he":"ז'בוטינסקי 131, תל אביב","address_en":"Jabotinsky 131, Tel Aviv","address_street_en":"131 jabotinsky st. tel aviv","address_area_en":"kikar hamedina","city":"tel aviv","status":"open","route":"galleries/medina/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/medina/hero-v2.webp","image_page_hero":"images/galleries/medina/page-hero.webp","manager":{"name_en_first":"natalie","name_en_last":"zigel","email":"nataliesiegel8@gmail.com","portrait":{"src":"images/galleries/managers/natalie-zigel.webp","width":1080,"height":1206,"alt_he":"פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה","figma_image_ref":"56b4a5a0e8bd0fda74230421ea4fc51ed660d778"},"note":"Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."},"note":"Gallery-page hero (Figma 1467:862 desktop 1467:813) is a NEW storefront photo — imageRef 281cf78459439ea5ef843021c0443939dd2e1131, crop suffix 10b0bd — baked to images/galleries/medina/page-hero.webp (896x1194; hero.webp/hero-v2.webp untouched — golden rule 8). image_hero (hero-v2) remains the homepage #galleries card image.","figma_node_desktop":null,"figma_node_mobile":"1318:663","figma_page_desktop":"1468:305","figma_page_mobile":"1467:840"},{"id":"dizengoff","slug":"dizengoff","name_he":"גלריית כיכר דיזינגוף","name_en":"Kikar Dizengoff Gallery","address_he":"כיכר דיזינגוף, תל אביב","address_en":"Dizengoff Square, Tel Aviv","address_street_en":"1 Raines st. tel aviv","address_area_en":"dizengoff square","city":"tel aviv","status":"open","route":"galleries/dizengoff/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/dizengoff/hero-v2.webp","image_page_hero":"images/galleries/dizengoff/hero-v2.webp","manager":{"name_en_first":"natalie","name_en_last":"zigel","email":"nataliesiegel8@gmail.com","portrait":{"src":"images/galleries/managers/natalie-zigel.webp","width":1080,"height":1206,"alt_he":"פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה","figma_image_ref":"56b4a5a0e8bd0fda74230421ea4fc51ed660d778"},"note":"Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."},"note":"Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. 'Raines' is verbatim from Figma (probably a typo of Reines — needs user ruling before display).","figma_node_desktop":"237:1465","figma_node_mobile":"1318:674","figma_page_desktop":"1473:311","figma_page_mobile":"1473:447"},{"id":"flea-market","slug":"flea-market","name_he":"גלריית שוק הפשפשים","name_en":"Flea Market Gallery","address_he":"שוק הפשפשים, תל אביב","address_en":"Flea Market, Tel Aviv (Jaffa)","address_street_en":null,"address_area_en":null,"city":"tel aviv","status":"coming-soon","route":null,"hours":[],"image_hero":null,"image_page_hero":null,"manager":null,"note":"Homepage card (redesign 2026-08, Figma 1318:686) renders as a flat #2B4C39 block with \"coming soon\" — image fills are hidden in Figma, no photo. Old hero.* files remain on disk, unlinked.","figma_node_desktop":null,"figma_node_mobile":"1318:686","figma_page_desktop":null,"figma_page_mobile":null}]}</script>
+
+<!-- MIRROR SLICE — exhibitions of THIS gallery, from data/exhibitions.json (gallery_id=dizengoff).
+     שדות תאריך start_date/end_date = מהכרטיס ב-Figma (26.05.2026-15.08.2026); יש לסנכרן גם ל-exhibitions.json.
+     תערוכה חדשה בדיזינגוף = הוסף רשומה ל-exhibitions.json וגם כאן. הסקשן נחשף רק אם יש current/upcoming. -->
+<script type="application/json" id="g-exhibitions-data">
+[
+ {"slug":"how-many","gallery_id":"dizengoff","status":"current","title_en":"How many partners have you had?","start_date":"2026-05-26","end_date":"2026-08-15","img":"images/exhibitions/how-many/hero.webp","w":1068,"h":1600,"alt":"כמה שותפים היו לך? — תמונת המפתח של התערוכה בגלריית כיכר דיזינגוף"}
+]
+</script>
+
+<script type="application/json" id="g-artworks-data">[{"id":"gal-rotem-1","artist_slug":"gal-rotem","artist_en":"gal rotem","artist_he":"גל רותם","title_he":"טביעה בחשיכה","title_en":null,"img":"gal-rotem-1","w":1080,"h":1079,"widths":[480,768,1080]},{"id":"zohar-ron-dan-ben-ari-1","artist_slug":"zohar-ron-dan-ben-ari","artist_en":"zohar ron × dandan nusha","artist_he":"זוהר רון | דן בן-ארי","title_he":null,"title_en":"sex?","img":"zohar-ron-dan-ben-ari-1-v2","w":1080,"h":720,"widths":[480,768,1080]},{"id":"zohar-ron-9","artist_slug":"zohar-ron","artist_en":"zohar ron","artist_he":"זוהר רון","title_he":"הקוסם","title_en":null,"img":"zohar-ron-9","w":1080,"h":721,"widths":[480,768,1080]},{"id":"risa-oz-1","artist_slug":"risa-oz","artist_en":"risa brooke oze","artist_he":"ריסה ברוק עוז","title_he":null,"title_en":"body language","img":"risa-oz-1","w":666,"h":885,"widths":[480,666]},{"id":"raz-ronen-1","artist_slug":"raz-ronen","artist_en":"raz ronen","artist_he":"רז רונן","title_he":"נוחות בעירום מלא על ספה","title_en":null,"img":"raz-ronen-1","w":1080,"h":1440,"widths":[480,768,1080]},{"id":"raz-ronen-2","artist_slug":"raz-ronen","artist_en":"raz ronen","artist_he":"רז רונן","title_he":"מינימליזם של גוף האישה ושמירה על סטייל","title_en":null,"img":"raz-ronen-2","w":1080,"h":1222,"widths":[480,768,1080]},{"id":"raz-ronen-3","artist_slug":"raz-ronen","artist_en":"raz ronen","artist_he":"רז רונן","title_he":null,"title_en":"lemon","img":"raz-ronen-3","w":1080,"h":1920,"widths":[480,768,1080]},{"id":"raz-ronen-4","artist_slug":"raz-ronen","artist_en":"raz ronen","artist_he":"רז רונן","title_he":null,"title_en":"fabrics","img":"raz-ronen-4","w":1080,"h":1440,"widths":[480,768,1080]},{"id":"anat-wegier-4","artist_slug":"anat-wegier","artist_en":"anat wegier","artist_he":"ענת ויז׳ייה","title_he":"אותו אחד שוב","title_en":null,"img":"anat-wegier-4","w":1080,"h":1303,"widths":[480,768,1080]},{"id":"alon-1","artist_slug":"alon","artist_en":"alon manjoch","artist_he":"אלון מנג׳וך","title_he":"מחשבות טורדניות","title_en":null,"img":"alon-1","w":1080,"h":1440,"widths":[480,768,1080]},{"id":"alon-2","artist_slug":"alon","artist_en":"alon manjoch","artist_he":"אלון מנג׳וך","title_he":"מודלים סטטיסטיים של זוגיות","title_en":null,"img":"alon-2","w":1080,"h":1207,"widths":[480,768,1080]},{"id":"tal-nehoray-7","artist_slug":"tal-nehoray","artist_en":"tal nehoray","artist_he":"טל נהוראי","title_he":"הר של דמעות","title_en":null,"img":"tal-nehoray-7","w":1080,"h":1156,"widths":[480,768,1080]},{"id":"noemi-safir-4","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"המילים שלא יוצאות","title_en":null,"img":"noemi-safir-4","w":1080,"h":1254,"widths":[480,768,1080]},{"id":"noemi-safir-5","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"עוד פעם מרצה","title_en":null,"img":"noemi-safir-5","w":1080,"h":1298,"widths":[480,768,1080]},{"id":"noemi-safir-6","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"אהבה ללא תנאי","title_en":null,"img":"noemi-safir-6","w":1080,"h":1238,"widths":[480,768,1080]},{"id":"noemi-safir-7","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"להישאר מבלי להיבלע","title_en":null,"img":"noemi-safir-7","w":1080,"h":1263,"widths":[480,768,1080]},{"id":"noemi-safir-8","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"שכבות שהשאירו בי סימן","title_en":null,"img":"noemi-safir-8","w":1080,"h":1257,"widths":[480,768,1080]},{"id":"noemi-safir-9","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"עד שנהייתי דקה","title_en":null,"img":"noemi-safir-9","w":1080,"h":1253,"widths":[480,768,1080]},{"id":"noemi-safir-10","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"כמה אני צריכה להיות צודקת","title_en":null,"img":"noemi-safir-10","w":1080,"h":1331,"widths":[480,768,1080]},{"id":"nir-giorgio-levin-1","artist_slug":"nir-giorgio-levin","artist_en":"nir giorgio levin","artist_he":"ניר ג׳ורג׳יו לוין","title_he":null,"title_en":"\"untitled\" (flesh and marble)","img":"nir-giorgio-levin-1","w":1080,"h":1356,"widths":[480,768,1080]},{"id":"nir-giorgio-levin-2","artist_slug":"nir-giorgio-levin","artist_en":"nir giorgio levin","artist_he":"ניר ג׳ורג׳יו לוין","title_he":null,"title_en":"\"untitled\" (with eyes closed, we saw)","img":"nir-giorgio-levin-2","w":1080,"h":1295,"widths":[480,768,1080]},{"id":"yarden-amir-3","artist_slug":"yarden-amir","artist_en":"yarden amir","artist_he":"ירדן אמיר","title_he":"ציפורי החופש","title_en":null,"img":"yarden-amir-3","w":1080,"h":692,"widths":[480,768,1080]},{"id":"yarden-amir-4","artist_slug":"yarden-amir","artist_en":"yarden amir","artist_he":"ירדן אמיר","title_he":null,"title_en":"Life Marks - Body Whispered","img":"yarden-amir-4","w":1080,"h":1440,"widths":[480,768,1080]},{"id":"yarden-amir-5","artist_slug":"yarden-amir","artist_en":"yarden amir","artist_he":"ירדן אמיר","title_he":"פרח אפוקליפטי","title_en":null,"img":"yarden-amir-5","w":1080,"h":1347,"widths":[480,768,1080]},{"id":"yarden-amir-6","artist_slug":"yarden-amir","artist_en":"yarden amir","artist_he":"ירדן אמיר","title_he":"מטאוריטים","title_en":null,"img":"yarden-amir-6","w":1080,"h":1307,"widths":[480,768,1080]},{"id":"elsa-ars-brush-3","artist_slug":"elsa-ars-brush","artist_en":"elsa ers brosh","artist_he":"אלסה ארס ברוש","title_he":null,"title_en":"gossip","img":"elsa-ars-brush-3","w":1080,"h":1629,"widths":[480,768,1080]},{"id":"elsa-ars-brush-4","artist_slug":"elsa-ars-brush","artist_en":"elsa ers brosh","artist_he":"אלסה ארס ברוש","title_he":null,"title_en":"an intimate portrait","img":"elsa-ars-brush-4","w":1080,"h":1467,"widths":[480,768,1080]},{"id":"elsa-ars-brush-5","artist_slug":"elsa-ars-brush","artist_en":"elsa ers brosh","artist_he":"אלסה ארס ברוש","title_he":null,"title_en":"within the flesh","img":"elsa-ars-brush-5","w":1080,"h":1608,"widths":[480,768,1080]},{"id":"tanya-shin-3","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"hand wrapped","img":"tanya-shin-3","w":1080,"h":1080,"widths":[480,768,1080]},{"id":"tanya-shin-2","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"stay still","img":"tanya-shin-2","w":601,"h":601,"widths":[480,601]},{"id":"tanya-shin-9","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"aura 2","img":"tanya-shin-9","w":1057,"h":1252,"widths":[480,768,1057]},{"id":"tanya-shin-6","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"concentric lines","img":"tanya-shin-6","w":1024,"h":1024,"widths":[480,768,1024]},{"id":"tanya-shin-4","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"triangle","img":"tanya-shin-4","w":1080,"h":1080,"widths":[480,768,1080]},{"id":"tanya-shin-1","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"crop 1","img":"tanya-shin-1","w":800,"h":616,"widths":[480,800]},{"id":"tanya-shin-5","artist_slug":"tanya-shin","artist_en":"tanya shin","artist_he":"טניה שין","title_he":null,"title_en":"crop 2","img":"tanya-shin-5","w":1080,"h":1925,"widths":[480,768,1080]},{"id":"gal-polk-8","artist_slug":"gal-polk","artist_en":"gal pollak","artist_he":"גל פולק","title_he":null,"title_en":"exs and oh's","img":"gal-polk-8","w":864,"h":1243,"widths":[480,768,864]},{"id":"liel-salman-1","artist_slug":"liel-salman","artist_en":"liel salman","artist_he":"ליאל סלמן","title_he":null,"title_en":"together","img":"liel-salman-1","w":1080,"h":1920,"widths":[480,768,1080]},{"id":"sami-david-2","artist_slug":"sami-david","artist_en":"samy d.","artist_he":null,"title_he":null,"title_en":"nova","img":"sami-david-2","w":1080,"h":1079,"widths":[480,768,1080]},{"id":"sami-david-3","artist_slug":"sami-david","artist_en":"samy d.","artist_he":null,"title_he":null,"title_en":"nova","img":"sami-david-3","w":1080,"h":1079,"widths":[480,768,1080]},{"id":"sami-david-4","artist_slug":"sami-david","artist_en":"samy d.","artist_he":null,"title_he":null,"title_en":"nova","img":"sami-david-4","w":1080,"h":1619,"widths":[480,768,1080]},{"id":"racheli-reuven-1","artist_slug":"racheli-reuven","artist_en":"racheli reuven","artist_he":"רחלי ראובן","title_he":"עשי בי קרבה","title_en":null,"img":"racheli-reuven-1","w":1080,"h":1410,"widths":[480,768,1080]},{"id":"noemi-safir-11","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"התמכרות רכה","title_en":null,"img":"noemi-safir-11","w":892,"h":1125,"widths":[480,768,892]},{"id":"noemi-safir-12","artist_slug":"noemi-safir","artist_en":"noemi safir","artist_he":"נעמי ספיר","title_he":"לחץ סגול","title_en":null,"img":"noemi-safir-12","w":901,"h":1126,"widths":[480,768,901]}]</script>
+
+<script>
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  /* ---------- gallery info (name / address / hours / manager) — data/galleries.json ---------- */
+  async function loadJson(path, embeddedId){
+    try{
+      var res = await fetch(path, {cache:'no-store'});
+      if(res.ok) return await res.json();
+    }catch(_){}
+    var el = document.getElementById(embeddedId);
+    if(el) return JSON.parse(el.textContent);
+    throw new Error('cannot load ' + path);
+  }
+  (async function(){
+    try{
+      var doc = await loadJson('../../data/galleries.json', 'fallback-galleries');
+      var g = (doc.galleries || []).find(function(x){ return x.slug === 'dizengoff'; });
+      if(!g) return;
+
+      document.getElementById('g-title').textContent = g.name_he || '';
+
+      var addr = document.getElementById('g-addr');
+      var parts = [g.address_street_en, g.address_area_en].filter(Boolean);
+      addr.innerHTML = parts.map(function(p){ return '<span>'+esc(p)+'</span>'; }).join('<i class="sq" aria-hidden="true"></i>');
+
+      var hoursEl = document.getElementById('g-hours');
+      hoursEl.innerHTML = (g.hours || []).map(function(h){
+        return '<span>'+esc(h.days_he + (h.time ? ' ' + h.time : ''))+'</span>';
+      }).join('<i class="sq" aria-hidden="true"></i>');
+
+      var m = g.manager;
+      var mgrSec = document.getElementById('g-mgr');
+      if(!m){ if(mgrSec) mgrSec.hidden = true; return; }
+      document.getElementById('mgr-fn').textContent = m.name_en_first || '';
+      document.getElementById('mgr-ln').textContent = m.name_en_last || '';
+      var em = document.getElementById('mgr-email');
+      if(m.email){ em.textContent = m.email; em.href = 'mailto:' + String(m.email).toLowerCase(); }
+      else if(em){ em.parentElement.hidden = true; }
+      if(m.portrait && m.portrait.alt_he) document.getElementById('mgr-img').alt = m.portrait.alt_he;
+      /* portrait src stays the static baked path — swapping src under srcset does nothing (lesson 2026-07-09) */
+    }catch(e){}
+  })();
+
+  /* ---------- gallery exhibitions — inline slice of exhibitions.json (events-index pattern) ---------- */
+  (function(){
+    var sec = document.getElementById('g-ex'), grid = document.getElementById('g-ex-grid'), src = document.getElementById('g-exhibitions-data');
+    if(!sec || !grid || !src) return;
+    var items; try{ items = JSON.parse(src.textContent); }catch(e){ return; }
+    /* shows all of this gallery's exhibitions (current + archived) — aligned with the medina page,
+       so the card outlives its end_date the way medina keeps loneliness */
+    items = items.filter(function(x){
+      return x.gallery_id === 'dizengoff';
+    }).sort(function(a,b){
+      var A = String(a.start_date || ''), B = String(b.start_date || '');
+      return A < B ? 1 : A > B ? -1 : 0; /* newest first */
+    });
+    if(!items.length) return; /* no exhibitions — section stays hidden */
+    function d(iso){ var p = String(iso).split('-'); return p[2] + '.' + p[1] + '.' + p[0]; }
+    grid.innerHTML = items.map(function(x){
+      var dates = (x.start_date && x.end_date)
+        ? '<span class="gx-date">'+esc(d(x.start_date) + ' - ' + d(x.end_date))+'</span>'
+        : '';
+      return '<a class="gx-card" href="../../exhibitions/'+esc(x.slug)+'/">'
+        + '<img src="../../'+esc(x.img)+'" width="'+(+x.w||0)+'" height="'+(+x.h||0)+'" alt="'+esc(x.alt||x.title_en||'')+'" loading="lazy" decoding="async">'
+        + '<span class="gx-ov">'+dates+'<span class="gx-ttl">'+esc(x.title_en||'')+'</span></span>'
+        + '</a>';
+    }).join('');
+    sec.hidden = false;
+    if(window.PictureUpgrade) PictureUpgrade.refresh(grid);
+  })();
+})();
+</script>
+
+<script>
+/* THE ARTWORKS — all works shown at this gallery, from the #g-artworks-data slice of
+   data/works.json (filtered by gallery_slug; user decision 2026-08-12 replacing the
+   Figma interior photos with the actual artworks). Slides hydrate lazily around the
+   current index so a big catalogue doesn't download at once. */
+(function(){
+  var src = document.getElementById('g-artworks-data');
+  var tri = document.querySelector('.g-art .tri');
+  var frame = document.querySelector('.g-art .tri-frame');
+  if(!src || !tri || !frame) return;
+  var items; try{ items = JSON.parse(src.textContent); }catch(e){ return; }
+  if(!items.length){ var sec = document.querySelector('.g-art'); if(sec) sec.hidden = true; return; }
+  var base = '../../images/works/v2/';
+  function srcsetOf(w){
+    return (w.widths || []).map(function(width, i){
+      var last = i === w.widths.length - 1;
+      return (last ? (base + w.img + '.webp') : (base + w.img + '-' + width + 'w.webp')) + ' ' + width + 'w';
+    }).join(', ');
+  }
+  var slides = items.map(function(w){
+    var img = document.createElement('img');
+    img.className = 'tri-slide';
+    img.width = +w.w || 0; img.height = +w.h || 0;
+    img.alt = [w.title_he || w.title_en || '', w.artist_he || w.artist_en || ''].filter(Boolean).join(' — ');
+    img.loading = 'lazy'; img.decoding = 'async'; img.draggable = false;
+    if(w.artist_en) img.dataset.caption = w.artist_en;
+    if(w.artist_slug) img.dataset.captionHref = '../../artists/' + w.artist_slug + '/';
+    img.dataset.artistHref = '../../works/' + w.id + '/';
+    img.dataset.src = base + w.img + '.webp';
+    var ss = srcsetOf(w);
+    if(ss) img.dataset.srcset = ss;
+    frame.appendChild(img);
+    return img;
+  });
+  function hydrate(i){
+    var s = slides[(i % slides.length + slides.length) % slides.length];
+    if(!s || !s.dataset.src) return;
+    if(s.dataset.srcset){ s.setAttribute('srcset', s.dataset.srcset); s.setAttribute('sizes', '(max-width:768px) 216px, 481px'); }
+    s.src = s.dataset.src;
+    delete s.dataset.src; delete s.dataset.srcset;
+  }
+  function around(i){ for(var k = -2; k <= 2; k++) hydrate(i + k); }
+  around(0);
+  tri.addEventListener('tri:change', function(e){ around(e.detail.index); });
+})();
+</script>
+
+<script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>

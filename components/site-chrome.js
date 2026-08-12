@@ -171,8 +171,8 @@
               '<a href="' + abs('privacy/') + '">מדיניות פרטיות</a>' +
             '</div>' +
             '<div class="footer-row">' +
-              '<a href="' + abs('') + '#galleries">גלריית כיכר המדינה</a>' +
-              '<a href="' + abs('') + '#galleries">גלריית כיכר דיזינגוף</a>' +
+              '<a href="' + abs('galleries/medina/') + '">גלריית כיכר המדינה</a>' +
+              '<a href="' + abs('galleries/dizengoff/') + '">גלריית כיכר דיזינגוף</a>' +
               '<a href="' + abs('') + '#galleries">גלריית שוק הפשפשים</a>' +
             '</div>' +
           '</nav>' +
@@ -188,8 +188,8 @@
               '<a href="' + abs('accessibility/') + '">הצהרת נגישות</a>' +
             '</div>' +
             '<div class="footer-mobile-row">' +
-              '<a href="' + abs('') + '#galleries">גלריית כיכר המדינה</a>' +
-              '<a href="' + abs('') + '#galleries">גלריית כיכר דיזינגוף</a>' +
+              '<a href="' + abs('galleries/medina/') + '">גלריית כיכר המדינה</a>' +
+              '<a href="' + abs('galleries/dizengoff/') + '">גלריית כיכר דיזינגוף</a>' +
               '<a href="' + abs('') + '#galleries">גלריית שוק הפשפשים</a>' +
             '</div>' +
           '</nav>' +

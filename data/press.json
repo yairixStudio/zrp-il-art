@@ -3,6 +3,19 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-livay-levi-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ליוואי לוי",
+      "title_en": "artist talk with livay levi",
+      "date": "2026-08-18",
+      "cover_image": "images/events/livay-levi/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": true,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות).",
+      "route": "events/livay-levi/"
+    },
+    {
       "id": "event-zohar-ron-medina-talk",
       "type": "event",
       "tag_en": "gallery event",
@@ -14,6 +27,32 @@
       "homepage_visible": false,
       "_note": "האירוע השני של זוהר רון (הקולפן / כיכר המדינה) — כרטיס בראש /press/. לא בגריד #press בהומפייג' (רה-דיזיין 2026-08: שם רק כתבות + 2 פתיחות).",
       "route": "events/zohar-ron-medina/"
+    },
+    {
+      "id": "event-hadas-tuval-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם הדס טובל",
+      "title_en": "artist talk with hadas tuval",
+      "date": "2026-08-28",
+      "cover_image": "images/events/hadas-tuval/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": true,
+      "_note": "כרטיס ב-/press/ וגם בראש גריד #press בהומפייג' (בקשת המשתמש 2026-08-12 — חריגה מכלל הרה-דיזיין שלפיו בהומפייג' רק כתבות + פתיחות; אותה חריגה כמו event-gala-night).",
+      "route": "events/hadas-tuval/"
+    },
+    {
+      "id": "event-noemi-safir-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "לקלף את הקוד — שיחת אמנים עם נעמי ספיר",
+      "title_en": "artist talk with noemi safir",
+      "date": "2026-08-19",
+      "cover_image": "images/events/noemi-safir/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד. לא בגריד #press בהומפייג' (רה-דיזיין 2026-08: שם רק כתבות + 2 פתיחות).",
+      "route": "events/noemi-safir/"
     },
     {
       "id": "event-the-space-between",
@@ -52,6 +91,19 @@
       "exhibition_id": null,
       "homepage_visible": false,
       "route": "events/alice-debellis/"
+    },
+    {
+      "id": "event-gala-night",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "ערב גאלה — הקולפן",
+      "title_en": "gala night",
+      "date": "2026-07-29",
+      "cover_image": "images/events/gala-night/card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": true,
+      "route": "events/gala-night/",
+      "figma_home_card": "XhGH289YTRcW811wrufRJz::1323:570"
     },
     {
       "id": "event-risa-and-noemi",

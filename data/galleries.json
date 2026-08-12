@@ -8,18 +8,21 @@
       "name_en": "Kikar Hamedina Gallery",
       "address_he": "ז'בוטינסקי 131, תל אביב",
       "address_en": "Jabotinsky 131, Tel Aviv",
+      "address_street_en": "131 jabotinsky st. tel aviv",
+      "address_area_en": "kikar hamedina",
       "city": "tel aviv",
       "status": "open",
+      "route": "galleries/medina/",
       "hours": [
         {
           "days_he": "א'-ה'",
           "days_en": "Sun-Thu",
-          "time": "10:00-19:00"
+          "time": "18:00-11:00"
         },
         {
           "days_he": "ו'",
           "days_en": "Fri",
-          "time": "10:00-14:00"
+          "time": "14:00-11:00"
         },
         {
           "days_he": "שבת סגור",
@@ -28,8 +31,25 @@
         }
       ],
       "image_hero": "images/galleries/medina/hero-v2.webp",
+      "image_page_hero": "images/galleries/medina/page-hero.webp",
+      "manager": {
+        "name_en_first": "natalie",
+        "name_en_last": "zigel",
+        "email": "nataliesiegel8@gmail.com",
+        "portrait": {
+          "src": "images/galleries/managers/natalie-zigel.webp",
+          "width": 1080,
+          "height": 1206,
+          "alt_he": "פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה",
+          "figma_image_ref": "56b4a5a0e8bd0fda74230421ea4fc51ed660d778"
+        },
+        "note": "Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."
+      },
+      "note": "Gallery-page hero (Figma 1467:862 desktop 1467:813) is a NEW storefront photo — imageRef 281cf78459439ea5ef843021c0443939dd2e1131, crop suffix 10b0bd — baked to images/galleries/medina/page-hero.webp (896x1194; hero.webp/hero-v2.webp untouched — golden rule 8). image_hero (hero-v2) remains the homepage #galleries card image.",
       "figma_node_desktop": null,
-      "figma_node_mobile": "1318:663"
+      "figma_node_mobile": "1318:663",
+      "figma_page_desktop": "1468:305",
+      "figma_page_mobile": "1467:840"
     },
     {
       "id": "dizengoff",
@@ -38,12 +58,48 @@
       "name_en": "Kikar Dizengoff Gallery",
       "address_he": "כיכר דיזינגוף, תל אביב",
       "address_en": "Dizengoff Square, Tel Aviv",
+      "address_street_en": "1 Raines st. tel aviv",
+      "address_area_en": "dizengoff square",
       "city": "tel aviv",
       "status": "open",
-      "hours": [],
+      "route": "galleries/dizengoff/",
+      "hours": [
+        {
+          "days_he": "א'-ה'",
+          "days_en": "Sun-Thu",
+          "time": "18:00-11:00"
+        },
+        {
+          "days_he": "ו'",
+          "days_en": "Fri",
+          "time": "14:00-11:00"
+        },
+        {
+          "days_he": "שבת סגור",
+          "days_en": "Sat closed",
+          "time": null
+        }
+      ],
       "image_hero": "images/galleries/dizengoff/hero-v2.webp",
+      "image_page_hero": "images/galleries/dizengoff/hero-v2.webp",
+      "manager": {
+        "name_en_first": "natalie",
+        "name_en_last": "zigel",
+        "email": "nataliesiegel8@gmail.com",
+        "portrait": {
+          "src": "images/galleries/managers/natalie-zigel.webp",
+          "width": 1080,
+          "height": 1206,
+          "alt_he": "פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה",
+          "figma_image_ref": "56b4a5a0e8bd0fda74230421ea4fc51ed660d778"
+        },
+        "note": "Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."
+      },
+      "note": "Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. 'Raines' is verbatim from Figma (probably a typo of Reines — needs user ruling before display).",
       "figma_node_desktop": "237:1465",
-      "figma_node_mobile": "1318:674"
+      "figma_node_mobile": "1318:674",
+      "figma_page_desktop": "1473:311",
+      "figma_page_mobile": "1473:447"
     },
     {
       "id": "flea-market",
@@ -52,13 +108,20 @@
       "name_en": "Flea Market Gallery",
       "address_he": "שוק הפשפשים, תל אביב",
       "address_en": "Flea Market, Tel Aviv (Jaffa)",
+      "address_street_en": null,
+      "address_area_en": null,
       "city": "tel aviv",
       "status": "coming-soon",
+      "route": null,
       "hours": [],
       "image_hero": null,
+      "image_page_hero": null,
+      "manager": null,
       "note": "Homepage card (redesign 2026-08, Figma 1318:686) renders as a flat #2B4C39 block with \"coming soon\" — image fills are hidden in Figma, no photo. Old hero.* files remain on disk, unlinked.",
       "figma_node_desktop": null,
-      "figma_node_mobile": "1318:686"
+      "figma_node_mobile": "1318:686",
+      "figma_page_desktop": null,
+      "figma_page_mobile": null
     }
   ]
 }

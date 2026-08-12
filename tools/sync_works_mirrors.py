@@ -22,6 +22,12 @@ ART = d["art_works"]
 STORE = d["exhibition_statements"]
 BY_ID = {w["id"]: w for w in ART}
 
+# Exhibition recency for artist pages: data/exhibitions.json is ordered chronologically
+# ASCENDING, so a later index = a newer show. The artist page sorts its exhibition groups
+# by this rank DESCENDING (user decision 2026-08-12: newest exhibition on top).
+# Adding a new exhibition = append it to exhibitions.json and re-run this script.
+EX_ORDER = [e["slug"] for e in json.load(open("data/exhibitions.json", encoding="utf-8"))["exhibitions"]]
+
 
 def replace_js_array(text, var_name, arr):
     payload = "window.%s=%s" % (var_name, json.dumps(arr, separators=(",", ":"), ensure_ascii=False))
@@ -60,6 +66,41 @@ NEW_CSS = ('.work-statement{grid-column:1/-1;direction:rtl;text-align:right;font
            '.ws-body{font-size:16px;line-height:1.7}.ws-body p{margin:0 0 .7em}.ws-body p:last-child{margin-bottom:0}')
 
 
+# ---- exhibition-group ordering upgrade (idempotent) ----
+# OLD: groups render in the order their first work appears (artist_page_pos).
+# NEW: groups are sorted by exhibition recency first; ties (and unknown exhibitions)
+#      keep their previous relative order, so per-artist Figma order still rules
+#      inside a group and between groups of the same show.
+OLD_GROUP_JS = (
+    '    function buildExGroups(list){\n'
+    '      var groups=[], byKey={};\n'
+    '      list.forEach(function(w){\n'
+    '        var key=w.exhibition_title_he||"__ungrouped__";\n'
+    '        if(!byKey[key]){byKey[key]={title:w.exhibition_title_he,route:w.exhibition_route,'
+    'statement:exStatement(a.slug,w.exhibition_title_he),items:[]};groups.push(byKey[key]);}\n'
+    '        byKey[key].items.push(w);\n'
+    '      });\n'
+    '      var gi=0;\n')
+NEW_GROUP_JS = (
+    '    /* Newest exhibition on top (user decision 2026-08-12). Rank = position in\n'
+    '       data/exhibitions.json (chronological ascending) -> sorted descending here.\n'
+    '       Unknown/ungrouped ranks -1 and sinks to the bottom; equal ranks keep the\n'
+    '       artist_page_pos order, so Figma still decides inside a show. */\n'
+    '    function exRank(slug){var L=window.__EX_ORDER_INLINE__||[];var i=L.indexOf(slug);return i<0?-1:i;}\n'
+    '    function buildExGroups(list){\n'
+    '      var groups=[], byKey={};\n'
+    '      list.forEach(function(w){\n'
+    '        var key=w.exhibition_title_he||"__ungrouped__";\n'
+    '        if(!byKey[key]){byKey[key]={title:w.exhibition_title_he,route:w.exhibition_route,'
+    'slug:w.exhibition_slug,statement:exStatement(a.slug,w.exhibition_title_he),items:[]};groups.push(byKey[key]);}\n'
+    '        byKey[key].items.push(w);\n'
+    '      });\n'
+    '      groups=groups.map(function(g,i){return {g:g,i:i,r:exRank(g.slug)};})\n'
+    '        .sort(function(x,y){return (y.r-x.r)||(x.i-y.i);})\n'
+    '        .map(function(o){return o.g;});\n'
+    '      var gi=0;\n')
+
+
 def main():
     # ---- 1) artist pages ----
     artist_files = sorted(glob.glob("artists/*/index.html"))
@@ -75,6 +116,19 @@ def main():
             if 'id="ex-statements-inline"' in t:
                 t = re.sub(r'<script id="ex-statements-inline">window\.__EX_STATEMENTS_INLINE__=\[.*?\]</script>',
                            lambda _: ex_script, t, count=1, flags=re.S)
+            # exhibition order inline (file:// can't fetch exhibitions.json) — create or refresh
+            order_script = '<script id="ex-order-inline">window.__EX_ORDER_INLINE__=%s</script>' % \
+                json.dumps(EX_ORDER, separators=(",", ":"), ensure_ascii=False)
+            if 'id="ex-order-inline"' in t:
+                t = re.sub(r'<script id="ex-order-inline">window\.__EX_ORDER_INLINE__=\[.*?\]</script>',
+                           lambda _: order_script, t, count=1, flags=re.S)
+            elif 'id="ex-statements-inline"' in t:
+                t = t.replace(ex_script, ex_script + "\n" + order_script, 1)
+            # exhibition-group ordering upgrade (idempotent: OLD vanishes after replace)
+            if OLD_GROUP_JS in t:
+                t = t.replace(OLD_GROUP_JS, NEW_GROUP_JS, 1)
+            elif "function exRank(slug){" not in t:
+                print("  ! group-order anchor not found:", fp, file=sys.stderr)
             # banner renderer upgrade (idempotent: OLD vanishes after replace)
             if OLD_JS in t:
                 t = t.replace(OLD_JS, NEW_JS, 1)
