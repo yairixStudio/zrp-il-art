@@ -58,7 +58,7 @@
       "name_en": "Kikar Dizengoff Gallery",
       "address_he": "כיכר דיזינגוף, תל אביב",
       "address_en": "Dizengoff Square, Tel Aviv",
-      "address_street_en": "1 Raines st. tel aviv",
+      "address_street_en": "1 Reines st. tel aviv",
       "address_area_en": "dizengoff square",
       "city": "tel aviv",
       "status": "open",
@@ -95,7 +95,7 @@
         },
         "note": "Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."
       },
-      "note": "Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. 'Raines' is verbatim from Figma (probably a typo of Reines — needs user ruling before display).",
+      "note": "Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. Street spelling 'Reines' — user ruling 2026-08-13 (Figma wrote 'Raines', typo of Reines St.; fixed site-wide).",
       "figma_node_desktop": "237:1465",
       "figma_node_mobile": "1318:674",
       "figma_page_desktop": "1473:311",
