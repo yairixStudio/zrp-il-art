@@ -76,7 +76,7 @@ window.ArtworkLightbox.refreshFocusable()  // אחרי injection דינמי (ר�
 ### 1.7 אסור
 
 - אל תבנה lightbox חדש.
-- `data-artwork-*` רק על יצירות אומנות. **לא** portrait, gallery hero, Instagram, press cover.
+- `data-artwork-*` רק על יצירות אומנות **או צילומי-אירוע בסליידרים/רצועות של דפי events** (הרחבה מאושרת — how-many ואילך; 2026-08-18 הוחל רוחבית). **לא** portrait, gallery hero, Instagram, press cover.
 - ב-`exhibition.html` thumbs של "artists" = portraits → לא lightbox.
 
 ### 1.8 שילובים
@@ -88,6 +88,12 @@ window.ArtworkLightbox.refreshFocusable()  // אחרי injection דינמי (ר�
 | `pages/exhibition.html` | ❌ thumbs = portraits |
 | `index.html` (tiles) | ❌ tiles = typography |
 | `index.html` (tribe mobile strip) | ✅ §1.4.1 — `div.tribe-thumb-card` + `data-artwork-gallery="tribe-teaser"`, בלי CTA |
+| `events/how-many/` | ✅ invitation tri (`data-tri-lightbox="true"` + `data-artwork-gallery="event-invitation"`) + רצועת moments (`data-artwork-gallery="event-moments"`, title per-img) |
+| `events/gala-night/` | ✅ 2026-08-18 — שתי גלריות ה-tri (`event-gallery-1/2`, title "gala night") + רצועת moments (13 תמונות, title "moments from the opening") |
+| `events/loneliness/` | ✅ 2026-08-18 — invitation tri ("the invitation") + הגלריה השנייה ("the atmosphere") + moments grid (14, "moments from the opening") |
+| `events/ktuba/` | ✅ 2026-08-18 — slideshow tri (3 צילומים, title "live art performance", `data-artwork-gallery="event-slideshow"`) |
+| `events/close-look/` | ❌ בכוונה — שקופיות ה-tri עטופות `<a>` לדף האומנית (קליק מרכז = ניווט) |
+| `events/artist-talk/` | ❌ בכוונה — שקופיות ה-tri הן `<video>` (אוטו-פליי בקרוסלה), לא תמונות |
 
 ### 1.9 TODO
 
@@ -297,7 +303,7 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 ### 4.3 התנהגות
 
 - **קליק על peek** = move to prev/next.
-- **קליק על main** = ללא פעולה (`cursor:default`).
+- **קליק על main** = ללא פעולה (`cursor:default`) — **אלא אם:** (א) לשקופית יש `data-artist-href` → ניווט; (ב) ל-`.tri` יש `data-tri-lightbox="true"` ולשקופית `data-artwork-*` → נפתח artwork-lightbox (§1). במצב לייטבוקס מוסיפים גם `data-artwork-gallery` על ה-`.tri` (scope ל-prev/next) ו-CSS `cursor:zoom-in` ל-`.is-center`. ה-tap מדוכא (`noClick`) ולכן קליק על peek לא מגיע ל-delegation של הלייטבוקס — רק המרכז נפתח.
 - **dots** = jump.
 - **swipe / drag** = prev/next, threshold 12% או 40px.
 - **חיצים במקלדת** (← → Home End) — צריך focus.

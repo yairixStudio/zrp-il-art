@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../../components/site-boot.css">
 <meta name="description" content="מיצג חי של זוהר רון: כתיבת שירה ספונטנית וקליגרפיה עברית על גוף עירום, גלריית כיכר המדינה תל אביב, 25 בפברואר 2026, Zielinski &amp; Rozen.">
 <link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css?v=4">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -88,6 +89,7 @@ body{text-transform:uppercase}
 .event-slideshow .tri-slide.is-prev{left:calc(50% - 428px)}
 .event-slideshow .tri-slide.is-next{left:calc(50% + 428px)}
 .event-slideshow .tri-slide.is-hidden{width:481px;height:841px}
+.event-slideshow .tri[data-tri-lightbox="true"] .tri-slide.is-center{cursor:zoom-in}
 
 /* === ARTISTS STRIP === */
 .event-artists{padding:32px var(--pad-x);display:flex;justify-content:center}
@@ -255,11 +257,11 @@ a.artist-card:hover .name{color:var(--ink)}
 
   <!-- SLIDESHOW — peek/main/peek with 7 dots (3 real images, 4 reserved) -->
   <section class="event-slideshow" aria-label="גלריית צילומים — מיצג כתובה">
-    <div class="tri" data-tri-loop="true">
+    <div class="tri" data-tri-loop="true" data-tri-lightbox="true" data-artwork-gallery="event-slideshow">
       <div class="tri-frame">
-        <img class="tri-slide" src="../../images/events/ktuba/slide-02.webp" srcset="../../images/events/ktuba/slide-02-480w.webp 480w, ../../images/events/ktuba/slide-02-768w.webp 768w, ../../images/events/ktuba/slide-02.webp 1125w" sizes="100vw" width="2268" height="4032" alt="מיצג כתובה — צילום מרכזי" draggable="false" decoding="async" loading="lazy">
-        <img class="tri-slide" src="../../images/events/ktuba/slide-03.webp" srcset="../../images/events/ktuba/slide-03-480w.webp 480w, ../../images/events/ktuba/slide-03-768w.webp 768w, ../../images/events/ktuba/slide-03.webp 1125w" sizes="100vw" width="2066" height="3672" alt="מיצג כתובה — צילום 3" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../../images/events/ktuba/slide-01.webp" srcset="../../images/events/ktuba/slide-01-480w.webp 480w, ../../images/events/ktuba/slide-01-768w.webp 768w, ../../images/events/ktuba/slide-01.webp 1125w" sizes="100vw" width="2304" height="4096" alt="מיצג כתובה — צילום 1" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../../images/events/ktuba/slide-02.webp" srcset="../../images/events/ktuba/slide-02-480w.webp 480w, ../../images/events/ktuba/slide-02-768w.webp 768w, ../../images/events/ktuba/slide-02.webp 1125w" sizes="100vw" width="2268" height="4032" alt="מיצג כתובה — צילום מרכזי" data-artwork-title="live art performance" draggable="false" decoding="async" loading="lazy">
+        <img class="tri-slide" src="../../images/events/ktuba/slide-03.webp" srcset="../../images/events/ktuba/slide-03-480w.webp 480w, ../../images/events/ktuba/slide-03-768w.webp 768w, ../../images/events/ktuba/slide-03.webp 1125w" sizes="100vw" width="2066" height="3672" alt="מיצג כתובה — צילום 3" data-artwork-title="live art performance" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../../images/events/ktuba/slide-01.webp" srcset="../../images/events/ktuba/slide-01-480w.webp 480w, ../../images/events/ktuba/slide-01-768w.webp 768w, ../../images/events/ktuba/slide-01.webp 1125w" sizes="100vw" width="2304" height="4096" alt="מיצג כתובה — צילום 1" data-artwork-title="live art performance" draggable="false" loading="lazy" decoding="async">
       </div>
       <div class="tri-dots" role="tablist" aria-label="gallery navigation">
         <button type="button" class="tri-dot" aria-label="slide 1" role="tab" aria-selected="false"></button>
@@ -311,6 +313,7 @@ a.artist-card:hover .name{color:var(--ink)}
 
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js?v=5" defer></script>
 <script>
 (function(){
   function loadArtists(){

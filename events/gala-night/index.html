@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="../../components/site-boot.css">
 <meta name="description" content="ערב הגאלה של תערוכת הקולפן בגלריית כיכר המדינה, תל אביב — 29 ביולי 2026, 19:30–21:30. עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.">
 <link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css?v=4">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -101,6 +102,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 .event-tri .tri-slide.is-prev{left:calc(50% - 473px)}
 .event-tri .tri-slide.is-next{left:calc(50% + 472.5px)}
 .event-tri .tri-slide.is-hidden{width:481px;height:841px}
+.event-tri[data-tri-lightbox="true"] .tri-slide.is-center{cursor:zoom-in}
 
 /* === PRESENTING ARTISTS — photo left + linked list right (Figma 1451:1974) === */
 .event-atmosphere{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
@@ -135,7 +137,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 .event-moments .strip .cell{flex:0 0 178px;width:178px;height:148px;overflow:hidden;background:#f3f1ee;scroll-snap-align:start}
 .event-moments .strip .cell>picture{display:contents}
 /* Figma crops the 178×178 square from its top (y:0) — keep heads in frame */
-.event-moments .strip .cell img{width:178px;height:148px;object-fit:cover;object-position:50% 0;transition:transform .8s ease}
+.event-moments .strip .cell img{width:178px;height:148px;object-fit:cover;object-position:50% 0;transition:transform .8s ease;cursor:zoom-in}
 .event-moments .strip .cell:hover img{transform:scale(1.05)}
 
 /* === RESPONSIVE === */
@@ -299,11 +301,11 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   <!-- GALLERY 1 — triptych slideshow (Figma 1451:1962 desktop / 1451:2136 mobile) -->
   <section class="event-gallery event-gal-a" aria-label="צילומים מערב הגאלה">
     <div class="inner">
-      <div class="tri event-tri" data-tri-loop="true">
+      <div class="tri event-tri" data-tri-loop="true" data-tri-lightbox="true" data-artwork-gallery="event-gallery-1">
         <div class="tri-frame">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery1-01.webp" srcset="../../images/events/gala-night/gallery1-01-480w.webp 480w, ../../images/events/gala-night/gallery1-01-768w.webp 768w, ../../images/events/gala-night/gallery1-01-1080w.webp 1080w, ../../images/events/gala-night/gallery1-01.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery1-02.webp" srcset="../../images/events/gala-night/gallery1-02-480w.webp 480w, ../../images/events/gala-night/gallery1-02-768w.webp 768w, ../../images/events/gala-night/gallery1-02-1080w.webp 1080w, ../../images/events/gala-night/gallery1-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery1-03.webp" srcset="../../images/events/gala-night/gallery1-03-480w.webp 480w, ../../images/events/gala-night/gallery1-03-768w.webp 768w, ../../images/events/gala-night/gallery1-03-1080w.webp 1080w, ../../images/events/gala-night/gallery1-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-01.webp" srcset="../../images/events/gala-night/gallery1-01-480w.webp 480w, ../../images/events/gala-night/gallery1-01-768w.webp 768w, ../../images/events/gala-night/gallery1-01-1080w.webp 1080w, ../../images/events/gala-night/gallery1-01.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-02.webp" srcset="../../images/events/gala-night/gallery1-02-480w.webp 480w, ../../images/events/gala-night/gallery1-02-768w.webp 768w, ../../images/events/gala-night/gallery1-02-1080w.webp 1080w, ../../images/events/gala-night/gallery1-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery1-03.webp" srcset="../../images/events/gala-night/gallery1-03-480w.webp 480w, ../../images/events/gala-night/gallery1-03-768w.webp 768w, ../../images/events/gala-night/gallery1-03-1080w.webp 1080w, ../../images/events/gala-night/gallery1-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
         </div>
         <div class="tri-dots" role="tablist" aria-label="gallery navigation">
           <button type="button" class="tri-dot is-on" aria-label="slide 1" role="tab" aria-selected="true"></button>
@@ -336,11 +338,11 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   <!-- GALLERY 2 — triptych slideshow (Figma 1451:1987 desktop / 1451:2153 mobile) -->
   <section class="event-gallery event-gal-b" aria-label="צילומים נוספים מערב הגאלה">
     <div class="inner">
-      <div class="tri event-tri" data-tri-loop="true">
+      <div class="tri event-tri" data-tri-loop="true" data-tri-lightbox="true" data-artwork-gallery="event-gallery-2">
         <div class="tri-frame">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery2-01.webp" srcset="../../images/events/gala-night/gallery2-01-480w.webp 480w, ../../images/events/gala-night/gallery2-01-768w.webp 768w, ../../images/events/gala-night/gallery2-01-1080w.webp 1080w, ../../images/events/gala-night/gallery2-01.webp 1815w" sizes="(max-width:768px) 60vw, 481px" width="1815" height="2723" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery2-02.webp" srcset="../../images/events/gala-night/gallery2-02-480w.webp 480w, ../../images/events/gala-night/gallery2-02-768w.webp 768w, ../../images/events/gala-night/gallery2-02-1080w.webp 1080w, ../../images/events/gala-night/gallery2-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
-          <img class="tri-slide" src="../../images/events/gala-night/gallery2-03.webp" srcset="../../images/events/gala-night/gallery2-03-480w.webp 480w, ../../images/events/gala-night/gallery2-03-768w.webp 768w, ../../images/events/gala-night/gallery2-03-1080w.webp 1080w, ../../images/events/gala-night/gallery2-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-01.webp" srcset="../../images/events/gala-night/gallery2-01-480w.webp 480w, ../../images/events/gala-night/gallery2-01-768w.webp 768w, ../../images/events/gala-night/gallery2-01-1080w.webp 1080w, ../../images/events/gala-night/gallery2-01.webp 1815w" sizes="(max-width:768px) 60vw, 481px" width="1815" height="2723" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-02.webp" srcset="../../images/events/gala-night/gallery2-02-480w.webp 480w, ../../images/events/gala-night/gallery2-02-768w.webp 768w, ../../images/events/gala-night/gallery2-02-1080w.webp 1080w, ../../images/events/gala-night/gallery2-02.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/gala-night/gallery2-03.webp" srcset="../../images/events/gala-night/gallery2-03-480w.webp 480w, ../../images/events/gala-night/gallery2-03-768w.webp 768w, ../../images/events/gala-night/gallery2-03-1080w.webp 1080w, ../../images/events/gala-night/gallery2-03.webp 1320w" sizes="(max-width:768px) 60vw, 481px" width="1320" height="2346" alt="צילום מערב הגאלה" data-artwork-title="gala night" draggable="false" decoding="async" loading="lazy">
         </div>
         <div class="tri-dots" role="tablist" aria-label="gallery navigation">
           <button type="button" class="tri-dot is-on" aria-label="slide 1" role="tab" aria-selected="true"></button>
@@ -368,20 +370,20 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
           <svg viewBox="0 0 24 16" aria-hidden="true"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg>
         </button>
       </div>
-      <div class="strip" role="list">
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-01-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-02-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-03-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-04-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-05-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-06-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-07-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-08-v2.webp" width="786" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-09-v2.webp" width="783" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-10-v2.webp" width="930" height="1392" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-11-v2.webp" width="885" height="1329" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-12-v2.webp" width="1326" height="885" alt="" decoding="async" loading="lazy"></div>
-        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-13-v2.webp" width="1032" height="666" alt="" decoding="async" loading="lazy"></div>
+      <div class="strip" role="list" data-artwork-gallery="event-moments">
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-01-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-02-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-03-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-04-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-05-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-06-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-07-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-08-v2.webp" width="786" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-09-v2.webp" width="783" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-10-v2.webp" width="930" height="1392" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-11-v2.webp" width="885" height="1329" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-12-v2.webp" width="1326" height="885" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
+        <div class="cell" role="listitem"><img src="../../images/events/gala-night/moment-13-v2.webp" width="1032" height="666" alt="" data-artwork-title="moments from the opening" decoding="async" loading="lazy"></div>
       </div>
     </div>
   </section>
@@ -392,6 +394,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js?v=5" defer></script>
 
 <script>
 (function(){
