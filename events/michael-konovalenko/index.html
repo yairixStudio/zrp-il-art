@@ -9,7 +9,7 @@
 <link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
-<meta name="description" content="שיחת אמנים עם מיכאל קונובלנקו במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
+<meta name="description" content="לגזור. לחבר. לראות מחדש. — שיחת אמנים עם מיכאל קונובלנקו על קולאז’, על הבחירה בין מקריות לשליטה ועל הרגע שבו אוסף חלקים הופך לדימוי חדש. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -70,6 +70,15 @@ body{text-transform:uppercase}
 .h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
 .h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
 .h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
+
+/* Body — Hebrew (FbEzmel Light); Figma text box 358px, 16/20, centered.
+   Four stanzas; nodes 1499:1178 (desktop) / 1499:1092 (mobile) are one single Light run
+   with no {ts} override, so the opening line is NOT set heavier (same reading as the
+   maria-artamonova frame). Both frames carry identical copy and identical line breaks,
+   so the <br>s are unconditional. */
+.h-body{width:358px;max-width:100%;font-size:16px;line-height:20px;text-align:center;color:var(--ink)}
+.h-body.heb{font-family:var(--heb);font-weight:300;direction:rtl}
+.h-body p+p{margin-top:20px}
 
 /* "presented as part of" — exhibition attribution (Figma: label, Solway bar, exhibition name 36) */
 .h-presented{display:flex;flex-direction:column;align-items:center;gap:16px;padding:16px 0}
@@ -158,9 +167,10 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
   .h-title{order:2}
   .h-meta{order:3}
-  .h-presented{order:4}
-  .h-address{order:5}
-  .event-artists{order:6}
+  .h-body{order:4}
+  .h-presented{order:5}
+  .h-address{order:6}
+  .event-artists{order:7}
 
   /* Hero card — full-bleed 520h, same flat 50% scrim */
   .event-hero .card{width:100%;max-width:none;height:520px}
@@ -172,6 +182,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
   .h-meta .gallery{font-size:14px}
   .h-meta .date,.h-meta .time{font-size:14px}
+  .h-body{background:var(--white);padding:16px;width:100%;font-size:16px}
   .h-presented{background:var(--white);padding:16px;width:100%}
   .h-presented .pre-label{font-size:14px;letter-spacing:.04em}
   .ex-name{font-size:19px;letter-spacing:.12em;max-width:358px}
@@ -204,7 +215,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Artist Talk with Michael Konovalenko | Kikar Hamedina — Zielinski &amp; Rozen">
-<meta property="og:description" content="שיחת אמנים עם מיכאל קונובלנקו במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
+<meta property="og:description" content="לגזור. לחבר. לראות מחדש. — שיחת אמנים עם מיכאל קונובלנקו על קולאז’, על הבחירה בין מקריות לשליטה ועל הרגע שבו אוסף חלקים הופך לדימוי חדש. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
 <meta property="og:url" content="https://art.zrp.co.il/events/michael-konovalenko/">
 <meta property="og:image" content="https://art.zrp.co.il/og/events-michael-konovalenko-hero.jpg">
 <meta property="og:image:width" content="1200">
@@ -212,9 +223,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:image:alt" content="Artist Talk with Michael Konovalenko — Kikar Hamedina">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Artist Talk with Michael Konovalenko | Kikar Hamedina — Zielinski &amp; Rozen">
-<meta name="twitter:description" content="שיחת אמנים עם מיכאל קונובלנקו במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
+<meta name="twitter:description" content="לגזור. לחבר. לראות מחדש. — שיחת אמנים עם מיכאל קונובלנקו על קולאז’, על הבחירה בין מקריות לשליטה ועל הרגע שבו אוסף חלקים הופך לדימוי חדש. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 17 באוגוסט 2026, 18:30–20:00.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/events-michael-konovalenko-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/michael-konovalenko/#event","url":"https://art.zrp.co.il/events/michael-konovalenko/","name":"Artist Talk with Michael Konovalenko — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-michael-konovalenko-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-08-17T18:30","endDate":"2026-08-17T20:00","description":"שיחת אמנים עם מיכאל קונובלנקו במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Michael Konovalenko — Kikar Hamedina","item":"https://art.zrp.co.il/events/michael-konovalenko/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/michael-konovalenko/#event","url":"https://art.zrp.co.il/events/michael-konovalenko/","name":"Artist Talk with Michael Konovalenko — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-michael-konovalenko-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-08-17T18:30","endDate":"2026-08-17T20:00","description":"לגזור. לחבר. לראות מחדש. מפגש ושיחה עם מיכאל קונובלנקו על קולאז’ — על הבחירה בין מקריות לשליטה, על דימויים שמגיעים ממקומות שונים ומקבלים חיים חדשים כשהם נפגשים, ועל הרגע שבו קולאז’ מפסיק להיות אוסף של חלקים והופך לדימוי חדש. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Michael Konovalenko — Kikar Hamedina","item":"https://art.zrp.co.il/events/michael-konovalenko/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -237,6 +248,13 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
             <span class="dot" aria-hidden="true"></span>
             <span class="time heb"><bdi>20:00-18:30</bdi></span>
           </div>
+        </div>
+
+        <div class="h-body heb">
+          <p>לגזור. לחבר. לראות מחדש.</p>
+          <p>מוזמנים למפגש ושיחה על קולאז’,<br>על הבחירה בין מקריות לשליטה,<br>על דימויים שמגיעים ממקומות שונים<br>ומקבלים חיים חדשים כשהם נפגשים.</p>
+          <p>נדבר על תהליך העבודה,<br>על איסוף הדימויים, על החיתוך,<br>על החיבור בין תמונות שלא נועדו להיות יחד -<br>ועל הרגע שבו קולאז’ מפסיק להיות אוסף של חלקים<br>והופך לדימוי חדש.</p>
+          <p>מה הופך תמונה לזיכרון?<br>מה הופך חיבור למשמעות?<br>ואיפה בדיוק מתחילה היצירה</p>
         </div>
 
         <div class="h-presented">
