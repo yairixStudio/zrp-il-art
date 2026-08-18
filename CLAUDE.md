@@ -18,7 +18,8 @@
 9. **כל אנגלית באתר = Copperplate UPPERCASE.** הכלל ב-CSS גלובלי. פרטים: `docs/conventions.md §5`.
 10. **עברית+אנגלית באותה שורה/מחרוזת:** FbEzmel לעברית, `<span class="lat">` + Copperplate ל-Latin — **גודל ויזואלי** (em optical), לא אותו `font-size` px. פרטים: `docs/conventions.md §5.2`.
 11. **כל אזכור אומן = קישור** (`docs/artist-linking.md`). הפרה = הדף לא מוכן.
-12. בסוף — עדכן sitemap (§3), `FIGMA_LINKS.md` אם גילית URL חדש, JSON contracts (§5) אם נוסף שדה, ולקח חדש ב-`docs/lessons.md §4`.
+12. **🔴 כל דף/פוסט חדש = רשומה ב-`sitemap.xml`, באותו קומיט** (כלל-זהב 15). בלי זה הדף לא קיים לגוגל.
+13. בסוף — עדכן את טבלת ה-sitemap ב-§4, `FIGMA_LINKS.md` אם גילית URL חדש, JSON contracts (§6) אם נוסף שדה, ולקח חדש ב-`docs/lessons.md §4`.
 
 ---
 
@@ -34,6 +35,7 @@
 | בונה דף חדש או נתקלת ב-Figma quirk / Static-vs-Dynamic decision | [`docs/lessons.md`](./docs/lessons.md) |
 | בודק אם משהו כבר נסגר או נתקלת ב-placeholder | [`docs/todo.md`](./docs/todo.md) |
 | מתחיל לבנות דף — צריך URLs של Figma | [`FIGMA_LINKS.md`](./FIGMA_LINKS.md) |
+| **סיים דף/פוסט חדש** — sitemap, canonical, OG, JSON-LD | [`docs/seo.md`](./docs/seo.md) — **חובה: הדף חייב להיכנס ל-`sitemap.xml` באותו קומיט (כלל-זהב 15)** |
 
 ---
 
@@ -213,7 +215,8 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 7. בנה HTML יחיד עם CSS מוטמע. Pattern: `font-face → tokens → sections → media queries → casing block (conventions.md §5)`.
 8. הוסף לינק לדף ב-nav של כל הדפים הקיימים (אין partial loader — copy-paste; כשמעל 8 דפים, ראה `docs/todo.md`).
 9. **לפני סיום:** עבור על `docs/artist-linking.md §7` (בדיקת anchors), וודא `text-transform`/font compliance (`conventions.md §5`), **בדוק חיתוך כותרות מלמעלה** (Copperplate caps ב-`line-height ≤1.2`; **אסור `overflow-x` על `body`** — רק על `html` — ראה `lessons.md` 2026-06-16/06-15), והרץ perf checklist (§8.11): כל `<img>` עם `src="*.webp"` + `width`/`height` + `loading="lazy" decoding="async"` (חוץ מה-LCP שמקבל `fetchpriority="high"`).
-10. עדכן: §4 sitemap status, §6 אם הוספת שדה, `docs/lessons.md §4` אם יש לקח חדש.
+10. **🔴 הוסף את הדף ל-`sitemap.xml`** (כלל-זהב 15): רשומת `<url>` חדשה ליד שאר הדפים מאותה משפחה (`events/`, `press/`, `artists/`…), ואז `python3 tools/seo/refresh_sitemap_lastmod.py` שממלא `lastmod` אמיתי ומתריע על כתובת בלי קובץ.
+11. עדכן: §4 sitemap status, §6 אם הוספת שדה, `docs/lessons.md §4` אם יש לקח חדש.
 
 **שיתוף קבצים:** לפני edit ל-`index.html`, `data/site.json`, `CLAUDE.md`, או כל קובץ shared — **Re-Read קודם**. סוכנים מקבילים יוצרים race conditions.
 
@@ -241,6 +244,11 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
     - **תמונה ≥80KB וגם ≥800px רוחב → חובה srcset:** צור וריאנטים `<name>-{480,768,1080}w.webp+avif` (רק רחבים מ-90% מהמקור: `magick src.webp -resize 480x -strip -quality 85 out.webp`, avif עם `-quality 60`), והוסף `srcset="...-480w.webp 480w, ..., <name>.webp <naturalW>w" sizes="100vw"`. `picture-upgrade.js` ממפה את ה-srcset ל-AVIF אוטומטית — חובה ש**כל** וריאנט webp יהיה לו אח avif.
 13. **כן** לעדכן את הקובץ הזה כש-state משתנה (sitemap, golden rules, contracts).
 14. **🔴 git commit אחרי כל מצב-עבודה תקין.** אסור לעבוד שעות בלי commit. **הנתונים** (`data/*.json`) הם מקור-האמת — הם תמיד שורדים; אבל **ה-renderer/CSS בתבנית** (`artists/<slug>/index.html`) הם קוד שאפשר לאבד ב-rebuild שגוי (קרה: כל לוגיקת ה-`buildExGroups`/grouping/`bio-col` נמחקה כי תבנית-מקור ישנה דרסה את zohar, ולא היה commit לשחזר ממנו). לכן: לפני כל rebuild גורף של דפי אומנים, ואחרי כל פיצ'ר/תיקון שעובד — `git add -A && git commit`. אם משחזרים תבנית, לשחזר מ-HEAD (git), לא מקובץ-אחר-שאולי-נסוג.
+15. **🔴 כל דף/פוסט חדש נכנס ל-`sitemap.xml` — באותו קומיט.** אירוע, כתבה, דף אומן, עמוד יצירה, תערוכה, גלריה, ספונסר, עמוד אינדקס — **כולם**. דף שלא ב-sitemap פשוט לא מתגלה בגוגל. הכלל חל גם על:
+    - **חשיפת דף מ-`_staging/`** — לא רק `mv`: להוסיף ל-sitemap **וגם** לתקן `canonical`/`og:url`/JSON-LD שעדיין מצביעים ל-`_staging` (קרה, ראה `docs/lessons.md` 2026-07-26).
+    - **מחיקת/הסרת דף** — למחוק את רשומת ה-`<url>` שלו, אחרת נשארת כתובת מתה ב-sitemap.
+    - **הרצה בסיום:** `python3 tools/seo/refresh_sitemap_lastmod.py` (אידמפוטנטי) — ממלא `lastmod` מתאריך הקומיט האחרון של כל עמוד, ומדפיס אזהרה לכל `<loc>` שאין לו קובץ. אחריו: `python3 tools/seo/og_gen.py` + `python3 tools/seo/inject.py` להשלמת ה-OG/מטא (`docs/seo.md`).
+    - **בדיקת שלמות (שנייה אחת):** מספר הרשומות ב-sitemap חייב להשתוות למספר עמודי ה-`index.html` המוגשים — `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" | wc -l` מול `grep -c "<loc>" sitemap.xml`.
 
 ---
 

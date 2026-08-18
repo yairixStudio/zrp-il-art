@@ -16,14 +16,18 @@
 
 ## קבצי שורש
 - `robots.txt` — מאפשר הכל, חוסם `/trash/`, מצביע ל-sitemap
-- `sitemap.xml` — 166 URLs (כל הדפים פרט ל-404), `lastmod` מ-git log
+- `sitemap.xml` — **227 URLs** (כל הדפים פרט ל-404; נכון ל-2026-08-18), `lastmod` מ-git log
+  - **🔴 כלל-זהב 15: כל דף/פוסט חדש נכנס ל-`sitemap.xml` באותו קומיט** — אירוע, כתבה, דף אומן, עמוד יצירה, תערוכה, גלריה, ספונסר, אינדקס. גם חשיפה מ-`_staging/` (+תיקון canonical/og:url/JSON-LD) וגם מחיקת דף (הסרת ה-`<url>`).
+  - בדיקת שלמות: `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" | wc -l` צריך להשתוות ל-`grep -c "<loc>" sitemap.xml`.
 
 ## רגנרציה (כשמוסיפים דף/יצירה/אומן)
 ```bash
+# 1. להוסיף ידנית רשומת <url> ל-sitemap.xml (ליד שאר הדפים מאותה משפחה)
+python3 tools/seo/refresh_sitemap_lastmod.py   # ממלא lastmod אמיתי + מתריע על <loc> בלי קובץ
 python3 tools/seo/og_gen.py     # מייצר JPG חדשים ל-/og/ + tools/seo/og-dims.json
 python3 tools/seo/inject.py     # מזריק/מעדכן את בלוק ה-SEO בכל הדפים (אידמפוטנטי)
-# לרענן sitemap: ראה הסקריפט ב-git history של הקומיט הזה (תחת tools/seo או /tmp)
 ```
+**`refresh_sitemap_lastmod.py`** (2026-08-18): לכל `<url>` לוקח את תאריך הקומיט האחרון שנגע ב-`index.html` שלו (קובץ עם שינויים לא-מקומיטים → תאריך השינוי בדיסק). אידמפוטנטי, ונוגע **רק** בטקסט שבתוך `<lastmod>` — סדר, `changefreq` ו-`priority` נשארים כמו שהם.
 - מקור התוכן: `data/*.json` (אותו schema של הדפים). שדה חסר → להוסיף ל-JSON.
 - תוכן עריכה ידני (כותרות/תיאורים מנוסחים): `tools/seo/overrides.json` (`{route: {title?, description}}`).
 - `inject.py` קורא overrides + og-dims מ-`tools/seo/` (fallback ל-`/tmp/`).
