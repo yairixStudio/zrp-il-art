@@ -123,6 +123,55 @@
           "alt": "טניה שין — עבודה מתוך התערוכה"
         }
       ],
+      "event_photos": [
+        {
+          "src": "images/events/close-look/moment-01.webp",
+          "alt": "מבקרת עם שקית מודפסת בלבבות מול חלון הראווה של הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-02.webp",
+          "alt": "שלוש משתתפות מול העבודה הוורודה בחלל הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-03.webp",
+          "alt": "שתי משתתפות מחייכות מול חלון הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-04.webp",
+          "alt": "שלוש משתתפות בסלפי בחלל הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-05.webp",
+          "alt": "שלושה מבקרים ליד קיר העבודות בגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-06.webp",
+          "alt": "שתי משתתפות ליד המראה בחלל הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-07.webp",
+          "alt": "שני מבקרים מול העבודות בחלל הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-08.webp",
+          "alt": "שתי משתתפות בחלל הגלריה על רקע העבודות"
+        },
+        {
+          "src": "images/events/close-look/moment-09.webp",
+          "alt": "שני מבקרים בסלפי מול קיר הציורים"
+        },
+        {
+          "src": "images/events/close-look/moment-10.webp",
+          "alt": "שתי משתתפות בסלפי בחלל הגלריה"
+        },
+        {
+          "src": "images/events/close-look/moment-11.webp",
+          "alt": "שתי משתתפות בסלפי מול העבודה PARTNERS"
+        }
+      ],
+      "_event_photos_note": "11 photos from the meeting itself (Figma 1560:5014 desktop / 1560:5030 mobile, imageRefs 1560:5046/5049/5052/5054/5055/5056/5057/5058/5059/5060/5065). Order puts the Figma triple first: moment-01 = left peek (5049), moment-02 = center (5052, data-tri-start=1), moment-03 = right peek (5046); the remaining 8 follow node order. Rendered as a second .tri band at the bottom of the page (in the Figma frames it sits above the artists strip). Mirrored statically in events/close-look/index.html.",
+      "figma_node_photos_desktop": "1560:5014",
+      "figma_node_photos_mobile": "1560:5030",
       "_image_note": "hero = event-5-cover-v2 triangle (1500px LCP). Triptych initial 3 = slide-01 + work-01 + work-02 (unchanged). Slides 02–07 from Figma 420:1757,1755,1750,1754,1753,1751; skipped 420:1749/1756 (dup slide-01/work-02) and 420:1752 (not in page set).",
       "artists": [
         {

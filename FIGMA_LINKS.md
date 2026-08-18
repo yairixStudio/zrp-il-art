@@ -62,7 +62,7 @@ legacy — מובייל:
 בושם how many (עיצוב נוכחי — תמונה אחת, בלי thumbs): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-599&m=dev
 
-בושם "סבלנות" (הקולפן — סקשן חדש; אין עמוד מוצר, מכירה בגלריה בלבד): Implement this design from Figma.
+בושם "סבלנות" (הקולפן — סקשן חדש; CTA → עמוד המוצר באתר הבישום): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-1169&m=dev
 
 > ⚠️ שני ה-nodes יושבים בתוך עמוד הבית המובייל החדש `1318:363`; שמות ה-nodes ב-Figma ("Exhibitions Archive") משקרים.
@@ -523,6 +523,14 @@ event close-look דסקטופ (`event-hmp1-desktop`): Implement this design from
 
 event close-look מובייל (`event-hmp1-mobile`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=420-1625&m=dev
+
+רה-דיזיין 2026-08 של אותו אירוע (`event- artist talk with בר כהן` — ⚠️ שם ה-node משקר, התוכן = tanya shin; **לא מומש** פרט לרצועת הצילומים):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1560-4367&m=dev  (דסקטופ)
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1560-4254&m=dev  (מובייל)
+
+רצועת הצילומים מהמפגש (11 תמונות) — **זה מה שמומש** (`.event-moments`):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1560-5014&m=dev  (דסקטופ)
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1560-5030&m=dev  (מובייל)
 
 ### how-many opening event (אירוע הפתיחה — כמה שותפים היו לך? | אוצרת קורין אברהם)
 

@@ -92,7 +92,7 @@ window.ArtworkLightbox.refreshFocusable()  // אחרי injection דינמי (ר�
 | `events/gala-night/` | ✅ 2026-08-18 — שתי גלריות ה-tri (`event-gallery-1/2`, title "gala night") + רצועת moments (13 תמונות, title "moments from the opening") |
 | `events/loneliness/` | ✅ 2026-08-18 — invitation tri ("the invitation") + הגלריה השנייה ("the atmosphere") + moments grid (14, "moments from the opening") |
 | `events/ktuba/` | ✅ 2026-08-18 — slideshow tri (3 צילומים, title "live art performance", `data-artwork-gallery="event-slideshow"`) |
-| `events/close-look/` | ❌ בכוונה — שקופיות ה-tri עטופות `<a>` לדף האומנית (קליק מרכז = ניווט) |
+| `events/close-look/` | ✅/❌ **שתי רצועות tri בעמוד:** `the artworks` = ❌ בכוונה (שקופיות עטופות `<a>` לדף האומנית, קליק מרכז = ניווט); `.event-moments` = ✅ 2026-08-18 (11 צילומים מהמפגש, `data-artwork-gallery="event-moments"`, title "moments from the meeting") |
 | `events/artist-talk/` | ❌ בכוונה — שקופיות ה-tri הן `<video>` (אוטו-פליי בקרוסלה), לא תמונות |
 
 ### 1.9 TODO
@@ -337,6 +337,7 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index));
 |---|---|
 | `pages/about.html` | 7 פורטרטים של ארז (Section 2) — peek-main-peek קלאסי |
 | `pages/events/ktuba.html` | slideshow band — 3 צילומים אמיתיים + 4 dots placeholder (סך 7 dots) |
+| `events/close-look/` | **שתיים בעמוד אחד** — `the artworks` (9 יצירות, שקופיות עטופות `<a>`) + `.event-moments` (11 צילומים מהמפגש, `data-tri-start="1"` כדי שהשלישייה הפותחת תהיה זו של הפיגמה; דוטים מוסתרים ≤768 per Figma) |
 
 ### 4.7 אסור
 

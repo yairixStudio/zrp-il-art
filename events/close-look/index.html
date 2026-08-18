@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="../../components/site-boot.css">
 <meta name="description" content="מבט מקרוב — מפגש פתוח עם האמנית והצלמת טניה שין בתוך התערוכה How Many Partners, גלריית כיכר דיזינגוף תל אביב, 2 ביוני, הכניסה חופשית.">
 <link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -109,6 +110,20 @@ body{text-transform:uppercase}
 a.artist-card:hover .img img{filter:brightness(.92)}
 a.artist-card:hover .name{color:var(--ink)}
 
+/* === MOMENTS — triptych of photos from the meeting itself (Figma 1560:5014 desktop / 1560:5030 mobile).
+   Same geometry as the artworks band (center 481x841, peeks 302x528 @ .6) but the gap between
+   center and peek is 72px in this frame ⇒ peek centers sit at ±463.5px. Photos, so cover
+   everywhere (no contain/light-bg treatment — these aren't artworks on a wall). */
+.event-moments{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:1248px}
+.event-moments .tri{--tri-max-w:1248px;--tri-bg:transparent;width:100%}
+.event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
+.event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
+.event-moments .tri-slide.is-prev{left:calc(50% - 463.5px)}
+.event-moments .tri-slide.is-next{left:calc(50% + 463.5px)}
+.event-moments .tri-slide.is-hidden{width:481px;height:841px}
+
 /* artist-link injected: every artist mention in copy links to its page (docs/artist-linking.md) */
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
@@ -126,6 +141,12 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-artworks .tri-slide.is-prev{left:calc(50% - 326px)}
   .event-artworks .tri-slide.is-next{left:calc(50% + 326px)}
   .event-artworks .tri-slide.is-hidden{width:360px;height:560px}
+  .event-moments .tri-frame{height:560px}
+  .event-moments .tri-slide.is-center{width:360px;height:560px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:220px;height:380px}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 326px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 326px)}
+  .event-moments .tri-slide.is-hidden{width:360px;height:560px}
 }
 
 @media (max-width:768px){
@@ -140,6 +161,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-artworks{order:3}
   .event-hero .h-body{order:4}
   .event-artists{order:5}
+  .event-moments{order:6}
 
   /* Hero card — full-width 520h, same flat scrim (Figma Frame 254/420:1646) */
   .event-hero .img-col{flex:none;width:100%;justify-content:center}
@@ -176,6 +198,19 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-artists .strip>a.artist-card{flex-basis:96px}
   .event-artists .strip .img{width:96px;height:80px}
   .event-artists .strip .name{font-size:16px;line-height:18px}
+
+  /* Moments gallery — stage 443h, center 216x378, peeks bleed off both edges (Figma 1560:5030).
+     No dots in the mobile frame: swipe only, and the peeks that run off-screen are the affordance. */
+  .event-moments{padding:8px 16px 32px}
+  .event-moments .inner{gap:16px}
+  .event-moments .tri{--tri-max-w:none;width:100%}
+  .event-moments .tri-frame{height:443px;max-width:none;width:100%}
+  .event-moments .tri-slide.is-center{width:216px;height:378px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .event-moments .tri-slide.is-hidden{width:216px;height:378px}
+  .event-moments .tri-dots{display:none}
 }
 
 @media (max-width:400px){
@@ -312,12 +347,51 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- MOMENTS — 11 photos from the meeting itself (Figma 1560:5014 desktop / 1560:5030 mobile).
+       Slide order is the Figma triple first: moment-01 = left peek, moment-02 = center
+       (data-tri-start="1"), moment-03 = right peek — so the opening frame matches the design.
+       Photos, not artworks: no artist link on the slides; center-click opens the lightbox
+       (docs/components.md §1.7 — event-photo sliders, approved site-wide 2026-08-18). -->
+  <section class="event-moments" aria-label="צילומים מהמפגש">
+    <div class="inner">
+      <div class="tri" data-tri-loop="true" data-tri-start="1" data-tri-lightbox="true" data-artwork-gallery="event-moments">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/close-look/moment-01.webp" srcset="../../images/events/close-look/moment-01-480w.webp 480w, ../../images/events/close-look/moment-01-768w.webp 768w, ../../images/events/close-look/moment-01.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="מבקרת עם שקית מודפסת בלבבות מול חלון הראווה של הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-02.webp" srcset="../../images/events/close-look/moment-02-480w.webp 480w, ../../images/events/close-look/moment-02-768w.webp 768w, ../../images/events/close-look/moment-02.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שלוש משתתפות מול העבודה הוורודה בחלל הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-03.webp" srcset="../../images/events/close-look/moment-03-480w.webp 480w, ../../images/events/close-look/moment-03-768w.webp 768w, ../../images/events/close-look/moment-03.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שתי משתתפות מחייכות מול חלון הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-04.webp" srcset="../../images/events/close-look/moment-04-480w.webp 480w, ../../images/events/close-look/moment-04-768w.webp 768w, ../../images/events/close-look/moment-04.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שלוש משתתפות בסלפי בחלל הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-05.webp" srcset="../../images/events/close-look/moment-05-480w.webp 480w, ../../images/events/close-look/moment-05-768w.webp 768w, ../../images/events/close-look/moment-05.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שלושה מבקרים ליד קיר העבודות בגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-06.webp" srcset="../../images/events/close-look/moment-06-480w.webp 480w, ../../images/events/close-look/moment-06-768w.webp 768w, ../../images/events/close-look/moment-06.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שתי משתתפות ליד המראה בחלל הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-07.webp" srcset="../../images/events/close-look/moment-07-480w.webp 480w, ../../images/events/close-look/moment-07-768w.webp 768w, ../../images/events/close-look/moment-07.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שני מבקרים מול העבודות בחלל הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-08.webp" srcset="../../images/events/close-look/moment-08-480w.webp 480w, ../../images/events/close-look/moment-08-768w.webp 768w, ../../images/events/close-look/moment-08.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שתי משתתפות בחלל הגלריה על רקע העבודות" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-09.webp" srcset="../../images/events/close-look/moment-09-480w.webp 480w, ../../images/events/close-look/moment-09-768w.webp 768w, ../../images/events/close-look/moment-09.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שני מבקרים בסלפי מול קיר הציורים" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-10.webp" srcset="../../images/events/close-look/moment-10-480w.webp 480w, ../../images/events/close-look/moment-10-768w.webp 768w, ../../images/events/close-look/moment-10.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שתי משתתפות בסלפי בחלל הגלריה" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/close-look/moment-11.webp" srcset="../../images/events/close-look/moment-11-480w.webp 480w, ../../images/events/close-look/moment-11-768w.webp 768w, ../../images/events/close-look/moment-11.webp 1125w" sizes="(max-width:768px) 216px, 481px" width="1125" height="2000" alt="שתי משתתפות בסלפי מול העבודה PARTNERS" data-artwork-title="moments from the meeting" draggable="false" decoding="async" loading="lazy">
+        </div>
+        <div class="tri-dots" role="tablist" aria-label="ניווט בצילומים מהמפגש">
+          <button type="button" class="tri-dot" aria-label="צילום 1" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot is-on" aria-label="צילום 2" role="tab" aria-selected="true"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 3" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 4" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 5" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 6" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 7" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 8" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 9" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 10" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 11" role="tab" aria-selected="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <site-footer></site-footer>
 
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js" defer></script>
 
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>
