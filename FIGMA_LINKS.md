@@ -664,6 +664,8 @@ press & events מובייל: Implement this design from Figma.
 
 ### עמוד ספונסר soos (`/sponsors/soos/`)
 
+> **🔴 2026-08-18: שני ה-nodes האלה שוכתבו בפיגמה לעיצוב sumii** (המעצבת מיחזרה את הפריימים — עכשיו הם נקראים "sumii - desktop/mobile"). עמוד soos באתר נשאר כפי שנבנה, בלי מקור חי בפיגמה. הקישורים למטה = היסטוריה.
+
 soos דסקטופ: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3287&m=dev
 
@@ -671,6 +673,16 @@ soos מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3480&m=dev
 
 > לוגו soos הוקטורי = node `1323:1013` (88×21.59, 4 vector paths — הורדה כ-SVG בלי imageRef; בעמוד הוא inline עם `fill:currentColor`). ⚠️ בפריים המובייל יש frames ריקים — `1318:3523` (Banner Text Container) + wrappers ריקים בשורות הקרדיט (`1318:3617`/`3621`) — שרידי תבנית ה-artist-talk, לא לבנות.
+
+### עמוד ספונסר/רזידנסי SUMII (`/sponsors/sumii/`)
+
+sumii דסקטופ ("sumii - desktop"): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3287&m=dev
+
+sumii מובייל ("sumii - mobile"): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3480&m=dev
+
+> ⚠️ **אותם node-ids של עמוד soos** — המעצבת שכתבה את הפריימים במקום (in-place). זיהוי לפי שם הפריים + תוכן, לא לפי node-id. לוגו Sumii הוקטורי = node `1546:3666` (88×40, 10 paths אחרי ניקוי — ה-path עם `fill-opacity:0.05` הוא זבל שהושמט; באתר inline כ-`<symbol id="sumii-mark">` + שני `<use>` עם `fill:currentColor`). כרטיס האוצרת: ה-fill השני (`889e3ab7…` — צילום זוהר רון) = leftover מוסתר; הגלוי = `7f582c67…` (קורין, אותו צילום של פורטרט האוצרת) עם crop `1b9e5e`. ל-hero (`13066b05…`) **אין scrim** בשני ה-breakpoints — התמונה כהה מעצמה (אומת ברינדור).
 
 ### עמוד אירוע The Space Between (`/events/the-space-between/`, מור צופיה געש 3.9.2026)
 
