@@ -63,7 +63,7 @@
 
 ### 1.5 תכונות
 
-קליק / Enter / Space פותחים. חיצים — prev/next. Esc — סוגר. Swipe במובייל. Focus trap + body scroll lock + focus restore. Preload הבאה/קודמת.
+קליק / Enter / Space פותחים. חיצים — prev/next. Esc — סוגר. Swipe במובייל. Focus trap + body scroll lock + focus restore. Preload הבאה/קודמת. **2026-08-18 (v6):** קליק על כל שטח ריק סוגר — כולל שולי ה-letterbox של `object-fit:contain` (תיבת ה-`<img>` נמתחת לרוחב המסך; `isOnRenderedImage` מחשב את מלבן הצילום המצויר מ-naturalWidth/Height ומתייחס לשוליים כרקע; קליק על הצילום עצמו עדיין מנווט כשיש `data-artwork-page`). **מיקום הגלילה נשמר בסגירה:** `alb-lock` (`height:100%` על html) מקריס את הדף ל-scrollTop 0 מאחורי הפופאפ — הרכיב שומר `scrollY` בנעילה ומשחזר instant בשחרור (עוקף `scroll-behavior:smooth`), וה-`focus()` המשוחזר רץ עם `preventScroll` — אין יותר אנימציית גלילה חזרה לסקשן.
 
 ### 1.6 API
 

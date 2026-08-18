@@ -78,6 +78,9 @@ legacy — מובייל:
 סקשן upcoming events (מובייל בלבד — frame `1318:476` בתוך פריים ההומפייג' `1318:363`; דסקטופ = אדפטציה): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-476&m=dev
 
+פוסטר כיכר המדינה (node `1318:3259` — הטקסט אפוי בתמונה; **2026-08-18 = `poster-hamedina-v3`**): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3259&m=dev
+
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
 
 סקשן upcoming events דסקטופ (עיגול ירוק + 3 כרטיסים + חיצים): Implement this design from Figma.
@@ -412,6 +415,9 @@ press the-shared-list מובייל (שם ה-frame "press-1-mobile"): Implement t
 
 מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1237-185&m=dev
+
+תמונת סדנה (בין הכתובת לרצועת האומנים; דסקטופ `1560:4169` — אין frame מובייל, האתר = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1560-4169&m=dev
 
 **artist talk — קָמִיעַ \| zohar ron (הקולפן, 9.9.2026, כיכר המדינה; נוסף 2026-08-06)** — ⚠️ **לא** לבלבל עם אירוע ה-how-many/דיזינגוף שלו (`1083:1817`/`1083:1704`); ה-slug כאן `zohar-ron-medina`.
 

@@ -86,6 +86,13 @@ a.ex-link:hover{opacity:.7}
 /* Venue address — Copperplate Light, 3 explicit lines (no auto-wrap) */
 .h-address{font-family:var(--cop);font-weight:300;font-size:16px;line-height:20px;text-align:center;max-width:100%}
 
+/* Workshop photo — Figma 1560:4169 Frame 268: 481×841 centered on white, padding 64/96.
+   Hidden leftover slideshow-dots in that frame are ignored. No 390 frame — mobile is an adaptation. */
+.event-photo{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-photo .frame{width:481px;max-width:100%;aspect-ratio:481/841;overflow:hidden}
+.event-photo .frame>picture{display:contents}
+.event-photo .frame img{width:100%;height:100%;object-fit:cover;display:block}
+
 /* Hero card — 492×744 portrait, bottom-up gradient scrim, white overlay stack */
 .event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
 .event-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
@@ -157,7 +164,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-body{order:4}
   .h-presented{order:5}
   .h-address{order:6}
-  .event-artists{order:7}
+  .event-photo{order:7}
+  .event-artists{order:8}
 
   /* Hero card — full-bleed 520h with a flat 40% scrim (Figma mobile fill) */
   .event-hero .card{width:100%;max-width:none;height:520px}
@@ -181,6 +189,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name{font-size:17px;width:313px;max-width:calc(100vw - 64px)}
   .event-hero .card .center-text .ex-name.heb{font-size:29px;line-height:1}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
+
+  .event-photo{padding:32px 16px}
 
   /* Artists strip (Figma mobile 96×80 thumbs) */
   .event-artists{padding:32px 16px;background:var(--white)}
@@ -270,6 +280,12 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="event-photo" aria-label="צילום מהסדנה">
+    <div class="frame">
+      <img src="../../images/events/alice-debellis/workshop.webp" srcset="../../images/events/alice-debellis/workshop-480w.webp 480w, ../../images/events/alice-debellis/workshop-768w.webp 768w, ../../images/events/alice-debellis/workshop.webp 962w" sizes="(max-width:768px) 92vw, 481px" width="962" height="1682" alt="אליס דה בליס ו-Benedetta לצד יצירת IL VIAGGIO DI RITORNO בגלריית כיכר המדינה" decoding="async" loading="lazy">
     </div>
   </section>
 

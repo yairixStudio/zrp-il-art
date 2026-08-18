@@ -46,6 +46,7 @@
   // Hebrew regex used to switch CTA font / direction
   var HEB_RE = /[֐-׿]/;
   var root, figure, imgWrap, imgEl, videoEl, altEl, ctaEl, captionEl, titleEl, artistEl, prevBtn, nextBtn, closeBtn;
+  var albIsOnRenderedImage = null;   // set in build(); shared with the img click handler
   function escapeHtml(s){
     if(s==null) return '';
     return String(s)
@@ -143,8 +144,12 @@
     // trigger declared one via data-artwork-page (e.g. lightbox opened from an
     // artist page). Lightboxes without it (the artwork's own page, gallery/press
     // images) stay non-navigating. See CLAUDE.md §15.
-    imgEl.addEventListener('click', function(){
-      if (currentPageHref) window.location.href = currentPageHref;
+    imgEl.addEventListener('click', function(e){
+      // Only navigate when the click is on the painted photo — the img element
+      // box includes the object-fit:contain letterbox, which closes instead.
+      if (currentPageHref && albIsOnRenderedImage && albIsOnRenderedImage(e)){
+        window.location.href = currentPageHref;
+      }
     });
     // Resize the image-wrapper to the image's actual rendered width whenever
     // the image finishes loading OR the viewport changes — keeps the CTA
@@ -156,17 +161,42 @@
       fitWrapperToImage();
     });
     // Backdrop / empty-area click closes (in addition to the X button and Escape).
-    // A pointerdown flag guards against a drag that starts on the image and
+    // "Content" = the painted photo/video/caption/CTA/alt + the control buttons.
+    // The <img> element box stretches to the viewport (object-fit:contain), so a
+    // click can land ON the img element yet OUTSIDE the painted photo — those
+    // letterbox margins count as backdrop too, otherwise the white space beside
+    // the photo is a dead zone.
+    // A pointerdown flag guards against a drag that starts on the photo and
     // releases on the backdrop being mistaken for a backdrop click.
+    var ALB_CONTENT_SEL = '.alb-caption, .alb-cta, .alb-alt, .alb-close, .alb-nav';
+    function isOnRenderedImage(e){
+      var r = imgEl.getBoundingClientRect();
+      var nw = imgEl.naturalWidth, nh = imgEl.naturalHeight;
+      if (!nw || !nh || !r.width || !r.height) return true; // can't tell → be conservative
+      var scale = Math.min(r.width / nw, r.height / nh);
+      var w = nw * scale, h = nh * scale;
+      var left = r.left + (r.width - w) / 2, top = r.top + (r.height - h) / 2;
+      return e.clientX >= left && e.clientX <= left + w &&
+             e.clientY >= top  && e.clientY <= top + h;
+    }
+    function isBackdropPoint(e){
+      var t = e.target;
+      if (t.nodeType !== 1) return false;
+      if (t.closest(ALB_CONTENT_SEL)) return false;
+      if (videoEl && !videoEl.hidden && (t === videoEl || videoEl.contains(t))) return false;
+      if (t === imgEl) return !isOnRenderedImage(e);
+      return true;
+    }
     var downOnBackdrop = false;
     root.addEventListener('pointerdown', function(e){
-      downOnBackdrop = !e.target.closest('.alb-figure, .alb-close, .alb-nav');
+      downOnBackdrop = isBackdropPoint(e);
     });
     root.addEventListener('click', function(e){
       if (!downOnBackdrop) return;
-      if (e.target.closest('.alb-figure, .alb-close, .alb-nav')) return;
+      if (!isBackdropPoint(e)) return;
       close();
     });
+    albIsOnRenderedImage = isOnRenderedImage;
     document.addEventListener('keydown', onKey);
     bindSwipe();
     bindScrollBlock();
@@ -194,7 +224,13 @@
     document.addEventListener('wheel', blockBackgroundScroll, {passive:false});
   }
 
+  var savedScrollY = 0;
   function lockPageScroll(){
+    // capture only on the first lock — a re-open while already locked would
+    // otherwise record the collapsed position (0) and restore to the top.
+    if (!document.documentElement.classList.contains('alb-lock')){
+      savedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    }
     document.documentElement.classList.add('alb-lock');
     document.body.classList.add('alb-lock');
   }
@@ -202,6 +238,15 @@
   function unlockPageScroll(){
     document.documentElement.classList.remove('alb-lock');
     document.body.classList.remove('alb-lock');
+    // .alb-lock (height:100%) collapses the scroll box, silently resetting the
+    // page to top while the lightbox is open. Restore the pre-open position
+    // instantly — inline scroll-behavior:auto beats a page-level
+    // `html{scroll-behavior:smooth}`, so the user never sees a scroll animation.
+    var doc = document.documentElement;
+    var prevBehavior = doc.style.scrollBehavior;
+    doc.style.scrollBehavior = 'auto';
+    window.scrollTo(0, savedScrollY);
+    doc.style.scrollBehavior = prevBehavior;
   }
 
   // Match the wrapper width to the image's *rendered* width (post-aspect/maxH
@@ -454,7 +499,9 @@
     if (videoEl){ try { videoEl.pause(); } catch(_){} }
     root.classList.remove('is-open');
     unlockPageScroll();
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    // preventScroll — unlockPageScroll already restored the exact position;
+    // a scrolling focus() would animate back down to the trigger.
+    if (lastFocus && lastFocus.focus) lastFocus.focus({preventScroll:true});
   }
   function nav(delta){ show(currentIdx + delta); }
 
