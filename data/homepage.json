@@ -121,9 +121,9 @@
      "VOLUME 2"
     ],
     "image": "images/homepage/perfume-promo/savlanut.webp",
-    "exclusive_he": "בלעדי לרכישה בגלריה בכיכר המדינה",
-    "cta_he": null,
-    "cta_url": null,
+    "exclusive_he": null,
+    "cta_he": "עוד על הבושם באתר",
+    "cta_url": "https://www.zrp.co.il/product/parfume-incense-amber-and-leather",
     "figma_node_desktop": null,
     "figma_node_mobile": "1318:1169",
     "figma_file": "XhGH289YTRcW811wrufRJz"

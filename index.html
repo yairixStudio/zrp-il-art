@@ -416,7 +416,6 @@ a.gallery-card{color:inherit;text-decoration:none}
 .pp-media{flex:0 0 492px;width:492px;min-width:0}
 .pp-media img{width:100%;height:auto;display:block}
 .pp-info{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;text-align:center}
-.perfume-promo--savlanut .pp-info{gap:32px}
 .pp-logo{width:214px;height:64px;flex:0 0 auto;display:block}
 .pp-text{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%}
 .pp-head{display:flex;flex-direction:column;align-items:center;gap:24px;width:100%}
@@ -430,9 +429,6 @@ a.gallery-card{color:inherit;text-decoration:none}
 .pp-sub-en{font-family:var(--cop);font-weight:300;font-size:20px;line-height:1.15;letter-spacing:.04em;color:var(--ink)}
 .pp-exbar{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--cop);font-weight:300;font-size:20px;line-height:1.15;letter-spacing:.04em;color:var(--ink)}
 .pp-exbar .dot{width:4px;height:4px;border-radius:50%;background:var(--ink)}
-.pp-exclusive{display:flex;flex-direction:column;align-items:center;gap:8px}
-.pp-exclusive .rule{width:32px;height:1px;background:var(--ink)}
-.pp-excl-txt{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.4;color:var(--ink)}
 .pp-cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;padding:16px 24px;border:1.4px solid var(--ink);font-family:var(--heb);font-weight:400;font-size:18px;line-height:1;color:var(--ink);transition:background .2s,color .2s}
 .pp-cta:hover{background:var(--ink);color:var(--white)}
 @media (max-width:1199px){
@@ -446,7 +442,6 @@ a.gallery-card{color:inherit;text-decoration:none}
   .perfume-promo{padding:32px var(--pad-x)}
   .perfume-promo-inner{gap:40px}
   .pp-info{gap:40px}
-  .perfume-promo--savlanut .pp-info{gap:16px}
   .pp-text{gap:8px}
   .pp-head{gap:8px}
   .pp-title{font-size:26px}
@@ -1110,7 +1105,7 @@ porta</div></a>
   </div>
 </section>
 
-<!-- PERFUME PROMO — סבלנות (the peeler) · Figma 1318:1169 (mobile; desktop = adaptation). אין עמוד מוצר — מכירה בגלריה בלבד, בלי כפתור/קישור רכישה -->
+<!-- PERFUME PROMO — סבלנות (the peeler) · Figma 1318:1169 (mobile; desktop = adaptation). CTA → עמוד המוצר באתר הבישום (2026-08-18) -->
 <section class="perfume-promo perfume-promo--savlanut" id="perfume-savlanut" aria-label="new perfume — בושם סבלנות — תערוכת הקולפן">
   <div class="perfume-promo-inner">
     <div class="pp-media">
@@ -1127,10 +1122,7 @@ porta</div></a>
         </div>
         <p class="pp-exbar" aria-label="exhibition — volume 2"><span>exhibition</span><span class="dot" aria-hidden="true"></span><span>volume 2</span></p>
       </div>
-      <div class="pp-exclusive">
-        <span class="rule" aria-hidden="true"></span>
-        <p class="pp-excl-txt heb" dir="rtl">בלעדי לרכישה בגלריה בכיכר המדינה</p>
-      </div>
+      <a class="pp-cta heb" dir="rtl" href="https://www.zrp.co.il/product/parfume-incense-amber-and-leather" target="_blank" rel="noopener">עוד על הבושם באתר</a>
     </div>
   </div>
 </section>
