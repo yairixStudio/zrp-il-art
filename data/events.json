@@ -973,6 +973,174 @@
       "card_title_en": "artist talk",
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina/alice-debellis): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"livay levi\").",
       "_image_note": "hero = imageRef 0b7f23e3… (מקור 2244×2804 — יצירה פיסולית בחלל מגורים) בקרופ cover ממורכז 984×1488 + וריאנטים 480/768. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (fill על הרקטנגל, כמו zohar-ron-medina). list-card 876×487 = קרופ רוחבי מאותו מקור (אין frame רשימה בפיגמה לאירוע הזה). thumb האומן = מיחזור images/artists/grid/livay-levi.webp; ב-Figma הריבוע יושב ב-y:0 בתוך חלון נמוך יותר ⇒ object-position 50% 0%."
+    },
+    {
+      "id": "michael-konovalenko",
+      "slug": "michael-konovalenko",
+      "title_he": "שיחת אמנים עם מיכאל קונובלנקו",
+      "title_en": "artist talk with michael konovalenko",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-17",
+      "date_he": "17 אוגוסט 2026",
+      "time_start": "18:30",
+      "time_end": "20:00",
+      "time_label": "20:00-18:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/michael-konovalenko/hero.webp",
+      "list_image": "images/events/michael-konovalenko/list-card.webp",
+      "description_he": [],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "michael konovalenko",
+          "slug": "michael-konovalenko",
+          "image": "images/artists/grid/michael-konovalenko.webp"
+        }
+      ],
+      "route": "events/michael-konovalenko/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1499:1127",
+      "figma_node_mobile": "1499:1014",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/zohar-ron-medina: פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה), רצועת אומן בודד. **אין פסקת גוף** — צומת הטקסט בפיגמה (1499:1178 דסקטופ / 1499:1092 מובייל) כתוב 'חסר טקסט' = פלייסהולדר של המעצבת; הכרעת משתמש: לבנות בלי בלוק .h-body בכלל (description_he נשאר מערך ריק עד שיימסר טקסט). שבירת הכותרת שונה בין הפריימים — דסקטופ 3 שורות (michael / konovalenko), מובייל 2 שורות ⇒ .dbr/.mbr. התאריך כבר עבר (17.8.2026) ולכן הכרטיס נושר מ-/events/ ומופיע רק בארכיון /press/ — זו התנהגות נכונה.",
+      "_image_note": "hero = imageRef 415dca17… (המקור 1098×1471, Display P3, צילום שחור-לבן). **שני קרופים** — הדסקטופ (492×744) חותך את הצדדים ושומר גובה מלא, המובייל (390×520) שומר רוחב מלא וחותך ~7px גובה ⇒ <picture> ידני עם source media=(max-width:768px): hero.{webp,avif} 984×1488 +480/768 לדסקטופ, hero-mobile.{webp,avif} 780×1040 +480 למובייל (⚠️ picture-upgrade.js מדלג על img שכבר ב-<picture> — כל webp חייב אח avif ידני). אומת RMSE 1.27% דסקטופ / 1.42% מובייל מול רינדורי ה-nodes אחרי מיסוך טקסט האוברליי. **scrim rgba(27,27,27,.5)** בשני ה-breakpoints (לא .4 של רוב המשפחה) — אומת שהוא מרונדר: פיקסלים נופלים בדיוק על src×0.5+13.5. list-card 876×487 = קרופ רוחבי מהמקור (אין frame כרטיס בפיגמה). thumb האומן = מיחזור images/artists/grid/michael-konovalenko.webp (RMSE 0.89% מול imageRef b5c58bb4), object-position 50% 0%; ה-fill d0ff0011 מתחתיו = leftover לא-נראה."
+    },
+    {
+      "id": "bar-cohen",
+      "slug": "bar-cohen",
+      "title_he": "שיחת אמנים עם בר כהן",
+      "title_en": "artist talk with bar cohen ‘akra’",
+      "list_title_en": "artist talk with bar cohen - ‘akra’",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-08-27",
+      "date_he": "27 אוגוסט 2026",
+      "time_start": "18:30",
+      "time_end": "20:30",
+      "time_label": "20:30-18:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/bar-cohen/hero.webp",
+      "list_image": "images/events/bar-cohen/list-card.webp",
+      "description_he": [
+        "לא כאן",
+        "מייצג אופנה מאת AKRA הבוחן את היחסים בין גוף, לבוש והמרחב שבו הם מתקיימים."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "bar cohen",
+          "slug": "bar-cohen",
+          "image": "images/artists/bar-cohen/portrait.webp"
+        }
+      ],
+      "route": "events/bar-cohen/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1515:1965",
+      "figma_node_mobile": "1515:1852",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/zohar-ron-medina): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"bar cohen ‘akra’\"), אבל המעצבת הוסיפה מקף לפני שם הסטודיו רק בפריים המובייל (\"bar cohen - ‘akra’\") — מיושם כ-span ‎.mdash שמוצג רק ≤768. AKRA = שם הסטודיו של בר כהן, לא אומן/ית נוספ/ת — אין קישור. הכותרת בדסקטופ 60/54 ולא 64/58: ב-64 השורה השנייה דורשת 687px בתיבה של 676 ונשברת לשלוש (הפיגמה עצמה גולשת ל-4 שורות ב-80px). 🔴 שתי צורות לכותרת, שתיהן verbatim מהפיגמה: title_en (בלי מקף) = הפריים של הדף עצמו; list_title_en (עם מקף) = הפריים של רשימת upcoming-events (node 1532:2491) — השדה הזה הוא שמזין את המירור #events-list-data ואת הכרטיס ב-/press/, כדי שהמירור יישאר מירור נאמן של ה-JSON ולא ייראה כסטייה.",
+      "_image_note": "hero = imageRef 5ca18581… (מקור 1200×1600 — טלוויזיה עטופה בניילון עם ברווז גומי, מתוך מייצג האופנה 'לא כאן'). ⚠️ שני קרופים: אספקט המקור (0.75) זהה בדיוק לכרטיס המובייל 390×520 ⇒ המובייל מציג את התמונה המלאה (hero-mobile 780×1040 + 480w) והדסקטופ חותך 71px מכל צד (hero 984×1488 + 768/480w) — <picture> ידני עם source media, ולכן לכל webp יש אח avif ידני. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (RMSE ממוסך 0.37% דסקטופ / 0.36% מובייל). list-card 876×487 = קרופ רוחבי מהמקור (y 245..912, כולל את הברווז; אין frame כרטיס בפיגמה). thumb האומנית = מיחזור images/artists/bar-cohen/portrait.webp (RMSE 0.80% מול imageRef cb0c1c8a…) — ⚠️ לא תמונת הגריד, שהיא צילום אחר לגמרי (RMSE 40.7%); object-position 50% 0%."
+    },
+    {
+      "id": "maria-artamonova",
+      "slug": "maria-artamonova",
+      "title_he": "שיחת אמנים עם מריה ארטמונובה",
+      "title_en": "artist talk with maria artamonova",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-09-07",
+      "date_he": "7 ספטמבר 2026",
+      "time_start": "18:30",
+      "time_end": "20:30",
+      "time_label": "20:30-18:30",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/maria-artamonova/hero.webp",
+      "list_image": "images/events/maria-artamonova/list-card.webp",
+      "description_he": [
+        "קשר רציני עם מקרמה",
+        "מוזמנים למפגש בגלריה, להשתתף בדיון מעמיק בנושא אמנות המקרמה וההשראה שמאחוריה.",
+        "במהלך הערב אמנית תחשוף את תהליך היצירה ותענה על שאלותיכם, תוך שיתוף חוויות ורעיונות מעוררי השראה."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "maria artamonova",
+          "slug": "maria-artamonova",
+          "image": "images/artists/grid/maria-artamonova.webp"
+        }
+      ],
+      "route": "events/maria-artamonova/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1514:1715",
+      "figma_node_mobile": "1514:1602",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/zohar-ron-medina): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"maria artamonova\") ⇒ <br> רגיל, בלי .dbr/.mbr; בדסקטופ ב-64px השם נשבר לבדו לשורה שלישית (בפיגמה 80px גולשים ל-4 שורות בתיבת 644 — הכיול האופטי נשמר, לא הומצא גודל ייעודי). שורת הפתיחה \"קשר רציני עם מקרמה\" מסומנת <span class=\"lead\"> (FbEzmel Regular 400) בתוך גוף Light — ⚠️ בפיגמה כל הבלוק Light אחיד; ההדגשה היא הכרעת בנייה, מבוטלת במחיקת ה-span. ⚠️ הטקסט בפיגמה כתוב \"אמנית תחשוף\" בלי ה\"א הידיעה — שוחזר verbatim.",
+      "_image_note": "hero = imageRef 5ab4a1fe… (מקור 1152×2048 — קיר מקרמה רב-צבעוני) בקרופ cover ממורכז 984×1488 + וריאנטים 480/768. אספקט המקור (0.5625) צר משני היעדים ⇒ שני חלונות ה-cover לוקחים רוחב מלא וממורכזים אנכית, וחלון המובייל (1152×1536) הוא תת-קבוצה של חלון הדסקטופ (1152×1742) ⇒ **קובץ hero יחיד לשני ה-breakpoints**, בלי <picture> ידני (אומת RMSE 0.68% דסקטופ / 0.66% מובייל מול רינדורי ה-nodes, עם אזור טקסט האוברליי ממוסך). scrim שטוח rgba(27,27,27,.4) בשני הפריימים. list-card 876×487 = קרופ רוחבי ממורכז מאותו מקור (אין frame רשימה בפיגמה). thumb האומנית = מיחזור images/artists/grid/maria-artamonova.webp (RMSE 2.06%), object-position 50% 0%."
+    },
+    {
+      "id": "jessica-tabarovsky",
+      "slug": "jessica-tabarovsky",
+      "title_he": "שיחת אמנים עם ג׳סיקה טברובסקי",
+      "title_en": "artist talk with jessica tabarovsky",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-09-10",
+      "date_he": "10 ספטמבר 2026",
+      "time_start": "19:00",
+      "time_end": "20:30",
+      "time_label": "20:30-19:00",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/jessica-tabarovsky/hero.webp",
+      "list_image": "images/events/jessica-tabarovsky/list-card.webp",
+      "description_he": [
+        "בין השפה המדוברת, שפת הציור, ושפת הגוף.",
+        "מפגש דו-כיווני של השראה בין האומנית לבין הקהל כיוצר.",
+        "מלווה ביין וגבינות."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "jessica tabarovsky",
+          "slug": "jessica-tabarovsky",
+          "image": "images/artists/grid/jessica-tabarovsky.webp"
+        }
+      ],
+      "route": "events/jessica-tabarovsky/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1499:1372",
+      "figma_node_mobile": "1499:1259",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ⇒ <br> רגיל, בלי .dbr/.mbr. הגוף = פסקה אחת עם שני <br> verbatim מהפיגמה, בלי שורת lead. מטא: גלריה FbEzmel Regular, תאריך+שעה Light בשני ה-breakpoints. אוברליי מובייל top:47.4% (Figma group y:189 מתוך 520), דסקטופ 50%. ⚠️ בפריים הדסקטופ הכותרת גולשת ל-4 שורות כי 80px לא נכנסים בתיבת ה-644; באתר ב-64px (הכיול האופטי) היא יוצאת 3 שורות — השבירה שהמעצבת כתבה נשמרת ושם האומנית נשבר לבדו.",
+      "_image_note": "🔴 scrim = גרדיאנט linear-gradient(0deg, rgba(0,0,0,.8), transparent) — כהה למטה, דוהה למעלה — ב**שני** ה-breakpoints (לא ה-scrim השטוח .4 של zohar-ron-medina/livay-levi). אומת מול רינדורי ה-nodes: אלפא נגזרת 0.011 ברצועה העליונה ו-0.763 בתחתונה (דסקטופ), 0.015/0.785 (מובייל) — תואם לחישוב. hero = imageRef 40cbee4a… (מבקרת מצלמת את ציורה של ג׳סיקה בחלל הגלריה; מקור 1530×2040). **שני קרופים** — הפריים המוביילי 390×520 הוא בדיוק יחס המקור (3:4) ולכן מציג את התצלום המלא, בעוד הדסקטופ 492×744 חותך 90.5px מכל צד ⇒ <picture> ידני עם source media=(max-width:768px) ל-avif ול-webp (כל webp עם אח avif — picture-upgrade.js מדלג על img שכבר עטוף). RMSE מול הרינדורים: 0.28% בשני ה-breakpoints אחרי מיסוך טקסט האוברליי הלבן (6.9%/9.0% בלי מיסוך). list-card 876×487 = קרופ רוחבי מאותו מקור ב-offset y:60 (אין frame כרטיס בפיגמה). thumb האומנית = מיחזור images/artists/grid/jessica-tabarovsky.webp (RMSE 0.81% מול imageRef 03eac4dc), object-position 50% 0%."
     }
   ]
 }

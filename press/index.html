@@ -58,9 +58,9 @@ body{text-transform:uppercase}
    live on /events/ (upcoming). The filter is the exact complement of the one there (`date>=today`),
    so an event moves from /events/ to /press/ on its own the day after it happens.
    The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
-   the static repeat(14,…) is only the no-JS fallback for all 27 cards.
+   the static repeat(16,…) is only the no-JS fallback for all 31 cards.
    ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(14,auto));grid-auto-flow:column;gap:48px;direction:rtl}
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(16,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -186,12 +186,30 @@ body{text-transform:uppercase}
      the-space-between (3.9) postdates the frame and was added at the top. -->
 <section class="cards" id="press-list" aria-label="press and events archive">
 
+  <a class="pcard" data-kind="event" data-date="2026-09-10" href="../events/jessica-tabarovsky/">
+    <div class="img"><img src="../images/events/jessica-tabarovsky/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with jessica tabarovsky</p>
+      <span class="date">10.9.2026</span>
+    </div>
+  </a>
+
   <a class="pcard" data-kind="event" data-date="2026-09-09" href="../events/zohar-ron-medina/">
-    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk<br>with zohar ron</p>
       <span class="date">9.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-09-07" href="../events/maria-artamonova/">
+    <div class="img"><img src="../images/events/maria-artamonova/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with maria artamonova</p>
+      <span class="date">7.9.2026</span>
     </div>
   </a>
 
@@ -213,6 +231,15 @@ body{text-transform:uppercase}
     </div>
   </a>
 
+  <a class="pcard" data-kind="event" data-date="2026-08-27" href="../events/bar-cohen/">
+    <div class="img"><img src="../images/events/bar-cohen/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with bar cohen - ‘akra’</p>
+      <span class="date">27.8.2026</span>
+    </div>
+  </a>
+
   <a class="pcard" data-kind="event" data-date="2026-08-19" href="../events/noemi-safir/">
     <div class="img"><img src="../images/events/noemi-safir/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
@@ -228,6 +255,15 @@ body{text-transform:uppercase}
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk<br>with livay levi</p>
       <span class="date">18.8.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-08-17" href="../events/michael-konovalenko/">
+    <div class="img"><img src="../images/events/michael-konovalenko/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with michael konovalenko</p>
+      <span class="date">17.8.2026</span>
     </div>
   </a>
 

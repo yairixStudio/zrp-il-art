@@ -763,6 +763,46 @@ livay levi מובייל: Implement this design from Figma.
 
 > ההכרעה שנגזרה מהפריים: קבוצה ייעודית "הקולפן | interdependence" עם סטייטמנט משותף + כרטיס יחיד שהקרדיט שלו "ליוואי לוי × הדס טובל". המימוש = רשומה אחת עם `artist_pages`+`collab` (ראה CLAUDE.md §6).
 
+### עמוד אירוע Artist Talk with Michael Konovalenko (`/events/michael-konovalenko/`, הקולפן / כיכר המדינה 17.8.2026)
+
+michael konovalenko דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1499-1127&m=dev
+
+michael konovalenko מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1499-1014&m=dev
+
+> ⚠️ צומת הגוף (`1499:1178` דסקטופ / `1499:1092` מובייל) כתוב "חסר טקסט" — פלייסהולדר; הדף נבנה **בלי בלוק `.h-body`** כלל. ה-scrim כאן `rgba(27,27,27,.5)` (לא .4), הכותרת נשברת אחרת בכל breakpoint, ושני הקרופים של הגיבור שונים ⇒ `<picture>` ידני. הפריים הריק `1499:1037` בתוך ה-hero המוביילי = שריד תבנית, לא נבנה.
+
+### עמוד אירוע Artist Talk with Bar Cohen ‘AKRA’ (`/events/bar-cohen/`, הקולפן / כיכר המדינה 27.8.2026)
+
+bar cohen דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1515-1965&m=dev
+
+bar cohen מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1515-1852&m=dev
+
+> ⚠️ הכותרת שונה בין הפריימים במקף אחד בלבד: דסקטופ `1515:1997` = "bar cohen ‘akra’", מובייל `1515:1910` = "bar cohen - ‘akra’" (וכך גם כרטיס הרשימה `1532:2491`) ⇒ `.mdash` שמוצג רק ≤768. הכותרת בקוד 60/54 ולא 64/58 — ראה §4. הפריים הריק `1515:1875` = שריד תבנית.
+
+### עמוד אירוע Artist Talk with Maria Artamonova (`/events/maria-artamonova/`, הקולפן / כיכר המדינה 7.9.2026)
+
+maria artamonova דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1514-1715&m=dev
+
+maria artamonova מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1514-1602&m=dev
+
+> ⚠️ צומת הגוף (`1514:1766`) כולו FbEzmel Light — שורת "קשר רציני עם מקרמה" **אינה** מודגשת בפיגמה; ה-`.lead` בקוד הוא הכרעת בנייה. "אמנית תחשוף" (בלי ה"א ידיעה) שוחזר verbatim — שאלה פתוחה למעצבת. הפריים הריק `1514:1625` = שריד תבנית.
+
+### עמוד אירוע Artist Talk with Jessica Tabarovsky (`/events/jessica-tabarovsky/`, הקולפן / כיכר המדינה 10.9.2026)
+
+jessica tabarovsky דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1499-1372&m=dev
+
+jessica tabarovsky מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1499-1259&m=dev
+
+> ⚠️ ה-scrim כאן הוא **הגרדיאנט** `linear-gradient(0deg, rgba(0,0,0,.8), transparent)` בשני ה-breakpoints, למרות שב-Figma הוא רשום מתחת ל-image fill (מה שנראה כמוסתר) — אומת ברינדור ה-nodes שהוא נצבע. שני קרופי גיבור ⇒ `<picture>` ידני.
+
 ---
 
-*Last review: 2026-08-12 (אירועי אוגוסט–ספטמבר + היצירה המשותפת הראשונה).*
+*Last review: 2026-08-18 (ארבעת אירועי הקולפן החדשים — michael konovalenko / bar cohen / maria artamonova / jessica tabarovsky).*

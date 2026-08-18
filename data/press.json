@@ -3,6 +3,58 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-jessica-tabarovsky-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ג׳סיקה טברובסקי",
+      "title_en": "artist talk with jessica tabarovsky",
+      "date": "2026-09-10",
+      "cover_image": "images/events/jessica-tabarovsky/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). האירוע עתידי ולכן בפועל מסונן החוצה מ-/press/ ומוצג ב-/events/ עד שיעבור התאריך.",
+      "route": "events/jessica-tabarovsky/"
+    },
+    {
+      "id": "event-maria-artamonova-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם מריה ארטמונובה",
+      "title_en": "artist talk with maria artamonova",
+      "date": "2026-09-07",
+      "cover_image": "images/events/maria-artamonova/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). האירוע עתידי ולכן בפועל מסונן החוצה מ-/press/ ומוצג ב-/events/ עד שיעבור התאריך.",
+      "route": "events/maria-artamonova/"
+    },
+    {
+      "id": "event-bar-cohen-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם בר כהן",
+      "title_en": "artist talk with bar cohen - ‘akra’",
+      "date": "2026-08-27",
+      "cover_image": "images/events/bar-cohen/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). כותרת הכרטיס = הנוסח עם המקף מפריים הרשימה בפיגמה; ב-events.json הכותרת הקנונית של הדף היא בלי מקף.",
+      "route": "events/bar-cohen/"
+    },
+    {
+      "id": "event-michael-konovalenko-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם מיכאל קונובלנקו",
+      "title_en": "artist talk with michael konovalenko",
+      "date": "2026-08-17",
+      "cover_image": "images/events/michael-konovalenko/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). האירוע כבר עבר ולכן ה-IIFE ב-/press/ לא מסנן אותו החוצה — זה הכרטיס היחיד מהרביעייה שנראה שם היום.",
+      "route": "events/michael-konovalenko/"
+    },
+    {
       "id": "event-livay-levi-talk",
       "type": "event",
       "tag_en": "gallery event",
