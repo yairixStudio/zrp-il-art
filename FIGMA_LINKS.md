@@ -97,6 +97,13 @@ legacy — מובייל:
 הסקשן המצומצם — 9 כרטיסים (כל העיתונות + 2 פתיחות) + כפתור "more press & events" (מובייל; דסקטופ = אנטומיית `/press/`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1322-258&m=dev
 
+### Homepage — סקשן ספונסר `#sumii` (טיזר רזידנסי SUMII, מעל `#soos`; 2026-08-18) ✅ המצב הנוכחי
+
+סקשן sumii מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-316&m=dev
+
+> ⚠️ **ה-node `1318:316` שוכתב in-place** — עד 2026-08-18 הוא היה המקור של סקשן `#soos` (כך מתועד בהיסטוריה); עכשיו הוא סקשן sumii. לסקשן soos אין יותר מקור חי בפיגמה. שם ה-node עדיין "Exhibitions Archive" — משקר. זיהוי לפי תוכן, לא לפי node-id/שם.
+
 ### Homepage — `#press` redesign v3 (רשימת הכרטיסים, 2026-07-14) — legacy, הוחלף ב-press-9
 
 press & events דסקטופ (19 כרטיסים, 2 עמודות): Implement this design from Figma.

@@ -345,8 +345,28 @@
   "figma_node_desktop": "412:334",
   "figma_node_mobile": "640:249"
  },
+ "sumii_sponsor": {
+  "_note": "Section #sumii above #soos (user request 2026-08-18). Mobile = Figma 1318:316 — ⚠️ the node was rewritten in-place over the old soos-section source (same id, new identity); desktop = adaptation (thumbs 158px/gap 16 like #soos). Lockup = gallery name / X / sumii logo (inline SVG, currentColor). Thumbs object-fit:contain (Figma FIT). Clickable → sponsors/sumii/: logo, title row, strip, read more; website external; curator name → curator page.",
+  "sponsor_id": "sumii",
+  "gname_en": "the art gallery by erez zielinski rozen",
+  "x_en": "x",
+  "title_en": "pop up art residency",
+  "dates_en": "31.08.2026 - 05.10.2026",
+  "sponsor_route": "sponsors/sumii/",
+  "website": "https://www.sumiiworld.com",
+  "curator_credit_he": "אוצרות: קורין אברהם",
+  "curator_slug": "korin-avraham",
+  "cta_en": "read more",
+  "images": [
+   "images/sponsors/sumii/hero-thumb.webp",
+   "images/sponsors/sumii/gallery-02.webp",
+   "images/sponsors/sumii/gallery-01.webp"
+  ],
+  "figma_node_mobile": "1318:316",
+  "figma_node_desktop": null
+ },
  "soos_sponsor": {
-  "_note": "Section #soos above #tribe-teaser (user decision 2026-08-04; redesign prompt 11). Mobile = Figma 1318:316 verbatim; desktop = adaptation (thumbs in tribe-teaser geometry 158px/gap 16). Images + logo reused from sponsor page. case_exception strings stay lowercase (.soos-brand).",
+  "_note": "Section #soos above #tribe-teaser (user decision 2026-08-04; redesign prompt 11). Mobile = Figma 1318:316 verbatim (⚠️ 2026-08-18: that node was since rewritten in-place to the sumii section — the soos section no longer has a live Figma source); desktop = adaptation (thumbs in tribe-teaser geometry 158px/gap 16). Images + logo reused from sponsor page. case_exception strings stay lowercase (.soos-brand).",
   "sponsor_id": "soos",
   "title_he": "הקולפן",
   "x_en": "x",
