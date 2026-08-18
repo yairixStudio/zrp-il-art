@@ -58,9 +58,9 @@ body{text-transform:uppercase}
    live on /events/ (upcoming). The filter is the exact complement of the one there (`date>=today`),
    so an event moves from /events/ to /press/ on its own the day after it happens.
    The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
-   the static repeat(13,…) is only the no-JS fallback for all 25 cards.
+   the static repeat(14,…) is only the no-JS fallback for all 27 cards.
    ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(13,auto));grid-auto-flow:column;gap:48px;direction:rtl}
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(14,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -327,6 +327,15 @@ body{text-transform:uppercase}
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk with tal nehoray</p>
       <span class="date">29.6.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" href="the-shared-list/">
+    <div class="img"><img src="../images/works/v2/zohar-ron-5.webp" srcset="../images/works/v2/zohar-ron-5-480w.webp 480w, ../images/works/v2/zohar-ron-5-768w.webp 768w, ../images/works/v2/zohar-ron-5.webp 1080w" sizes="(max-width:768px) 171px, 292px" width="1080" height="1603" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag"><span>פורטפוליו</span><span class="tag-sep">|</span><span>אמנות</span></span>
+      <p class="ttl">הרשימה המשותפת // 25.6.26</p>
+      <span class="date">25.6.2026</span>
     </div>
   </a>
 

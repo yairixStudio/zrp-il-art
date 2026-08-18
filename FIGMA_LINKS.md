@@ -389,6 +389,14 @@ press peeling-a-layer מובייל: Implement this design from Figma.
 homepage `#press` גריד מעודכן (2026-07-09, 11 כרטיסים, בלי artist-talk): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=551-371&m=dev
 
+### the-shared-list — פורטפוליו | אמנות (25.6.2026, "הרשימה המשותפת // 25.6.26", על תערוכת הקולפן)
+
+press the-shared-list דסקטופ (⚠️ שם ה-frame "press-1-desktop" — משקר, זו כתבה חדשה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1537-2880&m=dev
+
+press the-shared-list מובייל (שם ה-frame "press-1-mobile"): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1537-3091&m=dev
+
 ---
 
 ## 📅 אירועי גלריה (/events/:slug)

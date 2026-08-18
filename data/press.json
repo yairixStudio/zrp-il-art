@@ -215,6 +215,26 @@
       "figma_home_card": "XhGH289YTRcW811wrufRJz::1124:1389"
     },
     {
+      "id": "portfolio-the-shared-list",
+      "type": "press",
+      "source_he": "פורטפוליו",
+      "source_en": "Portfolio",
+      "tag_he": "אמנות",
+      "title_he": "הרשימה המשותפת // 25.6.26",
+      "title_en": null,
+      "subtitle_he": "אהוד בנאי ורונן תנחום בגן הלאומי בית גוברין; בשבח הצללים במוזיאון טיקוטין; אש זרה וקדושים תהיו בגלריה המקרר; רגד סואעד ומורן דעקה בגלריה השיתופית כברי; נאוה הראל־שושני ודובי הראל בגלריה העמקים; הקולפן בגלריה זלינסקי רוזן; תערוכת סיום הרזידנסי בגלריה Startup",
+      "url": "https://www.prtfl.co.il/archives/254898",
+      "date": "2026-06-25",
+      "author_he": null,
+      "cover_image": "images/works/v2/zohar-ron-5.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": true,
+      "route": "press/the-shared-list/",
+      "_note": "כתבת roundup של פורטפוליו על הקולפן. שלוש תמונות הכתבה = מיחזור images/works/v2 (zohar-ron-5 / nir-giorgio-levin-8 / elsa-ars-brush-1) — אומת RMSE מול ה-imageRefs בפיגמה; אפס תמונות חדשות.",
+      "figma_article_desktop": "XhGH289YTRcW811wrufRJz::1537:2880",
+      "figma_article_mobile": "XhGH289YTRcW811wrufRJz::1537:3091"
+    },
+    {
       "id": "event-how-many-artist-talk",
       "type": "event",
       "tag_en": "gallery event",
