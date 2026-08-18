@@ -615,6 +615,19 @@ galleries dizengoff דסקטופ: Implement this design from Figma.
 galleries dizengoff מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1473-447&m=dev
 
+#### כרטיס רזידנסי SUMII בסקשן gallery exhibitions (נוסף 2026-08-18, → `sponsors/sumii/`)
+
+הכרטיס עצמו: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1546-3894&m=dev
+
+הסקשן המלא דסקטופ (how-many + sumii): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1473-360&m=dev
+
+הסקשן במובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1473-509&m=dev
+
+> תאריכי הכרטיס בפיגמה = "05.10.2026 - 31.08.2026" (סוף-לפני-התחלה, בשני הפריימים) — הועתקו verbatim; הפוך מכרטיס how-many הסמוך ומטיזר ההומפייג'. ראה `docs/todo.md`.
+
 ---
 
 ## ❌ ללא Figma (לא קיים עיצוב)
