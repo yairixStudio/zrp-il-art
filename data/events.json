@@ -546,8 +546,17 @@
       ],
       "route": "events/risa-and-noemi/",
       "homepage_visible": true,
+      "event_photos": [
+        {
+          "src": "images/events/risa-and-noemi/moment-01.webp",
+          "alt": "ריסה ברוק עוז ונעמי ספיר בחלל גלריית כיכר דיזינגוף על רקע עבודות התערוכה"
+        }
+      ],
+      "_event_photos_note": "One photo from the event itself (imageRef c6d4b822…). Both frames draw two tiles carrying that same photo (duplicate placeholder) plus an empty faded peek, so the site renders it once at the drawn tile geometry (481×841 desktop; mobile drawn at 152×266 for a 2-up, scaled to the site's 216×378 single tile). A second imageRef (74f7d4a0…, visitors in the gallery) sits hidden *under* the top fill on desktop only and is absent from the mobile frame — treated as leftover, not published (user decision 2026-08-19). Mirrored statically in events/risa-and-noemi/index.html.",
       "figma_node_desktop": "1083:1543",
       "figma_node_mobile": "1083:1432",
+      "figma_node_photos_desktop": "1578:5349",
+      "figma_node_photos_mobile": "1578:5334",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artists talk"
     },
