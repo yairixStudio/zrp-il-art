@@ -9,6 +9,7 @@
 <link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css">
 <meta name="description" content="מה שנשאר — אירוע אינטימי בתערוכה How Many Partners Have You Had? עם ריסה ברוק עוז ונעמי ספיר, גלריית כיכר דיזינגוף, 24 ביולי 2026, 11:00.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
@@ -123,6 +124,21 @@ a.ex-link:hover{opacity:.7}
 a.artist-card:hover .img img{filter:brightness(.92)}
 a.artist-card:hover .name{color:var(--ink)}
 
+/* === MOMENTS — photo from the event itself (Figma 1578:5349 desktop / 1578:5334 mobile,
+   inside the artworks container, above the artists strip).
+   The frames draw two tiles carrying the *same* photo (duplicate placeholder) plus an empty
+   faded peek, so the band renders that one photo once, at the drawn tile geometry
+   (481×841 = ratio .572; the mobile tile is drawn at 152×266 for a 2-up, scaled to the
+   site's 216×378 mobile photo tile since only one photo is shown).
+   No anchor on the photo (event-photo convention, like close-look) — it opens the
+   lightbox, and both artists are linked in the strip right below. === */
+.event-moments{padding:96px var(--pad-x) 56px;background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;max-width:var(--max)}
+.event-moments figure{width:481px;max-width:100%;aspect-ratio:481/841;overflow:hidden;background:#f3f1ee}
+/* picture-upgrade.js wraps the <img> at runtime — keep the wrapper transparent to layout */
+.event-moments figure picture{display:contents}
+.event-moments figure img{width:100%;height:100%;object-fit:cover;cursor:zoom-in}
+
 /* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
@@ -147,6 +163,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name{font-size:20px}
   .event-hero .card .center-text .en{font-size:30px}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
+  .event-moments{padding:64px var(--pad-x) 40px}
+  .event-moments figure{width:360px}
 }
 @media (max-width:1050px) and (min-width:769px){
   .h-title{font-size:34px;line-height:34px}
@@ -168,7 +186,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-address{order:6}
   .linger{order:7}
   .h-note{order:8}
-  .event-artists{order:9}
+  .event-moments{order:9}
+  .event-artists{order:10}
 
   /* Hero card — full-bleed 520h with a flat 40% scrim (Figma mobile fill) */
   .event-hero .card{width:100%;max-width:none;height:520px}
@@ -196,8 +215,12 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name.heb{font-size:29px;line-height:1}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
 
+  /* Moments band — Figma artworks container: 32px top, 24px gap down to the artists strip */
+  .event-moments{padding:32px 16px 0}
+  .event-moments figure{width:216px}
+
   /* Artists strip (Figma mobile 96×80 thumbs) */
-  .event-artists{padding:32px 16px;background:var(--white)}
+  .event-artists{padding:24px 16px 32px;background:var(--white)}
   .event-artists .head .label{font-size:16px}
   .event-artists .strip>a.artist-card{flex-basis:112px}
   .event-artists .strip .img{width:96px;height:80px}
@@ -282,6 +305,22 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- MOMENTS — photo from the event itself (Figma 1578:5349 desktop / 1578:5334 mobile).
+       Both drawn tiles carry the same photo (duplicate placeholder), so it renders once.
+       Click opens the shared artwork lightbox; the artists themselves are linked below. -->
+  <section class="event-moments" aria-label="צילומים מהאירוע">
+    <div class="inner" data-artwork-gallery="event-moments">
+      <figure>
+        <img src="../../images/events/risa-and-noemi/moment-01.webp"
+             srcset="../../images/events/risa-and-noemi/moment-01-480w.webp 480w, ../../images/events/risa-and-noemi/moment-01-768w.webp 768w, ../../images/events/risa-and-noemi/moment-01.webp 1152w"
+             sizes="(max-width:768px) 216px, 481px" width="1152" height="1536"
+             alt="ריסה ברוק עוז ונעמי ספיר בחלל גלריית כיכר דיזינגוף על רקע עבודות התערוכה"
+             data-artwork-title="artists talk with risa brooke oze and noemi safir"
+             decoding="async" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
   <section class="event-artists" aria-label="האומנים באירוע">
     <div class="inner">
       <div class="head">
@@ -310,6 +349,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/artwork-lightbox.js" defer></script>
 <script src="../../components/embed-iframe.js" defer></script>
 </body>
 </html>
