@@ -54,7 +54,8 @@ body{text-transform:uppercase}
   max-width:var(--max);margin:0 auto;
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
   /* chronological order flows DOWN the right column first, then the left (Figma 1318:1761:
-     col2 = alice/anat/zohar, col1 = amnon/zohar-medina) — same RTL column trick as /press/.
+     right col = michael/livay/noemi/bar-cohen/hadas, left col = the-space-between/maria/amnon/
+     zohar-medina/jessica) — same RTL column trick as /press/.
      JS sets the exact row count (ceil(n/2)); repeat(3,auto) is only a no-JS fallback. */
   grid-auto-flow:column;direction:rtl;grid-template-rows:var(--ev-rows,repeat(3,auto));
   gap:48px;
@@ -80,6 +81,10 @@ body{text-transform:uppercase}
 .ev-card .tag .sep{display:none}
 .ev-card .tag.tag--wrap .t2{white-space:normal}
 .ev-card .ttl{font-family:var(--cop);font-weight:400;font-size:13px;line-height:1.5;letter-spacing:.02em}
+/* Hebrew card title — the designer words some cards in Hebrew instead of English
+   (the-space-between: Figma 1318:3227 desktop / 1455:2573 mobile).
+   Hebrew keeps Figma px verbatim (16 / 14); only Latin gets the optical calibration. */
+.ev-card .ttl--he{font-family:var(--heb);font-weight:400;font-size:16px;line-height:1.35;letter-spacing:0;direction:rtl;text-transform:none}
 .ev-card .date{font-family:var(--cop);font-weight:300;font-size:11.5px;line-height:1.2;letter-spacing:.02em}
 .ev-card .date--tbd{font-family:var(--heb);font-weight:400;font-size:14px;direction:rtl;text-transform:none;letter-spacing:0}
 
@@ -114,6 +119,7 @@ body{text-transform:uppercase}
   .hero h1{font-size:27px;line-height:1.1}
   .ev-list{grid-template-columns:1fr;grid-auto-flow:row;direction:ltr;grid-template-rows:none;gap:24px;padding:24px 16px 32px}
   .ev-card .im{flex:0 0 171px;aspect-ratio:171/108}
+  .ev-card .ttl--he{font-size:14px}
 }
 </style>
 <!-- SEO:auto:start -->
@@ -155,10 +161,11 @@ body{text-transform:uppercase}
 </section>
 
 <!-- EVENTS LIST — rendered from inline data (file:// can't fetch JSON).
-     Mirrors data/events.json; date >= today (or date_tbd) survives the filter,
+     Mirrors data/events.json; date >= today (or date_tbd, or pinned) survives the filter,
      sorted ascending (TBD events, if any, last). Desktop: chronological order flows
-     down the RIGHT column first via RTL column grid — matches Figma 1318:1761
-     (col2 = alice/anat/zohar, col1 = amnon/zohar-medina); mobile = same order, one column (1318:2012).
+     down the RIGHT column first via RTL column grid — matches Figma 1318:1761, whose 10 cards read
+     right column 17.8→28.8 (michael/livay/noemi/bar-cohen/hadas), left column 3.9→10.9
+     (the-space-between/maria/amnon/zohar-medina/jessica); mobile = same order, one column (1318:2012).
      `title_en` here mirrors events.json `list_title_en` when that field exists, else `title_en` —
      the designer sometimes words the card differently from the event page's own frame
      (bar-cohen: "…bar cohen - ‘akra’" on the card, no dash on the page). -->
@@ -180,16 +187,16 @@ body{text-transform:uppercase}
  {"slug":"alice-debellis","date":"2026-08-06","title_en":"artist talk with alice debellis","gallery_id":"medina","img":"images/events/alice-debellis/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אליס דה בליס — גלריית כיכר המדינה"},
  {"slug":"anat-wegier","date":"2026-08-07","title_en":"artist talk with anat wégier","gallery_id":"dizengoff","img":"images/events/anat-wegier/card.webp","w":584,"h":325,"alt":"שיחת אמנים עם ענת ויז׳ייה — גלריית כיכר דיזינגוף"},
  {"slug":"zohar-ron","date":"2026-08-10","title_en":"artist talk with zohar ron","gallery_id":"dizengoff","img":"images/events/zohar-ron/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר דיזינגוף"},
- {"slug":"michael-konovalenko","date":"2026-08-17","title_en":"artist talk with michael konovalenko","gallery_id":"medina","img":"images/events/michael-konovalenko/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם מיכאל קונובלנקו — גלריית כיכר המדינה"},
- {"slug":"livay-levi","date":"2026-08-18","title_en":"artist talk with livay levi","gallery_id":"medina","img":"images/events/livay-levi/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם ליוואי לוי — גלריית כיכר המדינה"},
+ {"slug":"michael-konovalenko","date":"2026-08-17","pinned":true,"title_en":"artist talk with michael konovalenko","gallery_id":"medina","img":"images/events/michael-konovalenko/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם מיכאל קונובלנקו — גלריית כיכר המדינה"},
+ {"slug":"livay-levi","date":"2026-08-18","pinned":true,"title_en":"artist talk with livay levi","gallery_id":"medina","img":"images/events/livay-levi/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם ליוואי לוי — גלריית כיכר המדינה"},
  {"slug":"noemi-safir","date":"2026-08-19","title_en":"artist talk with noemi safir","gallery_id":"medina","img":"images/events/noemi-safir/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם נעמי ספיר — גלריית כיכר המדינה"},
- {"slug":"bar-cohen","date":"2026-08-27","title_en":"artist talk with bar cohen - ‘akra’","gallery_id":"medina","img":"images/events/bar-cohen/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם בר כהן — גלריית כיכר המדינה"},
- {"slug":"hadas-tuval","date":"2026-08-28","title_en":"artist talk with hadas tuval","gallery_id":"medina","img":"images/events/hadas-tuval/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם הדס טובל — גלריית כיכר המדינה"},
- {"slug":"the-space-between","date":"2026-09-03","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
- {"slug":"maria-artamonova","date":"2026-09-07","title_en":"artist talk with maria artamonova","gallery_id":"medina","img":"images/events/maria-artamonova/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם מריה ארטמונובה — גלריית כיכר המדינה"},
+ {"slug":"bar-cohen","date":"2026-08-27","title_en":"artist talk with bar cohen - ‘akra’","gallery_id":"medina","img":"images/events/bar-cohen/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם בר כהן — גלריית כיכר המדינה"},
+ {"slug":"hadas-tuval","date":"2026-08-28","title_en":"artist talk with hadas tuval","gallery_id":"medina","img":"images/events/hadas-tuval/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם הדס טובל — גלריית כיכר המדינה"},
+ {"slug":"the-space-between","date":"2026-09-03","title_he":"מור צופיה געש | מה אנחנו באמת זוכרים ממקום?","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
+ {"slug":"maria-artamonova","date":"2026-09-07","title_en":"artist talk with maria artamonova","gallery_id":"medina","img":"images/events/maria-artamonova/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם מריה ארטמונובה — גלריית כיכר המדינה"},
  {"slug":"amnon-lipkin","date":"2026-09-08","title_en":"artist talk with amnon lipkin","gallery_id":"medina","img":"images/events/amnon-lipkin/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה"},
  {"slug":"zohar-ron-medina","date":"2026-09-09","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"},
- {"slug":"jessica-tabarovsky","date":"2026-09-10","title_en":"artist talk with jessica tabarovsky","gallery_id":"medina","img":"images/events/jessica-tabarovsky/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם ג׳סיקה טברובסקי — גלריית כיכר המדינה"}
+ {"slug":"jessica-tabarovsky","date":"2026-09-10","title_en":"artist talk with jessica tabarovsky","gallery_id":"medina","img":"images/events/jessica-tabarovsky/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם ג׳סיקה טברובסקי — גלריית כיכר המדינה"}
 ]
 </script>
 <script>
@@ -203,6 +210,10 @@ body{text-transform:uppercase}
   var n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
   var up=all.filter(function(e){
     if(e.date_tbd) return true;               // date TBD ("פרטים ותאריך בהמשך") — always upcoming
+    if(e.pinned) return true;                 // still listed in the designer's frame (1318:1761/2012)
+                                              // even though the date passed — drop the flag (here and
+                                              // in data/events.json, and un-pin the /press/ card) when
+                                              // she removes it from Figma
     var p=String(e.date).split('-');
     return new Date(+p[0],+p[1]-1,+p[2]).getTime()>=today;
   }).sort(function(a,b){
@@ -223,7 +234,9 @@ body{text-transform:uppercase}
     return (e.soon?'<a class="ev-card ev-card--soon" href="#" role="link" aria-disabled="true">':'<a class="ev-card" href="'+esc(e.slug)+'/">')
       +'<div class="txt">'
       +'<div class="tag"><span class="t1">gallery event</span><span class="sep"> | </span><span class="t2">'+esc(GALLERY[e.gallery_id]||'')+'</span></div>'
-      +'<div class="ttl">'+esc(e.title_en)+'</div>'
+      +(e.title_he
+          ? '<div class="ttl ttl--he" dir="rtl">'+esc(e.title_he)+'</div>'
+          : '<div class="ttl">'+esc(e.title_en)+'</div>')
       +dateHtml
       +'</div>'
       +'<div class="im"><img src="../'+esc(e.img)+'" width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'"'+load+'></div>'

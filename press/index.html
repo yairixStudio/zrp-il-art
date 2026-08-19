@@ -249,7 +249,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" data-kind="event" data-date="2026-08-18" href="../events/livay-levi/">
+  <a class="pcard" data-kind="event" data-date="2026-08-18" data-pinned="1" href="../events/livay-levi/">
     <div class="img"><img src="../images/events/livay-levi/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -258,7 +258,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" data-kind="event" data-date="2026-08-17" href="../events/michael-konovalenko/">
+  <a class="pcard" data-kind="event" data-date="2026-08-17" data-pinned="1" href="../events/michael-konovalenko/">
     <div class="img"><img src="../images/events/michael-konovalenko/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -481,7 +481,10 @@ body{text-transform:uppercase}
 
 <!-- ARCHIVE FILTER — /press/ shows PAST events only; today's and upcoming ones live on /events/.
      Exact complement of the `date >= today` filter in events/index.html, so an event crosses over
-     by itself the day after it happens. Press articles carry no data-kind and are never filtered.
+     by itself the day after it happens. `data-pinned` mirrors the `pinned` flag in that page's data
+     (an event the designer still lists in her /events/ frame after its date) — it stays there, so it
+     is removed here too, keeping exactly one home per event. Press articles carry no data-kind and
+     are never filtered.
      Runs before the toast binder so it never binds a card that is about to be removed. -->
 <script>
 (function(){
@@ -489,6 +492,7 @@ body{text-transform:uppercase}
   if(!grid) return;
   var today=new Date(); today.setHours(0,0,0,0);
   Array.prototype.forEach.call(grid.querySelectorAll('.pcard[data-kind="event"][data-date]'),function(c){
+    if(c.hasAttribute('data-pinned')){ c.remove(); return; }
     var p=c.getAttribute('data-date').split('-');
     var d=new Date(+p[0],+p[1]-1,+p[2]);
     if(d>=today) c.remove();
