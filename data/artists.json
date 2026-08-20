@@ -1020,6 +1020,23 @@
       "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::797:106",
       "figma_artist_page_desktop": null,
       "homepage_featured": false
+    },
+    {
+      "id": "shira-turbowicz",
+      "slug": "shira-turbowicz",
+      "name_en": "shira turbowicz",
+      "name_he": "שירה טורבוביץ׳",
+      "studio_en": "sumii",
+      "portrait": "images/artists/shira-turbowicz/portrait.webp",
+      "work_image": null,
+      "instagram_handle": "@sumii__world",
+      "bio_he": "SUMII הוא מותג עיצוב בית המשלב פיסול מסורתי עם מלאכה דיגיטלית. במרכזו אובייקטים בפסל חומר מפוסל ביד, הנסרק בתלת־ממד, עובר עיבוד וירטואלי ומודפס בחומרים חדשניים כמו ביו־פלסטיק משי, המיוצרים במהדורות מוגבלות.\n\nמאחורי SUMII עומדת האמנית הרב־תחומית שירה טורבוביץ׳, בוגרת CENTRAL SAINT MARTINS בלונדון וזוכת פרס LVMH, שפיתחה לאורך השנים שפה עיצובית המחברת בין פיסול, אופנה וטכנולוגיה.\n\nטורבוביץ׳ החלה את דרכה בסיום תואר תקשורת חזותית של אופנה בסנטרל סיינט מרטינס בלונדון והתמחות בבתי אופנה שונים לצד זכייה בפרס LVMH. בהמשך פנתה לאמנות ויצרה עבודות בחימר, עץ ווידאו שהוצגו באתונה, אנטוורפן ולונדון.\n\nמתוך המפגש בין העולמות האלה נולדה SUMII: שפה חומרית עכשווית שבה עבודת היד פוגשת כלים דיגיטליים, וטכניקות מסורתיות מקבלות צורה חדשה. הפסלים מתחילים בחומר, עוברים סריקה ועיבוד דיגיטלי, ומודפסים בתלת־ממד מחומרים חדשניים.\n\nSUMII ביפנית 住井: סמל לשייכות, עומק ויופי שקט.",
+      "bio_en": null,
+      "works": [],
+      "curator_slug": "korin-avraham",
+      "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::1608:5728",
+      "figma_artist_page_desktop": null,
+      "homepage_featured": false
     }
   ],
   "_pending_artist_pages": [

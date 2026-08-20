@@ -18,18 +18,23 @@
       "route": "sponsors/soos/",
       "cover_image": "images/sponsors/soos/hero.webp",
       "logo": "images/sponsors/soos/soos-logo.svg",
-      "case_exception": ["soos.sound", "www.soos.audio", "Bella"],
+      "case_exception": [
+        "soos.sound",
+        "www.soos.audio",
+        "Bella"
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "figma_node_desktop": "1318:3287",
       "figma_node_mobile": "1318:3480",
       "figma_logo_node": "1323:1013",
-      "_figma_note": "🔴 2026-08-18: הפריימים 1318:3287/3480 שוכתבו בפיגמה לעיצוב sumii (המעצבת מיחזרה את ה-nodes). העמוד הזה נשאר כפי שנבנה — אין לו יותר מקור חי בפיגמה."
+      "_figma_note": "🔴 2026-08-18: הפריימים 1318:3287/3480 שוכתבו בפיגמה לעיצוב sumii (המעצבת מיחזרה את ה-nodes). העמוד הזה נשאר כפי שנבנה — אין לו יותר מקור חי בפיגמה.",
+      "founder_artist_slug": null
     },
     {
       "id": "sumii",
       "slug": "sumii",
       "name": "SUMII",
-      "founder_he": "שירה טורוביץ׳",
+      "founder_he": "שירה טורבוביץ׳",
       "title_lockup": "sumii X the art gallery by erez zielinski rozen",
       "exhibition_slug": null,
       "exhibition_route": null,
@@ -46,7 +51,8 @@
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "figma_node_desktop": "1318:3287",
       "figma_node_mobile": "1318:3480",
-      "figma_logo_node": "1546:3666"
+      "figma_logo_node": "1546:3666",
+      "founder_artist_slug": "shira-turbowicz"
     }
   ]
 }

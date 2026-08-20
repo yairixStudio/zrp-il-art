@@ -88,6 +88,7 @@ body{text-transform:uppercase}
 .meta .details{font-family:var(--heb);font-weight:300;font-size:15px;color:var(--grey-mid);line-height:1.2;direction:rtl;max-width:100%;white-space:pre-line;text-transform:none}
 .dim{direction:ltr;unicode-bidi:isolate}
 .meta .details .det-en{font-family:var(--cop);font-weight:300;font-size:.85em;text-transform:uppercase;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+.meta .artist .lat{font-family:var(--cop);font-weight:400;font-size:.86em;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
 .meta-foot{display:flex;flex-direction:column;align-items:flex-end;gap:6px;margin-top:auto;padding-top:12px}
 .sold{font-family:var(--heb);font-weight:300;font-size:14px;color:var(--ink);border:1.4px solid var(--ink);padding:2px 10px;line-height:1.25}
 .gallery{font-family:var(--cop);font-weight:600;font-size:8px;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;direction:ltr;white-space:pre-line;text-align:right;transition:opacity .2s}
@@ -3714,6 +3715,84 @@ body{text-transform:uppercase}
     "exhibition_slug": "the-peeler",
     "exhibition_route": "exhibitions/the-peeler",
     "page": true
+  },
+  {
+    "id": "shira-turbowicz-1",
+    "artist_slug": "shira-turbowicz",
+    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_en": "shira turbowicz",
+    "title_he": "גאיה, אלת האדמה",
+    "title_en": null,
+    "gallery_slug": "dizengoff",
+    "gallery_en": "Dizengoff Square Gallery",
+    "sold": false,
+    "details_he": "פסל מודפס בתלת מימד ממשי PLA, ביו-פלסטיק מבוסס צמחים שמקורו במשאבים מתחדשים.\n\nמגיע ב4 גדלים שונים.",
+    "img": "shira-turbowicz-1",
+    "w": 832,
+    "h": 1208,
+    "widths": [
+      480,
+      768,
+      832
+    ],
+    "artist_page_pos": 1,
+    "exhibition_title_he": "POP UP ART RESIDENCY",
+    "exhibition_slug": null,
+    "exhibition_route": "sponsors/sumii",
+    "kind": "residency",
+    "page": true
+  },
+  {
+    "id": "shira-turbowicz-2",
+    "artist_slug": "shira-turbowicz",
+    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_en": "shira turbowicz",
+    "title_he": "סוניה דלונה | 1885–1979",
+    "title_en": null,
+    "gallery_slug": "dizengoff",
+    "gallery_en": "Dizengoff Square Gallery",
+    "sold": false,
+    "details_he": "פסל מודפס בתלת מימד ממשי PLA, ביו-פלסטיק מבוסס צמחים שמקורו במשאבים מתחדשים.\n\nמגיע ב4 גדלים שונים.",
+    "img": "shira-turbowicz-2",
+    "w": 832,
+    "h": 1208,
+    "widths": [
+      480,
+      768,
+      832
+    ],
+    "artist_page_pos": 2,
+    "exhibition_title_he": "POP UP ART RESIDENCY",
+    "exhibition_slug": null,
+    "exhibition_route": "sponsors/sumii",
+    "kind": "residency",
+    "page": true
+  },
+  {
+    "id": "shira-turbowicz-3",
+    "artist_slug": "shira-turbowicz",
+    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_en": "shira turbowicz",
+    "title_he": "ניקי דה סן פאל | 1930–2002",
+    "title_en": null,
+    "gallery_slug": "dizengoff",
+    "gallery_en": "Dizengoff Square Gallery",
+    "sold": false,
+    "details_he": "פסל מודפס בתלת מימד ממשי PLA, ביו-פלסטיק מבוסס צמחים שמקורו במשאבים מתחדשים.\n\nמגיע ב4 גדלים שונים.",
+    "img": "shira-turbowicz-3",
+    "w": 832,
+    "h": 1208,
+    "widths": [
+      480,
+      768,
+      832
+    ],
+    "artist_page_pos": 3,
+    "exhibition_title_he": "POP UP ART RESIDENCY",
+    "exhibition_slug": null,
+    "exhibition_route": "sponsors/sumii",
+    "kind": "residency",
+    "page": true
   }
 ]
 </script>
@@ -3799,7 +3878,22 @@ body{text-transform:uppercase}
     var href = '../artists/'+w.artist_slug+'/';
     var cls  = w.artist_he ? 'is-he' : 'is-en';
     var name = w.artist_he || w.artist_en;
-    return '<a class="artist '+cls+'" href="'+href+'">'+esc(name)+'</a>';
+    /* mixed Hebrew+Latin credit (e.g. "שירה טורבוביץ׳ | sumii") → Latin run in Copperplate (golden rule 4) */
+    var inner = (w.artist_he && /[A-Za-z]/.test(w.artist_he)) ? latHtml(w.artist_he) : esc(name);
+    return '<a class="artist '+cls+'" href="'+href+'">'+inner+'</a>';
+  }
+  /* Wrap Latin runs (2+ letters) in <span class="lat"> — same regex family as detailsHtml, generic class. */
+  function latHtml(s){
+    if(s==null) return '';
+    s=String(s);
+    var out=[], last=0, re=/[A-Za-z]{2}[A-Za-z0-9@&'’._?!:,;()/"\u00a0 -]*[A-Za-z0-9?!).]|[A-Za-z]{2,}/g, m;
+    while((m=re.exec(s))!==null){
+      if(m.index>last) out.push(esc(s.slice(last,m.index)));
+      out.push('<span class="lat">'+esc(m[0])+'</span>');
+      last=re.lastIndex;
+    }
+    if(last<s.length) out.push(esc(s.slice(last)));
+    return out.join('');
   }
 
   var grid = document.getElementById('works-grid');

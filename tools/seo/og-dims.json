@@ -4,15 +4,35 @@
 "w": 800,
 "h": 1200
 },
+"images/artists/aharon-bas/portrait.webp": {
+"jpg": "og/artists-aharon-bas-portrait.jpg",
+"w": 700,
+"h": 700
+},
+"images/artists/alice-debellis/portrait.webp": {
+"jpg": "og/artists-alice-debellis-portrait.jpg",
+"w": 1000,
+"h": 1000
+},
 "images/artists/alon/portrait.webp": {
 "jpg": "og/artists-alon-portrait.jpg",
 "w": 795,
 "h": 1200
 },
+"images/artists/amnon-lipkin/portrait.webp": {
+"jpg": "og/artists-amnon-lipkin-portrait.jpg",
+"w": 1000,
+"h": 1000
+},
 "images/artists/anat-wegier/portrait.webp": {
 "jpg": "og/artists-anat-wegier-portrait.jpg",
 "w": 580,
 "h": 998
+},
+"images/artists/bar-cohen/portrait.webp": {
+"jpg": "og/artists-bar-cohen-portrait.jpg",
+"w": 800,
+"h": 800
 },
 "images/artists/baruch-torgeman/portrait.webp": {
 "jpg": "og/artists-baruch-torgeman-portrait.jpg",
@@ -59,6 +79,11 @@
 "w": 810,
 "h": 810
 },
+"images/artists/hadas-tuval/portrait.webp": {
+"jpg": "og/artists-hadas-tuval-portrait.jpg",
+"w": 500,
+"h": 500
+},
 "images/artists/hila-loterstein/portrait.webp": {
 "jpg": "og/artists-hila-loterstein-portrait.jpg",
 "w": 690,
@@ -94,10 +119,20 @@
 "w": 720,
 "h": 1080
 },
+"images/artists/maria-artamonova/portrait.webp": {
+"jpg": "og/artists-maria-artamonova-portrait.jpg",
+"w": 1000,
+"h": 1000
+},
 "images/artists/maya-nachum-levy/portrait.webp": {
 "jpg": "og/artists-maya-nachum-levy-portrait.jpg",
 "w": 690,
 "h": 1044
+},
+"images/artists/michael-konovalenko/portrait.webp": {
+"jpg": "og/artists-michael-konovalenko-portrait.jpg",
+"w": 1000,
+"h": 1000
 },
 "images/artists/natasha-zeriker/portrait.webp": {
 "jpg": "og/artists-natasha-zeriker-portrait.jpg",
@@ -134,10 +169,20 @@
 "w": 675,
 "h": 1200
 },
+"images/artists/shira-turbowicz/portrait.webp": {
+"jpg": "og/artists-shira-turbowicz-portrait.jpg",
+"w": 1066,
+"h": 1066
+},
 "images/artists/tal-nehoray/portrait-v2.webp": {
 "jpg": "og/artists-tal-nehoray-portrait-v2.jpg",
 "w": 690,
 "h": 690
+},
+"images/artists/tali-zelnik/portrait.webp": {
+"jpg": "og/artists-tali-zelnik-portrait.jpg",
+"w": 1066,
+"h": 1066
 },
 "images/artists/talia-zoref/portrait.webp": {
 "jpg": "og/artists-talia-zoref-portrait.jpg",
@@ -174,6 +219,31 @@
 "w": 904,
 "h": 1200
 },
+"images/events/alice-debellis/hero.webp": {
+"jpg": "og/events-alice-debellis-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/amnon-lipkin/hero.webp": {
+"jpg": "og/events-amnon-lipkin-hero.jpg",
+"w": 390,
+"h": 520
+},
+"images/events/anat-wegier/hero.webp": {
+"jpg": "og/events-anat-wegier-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/artist-talk/hero-desktop.webp": {
+"jpg": "og/events-artist-talk-hero-desktop.jpg",
+"w": 900,
+"h": 1200
+},
+"images/events/bar-cohen/hero.webp": {
+"jpg": "og/events-bar-cohen-hero.jpg",
+"w": 1200,
+"h": 1815
+},
 "images/events/close-look/hero.webp": {
 "jpg": "og/events-close-look-hero.jpg",
 "w": 900,
@@ -184,15 +254,85 @@
 "w": 896,
 "h": 1200
 },
+"images/events/gala-night/hero.webp": {
+"jpg": "og/events-gala-night-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/hadas-tuval/hero.webp": {
+"jpg": "og/events-hadas-tuval-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/jessica-tabarovsky/hero.webp": {
+"jpg": "og/events-jessica-tabarovsky-hero.jpg",
+"w": 1200,
+"h": 1815
+},
 "images/events/ktuba/hero.webp": {
 "jpg": "og/events-ktuba-hero.jpg",
 "w": 900,
 "h": 1200
 },
+"images/events/liel-salman/hero.webp": {
+"jpg": "og/events-liel-salman-hero.jpg",
+"w": 1200,
+"h": 630
+},
+"images/events/livay-levi/hero.webp": {
+"jpg": "og/events-livay-levi-hero.jpg",
+"w": 1200,
+"h": 1815
+},
 "images/events/loneliness/hero.webp": {
 "jpg": "og/events-loneliness-hero.jpg",
 "w": 735,
 "h": 1200
+},
+"images/events/maria-artamonova/hero.webp": {
+"jpg": "og/events-maria-artamonova-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/michael-konovalenko/hero.webp": {
+"jpg": "og/events-michael-konovalenko-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/natasha-zeriker/hero.webp": {
+"jpg": "og/events-natasha-zeriker-hero.jpg",
+"w": 1200,
+"h": 1711
+},
+"images/events/nir-giorgio-levin/hero.webp": {
+"jpg": "og/events-nir-giorgio-levin-hero.jpg",
+"w": 1200,
+"h": 1456
+},
+"images/events/noemi-safir/hero.webp": {
+"jpg": "og/events-noemi-safir-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/risa-and-noemi/hero.webp": {
+"jpg": "og/events-risa-and-noemi-hero.jpg",
+"w": 1200,
+"h": 1800
+},
+"images/events/the-space-between/hero.webp": {
+"jpg": "og/events-the-space-between-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/zohar-ron-medina/hero.webp": {
+"jpg": "og/events-zohar-ron-medina-hero.jpg",
+"w": 1200,
+"h": 1815
+},
+"images/events/zohar-ron/hero.webp": {
+"jpg": "og/events-zohar-ron-hero.jpg",
+"w": 1200,
+"h": 1815
 },
 "images/exhibitions/how-many/hero.webp": {
 "jpg": "og/exhibitions-how-many-hero.jpg",
@@ -203,6 +343,11 @@
 "jpg": "og/exhibitions-loneliness-hero.jpg",
 "w": 690,
 "h": 1044
+},
+"images/exhibitions/the-peeler/hero.webp": {
+"jpg": "og/exhibitions-the-peeler-hero.jpg",
+"w": 801,
+"h": 974
 },
 "images/homepage/hero-landscape.webp": {
 "jpg": "og/homepage-hero-landscape.jpg",
@@ -219,10 +364,20 @@
 "w": 961,
 "h": 1200
 },
+"images/press/manicure-against-darkness/home-card.webp": {
+"jpg": "og/press-manicure-against-darkness-home-card.jpg",
+"w": 1000,
+"h": 555
+},
+"images/press/peeling-a-layer/01-hitnaarut.webp": {
+"jpg": "og/press-peeling-a-layer-01-hitnaarut.jpg",
+"w": 750,
+"h": 422
+},
 "images/press/press-1/00-home-card.webp": {
 "jpg": "og/press-press-1-00-home-card.jpg",
-"w": 171,
-"h": 108
+"w": 1160,
+"h": 1066
 },
 "images/press/the-sixth-scent/home-card.webp": {
 "jpg": "og/press-the-sixth-scent-home-card.jpg",
@@ -259,6 +414,21 @@
 "w": 793,
 "h": 1200
 },
+"images/works/v2/aharon-bas-1.webp": {
+"jpg": "og/works-v2-aharon-bas-1.jpg",
+"w": 596,
+"h": 1600
+},
+"images/works/v2/alice-debellis-1.webp": {
+"jpg": "og/works-v2-alice-debellis-1.jpg",
+"w": 238,
+"h": 1118
+},
+"images/works/v2/alice-debellis-2.webp": {
+"jpg": "og/works-v2-alice-debellis-2.jpg",
+"w": 1200,
+"h": 533
+},
 "images/works/v2/alon-1.webp": {
 "jpg": "og/works-v2-alon-1.jpg",
 "w": 900,
@@ -268,6 +438,71 @@
 "jpg": "og/works-v2-alon-2.jpg",
 "w": 1074,
 "h": 1200
+},
+"images/works/v2/amnon-lipkin-1.webp": {
+"jpg": "og/works-v2-amnon-lipkin-1.jpg",
+"w": 1168,
+"h": 1600
+},
+"images/works/v2/amnon-lipkin-10.webp": {
+"jpg": "og/works-v2-amnon-lipkin-10.jpg",
+"w": 1200,
+"h": 937
+},
+"images/works/v2/amnon-lipkin-11.webp": {
+"jpg": "og/works-v2-amnon-lipkin-11.jpg",
+"w": 1200,
+"h": 1600
+},
+"images/works/v2/amnon-lipkin-12.webp": {
+"jpg": "og/works-v2-amnon-lipkin-12.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/amnon-lipkin-13.webp": {
+"jpg": "og/works-v2-amnon-lipkin-13.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/amnon-lipkin-2.webp": {
+"jpg": "og/works-v2-amnon-lipkin-2.jpg",
+"w": 1200,
+"h": 1600
+},
+"images/works/v2/amnon-lipkin-3.webp": {
+"jpg": "og/works-v2-amnon-lipkin-3.jpg",
+"w": 1200,
+"h": 1303
+},
+"images/works/v2/amnon-lipkin-4.webp": {
+"jpg": "og/works-v2-amnon-lipkin-4.jpg",
+"w": 1200,
+"h": 1265
+},
+"images/works/v2/amnon-lipkin-5.webp": {
+"jpg": "og/works-v2-amnon-lipkin-5.jpg",
+"w": 1200,
+"h": 1351
+},
+"images/works/v2/amnon-lipkin-6.webp": {
+"jpg": "og/works-v2-amnon-lipkin-6.jpg",
+"w": 1200,
+"h": 1428
+},
+"images/works/v2/amnon-lipkin-7.webp": {
+"jpg": "og/works-v2-amnon-lipkin-7.jpg",
+"w": 1200,
+"h": 1370
+},
+"images/works/v2/amnon-lipkin-8.webp": {
+"jpg": "og/works-v2-amnon-lipkin-8.jpg",
+"w": 1200,
+"h": 1600
+},
+"images/works/v2/amnon-lipkin-9.webp": {
+"jpg": "og/works-v2-amnon-lipkin-9.jpg",
+"w": 1200,
+"h": 1600
 },
 "images/works/v2/anat-wegier-1.webp": {
 "jpg": "og/works-v2-anat-wegier-1.jpg",
@@ -288,6 +523,11 @@
 "jpg": "og/works-v2-anat-wegier-4.jpg",
 "w": 995,
 "h": 1200
+},
+"images/works/v2/bar-cohen-1.webp": {
+"jpg": "og/works-v2-bar-cohen-1.jpg",
+"w": 596,
+"h": 1600
 },
 "images/works/v2/baruch-torgeman-1.webp": {
 "jpg": "og/works-v2-baruch-torgeman-1.jpg",
@@ -339,6 +579,11 @@
 "w": 806,
 "h": 1200
 },
+"images/works/v2/elsa-ars-brush-6.webp": {
+"jpg": "og/works-v2-elsa-ars-brush-6.jpg",
+"w": 1080,
+"h": 726
+},
 "images/works/v2/gal-polk-1.webp": {
 "jpg": "og/works-v2-gal-polk-1.jpg",
 "w": 1080,
@@ -384,6 +629,16 @@
 "w": 800,
 "h": 1200
 },
+"images/works/v2/hadas-tuval-1.webp": {
+"jpg": "og/works-v2-hadas-tuval-1.jpg",
+"w": 1086,
+"h": 1448
+},
+"images/works/v2/hadas-tuval-2-v2.webp": {
+"jpg": "og/works-v2-hadas-tuval-2-v2.jpg",
+"w": 900,
+"h": 1200
+},
 "images/works/v2/hila-loterstein-1.webp": {
 "jpg": "og/works-v2-hila-loterstein-1.jpg",
 "w": 690,
@@ -418,6 +673,11 @@
 "jpg": "og/works-v2-jessica-tabarovsky-1.jpg",
 "w": 896,
 "h": 1200
+},
+"images/works/v2/jessica-tabarovsky-2.webp": {
+"jpg": "og/works-v2-jessica-tabarovsky-2.jpg",
+"w": 896,
+"h": 1195
 },
 "images/works/v2/la-raz-porta-1.webp": {
 "jpg": "og/works-v2-la-raz-porta-1.jpg",
@@ -474,6 +734,16 @@
 "w": 918,
 "h": 1200
 },
+"images/works/v2/livay-levi-3.webp": {
+"jpg": "og/works-v2-livay-levi-3.jpg",
+"w": 1080,
+"h": 810
+},
+"images/works/v2/maria-artamonova-1.webp": {
+"jpg": "og/works-v2-maria-artamonova-1.jpg",
+"w": 900,
+"h": 1600
+},
 "images/works/v2/maya-nachum-levy-1.webp": {
 "jpg": "og/works-v2-maya-nachum-levy-1.jpg",
 "w": 758,
@@ -483,6 +753,21 @@
 "jpg": "og/works-v2-maya-nachum-levy-2.jpg",
 "w": 622,
 "h": 1200
+},
+"images/works/v2/michael-konovalenko-1.webp": {
+"jpg": "og/works-v2-michael-konovalenko-1.jpg",
+"w": 1200,
+"h": 876
+},
+"images/works/v2/michael-konovalenko-2.webp": {
+"jpg": "og/works-v2-michael-konovalenko-2.jpg",
+"w": 1098,
+"h": 1471
+},
+"images/works/v2/michael-konovalenko-3.webp": {
+"jpg": "og/works-v2-michael-konovalenko-3.jpg",
+"w": 1111,
+"h": 1111
 },
 "images/works/v2/natasha-zeriker-1.webp": {
 "jpg": "og/works-v2-natasha-zeriker-1.jpg",
@@ -542,6 +827,16 @@
 "images/works/v2/noemi-safir-10.webp": {
 "jpg": "og/works-v2-noemi-safir-10.jpg",
 "w": 974,
+"h": 1200
+},
+"images/works/v2/noemi-safir-11.webp": {
+"jpg": "og/works-v2-noemi-safir-11.jpg",
+"w": 951,
+"h": 1200
+},
+"images/works/v2/noemi-safir-12.webp": {
+"jpg": "og/works-v2-noemi-safir-12.jpg",
+"w": 960,
 "h": 1200
 },
 "images/works/v2/noemi-safir-2.webp": {
@@ -614,11 +909,6 @@
 "w": 666,
 "h": 885
 },
-"images/works/v2/sami-david-1.webp": {
-"jpg": "og/works-v2-sami-david-1.jpg",
-"w": 1080,
-"h": 1079
-},
 "images/works/v2/sami-david-2.webp": {
 "jpg": "og/works-v2-sami-david-2.jpg",
 "w": 1080,
@@ -632,6 +922,21 @@
 "images/works/v2/sami-david-4.webp": {
 "jpg": "og/works-v2-sami-david-4.jpg",
 "w": 800,
+"h": 1200
+},
+"images/works/v2/shira-turbowicz-1.webp": {
+"jpg": "og/works-v2-shira-turbowicz-1.jpg",
+"w": 826,
+"h": 1200
+},
+"images/works/v2/shira-turbowicz-2.webp": {
+"jpg": "og/works-v2-shira-turbowicz-2.jpg",
+"w": 826,
+"h": 1200
+},
+"images/works/v2/shira-turbowicz-3.webp": {
+"jpg": "og/works-v2-shira-turbowicz-3.jpg",
+"w": 826,
 "h": 1200
 },
 "images/works/v2/tal-nehoray-1.webp": {
@@ -664,10 +969,30 @@
 "w": 1080,
 "h": 1156
 },
+"images/works/v2/tali-zelnik-1.webp": {
+"jpg": "og/works-v2-tali-zelnik-1.jpg",
+"w": 799,
+"h": 1200
+},
+"images/works/v2/tali-zelnik-2.webp": {
+"jpg": "og/works-v2-tali-zelnik-2.jpg",
+"w": 778,
+"h": 1200
+},
 "images/works/v2/talia-zoref-1.webp": {
 "jpg": "og/works-v2-talia-zoref-1.jpg",
+"w": 1200,
+"h": 630
+},
+"images/works/v2/talia-zoref-2.webp": {
+"jpg": "og/works-v2-talia-zoref-2.jpg",
+"w": 896,
+"h": 1029
+},
+"images/works/v2/talia-zoref-3.webp": {
+"jpg": "og/works-v2-talia-zoref-3.jpg",
 "w": 1080,
-"h": 864
+"h": 972
 },
 "images/works/v2/tanya-shin-1.webp": {
 "jpg": "og/works-v2-tanya-shin-1.jpg",
@@ -698,16 +1023,6 @@
 "jpg": "og/works-v2-tanya-shin-6.jpg",
 "w": 1024,
 "h": 1024
-},
-"images/works/v2/tanya-shin-7.webp": {
-"jpg": "og/works-v2-tanya-shin-7.jpg",
-"w": 1080,
-"h": 1080
-},
-"images/works/v2/tanya-shin-8.webp": {
-"jpg": "og/works-v2-tanya-shin-8.jpg",
-"w": 986,
-"h": 1200
 },
 "images/works/v2/tanya-shin-9.webp": {
 "jpg": "og/works-v2-tanya-shin-9.jpg",
@@ -784,6 +1099,11 @@
 "w": 1080,
 "h": 608
 },
+"images/works/v2/zohar-ron-9.webp": {
+"jpg": "og/works-v2-zohar-ron-9.jpg",
+"w": 1080,
+"h": 721
+},
 "images/works/v2/zohar-ron-dan-ben-ari-1-v2.webp": {
 "jpg": "og/works-v2-zohar-ron-dan-ben-ari-1-v2.jpg",
 "w": 1080,
@@ -793,10 +1113,5 @@
 "jpg": "og/works-v2-zohar-shtrit-1.jpg",
 "w": 690,
 "h": 1044
-},
-"images/events/anat-wegier/hero.webp": {
-"jpg": "og/events-anat-wegier-hero.jpg",
-"w": 1200,
-"h": 1815
 }
 }

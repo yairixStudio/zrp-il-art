@@ -26,6 +26,8 @@ holy-kadosh, costa-magarakis, maya-nachum-levy, la-raz-porta
 
 **אומנים שאינם רשומים / placeholder בלבד** (`dan ben-ary`, `racheli reuven`, `gal rotem` — אין ביו/עבודות): יש דף וקישור חובה מעמוד `/artists/`, אבל בתערוכות/טקסטים אם מוזכרים בלי דף מלא — עדיין לא לקשר עד שיש תוכן. **`raz ronen`** — נוסף לגריד `/artists/` (2026-06-11, Figma `613:285`); כעת חובה לקשר.
 
+> **2026-08-20 update:** **`shira-turbowicz`** (שירה טורבוביץ׳ / SUMII) קיבלה דף אומנית מלא (Figma `1608:5728`) ⇒ חובה לקשר — כולל האזכורים בעמוד הספונסר `/sponsors/sumii/` (חווטו באותו יום). `SUMII`/`sumii` לבדו = שם מותג, לא אזכור אומן.
+
 > **2026-05-12 update:** 4 אומנים שלא היו רשומים (`holy-kadosh`, `costa-magarakis`, `maya-nachum-levy`, `la-raz-porta`) קיבלו עכשיו דפים מלאים מתוך Figma `artist-pages-lonely` (`XhGH289YTRcW811wrufRJz::235:874`) ולכן הם כעת חובה לקישור.
 
 ---
