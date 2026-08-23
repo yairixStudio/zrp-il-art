@@ -724,11 +724,15 @@ soos מובייל: Implement this design from Figma.
 
 ### עמוד ספונסר/רזידנסי SUMII (`/sponsors/sumii/`)
 
-sumii דסקטופ ("sumii - desktop"): Implement this design from Figma.
-@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3287&m=dev
+> **🔴 2026-08-23 — העמוד מארח עכשיו שתי רזידנסיות (SUMII + מלאני הקימוגלו), ופריים הדסקטופ עבר ל-`1637:134`.** ה-node הישן `1318:3287` הוא הגרסה שלפני התוספת — אל תשתמש בו. המובייל נשאר `1318:3480` (שוכתב in-place, כולל שני הסקשנים החדשים).
 
-sumii מובייל ("sumii - mobile"): Implement this design from Figma.
+sumii + melani דסקטופ ("sumii - desktop", **canonical**): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1637-134&m=dev
+
+sumii + melani מובייל ("sumii - mobile"): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3480&m=dev
+
+> תת-nodes שימושיים: FIGURES (3 יצירות shira) `1637:213` דסקטופ / `1590:181`+`1589:5700`+`1589:5708` מובייל · פאנל מלאני `1637:284` / `1635:348`+`1635:365` · גריד מוצרי מלאני `1637:379`+`1652:118` / `1652:197` · לוגו מלאני (raster, cropTransform) `1637:350` · כרטיס ההירו של sumii `1637:194`. **legacy (לפני תוספת מלאני):** דסקטופ `1318:3287`.
 
 > ⚠️ **אותם node-ids של עמוד soos** — המעצבת שכתבה את הפריימים במקום (in-place). זיהוי לפי שם הפריים + תוכן, לא לפי node-id. לוגו Sumii הוקטורי = node `1546:3666` (88×40, 10 paths אחרי ניקוי — ה-path עם `fill-opacity:0.05` הוא זבל שהושמט; באתר inline כ-`<symbol id="sumii-mark">` + שני `<use>` עם `fill:currentColor`). כרטיס האוצרת: ה-fill השני (`889e3ab7…` — צילום זוהר רון) = leftover מוסתר; הגלוי = `7f582c67…` (קורין, אותו צילום של פורטרט האוצרת) עם crop `1b9e5e`. ל-hero (`13066b05…`) **אין scrim** בשני ה-breakpoints — התמונה כהה מעצמה (אומת ברינדור).
 
