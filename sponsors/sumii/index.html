@@ -114,10 +114,10 @@ a.shot:hover img{filter:brightness(.94)}
 /* ===== MELANI PANEL — לבן, לוקאפ משמאל (כרטיס 492 בלי תמונה) וטקסט מימין (Figma 1637:284) ===== */
 .mel-panel{background:var(--white);padding:48px var(--pad-x);display:flex;justify-content:center}
 .mel-panel .row{display:flex;gap:48px;align-items:flex-start;width:100%;max-width:var(--max)}
-.mel-panel .mel-img-col{flex:0 0 492px;display:flex;justify-content:center;flex-shrink:0}
+.mel-panel .mel-img-col{flex:0 0 492px;flex-shrink:0}
 .mel-panel .text-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px}
 /* לוקאפ מלאני — עמודה ממורכזת בראש הכרטיס (Figma 1637:349: x55/y42.83, width 372, gap 16) */
-.mel-lockup{padding-top:42.83px;width:372px;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
+.mel-lockup{padding-top:42.83px;margin-left:55px;width:372px;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
 .mel-lockup .mel-logo{width:224.98px;height:129.16px;flex-shrink:0}
 .mel-lockup .mel-logo picture{display:contents}
 .mel-lockup .mel-logo img{width:100%;height:100%;object-fit:contain}
@@ -125,7 +125,7 @@ a.shot:hover img{filter:brightness(.94)}
 .mel-lockup a{transition:opacity .2s}
 /* X = 44.7998 verbatim (גליף בודד); שם הגלריה Copperplate 35.6407 Figma → 31px (כיול-מדידה מול הרינדור) */
 .mel-lockup .x{font-family:var(--cop);font-weight:300;font-size:44.7998px;line-height:1}
-.mel-lockup .gname{font-family:var(--cop);font-weight:300;font-size:31px;line-height:1.35;text-align:center;letter-spacing:.02em}
+.mel-lockup .gname{font-family:var(--cop);font-weight:300;font-size:31px;line-height:1.35;text-align:center;letter-spacing:.02em;white-space:nowrap}
 .mel-lockup .gname .ln1{letter-spacing:.05em}
 
 /* ===== MELANI PRODUCTS — 5 כרטיסים, גריד 3 עמודות; השורה השנייה בעמודות 2-3
@@ -162,9 +162,10 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 @media (max-width:1319px) and (min-width:769px){
   :root{--col-gap:48px}
   .sp-hero .row,.mel-panel .row{gap:32px;min-width:0}
-  .sp-hero .img-col,.mel-panel .mel-img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .sp-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .mel-panel .mel-img-col{flex:0 1 400px;min-width:0}
   .sp-hero .card{width:100%;max-width:400px;height:640px}
-  .mel-lockup{width:100%}
+  .mel-lockup{margin-left:0;width:100%}
   .mel-lockup .mel-logo{width:190px;height:109.1px}
   .mel-lockup .x{font-size:38px}
   .mel-lockup .gname{font-size:26px}
@@ -230,7 +231,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .fig{background:var(--white);padding:24px 16px 0;width:100%}
 
   /* Melani lockup — שורה (לוגו · X · שם הגלריה) צמודה ימין, Figma 1635:348 */
-  .mel-lockup{background:var(--white);padding:24px 16px 0;width:100%;flex-direction:row;align-items:center;justify-content:flex-end;gap:16px}
+  .mel-lockup{background:var(--white);margin-left:0;padding:24px 16px 0;width:100%;flex-direction:row;align-items:center;justify-content:flex-end;gap:16px}
   .mel-lockup .mel-logo{width:134px;height:126px}
   .mel-lockup .x{font-size:20.1117px}
   .mel-lockup .gname{font-size:13px;line-height:1.4}
@@ -260,15 +261,17 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sumii X The Art Gallery — Zielinski &amp; Rozen">
-<meta property="og:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026).">
+<meta property="og:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026). אוצרות: קורין אברהם.">
 <meta property="og:url" content="https://art.zrp.co.il/sponsors/sumii/">
 <meta property="og:image" content="https://art.zrp.co.il/og/sponsors-sumii-hero.jpg">
-<meta property="og:image:alt" content="Sumii X The Art Gallery">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sumii X The Art Gallery — Zielinski &amp; Rozen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sumii X The Art Gallery — Zielinski &amp; Rozen">
-<meta name="twitter:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026).">
+<meta name="twitter:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026). אוצרות: קורין אברהם.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/sponsors-sumii-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/sumii/#page","url":"https://art.zrp.co.il/sponsors/sumii/","name":"Sumii X The Art Gallery","inLanguage":"he-IL","image":"https://art.zrp.co.il/og/sponsors-sumii-hero.jpg","description":"שתי רזידנסיות פופ-אפ בגלריית האמנות של ארז זילינסקי רוזן בכיכר דיזינגוף: SUMII של שירה טורבוביץ׳ (31.08.2026–05.10.2026) ומלאני הקימוגלו (28.09.2026–05.10.2026). אוצרות: קורין אברהם.","about":[{"@type":"Brand","name":"SUMII","url":"https://www.sumiiworld.com"},{"@type":"Brand","name":"Melani Hekimoglu","url":"https://www.melanihekimoglu.com"}],"publisher":{"@id":"https://art.zrp.co.il/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sumii X The Art Gallery","item":"https://art.zrp.co.il/sponsors/sumii/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/sumii/#webpage","url":"https://art.zrp.co.il/sponsors/sumii/","name":"Sumii X The Art Gallery — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"publisher":{"@id":"https://art.zrp.co.il/#org"},"description":"שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026). אוצרות: קורין אברהם.","about":[{"@type":"Brand","name":"SUMII","url":"https://www.sumiiworld.com"},{"@type":"Brand","name":"Melani Hekimoglu","url":"https://www.melanihekimoglu.com"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"SUMII","item":"https://art.zrp.co.il/sponsors/sumii/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -407,7 +410,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     <div class="prods">
 
       <article class="prod">
-        <div class="shot"><img src="../../images/sponsors/melani/flow-plates.webp" srcset="../../images/sponsors/melani/flow-plates-480w.webp 480w, ../../images/sponsors/melani/flow-plates.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW PLATES &amp; BOWLS — מגדל צלחות קרמיקה בגוונים חומים ולבנים" loading="lazy" decoding="async"></div>
+        <a class="shot" href="../../works/melani-hekimoglu-4/" aria-label="flow plates and bowls">
+          <img src="../../images/works/v2/melani-hekimoglu-4.webp" srcset="../../images/works/v2/melani-hekimoglu-4-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-4.webp 791w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="791" height="988" alt="FLOW PLATES &amp; BOWLS — מגדל צלחות קרמיקה בגוונים חומים ולבנים" loading="lazy" decoding="async">
+        </a>
         <div class="ttl">flow plates &amp; bowls</div>
         <div class="txt heb">צלחת קינוחים רוחב 16 ס"מ
 צלחת מנה ראשונה רוחב 22 ס"מ
@@ -415,20 +420,26 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
       </article>
 
       <article class="prod">
-        <div class="shot"><img src="../../images/sponsors/melani/flow-vases.webp" srcset="../../images/sponsors/melani/flow-vases-480w.webp 480w, ../../images/sponsors/melani/flow-vases.webp 518w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="518" height="628" alt="FLOW VASES — אגרטל קרמי בגוון חול עם שפה גלית" loading="lazy" decoding="async"></div>
+        <a class="shot" href="../../works/melani-hekimoglu-1/" aria-label="flow vases">
+          <img src="../../images/works/v2/melani-hekimoglu-1.webp" srcset="../../images/works/v2/melani-hekimoglu-1-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-1.webp 548w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="548" height="628" alt="FLOW VASES — אגרטל קרמי בגוון חול עם שפה גלית" loading="lazy" decoding="async">
+        </a>
         <div class="ttl">flow vases</div>
         <div class="txt heb">כל אגרטל משתנה בגובהו ובצורתו עקב תהליך היצירה הבלתי צפוי. הגבהים נעים בדרך כלל בין 6 ל-25 ס"מ.</div>
       </article>
 
       <article class="prod">
-        <div class="shot"><img src="../../images/sponsors/melani/flow-dessert-bowl.webp" srcset="../../images/sponsors/melani/flow-dessert-bowl-480w.webp 480w, ../../images/sponsors/melani/flow-dessert-bowl.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW DESSERT BOWL — קערת קינוחים קרמית לבנה על רגל" loading="lazy" decoding="async"></div>
+        <a class="shot" href="../../works/melani-hekimoglu-2/" aria-label="flow dessert bowl">
+          <img src="../../images/works/v2/melani-hekimoglu-2.webp" srcset="../../images/works/v2/melani-hekimoglu-2-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-2.webp 789w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="789" height="981" alt="FLOW DESSERT BOWL — קערת קינוחים קרמית לבנה על רגל" loading="lazy" decoding="async">
+        </a>
         <div class="ttl">flow dessert bowl</div>
         <div class="txt heb">קערת קינוחים
 12x12 ס"מ</div>
       </article>
 
       <article class="prod">
-        <div class="shot"><img src="../../images/sponsors/melani/flow-lamp.webp" srcset="../../images/sponsors/melani/flow-lamp-480w.webp 480w, ../../images/sponsors/melani/flow-lamp.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW LAMP — מנורת קרמיקה תלויה מעל שולחן ערוך" loading="lazy" decoding="async"></div>
+        <a class="shot" href="../../works/melani-hekimoglu-5/" aria-label="flow lamp">
+          <img src="../../images/works/v2/melani-hekimoglu-5.webp" srcset="../../images/works/v2/melani-hekimoglu-5-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-5-768w.webp 768w, ../../images/works/v2/melani-hekimoglu-5.webp 967w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="967" height="1208" alt="FLOW LAMP — מנורת קרמיקה תלויה מעל שולחן ערוך" loading="lazy" decoding="async">
+        </a>
         <div class="ttl">flow lamp</div>
         <div class="txt heb">מנורות <span class="lat">Flow</span>.
 הגודל משתנה עקב תהליך היצירה הבלתי צפוי.
@@ -436,7 +447,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
       </article>
 
       <article class="prod">
-        <div class="shot"><img src="../../images/sponsors/melani/bloom-planter.webp" srcset="../../images/sponsors/melani/bloom-planter-480w.webp 480w, ../../images/sponsors/melani/bloom-planter.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="BLOOM PLANTER — שני אובייקטים קרמיים לבנים על שולחנות צד" loading="lazy" decoding="async"></div>
+        <a class="shot" href="../../works/melani-hekimoglu-3/" aria-label="bloom planter">
+          <img src="../../images/works/v2/melani-hekimoglu-3.webp" srcset="../../images/works/v2/melani-hekimoglu-3-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-3-768w.webp 768w, ../../images/works/v2/melani-hekimoglu-3-1080w.webp 1080w, ../../images/works/v2/melani-hekimoglu-3.webp 1241w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="1241" height="927" alt="BLOOM PLANTER — שני אובייקטים קרמיים לבנים על שולחנות צד" loading="lazy" decoding="async">
+        </a>
         <div class="ttl">bloom planter</div>
         <div class="txt heb">כל אגרטל משתנה בגובהו ובצורתו עקב תהליך היצירה הבלתי צפוי. הגבהים נעים בדרך כלל בין 6 ל-25 ס"מ.</div>
       </article>

@@ -1143,5 +1143,15 @@
 "jpg": "og/works-v2-melani-hekimoglu-5.jpg",
 "w": 961,
 "h": 1200
+},
+"images/sponsors/sumii/hero.webp": {
+"jpg": "og/sponsors-sumii-hero.jpg",
+"w": 1200,
+"h": 630
+},
+"images/sponsors/soos/hero.webp": {
+"jpg": "og/sponsors-soos-hero.jpg",
+"w": 1200,
+"h": 1800
 }
 }

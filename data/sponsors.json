@@ -49,10 +49,36 @@
       "logo": "images/sponsors/sumii/sumii-logo.svg",
       "case_exception": [],
       "figma_file": "XhGH289YTRcW811wrufRJz",
-      "figma_node_desktop": "1318:3287",
+      "figma_node_desktop": "1637:134",
       "figma_node_mobile": "1318:3480",
       "figma_logo_node": "1546:3666",
-      "founder_artist_slug": "shira-turbowicz"
+      "founder_artist_slug": "shira-turbowicz",
+      "_figma_note": "2026-08-23: פריים הדסקטופ עבר ל-1637:134 (פריים חדש); המובייל נשאר 1318:3480 (שוכתב in-place). העמוד מארח מ-2026-08-23 גם את הרזידנסי של מלאני הקימוגלו — רשומה נפרדת melani-hekimoglu עם אותו route."
+    },
+    {
+      "id": "melani-hekimoglu",
+      "slug": "melani-hekimoglu",
+      "name": "Melani Hekimoglu",
+      "founder_he": "מלאני הקימוגלו",
+      "title_lockup": "melani hekimoglu X the art gallery by erez zielinski rozen",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "gallery_id": "dizengoff",
+      "curator_slug": "korin-avraham",
+      "date_start": "2026-09-28",
+      "date_end": "2026-10-05",
+      "website": "https://www.melanihekimoglu.com",
+      "model_credit": null,
+      "route": "sponsors/sumii/",
+      "cover_image": "images/works/v2/melani-hekimoglu-4.webp",
+      "logo": "images/sponsors/melani/logo.webp",
+      "case_exception": [],
+      "founder_artist_slug": "melani-hekimoglu",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "1637:284",
+      "figma_node_mobile": "1635:348",
+      "figma_logo_node": "1637:350",
+      "_note": "🔴 חולק את העמוד sponsors/sumii/ (אין route משלו) — הרזידנסי השנייה בגלריית כיכר דיזינגוף, מוצגת כסקשן שני באותו דף לפי הפיגמה (1637:284 + 1637:379 דסקטופ / 1635:348 מובייל). הלוגו הוא raster (favicon.png שהמעצבת העלתה), לא SVG: images/sponsors/melani/logo.{webp,avif} = הקרופ ההדוק מ-cropTransform של 1637:350. חמשת כרטיסי FLOW/BLOOM בעמוד ממחזרים את images/works/v2/melani-hekimoglu-1..5 (אותם imageRefs) ומקשרים ל-works/melani-hekimoglu-N/ — אין קבצים כפולים תחת images/sponsors/melani/."
     }
   ]
 }

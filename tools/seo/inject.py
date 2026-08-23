@@ -31,6 +31,7 @@ press = load("press.json")["items"]
 opencalls = {o["slug"]: o for o in load("opencalls.json")["opencalls"]}
 curators = {c["slug"]: c for c in load("curators.json")["curators"]}
 galleries = {g["slug"]: g for g in load("galleries.json")["galleries"]}
+sponsors = load("sponsors.json")["sponsors"]
 
 # editorial overrides produced by the content workflow: {route: {"title":..,"description":..}}
 OVERRIDES = {}
@@ -376,6 +377,29 @@ def build_meta(relpath):
         return dict(canonical=canonical, title_override=title_override, desc_override=desc_override,
                     og_type=og_type, og_image=og_image, jsonld=jsonld)
 
+    if parts[0] == "sponsors" and len(parts) == 3:
+        # sponsor / residency pages. A page may host more than one sponsor (they share `route`),
+        # e.g. sponsors/sumii/ carries both SUMII and Melani Hekimoglu — the first record on the
+        # route drives the OG image; every record on it becomes an `about` Brand node.
+        slug = parts[1]
+        on_route = [sp for sp in sponsors if (sp.get("route") or "").strip("/") == "sponsors/" + slug]
+        if on_route:
+            primary = on_route[0]
+            og_type = "article"
+            og_image = primary.get("cover_image") or DEFAULT_OG
+            brands = []
+            for sp in on_route:
+                b = {"@type": "Brand", "name": sp.get("name")}
+                if sp.get("website"): b["url"] = sp["website"]
+                brands.append(b)
+            node = page_node("__TITLE__", "__DESC__")
+            node["@id"] = canonical + "#webpage"
+            node["about"] = brands if len(brands) > 1 else brands[0]
+            jsonld = [{"@context": "https://schema.org", "@graph": [
+                node, breadcrumb([(primary.get("name") or slug, route)])]}]
+        return dict(canonical=canonical, title_override=title_override, desc_override=desc_override,
+                    og_type=og_type, og_image=og_image, jsonld=jsonld)
+
     # generic static pages: about, contact, accessibility, privacy, 404, and indexes
     name_map = {
         "about": "About — Zielinski & Rozen Art Galleries",
@@ -416,6 +440,14 @@ def build_block(relpath, headtxt, meta):
     desc_final = ov.get("description") or meta.get("desc_override") or current_desc(headtxt) or \
         "Zielinski & Rozen — art galleries in Tel Aviv."
     og_img_abs, og_w, og_h = og_image_info(meta["og_image"])
+    # sentinels let a route branch defer to the page's own <title>/<meta description>
+    def fill(x):
+        if isinstance(x, dict):  return {k: fill(v) for k, v in x.items()}
+        if isinstance(x, list):  return [fill(v) for v in x]
+        if x == "__TITLE__":     return title_final
+        if x == "__DESC__":      return desc_final
+        return x
+    meta = dict(meta, jsonld=fill(meta["jsonld"]))
     is404 = (relpath == "404.html")
     lines = [START]
     lines.append('<link rel="canonical" href="%s">' % route_abs)
