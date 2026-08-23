@@ -266,7 +266,7 @@
   </url>
   <url>
     <loc>https://art.zrp.co.il/events/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -355,6 +355,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://art.zrp.co.il/events/elsa-ars-brush/</loc>
+    <lastmod>2026-08-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://art.zrp.co.il/events/maria-artamonova/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -434,7 +440,7 @@
   </url>
   <url>
     <loc>https://art.zrp.co.il/press/</loc>
-    <lastmod>2026-08-19</lastmod>
+    <lastmod>2026-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

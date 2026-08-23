@@ -1165,6 +1165,47 @@
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ⇒ <br> רגיל, בלי .dbr/.mbr. הגוף = פסקה אחת עם שני <br> verbatim מהפיגמה, בלי שורת lead. מטא: גלריה FbEzmel Regular, תאריך+שעה Light בשני ה-breakpoints. אוברליי מובייל top:47.4% (Figma group y:189 מתוך 520), דסקטופ 50%. ⚠️ בפריים הדסקטופ הכותרת גולשת ל-4 שורות כי 80px לא נכנסים בתיבת ה-644; באתר ב-64px (הכיול האופטי) היא יוצאת 3 שורות — השבירה שהמעצבת כתבה נשמרת ושם האומנית נשבר לבדו.",
       "_image_note": "🔴 scrim = גרדיאנט linear-gradient(0deg, rgba(0,0,0,.8), transparent) — כהה למטה, דוהה למעלה — ב**שני** ה-breakpoints (לא ה-scrim השטוח .4 של zohar-ron-medina/livay-levi). אומת מול רינדורי ה-nodes: אלפא נגזרת 0.011 ברצועה העליונה ו-0.763 בתחתונה (דסקטופ), 0.015/0.785 (מובייל) — תואם לחישוב. hero = imageRef 40cbee4a… (מבקרת מצלמת את ציורה של ג׳סיקה בחלל הגלריה; מקור 1530×2040). **שני קרופים** — הפריים המוביילי 390×520 הוא בדיוק יחס המקור (3:4) ולכן מציג את התצלום המלא, בעוד הדסקטופ 492×744 חותך 90.5px מכל צד ⇒ <picture> ידני עם source media=(max-width:768px) ל-avif ול-webp (כל webp עם אח avif — picture-upgrade.js מדלג על img שכבר עטוף). RMSE מול הרינדורים: 0.28% בשני ה-breakpoints אחרי מיסוך טקסט האוברליי הלבן (6.9%/9.0% בלי מיסוך). list-card 876×487 = קרופ רוחבי מאותו מקור ב-offset y:60 (אין frame כרטיס בפיגמה). thumb האומנית = מיחזור images/artists/grid/jessica-tabarovsky.webp (RMSE 0.81% מול imageRef 03eac4dc), object-position 50% 0%.",
       "_list_image_note": "list-card-v2 = הקרופ מהפריים של רשימת האירועים (1318:1761) — ה-fill שם הוא STRETCH עם cropTransform, ולכן הקובץ נאפה ב-876×487 מהחלון המדויק ונמתח כמו בפיגמה; list-card.webp הישן (קרופ רוחבי שנבנה לפני שהיה frame כרטיס) נשאר בדיסק — כלל-זהב 8."
+    },
+    {
+      "id": "elsa-ars-brush",
+      "slug": "elsa-ars-brush",
+      "title_he": "שיחת אמנים עם אלסה ארס ברוש",
+      "title_en": "artist talk with elsa ers brosh",
+      "subtitle_he": "הקולפן",
+      "exhibition_id": "the-peeler",
+      "exhibition_volume": 2,
+      "date": "2026-09-06",
+      "date_he": "6 ספטמבר 2026",
+      "time_start": "11:00",
+      "time_end": "12:30",
+      "time_label": "12:30-11:00",
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": "images/events/elsa-ars-brush/hero.webp",
+      "list_image": "images/events/elsa-ars-brush/list-card.webp",
+      "description_he": [
+        "האמנית תארח אירוע בו תדון בעבודות המוצגות, מהיכן מגיעות ההשפעות שלה, כיצד היא בונה את הטכניקה שלה וכיצד היא משתמשת בכלים דיגיטליים לטכניקת ציור קלאסית."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "elsa ers brosh",
+          "slug": "elsa-ars-brush",
+          "image": "images/artists/grid/elsa-ars-brush.webp"
+        }
+      ],
+      "route": "events/elsa-ars-brush/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1578:5481",
+      "figma_node_mobile": "1660:488",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": "artist talk",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi): פס EXHIBITION • VOLUME 2 + הקולפן, scrim שטוח rgba(27,27,27,.4) בשני ה-breakpoints, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני הפריימים (\"artist talk with\" / \"elsa ers brosh\") ⇒ <br> רגיל. הגוף = ריצת FbEzmel Light אחת בלי הדגשה (אין .lead — אותה קריאה כמו maria/michael). זהו האירוע השני של אלסה: events/artist-talk/ (11.6.26, how-many/דיזינגוף, עם גל פולק) הוא אירוע אחר — ה-slug נבחר לפי שם האומנית כי artist-talk תפוס.",
+      "_image_note": "hero = imageRef af7d251c… (מקור 1066×1600 — אלסה בסטודיו עם ציור פרידה קאלו). ⚠️ אספקט המקור (.66625) יושב בין חלון הדסקטופ (492/744=.66129) לחלון המובייל (390/520=.75), ולכן **קובץ אחד לא-חתוך** מייצר את שני קרופי הפיגמה במדויק דרך object-fit:cover — בלי <picture> ידני (אומת RMSE ממוסך 0.34% דסקטופ / 0.66% מובייל מול רינדורי 1578:5542 ו-1660:509). ה-fill השני בדסקטופ (5ca18581… — ההירו של bar-cohen) = leftover מוסתר מתחת. list-card 876×487 = חלון רוחבי (y 100..693) שנבחר כדי לשמור את פניה בפריים; אין frame רשימה בפיגמה לאירוע הזה. thumb האומנית = מיחזור images/artists/grid/elsa-ars-brush.webp (RMSE 0.65% מול imageRef 90b56a9b…, שהוא אותו צילום של images/artists/elsa-ars-brush/portrait.webp), object-position 50% 0%."
     }
   ]
 }

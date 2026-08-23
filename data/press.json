@@ -29,6 +29,19 @@
       "route": "events/maria-artamonova/"
     },
     {
+      "id": "event-elsa-ars-brush-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם אלסה ארס ברוש",
+      "title_en": "artist talk with elsa ers brosh",
+      "date": "2026-09-06",
+      "cover_image": "images/events/elsa-ars-brush/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). האירוע עתידי ולכן בפועל מסונן החוצה מ-/press/ ומוצג ב-/events/ עד שיעבור התאריך.",
+      "route": "events/elsa-ars-brush/"
+    },
+    {
       "id": "event-bar-cohen-talk",
       "type": "event",
       "tag_en": "gallery event",
