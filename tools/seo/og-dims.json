@@ -1113,5 +1113,35 @@
 "jpg": "og/works-v2-zohar-shtrit-1.jpg",
 "w": 690,
 "h": 1044
+},
+"images/artists/melani-hekimoglu/portrait.webp": {
+"jpg": "og/artists-melani-hekimoglu-portrait.jpg",
+"w": 1080,
+"h": 1080
+},
+"images/works/v2/melani-hekimoglu-1.webp": {
+"jpg": "og/works-v2-melani-hekimoglu-1.jpg",
+"w": 548,
+"h": 628
+},
+"images/works/v2/melani-hekimoglu-2.webp": {
+"jpg": "og/works-v2-melani-hekimoglu-2.jpg",
+"w": 789,
+"h": 981
+},
+"images/works/v2/melani-hekimoglu-3.webp": {
+"jpg": "og/works-v2-melani-hekimoglu-3.jpg",
+"w": 1200,
+"h": 896
+},
+"images/works/v2/melani-hekimoglu-4.webp": {
+"jpg": "og/works-v2-melani-hekimoglu-4.jpg",
+"w": 791,
+"h": 988
+},
+"images/works/v2/melani-hekimoglu-5.webp": {
+"jpg": "og/works-v2-melani-hekimoglu-5.jpg",
+"w": 961,
+"h": 1200
 }
 }

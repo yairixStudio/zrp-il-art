@@ -7,7 +7,7 @@
 <link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="preload" href="../../פונטים/FbEzmel-Light.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
-<meta name="description" content="SUMII X גלריית ארז זילינסקי רוזן — שירה טורבוביץ׳ והמותג SUMII בפופ-אפ ארט רזידנסי בגלריית כיכר דיזינגוף, 31.08–05.10.2026. קולקציית FIGURES: פסלי דמויות נשיות המשלבים פיסול ביד עם הדפסת תלת־ממד. אוצרות: קורין אברהם.">
+<meta name="description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026). אוצרות: קורין אברהם.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -24,6 +24,7 @@
   --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
   --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
   --pad-x:48px;
+  --col-gap:87px;          /* Figma: 1248 − 3×358 = 174 → 87 בין עמודות */
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:clip}
@@ -36,21 +37,23 @@ body{text-transform:uppercase}
 .heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
 .heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase;font-size:.88em;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
 
-/* ===== SPONSOR PAGE — SUMII ("sumii X the art gallery"), soos-family panel + gallery strip + curator ===== */
+/* ===== SPONSOR PAGE — SUMII + MELANI HEKİMOĞLU (שתי רזידנסיות בכיכר דיזינגוף)
+   Figma desktop 1637:134 / mobile 1318:3480. סדר הסקשנים:
+   panel(sumii) → figures → panel(melani) → melani products → curator ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
 
 /* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
-   (Figma "Main container" 1318:3313: padding 48/96/32, content 1248, gap 48; left col top-aligned) */
-.sp-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+   (Figma "Main container" 1637:160: padding 48/96, content 1248, gap 48; left col top-aligned) */
+.sp-hero{background:var(--bg-grey);padding:48px var(--pad-x);display:flex;justify-content:center}
 .sp-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
 .sp-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px}
 
-/* Chip — bordered gallery tag, right edge (Figma 1318:3317: 1px #1B1B1B, padding 4/8, no fill) */
+/* Chip — bordered gallery tag, right edge (Figma 1637:164: 1px #1B1B1B, padding 4/8, no fill) */
 .chip-row{width:100%;display:flex;justify-content:flex-end}
 a.chip{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--ink);font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);direction:rtl;transition:opacity .2s}
 a.chip:hover{opacity:.65}
 
-/* Lockup — [Sumii wordmark] X [the art gallery by / erez zielinski rozen], row gap 16 (Figma 1548:118).
+/* Lockup — [Sumii wordmark] X [the art gallery by / erez zielinski rozen], row gap 16 (Figma 1637:166).
    X = 20.1117 verbatim (גליף בודד — בלי כיול); שורות הגלריה Copperplate 16 Figma → 13px אופטי. */
 .lockup{display:flex;align-items:center;gap:16px}
 .lockup .x{font-family:var(--cop);font-weight:300;font-size:20.1117px;line-height:1}
@@ -61,11 +64,13 @@ a.chip:hover{opacity:.65}
 .lockup .sumii-logo{width:49.14px;height:22.35px;display:block;color:currentColor;transition:opacity .2s}
 .lockup a.logo-link{display:block;color:var(--ink)}
 
-/* Body + divider + site + credit group (Figma 1318:3322: gap 16; divider section padding 24/16/16) */
+/* Body + divider + site + credit group (Figma 1637:183: gap 16; divider section padding 24/16/16) */
 .sp-main{display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
 .sp-body{width:100%;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;text-align:right;direction:rtl;color:var(--ink)}
 .sp-body p+p{margin-top:19.468px}
-/* Divider 72×1 — #D2D2D2 desktop / #EFEFEF mobile (Figma 1318:3327 / 1546:3883, right inset 16px) */
+/* פסקת הפתיחה של מלאני = FbEzmel Regular בשני הפריימים (Figma ts4 desktop / ts2 mobile) */
+.sp-body p.lede{font-weight:400}
+/* Divider 72×1 — #D2D2D2 desktop / #EFEFEF mobile (Figma 1637:188 / 1546:3883, right inset 16px) */
 .sp-divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
 .sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
 a.sp-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);transition:opacity .2s}
@@ -85,13 +90,50 @@ a.sp-site:hover{opacity:.65}
 .center-text .x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
 .center-text .sumii-logo{width:87.97px;height:40px;display:block;color:currentColor}
 
-/* GALLERY STRIP — on white, 3 equal columns gap 8, object-fit:contain (Figma 1329:190: FIT,
-   height 389.80853271484375; במובייל FILL/cover) */
-.sp-gallery{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
-.sp-gallery .strip{display:flex;gap:8px;width:100%;max-width:var(--max);aspect-ratio:1248/389.80853271484375}
-.sp-gallery .g{flex:1 1 0;min-width:0;overflow:hidden}
-.sp-gallery .g picture{display:contents}
-.sp-gallery .g img{width:100%;height:100%;object-fit:contain}
+/* ===== FIGURES — 3 עבודות של shira turbowicz (Figma 1637:213 דסקטופ, על אפור;
+   במובייל הכרטיסים זולגים לתוך זרימת ה-Info Section הלבנה).
+   הגריד ב-direction:rtl ⇒ סדר ה-DOM (גאיה→סוניה→ניקי) נקרא מימין לשמאל, כמו בפיגמה. ===== */
+.sp-figures{background:var(--bg-grey);padding:32px var(--pad-x);display:flex;justify-content:center}
+.sp-figures .figs{width:100%;max-width:var(--max);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--col-gap);direction:rtl}
+
+/* כרטיס עבודה/מוצר — תמונה (aspect 358/434.17, cover כמו FILL בפיגמה) → 24 → כותרת → 24 → טקסט */
+.fig,.prod{display:flex;flex-direction:column;min-width:0;background:transparent}
+.fig .shot,.prod .shot{display:block;width:100%;aspect-ratio:358/434.17;overflow:hidden;background:#F4F1ED}
+.fig .shot picture,.prod .shot picture{display:contents}
+.fig .shot img,.prod .shot img{width:100%;height:100%;object-fit:cover;display:block}
+a.shot img{transition:filter .25s}
+a.shot:hover img{filter:brightness(.94)}
+.fig .ttl,.prod .ttl{margin-top:24px}
+.fig .txt,.prod .txt{margin-top:24px}
+/* כותרת יצירה — FbEzmel Regular 20 verbatim; שם לועזי ב-Copperplate (Figma ts6) */
+.fig .ttl{font-family:var(--heb);font-weight:400;font-size:20px;line-height:1.3;text-align:right;direction:rtl;color:var(--ink)}
+/* כותרת מוצר — Copperplate Regular 20 Figma → 16px אופטי (UPPERCASE גלובלי) */
+.prod .ttl{font-family:var(--cop);font-weight:400;font-size:16px;line-height:1.3;text-align:right;letter-spacing:.02em;color:var(--ink)}
+.fig .txt,.prod .txt{font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;text-align:right;direction:rtl;color:var(--ink);white-space:pre-line}
+
+/* ===== MELANI PANEL — לבן, לוקאפ משמאל (כרטיס 492 בלי תמונה) וטקסט מימין (Figma 1637:284) ===== */
+.mel-panel{background:var(--white);padding:48px var(--pad-x);display:flex;justify-content:center}
+.mel-panel .row{display:flex;gap:48px;align-items:flex-start;width:100%;max-width:var(--max)}
+.mel-panel .mel-img-col{flex:0 0 492px;display:flex;justify-content:center;flex-shrink:0}
+.mel-panel .text-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px}
+/* לוקאפ מלאני — עמודה ממורכזת בראש הכרטיס (Figma 1637:349: x55/y42.83, width 372, gap 16) */
+.mel-lockup{padding-top:42.83px;width:372px;max-width:100%;display:flex;flex-direction:column;align-items:center;gap:16px}
+.mel-lockup .mel-logo{width:224.98px;height:129.16px;flex-shrink:0}
+.mel-lockup .mel-logo picture{display:contents}
+.mel-lockup .mel-logo img{width:100%;height:100%;object-fit:contain}
+.mel-lockup a:hover{opacity:.65}
+.mel-lockup a{transition:opacity .2s}
+/* X = 44.7998 verbatim (גליף בודד); שם הגלריה Copperplate 35.6407 Figma → 28.5px אופטי */
+.mel-lockup .x{font-family:var(--cop);font-weight:300;font-size:44.7998px;line-height:1}
+.mel-lockup .gname{font-family:var(--cop);font-weight:300;font-size:28.5px;line-height:1.35;text-align:center;letter-spacing:.02em}
+.mel-lockup .gname .ln1{letter-spacing:.05em}
+
+/* ===== MELANI PRODUCTS — 5 כרטיסים, גריד 3 עמודות; השורה השנייה בעמודות 2-3
+   (Figma 1637:379/1652:118: row2 justify flex-end, gap 87 ⇒ נופלת בדיוק על עמודות 2 ו-3) ===== */
+.sp-products{background:var(--white);padding:32px var(--pad-x);display:flex;justify-content:center}
+.sp-products .prods{width:100%;max-width:var(--max);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--col-gap);row-gap:64px}
+.sp-products .prod:nth-child(4){grid-column:2}
+.sp-products .prod:nth-child(5){grid-column:3}
 
 /* THE CURATOR — artists-strip pattern (event pages), single card → curator page */
 .sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
@@ -116,30 +158,50 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 /* ===== RESPONSIVE ===== */
 @media (min-width:1320px){ :root{--pad-x:96px} }
 
-/* Narrow desktop / tablet — shrink the hero card, keep composition */
+/* Narrow desktop / tablet — shrink the hero card and the column gutter, keep composition */
 @media (max-width:1319px) and (min-width:769px){
-  .sp-hero .row{gap:32px;min-width:0}
-  .sp-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  :root{--col-gap:48px}
+  .sp-hero .row,.mel-panel .row{gap:32px;min-width:0}
+  .sp-hero .img-col,.mel-panel .mel-img-col{flex:0 1 400px;min-width:0;justify-content:center}
   .sp-hero .card{width:100%;max-width:400px;height:640px}
+  .mel-lockup{width:100%}
+  .mel-lockup .mel-logo{width:190px;height:109.1px}
+  .mel-lockup .x{font-size:38px}
+  .mel-lockup .gname{font-size:24px}
 }
 
-/* Mobile (Figma 1318:3480): hero full-bleed 390×520 under the header, then white content.
-   Order: chip → lockup → body → gallery → divider → site → credit → curator
-   (הגלריה נכנסת בין הגוף לקבוצת הקרדיטים — שונה מהדסקטופ). */
+/* Mobile (Figma 1318:3480): hero full-bleed 390×520 under the header, then one white column.
+   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 figures · 8-10 divider/site/credit ·
+          11 melani lockup · 12 melani body · 13-17 products · 18-20 divider/site/credit · 21 curator */
 @media (max-width:768px){
   :root{--pad-x:16px}
 
-  .sp-hero,.sp-hero .row,.sp-hero .text-col,.chip-row,.sp-main{display:contents}
+  .sp-hero,.sp-hero .row,.sp-hero .text-col,.chip-row,.sp-main,
+  .sp-figures,.sp-figures .figs,
+  .mel-panel,.mel-panel .row,.mel-panel .mel-img-col,.mel-panel .text-col,
+  .sp-products,.sp-products .prods{display:contents}
 
   .sp-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
   a.chip{order:2}
   .lockup{order:3}
-  .sp-body{order:4}
-  .sp-gallery{order:5}
-  .sp-divider{order:6}
-  a.sp-site{order:7}
-  .sp-credit{order:8}
-  .sp-curator{order:9}
+  .sp-body--sumii{order:4}
+  .fig:nth-child(1){order:5}
+  .fig:nth-child(2){order:6}
+  .fig:nth-child(3){order:7}
+  .sp-divider--sumii{order:8}
+  .sp-site--sumii{order:9}
+  .sp-credit--sumii{order:10}
+  .mel-lockup{order:11}
+  .sp-body--mel{order:12}
+  .prod:nth-child(1){order:13}
+  .prod:nth-child(2){order:14}
+  .prod:nth-child(3){order:15}
+  .prod:nth-child(4){order:16}
+  .prod:nth-child(5){order:17}
+  .sp-divider--mel{order:18}
+  .sp-site--mel{order:19}
+  .sp-credit--mel{order:20}
+  .sp-curator{order:21}
 
   .only-d{display:none}
   .only-m{display:inline}
@@ -157,13 +219,26 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .lockup{background:var(--white);padding:24px 16px 0;width:100%;justify-content:flex-end}
   .sp-body{background:var(--white);padding:24px 16px 0;width:100%;font-size:16px;line-height:17.305px}
   .sp-body p+p{margin-top:17.305px}
-  .sp-gallery{padding:24px 16px 0}
-  .sp-gallery .strip{aspect-ratio:358/138.18}
-  .sp-gallery .g img{object-fit:cover}
   .sp-divider{background:var(--white);padding:24px 32px 0;width:100%}
   .sp-divider i{background:#EFEFEF}
   a.sp-site{background:var(--white);padding:16px 16px 0;width:100%;text-align:right;font-size:13px}
   .sp-credit{background:var(--white);padding:10px 16px 24px;width:100%;font-size:16px;line-height:17.305px}
+  /* קבוצת הקרדיטים של סומי אינה סוגרת את העמוד — ההמשך (מלאני) בא מיד אחריה */
+  .sp-credit--sumii{padding-bottom:0}
+
+  /* Figures — כרטיס מלא ברוחב התוכן, אותם 24/24 כמו בדסקטופ (Figma: img+ttl ילד אחד, desc ילד נפרד, gap 24) */
+  .fig{background:var(--white);padding:24px 16px 0;width:100%}
+
+  /* Melani lockup — שורה (לוגו · X · שם הגלריה) צמודה ימין, Figma 1635:348 */
+  .mel-lockup{background:var(--white);padding:24px 16px 0;width:100%;flex-direction:row;align-items:center;justify-content:flex-end;gap:16px}
+  .mel-lockup .mel-logo{width:134px;height:126px}
+  .mel-lockup .x{font-size:20.1117px}
+  .mel-lockup .gname{font-size:13px;line-height:1.4}
+
+  /* Products — 64px בין כרטיסים (Figma 1652:197 gap 64); הראשון ממשיך את קצב ה-24 */
+  .prod{background:var(--white);padding:64px 16px 0;width:100%}
+  .prod:nth-child(1){padding-top:24px}
+  .prod .txt{margin-top:8px}
 
   /* Curator strip (Figma mobile 96×80 thumb) */
   .sp-curator{padding:32px 16px}
@@ -185,15 +260,15 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sumii X The Art Gallery — Zielinski &amp; Rozen">
-<meta property="og:description" content="SUMII X גלריית ארז זילינסקי רוזן — שירה טורבוביץ׳ והמותג SUMII בפופ-אפ ארט רזידנסי בגלריית כיכר דיזינגוף, 31.08–05.10.2026. קולקציית FIGURES: פסלי דמויות נשיות המשלבים פיסול ביד עם הדפסת תלת־ממד.">
+<meta property="og:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026).">
 <meta property="og:url" content="https://art.zrp.co.il/sponsors/sumii/">
 <meta property="og:image" content="https://art.zrp.co.il/og/sponsors-sumii-hero.jpg">
 <meta property="og:image:alt" content="Sumii X The Art Gallery">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sumii X The Art Gallery — Zielinski &amp; Rozen">
-<meta name="twitter:description" content="SUMII X גלריית ארז זילינסקי רוזן — שירה טורבוביץ׳ והמותג SUMII בפופ-אפ ארט רזידנסי בגלריית כיכר דיזינגוף, 31.08–05.10.2026.">
+<meta name="twitter:description" content="שתי רזידנסיות בגלריית כיכר דיזינגוף: SUMII של שירה טורבוביץ׳ עם קולקציית FIGURES (31.08–05.10.2026), ומלאני הקימוגלו עם סדרת FLOW הקרמית (28.09–05.10.2026).">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/sponsors-sumii-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/sumii/#page","url":"https://art.zrp.co.il/sponsors/sumii/","name":"Sumii X The Art Gallery","inLanguage":"he-IL","image":"https://art.zrp.co.il/og/sponsors-sumii-hero.jpg","description":"SUMII X גלריית ארז זילינסקי רוזן — פופ-אפ ארט רזידנסי של שירה טורבוביץ׳ והמותג SUMII בגלריית כיכר דיזינגוף, 31.08.2026–05.10.2026. אוצרות: קורין אברהם.","about":{"@type":"Brand","name":"SUMII","url":"https://www.sumiiworld.com"},"publisher":{"@id":"https://art.zrp.co.il/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sumii X The Art Gallery","item":"https://art.zrp.co.il/sponsors/sumii/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/sumii/#page","url":"https://art.zrp.co.il/sponsors/sumii/","name":"Sumii X The Art Gallery","inLanguage":"he-IL","image":"https://art.zrp.co.il/og/sponsors-sumii-hero.jpg","description":"שתי רזידנסיות פופ-אפ בגלריית האמנות של ארז זילינסקי רוזן בכיכר דיזינגוף: SUMII של שירה טורבוביץ׳ (31.08.2026–05.10.2026) ומלאני הקימוגלו (28.09.2026–05.10.2026). אוצרות: קורין אברהם.","about":[{"@type":"Brand","name":"SUMII","url":"https://www.sumiiworld.com"},{"@type":"Brand","name":"Melani Hekimoglu","url":"https://www.melanihekimoglu.com"}],"publisher":{"@id":"https://art.zrp.co.il/#org"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Sumii X The Art Gallery","item":"https://art.zrp.co.il/sponsors/sumii/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -204,7 +279,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 <main class="sponsor">
 
-  <!-- PANEL — text column left (right-aligned content), hero card right (Figma 1318:3287 desktop / 1318:3480 mobile) -->
+  <!-- PANEL — SUMII: text column left (right-aligned content), hero card right (Figma 1637:160 desktop / 1318:3539 mobile) -->
   <section class="sp-hero">
     <div class="row">
 
@@ -222,8 +297,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
         </h1>
 
         <div class="sp-main">
-          <div class="sp-body heb">
-            <p>גלריית <a class="artist-link" href="../../about/">ארז זילינסקי רוזן</a> בכיכר דיזנגוף מארחת את <a class="artist-link" href="../../artists/shira-turbowicz/">שירה טורבוביץ׳</a> מהמותג <span class="lat">SUMII</span> ל־<span class="lat">POP UP ART RESIDENCY</span> בתאריכים 31.08.2026–05.10.2026.</p>
+          <div class="sp-body sp-body--sumii heb">
+            <p>גלריית <a class="artist-link" href="../../about/">ארז זילינסקי רוזן</a> בכיכר דיזנגוף מארחת את <a class="artist-link" href="../../artists/shira-turbowicz/">שירה טורבוביץ׳</a> מהמותג <span class="lat">SUMII</span> ל־<span class="lat">POP UP ART RESIDENCY</span> בתאריכים <bdi dir="ltr">31.08.2026–05.10.2026</bdi>.</p>
             <p><span class="lat">SUMII</span> הוא מותג עיצוב בית המשלב פיסול מסורתי עם מלאכה דיגיטלית. במרכזו אובייקטים בפסל חומר מפוסל ביד, הנסרק בתלת־ממד, עובר עיבוד וירטואלי ומודפס בחומרים חדשניים כמו ביו־פלסטיק משי, המיוצרים במהדורות מוגבלות.</p>
             <p>בגלריית האמנות של ארז זילינסקי רוזן בכיכר דיזנגוף תוצג קולקציית <span class="lat">FIGURES</span>, סדרה של דמויות פיגורטיביות החוגגת נשיות דרך צורה, קימור ובשם. כל פריט בסדרה הוא פסל הנושא שם וסיפור של דמות נשית היסטורית פורצת דרך.</p>
             <p>מאחורי <span class="lat">SUMII</span> עומדת האמנית הרב־תחומית <a class="artist-link" href="../../artists/shira-turbowicz/">שירה טורבוביץ׳</a>, בוגרת <span class="lat">CENTRAL SAINT MARTINS</span> בלונדון וזוכת פרס <span class="lat">LVMH</span>, שפיתחה לאורך השנים שפה עיצובית המחברת בין פיסול, אופנה וטכנולוגיה.</p>
@@ -232,11 +307,11 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
             <p><span class="lat">SUMII</span> ביפנית 住井: סמל לשייכות, עומק ויופי שקט.</p>
           </div>
 
-          <div class="sp-divider" aria-hidden="true"><i></i></div>
+          <div class="sp-divider sp-divider--sumii" aria-hidden="true"><i></i></div>
 
-          <a class="sp-site" href="https://www.sumiiworld.com" target="_blank" rel="noopener">www.sumiiworld.com</a>
+          <a class="sp-site sp-site--sumii" href="https://www.sumiiworld.com" target="_blank" rel="noopener">www.sumiiworld.com</a>
 
-          <div class="sp-credit heb"><span class="only-d">אוצרות: </span><span class="only-m">אוצרת התערוכה - </span><a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></div>
+          <div class="sp-credit sp-credit--sumii heb"><span class="only-d">אוצרות: </span><span class="only-m">אוצרת התערוכה - </span><a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></div>
         </div>
       </div>
 
@@ -254,16 +329,122 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
-  <!-- GALLERY STRIP — FIGURES collection, 3-up contain on white (Figma 1329:188 desktop / 1318:3624 mobile) -->
-  <section class="sp-gallery" aria-label="קולקציית FIGURES של SUMII">
-    <div class="strip">
-      <div class="g"><img src="../../images/sponsors/sumii/gallery-01.webp" width="624" height="780" alt="פסל SUMII לבן מקולקציית FIGURES — דמות נשית מודפסת בתלת־ממד על רקע כהה" loading="lazy" decoding="async"></div>
-      <div class="g"><img src="../../images/sponsors/sumii/gallery-02.webp" width="520" height="780" alt="פסל SUMII בגוון כחול-פלדה מקולקציית FIGURES — טורסו נשי מודפס בתלת־ממד" loading="lazy" decoding="async"></div>
-      <div class="g"><img src="../../images/sponsors/sumii/gallery-03.webp" width="520" height="780" alt="פסל SUMII כחול מפותל מקולקציית FIGURES על רקע בז'" loading="lazy" decoding="async"></div>
+  <!-- FIGURES — 3 עבודות של shira turbowicz (Figma 1637:213 desktop / 1590:181+1589:* mobile).
+       סדר ה-DOM = סדר הקריאה RTL (גאיה → סוניה → ניקי) = סדר המובייל בפיגמה. -->
+  <section class="sp-figures" aria-label="קולקציית FIGURES של SUMII">
+    <div class="figs">
+
+      <article class="fig">
+        <a class="shot" href="../../works/shira-turbowicz-1/" aria-label="גאיה, אלת האדמה">
+          <img src="../../images/works/v2/shira-turbowicz-1.webp" srcset="../../images/works/v2/shira-turbowicz-1-480w.webp 480w, ../../images/works/v2/shira-turbowicz-1-768w.webp 768w, ../../images/works/v2/shira-turbowicz-1.webp 832w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="832" height="1208" alt="גאיה, אלת האדמה — פסל SUMII מודפס בתלת־ממד" loading="lazy" decoding="async">
+        </a>
+        <div class="ttl heb">גאיה, אלת האדמה | <span class="lat">Gaia</span></div>
+        <div class="txt heb">לפי האמונה היוונית העתיקה, מתוך הכאוס נולדה גאיה — האם הראשונה והאדמה עצמה, מקור ההרים, הימים והשמיים. היא גילמה את כוחו הכפול של הטבע: להעניק חיים, אך גם לכלותם.
+מקור החיים ויוצרת החורבן "ראשון היה הכאוס, ואחריו גאיה רחבת־החזה..." — הסיודוס, תיאוגוניה</div>
+      </article>
+
+      <article class="fig">
+        <a class="shot" href="../../works/shira-turbowicz-2/" aria-label="סוניה דלונה">
+          <img src="../../images/works/v2/shira-turbowicz-2.webp" srcset="../../images/works/v2/shira-turbowicz-2-480w.webp 480w, ../../images/works/v2/shira-turbowicz-2-768w.webp 768w, ../../images/works/v2/shira-turbowicz-2.webp 832w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="832" height="1208" alt="סוניה דלונה — פסל SUMII מודפס בתלת־ממד" loading="lazy" decoding="async">
+        </a>
+        <div class="ttl heb">סוניה דלונה | <bdi dir="ltr">1885–1979</bdi> | <span class="lat">Sonia Delaunay</span></div>
+        <div class="txt heb">סוניה דלונה הקדישה את יצירתה לחקר הצבע ולשילוב האמנות בחיי היומיום. יחד עם רובר דלונה פיתחה את הסימולטניזם — שפה חזותית המבוססת על ניגודי צבע, אור ותנועה היוצרים קצב ורטט. את רעיונותיה הרחיבה מעבר לציור אל אופנה, טקסטיל, תיאטרון ועיצוב, והפכה את האמנות לחוויה שאפשר ללבוש ולחיות בתוכה.</div>
+      </article>
+
+      <article class="fig">
+        <a class="shot" href="../../works/shira-turbowicz-3/" aria-label="ניקי דה סן פאל">
+          <img src="../../images/works/v2/shira-turbowicz-3.webp" srcset="../../images/works/v2/shira-turbowicz-3-480w.webp 480w, ../../images/works/v2/shira-turbowicz-3-768w.webp 768w, ../../images/works/v2/shira-turbowicz-3.webp 832w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="832" height="1208" alt="ניקי דה סן פאל — פסל SUMII מודפס בתלת־ממד" loading="lazy" decoding="async">
+        </a>
+        <div class="ttl heb">ניקי דה סן פאל | <bdi dir="ltr">1930–2002</bdi> | <span class="lat">Niki de Saint Phalle</span></div>
+        <div class="txt heb">ניקי דה סן פאל ראתה באמנות כלי לריפוי ולמרד. סדרת ה"נאנאס" (<span class="lat">NANAS</span>) — פסלי נשים גדולות, צבעוניות ועוצמתיות — ערערה על אידיאל היופי המערבי והדהדה אלות פריון קדומות.
+שיא יצירתה היה "גן הטארוט" בטוסקנה: עולם פיסולי של דמויות ענק מצופות מראות, זכוכית וקרמיקה, שניתן לצעוד ולשהות בתוכן.
+"הבנתי שאין דבר מזעזע יותר משמחה."
+— ניקי דה סן פאל</div>
+      </article>
+
     </div>
   </section>
 
-  <!-- THE CURATOR — korin avraham (Figma 1546:3785 desktop / 1546:3820 mobile) -->
+  <!-- PANEL — MELANI HEKİMOĞLU: לוקאפ משמאל, טקסט מימין (Figma 1637:284 desktop / 1635:348+1635:365 mobile) -->
+  <section class="mel-panel">
+    <div class="row">
+
+      <div class="mel-img-col">
+        <div class="mel-lockup">
+          <a class="mel-logo" href="https://www.melanihekimoglu.com" target="_blank" rel="noopener" aria-label="Melani Hekimoglu">
+            <img src="../../images/sponsors/melani/logo.webp" width="450" height="258" alt="Melani Hekimoğlu — Handmade in Tel Aviv" loading="lazy" decoding="async">
+          </a>
+          <span class="x">X</span>
+          <a class="gname" href="../../"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</a>
+        </div>
+      </div>
+
+      <div class="text-col">
+        <div class="sp-body sp-body--mel heb">
+          <p class="lede">גלריית <a class="artist-link" href="../../about/">ארז זילינסקי רוזן</a> בכיכר דיזנגוף מארחת את מלאני הקימוגלו ל־<span class="lat">POP UP ART RESIDENCY</span> בתאריכים <bdi dir="ltr">28.09.2026–05.10.2026</bdi>.</p>
+          <p>מלאני הקימוגלו היא אמנית ומעצבת, שעשייתה נעה בין אמנות עכשווית לעיצוב פונקציונלי. בעבודתה, המבוססת בעיקר על חומר קרמי, היא חוקרת חומר וצורה דרך פיסול, מיצב ואובייקטים פונקציונליים ואספניים.</p>
+          <p>הפרקטיקה האמנותית שלה עוסקת בזמן, שינוי ומחזוריות, ומבקשת להחזיר את תשומת הלב לרגעים בודדים בעולם שהולך ונעשה מהיר יותר. הצורות הקרמיות שלה חוקרות נזילות שקפאה בזמן, ולוכדות תנועה בחומר בין כוונה לספונטניות, כאשר כל פריט מעוצב באופן אינדיבידואלי ויחיד במינו.</p>
+          <p>בין התאריכים <bdi dir="ltr">28.09.2026–05.10.2026</bdi> תהפוך הגלריה של ארז זילינסקי רוזן בכיכר דיזנגוף לסטודיו זמני ולמרחב עבודה פתוח.</p>
+          <p>מלאני תעבוד במקום על יצירה חדשה ותשתמש בזמן ובחלל למחקר, ניסוי ופיתוח רעיונות דרך טקסטורה, צורה, חומר ותנועה.</p>
+          <p>העבודה תתרחש ותתפתח בגלריה בזמן אמת, ללא תוצאה שנקבעה מראש. גם הקהל יהפוך לחלק מהתהליך: המבקרים יוכלו להיכנס, לפגוש את מלאני בזמן העבודה, להתבונן, לשוחח ולהגיב, כשהמפגשים עצמם עשויים להשפיע על הדרך שבה העבודה מתפתחת.</p>
+          <p>שבוע שבו הגלריה אינה רק המקום שבו מציגים אמנות, אלא המקום שבו היא נוצרת.</p>
+        </div>
+
+        <div class="sp-main">
+          <div class="sp-divider sp-divider--mel" aria-hidden="true"><i></i></div>
+
+          <a class="sp-site sp-site--mel" href="https://www.melanihekimoglu.com" target="_blank" rel="noopener">www.melanihekimoglu.com</a>
+
+          <div class="sp-credit sp-credit--mel heb">אוצרת התערוכה - <a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MELANI PRODUCTS — סדרת FLOW / BLOOM (Figma 1637:379+1652:118 desktop / 1652:197 mobile) -->
+  <section class="sp-products" aria-label="עבודות של מלאני הקימוגלו">
+    <div class="prods">
+
+      <article class="prod">
+        <div class="shot"><img src="../../images/sponsors/melani/flow-plates.webp" srcset="../../images/sponsors/melani/flow-plates-480w.webp 480w, ../../images/sponsors/melani/flow-plates.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW PLATES &amp; BOWLS — מגדל צלחות קרמיקה בגוונים חומים ולבנים" loading="lazy" decoding="async"></div>
+        <div class="ttl">flow plates &amp; bowls</div>
+        <div class="txt heb">צלחת קינוחים רוחב 16 ס"מ
+צלחת מנה ראשונה רוחב 22 ס"מ
+צלחת מנה עיקרית רוחב 27 ס"מ</div>
+      </article>
+
+      <article class="prod">
+        <div class="shot"><img src="../../images/sponsors/melani/flow-vases.webp" srcset="../../images/sponsors/melani/flow-vases-480w.webp 480w, ../../images/sponsors/melani/flow-vases.webp 518w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="518" height="628" alt="FLOW VASES — אגרטל קרמי בגוון חול עם שפה גלית" loading="lazy" decoding="async"></div>
+        <div class="ttl">flow vases</div>
+        <div class="txt heb">כל אגרטל משתנה בגובהו ובצורתו עקב תהליך היצירה הבלתי צפוי. הגבהים נעים בדרך כלל בין 6 ל-25 ס"מ.</div>
+      </article>
+
+      <article class="prod">
+        <div class="shot"><img src="../../images/sponsors/melani/flow-dessert-bowl.webp" srcset="../../images/sponsors/melani/flow-dessert-bowl-480w.webp 480w, ../../images/sponsors/melani/flow-dessert-bowl.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW DESSERT BOWL — קערת קינוחים קרמית לבנה על רגל" loading="lazy" decoding="async"></div>
+        <div class="ttl">flow dessert bowl</div>
+        <div class="txt heb">קערת קינוחים
+12x12 ס"מ</div>
+      </article>
+
+      <article class="prod">
+        <div class="shot"><img src="../../images/sponsors/melani/flow-lamp.webp" srcset="../../images/sponsors/melani/flow-lamp-480w.webp 480w, ../../images/sponsors/melani/flow-lamp.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="FLOW LAMP — מנורת קרמיקה תלויה מעל שולחן ערוך" loading="lazy" decoding="async"></div>
+        <div class="ttl">flow lamp</div>
+        <div class="txt heb">מנורות <span class="lat">Flow</span>.
+הגודל משתנה עקב תהליך היצירה הבלתי צפוי.
+רוחב של +- 45 ס"מ.</div>
+      </article>
+
+      <article class="prod">
+        <div class="shot"><img src="../../images/sponsors/melani/bloom-planter.webp" srcset="../../images/sponsors/melani/bloom-planter-480w.webp 480w, ../../images/sponsors/melani/bloom-planter.webp 716w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="716" height="868" alt="BLOOM PLANTER — שני אובייקטים קרמיים לבנים על שולחנות צד" loading="lazy" decoding="async"></div>
+        <div class="ttl">bloom planter</div>
+        <div class="txt heb">כל אגרטל משתנה בגובהו ובצורתו עקב תהליך היצירה הבלתי צפוי. הגבהים נעים בדרך כלל בין 6 ל-25 ס"מ.</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- THE CURATOR — korin avraham (Figma 1637:240 desktop / 1546:3820 mobile) -->
   <section class="sp-curator" aria-label="אוצרת הרזידנסי">
     <div class="inner">
       <div class="label">the curator</div>

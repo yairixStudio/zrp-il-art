@@ -341,6 +341,13 @@ tali-zelnik מובייל: Implement this design from Figma.
 shira-turbowicz מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1608-5728&m=dev
 
+### melani-hekimoglu — דף אומנית מלא (2026-08-23, `landing`)
+
+> אומנית חדשה **ללא תערוכה** — מלאני הקימוגלו, קרמיקה (רזידנסי 28.09–05.10.2026 בכיכר דיזינגוף, אוצרות קורין אברהם). פריים מובייל 390px בלבד (⚠️ שם ה-node "artist5" — אותה תבנית ממוחזרת כמו tali-zelnik/shira-turbowicz). ביו 2 פסקאות (`1634:219`) + 5 יצירות (`1634:232`, `1641:382`, `1641:402`) + רצועת `the curator` (`1634:261`). **אין כותרת-קבוצה מעל הסטייטמנט** (שלא כמו shira, שיש לה "POP UP ART RESIDENCY"). ⚠️ ה-fill `724f6d54…` שמתחת לשתי יצירות = צילום קטלוגי ממותג "SHORASHIM", leftover מוסתר. השם בפריים בשורה **אחת** Bold (36) — שונה מהפיצול bold/light של שאר הפריימים (למשל hadas-tuval `797:106`).
+
+melani-hekimoglu מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1634-188&m=dev
+
 ### zohar ron × dandan nusha (שיתוף — `artist.html?slug=zohar-ron-dan-ben-ari`)
 
 מובייל (קנוני ב-`landing`, לא ב-`artist-pages`): Implement this design from Figma.

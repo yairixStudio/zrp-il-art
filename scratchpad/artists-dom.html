@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Artists — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin="">
+<link rel="preload" href="../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin="">
+<link rel="preload" href="../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin="">
+<link rel="stylesheet" href="../components/site-boot.css">
+<meta name="description" content="האמנים של גלריות זילינסקי רוזן בתל אביב: ציירים, פסלים וצלמים ישראלים המציגים במודל ללא עמלות תיווך, שבו כל ההכנסה מגיעה ישירות לאמן.">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2"),url("../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate.woff2") format("woff2"),url("../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Heavy.woff2") format("woff2"),url("../פונטים/CopperplateCC-Heavy.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --artist:#828282;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* GLOBAL CASING RULE — all English text renders UPPERCASE (project-wide).
+   Hebrew is exempt. See CLAUDE.md §9 / conventions.md §5. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* ===== HERO (THE artists) — Figma desktop 523:107 (grey) / mobile 523:2 ===== */
+.hero{background:var(--bg-grey);padding:48px var(--pad-x) 40px}
+.hero-inner{width:100%;max-width:var(--max);margin:0 auto;text-align:right}
+.hero h1,.hero h2{font-family:var(--cop);font-size:80px;line-height:.96;color:var(--ink);letter-spacing:.02em}
+.hero h1{font-weight:700}
+.hero h2{font-weight:300}
+.hero-intro{margin-top:18px;max-width:var(--max);margin-left:auto;margin-right:auto}
+.hero-intro p{font-family:var(--heb);font-weight:400;font-size:18px;line-height:1.55;color:var(--ink);direction:rtl;text-align:right}
+.hero-intro p + p{margin-top:1em}
+
+/* ===== ARTIST GRID — 3 columns desktop / 2 columns mobile, per Figma 523:107 / 523:2 ===== */
+.grid{
+  max-width:var(--max);margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  column-gap:16px;row-gap:32px;
+  padding:48px var(--pad-x);background:var(--white);
+}
+.artist{display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0}
+.artist .img{position:relative;width:100%;aspect-ratio:1/1;overflow:hidden;background:#FAFAFA}
+.artist .img img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.artist .img::after{content:"";position:absolute;inset:0;background:rgba(27,27,27,0);transition:background .3s;pointer-events:none}
+.artist:hover .img::after{background:rgba(27,27,27,.06)}
+.artist .nm{
+  font-family:var(--cop);font-weight:300;font-size:28px;line-height:1.05;
+  text-align:center;color:var(--artist);white-space:pre-line;letter-spacing:.02em;
+  transition:color .2s;
+}
+.artist:hover .nm{color:var(--ink)}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100px) — stays 3-up
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .hero h1,.hero h2{font-size:60px}
+  .grid{row-gap:32px}
+  .artist .nm{font-size:22px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768px) — 2-up per Figma 523:2 (white hero)
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .hero{background:var(--white);padding:32px 16px 8px}
+  .hero-inner{text-align:center;padding-left:16px;padding-right:16px}
+  .hero h1{font-size:40px}
+  .hero h2{font-size:60px;margin-top:0}
+  .hero-intro{margin-top:16px}
+  .hero-intro p{font-size:16px;text-align:center}
+  .grid{grid-template-columns:repeat(2,1fr);padding:32px 16px;column-gap:16px;row-gap:32px}
+  .artist{gap:12px}
+  .artist .nm{font-size:16px;line-height:1.12}
+}
+
+/* ============================================================
+   RESPONSIVE — SMALL MOBILE (≤390px) — stays 2-up
+   ============================================================ */
+@media (max-width:390px){
+  .grid{column-gap:12px}
+  .artist .nm{font-size:15px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/artists/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The Artists — Zielinski &amp; Rozen">
+<meta property="og:description" content="האמנים של גלריות זילינסקי רוזן בתל אביב: ציירים, פסלים וצלמים ישראלים המציגים במודל ללא עמלות תיווך, שבו כל ההכנסה מגיעה ישירות לאמן.">
+<meta property="og:url" content="https://art.zrp.co.il/artists/">
+<meta property="og:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="995">
+<meta property="og:image:alt" content="The Artists — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Artists — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="האמנים של גלריות זילינסקי רוזן בתל אביב: ציירים, פסלים וצלמים ישראלים המציגים במודל ללא עמלות תיווך, שבו כל ההכנסה מגיעה ישירות לאמן.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://art.zrp.co.il/artists/#webpage","url":"https://art.zrp.co.il/artists/","name":"The Artists — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"}}</script>
+<!-- SEO:auto:end -->
+<link rel="stylesheet" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/components/site-chrome.css?v=7" data-site-chrome-css=""><link rel="icon" type="image/png" sizes="16x16" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon-16.png" data-site-chrome-icon=""><link rel="icon" type="image/png" sizes="32x32" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon-32.png" data-site-chrome-icon=""><link rel="icon" type="image/png" sizes="192x192" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon.png" data-site-chrome-icon=""><link rel="shortcut icon" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon.ico" data-site-chrome-icon=""><link rel="apple-touch-icon" sizes="180x180" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/apple-touch-icon.png" data-site-chrome-icon=""></head>
+<body class="is-ready"><a class="skip-link" data-zr-skip="" href="#main">SKIP TO CONTENT</a>
+
+<!-- NAV -->
+<site-header data-rendered="1"><header class="nav"><div class="nav-inner"><button class="hamburger" aria-label="menu" aria-expanded="false" aria-controls="primary-nav"><svg class="hamburger-figma" viewBox="0 0 24 24" fill="#1B1B1B" aria-hidden="true"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path></svg><svg class="hamburger-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="#1B1B1B" stroke-width="1.5" fill="none"></path></svg><span class="hamburger-bars"><span></span><span></span><span></span></span></button><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/" class="logo" aria-label="home" data-nav="home"><img class="logo-svg" src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/logo.svg" alt="Zielinski &amp; Rozen" width="177" height="37" decoding="async" data-pic-done="1"></a><div class="nav-right"><button class="hd-bookmark" type="button" data-bookmark-open="" aria-label="saved posts" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12v18l-6-4-6 4V3z"></path></svg><span class="hd-bookmark-count" data-bookmark-count="">0</span></button><ul class="nav-links" id="primary-nav" lang="en"><li class="nav-close-item" role="presentation"><button class="nav-close" type="button" aria-label="close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.5" fill="none"></path></svg></button></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#opencall" data-nav="opencall">open call</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#exhibitions" data-nav="exhibitions">exhibitions</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/works/" data-nav="works">the art works</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/artists/" data-nav="artists" class="active" aria-current="page">the artists</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries" data-nav="galleries">the galleries</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/about/" data-nav="about">about</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/press/" data-nav="press">press &amp; events</a></li><li class="nav-zrp-cta-item" role="presentation"><a class="nav-zrp-cta" href="https://zrp.co.il" target="_blank" rel="noopener" aria-label="the official site — zrp.co.il"><img class="nav-zrp-cta-logo" src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/logo.svg" alt="Zielinski &amp; Rozen" width="177" height="37" decoding="async" loading="lazy" data-pic-done="1"><span class="nav-zrp-cta-label">the official site</span></a></li></ul><div class="bm-backdrop" data-bookmark-backdrop="" hidden=""></div><aside class="bookmark-modal" data-bookmark-modal="" hidden="" role="dialog" aria-label="saved posts"><div class="bm-head"><h3>MY LIST</h3><button data-bookmark-close="" type="button" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"></path></svg></button></div><ul data-bookmark-list=""></ul><div class="bm-empty" data-bookmark-empty="">אין פוסטים שמורים עדיין</div></aside></div></div></header></site-header>
+
+<!-- HERO -->
+<section class="hero" id="main" tabindex="-1">
+  <div class="hero-inner">
+    <h1>THE</h1>
+    <h2>artists</h2>
+  </div>
+  <div class="hero-intro heb" dir="rtl">
+    <p>הגלריות של ארז זילינסקי רוזן נולדו מתוך אהבה עמוקה לאמנות ולאנשים שיוצרים אותה. לאורך השנים בחר ארז להשקיע את זמנו, משאביו והבמה שיצר כדי לקדם אמנים ואמניות, מתוך אמונה שאמנות היא כוח שמחבר בין אנשים, מעורר מחשבה ויוצר שינוי.</p>
+    <p>במודל יוצא דופן בנוף המקומי, הגלריות פועלות ללא עמלות תיווך, וכל ההכנסות ממכירת היצירות מועברות ישירות לאמנים המציגים. זהו ביטוי למחויבות אמיתית לתמיכה ביצירה ישראלית ולבניית קהילה שבה האמנות עומדת במרכז.</p>
+  </div>
+</section>
+
+<!-- Artist grid — rendered from inline data (file:// can't fetch JSON).
+     Order + two-line names follow Figma 523:107 (desktop) / 523:2 (mobile).
+     Each card links to /artists/<slug>/. Images: images/artists/grid/<slug>.webp -->
+<section class="grid" id="artists-grid"><a class="artist" href="../artists/zohar-ron/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/zohar-ron-480w.avif 480w, ../images/artists/grid/zohar-ron.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/zohar-ron.webp" srcset="../images/artists/grid/zohar-ron-480w.webp 480w, ../images/artists/grid/zohar-ron.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="zohar ron" decoding="async" fetchpriority="high" data-pic-done="1"></picture></div><div class="nm">zohar
+ron</div></a><a class="artist" href="../artists/gilad-kenan/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/gilad-kenan-480w.avif 480w, ../images/artists/grid/gilad-kenan.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/gilad-kenan.webp" srcset="../images/artists/grid/gilad-kenan-480w.webp 480w, ../images/artists/grid/gilad-kenan.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="gilad kenan" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">gilad
+kenan</div></a><a class="artist" href="../artists/nir-giorgio-levin/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/nir-giorgio-levin-480w.avif 480w, ../images/artists/grid/nir-giorgio-levin.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/nir-giorgio-levin.webp" srcset="../images/artists/grid/nir-giorgio-levin-480w.webp 480w, ../images/artists/grid/nir-giorgio-levin.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="nir giorgio levin" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">nir giorgio
+levin</div></a><a class="artist" href="../artists/jessica-tabarovsky/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/jessica-tabarovsky-480w.avif 480w, ../images/artists/grid/jessica-tabarovsky.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/jessica-tabarovsky.webp" srcset="../images/artists/grid/jessica-tabarovsky-480w.webp 480w, ../images/artists/grid/jessica-tabarovsky.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="jessica tabarovsky" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">jessica
+tabarovsky</div></a><a class="artist" href="../artists/baruch-torgeman/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/baruch-torgeman-480w.avif 480w, ../images/artists/grid/baruch-torgeman.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/baruch-torgeman.webp" srcset="../images/artists/grid/baruch-torgeman-480w.webp 480w, ../images/artists/grid/baruch-torgeman.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="baruch torgeman" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">baruch
+torgeman</div></a><a class="artist" href="../artists/chen-ziv/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/chen-ziv-480w.avif 480w, ../images/artists/grid/chen-ziv.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/chen-ziv.webp" srcset="../images/artists/grid/chen-ziv-480w.webp 480w, ../images/artists/grid/chen-ziv.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="chen ziv" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">chen
+ziv</div></a><a class="artist" href="../artists/lahav-barak/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/lahav-barak-480w.avif 480w, ../images/artists/grid/lahav-barak.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/lahav-barak.webp" srcset="../images/artists/grid/lahav-barak-480w.webp 480w, ../images/artists/grid/lahav-barak.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="lahav barak" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">lahav
+barak</div></a><a class="artist" href="../artists/anat-wegier/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/anat-wegier-480w.avif 480w, ../images/artists/grid/anat-wegier.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/anat-wegier.webp" srcset="../images/artists/grid/anat-wegier-480w.webp 480w, ../images/artists/grid/anat-wegier.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="anat wegier" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">anat
+wegier</div></a><a class="artist" href="../artists/elsa-ars-brush/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/elsa-ars-brush-480w.avif 480w, ../images/artists/grid/elsa-ars-brush.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/elsa-ars-brush.webp" srcset="../images/artists/grid/elsa-ars-brush-480w.webp 480w, ../images/artists/grid/elsa-ars-brush.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="elsa ers brosh" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">elsa
+ers brosh</div></a><a class="artist" href="../artists/noemi-safir/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/noemi-safir-480w.avif 480w, ../images/artists/grid/noemi-safir.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/noemi-safir.webp" srcset="../images/artists/grid/noemi-safir-480w.webp 480w, ../images/artists/grid/noemi-safir.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="noemi safir" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">noemi
+safir</div></a><a class="artist" href="../artists/yarden-amir/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/yarden-amir-480w.avif 480w, ../images/artists/grid/yarden-amir.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/yarden-amir.webp" srcset="../images/artists/grid/yarden-amir-480w.webp 480w, ../images/artists/grid/yarden-amir.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="yarden amir" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">yarden
+amir</div></a><a class="artist" href="../artists/livay-levi/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/livay-levi-480w.avif 480w, ../images/artists/grid/livay-levi.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/livay-levi.webp" srcset="../images/artists/grid/livay-levi-480w.webp 480w, ../images/artists/grid/livay-levi.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="livay levi" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">livay
+levi</div></a><a class="artist" href="../artists/natasha-zeriker/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/natasha-zeriker-480w.avif 480w, ../images/artists/grid/natasha-zeriker.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/natasha-zeriker.webp" srcset="../images/artists/grid/natasha-zeriker-480w.webp 480w, ../images/artists/grid/natasha-zeriker.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="natasha zeriker" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">natasha
+zeriker</div></a><a class="artist" href="../artists/talia-zoref/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/talia-zoref-480w.avif 480w, ../images/artists/grid/talia-zoref.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/talia-zoref.webp" srcset="../images/artists/grid/talia-zoref-480w.webp 480w, ../images/artists/grid/talia-zoref.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="talia zoref" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">talia
+zoref</div></a><a class="artist" href="../artists/gal-polk/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/gal-polk-480w.avif 480w, ../images/artists/grid/gal-polk.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/gal-polk.webp" srcset="../images/artists/grid/gal-polk-480w.webp 480w, ../images/artists/grid/gal-polk.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="gal pollak" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">gal
+pollak</div></a><a class="artist" href="../artists/alon/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/alon-480w.avif 480w, ../images/artists/grid/alon.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/alon.webp" srcset="../images/artists/grid/alon-480w.webp 480w, ../images/artists/grid/alon.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="alon manjoch" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">alon
+manjoch</div></a><a class="artist" href="../artists/risa-oz/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/risa-oz-480w.avif 480w, ../images/artists/grid/risa-oz.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/risa-oz.webp" srcset="../images/artists/grid/risa-oz-480w.webp 480w, ../images/artists/grid/risa-oz.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="risa brooke oze" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">risa
+brooke oze</div></a><a class="artist" href="../artists/tanya-shin/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/tanya-shin-480w.avif 480w, ../images/artists/grid/tanya-shin.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/tanya-shin.webp" srcset="../images/artists/grid/tanya-shin-480w.webp 480w, ../images/artists/grid/tanya-shin.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="tanya shin" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">tanya
+shin</div></a><a class="artist" href="../artists/liel-salman/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/liel-salman-480w.avif 480w, ../images/artists/grid/liel-salman.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/liel-salman.webp" srcset="../images/artists/grid/liel-salman-480w.webp 480w, ../images/artists/grid/liel-salman.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="liel salman noam" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">liel
+salman noam</div></a><a class="artist" href="../artists/sami-david/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/sami-david-480w.avif 480w, ../images/artists/grid/sami-david.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/sami-david.webp" srcset="../images/artists/grid/sami-david-480w.webp 480w, ../images/artists/grid/sami-david.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="samy&nbsp;d." decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">samy&nbsp;d.</div></a><a class="artist" href="../artists/shira-turbowicz/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/shira-turbowicz-480w.avif 480w, ../images/artists/grid/shira-turbowicz.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/shira-turbowicz.webp" srcset="../images/artists/grid/shira-turbowicz-480w.webp 480w, ../images/artists/grid/shira-turbowicz.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="shira turbowicz" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">shira
+turbowicz</div></a><a class="artist" href="../artists/melani-hekimoglu/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/melani-hekimoglu-480w.avif 480w, ../images/artists/grid/melani-hekimoglu.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/melani-hekimoglu.webp" srcset="../images/artists/grid/melani-hekimoglu-480w.webp 480w, ../images/artists/grid/melani-hekimoglu.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="melani hekimoglu" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">melani
+hekimoglu</div></a><a class="artist" href="../artists/zohar-ron-dan-ben-ari/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/dan-ben-ary-480w.avif 480w, ../images/artists/grid/dan-ben-ary.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/dan-ben-ary.webp" srcset="../images/artists/grid/dan-ben-ary-480w.webp 480w, ../images/artists/grid/dan-ben-ary.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="dan ben-ary" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">dan
+ben-ary</div></a><a class="artist" href="../artists/racheli-reuven/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/racheli-reuven-480w.avif 480w, ../images/artists/grid/racheli-reuven.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/racheli-reuven.webp" srcset="../images/artists/grid/racheli-reuven-480w.webp 480w, ../images/artists/grid/racheli-reuven.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="racheli reuven" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">racheli
+reuven</div></a><a class="artist" href="../artists/tal-nehoray/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/tal-nehoray-480w.avif 480w, ../images/artists/grid/tal-nehoray.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/tal-nehoray.webp" srcset="../images/artists/grid/tal-nehoray-480w.webp 480w, ../images/artists/grid/tal-nehoray.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="tal nehoray" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">tal
+nehoray</div></a><a class="artist" href="../artists/holy-kadosh/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/holy-kadosh-480w.avif 480w, ../images/artists/grid/holy-kadosh.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/holy-kadosh.webp" srcset="../images/artists/grid/holy-kadosh-480w.webp 480w, ../images/artists/grid/holy-kadosh.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="tal holy kadosh" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">tal holy
+kadosh</div></a><a class="artist" href="../artists/costa-magarakis/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/costa-magarakis-480w.avif 480w, ../images/artists/grid/costa-magarakis.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/costa-magarakis.webp" srcset="../images/artists/grid/costa-magarakis-480w.webp 480w, ../images/artists/grid/costa-magarakis.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="costa magarakis" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">costa
+magarakis</div></a><a class="artist" href="../artists/hila-loterstein/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/hila-loterstein-480w.avif 480w, ../images/artists/grid/hila-loterstein.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/hila-loterstein.webp" srcset="../images/artists/grid/hila-loterstein-480w.webp 480w, ../images/artists/grid/hila-loterstein.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="hila loterstein" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">hila
+loterstein</div></a><a class="artist" href="../artists/eitan-goldson/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/eitan-goldson-480w.avif 480w, ../images/artists/grid/eitan-goldson.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/eitan-goldson.webp" srcset="../images/artists/grid/eitan-goldson-480w.webp 480w, ../images/artists/grid/eitan-goldson.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="eitan goldson" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">eitan
+goldson</div></a><a class="artist" href="../artists/maya-nachum-levy/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/maya-nachum-levy-480w.avif 480w, ../images/artists/grid/maya-nachum-levy.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/maya-nachum-levy.webp" srcset="../images/artists/grid/maya-nachum-levy-480w.webp 480w, ../images/artists/grid/maya-nachum-levy.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="maya nachum levy" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">maya
+nachum levy</div></a><a class="artist" href="../artists/adi-duak/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/adi-duak-480w.avif 480w, ../images/artists/grid/adi-duak.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/adi-duak.webp" srcset="../images/artists/grid/adi-duak-480w.webp 480w, ../images/artists/grid/adi-duak.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="adi duek" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">adi
+duek</div></a><a class="artist" href="../artists/la-raz-porta/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/la-raz-porta-480w.avif 480w, ../images/artists/grid/la-raz-porta.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/la-raz-porta.webp" srcset="../images/artists/grid/la-raz-porta-480w.webp 480w, ../images/artists/grid/la-raz-porta.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="la raz porta anonymous artist duo" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">la raz porta
+anonymous artist duo</div></a><a class="artist" href="../artists/zohar-shtrit/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/zohar-shtrit-480w.avif 480w, ../images/artists/grid/zohar-shtrit.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/zohar-shtrit.webp" srcset="../images/artists/grid/zohar-shtrit-480w.webp 480w, ../images/artists/grid/zohar-shtrit.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="zohar shitrit" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">zohar
+shitrit</div></a><a class="artist" href="../artists/gal-rotem/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/gal-rotem-480w.avif 480w, ../images/artists/grid/gal-rotem.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/gal-rotem.webp" srcset="../images/artists/grid/gal-rotem-480w.webp 480w, ../images/artists/grid/gal-rotem.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="gal rotem" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">gal
+rotem</div></a><a class="artist" href="../artists/raz-ronen/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/raz-ronen-480w.avif 480w, ../images/artists/grid/raz-ronen.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/raz-ronen.webp" srcset="../images/artists/grid/raz-ronen-480w.webp 480w, ../images/artists/grid/raz-ronen.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="raz ronen" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">raz
+ronen</div></a><a class="artist" href="../artists/aharon-bas/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/aharon-bas-480w.avif 480w, ../images/artists/grid/aharon-bas.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/aharon-bas.webp" srcset="../images/artists/grid/aharon-bas-480w.webp 480w, ../images/artists/grid/aharon-bas.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="aharon bas" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">aharon
+bas</div></a><a class="artist" href="../artists/bar-cohen/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/bar-cohen-480w.avif 480w, ../images/artists/grid/bar-cohen.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/bar-cohen.webp" srcset="../images/artists/grid/bar-cohen-480w.webp 480w, ../images/artists/grid/bar-cohen.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="bar cohen" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">bar
+cohen</div></a><a class="artist" href="../artists/michael-konovalenko/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/michael-konovalenko-480w.avif 480w, ../images/artists/grid/michael-konovalenko.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/michael-konovalenko.webp" srcset="../images/artists/grid/michael-konovalenko-480w.webp 480w, ../images/artists/grid/michael-konovalenko.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="michael konovalenko" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">michael
+konovalenko</div></a><a class="artist" href="../artists/maria-artamonova/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/maria-artamonova-480w.avif 480w, ../images/artists/grid/maria-artamonova.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/maria-artamonova.webp" srcset="../images/artists/grid/maria-artamonova-480w.webp 480w, ../images/artists/grid/maria-artamonova.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="maria artamonova" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">maria
+artamonova</div></a><a class="artist" href="../artists/alice-debellis/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/alice-debellis-480w.avif 480w, ../images/artists/grid/alice-debellis.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/alice-debellis.webp" srcset="../images/artists/grid/alice-debellis-480w.webp 480w, ../images/artists/grid/alice-debellis.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="alice de bellis" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">alice
+de bellis</div></a><a class="artist" href="../artists/amnon-lipkin/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/amnon-lipkin-480w.avif 480w, ../images/artists/grid/amnon-lipkin.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/amnon-lipkin.webp" srcset="../images/artists/grid/amnon-lipkin-480w.webp 480w, ../images/artists/grid/amnon-lipkin.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="amnon lipkin" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">amnon
+lipkin</div></a><a class="artist" href="../artists/hadas-tuval/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/hadas-tuval-480w.avif 480w, ../images/artists/grid/hadas-tuval.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/hadas-tuval.webp" srcset="../images/artists/grid/hadas-tuval-480w.webp 480w, ../images/artists/grid/hadas-tuval.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="hadas tuval" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">hadas
+tuval</div></a><a class="artist" href="../artists/tali-zelnik/"><div class="img"><picture><source type="image/avif" srcset="../images/artists/grid/tali-zelnik-480w.avif 480w, ../images/artists/grid/tali-zelnik.avif 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px"><img src="../images/artists/grid/tali-zelnik.webp" srcset="../images/artists/grid/tali-zelnik-480w.webp 480w, ../images/artists/grid/tali-zelnik.webp 810w" sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" width="810" height="810" alt="tali zelnik" decoding="async" loading="lazy" data-pic-done="1"></picture></div><div class="nm">tali
+zelnik</div></a></section>
+
+<script type="application/json" id="artists-grid-data">
+[
+  {
+    "slug": "zohar-ron",
+    "name": "zohar\nron"
+  },
+  {
+    "slug": "gilad-kenan",
+    "name": "gilad\nkenan"
+  },
+  {
+    "slug": "nir-giorgio-levin",
+    "name": "nir giorgio\nlevin"
+  },
+  {
+    "slug": "jessica-tabarovsky",
+    "name": "jessica\ntabarovsky"
+  },
+  {
+    "slug": "baruch-torgeman",
+    "name": "baruch\ntorgeman"
+  },
+  {
+    "slug": "chen-ziv",
+    "name": "chen\nziv"
+  },
+  {
+    "slug": "lahav-barak",
+    "name": "lahav\nbarak"
+  },
+  {
+    "slug": "anat-wegier",
+    "name": "anat\nwegier"
+  },
+  {
+    "slug": "elsa-ars-brush",
+    "name": "elsa\ners brosh"
+  },
+  {
+    "slug": "noemi-safir",
+    "name": "noemi\nsafir"
+  },
+  {
+    "slug": "yarden-amir",
+    "name": "yarden\namir"
+  },
+  {
+    "slug": "livay-levi",
+    "name": "livay\nlevi"
+  },
+  {
+    "slug": "natasha-zeriker",
+    "name": "natasha\nzeriker"
+  },
+  {
+    "slug": "talia-zoref",
+    "name": "talia\nzoref"
+  },
+  {
+    "slug": "gal-polk",
+    "name": "gal\npollak"
+  },
+  {
+    "slug": "alon",
+    "name": "alon\nmanjoch"
+  },
+  {
+    "slug": "risa-oz",
+    "name": "risa\nbrooke oze"
+  },
+  {
+    "slug": "tanya-shin",
+    "name": "tanya\nshin"
+  },
+  {
+    "slug": "liel-salman",
+    "name": "liel\nsalman noam"
+  },
+  {
+    "slug": "sami-david",
+    "name": "samy d."
+  },
+  {
+    "slug": "shira-turbowicz",
+    "name": "shira\nturbowicz"
+  },
+  {
+    "slug": "melani-hekimoglu",
+    "name": "melani\nhekimoglu"
+  },
+  {
+    "slug": "dan-ben-ary",
+    "name": "dan\nben-ary",
+    "link": "zohar-ron-dan-ben-ari"
+  },
+  {
+    "slug": "racheli-reuven",
+    "name": "racheli\nreuven"
+  },
+  {
+    "slug": "tal-nehoray",
+    "name": "tal\nnehoray"
+  },
+  {
+    "slug": "holy-kadosh",
+    "name": "tal holy\nkadosh"
+  },
+  {
+    "slug": "costa-magarakis",
+    "name": "costa\nmagarakis"
+  },
+  {
+    "slug": "hila-loterstein",
+    "name": "hila\nloterstein"
+  },
+  {
+    "slug": "eitan-goldson",
+    "name": "eitan\ngoldson"
+  },
+  {
+    "slug": "maya-nachum-levy",
+    "name": "maya\nnachum levy"
+  },
+  {
+    "slug": "adi-duak",
+    "name": "adi\nduek"
+  },
+  {
+    "slug": "la-raz-porta",
+    "name": "la raz porta\nanonymous artist duo"
+  },
+  {
+    "slug": "zohar-shtrit",
+    "name": "zohar\nshitrit"
+  },
+  {
+    "slug": "gal-rotem",
+    "name": "gal\nrotem"
+  },
+  {
+    "slug": "raz-ronen",
+    "name": "raz\nronen"
+  },
+  {
+    "slug": "aharon-bas",
+    "name": "aharon\nbas"
+  },
+  {
+    "slug": "bar-cohen",
+    "name": "bar\ncohen"
+  },
+  {
+    "slug": "michael-konovalenko",
+    "name": "michael\nkonovalenko"
+  },
+  {
+    "slug": "maria-artamonova",
+    "name": "maria\nartamonova"
+  },
+  {
+    "slug": "alice-debellis",
+    "name": "alice\nde bellis"
+  },
+  {
+    "slug": "amnon-lipkin",
+    "name": "amnon\nlipkin"
+  },
+  {
+    "slug": "hadas-tuval",
+    "name": "hadas\ntuval"
+  },
+  {
+    "slug": "tali-zelnik",
+    "name": "tali\nzelnik"
+  }
+]
+</script>
+
+<script>
+(function(){
+  var items = JSON.parse(document.getElementById('artists-grid-data').textContent);
+  var base  = '../images/artists/grid/';
+  function esc(s){
+    if(s==null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  var grid = document.getElementById('artists-grid');
+  grid.innerHTML = items.map(function(a,i){
+    var main = base + a.slug + '.webp';
+    var sset = base + a.slug + '-480w.webp 480w, ' + main + ' 810w';
+    var alt  = a.name.replace(/\n/g,' ');
+    var load = i ? 'loading="lazy"' : 'fetchpriority="high"';
+    return '<a class="artist" href="../artists/' + (a.link || a.slug) + '/">' +
+        '<div class="img">' +
+          '<img src="' + main + '" srcset="' + sset + '" ' +
+               'sizes="(max-width:768px) 46vw, (max-width:1100px) 30vw, 405px" ' +
+               'width="810" height="810" alt="' + esc(alt) + '" decoding="async" ' + load + '>' +
+        '</div>' +
+        '<div class="nm">' + esc(a.name) + '</div>' +
+      '</a>';
+  }).join('');
+  if(window.PictureUpgrade) PictureUpgrade.refresh(grid);
+})();
+</script>
+
+<!-- FOOTER -->
+<site-footer data-rendered="1"><footer class="footer"><div class="newsletter"><h2>Stay Informed</h2><form onsubmit="event.preventDefault()" novalidate=""><textarea class="newsletter-email" name="email" rows="1" inputmode="email" autocomplete="email" placeholder="Email Address" aria-label="Email Address" spellcheck="false"></textarea><div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Website<input type="text" class="newsletter-hp" name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">SUBSCRIBE</button><label class="newsletter-consent"><input type="checkbox" class="newsletter-consent-cb" name="consent" id="newsletter-consent-cb" required="" aria-required="true"><span class="newsletter-consent-text">קראתי ואני מסכים/ה ל<a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות הפרטיות</a> ולקבלת דיוור מ<span class="lat">Zielinski &amp; Rozen</span> (כולל אתר הבשמים <span class="lat">zrp.co.il</span>) <span class="newsletter-consent-req">(חובה)</span></span></label><p class="newsletter-status" data-newsletter-status="" role="status" aria-live="polite"></p></form></div><div class="footer-right"><nav class="footer-menu" aria-label="footer links"><div class="footer-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/contact/">יצירת קשר</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/accessibility/">הצהרת נגישות</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות פרטיות</a></div><div class="footer-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/medina/">גלריית כיכר המדינה</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/dizengoff/">גלריית כיכר דיזינגוף</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries">גלריית שוק הפשפשים</a></div></nav><p class="footer-copy">© 2026 THE art GALLERY<br>ZiELINSKI &amp; ROZEN ALL RIGHTS RESERVED.</p><div class="footer-icons"><a href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.44.41a4.07 4.07 0 011.51.98c.46.46.77.93.98 1.51.17.47.36 1.27.41 2.44.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.41 2.44a4.07 4.07 0 01-.98 1.51 4.07 4.07 0 01-1.51.98c-.47.17-1.27.36-2.44.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.44-.41a4.07 4.07 0 01-1.51-.98 4.07 4.07 0 01-.98-1.51c-.17-.47-.36-1.27-.41-2.44C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.41-2.44a4.07 4.07 0 01.98-1.51 4.07 4.07 0 011.51-.98c.47-.17 1.27-.36 2.44-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.77 5.77 0 00-2.13 1.38A5.77 5.77 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.47 1.38 2.13a5.77 5.77 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.77 5.77 0 002.13-1.38 5.77 5.77 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.77 5.77 0 00-1.38-2.13A5.77 5.77 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z" fill="currentColor"></path><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path><circle cx="18.41" cy="5.59" r="1.44" fill="currentColor"></circle></svg></a><a href="https://web.facebook.com/ZielinskiRozen/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12a12 12 0 10-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0024 12z"></path></svg></a></div></div><div class="footer-mobile-extra"><nav class="footer-mobile-mini" aria-label="footer links mobile"><div class="footer-mobile-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/contact/">יצירת קשר</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות פרטיות</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/accessibility/">הצהרת נגישות</a></div><div class="footer-mobile-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/medina/">גלריית כיכר המדינה</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/dizengoff/">גלריית כיכר דיזינגוף</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries">גלריית שוק הפשפשים</a></div></nav><div class="footer-icons footer-icons--mobile"><a href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.44.41a4.07 4.07 0 011.51.98c.46.46.77.93.98 1.51.17.47.36 1.27.41 2.44.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.41 2.44a4.07 4.07 0 01-.98 1.51 4.07 4.07 0 01-1.51.98c-.47.17-1.27.36-2.44.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.44-.41a4.07 4.07 0 01-1.51-.98 4.07 4.07 0 01-.98-1.51c-.17-.47-.36-1.27-.41-2.44C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.41-2.44a4.07 4.07 0 01.98-1.51 4.07 4.07 0 011.51-.98c.47-.17 1.27-.36 2.44-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.77 5.77 0 00-2.13 1.38A5.77 5.77 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.47 1.38 2.13a5.77 5.77 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.77 5.77 0 002.13-1.38 5.77 5.77 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.77 5.77 0 00-1.38-2.13A5.77 5.77 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z" fill="currentColor"></path><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path><circle cx="18.41" cy="5.59" r="1.44" fill="currentColor"></circle></svg></a><a href="https://web.facebook.com/ZielinskiRozen/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12a12 12 0 10-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0024 12z"></path></svg></a></div><p class="footer-copy footer-copy--mobile">© 2026 THE art GALLERY ZiELINSKI &amp; ROZEN ALL RIGHTS RESERVED.</p></div></footer><div class="footer-sponsor"><span class="footer-sponsor-label">sponsored by</span><a class="footer-sponsor-logo" href="https://zrp.co.il" target="_blank" rel="noopener" aria-label="sponsored by Zielinski &amp; Rozen — zrp.co.il"><img src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/sponsor-logo.svg" alt="Zielinski &amp; Rozen" width="107" height="32" decoding="async" loading="lazy" data-pic-done="1"></a></div></site-footer>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../components/site-chrome.js?v=6" defer=""></script>
+<script src="../components/analytics.js" defer=""></script>
+<script src="../components/picture-upgrade.js" defer=""></script>
+<script src="../components/embed-iframe.js" defer=""></script>
+
+
+<div class="logo-choose-backdrop" data-logo-choose-backdrop="" hidden=""></div><div class="logo-choose-wrap" data-logo-choose-wrap="" hidden=""><div class="logo-choose-unit"><button class="logo-choose-close" type="button" data-logo-choose-close="" aria-label="סגירה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" width="28" height="28"><path d="M18 6L6 18M6 6l12 12"></path></svg></button><div class="logo-choose" data-logo-choose="" role="dialog" aria-modal="true" aria-label="לאן להגיע"><p class="logo-choose-q">לאן תרצו להגיע?</p><div class="logo-choose-opts"><a class="logo-choose-opt" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/" data-logo-choose-go="art"><span class="logo-choose-opt-en">THE art GALLERY</span><span class="logo-choose-opt-he">אתר הגלריות</span></a><a class="logo-choose-opt" href="https://zrp.co.il" target="_blank" rel="noopener" data-logo-choose-go="perfume"><span class="logo-choose-opt-en">ZIELINSKI &amp; ROZEN</span><span class="logo-choose-opt-he">מותג הבישום</span></a></div></div></div></div></body></html>
