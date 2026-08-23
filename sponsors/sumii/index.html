@@ -220,6 +220,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .lockup{background:var(--white);padding:24px 16px 0;width:100%;justify-content:flex-end}
   .sp-body{background:var(--white);padding:24px 16px 0;width:100%;font-size:16px;line-height:17.305px}
   .sp-body p+p{margin-top:17.305px}
+  /* פסקת הפתיחה של sumii = Regular רק במובייל (Figma 1318:3546 ts2; בפריים הדסקטופ 1637:185 היא Light) */
+  .sp-body--sumii p:first-child{font-weight:400}
   .sp-divider{background:var(--white);padding:24px 32px 0;width:100%}
   .sp-divider i{background:#EFEFEF}
   a.sp-site{background:var(--white);padding:16px 16px 0;width:100%;text-align:right;font-size:13px}
@@ -234,7 +236,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .mel-lockup{background:var(--white);margin-left:0;padding:24px 16px 0;width:100%;flex-direction:row;align-items:center;justify-content:flex-end;gap:16px}
   .mel-lockup .mel-logo{width:134px;height:126px}
   .mel-lockup .x{font-size:20.1117px}
-  .mel-lockup .gname{font-size:13px;line-height:1.4}
+  /* ה-nowrap נחוץ רק בדסקטופ (שם הצומת hug וגולש מ-372); בשורת המובייל הוא היה חותך מתחת ל-390 */
+  .mel-lockup .gname{font-size:13px;line-height:1.4;white-space:normal}
 
   /* Products — 64px בין כרטיסים (Figma 1652:197 gap 64); הראשון ממשיך את קצב ה-24 */
   .prod{background:var(--white);padding:64px 16px 0;width:100%}
