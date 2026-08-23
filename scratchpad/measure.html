@@ -1,0 +1,17 @@
+<!doctype html><meta charset="utf-8">
+<style>
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:block}
+body{margin:0;font-family:"Copperplate",serif}
+span{font-weight:700;letter-spacing:.02em;text-transform:uppercase;line-height:1;white-space:nowrap;display:inline-block}
+</style>
+<div id="out">measuring…</div><div id="probe"></div>
+<script>
+document.fonts.load('700 36px "Copperplate"').then(function(){return document.fonts.ready}).then(function(){
+  var probe=document.getElementById('probe'), lines=[];
+  [24,26,28,29,30,32,34,36].forEach(function(fs){
+    var s=document.createElement('span'); s.style.fontSize=fs+'px'; s.textContent='melani hekimoglu';
+    probe.appendChild(s); lines.push(fs+':'+s.getBoundingClientRect().width.toFixed(1));
+  });
+  document.getElementById('out').textContent='RESULT '+lines.join(' | ');
+});
+</script>

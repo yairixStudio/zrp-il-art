@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr" data-artwork-id="melani-hekimoglu-5"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>flow lamp · מלאני הקימוגלו — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin="">
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin="">
+<link rel="preload" href="../../פונטים/FbEzmel-Light.otf" as="font" type="font/otf" crossorigin="">
+<link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css?v=4">
+<meta name="description" content="FLOW LAMP — מלאני הקימוגלו. מנורת קרמיקה, רזידנסי בגלריית כיכר דיזינגוף של Zielinski &amp; Rozen, 28.09–05.10.2026.">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --grey-mid:#7D7D7D;
+  --line:#EFEFEF;
+  --stroke:#707070;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+/* GLOBAL CASING RULE — all English renders UPPERCASE (CLAUDE.md §9). Hebrew exempt. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* ===== ARTWORK DETAIL ===== */
+.aw{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x)}
+.aw-grid{display:flex;gap:48px;align-items:stretch}
+
+/* Media (left) */
+.aw-media{flex:1 1 0;min-width:0;display:flex;align-items:flex-start;justify-content:center;min-height:570px}
+.aw-media [data-artwork-src]{display:flex;width:100%;align-items:flex-start;justify-content:center;line-height:0}
+.aw-media picture{display:flex;width:100%;align-items:flex-start;justify-content:center;line-height:0}
+.aw-media img{max-width:100%;max-height:640px;width:auto;height:auto;object-fit:contain;cursor:zoom-in}
+
+/* Info (right) — keep the flex container LTR so align-items:flex-end == right;
+   direction:rtl lives only on the Hebrew text elements (else flex-end flips to left). */
+.aw-info{flex:0 0 360px;display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-end;gap:32px;text-align:right}
+
+/* Buttons */
+.aw-actions{display:flex;justify-content:flex-end;gap:16px}
+.aw-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:1px solid var(--stroke);border-radius:100px;padding:8px 16px;line-height:1;transition:background .2s,color .2s}
+.aw-btn:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.aw-btn:hover svg{fill:var(--white)}
+.aw-btn--contact{font-family:var(--cop);font-weight:300;font-size:16px;text-transform:uppercase;letter-spacing:.02em;color:#000}
+.aw-btn--share{padding:8px 16px}
+.aw-btn--share svg{width:16px;height:16px;fill:var(--ink);display:block;transform:scaleX(-1)}
+
+/* Title block */
+.aw-titleblock{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:312px;max-width:100%}
+.aw-headings{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.aw-title{font-family:var(--heb);font-weight:400;font-size:28px;line-height:1.15;color:var(--ink);direction:rtl}
+.aw-artist{font-family:var(--heb);font-weight:400;font-size:16px;line-height:1.2;color:var(--ink);direction:rtl;transition:opacity .2s}
+.aw-artist:hover{opacity:.6}
+.aw-artist a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.aw-artist a:hover{opacity:.6}
+.aw-details{font-family:var(--heb);font-weight:300;font-size:16px;line-height:1.25;color:var(--grey-mid);direction:rtl;white-space:pre-line;text-transform:none}
+.dim{direction:ltr;unicode-bidi:isolate}
+.aw-details .det-en{font-family:var(--cop);font-weight:300;font-size:.85em;text-transform:uppercase;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate}
+.aw-ex-title .lat,.aw-ex-body .lat,.aw-artist .lat{font-family:var(--cop);text-transform:uppercase;letter-spacing:.02em;direction:ltr;unicode-bidi:isolate;font-size:.86em}
+.aw-gallery{display:block;font-family:var(--cop);font-weight:400;font-size:12px;line-height:1.4;text-transform:uppercase;letter-spacing:.02em;color:var(--ink);direction:ltr;white-space:pre-line;text-align:right;transition:opacity .2s}
+.aw-gallery:hover{opacity:.6}
+
+/* Divider */
+.aw-divider{align-self:stretch;display:flex;justify-content:flex-end;padding:16px 0 8px}
+.aw-divider span{display:block;width:72px;height:1px;background:var(--line)}
+
+/* Exhibition */
+.aw-exhibition{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.aw-ex-title{font-family:var(--heb);font-weight:400;font-size:18px;line-height:1.3;color:var(--ink);direction:rtl;padding:8px 0;transition:opacity .2s}
+a.aw-ex-title:hover{opacity:.6}
+.aw-ex-body{display:flex;flex-direction:column;gap:1em}
+.aw-ex-body p{font-family:var(--heb);font-weight:300;font-size:16px;line-height:1.55;color:var(--ink);direction:rtl;text-align:right}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:1100px){:root{--pad-x:48px}.aw-info{flex-basis:320px}}
+
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .aw{padding:24px 16px}
+  .aw-grid{flex-direction:column;gap:24px}
+  .aw-media{flex:0 0 auto;min-height:0;width:100%}
+  .aw-media img{max-height:none;width:100%}
+  .aw-info{flex:none;width:100%;gap:24px;justify-content:flex-start}
+  .aw-actions{order:2;align-self:stretch;flex-direction:row-reverse;justify-content:flex-start}
+  .aw-titleblock{order:1;width:100%}
+  .aw-divider{order:3}
+  .aw-exhibition{order:4}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/works/melani-hekimoglu-5/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FLOW LAMP · מלאני הקימוגלו — Zielinski &amp; Rozen">
+<meta property="og:description" content="FLOW LAMP — מלאני הקימוגלו. מנורת קרמיקה, רזידנסי בגלריית כיכר דיזינגוף של Zielinski &amp; Rozen, 28.09–05.10.2026.">
+<meta property="og:url" content="https://art.zrp.co.il/works/melani-hekimoglu-5/">
+<meta property="og:image" content="https://art.zrp.co.il/og/works-v2-melani-hekimoglu-5.jpg">
+<meta property="og:image:width" content="961">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="FLOW LAMP · מלאני הקימוגלו — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FLOW LAMP · מלאני הקימוגלו — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="FLOW LAMP — מלאני הקימוגלו. מנורת קרמיקה, רזידנסי בגלריית כיכר דיזינגוף של Zielinski &amp; Rozen, 28.09–05.10.2026.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/works-v2-melani-hekimoglu-5.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"VisualArtwork","@id":"https://art.zrp.co.il/works/melani-hekimoglu-5/#artwork","url":"https://art.zrp.co.il/works/melani-hekimoglu-5/","name":"flow lamp","image":"https://art.zrp.co.il/images/works/v2/melani-hekimoglu-5.webp","creator":{"@type":"Person","name":"melani hekimoglu","@id":"https://art.zrp.co.il/artists/melani-hekimoglu/#person","url":"https://art.zrp.co.il/artists/melani-hekimoglu/"},"isPartOf":{"@id":"https://art.zrp.co.il/#org"},"artMedium":"מנורות Flow הגודל משתנה עקב תהליך היצירה הבלתי צפוי. רוחב של +- 45 ס\"מ."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"The Art Works","item":"https://art.zrp.co.il/works/"},{"@type":"ListItem","position":2,"name":"melani hekimoglu","item":"https://art.zrp.co.il/artists/melani-hekimoglu/"},{"@type":"ListItem","position":3,"name":"flow lamp","item":"https://art.zrp.co.il/works/melani-hekimoglu-5/"}]}]}</script>
+<!-- SEO:auto:end -->
+<link rel="stylesheet" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/components/site-chrome.css?v=7" data-site-chrome-css=""><link rel="icon" type="image/png" sizes="16x16" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon-16.png" data-site-chrome-icon=""><link rel="icon" type="image/png" sizes="32x32" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon-32.png" data-site-chrome-icon=""><link rel="icon" type="image/png" sizes="192x192" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon.png" data-site-chrome-icon=""><link rel="shortcut icon" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/favicon.ico" data-site-chrome-icon=""><link rel="apple-touch-icon" sizes="180x180" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/apple-touch-icon.png" data-site-chrome-icon=""></head>
+<body class="is-ready"><a class="skip-link" data-zr-skip="" href="#main">SKIP TO CONTENT</a>
+
+<!-- NAV -->
+<site-header data-rendered="1"><header class="nav"><div class="nav-inner"><button class="hamburger" aria-label="menu" aria-expanded="false" aria-controls="primary-nav"><svg class="hamburger-figma" viewBox="0 0 24 24" fill="#1B1B1B" aria-hidden="true"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"></path></svg><svg class="hamburger-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="#1B1B1B" stroke-width="1.5" fill="none"></path></svg><span class="hamburger-bars"><span></span><span></span><span></span></span></button><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/" class="logo" aria-label="home" data-nav="home"><img class="logo-svg" src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/logo.svg" alt="Zielinski &amp; Rozen" width="177" height="37" decoding="async" data-pic-done="1"></a><div class="nav-right"><button class="hd-bookmark" type="button" data-bookmark-open="" aria-label="saved posts" aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3h12v18l-6-4-6 4V3z"></path></svg><span class="hd-bookmark-count" data-bookmark-count="">0</span></button><ul class="nav-links" id="primary-nav" lang="en"><li class="nav-close-item" role="presentation"><button class="nav-close" type="button" aria-label="close menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.5" fill="none"></path></svg></button></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#mobile-cta" data-nav="opencall">open call</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#exhibitions" data-nav="exhibitions">exhibitions</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/works/" data-nav="works" class="active" aria-current="page">the art works</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/artists/" data-nav="artists">the artists</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries" data-nav="galleries">the galleries</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/about/" data-nav="about">about</a></li><li><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/press/" data-nav="press">press &amp; events</a></li><li class="nav-zrp-cta-item" role="presentation"><a class="nav-zrp-cta" href="https://zrp.co.il" target="_blank" rel="noopener" aria-label="the official site — zrp.co.il"><img class="nav-zrp-cta-logo" src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/logo.svg" alt="Zielinski &amp; Rozen" width="177" height="37" decoding="async" loading="lazy" data-pic-done="1"><span class="nav-zrp-cta-label">the official site</span></a></li></ul><div class="bm-backdrop" data-bookmark-backdrop="" hidden=""></div><aside class="bookmark-modal" data-bookmark-modal="" hidden="" role="dialog" aria-label="saved posts"><div class="bm-head"><h3>MY LIST</h3><button data-bookmark-close="" type="button" aria-label="close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"></path></svg></button></div><ul data-bookmark-list=""></ul><div class="bm-empty" data-bookmark-empty="">אין פוסטים שמורים עדיין</div></aside></div></div></header></site-header>
+
+<!-- ARTWORK DETAIL — rendered from inline data (file:// can't fetch JSON).
+     Canonical record lives in data/works.json → art_works[] (zohar-ron-5);
+     this page mirrors only its own artwork object. To make another artwork's
+     page: copy this file, change <html data-artwork-id>, and swap #artwork-data. -->
+<main class="aw" id="main" tabindex="-1">
+  <div class="aw-grid">
+    <div class="aw-media" id="aw-media" data-artwork-gallery=""><div class="aw-media-trigger" data-artwork-src="../../images/works/v2/melani-hekimoglu-5.webp" data-artwork-title="flow lamp" data-artwork-artist="מלאני הקימוגלו" data-artwork-link="../../artists/melani-hekimoglu/" aria-label="פתיחת תמונה במסך מלא" tabindex="0" role="button"><picture><source type="image/avif" srcset="../../images/works/v2/melani-hekimoglu-5-480w.avif 480w, ../../images/works/v2/melani-hekimoglu-5-768w.avif 768w, ../../images/works/v2/melani-hekimoglu-5.avif 967w" sizes="(max-width:768px) 100vw, 55vw"><img src="../../images/works/v2/melani-hekimoglu-5.webp" srcset="../../images/works/v2/melani-hekimoglu-5-480w.webp 480w, ../../images/works/v2/melani-hekimoglu-5-768w.webp 768w, ../../images/works/v2/melani-hekimoglu-5.webp 967w" sizes="(max-width:768px) 100vw, 55vw" width="967" height="1208" alt="מלאני הקימוגלו — flow lamp" decoding="async" fetchpriority="high" data-pic-done="1"></picture></div></div>
+    <div class="aw-info" id="aw-info"><div class="aw-actions"><a class="aw-btn aw-btn--contact" href="mailto:korinalove5@gmail.com?subject=%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%9E%D7%90%D7%AA%D7%A8%20%D7%94%D7%90%D7%95%D7%9E%D7%A0%D7%95%D7%AA%20%E2%80%94%20flow%20lamp%20%2F%20%D7%9E%D7%9C%D7%90%D7%A0%D7%99%20%D7%94%D7%A7%D7%99%D7%9E%D7%95%D7%92%D7%9C%D7%95&amp;body=%D7%A9%D7%9C%D7%95%D7%9D%20%D7%A7%D7%95%D7%A8%D7%99%D7%9F%2C%0A%D7%A4%D7%A0%D7%99%D7%99%D7%94%20%D7%96%D7%95%20%D7%A0%D7%A9%D7%9C%D7%97%D7%94%20%D7%93%D7%A8%D7%9A%20%D7%90%D7%AA%D7%A8%20%D7%94%D7%90%D7%95%D7%9E%D7%A0%D7%95%D7%AA%20%D7%A9%D7%9C%20%D7%92%D7%9C%D7%A8%D7%99%D7%95%D7%AA%20Zielinski%20%26%20Rozen.%0A%D7%90%D7%A0%D7%99%20%D7%9E%D7%A2%D7%95%D7%A0%D7%99%D7%99%D7%9F%2F%D7%AA%20%D7%91%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A0%D7%95%D7%A1%D7%A4%D7%99%D7%9D%20%D7%A2%D7%9C%20%D7%94%D7%99%D7%A6%D7%99%D7%A8%D7%94%20%D7%94%D7%91%D7%90%D7%94%3A%0A%D7%A9%D7%9D%20%D7%94%D7%99%D7%A6%D7%99%D7%A8%D7%94%3A%20flow%20lamp%0A%D7%90%D7%9E%D7%9F%2F%D7%99%D7%AA%3A%20%D7%9E%D7%9C%D7%90%D7%A0%D7%99%20%D7%94%D7%A7%D7%99%D7%9E%D7%95%D7%92%D7%9C%D7%95%0A%D7%A4%D7%A8%D7%98%D7%99%D7%9D%3A%20%D7%9E%D7%A0%D7%95%D7%A8%D7%95%D7%AA%20Flow%20%7C%20%D7%94%D7%92%D7%95%D7%93%D7%9C%20%D7%9E%D7%A9%D7%AA%D7%A0%D7%94%20%D7%A2%D7%A7%D7%91%20%D7%AA%D7%94%D7%9C%D7%99%D7%9A%20%D7%94%D7%99%D7%A6%D7%99%D7%A8%D7%94%20%D7%94%D7%91%D7%9C%D7%AA%D7%99%20%D7%A6%D7%A4%D7%95%D7%99.%20%7C%20%D7%A8%D7%95%D7%97%D7%91%20%D7%A9%D7%9C%20%2B-%2045%20%D7%A1%22%D7%9E.%0A%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%9C%D7%99%D7%A6%D7%99%D7%A8%D7%94%3A%20file%3A%2F%2F%2FUsers%2Fyairix%2FLibrary%2FMobile%2520Documents%2Fcom~apple~CloudDocs%2FZ%2520%26%2520R%2F%25D7%2590%25D7%25A8%25D7%2598%2520%25D7%25A4%25D7%2599%25D7%2592%25D7%259E%25D7%2594%2520%25D7%25A4%25D7%25A8%25D7%2595%2Fworks%2Fmelani-hekimoglu-5%2Findex.html%0A%D7%AA%D7%95%D7%93%D7%94%20%D7%A8%D7%91%D7%94!">contact us</a><button class="aw-btn aw-btn--share" type="button" data-share-btn="" aria-label="שתף" data-share-wired="1"><svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M28.88 30a1 1 0 0 1-.88-.5A15.19 15.19 0 0 0 15 22v6a1 1 0 0 1-.62.92 1 1 0 0 1-1.09-.21l-12-12a1 1 0 0 1 0-1.42l12-12a1 1 0 0 1 1.09-.21A1 1 0 0 1 15 4v6.11a17.19 17.19 0 0 1 15 17 16.34 16.34 0 0 1-.13 2 1 1 0 0 1-.79.86ZM14.5 20A17.62 17.62 0 0 1 28 26 15.31 15.31 0 0 0 13.91 12 1 1 0 0 1 13 11V6.41L3.41 16 13 25.59V21a1 1 0 0 1 1-1h.54Z"></path></svg></button></div><div class="aw-titleblock"><div class="aw-headings"><span class="aw-title" style="direction:ltr;font-family:var(--cop);text-transform:uppercase">flow lamp</span><a class="aw-artist" href="../../artists/melani-hekimoglu/">מלאני הקימוגלו</a></div><span class="aw-details">מנורות <span class="det-en">Flow</span>
+הגודל משתנה עקב תהליך היצירה הבלתי צפוי.
+רוחב של +- 45 ס"מ.</span><a class="aw-gallery" href="../../#galleries">Dizengoff Square Gallery</a></div><div class="aw-divider"><span></span></div><div class="aw-exhibition"><div class="aw-ex-body"><p>בין התאריכים 28.09.2026–05.10.2026 תהפוך הגלריה של ארז זילינסקי רוזן בכיכר דיזנגוף לסטודיו זמני ולמרחב עבודה פתוח</p><p>מלאני תעבוד במקום על יצירה חדשה ותשתמש בזמן ובחלל למחקר, ניסוי ופיתוח רעיונות דרך טקסטורה, צורה, חומר ותנועה.</p><p>העבודה תתרחש ותתפתח בגלריה בזמן אמת, ללא תוצאה שנקבעה מראש. גם הקהל יהפוך לחלק מהתהליך: המבקרים יוכלו להיכנס, לפגוש את מלאני בזמן העבודה, להתבונן, לשוחח ולהגיב, כשהמפגשים עצמם עשויים להשפיע על הדרך שבה העבודה מתפתחת.</p><p>שבוע שבו הגלריה אינה רק המקום שבו מציגים אמנות, אלא המקום שבו היא נוצרת.</p></div></div></div>
+  </div>
+</main>
+
+<script type="application/json" id="artwork-data">{"id":"melani-hekimoglu-5","artist_slug":"melani-hekimoglu","artist_he":"מלאני הקימוגלו","artist_en":"melani hekimoglu","title_he":null,"title_en":"flow lamp","gallery_slug":"dizengoff","gallery_en":"Dizengoff Square Gallery","sold":false,"details_he":"מנורות Flow\nהגודל משתנה עקב תהליך היצירה הבלתי צפוי.\nרוחב של +- 45 ס\"מ.","img":"melani-hekimoglu-5","w":967,"h":1208,"widths":[480,768,967],"artist_page_pos":5,"exhibition_title_he":null,"exhibition_slug":null,"exhibition_route":null,"kind":"residency","page":true,"statement_he":["בין התאריכים 28.09.2026–05.10.2026 תהפוך הגלריה של ארז זילינסקי רוזן בכיכר דיזנגוף לסטודיו זמני ולמרחב עבודה פתוח","מלאני תעבוד במקום על יצירה חדשה ותשתמש בזמן ובחלל למחקר, ניסוי ופיתוח רעיונות דרך טקסטורה, צורה, חומר ותנועה.","העבודה תתרחש ותתפתח בגלריה בזמן אמת, ללא תוצאה שנקבעה מראש. גם הקהל יהפוך לחלק מהתהליך: המבקרים יוכלו להיכנס, לפגוש את מלאני בזמן העבודה, להתבונן, לשוחח ולהגיב, כשהמפגשים עצמם עשויים להשפיע על הדרך שבה העבודה מתפתחת.","שבוע שבו הגלריה אינה רק המקום שבו מציגים אמנות, אלא המקום שבו היא נוצרת."]}</script>
+
+<script>
+(function(){
+  var w = JSON.parse(document.getElementById('artwork-data').textContent);
+  var imgBase = '../../images/works/v2/';
+
+  function esc(s){
+    if(s==null) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+  function galleryLabel(s){
+    if(!s) return '';
+    return esc(String(s).trim());
+  }
+  function wrapDimRuns(t){return t.replace(/\d+(?:[.,]\d+)?(?:\s*[xX×]\s*\d+(?:[.,]\d+)?)+/g,function(m){return '<span class="dim">'+m+'</span>';});}
+  /* Wrap Latin words (2+ letters) so they render in Copperplate (CLAUDE.md §9). */
+  function detailsHtml(s){
+    if(!s) return '';
+    var out=[], last=0, re=/[A-Za-z]{2,}(?:\s+[A-Za-z]{2,})*/g, m;
+    while((m=re.exec(s))!==null){
+      if(m.index>last) out.push(wrapDimRuns(esc(s.slice(last,m.index))));
+      out.push('<span class="det-en">'+esc(m[0])+'</span>');
+      last=re.lastIndex;
+    }
+    if(last<s.length) out.push(wrapDimRuns(esc(s.slice(last))));
+    return out.join('');
+  }
+  /* Wrap Latin runs so English renders in Copperplate (CLAUDE.md §9). Same
+     LATIN_RUN as the artist pages; runs on raw text, esc() per segment. */
+  function latHtml(s){
+    if(s==null) return '';
+    s=String(s);
+    var out=[], last=0, re=/[A-Za-z]{2}[A-Za-z0-9@&'’._?!:,;()/"\u00a0 -]*[A-Za-z0-9?!).]|[A-Za-z]{2,}/g, m;
+    while((m=re.exec(s))!==null){
+      if(m.index>last) out.push(esc(s.slice(last,m.index)));
+      out.push('<span class="lat">'+esc(m[0])+'</span>');
+      last=re.lastIndex;
+    }
+    if(last<s.length) out.push(esc(s.slice(last)));
+    return out.join('');
+  }
+  function srcset(w){
+    return w.widths.map(function(width,i){
+      var last = i===w.widths.length-1;
+      var file = last ? (imgBase+w.img+'.webp') : (imgBase+w.img+'-'+width+'w.webp');
+      return file+' '+width+'w';
+    }).join(', ');
+  }
+  function artistName(w){ return w.artist_he || w.artist_en || ''; }
+  function titleText(w){ return w.title_he || w.title_en || ''; }
+
+  document.title = titleText(w) + ' · ' + artistName(w) + ' — Zielinski & Rozen';
+
+  var artistHref  = '../../artists/'+w.artist_slug+'/';
+  var galleryHref = '../../#galleries';
+
+  /* --- Media (click → shared artwork lightbox) --- */
+  var main = imgBase+w.img+'.webp';
+  var alt  = artistName(w) + (titleText(w) ? ' — '+titleText(w) : '');
+  var imgTag =
+    '<img src="'+main+'" srcset="'+srcset(w)+'" sizes="(max-width:768px) 100vw, 55vw" '+
+    'width="'+w.w+'" height="'+w.h+'" alt="'+esc(alt)+'" decoding="async" fetchpriority="high">';
+  document.getElementById('aw-media').setAttribute('data-artwork-gallery','');
+  document.getElementById('aw-media').innerHTML =
+    '<div class="aw-media-trigger" data-artwork-src="'+main+'" '+
+      'data-artwork-title="'+esc(titleText(w))+'" '+
+      'data-artwork-artist="'+esc(artistName(w))+'" '+
+      'data-artwork-link="'+artistHref+'" '+
+      'aria-label="פתיחת תמונה במסך מלא">'+imgTag+'</div>';
+
+  /* --- Info --- */
+
+  /* Contact button → pre-filled email to the exhibition curator.
+     Korin Avraham (curator of the-peeler / how-many) — email per data/opencalls.json. */
+  var curatorEmail = 'korinalove5@gmail.com';
+  var mailSubject = 'פנייה מאתר האומנות — ' + titleText(w) + ' / ' + artistName(w);
+  var mailBody = [
+    'שלום קורין,', '',
+    'פנייה זו נשלחה דרך אתר האומנות של גלריות Zielinski & Rozen.', '',
+    'אני מעוניין/ת בפרטים נוספים על היצירה הבאה:',
+    'שם היצירה: ' + titleText(w),
+    'אמן/ית: ' + artistName(w),
+    (w.exhibition_title_he ? 'תערוכה: ' + w.exhibition_title_he : null),
+    (w.details_he ? 'פרטים: ' + w.details_he.replace(/\n/g, ' | ') : null),
+    'קישור ליצירה: ' + location.href, '',
+    'תודה רבה!'
+  ].filter(Boolean).join('\n');
+  var contactHref = 'mailto:' + curatorEmail +
+    '?subject=' + encodeURIComponent(mailSubject) +
+    '&body=' + encodeURIComponent(mailBody);
+
+  var titleHtml = w.title_he
+    ? '<span class="aw-title">'+esc(w.title_he)+'</span>'
+    : '<span class="aw-title" style="direction:ltr;font-family:var(--cop);text-transform:uppercase">'+esc(w.title_en)+'</span>';
+  var artistHtml;
+  if(w.collab && w.collab.length){
+    var _conn=w.collab_connector_he||'בשיתוף';
+    artistHtml='<span class="aw-artist">'+w.collab.map(function(c){
+      return '<a href="../../artists/'+esc(c.slug)+'/">'+latHtml(c.name_he||c.name_en||'')+'</a>';
+    }).join(' '+esc(_conn)+' ')+'</span>';
+  } else {
+    artistHtml = '<a class="aw-artist" href="'+artistHref+'">'+latHtml(artistName(w))+'</a>';
+  }
+  var detailsBlock = w.details_he ? '<span class="aw-details">'+detailsHtml(w.details_he).replace(/(\d)([xX])(?=\d)/g,'$1<span class="dim-x">$2</span>')+'</span>' : '';
+  var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
+
+  /* Residency without a show (frame 1634:188): exhibition_title_he is null, so the
+     statement stands alone — no empty title element above it. */
+  var exHeadInner = latHtml(w.exhibition_title_he||'');
+  var exHead = !w.exhibition_title_he ? ''
+    : (w.exhibition_route
+      ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
+      : '<span class="aw-ex-title">'+exHeadInner+'</span>');
+  var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
+  var exhibitionBlock = (w.exhibition_title_he || exBody)
+    ? '<div class="aw-exhibition">'+exHead+'<div class="aw-ex-body">'+exBody+'</div></div>'
+    : '';
+
+  /* Shared share button (same as press/events) — wired automatically by
+     components/site-chrome.js via [data-share-btn] (navigator.share / copy-link + toast). */
+  var shareIcon = '<svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M28.88 30a1 1 0 0 1-.88-.5A15.19 15.19 0 0 0 15 22v6a1 1 0 0 1-.62.92 1 1 0 0 1-1.09-.21l-12-12a1 1 0 0 1 0-1.42l12-12a1 1 0 0 1 1.09-.21A1 1 0 0 1 15 4v6.11a17.19 17.19 0 0 1 15 17 16.34 16.34 0 0 1-.13 2 1 1 0 0 1-.79.86ZM14.5 20A17.62 17.62 0 0 1 28 26 15.31 15.31 0 0 0 13.91 12 1 1 0 0 1 13 11V6.41L3.41 16 13 25.59V21a1 1 0 0 1 1-1h.54Z"/></svg>';
+
+  document.getElementById('aw-info').innerHTML =
+    '<div class="aw-actions">'+
+      '<a class="aw-btn aw-btn--contact" href="'+contactHref+'">contact us</a>'+
+      '<button class="aw-btn aw-btn--share" type="button" data-share-btn aria-label="שתף">'+shareIcon+'</button>'+
+    '</div>'+
+    '<div class="aw-titleblock">'+
+      '<div class="aw-headings">'+titleHtml+artistHtml+'</div>'+
+      detailsBlock+
+      galleryBlock+
+    '</div>'+
+    (exhibitionBlock ? '<div class="aw-divider"><span></span></div>'+exhibitionBlock : '');
+})();
+</script>
+
+<!-- FOOTER -->
+<site-footer data-rendered="1"><footer class="footer"><div class="newsletter"><h2>Stay Informed</h2><form onsubmit="event.preventDefault()" novalidate=""><textarea class="newsletter-email" name="email" rows="1" inputmode="email" autocomplete="email" placeholder="Email Address" aria-label="Email Address" spellcheck="false"></textarea><div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden"><label>Website<input type="text" class="newsletter-hp" name="website" tabindex="-1" autocomplete="off"></label></div><button type="submit">SUBSCRIBE</button><label class="newsletter-consent"><input type="checkbox" class="newsletter-consent-cb" name="consent" id="newsletter-consent-cb" required="" aria-required="true"><span class="newsletter-consent-text">קראתי ואני מסכים/ה ל<a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות הפרטיות</a> ולקבלת דיוור מ<span class="lat">Zielinski &amp; Rozen</span> (כולל אתר הבשמים <span class="lat">zrp.co.il</span>) <span class="newsletter-consent-req">(חובה)</span></span></label><p class="newsletter-status" data-newsletter-status="" role="status" aria-live="polite"></p></form></div><div class="footer-right"><nav class="footer-menu" aria-label="footer links"><div class="footer-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/contact/">יצירת קשר</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/accessibility/">הצהרת נגישות</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות פרטיות</a></div><div class="footer-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/medina/">גלריית כיכר המדינה</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/dizengoff/">גלריית כיכר דיזינגוף</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries">גלריית שוק הפשפשים</a></div></nav><p class="footer-copy">© 2026 THE art GALLERY<br>ZiELINSKI &amp; ROZEN ALL RIGHTS RESERVED.</p><div class="footer-icons"><a href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.44.41a4.07 4.07 0 011.51.98c.46.46.77.93.98 1.51.17.47.36 1.27.41 2.44.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.41 2.44a4.07 4.07 0 01-.98 1.51 4.07 4.07 0 01-1.51.98c-.47.17-1.27.36-2.44.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.44-.41a4.07 4.07 0 01-1.51-.98 4.07 4.07 0 01-.98-1.51c-.17-.47-.36-1.27-.41-2.44C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.41-2.44a4.07 4.07 0 01.98-1.51 4.07 4.07 0 011.51-.98c.47-.17 1.27-.36 2.44-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.77 5.77 0 00-2.13 1.38A5.77 5.77 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.47 1.38 2.13a5.77 5.77 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.77 5.77 0 002.13-1.38 5.77 5.77 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.77 5.77 0 00-1.38-2.13A5.77 5.77 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z" fill="currentColor"></path><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path><circle cx="18.41" cy="5.59" r="1.44" fill="currentColor"></circle></svg></a><a href="https://web.facebook.com/ZielinskiRozen/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12a12 12 0 10-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0024 12z"></path></svg></a></div></div><div class="footer-mobile-extra"><nav class="footer-mobile-mini" aria-label="footer links mobile"><div class="footer-mobile-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/contact/">יצירת קשר</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/privacy/">מדיניות פרטיות</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/accessibility/">הצהרת נגישות</a></div><div class="footer-mobile-row"><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/medina/">גלריית כיכר המדינה</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/galleries/dizengoff/">גלריית כיכר דיזינגוף</a><a href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/#galleries">גלריית שוק הפשפשים</a></div></nav><div class="footer-icons footer-icons--mobile"><a href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" width="24" height="24" fill="none"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.44.41a4.07 4.07 0 011.51.98c.46.46.77.93.98 1.51.17.47.36 1.27.41 2.44.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.41 2.44a4.07 4.07 0 01-.98 1.51 4.07 4.07 0 01-1.51.98c-.47.17-1.27.36-2.44.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.44-.41a4.07 4.07 0 01-1.51-.98 4.07 4.07 0 01-.98-1.51c-.17-.47-.36-1.27-.41-2.44C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.41-2.44a4.07 4.07 0 01.98-1.51 4.07 4.07 0 011.51-.98c.47-.17 1.27-.36 2.44-.41C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.77 5.77 0 00-2.13 1.38A5.77 5.77 0 00.63 4.14C.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.47 1.38 2.13a5.77 5.77 0 002.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.77 5.77 0 002.13-1.38 5.77 5.77 0 001.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.77 5.77 0 00-1.38-2.13A5.77 5.77 0 0019.86.63C19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z" fill="currentColor"></path><path d="M12 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8z" fill="currentColor"></path><circle cx="18.41" cy="5.59" r="1.44" fill="currentColor"></circle></svg></a><a href="https://web.facebook.com/ZielinskiRozen/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M24 12a12 12 0 10-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0024 12z"></path></svg></a></div><p class="footer-copy footer-copy--mobile">© 2026 THE art GALLERY ZiELINSKI &amp; ROZEN ALL RIGHTS RESERVED.</p></div></footer><div class="footer-sponsor"><span class="footer-sponsor-label">sponsored by</span><a class="footer-sponsor-logo" href="https://zrp.co.il" target="_blank" rel="noopener" aria-label="sponsored by Zielinski &amp; Rozen — zrp.co.il"><img src="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/images/header:footer:general/sponsor-logo.svg" alt="Zielinski &amp; Rozen" width="107" height="32" decoding="async" loading="lazy" data-pic-done="1"></a></div></site-footer>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../../components/site-chrome.js?v=6" defer=""></script>
+<script src="../../components/analytics.js" defer=""></script>
+<script src="../../components/picture-upgrade.js" defer=""></script>
+<script src="../../components/artwork-lightbox.js?v=6" defer=""></script>
+<script defer="">
+if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
+</script>
+
+
+<div class="logo-choose-backdrop" data-logo-choose-backdrop="" hidden=""></div><div class="logo-choose-wrap" data-logo-choose-wrap="" hidden=""><div class="logo-choose-unit"><button class="logo-choose-close" type="button" data-logo-choose-close="" aria-label="סגירה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" width="28" height="28"><path d="M18 6L6 18M6 6l12 12"></path></svg></button><div class="logo-choose" data-logo-choose="" role="dialog" aria-modal="true" aria-label="לאן להגיע"><p class="logo-choose-q">לאן תרצו להגיע?</p><div class="logo-choose-opts"><a class="logo-choose-opt" href="file:///Users/yairix/Library/Mobile%20Documents/com~apple~CloudDocs/Z%20&amp;%20R/%D7%90%D7%A8%D7%98%20%D7%A4%D7%99%D7%92%D7%9E%D7%94%20%D7%A4%D7%A8%D7%95/" data-logo-choose-go="art"><span class="logo-choose-opt-en">THE art GALLERY</span><span class="logo-choose-opt-he">אתר הגלריות</span></a><a class="logo-choose-opt" href="https://zrp.co.il" target="_blank" rel="noopener" data-logo-choose-go="perfume"><span class="logo-choose-opt-en">ZIELINSKI &amp; ROZEN</span><span class="logo-choose-opt-he">מותג הבישום</span></a></div></div></div></div></body></html>

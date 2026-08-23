@@ -1037,6 +1037,22 @@
       "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::1608:5728",
       "figma_artist_page_desktop": null,
       "homepage_featured": false
+    },
+    {
+      "id": "melani-hekimoglu",
+      "slug": "melani-hekimoglu",
+      "name_en": "melani hekimoglu",
+      "name_he": "מלאני הקימוגלו",
+      "portrait": "images/artists/melani-hekimoglu/portrait.webp",
+      "work_image": null,
+      "instagram_handle": "@melani.ceramics",
+      "bio_he": "מלאני הקימוגלו היא אמנית ומעצבת, שעשייתה נעה בין אמנות עכשווית לעיצוב פונקציונלי. בעבודתה, המבוססת בעיקר על חומר קרמי, היא חוקרת חומר וצורה דרך פיסול, מיצב ואובייקטים פונקציונליים ואספניים.\n\nהפרקטיקה האמנותית שלה עוסקת בזמן, שינוי ומחזוריות, ומבקשת להחזיר את תשומת הלב לרגעים בודדים בעולם שהולך ונעשה מהיר יותר. הצורות הקרמיות שלה חוקרות נזילות שקפאה בזמן, ולוכדות תנועה בחומר בין כוונה לספונטניות, כאשר כל פריט מעוצב באופן אינדיבידואלי ויחיד במינו.",
+      "bio_en": null,
+      "works": [],
+      "curator_slug": "korin-avraham",
+      "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::1634:188",
+      "figma_artist_page_desktop": null,
+      "homepage_featured": false
     }
   ],
   "_pending_artist_pages": [

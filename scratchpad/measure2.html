@@ -1,0 +1,21 @@
+<!doctype html><meta charset="utf-8">
+<style>
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2");font-weight:300;font-display:block}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2");font-weight:700;font-display:block}
+body{margin:0;font-family:"Copperplate",serif}
+span{white-space:nowrap;display:inline-block;line-height:1;text-transform:uppercase}
+.nm{font-weight:700;letter-spacing:.02em}
+.hd{font-weight:300;direction:ltr}
+</style>
+<div id="out">measuring…</div><div id="probe"></div>
+<script>
+Promise.all([document.fonts.load('700 36px "Copperplate"'),document.fonts.load('300 16px "Copperplate"')])
+.then(function(){return document.fonts.ready}).then(function(){
+  var probe=document.getElementById('probe'), lines=[];
+  function m(cls,txt,fs){var s=document.createElement('span');s.className=cls;s.style.fontSize=fs+'px';s.textContent=txt;probe.appendChild(s);return s.getBoundingClientRect().width.toFixed(1);}
+  [50,52,54,56,58].forEach(function(fs){lines.push('name'+fs+':'+m('nm','melani hekimoglu',fs));});
+  [25,26,27].forEach(function(fs){lines.push('name'+fs+':'+m('nm','melani hekimoglu',fs));});
+  [11,12,12.5,13,14,16].forEach(function(fs){lines.push('handle'+fs+':'+m('hd','@melani.ceramics',fs));});
+  document.getElementById('out').textContent='RESULT '+lines.join(' | ');
+});
+</script>
