@@ -408,6 +408,90 @@
           "image": "images/artists/grid/natasha-zeriker.webp"
         }
       ],
+      "photo_credit_stills": "Kfir Shlevin",
+      "photo_credit_video": "Valeria Balanga",
+      "event_photos": [
+        {
+          "src": "images/events/natasha-zeriker/moment-01.webp",
+          "alt": "סלפי של שתי משתתפות מחייכות בחלל הגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-02.webp",
+          "alt": "חיבוק בין שתי משתתפות מול העבודה הגדולה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-03.webp",
+          "alt": "האמנית מגבה מול העבודה הגדולה בגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-04.webp",
+          "alt": "משתתפות משוחחות בחלל הגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-05.webp",
+          "alt": "האמנית מביטה בקיר העבודות"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-06.webp",
+          "alt": "שתי משתתפות מחייכות על רקע העבודה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-07.webp",
+          "alt": "קבוצת מבקרים משוחחת בחלל הגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-08.webp",
+          "alt": "האמנית מחייכת מול העבודה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-09.webp",
+          "alt": "מבקרים מצלמים משתתפת מול העבודה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-10.webp",
+          "alt": "האמנית עם מבקרים בחלל הגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-11.webp",
+          "alt": "ידיים אוחזות בפסלון מול העבודה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-12.webp",
+          "alt": "כמה ידיים אוחזות יחד בפסלון"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-13.webp",
+          "alt": "האמנית בפרופיל מול העבודה הגדולה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-14.webp",
+          "alt": "מבקרים משוחחים ליד קיר העבודות"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-15.webp",
+          "alt": "האמנית משוחחת עם מבקרת ליד טקסט התערוכה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-16.webp",
+          "alt": "ידיים קושרות חוט על מסגרת העבודה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-17.webp",
+          "alt": "מבקר מביט בעבודה הגדולה בחלל הגלריה"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-18.webp",
+          "alt": "סלפי של שלושה משתתפים באירוע"
+        },
+        {
+          "src": "images/events/natasha-zeriker/moment-19.webp",
+          "alt": "פריט לבוש בפריים מתוך צילום הווידאו של הערב"
+        }
+      ],
+      "figma_node_photos_desktop": "1676:1008",
+      "figma_node_photos_mobile": "1676:993",
+      "figma_node_credits_desktop": "1683:1042",
+      "figma_node_credits_mobile": "1683:1045",
       "route": "events/natasha-zeriker/",
       "homepage_visible": true,
       "figma_node_desktop": "1055:615",
