@@ -9,6 +9,8 @@
 <link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css">
 <meta name="description" content="לקלף את הקוד — נעמי ספיר מציגה את יצירותיה בשיתוף עם Idit Klaiman, ערב נשים אינטימי בין אמנות לחיים, במסגרת תערוכת הקולפן. גלריית כיכר המדינה תל אביב, 19 באוגוסט 2026, 18:00–19:30.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
@@ -126,6 +128,22 @@ a.ex-link:hover{opacity:.7}
 a.artist-card:hover .img img{filter:brightness(.92)}
 a.artist-card:hover .name{color:var(--ink)}
 
+/* === MOMENTS — triptych of photos from the talk itself (Figma 1686:1048 desktop / 1686:1067
+   inside the mobile address section 1450:1879). Sits between the hero panel and the artists
+   strip, exactly as in both frames. Desktop stage: centre 481x841, peeks 302x528 @ .6, the
+   row is space-between inside the 1248 inner ⇒ gaps of 81 ⇒ peek centres at ±472.5. */
+.event-moments{padding:64px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-moments .tri{--tri-max-w:1248px;--tri-bg:transparent;--tri-dot-w:24px;width:100%}
+/* 19 slides ⇒ 19 dots: the component's 200px cap would squash them to ~3px slivers. */
+.event-moments .tri-dots{max-width:none}
+.event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
+.event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
+.event-moments .tri-slide.is-prev{left:calc(50% - 472.5px)}
+.event-moments .tri-slide.is-next{left:calc(50% + 472.5px)}
+.event-moments .tri-slide.is-hidden{width:481px;height:841px}
+
 /* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
@@ -146,9 +164,21 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name{font-size:24px}
   .event-hero .card .center-text .en{font-size:30px}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
+  /* Moments stage scales with the panel: 481→420 (.873), peeks and offsets follow, so the
+     full 2×472.5+302 span still fits the narrower inner width. */
+  .event-moments .tri-frame{height:734px}
+  .event-moments .tri-slide.is-center,.event-moments .tri-slide.is-hidden{width:420px;height:734px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:264px;height:461px}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 412.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 412.5px)}
 }
 @media (max-width:1050px) and (min-width:769px){
   .h-title{font-size:34px;line-height:34px}
+  .event-moments .tri-frame{height:560px}
+  .event-moments .tri-slide.is-center,.event-moments .tri-slide.is-hidden{width:360px;height:560px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:220px;height:380px}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 326px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 326px)}
 }
 
 /* Mobile (Figma 390): hero photo first, then each block on white, full-width */
@@ -164,7 +194,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-body{order:4}
   .h-presented{order:5}
   .h-address{order:6}
-  .event-artists{order:7}
+  .event-moments{order:7}
+  .event-artists{order:8}
 
   /* Hero card — full-bleed 520h, same flat 40% scrim. Overlay sits a touch above centre
      (Figma group y:189 of 520 ⇒ 47.4%). */
@@ -188,6 +219,20 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name{font-size:17px;width:313px;max-width:calc(100vw - 64px)}
   .event-hero .card .center-text .ex-name.heb{font-size:29px;line-height:1}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
+
+  /* Moments gallery (Figma 1686:1067): stage 358×443, centre 216×378, peeks 117×204.75 at
+     ±194.5 bleeding off both edges. The frame sits in the same white section as the address
+     with a 16px gap, and the artists strip's own 32px top padding follows. No dot row in the
+     mobile frame — swipe only, the bleeding peeks are the affordance. */
+  .event-moments{padding:0 16px 16px}
+  .event-moments .inner{gap:16px}
+  .event-moments .tri{--tri-max-w:none;width:100%}
+  .event-moments .tri-frame{height:443px;max-width:none;width:100%}
+  .event-moments .tri-slide.is-center,.event-moments .tri-slide.is-hidden{width:216px;height:378px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .event-moments .tri-dots{display:none}
 
   /* Artists strip (Figma mobile 96×80 thumbs) */
   .event-artists{padding:32px 16px;background:var(--white)}
@@ -286,6 +331,61 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- MOMENTS — photos from the talk itself (Figma 1686:1048 desktop / 1686:1067 mobile).
+       Slide order is NOT the designer's paste order: `.tri` renders slide[start-1] / [start] /
+       [start+1] as left peek / centre / right peek, so the three photos the frames actually
+       show (imageRefs ebd5d2ac / 960b9afd / 250b4d1a) are hoisted to positions 1-3 with
+       data-tri-start="1". The remaining 16 follow in the designer's order. Do not "restore"
+       the paste order — it would silently break the preview. -->
+  <section class="event-moments" aria-label="צילומים מהאירוע">
+    <div class="inner">
+      <div class="tri" data-tri-loop="true" data-tri-start="1" data-tri-lightbox="true" data-artwork-gallery="event-moments">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-01.webp" srcset="../../images/events/noemi-safir/moment-01-480w.webp 480w, ../../images/events/noemi-safir/moment-01-768w.webp 768w, ../../images/events/noemi-safir/moment-01-1080w.webp 1080w, ../../images/events/noemi-safir/moment-01.webp 1291w" sizes="(max-width:768px) 379px, (max-width:1319px) 561px, 842px" width="1291" height="1289" alt="קולאז&#x27; צילומים מהערב — משתתפות משוחחות ומצטלמות בחלל הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-02.webp" srcset="../../images/events/noemi-safir/moment-02-480w.webp 480w, ../../images/events/noemi-safir/moment-02-768w.webp 768w, ../../images/events/noemi-safir/moment-02-1080w.webp 1080w, ../../images/events/noemi-safir/moment-02.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="צילום שחור-לבן של קיר העבודות בחלל הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-03.webp" srcset="../../images/events/noemi-safir/moment-03-480w.webp 480w, ../../images/events/noemi-safir/moment-03-768w.webp 768w, ../../images/events/noemi-safir/moment-03-1080w.webp 1080w, ../../images/events/noemi-safir/moment-03.webp 1362w" sizes="(max-width:768px) 306px, (max-width:1319px) 453px, 681px" width="1362" height="1683" alt="משתתפות יושבות בחלל הגלריה מול העבודות, שתי הדוברות עומדות מולן" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-04.webp" srcset="../../images/events/noemi-safir/moment-04-480w.webp 480w, ../../images/events/noemi-safir/moment-04-768w.webp 768w, ../../images/events/noemi-safir/moment-04-1080w.webp 1080w, ../../images/events/noemi-safir/moment-04.webp 1285w" sizes="(max-width:768px) 378px, (max-width:1319px) 560px, 842px" width="1285" height="1284" alt="קולאז&#x27; צילומים מהערב — משתתפות מצטלמות יחד" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-05.webp" srcset="../../images/events/noemi-safir/moment-05-480w.webp 480w, ../../images/events/noemi-safir/moment-05-768w.webp 768w, ../../images/events/noemi-safir/moment-05-1080w.webp 1080w, ../../images/events/noemi-safir/moment-05.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="משתתפת עומדת ליד אחד הציורים ומחזיקה דף" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-06.webp" srcset="../../images/events/noemi-safir/moment-06-480w.webp 480w, ../../images/events/noemi-safir/moment-06-768w.webp 768w, ../../images/events/noemi-safir/moment-06-1080w.webp 1080w, ../../images/events/noemi-safir/moment-06.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="פורטרט שחור-לבן של משתתפת בערב" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-07.webp" srcset="../../images/events/noemi-safir/moment-07-480w.webp 480w, ../../images/events/noemi-safir/moment-07-768w.webp 768w, ../../images/events/noemi-safir/moment-07.webp 970w" sizes="(max-width:768px) 229px, (max-width:1319px) 360px, 510px" width="970" height="1600" alt="שתי הדוברות עומדות מול העבודות, אחת בשמלה אדומה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-08.webp" srcset="../../images/events/noemi-safir/moment-08-480w.webp 480w, ../../images/events/noemi-safir/moment-08-768w.webp 768w, ../../images/events/noemi-safir/moment-08.webp 1200w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1200" height="1600" alt="משתתפת עומדת מול קיר העבודות ומחזיקה כוס" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-09.webp" srcset="../../images/events/noemi-safir/moment-09-480w.webp 480w, ../../images/events/noemi-safir/moment-09-768w.webp 768w, ../../images/events/noemi-safir/moment-09.webp 900w" sizes="(max-width:768px) 216px, (max-width:1319px) 360px, 481px" width="900" height="1600" alt="מגש כיבוד ובקבוקי יין בדלי קרח על השולחן" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-10.webp" srcset="../../images/events/noemi-safir/moment-10-480w.webp 480w, ../../images/events/noemi-safir/moment-10-768w.webp 768w, ../../images/events/noemi-safir/moment-10-1080w.webp 1080w, ../../images/events/noemi-safir/moment-10.webp 1260w" sizes="(max-width:768px) 283px, (max-width:1319px) 420px, 630px" width="1260" height="1681" alt="קיר העבודות של נעמי ספיר בחלל הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-11.webp" srcset="../../images/events/noemi-safir/moment-11-480w.webp 480w, ../../images/events/noemi-safir/moment-11-768w.webp 768w, ../../images/events/noemi-safir/moment-11-1080w.webp 1080w, ../../images/events/noemi-safir/moment-11.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="משתתפת עומדת מול הציורים בחלל הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-12.webp" srcset="../../images/events/noemi-safir/moment-12-480w.webp 480w, ../../images/events/noemi-safir/moment-12-768w.webp 768w, ../../images/events/noemi-safir/moment-12-1080w.webp 1080w, ../../images/events/noemi-safir/moment-12.webp 1260w" sizes="(max-width:768px) 283px, (max-width:1319px) 420px, 630px" width="1260" height="1681" alt="משתתפת מביטה בציורים על קיר הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-13.webp" srcset="../../images/events/noemi-safir/moment-13-480w.webp 480w, ../../images/events/noemi-safir/moment-13-768w.webp 768w, ../../images/events/noemi-safir/moment-13-1080w.webp 1080w, ../../images/events/noemi-safir/moment-13.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="משתתפת מחזיקה דף וקוראת מול אחד הציורים" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-14.webp" srcset="../../images/events/noemi-safir/moment-14-480w.webp 480w, ../../images/events/noemi-safir/moment-14.webp 824w" sizes="(max-width:768px) 216px, (max-width:1319px) 360px, 481px" width="824" height="1600" alt="משתתפת עומדת עם דף בידיה בחלל הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-15.webp" srcset="../../images/events/noemi-safir/moment-15-480w.webp 480w, ../../images/events/noemi-safir/moment-15-768w.webp 768w, ../../images/events/noemi-safir/moment-15-1080w.webp 1080w, ../../images/events/noemi-safir/moment-15.webp 1232w" sizes="(max-width:768px) 277px, (max-width:1319px) 410px, 616px" width="1232" height="1682" alt="שתי הדוברות עומדות יחד מול העבודות" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-16.webp" srcset="../../images/events/noemi-safir/moment-16-480w.webp 480w, ../../images/events/noemi-safir/moment-16-768w.webp 768w, ../../images/events/noemi-safir/moment-16-1080w.webp 1080w, ../../images/events/noemi-safir/moment-16.webp 1242w" sizes="(max-width:768px) 279px, (max-width:1319px) 414px, 621px" width="1242" height="1681" alt="משתתפת עומדת ליד חלון הראווה עם כיתוב התערוכה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-17.webp" srcset="../../images/events/noemi-safir/moment-17-480w.webp 480w, ../../images/events/noemi-safir/moment-17-768w.webp 768w, ../../images/events/noemi-safir/moment-17-1080w.webp 1080w, ../../images/events/noemi-safir/moment-17.webp 1260w" sizes="(max-width:768px) 283px, (max-width:1319px) 420px, 630px" width="1260" height="1681" alt="משתתפת מביטה בציורים, מגבה למצלמה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-18.webp" srcset="../../images/events/noemi-safir/moment-18-480w.webp 480w, ../../images/events/noemi-safir/moment-18-768w.webp 768w, ../../images/events/noemi-safir/moment-18.webp 962w" sizes="(max-width:768px) 216px, (max-width:1319px) 360px, 481px" width="962" height="1710" alt="פורטרט של משתתפת בערב שיחת האמנים" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/noemi-safir/moment-19.webp" srcset="../../images/events/noemi-safir/moment-19-480w.webp 480w, ../../images/events/noemi-safir/moment-19-768w.webp 768w, ../../images/events/noemi-safir/moment-19-1080w.webp 1080w, ../../images/events/noemi-safir/moment-19.webp 1262w" sizes="(max-width:768px) 284px, (max-width:1319px) 420px, 631px" width="1262" height="1683" alt="משתתפת עומדת מול ציור על קיר הגלריה" data-artwork-title="moments from the talk" draggable="false" decoding="async" loading="lazy">
+        </div>
+        <div class="tri-dots" role="tablist" aria-label="ניווט בצילומים מהאירוע">
+          <button type="button" class="tri-dot" aria-label="צילום 1" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot is-on" aria-label="צילום 2" role="tab" aria-selected="true"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 3" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 4" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 5" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 6" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 7" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 8" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 9" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 10" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 11" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 12" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 13" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 14" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 15" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 16" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 17" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 18" role="tab" aria-selected="false"></button>
+          <button type="button" class="tri-dot" aria-label="צילום 19" role="tab" aria-selected="false"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="event-artists" aria-label="האומנים באירוע">
     <div class="inner">
       <div class="head">
@@ -307,6 +407,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 <site-footer></site-footer>
 
+<script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js" defer></script>
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>

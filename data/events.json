@@ -907,7 +907,126 @@
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
       "_note": "האירוע השני של נעמי ספיר (הראשון — slug `risa-and-noemi` — הוא how-many/דיזינגוף, במשותף עם ריסה ברוק עוז). כאן: תערוכת הקולפן, גלריית כיכר המדינה. `host_he` = עידית קלייman, יזמת אורחת שאינה אומנית של האתר — מוזכרת בגוף בלטינית ובלי קישור (תקדים the-space-between).",
-      "_image_note": "hero = imageRef 5c64359f… (ציור של נעמי ספיר, מקור 2897×3621). **שני קרופים**: דסקטופ 984×1488 cover ממורכז (RMSE 5.6% מול רינדור node 1450:1824 — הפרש מוסבר בטקסט האוברליי הלבן), מובייל 780×1040 cover ממורכז (RMSE 7.5% מול 1450:1669) — הפריים המוביילי שומר את כל הציור בעוד הדסקטופ חותך את הצדדים, ולכן <picture> ידני עם media. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (אומת: ממוצע אפור 0.382 ברינדור מול 0.374 בחישוב). thumb האומנית = מיחזור images/artists/noemi-safir/portrait-v2.webp (אומת RMSE 2.9% מול imageRef 1214412249; ⚠️ **לא** תמונת הגריד שלה — צילום אחר, RMSE 27%), מיושר לראש (object-position 50% 0%) כמו ב-Figma."
+      "_image_note": "hero = imageRef 5c64359f… (ציור של נעמי ספיר, מקור 2897×3621). **שני קרופים**: דסקטופ 984×1488 cover ממורכז (RMSE 5.6% מול רינדור node 1450:1824 — הפרש מוסבר בטקסט האוברליי הלבן), מובייל 780×1040 cover ממורכז (RMSE 7.5% מול 1450:1669) — הפריים המוביילי שומר את כל הציור בעוד הדסקטופ חותך את הצדדים, ולכן <picture> ידני עם media. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (אומת: ממוצע אפור 0.382 ברינדור מול 0.374 בחישוב). thumb האומנית = מיחזור images/artists/noemi-safir/portrait-v2.webp (אומת RMSE 2.9% מול imageRef 1214412249; ⚠️ **לא** תמונת הגריד שלה — צילום אחר, RMSE 27%), מיושר לראש (object-position 50% 0%) כמו ב-Figma.",
+      "event_photos": [
+        {
+          "src": "images/events/noemi-safir/moment-01.webp",
+          "alt": "קולאז&#x27; צילומים מהערב — משתתפות משוחחות ומצטלמות בחלל הגלריה",
+          "figma_node": "1691:1082",
+          "figma_image_ref": "ebd5d2ac0eb95c32967dfc7145b0d591dffc9d16"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-02.webp",
+          "alt": "צילום שחור-לבן של קיר העבודות בחלל הגלריה",
+          "figma_node": "1691:1093",
+          "figma_image_ref": "960b9afd46cda2f0fcc2467f1cd6e05696d04bc6"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-03.webp",
+          "alt": "משתתפות יושבות בחלל הגלריה מול העבודות, שתי הדוברות עומדות מולן",
+          "figma_node": "1691:1083",
+          "figma_image_ref": "250b4d1a423cc23d849a5acc4e75ae0a1da96180"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-04.webp",
+          "alt": "קולאז&#x27; צילומים מהערב — משתתפות מצטלמות יחד",
+          "figma_node": "1691:1090",
+          "figma_image_ref": "ae77c946e0971a25bf2b9ad96aa3c6321532cc7c"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-05.webp",
+          "alt": "משתתפת עומדת ליד אחד הציורים ומחזיקה דף",
+          "figma_node": "1691:1089",
+          "figma_image_ref": "ea04e52b535bf5f25030b33478d8a88d87e64519"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-06.webp",
+          "alt": "פורטרט שחור-לבן של משתתפת בערב",
+          "figma_node": "1691:1088",
+          "figma_image_ref": "7d43c5e72ce5ea939987a4887e31872c1d46441e"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-07.webp",
+          "alt": "שתי הדוברות עומדות מול העבודות, אחת בשמלה אדומה",
+          "figma_node": "1691:1087",
+          "figma_image_ref": "8233a4cdaf208ea868f19010255f44c40a513bed"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-08.webp",
+          "alt": "משתתפת עומדת מול קיר העבודות ומחזיקה כוס",
+          "figma_node": "1691:1084",
+          "figma_image_ref": "619f12197933f37d6588fcea6d2f3a032db4c54e"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-09.webp",
+          "alt": "מגש כיבוד ובקבוקי יין בדלי קרח על השולחן",
+          "figma_node": "1691:1085",
+          "figma_image_ref": "7d1e59265c6645bb3b157754adff1cc1c7c620bc"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-10.webp",
+          "alt": "קיר העבודות של נעמי ספיר בחלל הגלריה",
+          "figma_node": "1691:1092",
+          "figma_image_ref": "6d37fb49e84e74f2db50c8dd9006512e57e5a742"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-11.webp",
+          "alt": "משתתפת עומדת מול הציורים בחלל הגלריה",
+          "figma_node": "1691:1094",
+          "figma_image_ref": "d16ecffc213feaeb43631f4384ccf6de8688845d"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-12.webp",
+          "alt": "משתתפת מביטה בציורים על קיר הגלריה",
+          "figma_node": "1691:1095",
+          "figma_image_ref": "19c750a4a0ee5cb494aed0b059e1f5078a3766d8"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-13.webp",
+          "alt": "משתתפת מחזיקה דף וקוראת מול אחד הציורים",
+          "figma_node": "1691:1091",
+          "figma_image_ref": "a0ab0b50850b64d8003a01f454b242c4eaaf6b74"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-14.webp",
+          "alt": "משתתפת עומדת עם דף בידיה בחלל הגלריה",
+          "figma_node": "1691:1086",
+          "figma_image_ref": "32bc0d093fea8b3c04d1d231a37d8eb12c3e5b15"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-15.webp",
+          "alt": "שתי הדוברות עומדות יחד מול העבודות",
+          "figma_node": "1691:1099",
+          "figma_image_ref": "a899ea091f6a8d0445da3e78fc5715143c91a039"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-16.webp",
+          "alt": "משתתפת עומדת ליד חלון הראווה עם כיתוב התערוכה",
+          "figma_node": "1691:1100",
+          "figma_image_ref": "5b120d9cdb31075fa9555f84d382810ac67d3b34"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-17.webp",
+          "alt": "משתתפת מביטה בציורים, מגבה למצלמה",
+          "figma_node": "1691:1096",
+          "figma_image_ref": "f2fb5f76808ce90cadb1876015e5166c1030c206"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-18.webp",
+          "alt": "פורטרט של משתתפת בערב שיחת האמנים",
+          "figma_node": "1691:1098",
+          "figma_image_ref": "67f11e73ee6f1a8b5c13c4f35e654ee7358e6103"
+        },
+        {
+          "src": "images/events/noemi-safir/moment-19.webp",
+          "alt": "משתתפת עומדת מול ציור על קיר הגלריה",
+          "figma_node": "1691:1097",
+          "figma_image_ref": "bf0d4eef55a028b95f0c8b089e6df72babd3ccf5"
+        }
+      ],
+      "figma_node_photos_desktop": "1686:1048",
+      "figma_node_photos_mobile": "1686:1067",
+      "_photos_note": "סדר ה-DOM ≠ סדר ההדבקה של המעצבת. קומפוננטת `.tri` מרנדרת את slide[start-1]/[start]/[start+1] כ-peek-שמאלי/מרכז/peek-ימני, ולכן שלוש התמונות שהפריימים באמת מציירים (imageRefs ebd5d2ac / 960b9afd / 250b4d1a) הועלו לראש המערך במקומות 1-3 עם data-tri-start=\"1\"; 16 הנותרות ממשיכות בסדר שהמעצבת מסרה. **אל תשחזר את סדר ההדבקה** — זה ישבור בשקט את התצוגה המקדימה. הסקשן עצמו = markup סטטי ב-`events/noemi-safir/index.html` (הרשומה כאן היא מירור — לסנכרן את שניהם)."
     },
     {
       "id": "hadas-tuval",
@@ -1025,10 +1144,98 @@
       "homepage_visible": false,
       "figma_node_desktop": "1496:413",
       "figma_node_mobile": "1496:300",
+      "figma_node_photos_desktop": "1496:488",
+      "figma_node_photos_mobile": "1691:1135",
+      "event_photos": [
+        {
+          "src": "images/events/livay-levi/moment-01.webp",
+          "alt": "ידיים מדפדפות בקטלוג מעל אובייקט לבן בחלל הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-02.webp",
+          "alt": "חלל הגלריה — רמקול, שולחן זכוכית על בסיסי פסל וצורות לבנות תלויות מול חלון הראווה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-03.webp",
+          "alt": "שני מבקרים מול קיר הטקסט בחלל הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-04.webp",
+          "alt": "שני משתתפים משוחחים ליד חלון הראווה של תערוכת הקולפן"
+        },
+        {
+          "src": "images/events/livay-levi/moment-05.webp",
+          "alt": "שלושה משתתפים מצטלמים יחד בחלל הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-06.webp",
+          "alt": "משתתף אוחז אובייקט לבן מול קיר הטקסט"
+        },
+        {
+          "src": "images/events/livay-levi/moment-07.webp",
+          "alt": "שני משתתפים מחובקים בחלל הגלריה בערב האירוע"
+        },
+        {
+          "src": "images/events/livay-levi/moment-08.webp",
+          "alt": "שלושה משתתפים מצטלמים מתחת לצורות הלבנות התלויות"
+        },
+        {
+          "src": "images/events/livay-levi/moment-09.webp",
+          "alt": "ארבעה משתתפים צוחקים בכניסה לגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-10.webp",
+          "alt": "פסל לבן גבוה לצד מראה עם טקסט בפינת הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-11.webp",
+          "alt": "משתתפת מחייכת במהלך חיבוק בחלל הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-12.webp",
+          "alt": "שתי מבקרות קוראות את קיר הטקסט לצד הפסלים הלבנים"
+        },
+        {
+          "src": "images/events/livay-levi/moment-13.webp",
+          "alt": "משתתף עומד בחלל הגלריה על רקע חלון הראווה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-14.webp",
+          "alt": "שולחן הכיבוד — דלי קרח עם בקבוקי יין, פרחים לבנים וכוסות"
+        },
+        {
+          "src": "images/events/livay-levi/moment-15.webp",
+          "alt": "מבט לאורך חלל הגלריה — צורות לבנות תלויות, מראה ועבודות על הקירות"
+        },
+        {
+          "src": "images/events/livay-levi/moment-16.webp",
+          "alt": "שני משתתפים מביטים בטלפון ברחוב שמול הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-17.webp",
+          "alt": "קהל המבקרים בחלל הגלריה בערב האירוע"
+        },
+        {
+          "src": "images/events/livay-levi/moment-18.webp",
+          "alt": "מבקרים מתבוננים בעבודות שעל קיר הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-19.webp",
+          "alt": "משתתפת מציגה אובייקט לבן קטן לצד משתתף נוסף"
+        },
+        {
+          "src": "images/events/livay-levi/moment-20.webp",
+          "alt": "שני משתתפים מביטים בטלפון מול חלון הגלריה"
+        },
+        {
+          "src": "images/events/livay-levi/moment-21.webp",
+          "alt": "קבוצת מבקרים בחלל הגלריה, מבט מאחור"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina/alice-debellis): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"livay levi\").",
-      "_image_note": "hero = imageRef 0b7f23e3… (מקור 2244×2804 — יצירה פיסולית בחלל מגורים) בקרופ cover ממורכז 984×1488 + וריאנטים 480/768. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (fill על הרקטנגל, כמו zohar-ron-medina). list-card 876×487 = קרופ רוחבי מאותו מקור (אין frame רשימה בפיגמה לאירוע הזה). thumb האומן = מיחזור images/artists/grid/livay-levi.webp; ב-Figma הריבוע יושב ב-y:0 בתוך חלון נמוך יותר ⇒ object-position 50% 0%.",
+      "_image_note": "hero = imageRef 0b7f23e3… (מקור 2244×2804 — יצירה פיסולית בחלל מגורים) בקרופ cover ממורכז 984×1488 + וריאנטים 480/768. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (fill על הרקטנגל, כמו zohar-ron-medina). list-card 876×487 = קרופ רוחבי מאותו מקור (אין frame רשימה בפיגמה לאירוע הזה). event_photos = 21 צילומים מהערב עצמו (Figma 1496:488 דסקטופ / 1691:1135 מובייל): שלושת הראשונים הם שלישיית הפיגמה בדיוק — moment-01 peek שמאלי, moment-02 מרכז, moment-03 peek ימני (אומת RMSE 1.4%/2.3%/0.5% מול רינדורי ה-nodes; לכל רקטנגל בפיגמה שני image fills וה-fill הראשון ברשימה הוא הנראה) — והשאר בסדר שבו נמסרו. ⚠️ המעצבת סימנה 22 nodes אך אחד מהם (1691:1168) הוא כפילות של 1691:1163, ולכן 21 צילומים ייחודיים. אין דוטים ואין חיצים באף אחד משני הפריימים. thumb האומן = מיחזור images/artists/grid/livay-levi.webp; ב-Figma הריבוע יושב ב-y:0 בתוך חלון נמוך יותר ⇒ object-position 50% 0%.",
       "pinned": true,
       "_pinned_note": "נשאר ברשימת /events/ גם אחרי שהתאריך עבר, כי הפריים של המעצבת (1318:1761 דסקטופ / 1318:2012 מובייל) עדיין מציג אותו. להסיר את הדגל (כאן, במירור #events-list-data, וב-data-pinned של הכרטיס ב-/press/) כשהוא יורד מהפיגמה."
     },
