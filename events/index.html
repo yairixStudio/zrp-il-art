@@ -54,8 +54,10 @@ body{text-transform:uppercase}
   max-width:var(--max);margin:0 auto;
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
   /* chronological order flows DOWN the right column first, then the left (Figma 1318:1761:
-     right col = michael/livay/noemi/bar-cohen/hadas, left col = the-space-between/maria/amnon/
+     right col = michael/livay/noemi/bar-cohen/hadas, left col = the-space-between/maria/
      zohar-medina/jessica) — same RTL column trick as /press/.
+     NOTE 2026-08-28: amnon-lipkin (8.9) was deleted from the site by request — it is still
+     drawn in the Figma frame; do NOT restore it on the next sync.
      JS sets the exact row count (ceil(n/2)); repeat(3,auto) is only a no-JS fallback. */
   grid-auto-flow:column;direction:rtl;grid-template-rows:var(--ev-rows,repeat(3,auto));
   gap:48px;
@@ -165,7 +167,8 @@ body{text-transform:uppercase}
      sorted ascending (TBD events, if any, last). Desktop: chronological order flows
      down the RIGHT column first via RTL column grid — matches Figma 1318:1761, whose 10 cards read
      right column 17.8→28.8 (michael/livay/noemi/bar-cohen/hadas), left column 3.9→10.9
-     (the-space-between/maria/amnon/zohar-medina/jessica); mobile = same order, one column (1318:2012).
+     (the-space-between/maria/zohar-medina/jessica — amnon-lipkin deleted 2026-08-28, still in the
+     frame; do not restore); mobile = same order, one column (1318:2012).
      `title_en` here mirrors events.json `list_title_en` when that field exists, else `title_en` —
      the designer sometimes words the card differently from the event page's own frame
      (bar-cohen: "…bar cohen - ‘akra’" on the card, no dash on the page). -->
@@ -195,7 +198,6 @@ body{text-transform:uppercase}
  {"slug":"the-space-between","date":"2026-09-03","title_he":"מור צופיה געש | מה אנחנו באמת זוכרים ממקום?","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
  {"slug":"elsa-ars-brush","date":"2026-09-06","title_en":"artist talk with elsa ers brosh","gallery_id":"medina","img":"images/events/elsa-ars-brush/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אלסה ארס ברוש — גלריית כיכר המדינה"},
  {"slug":"maria-artamonova","date":"2026-09-07","title_en":"artist talk with maria artamonova","gallery_id":"medina","img":"images/events/maria-artamonova/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם מריה ארטמונובה — גלריית כיכר המדינה"},
- {"slug":"amnon-lipkin","date":"2026-09-08","title_en":"artist talk with amnon lipkin","gallery_id":"medina","img":"images/events/amnon-lipkin/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אמנון ליפקין — גלריית כיכר המדינה"},
  {"slug":"zohar-ron-medina","date":"2026-09-09","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"},
  {"slug":"jessica-tabarovsky","date":"2026-09-10","title_en":"artist talk with jessica tabarovsky","gallery_id":"medina","img":"images/events/jessica-tabarovsky/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם ג׳סיקה טברובסקי — גלריית כיכר המדינה"}
 ]

@@ -601,45 +601,6 @@
       "card_title_en": "artist talk"
     },
     {
-      "id": "amnon-lipkin",
-      "slug": "amnon-lipkin",
-      "title_he": "שיחת אמנים עם אמנון ליפקין",
-      "title_en": "artist talk with amnon lipkin",
-      "subtitle_he": "הקולפן",
-      "exhibition_id": "the-peeler",
-      "exhibition_volume": 2,
-      "date": "2026-09-08",
-      "date_he": "8 ספטמבר 2026",
-      "time_start": "18:30",
-      "time_end": "20:30",
-      "time_label": "20:30-18:30",
-      "gallery_id": "medina",
-      "gallery_label_he": "גלריית כיכר המדינה",
-      "cover_image": "images/events/amnon-lipkin/hero.webp",
-      "list_image": "images/events/amnon-lipkin/list-card.webp",
-      "description_he": [
-        "ערב רישום ספונטני במכונת תפירה. אגיע עם הזינגר של סבתא. לשבת לתפור ציורים בלייב ולחפור על העבודות המוצגות בתערוכה."
-      ],
-      "address_en": [
-        "THE art GALLERY by erez ZiELINSKI & ROZEN",
-        "kikar hamedina",
-        "131 jabotinski st. tel aviv"
-      ],
-      "artists": [
-        {
-          "name_en": "amnon lipkin",
-          "slug": "amnon-lipkin",
-          "image": "images/artists/grid/amnon-lipkin.webp"
-        }
-      ],
-      "route": "events/amnon-lipkin/",
-      "homepage_visible": false,
-      "figma_node_desktop": "1145:1124",
-      "figma_node_mobile": "1145:1009",
-      "figma_file": "XhGH289YTRcW811wrufRJz",
-      "card_title_en": "artist talk"
-    },
-    {
       "id": "zohar-ron-medina",
       "slug": "zohar-ron-medina",
       "title_he": "קָמִיעַ — שיח גלריה עם זוהר רון",
