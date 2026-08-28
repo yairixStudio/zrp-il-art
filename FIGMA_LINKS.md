@@ -78,7 +78,7 @@ legacy — מובייל:
 סקשן upcoming events (מובייל בלבד — frame `1318:476` בתוך פריים ההומפייג' `1318:363`; דסקטופ = אדפטציה): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-476&m=dev
 
-פוסטר כיכר המדינה (node `1318:3259` — הטקסט אפוי בתמונה; **2026-08-18 = `poster-hamedina-v3`**): Implement this design from Figma.
+פוסטר כיכר המדינה (node `1318:3259` — הטקסט אפוי בתמונה; **2026-08-28 = `poster-hamedina-v4` ספטמבר**, מקור שולחן-עבודה; `poster-hamedina-v3` נשאר בדיסק — כלל-זהב 8): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3259&m=dev
 
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
@@ -820,6 +820,16 @@ jessica tabarovsky מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1499-1259&m=dev
 
 > ⚠️ ה-scrim כאן הוא **הגרדיאנט** `linear-gradient(0deg, rgba(0,0,0,.8), transparent)` בשני ה-breakpoints, למרות שב-Figma הוא רשום מתחת ל-image fill (מה שנראה כמוסתר) — אומת ברינדור ה-nodes שהוא נצבע. שני קרופי גיבור ⇒ `<picture>` ידני.
+
+### עמוד אירוע Artist Talk with Baruch Torgeman (`/events/baruch-torgeman/`, הקולפן / כיכר המדינה 6.9.2026 18:30–20:30)
+
+baruch torgeman דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1676-602&m=dev
+
+baruch torgeman מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1676-714&m=dev
+
+> ⚠️ שני `{ts1}` בצומת הגוף = ריצות Copperplate בתוך העברית ("Gala Bingo", "Bring your own bottle,") — `<span class="lat">` ב-13px, UPPERCASE. הכותרת הדסקטופית ירדה ל-56/50 (ב-64 השם מתפצל לשתי שורות). ה-hero (imageRef `5d2da29d…`) נאפה **ביחס 0.75 = אספקט המובייל** ולכן קובץ אחד משרת את שני ה-breakpoints; ה-thumb הוא הפורטרט ולא תמונת הגריד (שתי תמונות שונות של האומן).
 
 ---
 

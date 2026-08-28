@@ -60,7 +60,7 @@ body{text-transform:uppercase}
    The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
    the static repeat(16,…) is only the no-JS fallback for all 31 cards.
    ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(16,auto));grid-auto-flow:column;gap:48px;direction:rtl}
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(17,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -210,6 +210,15 @@ body{text-transform:uppercase}
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk<br>with maria artamonova</p>
       <span class="date">7.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-09-06" href="../events/baruch-torgeman/">
+    <div class="img"><img src="../images/events/baruch-torgeman/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with baruch torgeman</p>
+      <span class="date">6.9.2026</span>
     </div>
   </a>
 

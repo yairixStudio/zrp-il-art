@@ -29,6 +29,19 @@
       "route": "events/maria-artamonova/"
     },
     {
+      "id": "event-baruch-torgeman-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ברוך תורג׳מן",
+      "title_en": "artist talk with baruch torgeman",
+      "date": "2026-09-06",
+      "cover_image": "images/events/baruch-torgeman/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "_note": "כרטיס ב-/press/ בלבד (רה-דיזיין 2026-08: בגריד #press בהומפייג' רק כתבות + 2 פתיחות). האירוע עתידי ולכן בפועל מסונן החוצה מ-/press/ ומוצג ב-/events/ עד שיעבור התאריך. אותו יום של אלסה ארס ברוש — זה ב-18:30, שלה ב-11:00, ולכן הוא מעליה בסדר הכרונולוגי היורד.",
+      "route": "events/baruch-torgeman/"
+    },
+    {
       "id": "event-elsa-ars-brush-talk",
       "type": "event",
       "tag_en": "gallery event",
