@@ -810,6 +810,13 @@ livay levi מובייל: Implement this design from Figma.
 
 > ההכרעה שנגזרה מהפריים: קבוצה ייעודית "הקולפן | interdependence" עם סטייטמנט משותף + כרטיס יחיד שהקרדיט שלו "ליוואי לוי × הדס טובל". המימוש = רשומה אחת עם `artist_pages`+`collab` (ראה CLAUDE.md §6).
 
+### סקשן היצירות של ליוואי לוי — כותרת מעודכנת + `livay-levi-4` (`/artists/livay-levi/`)
+
+"Artworks Section" בתוך פריים דף האומן (מובייל 390; אין frame דסקטופ):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1500-1551&m=dev
+
+> ממנו נגזרו (2026-08-28): כותרת הקבוצה `הקולפן | מעורר רגש: מרחק שקט` (הייתה `הקולפן`), והיצירה הרביעית "השתקפות של חומר" עם `statement_he` per-work משלה. הסטייטמנט הראשי ("היצירה- על פניו") לא השתנה.
+
 ### עמוד אירוע Artist Talk with Michael Konovalenko (`/events/michael-konovalenko/`, הקולפן / כיכר המדינה 17.8.2026)
 
 michael konovalenko דסקטופ: Implement this design from Figma.
