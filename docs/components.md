@@ -323,6 +323,13 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 
 זמינים: `--tri-max-w`, `--tri-aspect`, `--tri-center-{w,h}`, `--tri-peek-{w,h,left,right,opacity,opacity-hover}`, `--tri-bg`, `--tri-dot-{w,h,gap,color,active,hover}`, `--tri-transition`.
 
+**🔴 שני דברים שנשרפים כמעט בכל שימוש חדש:**
+
+1. **ה-offset של ה-peek נגזר מהפיגמה, לא מועתק מדף אחות.** הנוסחה: `offset = center_w/2 + gap + peek_w/2`, כאשר ה-gap הוא מה שה-`space-between` של הפיגמה מייצר ברוחב הפנימי בפועל. דוגמאות מהאתר — `close-look` (gap 72) ⇒ `±463.5px`; `events/noemi-safir` (אותו מרכז 481 ואותם peeks 302, אבל gap 81) ⇒ `±472.5px`. אותם מספרי-שקופית, offset אחר. תמיד לחשב מחדש.
+2. **`.tri-dots` חסום ב-`max-width:200px`** — עם ~11 שקופיות זה עוד קריא (≈11px לדוט), אבל מ-15 ומעלה הדוטים מתכווצים לרסיסים של 2-3px. לגלריה עם הרבה שקופיות: `.<section> .tri-dots{max-width:none}` + `--tri-dot-w:24px` (19 דוטים ⇒ ‎600px, נכנס בנוחות ב-1248). ראשון-שימוש: `events/noemi-safir` (19 שקופיות).
+
+**סדר השקופיות מול "התצוגה המקדימה" של הפיגמה:** הקומפוננטה מרנדרת את `slide[start-1]` כ-peek שמאלי, `slide[start]` כמרכז ו-`slide[start+1]` כ-peek ימני. לכן, כשהפריים מצייר שלוש תמונות מסוימות, **הן חייבות להיות שלוש שקופיות עוקבות** ב-DOM עם `data-tri-start` שמצביע לאמצעית — גם אם ברשימת המקורות שהמעצבת מסרה הן מפוזרות. תקדימים: `close-look`, `events/noemi-safir`.
+
 ### 4.5 API
 
 ```js
