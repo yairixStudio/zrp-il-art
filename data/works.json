@@ -861,7 +861,7 @@
         768,
         1080
       ],
-      "artist_page_pos": 2,
+      "artist_page_pos": 3,
       "exhibition_title_he": "הקולפן | מעורר רגש: מרחק שקט",
       "exhibition_slug": "the-peeler",
       "exhibition_route": "exhibitions/the-peeler",
@@ -886,7 +886,7 @@
         768,
         1080
       ],
-      "artist_page_pos": 1,
+      "artist_page_pos": 2,
       "exhibition_title_he": "הקולפן | מעורר רגש: מרחק שקט",
       "exhibition_slug": "the-peeler",
       "exhibition_route": "exhibitions/the-peeler",
@@ -3701,7 +3701,7 @@
         768,
         1086
       ],
-      "artist_page_pos": 1
+      "artist_page_pos": 2
     },
     {
       "id": "hadas-tuval-2",
@@ -3726,7 +3726,7 @@
         768,
         998
       ],
-      "artist_page_pos": 2
+      "artist_page_pos": 3
     },
     {
       "id": "livay-levi-3",
@@ -3763,7 +3763,7 @@
         768,
         1080
       ],
-      "artist_page_pos": 4,
+      "artist_page_pos": 1,
       "exhibition_title_he": "הקולפן | interdependence",
       "exhibition_slug": "the-peeler",
       "exhibition_route": "exhibitions/the-peeler",
@@ -3786,7 +3786,7 @@
       "widths": [
         406
       ],
-      "artist_page_pos": 3,
+      "artist_page_pos": 4,
       "exhibition_title_he": "הקולפן | מעורר רגש: מרחק שקט",
       "exhibition_slug": "the-peeler",
       "exhibition_route": "exhibitions/the-peeler",
@@ -4364,7 +4364,7 @@
       "exhibition_slug": "the-peeler",
       "exhibition_route": "exhibitions/the-peeler",
       "statement_he": [
-        "יצירה בשיתוף פעולה בין ליוואי לוי והדס טובל.",
+        "יצירה בשיתוף פעולה בין הדס טובל לליוואי לוי.",
         "תלות הדדית וקיום משותף. עבודה בשיתוף פעולה עשויה חלקים, אברי גוף וחלקים מופשטים יצירתו של ליוואי הקשורים ברשת חוטים יצירתה של הדס. החלקים מחוברים ומהווים גוף שלם שבו כל תנועה של אחד משפיעה על האחר ותלויה בו באותו הזמן. יצירה חדשה הנובעת מן המשבר."
       ]
     },
