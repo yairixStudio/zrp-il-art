@@ -104,7 +104,7 @@ body{text-transform:uppercase}
 .hero-titles h2{font-family:var(--cop);font-weight:300;font-size:clamp(40px,5vw,64px);letter-spacing:.04em;line-height:1.05}
 
 .hero-foot{display:contents}
-.hero-foot .scroll-prompt{display:none}
+.hero-more{display:none}
 
 .hero-desc{
   font-family:var(--heb);font-weight:300;font-size:clamp(16px,1.4vw,18px);line-height:1.5;
@@ -113,6 +113,7 @@ body{text-transform:uppercase}
   padding:0;
   order:1;align-self:center;
 }
+.hero-desc .lat{font-family:var(--cop);font-weight:300;font-size:.88em;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
 
 .hero-image{display:flex;justify-content:center;align-items:center;order:2}
 .hero-image .img-frame{
@@ -128,27 +129,13 @@ body{text-transform:uppercase}
 .hero-image .img-frame > a.hero-image-link picture{display:block;width:100%;height:100%}
 .hero-image .img-frame img{width:100%;height:100%;object-fit:cover;display:block}
 
-@keyframes scroll-prompt-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-@keyframes scroll-prompt-shimmer{0%{background-position:130% 50%}100%{background-position:-30% 50%}}
-.scroll-prompt span{
-  display:inline-block;
-  background:linear-gradient(90deg,var(--ink) 0%,var(--ink) 32%,#7a7a7a 42%,#e8e8e8 50%,#7a7a7a 58%,var(--ink) 68%,var(--ink) 100%);
-  background-size:260% 100%;
-  background-clip:text;
-  -webkit-background-clip:text;
-  color:transparent;
-  -webkit-text-fill-color:transparent;
-  animation:scroll-prompt-shimmer 2.8s ease-in-out infinite;
-}
-.scroll-prompt svg{width:16px;height:16px;display:block;animation:scroll-prompt-bob 1.5s ease-in-out infinite}
-
 /* ===== ANNOUNCEMENT BAR — marquee ===== */
 .announce{background:var(--ink);color:var(--white);padding:32px 0;font-family:var(--cop);font-weight:400;font-size:20px;letter-spacing:.03em;line-height:1.5;overflow:hidden;direction:ltr;--announce-duration:40s;--announce-gap:96px}
 .announce-track{display:flex;width:max-content;flex-wrap:nowrap;animation:announce-scroll var(--announce-duration) linear infinite;will-change:transform}
 .announce:hover .announce-track{animation-play-state:paused}
 .announce-item{flex:0 0 auto;padding-right:var(--announce-gap);white-space:nowrap}
 @keyframes announce-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media (prefers-reduced-motion:reduce){.announce{text-align:center;padding:32px 16px}.announce-track{animation:none;width:100%;justify-content:center}.announce-item:not(:first-child){display:none}.announce-item{padding-right:0}.scroll-prompt svg,.scroll-prompt span{animation:none}.scroll-prompt span{background:none;color:var(--ink);-webkit-text-fill-color:currentColor}}
+@media (prefers-reduced-motion:reduce){.announce{text-align:center;padding:32px 16px}.announce-track{animation:none;width:100%;justify-content:center}.announce-item:not(:first-child){display:none}.announce-item{padding-right:0}}
 
 /* ===== SECTION HEADERS ===== */
 .section-header{font-family:var(--cop);font-size:36px;font-weight:400;letter-spacing:.02em;line-height:1.1}
@@ -656,13 +643,9 @@ a.sumii-strip:hover{opacity:.85}
   }
 
   .hero-foot{
-    display:flex;flex-direction:column;gap:0;
+    display:flex;flex-direction:column;gap:12px;
     order:3;width:100%;
     margin-top:24px;
-  }
-  .hero-foot .scroll-prompt{
-    display:flex;flex-direction:column;align-items:flex-end;gap:8px;
-    font-family:var(--cop);font-weight:300;font-size:16px;color:var(--ink);
   }
 
   .hero-desc{
@@ -670,10 +653,21 @@ a.sumii-strip:hover{opacity:.85}
     font-family:var(--heb);font-weight:300;
     font-size:16px;line-height:1.5;
     max-width:none;
-    padding:0;margin:120px 0 0;
+    padding:0;margin:0;
     align-self:stretch;
+    order:0;
   }
-  .hero-desc .d-only{display:none}
+
+  .hero-more{
+    display:inline-flex;justify-content:center;align-items:center;
+    align-self:center;
+    padding:4px 16px;border:1px solid #000;
+    font-family:var(--cop);font-weight:300;font-size:16px;line-height:normal;letter-spacing:.02em;
+    color:var(--ink);text-decoration:none;
+    transition:opacity .2s;
+  }
+  .hero-more:hover{opacity:.5}
+  .hero-more:focus-visible{outline:1px solid var(--ink);outline-offset:3px}
 
   /* ANNOUNCEMENT */
   .announce{font-size:13px;letter-spacing:.01em;padding:20px 0;--announce-duration:25s;--announce-gap:48px}
@@ -918,11 +912,8 @@ a.sumii-strip:hover{opacity:.85}
     </div>
   </div>
   <div class="hero-foot">
-    <div class="scroll-prompt" aria-hidden="true">
-      <span>SCROLL</span>
-      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M8 2v12M3 9l5 5 5-5"/></svg>
-    </div>
-    <p class="hero-desc">ארז זילינסקי־רוזן, קודם כול אמן. <br class="d-only">עולם הבישום עבורו הוא קנבס בלתי נראה שנבנה משכבות של רגש וזיכרון.</p>
+    <p class="hero-desc">ארז זילינסקי רוזן הוא רוקח בשמים ואוצר תרבות, מייסד מותג הבישום הבינלאומי <span class="lat">ZIELINSKI &amp; ROZEN</span> ומייסד רשת גלריות בינלאומית לאמנות עכשווית, הפועלת בתל אביב וברחבי אירופה, בשיתוף פעולה עם אמנים ויוצרים מהארץ ומהעולם.</p>
+    <a class="hero-more" href="about/" data-nav="about">read more</a>
   </div>
 </section>
 
@@ -1139,7 +1130,7 @@ porta</div></a>
       <img src="images/homepage/upcoming/poster-dizengoff-v2.webp" srcset="images/homepage/upcoming/poster-dizengoff-v2-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v2-768w.webp 768w, images/homepage/upcoming/poster-dizengoff-v2.webp 941w" sizes="(max-width:768px) 76vw, 380px" width="941" height="1672" alt="לוח האירועים אוגוסט בגלריית כיכר דיזינגוף" decoding="async" loading="lazy">
     </a>
     <a class="ev-up-poster" href="events/">
-      <img src="images/homepage/upcoming/poster-hamedina-v3.webp" srcset="images/homepage/upcoming/poster-hamedina-v3-480w.webp 480w, images/homepage/upcoming/poster-hamedina-v3-768w.webp 768w, images/homepage/upcoming/poster-hamedina-v3-1080w.webp 1080w, images/homepage/upcoming/poster-hamedina-v3.webp 1620w" sizes="(max-width:768px) 76vw, 380px" width="1620" height="2880" alt="לוח האירועים אוגוסט בגלריית כיכר המדינה" decoding="async" loading="lazy">
+      <img src="images/homepage/upcoming/poster-hamedina-v4.webp" width="488" height="867" alt="לוח האירועים ספטמבר בגלריית כיכר המדינה" decoding="async" loading="lazy">
     </a>
   </div>
   <a class="ev-up-viewall" href="events/">view all</a>
