@@ -81,6 +81,8 @@ legacy — מובייל:
 פוסטר כיכר המדינה (node `1318:3259` — הטקסט אפוי בתמונה; **2026-08-28 = `poster-hamedina-v4` ספטמבר**, מקור שולחן-עבודה; `poster-hamedina-v3` נשאר בדיסק — כלל-זהב 8): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3259&m=dev
 
+פוסטר כיכר דיזינגוף — **אין node חי בפיגמה**. `poster-dizengoff-v2` [אוגוסט] נלקח מ-`1318:482`; **2026-09-01 = `poster-dizengoff-v3` ספטמבר (רזידנסי Sumii)**, מקור שולחן-עבודה `Instagram story - 16.jpg` שהמעצבת מסרה. עדכון לוח = החלפת קובץ, לא Figma.
+
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
 
 סקשן upcoming events דסקטופ (עיגול ירוק + 3 כרטיסים + חיצים): Implement this design from Figma.
