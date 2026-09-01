@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ארז זילינסקי–רוזן, אמן ומייסד גלריות זילינסקי &amp; רוזן בתל אביב — שלוש גלריות אמנות ללא מטרות רווח התומכות באמנים צעירים.">
-<title>About — Zielinski & Rozen Art Galleries</title>
-<link rel="preload" href="../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
-<link rel="preload" href="../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
-<link rel="preload" href="../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
+<meta name="description" content="ארז זילינסקי רוזן — רוקח בשמים ואוצר תרבות, מייסד מותג הבישום הבינלאומי זילינסקי &amp; רוזן ורשת גלריות בינלאומית לאמנות עכשווית בתל אביב ובאירופה. הגלריות פועלות ללא מטרות רווח וכל ההכנסות מועברות ישירות לאמנים.">
+<title>About — Zielinski &amp; Rozen Art Galleries</title>
+<link rel="preload" href="../פונטים/Copperplate.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../פונטים/CopperplateCC-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../פונטים/FbEzmel-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../components/site-boot.css">
 <link rel="stylesheet" href="../components/triptych-gallery.css">
 <style>
@@ -28,243 +28,241 @@
   --grey-mid:#808080;
   --copy-grey:#6B7280;
   --sep:#EFEFEF;
-  --divider:#D8D8D8;     /* about page only — vertical quote-block divider */
-  --slide-active:#515151; /* about page only — active slideshow segment */
+  --divider:#D8D8D8;      /* about — vertical bio divider (mobile) */
+  --slide-active:#515151; /* triptych active dot */
   --max:1440px;
   --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
   --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
   --pad-x:96px;
+  --pgap:24px;            /* paragraph gap in the long bio (≈ one blank 22px line) */
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit;text-decoration:none}
 button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 
 /* GLOBAL CASING RULE — all English text renders UPPERCASE (project-wide).
-   Hebrew is exempt. See CLAUDE.md §9. */
+   Hebrew is exempt. Figma writes lowercase (Copperplate small caps) — the global rule wins. */
 body{text-transform:uppercase}
 .heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
 
-.only-mobile{display:none}
-.only-desktop{display:block}
+.dbr{display:inline}        /* desktop-only <br> (explicit Figma breaks; mobile flows) */
 
-/* ===== NAV/FOOTER moved to ../components/site-chrome.css ===== */
+/* ===== NAV/FOOTER in ../components/site-chrome.css ===== */
 
-/* ===== ABOUT — DESKTOP ===== */
+/* ===== ABOUT — DESKTOP (Figma 1699:1406, 1440) =====
+   Every content section: row of [492px image col] + [fill text col], gap 48,
+   inner text padding 0 16 → 676 content. Sides alternate per section. */
 .about{display:flex;flex-direction:column}
+.about section{display:flex;justify-content:center}
+.about .row{display:flex;gap:48px;width:100%;max-width:var(--max)}
+.about .img-col{flex:0 0 492px;display:flex;align-items:center}
+.about .img-frame{position:relative;width:492px;overflow:hidden}
+.about .img-frame img{width:100%;height:100%;object-fit:cover}
+.about .img-frame picture{display:contents}
+.about .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;padding:0 16px}
 
-/* SECTION 1 — Hero (image + title + intro) */
-.about-hero{padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
-.about-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
-.about-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;position:relative}
-.about-hero .img-frame{position:relative;width:492px;height:744px}
-.about-hero .img-frame img{width:100%;height:100%;object-fit:cover}
-.about-hero .img-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0) 100%);pointer-events:none;opacity:.55}
-.about-hero .name-overlay{position:absolute;right:0;top:597px;width:auto;display:flex;flex-direction:column;align-items:flex-end;color:#fff;font-family:var(--cop);font-weight:700;font-size:40px;letter-spacing:.22em;text-align:right;line-height:1.025;z-index:1}
-.about-hero .text-col{flex:1;display:flex;flex-direction:column;justify-content:center;gap:40px;padding:0 16px}
-.about-hero h1{font-family:var(--cop);font-weight:400;font-size:80px;line-height:1;text-align:center;color:var(--ink)}
-.about-hero .ig-handle{align-self:center;font-family:var(--cop);font-weight:400;font-size:24px;line-height:1.1;text-align:center;color:var(--ink)}
-.about-hero a.ig-handle{transition:opacity .2s}
+/* SECTION 1 — Hero (photo + name lockup | handle, title, intro) */
+.about-hero{padding:48px var(--pad-x) 32px}
+.about-hero .img-frame{height:744px}
+.about-hero .img-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 100%);pointer-events:none}
+.about-hero .name-overlay{position:absolute;right:24px;bottom:24px;display:flex;flex-direction:column;align-items:flex-end;color:#fff;font-family:var(--cop);font-weight:700;font-size:33px;letter-spacing:.22em;line-height:41px;text-align:right;z-index:1}
+.about-hero .text-col{gap:32px;align-items:center}
+.about-hero .slogan{display:contents}
+.about-hero .ig-handle{font-family:var(--cop);font-weight:400;font-size:21px;line-height:1.1;text-align:center;transition:opacity .2s}
 .about-hero a.ig-handle:hover{opacity:.6}
-.about-hero .intro-he{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.55;text-align:center;direction:rtl;color:var(--ink)}
+.about-hero h1{font-family:var(--cop);font-weight:400;font-size:60px;line-height:.9em;padding-top:.2em;text-align:center;color:var(--ink);width:100%}
+.about-hero .intro-he{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.06;text-align:center;direction:rtl;color:var(--ink);width:100%}
 
-/* SECTION 2 — Erez portraits coverflow carousel.
-   משתמש בקומפוננטה המשותפת components/triptych-gallery.{css,js} (ראה §16ב ב-CLAUDE.md).
-   ה-wrapper כאן רק נותן padding/background; ה-classes הפעילות (.tri/.tri-frame/.tri-slide/.tri-dot)
-   מטופלות בקומפוננטה. */
+/* SECTION 2 — Erez portraits coverflow carousel (shared .tri component).
+   Figma 1699:1447: centre 481×841, peeks 302×528 @.6 at ±472.5 (space-between in 1248,
+   gap 81 — same geometry as events/noemi-safir). 7 bar dots, start on slide 2. */
 .about-tri{padding:64px var(--pad-x);background:var(--white)}
-.about-tri .tri{--tri-peek-left:7%;--tri-peek-right:93%}
+.about-tri .tri{--tri-max-w:1248px;--tri-bg:transparent;--tri-dot-color:#EEF0EF;--tri-dot-active:#515151;width:100%;max-width:1248px;gap:16px}
+.about-tri .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.about-tri .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
+.about-tri .tri-slide.is-prev,.about-tri .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
+.about-tri .tri-slide.is-prev{left:calc(50% - 472.5px)}
+.about-tri .tri-slide.is-next{left:calc(50% + 472.5px)}
+.about-tri .tri-slide.is-hidden{width:481px;height:841px}
 
-/* SECTION 3 — Biography (Hebrew) with vertical EREZ sidebar */
-.about-bio{padding:48px var(--pad-x);display:flex;justify-content:center;width:100%;box-sizing:border-box}
-.about-bio .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max);min-width:0;direction:rtl}
-.about-bio .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:32px;padding:0 16px;direction:rtl}
-/* bio-block = Figma Frame 296 (row 438.08px wide).
-   - direction:ltr (NOT rtl) so paras sits on the LEFT and vsig on the RIGHT (rightmost edge — vsig is the "spine" of the section, opposite the image).
-   - align-items:flex-start is critical: stretch would couple vsig wrapper height to paras height, and JS letter-spacing growth would feed back into paras, creating an infinite-grow loop. flex-start decouples them. */
-.about-bio .bio-block{display:flex;flex-direction:row;gap:19.578947px;align-items:flex-start;width:100%;max-width:438.08px;min-width:0;direction:ltr}
-.about-bio .paras{display:flex;flex-direction:column;gap:19.578947px;flex:1;min-width:0;font-family:var(--heb);font-weight:300;font-size:22px;line-height:1.0;color:var(--ink);text-align:right;direction:rtl;overflow-wrap:break-word;word-break:normal}
-.about-bio .paras p{font-weight:300}
-.about-bio .paras .lead{font-weight:400}
-.about-bio .paras .quote{font-style:normal}
-.about-bio .vsig{flex:0 0 30.59px;display:flex;align-items:center;justify-content:center;padding:6.118421px 0}
-/* vsig span: vertical text — letter-spacing is set dynamically by JS to match paragraphs column height exactly. The .58em desktop value is a fallback for no-JS. */
-.about-bio .vsig span{writing-mode:vertical-rl;transform:rotate(0deg);font-family:var(--cop);font-weight:400;font-size:14px;letter-spacing:2em;color:var(--ink);white-space:nowrap;display:inline-block}
-/* img-col hugs the portrait: explicit height + Figma aspect-ratio derives width (avoids slack when <picture>/<img>% chain mis-resolves vs global img rules). about-en/about-close stay fixed widths. */
-.about-bio .img-col{flex:0 0 auto;width:fit-content;max-width:100%;display:flex;flex-direction:row;justify-content:flex-start;align-items:stretch;align-self:flex-start;order:-1}
-.about-bio .img-col .img-frame{width:auto;height:739px;aspect-ratio:422.285714/739;max-width:100%;flex-shrink:0;overflow:hidden;margin:0}
-.about-bio .img-col picture{display:block;width:100%;height:100%;margin:0;line-height:0}
-.about-bio .img-col img{display:block;width:100%;height:100%;max-width:none;margin:0;object-fit:cover;object-position:center}
+/* SECTION 3 — Long biography (text left, right-anchored 574 col | photo right).
+   One continuous Hebrew text in Figma; split into .bio-a / .bio-b so the mobile
+   frame's photo-in-the-middle order can interleave without duplicating content. */
+.about-bio{padding:48px var(--pad-x)}
+.about-bio .text-col{align-items:flex-end}
+.about-bio .bio-text{width:574px;max-width:100%}
+.about-bio p{font-family:var(--heb);font-weight:300;font-size:22px;line-height:1.09;text-align:right;direction:rtl;color:var(--ink);margin:0 0 var(--pgap)}
+.about-bio .bio-b-paras p:last-child{margin-bottom:0}
+.about-bio p .lead{font-weight:400}
+.about-bio p .lat{font-family:var(--cop);font-weight:300;font-size:.88em;direction:ltr;unicode-bidi:isolate}
+.about-bio .bio-b{display:flex;gap:16px}
+.about-bio .bio-b-paras{flex:1;min-width:0}
+.about-bio .qspacer{display:none;width:1px;flex-shrink:0;background:var(--divider)}
+.about-bio .img-frame{aspect-ratio:492/739;height:auto}
 
-/* SECTION 4 — Gray quote band (height hugs content; desktop pad 48 vert / 96 horiz; 16px between text + divider) */
-.about-quote-grey{padding:48px 96px;background:var(--bg-grey);display:flex;justify-content:center;width:100%;box-sizing:border-box}
-.about-quote-grey .row{display:flex;gap:16px;justify-content:flex-end;align-items:stretch;width:100%;max-width:var(--max);direction:ltr}
-.about-quote-grey .qtext{font-family:var(--heb);font-weight:300;font-size:14px;line-height:1.34;text-align:right;direction:rtl;color:var(--ink);max-width:980px;margin:0}
-.about-quote-grey .qspacer{width:1px;flex-shrink:0;background:var(--divider);align-self:stretch}
-
-/* SECTION 5 — English pull-quote with portrait */
-.about-en{padding:88px var(--pad-x);display:flex;justify-content:center}
-.about-en .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
-.about-en .img-col{flex:0 0 492px;display:flex;justify-content:flex-end}
-.about-en .img-col .img-frame{width:492px;height:744px;overflow:hidden}
-.about-en .img-col img{width:100%;height:100%;object-fit:cover}
-.about-en .text-col{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:0 16px;text-align:center;font-family:var(--cop);color:var(--ink)}
+/* SECTION 4 — English pull-quote (phone photo | quote) */
+.about-en{padding:48px var(--pad-x) 32px}
+.about-en .img-frame{height:744px}
+.about-en .text-col{gap:10px;text-align:center;font-family:var(--cop);color:var(--ink)}
 .about-en .qmark{font-family:var(--cop);font-weight:700;font-size:40px;line-height:1}
-.about-en .qbody{font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.2}
-.about-en .qbody .b{font-weight:700;font-size:12px}
+.about-en .qbody{font-family:var(--cop);font-weight:300;font-size:15.5px;line-height:1.55}
 
-/* SECTION 6 — Closing image with big logotype on left */
-.about-close{padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
-.about-close .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
-.about-close .text-col{flex:1;min-width:0;display:flex;align-items:center;justify-content:center;padding:0 16px;container-type:inline-size}
-.about-close .stamp{font-family:var(--cop);font-weight:400;font-size:min(32px,calc(100cqw / 12));line-height:1.05;letter-spacing:.04em;color:var(--ink);text-align:center;white-space:nowrap;width:100%;max-width:100%}
-.about-close .img-col{flex:0 0 492px;display:flex;justify-content:flex-end}
-.about-close .img-col .img-frame{width:492px;height:744px;overflow:hidden}
-.about-close .img-col img{width:100%;height:100%;object-fit:cover;object-position:center}
+/* SECTION 5 — Brand logotype | shop-window photo (logo hidden on mobile) */
+.about-close{padding:48px var(--pad-x) 32px}
+.about-close .text-col{align-items:center}
+.about-close .brandmark{width:min(446px,100%);height:auto}
+.about-close .img-frame{height:744px}
 
-/* SECTION 7/8 — Exhibitions curator (korin avraham) + Gallery manager (natalie zigel)
-   Figma 768:2 / 742:37 (korin) · 768:32 / 769:14 (natalie) */
-.about-person{padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
-.about-person .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
-.about-person .img-col{flex:0 0 492px;display:flex;justify-content:flex-end}
-.about-person .img-col .img-frame{position:relative;width:492px;height:744px;overflow:hidden;background:#f3f1ee}
-.about-person .img-col img{width:100%;height:100%;object-fit:cover;object-position:center}
-.about-person .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:32px;padding:0 16px}
-.about-person .p-id{display:flex;flex-direction:column;align-items:center;gap:20px}
-.about-person .p-name{display:flex;flex-direction:column;align-items:center;text-align:center;line-height:1}
-.about-person .p-name .first{font-family:var(--cop);font-weight:700;font-size:80px}
-.about-person .p-name .last{font-family:var(--cop);font-weight:300;font-size:80px}
-.about-person .p-handle{font-family:var(--cop);font-weight:300;font-size:28px;line-height:1.1;padding:0 8px;text-align:center;color:var(--ink)}
-.about-person a.p-handle{transition:opacity .2s}
+/* SECTIONS 6/7 — Exhibitions curator (korin avraham) + gallery manager (natalie zigel).
+   Portrait boxes are 492×652 (centred in the 744 slot per Figma y:46). */
+.about-person{padding:48px var(--pad-x) 32px}
+.about-person .img-frame{aspect-ratio:492/652;height:auto}
+.about-person .text-col{gap:32px}
+.about-person .p-id{display:flex;flex-direction:column;align-items:center;gap:16px}
+.about-person .p-name{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
+.about-person .p-name span{display:block;line-height:1;padding-top:.15em}
+.about-person .p-name .first{font-family:var(--cop);font-weight:700;font-size:64px}
+.about-person .p-name .last{font-family:var(--cop);font-weight:300;font-size:64px}
+.about-person .p-handle{font-family:var(--cop);font-weight:300;font-size:24px;line-height:1.1;padding:0 8px;text-align:center;color:var(--ink);transition:opacity .2s}
 .about-person a.p-handle:hover{opacity:.6}
 .about-person .p-roles{display:flex;gap:19px;align-items:stretch}
 .about-person--manager .p-roles{justify-content:center}
-.about-person .p-role{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 16px;border:1px solid var(--ink);font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.15;color:var(--ink)}
-.about-person .p-role.fill{flex:1 1 0}
-a.p-role{text-decoration:none;transition:background .2s,color .2s}
+.about-person .p-role{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 16px;border:1px solid var(--ink);font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.2;color:var(--ink)}
+.about-person .p-role.fill{flex:1 1 0;min-width:0}
+a.p-role{transition:background .2s,color .2s}
 a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
-.about-person .p-bio{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.55;text-align:center;direction:rtl;color:var(--ink)}
-.about-person .p-bio .lat{font-family:var(--cop);font-weight:300}
+.about-person .p-bio{display:flex;flex-direction:column;gap:19px}
+.about-person .p-bio p{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.06;text-align:center;direction:rtl;color:var(--ink)}
 
-/* ===== FOOTER styles in ../components/site-chrome.css ===== */
+/* ============================================================
+   RESPONSIVE — 1320–1439 (content row narrower than 1248):
+   triptych keeps full geometry; peeks clip at the frame edges.
+   ============================================================ */
+
+/* ============================================================
+   RESPONSIVE — TABLET (769–1319): scaled triptych (livay-levi pattern)
+   ============================================================ */
+@media (min-width:769px) and (max-width:1319px){
+  .about-tri .tri-frame{height:665px}
+  .about-tri .tri-slide.is-center{width:380px;height:665px}
+  .about-tri .tri-slide.is-prev,.about-tri .tri-slide.is-next{width:239px;height:417px}
+  .about-tri .tri-slide.is-prev{left:calc(50% - 373.5px)}
+  .about-tri .tri-slide.is-next{left:calc(50% + 373.5px)}
+  .about-tri .tri-slide.is-hidden{width:380px;height:665px}
+}
 
 /* ============================================================
    RESPONSIVE — TABLET (≤1100px)
    ============================================================ */
 @media (max-width:1100px){
   :root{--pad-x:48px}
-  .about-hero .img-col{flex-basis:380px}
-  .about-hero .img-frame{width:380px;height:560px}
-  .about-hero .name-overlay{right:0;left:auto;top:430px;width:auto;font-size:32px}
-  .about-hero h1{font-size:60px;line-height:60px}
-  .about-en .img-col,.about-close .img-col{flex-basis:380px;width:380px}
-  .about-bio .img-col{flex-basis:auto;width:fit-content;max-width:100%}
-  .about-bio .img-col .img-frame{height:560px;aspect-ratio:380/560;width:auto;max-width:100%}
-  .about-en .img-col .img-frame,.about-close .img-col .img-frame{width:380px;height:560px}
-  /* Bio text-col: shrink font + gaps so total column height ≈ image (560px) instead of 700px */
-  .about-bio .bio-block{gap:14px}
-  .about-bio .paras{font-size:18px;gap:14px}
-  .about-tri{padding:48px var(--pad-x)}
-  .about-quote-grey{padding:48px var(--pad-x)}
-  .about-person .img-col{flex-basis:380px;width:380px}
-  .about-person .img-col .img-frame{width:380px;height:560px}
-  .about-person .p-name .first,.about-person .p-name .last{font-size:60px}
+  .about .img-col{flex-basis:380px}
+  .about .img-frame{width:380px}
+  .about-hero .img-frame,.about-en .img-frame,.about-close .img-frame{height:574px}
+  .about-hero .name-overlay{font-size:25px;line-height:32px;right:18px;bottom:18px}
+  .about-hero h1{font-size:45px}
+  .about-hero .ig-handle{font-size:16px}
+  .about-bio .bio-text{width:100%}
+  .about-bio p{font-size:19px}
+  .about-person .p-name .first,.about-person .p-name .last{font-size:48px}
+  .about-person .p-handle{font-size:19px}
 }
 
 /* ============================================================
-   RESPONSIVE — MOBILE (≤768px)
+   RESPONSIVE — MOBILE (≤768px) — Figma 1699:1291 (390)
    ============================================================ */
 @media (max-width:768px){
-  :root{--pad-x:16px}
-  .only-desktop{display:none !important}
-  .only-mobile{display:block}
+  :root{--pad-x:16px;--pgap:17px}
+  .dbr{display:none}
 
-  /* MOBILE ABOUT — single column, ordered per Figma mobile blueprint */
-  .about{padding:0}
-
-  /* Section A — hero with name overlay */
-  .about-hero{padding:24px 16px 0}
-  .about-hero .row{flex-direction:column;gap:16px}
-  .about-hero .img-col{flex:0 0 auto;width:100%;justify-content:flex-start;order:1}
-  .about-hero .img-frame{width:100%;aspect-ratio:358/448}
-  .about-hero .name-overlay{left:auto;right:16px;top:auto;bottom:24px;width:auto;text-align:right;font-size:40px;line-height:1.025}
-  .about-hero .text-col{padding:8px 0;gap:8px;order:2}
-  .about-hero h1{font-size:24px;line-height:1.1;text-align:right;font-family:var(--cop);font-weight:400}
-  .about-hero .ig-handle{font-size:16px;margin-bottom:20px}
-  .about-hero .intro-he{font-size:16px;text-align:right;line-height:1.55}
-
-  /* Section B — coverflow carousel (mobile: smaller peeks, slightly taller frame) */
-  .about-tri{padding:24px 16px}
-  .about-tri .tri{--tri-peek-left:1%;--tri-peek-right:99%}
-
-  /* Section C — biographical text + vertical signature column */
-  .about-bio{padding:16px 16px}
-  .about-bio .row{flex-direction:column;gap:16px}
-  .about-bio .text-col{flex-direction:row;align-items:flex-start;padding:0;gap:16px;flex:0 0 auto;order:1}
-  .about-bio .bio-block{width:100%;gap:16px}
-  .about-bio .paras{font-size:16px;max-width:none;flex:1}
-  .about-bio .vsig{flex:0 0 25px;padding:5px 0}
-  .about-bio .vsig span{font-size:12px;letter-spacing:2em}
-  .about-bio .img-col{flex:0 0 auto;width:100%;order:2}
-  .about-bio .img-col .img-frame{width:100%;height:378px;margin:0;display:flex;align-items:center;justify-content:center}
-  .about-bio .img-col picture{width:216px;height:378px;display:block}
-  .about-bio .img-col img{width:216px;height:378px;object-fit:cover}
-
-  /* Section D — gray quote band */
-  .about-quote-grey{padding:24px 16px;background:var(--white);order:4}
-  .about-quote-grey .row{flex-direction:row;gap:16px;align-items:stretch;justify-content:flex-end}
-  .about-quote-grey .qtext{font-size:16px;line-height:1.34;max-width:none;flex:1}
-  .about-quote-grey .qspacer{width:1px;flex-shrink:0}
-
-  /* Mobile page order: …quote-grey → close image → en image → en quote */
+  /* Section order per the mobile frame: hero → carousel → bio-a → photo → bio-b
+     → shop window → phone → quote → korin → natalie */
   .about-hero{order:1}
   .about-tri{order:2}
   .about-bio{order:3}
-  .about-close{order:5}
-  .about-en{order:6}
-  .about-person--curator{order:7}
-  .about-person--manager{order:8}
+  .about-close{order:4}
+  .about-en{order:5}
+  .about-person--curator{order:6}
+  .about-person--manager{order:7}
 
-  /* Section E — closing big stretched image */
-  .about-close{padding:24px 16px 0}
-  .about-close .row{flex-direction:column;gap:16px}
-  .about-close .text-col{order:2;padding:8px 0;display:none}
-  .about-close .img-col{order:1;width:100%;flex:0 0 auto}
-  .about-close .img-col .img-frame{width:100%;height:566px}
+  .about .row{flex-direction:column;gap:16px}
+  .about .img-col{flex:0 0 auto;width:100%}
+  .about .img-frame{width:100%}
+  .about .text-col{padding:0}
 
-  /* Section F — Erez portrait + English quote (image, then quote) */
-  .about-en{padding:16px 16px 32px}
-  .about-en .row{flex-direction:column;gap:16px}
-  .about-en .img-col{order:1;flex:0 0 auto;width:100%}
-  .about-en .img-col .img-frame{width:100%;height:447.44px}
-  .about-en .text-col{order:2;padding:8px 24px;gap:8px}
-  .about-en .qmark{font-size:32px}
-  .about-en .qbody{font-size:13px;line-height:1.2}
+  /* Hero */
+  .about-hero{padding:24px 16px}
+  .about-hero .img-frame{height:auto;aspect-ratio:358/448}
+  .about-hero .img-frame::after{background:linear-gradient(0deg,#000 0%,rgba(27,27,27,0) 55%)}
+  .about-hero .name-overlay{right:16px;bottom:16px;font-size:33px;line-height:41px}
+  .about-hero .text-col{gap:16px}
+  .about-hero .slogan{display:flex;flex-direction:column;gap:8px;width:100%}
+  .about-hero .ig-handle{font-size:12px}
+  .about-hero h1{font-size:19px;line-height:1.1;padding-top:.15em}
+  .about-hero .intro-he{font-size:16px;text-align:right}
 
-  /* Sections 7/8 — curator + manager (mobile: photo on top w/ gradient, centered name, role tags) */
+  /* Carousel — Figma: centre 216×378, peeks 117×204.75 at ±194.5, no dots */
+  .about-tri{padding:24px 16px}
+  .about-tri .tri{--tri-max-w:none;width:100%}
+  .about-tri .tri-frame{height:443px;max-width:none;width:100%}
+  .about-tri .tri-slide.is-center{width:216px;height:378px}
+  .about-tri .tri-slide.is-prev,.about-tri .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .about-tri .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .about-tri .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .about-tri .tri-slide.is-hidden{width:216px;height:378px}
+  .about-tri .tri-dots{display:none}
+
+  /* Bio — interleave: text-col and .bio-text dissolve so the photo sits between
+     the two halves (paragraphs 1-3 → photo → paragraphs 4-6 + divider) */
+  .about-bio{padding:24px 16px}
+  .about-bio .text-col,.about-bio .bio-text{display:contents}
+  .about-bio .bio-a{order:1}
+  .about-bio .img-col{order:2}
+  .about-bio .bio-b{order:3;padding-bottom:24px}
+  .about-bio p{font-size:16px;line-height:1.06}
+  .about-bio .bio-a p:last-child{margin-bottom:0}
+  .about-bio .qspacer{display:block}
+  /* Photo shown small and centred inside a 443-high white block (Figma 1699:1345) */
+  .about-bio .img-frame{aspect-ratio:auto;height:443px;display:flex;align-items:center;justify-content:center}
+  .about-bio .img-frame picture{display:block;width:216px;height:378px}
+  .about-bio .img-frame img{width:216px;height:378px}
+
+  /* Shop window (358×566) — logo column hidden */
+  .about-close{padding:24px 16px}
+  .about-close .text-col{display:none}
+  .about-close .img-frame{height:auto;aspect-ratio:2589/4095}
+
+  /* Phone photo + quote */
+  .about-en{padding:24px 16px}
+  .about-en .img-frame{height:auto;aspect-ratio:358/447.44}
+  .about-en .text-col{padding:8px 24px;gap:10px}
+  .about-en .qmark{font-size:40px}
+  .about-en .qbody{font-size:14px}
+
+  /* People — photo first, then centred lockup; korin keeps the mobile scrim */
   .about-person{padding:24px 16px}
-  .about-person .row{flex-direction:column;gap:16px}
-  .about-person .img-col{flex:0 0 auto;width:100%;justify-content:flex-start;order:1}
-  .about-person .img-col .img-frame{width:100%;height:auto;aspect-ratio:358/448}
-  .about-person .img-col .img-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,rgba(27,27,27,0) 55%);pointer-events:none}
-  .about-person .text-col{order:2;padding:0;gap:24px;justify-content:flex-start}
+  .about-person .img-col{order:-1}
+  .about-person .img-frame{aspect-ratio:358/448;height:auto}
+  .about-person--curator .img-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#000 0%,rgba(27,27,27,0) 55%);pointer-events:none}
+  .about-person .text-col{gap:24px}
   .about-person .p-id{gap:8px}
-  .about-person .p-name .first,.about-person .p-name .last{font-size:30px}
-  .about-person .p-handle{font-size:16px;padding:0}
+  .about-person .p-name{gap:8px}
+  .about-person .p-name .first,.about-person .p-name .last{font-size:27px}
+  .about-person .p-handle{font-size:14px;padding:0}
   .about-person .p-roles{flex-direction:column;gap:19px;align-items:stretch}
   .about-person .p-role{align-self:stretch}
   .about-person--manager .p-roles{flex-direction:row;justify-content:center}
   .about-person--manager .p-role{align-self:auto}
-  .about-person .p-bio{font-size:16px;line-height:1.5;text-align:right}
+  .about-person .p-bio{gap:17px}
+  .about-person .p-bio p{font-size:16px;line-height:1.06;text-align:right}
 }
 
-@media (max-width:400px){
-  .about-hero h1{font-size:22px}
-  .about-hero .name-overlay{font-size:32px}
-  .about-bio .paras{font-size:15px}
-  .about-quote-grey .qtext{font-size:13px}
+@media (max-width:360px){
+  .about-hero .name-overlay{font-size:30px;line-height:37px}
+  .about-hero h1{font-size:17px}
 }
 </style>
 <!-- SEO:auto:start -->
@@ -279,7 +277,7 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
 <meta property="og:locale" content="he_IL">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About — Zielinski &amp; Rozen Art Galleries">
-<meta property="og:description" content="ארז זילינסקי–רוזן, אמן ומייסד גלריות זילינסקי &amp; רוזן בתל אביב — שלוש גלריות אמנות ללא מטרות רווח התומכות באמנים צעירים.">
+<meta property="og:description" content="ארז זילינסקי רוזן — רוקח בשמים ואוצר תרבות, מייסד מותג הבישום הבינלאומי זילינסקי &amp; רוזן ורשת גלריות בינלאומית לאמנות עכשווית בתל אביב ובאירופה. הגלריות פועלות ללא מטרות רווח וכל ההכנסות מועברות ישירות לאמנים.">
 <meta property="og:url" content="https://art.zrp.co.il/about/">
 <meta property="og:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
 <meta property="og:image:width" content="1200">
@@ -287,9 +285,9 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
 <meta property="og:image:alt" content="About — Zielinski &amp; Rozen Art Galleries">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About — Zielinski &amp; Rozen Art Galleries">
-<meta name="twitter:description" content="ארז זילינסקי–רוזן, אמן ומייסד גלריות זילינסקי &amp; רוזן בתל אביב — שלוש גלריות אמנות ללא מטרות רווח התומכות באמנים צעירים.">
+<meta name="twitter:description" content="ארז זילינסקי רוזן — רוקח בשמים ואוצר תרבות, מייסד מותג הבישום הבינלאומי זילינסקי &amp; רוזן ורשת גלריות בינלאומית לאמנות עכשווית בתל אביב ובאירופה.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://art.zrp.co.il/about/#webpage","url":"https://art.zrp.co.il/about/","name":"About — Zielinski & Rozen Art Galleries","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"},"mainEntity":{"@type":"Person","name":"Erez Zielinski-Rozen","jobTitle":"Founder & Artist","worksFor":{"@id":"https://art.zrp.co.il/#org"}}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"AboutPage","@id":"https://art.zrp.co.il/about/#webpage","url":"https://art.zrp.co.il/about/","name":"About — Zielinski & Rozen Art Galleries","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"},"mainEntity":{"@type":"Person","name":"Erez Zielinski-Rozen","jobTitle":"Founder & Perfumer & Culture Curator","worksFor":{"@id":"https://art.zrp.co.il/#org"}}}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -299,12 +297,12 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
 
 <main class="about">
 
-  <!-- SECTION 1 — Hero with name overlay + title + intro paragraph -->
+  <!-- SECTION 1 — Hero: photo with name lockup | handle + title + intro (Figma 1699:1432 / 1699:1313) -->
   <section class="about-hero">
     <div class="row">
       <div class="img-col">
         <div class="img-frame">
-          <img src="../images/about/erez-hero.webp" srcset="../images/about/erez-hero-480w.webp 480w, ../images/about/erez-hero-768w.webp 768w, ../images/about/erez-hero.webp 1200w" sizes="100vw" width="1200" height="1600" alt="Erez Zielinski Rozen" decoding="async" fetchpriority="high">
+          <img src="../images/about/erez-hero.webp" srcset="../images/about/erez-hero-480w.webp 480w, ../images/about/erez-hero-768w.webp 768w, ../images/about/erez-hero.webp 1200w" sizes="(max-width:768px) 100vw, 492px" width="1200" height="1600" alt="Erez Zielinski Rozen" decoding="async" fetchpriority="high">
           <div class="name-overlay">
             <span>erez</span>
             <span>zielinski</span>
@@ -314,28 +312,30 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
       </div>
       <div class="text-col">
         <a class="ig-handle" href="https://www.instagram.com/erezzielinskirozen/" target="_blank" rel="noopener">@erezzielinskirozen</a>
-        <h1>Make you feel like Art</h1>
-        <p class="intro-he">אומנות שוברת מוסכמות ויצירה חדשה היא חלק בלתי נפרד מהמותג זילינסקי רוזן.<br>הצורך בהתפתחות תמידית, מחשבה שונה ויציאה מהקופסא הוא חלק הכרחי בהתפתחות האנושית<br>ולכן חשוב לנו לעודד ולתמוך באמנים ואומניות צעירים המביאים בשורה חדשה, כמו הבשמים שלנו.</p>
+        <div class="slogan">
+          <h1>Make you feel like Art</h1>
+          <p class="intro-he">אומנות שוברת מוסכמות ויצירה חדשה היא חלק בלתי נפרד מהמותג זילינסקי רוזן. <br class="dbr">הצורך בהתפתחות תמידית, מחשבה שונה ויציאה מהקופסא הוא חלק הכרחי בהתפתחות האנושית <br class="dbr">ולכן חשוב לנו לעודד ולתמוך באמנים ואומניות צעירים המביאים בשורה חדשה, כמו הבשמים שלנו.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 2 — Erez portraits coverflow carousel.
-       משתמש בקומפוננטה components/triptych-gallery.{css,js} (ראה §16ב ב-CLAUDE.md). -->
-  <section class="about-tri" aria-label="ארז זילינסקי–רוזן — תמונות">
-    <div class="tri">
+  <!-- SECTION 2 — Erez portraits coverflow carousel (Figma 1699:1447 desktop / 1699:1324 mobile).
+       7 slides, opens on slide 2 (tri-center) so the visible triplet matches the frame. -->
+  <section class="about-tri" aria-label="ארז זילינסקי רוזן — תמונות">
+    <div class="tri" data-tri-start="1">
       <div class="tri-frame">
-        <img class="tri-slide" src="../images/about/tri-center.webp" srcset="../images/about/tri-center-480w.webp 480w, ../images/about/tri-center-768w.webp 768w, ../images/about/tri-center.webp 1200w" sizes="100vw" width="1200" height="1600"   alt="ארז זילינסקי–רוזן" draggable="false" decoding="async" loading="lazy">
-        <img class="tri-slide" src="../images/about/erez-hero.webp" srcset="../images/about/erez-hero-480w.webp 480w, ../images/about/erez-hero-768w.webp 768w, ../images/about/erez-hero.webp 1200w" sizes="100vw" width="1200" height="1600"    alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../images/about/erez-bio.webp" srcset="../images/about/erez-bio-480w.webp 480w, ../images/about/erez-bio-768w.webp 768w, ../images/about/erez-bio.webp 1200w" sizes="100vw" width="1200" height="1600"     alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../images/about/erez-quote.webp" srcset="../images/about/erez-quote-480w.webp 480w, ../images/about/erez-quote-768w.webp 768w, ../images/about/erez-quote.webp 1200w" sizes="100vw" width="1200" height="1600"   alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../images/about/erez-closing.webp" srcset="../images/about/erez-closing-480w.webp 480w, ../images/about/erez-closing-768w.webp 768w, ../images/about/erez-closing-1080w.webp 1080w, ../images/about/erez-closing.webp 1500w" sizes="100vw" width="3072" height="4096" alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../images/about/tri-left.webp" srcset="../images/about/tri-left-480w.webp 480w, ../images/about/tri-left-768w.webp 768w, ../images/about/tri-left.webp 1200w" sizes="100vw" width="1200" height="1600"     alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
-        <img class="tri-slide" src="../images/about/tri-right.webp" srcset="../images/about/tri-right-480w.webp 480w, ../images/about/tri-right-768w.webp 768w, ../images/about/tri-right.webp 1200w" sizes="100vw" width="1200" height="1600"    alt="ארז זילינסקי–רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/tri-left.webp" srcset="../images/about/tri-left-480w.webp 480w, ../images/about/tri-left-768w.webp 768w, ../images/about/tri-left.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/tri-center.webp" srcset="../images/about/tri-center-480w.webp 480w, ../images/about/tri-center-768w.webp 768w, ../images/about/tri-center.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/tri-right.webp" srcset="../images/about/tri-right-480w.webp 480w, ../images/about/tri-right-768w.webp 768w, ../images/about/tri-right.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/erez-hero.webp" srcset="../images/about/erez-hero-480w.webp 480w, ../images/about/erez-hero-768w.webp 768w, ../images/about/erez-hero.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/erez-bio.webp" srcset="../images/about/erez-bio-480w.webp 480w, ../images/about/erez-bio-768w.webp 768w, ../images/about/erez-bio.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/erez-quote.webp" srcset="../images/about/erez-quote-480w.webp 480w, ../images/about/erez-quote-768w.webp 768w, ../images/about/erez-quote.webp 1200w" sizes="(max-width:768px) 60vw, 481px" width="1200" height="1600" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
+        <img class="tri-slide" src="../images/about/erez-closing-v2.webp" srcset="../images/about/erez-closing-v2-480w.webp 480w, ../images/about/erez-closing-v2-768w.webp 768w, ../images/about/erez-closing-v2.webp 1080w" sizes="(max-width:768px) 60vw, 481px" width="1080" height="1708" alt="ארז זילינסקי רוזן" draggable="false" loading="lazy" decoding="async">
       </div>
       <div class="tri-dots" role="tablist" aria-label="gallery navigation">
-        <button type="button" class="tri-dot is-on" aria-label="slide 1" role="tab" aria-selected="true"></button>
-        <button type="button" class="tri-dot" aria-label="slide 2" role="tab" aria-selected="false"></button>
+        <button type="button" class="tri-dot" aria-label="slide 1" role="tab" aria-selected="false"></button>
+        <button type="button" class="tri-dot is-on" aria-label="slide 2" role="tab" aria-selected="true"></button>
         <button type="button" class="tri-dot" aria-label="slide 3" role="tab" aria-selected="false"></button>
         <button type="button" class="tri-dot" aria-label="slide 4" role="tab" aria-selected="false"></button>
         <button type="button" class="tri-dot" aria-label="slide 5" role="tab" aria-selected="false"></button>
@@ -345,57 +345,37 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
     </div>
   </section>
 
-  <!-- SECTION 3 — Biographical text + vertical signature + portrait -->
+  <!-- SECTION 3 — Long biography (Figma 1699:1460 desktop; mobile splits around the photo) -->
   <section class="about-bio">
     <div class="row">
       <div class="text-col">
-        <div class="bio-block">
-        <div class="paras">
-          <p><span class="lead">ארז ‬זילינסקי–רוזן</span> ‬הוא ‬קודם ‬כול ‬אמן.<br>
-          לפני ‬שהוא ‬רוקח, ‬לפני ‬שהוא ‬יזם — ‬הוא ‬יוצר.<br>
-          עולם ‬הבישום ‬עבורו ‬הוא ‬קנבס ‬בלתי ‬נראה ‬שנבנה ‬משכבות ‬של ‬רגש ‬וזיכרון.<br>
-          הוא ‬עובד ‬מתוך ‬אינטואיציה ‬טהורה — ‬ממצב ‬רוח, ‬מחוויות, ‬מהחיים ‬עצמם. כל ‬בושם ‬שהוא ‬יוצר ‬הוא ‬יצירת ‬אמנות, ‬עם ‬סיפור ‬, ‬עם ‬צבע, ‬<br>
-          עם ‬פעימה.</p>
-
-          <p>בדיוק ‬כמו ‬שהבשמים ‬נולדים ‬מתוך ‬דיאלוג ‬של ‬רגש ‬וחומר, ‬כך ‬גם ‬הגלריות ‬של ‬ארז ‬הן ‬מקום ‬שבו ‬האמנות ‬מתרחשת, ‬זזה ‬ומתפתחת ‬,<br>
-          באופן ‬שממשיך ‬את ‬מהות ‬המותג ‬: ‬ריח ‬כיצירה, ‬יצירה ‬כבית.</p>
-
-          <p>הגלריות ‬פועלות ‬ללא ‬מטרות ‬רווח — ‬כל ‬ההכנסות ‬ממכירת ‬היצירות ‬בתערוכה ‬מועברות ‬ישירות ‬לאמניות ‬ולאמנים.<br>
-          הגלריות ‬פועלות ‬מתוך ‬מטרה ‬מוצהרת ‬לייצר ‬חשיפה משמעותית ‬לאמנות ‬ישראלית ‬עכשווית ‬ולאפשר ‬מפגש ישיר ‬ובלתי ‬אמצעי ‬בין ‬<br>
-          יוצרים ‬לקהל.</p>
-
-          <p>הקשר ‬של ‬ארז ‬לאמנות ‬אינו ‬רק ‬השראה:<br>
-          <span class="quote">"אמנות ‬היא ‬חלק ‬בלתי ‬נפרד ‬מהמותג, ‬<br>
-          היא ‬שוברת ‬מוסכמות, ‬מרחיבה ‬גבולות ‬<br>
-          ומאפשרת ‬חופש. ‬<br>
-          אותו ‬החופש ‬שמוביל ‬אותי ‬בבישום, ‬הוביל ‬אותי ‬לפתוח ‬את ‬הגלריות ‬החדשות — ‬מרחבים ‬שמכילים ‬יצירה ‬חיה ‬ונושמת, ‬אמנים, ‬פרשנות ‬אישית, ‬ומפגש ‬בין ‬ניחוח ‬ליצירה ‬חזותית."</span></p>
+        <div class="bio-text">
+          <div class="bio-a">
+            <p><span class="lead">ארז זילינסקי רוזן</span> הוא רוקח בשמים ואוצר תרבות, מייסד מותג הבישום הבינלאומי <span class="lat">ZIELINSKI &amp; ROZEN</span> ומייסד רשת גלריות בינלאומית לאמנות עכשווית, הפועלת בתל אביב וברחבי אירופה, בשיתוף פעולה עם אמנים ויוצרים מהארץ ומהעולם.</p>
+            <p>עבור ארז, בישום ואמנות הם שני ביטויים של אותה שפה יצירתית. שניהם נולדים מתוך זיכרון, רגש וחוויה אנושית, ומבקשים לעורר תחושה, לעורר מחשבה ולהישאר עם האדם גם הרבה אחרי רגע המפגש.</p>
+            <p>מתוך תפיסת העולם הזו נולדו גם הגלריות. הן אינן רק חללי תצוגה, אלא מרחבים חיים המאפשרים מפגש בין אמנים, יוצרים וקהל, ומעודדים דיאלוג בין אמנות, תרבות, ריח וזיכרון. כל תערוכה נבנית מתוך רעיון אוצרותי שלם, המשלב בין יצירה חזותית, חוויה חושית וסיפור אנושי.</p>
+          </div>
+          <div class="bio-b">
+            <div class="bio-b-paras">
+              <p>הגלריות פועלות ללא מטרות רווח, וכל ההכנסות ממכירת היצירות מועברות ישירות לאמנים. הן הוקמו מתוך אמונה עמוקה כי לאמנות יש הכוח לחבר בין אנשים, לעורר שיח, להרחיב נקודות מבט וליצור חוויה שממשיכה להדהד גם לאחר היציאה מהגלריה.</p>
+              <p>מאז הקמתן הגלריות הפכו לבית לעשרות אמנים ישראלים ולבמה לתערוכות מקוריות המשלבות אמנות עכשווית, בישום וחוויה רב־חושית. כעת, עם פתיחת גלריות חדשות ברחבי אירופה, מתרחב החזון אל מעבר לגבולות ישראל וממשיך ליצור חיבורים בין יוצרים, תרבויות וקהלים ברחבי העולם.</p>
+              <p>כדבריו של ארז:<br>“אמנות היא חלק בלתי נפרד מהמותג. היא שוברת מוסכמות, מרחיבה גבולות ומאפשרת חופש. אותו חופש שמוביל אותי בעולם הבישום, מוביל אותי גם ביצירת מרחבים שבהם אנשים יכולים להרגיש, לחשוב ולהתחבר.”</p>
+            </div>
+            <div class="qspacer" aria-hidden="true"></div>
+          </div>
         </div>
-        <div class="vsig"><span>EREZ ZIELINSKI ROZEN</span></div>
-        </div><!-- /.bio-block -->
       </div>
       <div class="img-col">
-        <div class="img-frame"><img src="../images/about/erez-bio.webp" srcset="../images/about/erez-bio-480w.webp 480w, ../images/about/erez-bio-768w.webp 768w, ../images/about/erez-bio.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></div>
+        <div class="img-frame"><img src="../images/about/erez-bio-crop.webp" srcset="../images/about/erez-bio-crop-480w.webp 480w, ../images/about/erez-bio-crop-768w.webp 768w, ../images/about/erez-bio-crop.webp 1060w" sizes="(max-width:768px) 216px, 492px" width="1060" height="1548" alt="" decoding="async" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 4 — Gray quote band -->
-  <section class="about-quote-grey">
-    <div class="row">
-      <p class="qtext">רוקחות בשמים היא עבורי כמו לצייר על קנבס ריק,<br>
-      כמו לכתוב סיפור מרתק או להלחין סימפוניה סוחפת.<br>
-      כל בושם הוא יצירת אומנות בפני עצמה, שילוב עוצמתי של ניחוחות המעוררים רגשות, זיכרונות ותחושות.<br>
-      זו אמנות שבה חומרי הגלם הם המילים, והניחוח הוא הסיפור. כמו בכל יצירת אומנות, גם לבושם יש סגנונות שונים, וכל אחד תופס אותנו ומפרש אותנו בצורה ייחודית.<br><br>
-      אני לא יכול להשאיר אדיש לבושם. כמו שיר של אדית פיאף, הוא סוחף אותי, מעורר בי רגשות, אסוציאציות וזיכרונות.</p>
-      <div class="qspacer"></div>
-    </div>
-  </section>
-
-  <!-- SECTION 5 — English pull-quote with portrait -->
+  <!-- SECTION 4 — English pull-quote with phone photo (Figma 1699:1477) -->
   <section class="about-en">
     <div class="row">
       <div class="img-col">
-        <div class="img-frame"><img src="../images/about/erez-quote.webp" srcset="../images/about/erez-quote-480w.webp 480w, ../images/about/erez-quote-768w.webp 768w, ../images/about/erez-quote.webp 1200w" sizes="100vw" width="1200" height="1600" alt="" decoding="async" loading="lazy"></div>
+        <div class="img-frame"><img src="../images/about/erez-quote.webp" srcset="../images/about/erez-quote-480w.webp 480w, ../images/about/erez-quote-768w.webp 768w, ../images/about/erez-quote.webp 1200w" sizes="(max-width:768px) 100vw, 492px" width="1200" height="1600" alt="" decoding="async" loading="lazy"></div>
       </div>
       <div class="text-col">
         <div class="qmark">“</div>
@@ -408,7 +388,8 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
           The scent can tell a lot.
           <br><br>
           who we are, how we feel,<br>
-          how we think, how we behave.<br>
+          how we think, how we behave.
+          <br><br>
           It also reveals those facets<br>
           that we, perhaps,<br>
           did not notice in ourselves before.<br>
@@ -420,20 +401,19 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
     </div>
   </section>
 
-  <!-- SECTION 6 — Closing image with stamp -->
+  <!-- SECTION 5 — Brand logotype + shop-window photo (Figma 1699:1484; logo hidden on mobile) -->
   <section class="about-close">
     <div class="row">
       <div class="text-col">
-        <div class="stamp">ZIELINSKI &amp; ROZEN</div>
+        <img class="brandmark" src="../images/brand/logo.svg" width="446" height="93" alt="Zielinski &amp; Rozen" loading="lazy" decoding="async">
       </div>
       <div class="img-col">
-        <div class="img-frame"><img src="../images/about/erez-closing.webp" srcset="../images/about/erez-closing-480w.webp 480w, ../images/about/erez-closing-768w.webp 768w, ../images/about/erez-closing-1080w.webp 1080w, ../images/about/erez-closing.webp 1500w" sizes="100vw" width="3072" height="4096" alt="" decoding="async" loading="lazy"></div>
+        <div class="img-frame"><img src="../images/about/erez-closing-v2.webp" srcset="../images/about/erez-closing-v2-480w.webp 480w, ../images/about/erez-closing-v2-768w.webp 768w, ../images/about/erez-closing-v2.webp 1080w" sizes="(max-width:768px) 100vw, 492px" width="1080" height="1708" alt="ארז זילינסקי רוזן בחלון גלריית כיכר דיזינגוף" decoding="async" loading="lazy"></div>
       </div>
     </div>
   </section>
 
-
-  <!-- SECTION 7 — Exhibitions curator (korin avraham). Figma 768:2 desktop / 742:37 mobile -->
+  <!-- SECTION 6 — Exhibitions curator (korin avraham). Figma 1699:1506 desktop / 1699:1362 mobile -->
   <section class="about-person about-person--curator" aria-label="korin avraham — exhibitions curator">
     <div class="row">
       <div class="img-col">
@@ -450,12 +430,18 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
           <a class="p-role" href="../curators/korin-avraham/">exhibitions curator</a>
           <span class="p-role fill">international art department manager</span>
         </div>
-        <p class="p-bio" dir="rtl">קורין אברהם, 45, תל-אביב יפו, היא יוצרת, אוצרת ויזמית תוכן הפועלת בצומת שבין אופנה, תרבות, אמנות ורגש.<br><br>בהכשרתה היא עורכת דין ובהדרגה פנתה לעשייה יצירתית הנשענת על צילום. עבודתה מאופיינת בדיוק אסתטי וביכולת לבנות סיפור דרך דימוי שמקבל חיים בהפקות ופרויקטים שמתקיימים בין ערים ותרבויות שונות, תוך חיבור בין מקומי לגלובלי.<br><br>אברהם עוסקת ביצירה כדרך לפגוש את עצמה. העבודה שלה מתקיימת בתוך העולם גם כשהוא רועש, צפוף ורווי תפקידים. עשייתה מצביעה על ידע קיים - ידע שאינו נלמד, אלא נזכר.<br><br>היא אינה מחפשת תנאים של ניתוק או התבודדות, אלא תשומת לב שמתקיימת בתוך החיים עצמם. מכלול העבודות בתערוכה מהוות עבור אברהם סקלה של בדידות, לפעמים כמקום של נחמה והסחת דעת, לפעמים כעמידה חשופה, לפעמים כהתמודדות.<br><br>החיבור שלה אליהן נובע מהבחירה להישאר בתוך התנועה הזו, גם כשלא ברור מה מחכה בצומת הבא. זה אינו סיפור סגור, אלא תהליך חי שמבקש אומץ, הקשבה והסכמה, כאשר הבהירות נוצרת מתוך נוכחות מתמשכת, ולאו דווקא מתוך היעלמות מהעולם.</p>
+        <div class="p-bio">
+          <p>קורין אברהם, 45, תל-אביב יפו, היא יוצרת, אוצרת ויזמית תוכן הפועלת בצומת שבין אופנה, תרבות, אמנות ורגש.</p>
+          <p>בהכשרתה היא עורכת דין ובהדרגה פנתה לעשייה יצירתית הנשענת על צילום. <br>עבודתה מאופיינת בדיוק אסתטי וביכולת לבנות סיפור דרך דימוי שמקבל חיים בהפקות ופרויקטים שמתקיימים בין ערים ותרבויות שונות, תוך חיבור בין מקומי לגלובלי.</p>
+          <p>אברהם עוסקת ביצירה כדרך לפגוש את עצמה.<br>העבודה שלה מתקיימת בתוך העולם גם כשהוא רועש, צפוף ורווי תפקידים.<br>עשייתה מצביעה על ידע קיים - ידע שאינו נלמד, אלא נזכר.</p>
+          <p>היא אינה מחפשת תנאים של ניתוק או התבודדות, אלא תשומת לב שמתקיימת בתוך החיים עצמם.<br>מכלול העבודות בתערוכה מהוות עבור אברהם סקלה של בדידות, לפעמים כמקום של נחמה והסחת דעת, לפעמים כעמידה חשופה, לפעמים כהתמודדות.</p>
+          <p>החיבור שלה אליהן נובע מהבחירה להישאר בתוך התנועה הזו, גם כשלא ברור מה מחכה בצומת הבא. זה אינו סיפור סגור, אלא תהליך חי שמבקש אומץ, הקשבה והסכמה, כאשר הבהירות נוצרת מתוך נוכחות מתמשכת, ולאו דווקא מתוך היעלמות מהעולם.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 8 — Gallery manager (natalie zigel). Figma 768:32 desktop / 769:14 mobile -->
+  <!-- SECTION 7 — Gallery manager (natalie zigel). Figma 1699:1524 desktop / 1699:1379 mobile -->
   <section class="about-person about-person--manager" aria-label="natalie zigel — the gallery manager">
     <div class="row">
       <div class="text-col">
@@ -469,14 +455,13 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
       </div>
       <div class="img-col">
         <div class="img-frame">
-          <img src="../images/about/people/natalie-zigel.webp" srcset="../images/about/people/natalie-zigel-480w.webp 480w, ../images/about/people/natalie-zigel.webp 984w" sizes="(max-width:768px) 100vw, 492px" width="984" height="1099" alt="natalie zigel" decoding="async" loading="lazy">
+          <img src="../images/about/people/natalie-zigel.webp" srcset="../images/about/people/natalie-zigel-480w.webp 480w, ../images/about/people/natalie-zigel.webp 984w" sizes="(max-width:768px) 100vw, 492px" width="984" height="1100" alt="natalie zigel" decoding="async" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
 </main>
-
 
 <!-- FOOTER -->
 <site-footer></site-footer>
@@ -485,86 +470,6 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
 <script src="../components/site-chrome.js?v=6" defer></script>
 <!-- Erez portraits coverflow carousel (Section 2) — shared component. -->
 <script src="../components/triptych-gallery.js" defer></script>
-
-<!-- Vertical signature auto-fit: stretch letter-spacing so rotated text length === paragraphs height.
-     The layout uses align-items:flex-start on .bio-block so growing the vsig wrapper does NOT
-     stretch the paras column; this breaks the feedback loop that was causing runaway growth. -->
-<script>
-(function(){
-  var updating = false;        // guard so ResizeObserver doesn't re-fire mid-update
-  var lastLs = new WeakMap();  // remember last setting per span to skip redundant work
-  var ro = null;
-
-  function fitVsig(section){
-    var paras = section.querySelector('.paras');
-    var vsig = section.querySelector('.vsig');
-    if(!paras || !vsig) return;
-    var imgFrame = section.querySelector('.img-frame');
-    if(imgFrame && window.matchMedia('(min-width:769px)').matches){
-      var imgH = paras.getBoundingClientRect().height;
-      if(imgH > 0){
-        imgFrame.style.height = imgH + 'px';
-        imgFrame.style.width = (imgH * 216 / 378) + 'px';
-      }
-    } else if(imgFrame){
-      imgFrame.style.height = '';
-      imgFrame.style.width = '';
-    }
-    var span = vsig.querySelector('span');
-    if(!span) return;
-
-    var padStyles = getComputedStyle(vsig);
-    var pad = parseFloat(padStyles.paddingTop) + parseFloat(padStyles.paddingBottom);
-    var parasH = paras.getBoundingClientRect().height;
-    if(parasH <= 0) return;
-    var target = parasH - pad;
-    if(target <= 0) return;
-
-    // Measure base text length at letter-spacing:0
-    var prev = lastLs.get(span);
-    span.style.letterSpacing = '0px';
-    var base = span.getBoundingClientRect().height;
-    var chars = span.textContent.length;
-    if(chars <= 1){ if(prev !== undefined) span.style.letterSpacing = prev+'px'; return; }
-
-    var ls = (target - base) / (chars - 1);
-    if(ls < 8) ls = 8;         // minimum — always show some spacing
-    if(ls > 400) ls = 400;     // safety cap
-    if(prev !== undefined && Math.abs(prev - ls) < 0.25){
-      span.style.letterSpacing = prev+'px'; // restore — don't leave at 0px
-      return;
-    }
-    lastLs.set(span, ls);
-    span.style.letterSpacing = ls + 'px';
-  }
-
-  function fitAll(){
-    if(updating) return;
-    updating = true;
-    document.querySelectorAll('.about-bio').forEach(fitVsig);
-    // release the guard on the next frame so the observer's echo doesn't re-trigger us
-    requestAnimationFrame(function(){
-      requestAnimationFrame(function(){ updating = false; });
-    });
-  }
-
-  function schedule(){
-    if(schedule._t) clearTimeout(schedule._t);
-    schedule._t = setTimeout(fitAll, 60);
-  }
-
-  if(document.fonts && document.fonts.ready){
-    document.fonts.ready.then(fitAll);
-  }
-  window.addEventListener('load', fitAll);
-  window.addEventListener('resize', schedule);
-
-  if('ResizeObserver' in window){
-    ro = new ResizeObserver(function(){ if(!updating) schedule(); });
-    document.querySelectorAll('.about-bio .paras').forEach(function(el){ ro.observe(el); });
-  }
-})();
-</script>
 
 <script src="../components/analytics.js" defer></script>
 <script src="../components/picture-upgrade.js" defer></script>

@@ -199,11 +199,19 @@ legacy (גריד 38 דסקטופ / קרוסלה+נקודות מובייל, "mobi
 
 ## 👤 אודות / Biography of Erez (/about)
 
-אודות דסקטופ: Implement this design from Figma.
-@https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2970&m=dev
+> **רה-דיזיין 2026-09-01** — הפריימים הקנוניים עברו לקובץ `landing` ("biography-erez-desktop"/"biography-erez-mobile"). כל 9 התמונות = מיחזור הקבצים הקיימים (אומת RMSE); שתי אפיות קרופ חדשות: `erez-closing-v2` (crop `3bb3a4`), `erez-bio-crop` (crop `7dd04d`).
 
-אודות מובייל: Implement this design from Figma.
+אודות דסקטופ (canonical — 1440): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1699-1406&m=dev
+
+אודות מובייל (canonical — 390): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1699-1291&m=dev
+
+<details><summary>legacy (העיצוב הישן בקובץ הגרפיקות — הוחלף 2026-09-01)</summary>
+
+@https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2970&m=dev
 @https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2888&m=dev
+</details>
 
 ---
 
