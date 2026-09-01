@@ -485,6 +485,32 @@
       "route": "press/time-out/",
       "figma_home_card_desktop": "XhGH289YTRcW811wrufRJz::428:507",
       "figma_home_card_mobile": "XhGH289YTRcW811wrufRJz::412:1051"
+    },
+    {
+      "id": "event-sumii-opening",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "ערב הפתיחה — POP UP ART RESIDENCY של SUMII",
+      "title_en": "opening night event - art residency by sumii",
+      "date": "2026-09-02",
+      "cover_image": "images/events/sumii-opening/list-card.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "route": null,
+      "_route_note": "אין דף אירוע (אין פריימי דף בפיגמה — רק כרטיס רשימה) ⇒ כרטיס pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray. הכרטיס יופיע ב-/press/ מ-3.9.2026, ובינתיים הוא חי ב-/events/. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, ולהוסיף ל-sitemap."
+    },
+    {
+      "id": "event-nir-giorgio-levin-medina-talk",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — כיכר המדינה",
+      "title_en": "artist talk with nir giorgio levin",
+      "date": "2026-09-08",
+      "cover_image": "images/events/nir-giorgio-levin-medina/list-card.webp",
+      "exhibition_id": "the-peeler",
+      "homepage_visible": false,
+      "route": null,
+      "_route_note": "אין דף אירוע (אין פריימי דף בפיגמה — רק כרטיס רשימה) ⇒ כרטיס pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray. ה-id וה-slug נושאים סיומת -medina כי nir-giorgio-levin תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026)."
     }
   ]
 }

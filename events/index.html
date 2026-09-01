@@ -53,11 +53,13 @@ body{text-transform:uppercase}
 .ev-list{
   max-width:var(--max);margin:0 auto;
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
-  /* chronological order flows DOWN the right column first, then the left (Figma 1318:1761:
-     right col = michael/livay/noemi/bar-cohen/hadas, left col = the-space-between/maria/
-     zohar-medina/jessica) — same RTL column trick as /press/.
-     NOTE 2026-08-28: amnon-lipkin (8.9) was deleted from the site by request — it is still
-     drawn in the Figma frame; do NOT restore it on the next sync.
+  /* chronological order flows DOWN the right column first, then the left — same RTL column
+     trick as /press/. Per Figma 1318:1761 (synced 2026-09-01, 8 cards / 4 rows):
+     right col = sumii-opening 2.9 / the-space-between 3.9 / elsa 6.9 / baruch 6.9,
+     left col  = maria 7.9 / nir-giorgio-levin-medina 8.9 / zohar-ron-medina 9.9 / jessica 10.9.
+     NOTE 2026-08-28: amnon-lipkin was deleted from the site by request. The 8.9 slot is now
+     nir-giorgio-levin-medina — a DIFFERENT event (imageRef 99781a55…, added 2026-09-01 by
+     user decision); do NOT restore amnon-lipkin on the next sync.
      JS sets the exact row count (ceil(n/2)); repeat(3,auto) is only a no-JS fallback. */
   grid-auto-flow:column;direction:rtl;grid-template-rows:var(--ev-rows,repeat(3,auto));
   gap:48px;
@@ -165,10 +167,14 @@ body{text-transform:uppercase}
 <!-- EVENTS LIST — rendered from inline data (file:// can't fetch JSON).
      Mirrors data/events.json; date >= today (or date_tbd, or pinned) survives the filter,
      sorted ascending (TBD events, if any, last). Desktop: chronological order flows
-     down the RIGHT column first via RTL column grid — matches Figma 1318:1761, whose 10 cards read
-     right column 17.8→28.8 (michael/livay/noemi/bar-cohen/hadas), left column 3.9→10.9
-     (the-space-between/maria/zohar-medina/jessica — amnon-lipkin deleted 2026-08-28, still in the
-     frame; do not restore); mobile = same order, one column (1318:2012).
+     down the RIGHT column first via RTL column grid — matches Figma 1318:1761, whose 8 cards read
+     right column 2.9→6.9 (sumii-opening/the-space-between/elsa/baruch), left column 7.9→10.9
+     (maria/nir-giorgio-levin-medina/zohar-ron-medina/jessica); mobile = same order, one column
+     (1732:140 — the current mobile frame, replacing 1318:2012).
+     Synced 2026-09-01: michael/livay lost their `pinned` flag (the designer dropped them from the
+     frame — they now live in /press/), and the two 2.9 / 8.9 cards were added as soon:true
+     list-only entries (no event page exists for either). amnon-lipkin was deleted 2026-08-28 and
+     must NOT be restored; the 8.9 slot is a different event.
      `title_en` here mirrors events.json `list_title_en` when that field exists, else `title_en` —
      the designer sometimes words the card differently from the event page's own frame
      (bar-cohen: "…bar cohen - ‘akra’" on the card, no dash on the page). -->
