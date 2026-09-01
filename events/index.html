@@ -195,10 +195,12 @@ body{text-transform:uppercase}
  {"slug":"noemi-safir","date":"2026-08-19","title_en":"artist talk with noemi safir","gallery_id":"medina","img":"images/events/noemi-safir/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם נעמי ספיר — גלריית כיכר המדינה"},
  {"slug":"bar-cohen","date":"2026-08-27","title_en":"artist talk with bar cohen - ‘akra’","gallery_id":"medina","img":"images/events/bar-cohen/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם בר כהן — גלריית כיכר המדינה"},
  {"slug":"hadas-tuval","date":"2026-08-28","title_en":"artist talk with hadas tuval","gallery_id":"medina","img":"images/events/hadas-tuval/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם הדס טובל — גלריית כיכר המדינה"},
+ {"slug":"sumii-opening","date":"2026-09-02","soon":true,"title_en":"opening night event - ART RESIDENCY by sumii","gallery_id":"dizengoff","img":"images/events/sumii-opening/list-card.webp","w":876,"h":487,"alt":"ערב הפתיחה של הרזידנסי של SUMII — גלריית כיכר דיזינגוף"},
  {"slug":"the-space-between","date":"2026-09-03","title_he":"מור צופיה געש | מה אנחנו באמת זוכרים ממקום?","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
  {"slug":"elsa-ars-brush","date":"2026-09-06","title_en":"artist talk with elsa ers brosh","gallery_id":"medina","img":"images/events/elsa-ars-brush/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אלסה ארס ברוש — גלריית כיכר המדינה"},
  {"slug":"baruch-torgeman","date":"2026-09-06","title_en":"artist talk with baruch torgeman","gallery_id":"medina","img":"images/events/baruch-torgeman/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם ברוך תורג׳מן — גלריית כיכר המדינה"},
  {"slug":"maria-artamonova","date":"2026-09-07","title_en":"artist talk with maria artamonova","gallery_id":"medina","img":"images/events/maria-artamonova/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם מריה ארטמונובה — גלריית כיכר המדינה"},
+ {"slug":"nir-giorgio-levin-medina","date":"2026-09-08","soon":true,"title_en":"artist talk with nir giorgio levin","gallery_id":"medina","img":"images/events/nir-giorgio-levin-medina/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר המדינה"},
  {"slug":"zohar-ron-medina","date":"2026-09-09","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"},
  {"slug":"jessica-tabarovsky","date":"2026-09-10","title_en":"artist talk with jessica tabarovsky","gallery_id":"medina","img":"images/events/jessica-tabarovsky/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם ג׳סיקה טברובסקי — גלריית כיכר המדינה"}
 ]
@@ -235,6 +237,16 @@ body{text-transform:uppercase}
       ? '<div class="date date--tbd">פרטים ותאריך בהמשך</div>'
       : (function(){var d=String(e.date).split('-');return '<div class="date">'+esc((+d[2])+'.'+(+d[1])+'.'+d[0])+'</div>';})();
     var load=i?' loading="lazy" decoding="async"':' fetchpriority="high" decoding="async"';
+    /* optional `widths` — heavy card image that trips golden rule 12 (>=80KB and >=800px).
+       Variants live beside the master as <name>-<w>w.webp (+ avif siblings, which
+       picture-upgrade.js maps automatically). Cards without the field stay single-src. */
+    var srcset='';
+    if(e.widths&&e.widths.length){
+      var base='../'+e.img.replace(/\.webp$/,'');
+      srcset=' srcset="'+e.widths.map(function(w){
+        return esc(w===e.w?base+'.webp':base+'-'+w+'w.webp')+' '+w+'w';
+      }).join(', ')+'" sizes="(max-width:768px) 171px, 292px"';
+    }
     return (e.soon?'<a class="ev-card ev-card--soon" href="#" role="link" aria-disabled="true">':'<a class="ev-card" href="'+esc(e.slug)+'/">')
       +'<div class="txt">'
       +'<div class="tag"><span class="t1">gallery event</span><span class="sep"> | </span><span class="t2">'+esc(GALLERY[e.gallery_id]||'')+'</span></div>'
@@ -243,7 +255,7 @@ body{text-transform:uppercase}
           : '<div class="ttl">'+esc(e.title_en)+'</div>')
       +dateHtml
       +'</div>'
-      +'<div class="im"><img src="../'+esc(e.img)+'" width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'"'+load+'></div>'
+      +'<div class="im"><img src="../'+esc(e.img)+'"'+srcset+' width="'+e.w+'" height="'+e.h+'" alt="'+esc(e.alt)+'"'+load+'></div>'
       +'</a>';
   }).join('');
   if(window.PictureUpgrade) PictureUpgrade.refresh(list);
