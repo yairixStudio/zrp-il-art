@@ -36,3 +36,8 @@ lighthouse-reports/
 
 # staged-but-unpublished pages (hidden until reveal; not served by GitHub Pages)
 _staging/
+
+# local work folders — never published (untracked 2026-09-27; files stay on disk)
+scratchpad/
+trash/
+media/
