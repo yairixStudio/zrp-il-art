@@ -99,6 +99,14 @@ legacy — מובייל:
 הסקשן המצומצם — 9 כרטיסים (כל העיתונות + 2 פתיחות) + כפתור "more press & events" (מובייל; דסקטופ = אנטומיית `/press/`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1322-258&m=dev
 
+### Homepage — `#galleries-berlin` "the gallery / berlin" (מתחת ל-`#galleries`; 2026-09-27) ✅ המצב הנוכחי
+
+דסקטופ (1440): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1859-2668&m=dev
+
+מובייל (390): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1856-433&m=dev
+
 ### Homepage — סקשן ספונסר `#sumii` (טיזר רזידנסי SUMII, מעל `#soos`; 2026-08-18) ✅ המצב הנוכחי
 
 סקשן sumii מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.

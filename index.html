@@ -377,6 +377,22 @@ a.gallery-card{color:inherit;text-decoration:none}
 .gallery-card .addr{font-size:18px;font-weight:400;white-space:nowrap}
 .gallery-card .hours{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:300;color:var(--ink)}
 
+/* ===== GALLERIES — BERLIN · Figma landing::1859:2668 (desktop) / 1856:433 (mobile) =====
+   Single LTR English card below #galleries. Title reuses .galleries-title (same 36px as "the galleries / tel aviv").
+   Card column 410.667 / image 33:40 = same geometry as the Tel Aviv cards. */
+.galleries--berlin{padding-top:34px;padding-bottom:96px}
+.berlin-card{width:100%;max-width:410.667px;display:flex;flex-direction:column;gap:16px;direction:ltr;text-align:left;font-family:var(--cop);color:var(--ink)}
+.berlin-card .img{width:100%;aspect-ratio:33/40;overflow:hidden;background:#f3f1ee}
+.berlin-card .img picture{display:block;width:100%;height:100%}
+.berlin-card .img img{width:100%;height:100%;object-fit:cover;display:block}
+.berlin-card .txt{display:flex;flex-direction:column;gap:8px}
+.berlin-card .bname{font-weight:400;font-size:22px;line-height:30px}
+.berlin-card .baddr{display:flex;flex-direction:column;gap:4px}
+.berlin-card .addr-lines{font-weight:400;font-size:14px;line-height:1.3}
+.berlin-card .bhandle{font-weight:300;font-size:13.5px;line-height:1.3;color:var(--ink);text-decoration:none}
+.berlin-card .bhandle:hover{opacity:.6}
+.berlin-card .only-m-inline,.berlin-card .bhandle.only-m{display:none}
+
 /* ===== X OUR ARTISTS — Figma landing::228:67 (desktop) / 228:101 (mobile) =====
    Focus carousel on BOTH breakpoints (redesign 2026-08 task 9, Figma mobile 1318:695; desktop = scaled
    adaptation via the shared .tri triptych component). 38 slides, opens on nir giorgio levin (data-tri-start).
@@ -767,6 +783,21 @@ a.sumii-strip:hover{opacity:.85}
   .gallery-card .addr{font-size:15px;font-family:var(--heb);font-weight:400}
   .gallery-card--flea .addr{display:none}
   .gallery-card .hours{font-size:13px;font-family:var(--heb);font-weight:300;display:flex;flex-direction:column;gap:4px}
+
+  /* GALLERIES — BERLIN (Figma 1856:433): image+address column 174px on the left, name+handle on the right */
+  .galleries--berlin{padding:0 16px 48px}
+  .berlin-card{max-width:none;display:grid;grid-template-columns:174px 1fr;grid-template-areas:"img txt" "addr txt";column-gap:16px;row-gap:8px;align-items:start}
+  .berlin-card .img{grid-area:img;width:174px;height:210.91px;aspect-ratio:auto}
+  .berlin-card .txt{display:contents}
+  .berlin-card .bname-wrap{grid-area:txt;display:flex;flex-direction:column;gap:8px}
+  .berlin-card .baddr{grid-area:addr;padding-right:8px}
+  .berlin-card .bname{font-size:16.8px;line-height:1.3}
+  .berlin-card .addr-lines{font-size:11px}
+  .berlin-card .bhandle{font-size:11px}
+  .berlin-card .only-d-inline{display:none}
+  .berlin-card .only-m-inline{display:inline}
+  .berlin-card .bhandle.only-d{display:none}
+  .berlin-card .bhandle.only-m{display:inline}
 
   /* X OUR ARTISTS — Figma 228:101 */
   .x-artists{padding:32px 0;gap:40px}
@@ -1327,6 +1358,27 @@ porta</div></a>
       <!-- Figma 1318:686 — image fills hidden; card renders as flat #2B4C39 (dim--green) — no photo (hero.* files kept on disk, unused) -->
       <div class="img dim dim--green"><span class="coming">coming soon</span></div>
     </article>
+  </div>
+</section>
+
+<!-- GALLERIES — BERLIN · Figma 1859:2668 desktop / 1856:433 mobile · data: galleries.json :: berlin + homepage.json :: galleries_berlin_section (user request 2026-09-27: directly below "the galleries / tel aviv") -->
+<section class="galleries galleries--berlin" id="galleries-berlin" aria-label="the gallery berlin">
+  <div class="galleries-title">
+    <span class="b">the gallery</span>
+    <span class="l">berlin</span>
+  </div>
+  <div class="berlin-card">
+    <div class="img"><picture><img src="images/galleries/berlin/hero.webp" srcset="images/galleries/berlin/hero-480w.webp 480w, images/galleries/berlin/hero.webp 822w" sizes="(max-width:768px) 174px, 411px" width="822" height="996" alt="the art gallery berlin — hotel amano, auguststraße 43, berlin mitte" decoding="async" loading="lazy"></picture></div>
+    <div class="txt">
+      <div class="bname-wrap">
+        <div class="bname">the art gallery berlin</div>
+        <a class="bhandle only-m" href="https://www.instagram.com/erezrozen_artgallery/" target="_blank" rel="noopener">@erezrozen_artgallery</a>
+      </div>
+      <div class="baddr">
+        <div class="addr-lines">hotel amano<span class="only-d-inline"> berlin</span><br>auguststraße 43<br>berlin mitte</div>
+        <a class="bhandle only-d" href="https://www.instagram.com/erezrozen_artgallery/" target="_blank" rel="noopener">@erezrozen_artgallery</a>
+      </div>
+    </div>
   </div>
 </section>
 

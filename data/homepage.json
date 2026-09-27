@@ -146,6 +146,16 @@
    "flea-market"
   ]
  },
+ "galleries_berlin_section": {
+  "_note": "Section #galleries-berlin directly below #galleries (user request 2026-09-27). Figma 1859:2668 desktop / 1856:433 mobile. Single LTR English card (Copperplate): image + name + address + instagram. Static HTML; data declarative.",
+  "title_b": "the gallery",
+  "title_l": "berlin",
+  "gallery_ids": [
+   "berlin"
+  ],
+  "figma_node_desktop": "1859:2668",
+  "figma_node_mobile": "1856:433"
+ },
  "x_our_artists": {
   "_note": "Above press section — \"Zielinski Rozen x our artists\" featured grid. items[] = Figma \"mobile order\" (1124:1181, canonical 2026-07-15), 38 items row-major (3 cols x 13 rows). Desktop 3-col grid and Mobile triptych coverflow both render all 38 in this order. Images node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). Captions verbatim from Figma. work-N.webp maps 1:1 to item position N.",
   "title_b": "Zielinski Rozen",

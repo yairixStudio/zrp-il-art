@@ -122,6 +122,40 @@
       "figma_node_mobile": "1318:686",
       "figma_page_desktop": null,
       "figma_page_mobile": null
+    },
+    {
+      "id": "berlin",
+      "slug": "berlin",
+      "name_he": null,
+      "name_en": "the art gallery berlin",
+      "address_he": null,
+      "address_en": "Hotel Amano Berlin, Auguststraße 43, Berlin Mitte",
+      "address_street_en": "auguststraße 43",
+      "address_area_en": "berlin mitte",
+      "address_lines_en": [
+        "hotel amano berlin",
+        "auguststraße 43",
+        "berlin mitte"
+      ],
+      "address_lines_en_mobile": [
+        "hotel amano",
+        "auguststraße 43",
+        "berlin mitte"
+      ],
+      "instagram_handle": "@erezrozen_artgallery",
+      "instagram_url": "https://www.instagram.com/erezrozen_artgallery/",
+      "city": "berlin",
+      "status": "open",
+      "route": null,
+      "hours": [],
+      "image_hero": "images/galleries/berlin/hero.webp",
+      "image_page_hero": null,
+      "manager": null,
+      "note": "Homepage section #galleries-berlin (below #galleries tel aviv), Figma 1859:2668 desktop / 1856:433 mobile (2026-09-27). Card image = node render of 1859:2678 (visible fill imageRef d287a3c13e3a3d628b245bc6133536001a442708, crop 517382), 822x996 like the Tel Aviv cards. Figma writes the handle '@erez rozen_artgallery' (with a space) while its hyperlink points at erezrozen_artgallery — displayed without the space to match the real handle. Mobile address omits 'berlin' after 'hotel amano' (Figma verbatim per breakpoint). No gallery page yet (route null).",
+      "figma_node_desktop": "1859:2677",
+      "figma_node_mobile": "1855:226",
+      "figma_page_desktop": null,
+      "figma_page_mobile": null
     }
   ]
 }
