@@ -62,7 +62,12 @@ body{text-transform:uppercase}
 /* 55/50 rather than the family's 64/58: "maria artamonova" needs 769.5px on line 2 at 64px,
    inside a 676px box, so it broke into three lines instead of the two the designer typed.
    Same fix and same reading as the bar-cohen frame (60/54). */
-.h-title{font-family:var(--cop);font-weight:400;font-size:55px;line-height:50px;text-align:center;color:var(--ink);width:100%;padding-top:.2em}
+.h-title{font-family:var(--cop);font-weight:400;font-size:55px;line-height:50px;text-align:center;color:var(--ink);width:100%;padding-top:.2em;will-change:transform}
+/* will-change: Copperplate Regular 400 (Copperplate.woff2) declares head/CFF FontBBox yMax .432em
+   while its caps reach .667em. Skia culls a text run by that too-small box, so when a line's
+   content top lands just below a 256px raster-tile boundary the ink above it is dropped — at 1440
+   line 2 sits at y≈254 and "MARIA ARTAMONOVA" rendered with its tops sliced off (1x and 2x).
+   text-shadow / contain:paint don't help; an own layer does, pixel-identical elsewhere. */
 .h-title .artist-link{color:inherit;text-decoration:none}
 
 /* Meta — gallery (Regular), then date · time (Light, 1×1 dot — Figma) */
@@ -153,6 +158,14 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 /* ===== RESPONSIVE ===== */
 @media (min-width:1320px){ :root{--pad-x:96px} }
+/* 1320–1439: the row is still narrower than its 1248px max, so the text column drops from 676
+   to 556px and "maria artamonova" (≈12px of width per px of font) broke onto a 3rd/4th line at
+   a fixed 55px. Track the column width (100vw − 764px of padding/gap/photo, minus a scrollbar
+   margin) so the designer's single break holds; from 1440 the fixed 55/50 takes over.
+   Same fix as baruch-torgeman / nir-giorgio-levin-medina. */
+@media (min-width:1320px) and (max-width:1439.98px){
+  .h-title{font-size:min(55px,calc((100vw - 784px) * .0825));line-height:.91em}
+}
 
 /* Narrow desktop / tablet — shrink the photo and the display title together */
 @media (max-width:1319px) and (min-width:769px){
@@ -168,8 +181,14 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .en{font-size:30px}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
 }
+/* ≤1050: the single word "ARTAMONOVA" is ≈274px at 34px, but the text column is only
+   100vw − 560px wide (209px at 769) — it ran 65px past the column and 17px onto the photo card.
+   Scale the title with the column below ~863px so no word can overflow; 34px from there up.
+   The nowrap "EXHIBITION • VOLUME 2" bar is ~319px at 26px against a 100vw − 512px column
+   (257px at 769) — it ran 7px onto the card; scale its labels the same way below ~863px. */
 @media (max-width:1050px) and (min-width:769px){
-  .h-title{font-size:34px;line-height:34px}
+  .h-title{font-size:min(34px,calc((100vw - 580px) * .12));line-height:1em}
+  .h-presented .ex-bar .lbl{font-size:min(26px,calc((100vw - 530px) * .078))}
 }
 /* Tablet / narrow desktop — the full-size trio needs 1248px of content and only ~1223 exist at
    1319 with --pad-x:48, so the whole triptych scales by .79 (same aspect ratios). */
@@ -262,7 +281,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta name="twitter:title" content="Artist Talk with Maria Artamonova | Kikar Hamedina — Zielinski &amp; Rozen">
 <meta name="twitter:description" content="קשר רציני עם מקרמה — מפגש בגלריה עם האמנית מריה ארטמונובה: דיון מעמיק באמנות המקרמה, תהליך היצירה וההשראה שמאחוריה. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 7 בספטמבר 2026, 18:30–20:30.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/events-maria-artamonova-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/maria-artamonova/#event","url":"https://art.zrp.co.il/events/maria-artamonova/","name":"Artist Talk with Maria Artamonova — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-maria-artamonova-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-09-07T18:30","endDate":"2026-09-07T20:30","description":"קשר רציני עם מקרמה — מפגש בגלריה עם האמנית מריה ארטמונובה: דיון מעמיק בנושא אמנות המקרמה וההשראה שמאחוריה, חשיפת תהליך היצירה ומענה על שאלות הקהל. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Maria Artamonova — Kikar Hamedina","item":"https://art.zrp.co.il/events/maria-artamonova/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/maria-artamonova/#event","url":"https://art.zrp.co.il/events/maria-artamonova/","name":"Artist Talk with Maria Artamonova — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-maria-artamonova-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/medina/#gallery","name":"Kikar Hamedina Gallery","url":"https://art.zrp.co.il/galleries/medina/","address":{"@type":"PostalAddress","streetAddress":"Jabotinsky 131","addressLocality":"Tel Aviv","addressCountry":"IL"}},"startDate":"2026-09-07T18:30:00+03:00","endDate":"2026-09-07T20:30:00+03:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","performer":{"@type":"Person","name":"Maria Artamonova","url":"https://art.zrp.co.il/artists/maria-artamonova/"},"description":"קשר רציני עם מקרמה — מפגש בגלריה עם האמנית מריה ארטמונובה: דיון מעמיק בנושא אמנות המקרמה וההשראה שמאחוריה, חשיפת תהליך היצירה ומענה על שאלות הקהל. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Maria Artamonova — Kikar Hamedina","item":"https://art.zrp.co.il/events/maria-artamonova/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
