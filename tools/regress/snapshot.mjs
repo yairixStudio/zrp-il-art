@@ -20,10 +20,11 @@
  *   node tools/regress/diff.mjs before after
  *
  * Options:
- *   --label NAME         output dir .regress/NAME (required)
+ *   --label NAME         output dir $REGRESS_OUT/NAME (required; see "Output" below)
  *   --modes http,file    http = served by a local http.server (production-like),
  *                        file = file:// (how the site is browsed locally)
- *   --widths 390,1440
+ *   --widths 390,1440    (add e.g. 1024,1366 for layout work — family-specific bugs often live
+ *                        at 769–1100 / 1320–1439 and are invisible at the two defaults)
  *   --only a/,b/         only pages whose path starts with one of these prefixes
  *   --concurrency N      parallel tabs (default 6)
  *   --shots              also save a first-screen JPEG per page
@@ -64,7 +65,7 @@ const CONC = Number(opt('concurrency', 6));
 const SHOTS = !!opt('shots', false);
 const FULL = !!opt('full', false);
 // --root DIR: snapshot another checkout of the site (e.g. a pristine clone of HEAD)
-// while keeping the harness, node_modules and the .regress/ output here.
+// while the harness and node_modules stay in this repo.
 const ROOT = path.resolve(opt('root', HARNESS_ROOT) === true ? HARNESS_ROOT : opt('root', HARNESS_ROOT));
 // Output lives OUTSIDE the repo by default (the repo sits in iCloud, which spawns "name 2.json"
 // conflict copies inside rapidly rewritten folders). Override with REGRESS_OUT.
@@ -73,8 +74,10 @@ const OUT = path.join(OUT_BASE, label);
 
 // ---------- page list: every tracked, published .html ----------
 const EXCLUDE = /^(trash|scratchpad|_staging|_originals|node_modules|newsletter-backend|lighthouse-reports|\.regress)\//;
-const pages = execFileSync('git', ['-C', ROOT, 'ls-files', '*.html'], { encoding: 'utf8' })
-  .split('\n').filter(Boolean)
+// tracked pages + new (untracked, not ignored) pages — a page you just created is included too
+const gitList = (...a) => execFileSync('git', ['-C', ROOT, 'ls-files', ...a, '*.html'], { encoding: 'utf8' }).split('\n');
+const pages = [...new Set([...gitList(), ...gitList('--others', '--exclude-standard')])].filter(Boolean)
+  .filter(p => fs.existsSync(path.join(ROOT, p)))
   .filter(p => !EXCLUDE.test(p))
   .filter(p => !ONLY || ONLY.some(pre => p.startsWith(pre)))
   .sort();

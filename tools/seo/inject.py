@@ -532,8 +532,28 @@ def all_pages():
     return sorted(out)
 
 
+RECIPE = """inject.py: refusing to run over the whole site.
+A site-wide run silently regresses ~90 pages (partial og-dims.json -> og:image falls back to raw
+webp, hand-written descriptions truncated, startDate/endDate lose times) - it happened on
+2026-07-26 and 2026-08-23. See docs/todo.md + docs/lessons.md.
+
+Recipe for a new/changed page (until the tooling is fixed):
+  1. add its <url> to sitemap.xml, then: python3 tools/seo/refresh_sitemap_lastmod.py
+  2. bake the share image by hand, e.g.
+       magick images/events/<slug>/hero.webp -resize 1200x -strip -quality 82 og/events-<slug>-hero.jpg
+  3. copy the <!-- SEO:auto --> block from a sister page and edit it.
+To process specific pages anyway:   python3 tools/seo/inject.py path/to/page/index.html [...]
+(then review the diff of ONLY those files)."""
+
 if __name__ == "__main__":
-    pages = all_pages()
+    import sys
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    if args:
+        pages = [os.path.normpath(a) for a in args]
+    elif "--all-pages-i-accept-the-regression" in sys.argv:
+        pages = all_pages()
+    else:
+        sys.exit(RECIPE)
     stats = {}
     for p in pages:
         st, _ = process(p)

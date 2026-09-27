@@ -14,21 +14,12 @@
 
 ## 1. על מי חל הכלל?
 
-על כל אומן שיש לו רשומה ב-`data/artists.json` עם `slug` קיים. נכון ל-2026-05-12 יש 22 אומנים רשומים:
+על כל אומן שיש לו רשומה ב-`data/artists.json` עם `slug` — ולכן דף `artists/<slug>/index.html` (היום 44). הרשימה הקנונית = `artists.json`; לא להסתמך על רשימה מועתקת.
 
-```
-zohar-ron, eitan-goldson, tanya-shin, nir-giorgio-levin, elsa-ars-brush,
-gal-polk, zohar-shtrit, hila-loterstein, sami-david, risa-oz,
-zohar-ron-dan-ben-ari, adi-duak, alon, noemi-safir, yarden-amir,
-anat-wegier, liel-salman, tal-nehoray,
-holy-kadosh, costa-magarakis, maya-nachum-levy, la-raz-porta
-```
-
-**אומנים שאינם רשומים / placeholder בלבד** (`dan ben-ary`, `racheli reuven`, `gal rotem` — אין ביו/עבודות): יש דף וקישור חובה מעמוד `/artists/`, אבל בתערוכות/טקסטים אם מוזכרים בלי דף מלא — עדיין לא לקשר עד שיש תוכן. **`raz ronen`** — נוסף לגריד `/artists/` (2026-06-11, Figma `613:285`); כעת חובה לקשר.
-
-> **2026-08-20 update:** **`shira-turbowicz`** (שירה טורבוביץ / SUMII) קיבלה דף אומנית מלא (Figma `1608:5728`) ⇒ חובה לקשר — כולל האזכורים בעמוד הספונסר `/sponsors/sumii/` (חווטו באותו יום). `SUMII`/`sumii` לבדו = שם מותג, לא אזכור אומן.
-
-> **2026-05-12 update:** 4 אומנים שלא היו רשומים (`holy-kadosh`, `costa-magarakis`, `maya-nachum-levy`, `la-raz-porta`) קיבלו עכשיו דפים מלאים מתוך Figma `artist-pages-lonely` (`XhGH289YTRcW811wrufRJz::235:874`) ולכן הם כעת חובה לקישור.
+- **placeholder** — `_pending_artist_pages` ב-`artists.json` (היום `dan-ben-ary`, `racheli-reuven`): קישור חובה מעמוד `/artists/`; בתערוכות/טקסטים — לא לקשר עד שיש תוכן (כך racheli reuven ברצועת how-many ובטקסט של `events/how-many/`).
+  - `dan-ben-ary` — הדף שלו מפנה ל-`artists/zohar-ron-dan-ben-ari/`, ולשם מקשרים את האזכורים שלו (כרטיס `/artists/` דרך `link`, רצועת how-many, `events/how-many/`).
+- `gal-rotem`, `raz-ronen` — דפים מלאים (לא placeholder) ⇒ חובה לקשר.
+- `shira-turbowicz` (שירה טורבוביץ / SUMII) — דף אומנית מלא ⇒ חובה לקשר, כולל בעמוד הספונסר `/sponsors/sumii/`. `SUMII`/`sumii` לבדו = שם מותג, לא אזכור אומן.
 
 ---
 
@@ -36,12 +27,15 @@ holy-kadosh, costa-magarakis, maya-nachum-levy, la-raz-porta
 
 | מקום | מה לקשר | איך |
 |---|---|---|
-| גריד אומנים (`pages/works.html`) | תמונה + שם | `<a href="artists/<slug>.html">` סביב התמונה ועוד סביב השם |
-| Featured artists בהומפייג' | פורטרט + שם | `<a class="artist" href="pages/artists/<slug>.html">` סביב הקלף השלם |
+| גריד `/artists/` (`artists/index.html`) | הכרטיס כולו (תמונה + שם) | `<a class="artist" href="../artists/<slug>/">` — מרונדר מ-`#artists-grid-data`; `link` בכרטיס = slug של דף אחר |
+| גריד `/works/` (`works/index.html`) | שם האומן | `<a class="artist" href="../artists/<slug>/">`; ביצירה משותפת (`collab[]`) — כל שם בנפרד. התמונה → עמוד היצירה `<id>/`, לא דף האומן (§4) |
+| "our artists" בהומפייג' (`.artists-list` תחת `#exhibitions-now`) | פורטרט + שם | `<a class="artist" href="artists/<slug>/">` סביב הקלף השלם |
+| קרוסלת `#x-our-artists` בהומפייג' | השקופית + הכיתוב | `data-artist-href` + `data-caption-href` = `artists/<slug>/` על `<img class="tri-slide">` (`components/triptych-gallery.js` מנווט) |
 | Artist strip בדף תערוכה | תמונה + שם | קלף `<a class="card is-linked">` (slug ב-JSON או `_ARTIST_SLUGS` map) |
-| תמונה בכתבה (press) — **פורטרט / צילום אדם** (התמונה עצמה היא האומן) | התמונה | `<a class="artist-img-link" href="../artists/<slug>.html">` סביב `<img>` בלבד (לא `<figure>`) |
+| רצועת אומנים בדף אירוע | תמונה + שם | `<a class="artist-card" href="../../artists/<slug>/">` סביב התמונה והשם |
+| תמונה בכתבה (press) — **פורטרט / צילום אדם** (התמונה עצמה היא האומן) | התמונה | `<a class="artist-img-link" href="../../artists/<slug>/">` סביב `<img>` בלבד (לא `<figure>`) |
 | תמונה בכתבה (press) — **יצירה, מיצב, תיעוד תערוכה, גלריה** | אין קישור על התמונה | `<img>` ישירות ב־`<div class="img …">`. הקישור לדף האומן נשאר ב־`<figcaption>` (`artist-link`) ובטקסט הגוף — לא מנווטים מקליק על היצירה לדף האומן |
-| `<figcaption>` שמזכיר אומן | השם בלבד | `<a class="artist-link" href="../artists/<slug>.html">` סביב המופע הראשון |
+| `<figcaption>` שמזכיר אומן | השם בלבד | `<a class="artist-link" href="../../artists/<slug>/">` סביב המופע הראשון |
 | פסקת body (`<p>...האומנת X...`) | כל מופע של שם | `<a class="artist-link">` |
 | `<aside>`, `pull-quote`, `caption` | אותו דבר | `<a class="artist-link">` |
 | Lightbox כותרת | טקסט שמכיל שם אומן | קשר את השם |
@@ -50,7 +44,7 @@ holy-kadosh, costa-magarakis, maya-nachum-levy, la-raz-porta
 
 ## 3. CSS להעתקה
 
-הוגדר ב-`pages/press/*.html` וב-`pages/works.html`. (בעתיד להעביר ל-`components/site-chrome.css`.)
+אין stylesheet משותף: הבלוק מועתק לכל דף שמשתמש ב-`a.artist-link` (כתבות, דפי אירוע, `sponsors/`, `opencalls/`, ומעט דפי אומן/יצירה). `a.artist-img-link` — היום רק ב-`press/walla/`. (בעתיד להעביר ל-`components/site-chrome.css`.)
 
 ```css
 a.artist-link{
@@ -69,7 +63,7 @@ a.artist-img-link:hover img{filter:brightness(.96)}
 
 ## 4. למה לא lightbox? ומתי קליק על תמונה → דף אומן?
 
-ב־`/works.html` ההחלטה הקדומה הייתה image-click → lightbox. שונתה 2026-05-11: image-click → דף אומן. Lightbox נשמר רק כשהוא חושף תוכן שאין דרך אחרת להגיע אליו (artwork details בדף האומן ב־`pages/artists/artist.html`).
+ב-`/works/` קליק על התמונה → עמוד היצירה `works/<id>/` (לא lightbox ולא דף האומן); הקישור לדף האומן = השם בכרטיס, ושוב בעמוד היצירה. ה-lightbox חי בעמוד היצירה (קליק על התמונה) ובכרטיסי היצירות שבדפי האומן (`artists/<slug>/`).
 
 **בכתבי press:** קליק על **תמונת פורטרט / אדם** עשוי לעטוף ב־`artist-img-link` לדף האומן. תמונת **יצירה או תיעוד תערוכה** — בלי anchor על ה־`<img>` (הקישור בכיתוב או בגוף הטקסט מספיק; קליק על היצירה לא אמור לפתוח דף אומן).
 
@@ -77,36 +71,39 @@ a.artist-img-link:hover img{filter:brightness(.96)}
 
 ## 5. נתיבים יחסיים (לדף `alon`)
 
+תמיד יחסי ועם `/` בסוף — בלי `.html`, בלי `index.html`, בלי `/artists/…` מוחלט: `'../'` × עומק הדף + `artists/alon/`.
+
 | מאיפה | href |
 |---|---|
-| `index.html` (root) | `pages/artists/alon.html` |
-| `pages/works.html` | `artists/alon.html` |
-| `pages/about.html` | `artists/alon.html` |
-| `pages/press/walla.html` | `../artists/alon.html` |
-| `pages/events/loneliness.html` | `../artists/alon.html` |
-| `pages/exhibition.html` (rendered) | `artists/alon.html` (לא `../artists/` — זה יוצא לשורש האתר ו-404) |
-| בתוך `pages/artists/X.html` (לאומן אחר) | `Y.html` |
+| `index.html` (root) | `artists/alon/` |
+| עומק 1 — `works/index.html`, `artists/index.html`, `about/index.html`, `press/index.html`, `events/index.html` | `../artists/alon/` |
+| עומק 2 — `press/<slug>/`, `events/<slug>/`, `exhibitions/<slug>/`, `works/<id>/`, `galleries/<slug>/`, `sponsors/<slug>/`, `curators/<slug>/` | `../../artists/alon/` |
+| בתוך `artists/<slug>/` (לאומן אחר) | `../../artists/alon/` (כך כל ה-hrefs בקוד; `../alon/` שקול) |
+
+href שנבנה ב-JS נפתר מול כתובת **הדף**, ולכן כל רנדרר מקודד את העומק של הדף שלו: `'../artists/'+slug+'/'` ב-`works/index.html` וב-`artists/index.html`; `'../../artists/'+slug+'/'` ב-`works/<id>/`, `galleries/<slug>/`, `exhibitions/how-many/`, `artists/<slug>/`. העתקת רנדרר לדף בעומק אחר ⇒ לתקן את הקידומת.
 
 ---
 
 ## 6. רנדור דינמי מ-JSON
 
-אם דף מרנדר תוכן אומנים מ-JSON (כמו `exhibition.html` שטוען `data/exhibitions.json`):
+אם דף מרנדר תוכן אומנים מ-JSON (כמו רצועת האומנים ב-`exhibitions/how-many/` וב-`exhibitions/loneliness/`, מ-`data/exhibitions.json`):
 
-1. **הוסף `slug` לכל אומן ב-JSON.** רנדור ללא slug → name→slug lookup שביר, שוכח אומנים.
-2. **בקוד הרנדור:** אם `a.slug` קיים → `<a href="...artists/${a.slug}.html">`. אם null → `<div>` רגיל. אסור לקשר ל-`/artists/holy-kadosh.html` שלא קיים.
-3. **דוגמה:** `pages/exhibition.html` — `_ARTIST_SLUGS` + `linkable ? 'a' : 'div'`.
+1. **הוסף `slug` לכל אומן ב-JSON.** רנדור ללא slug → name→slug lookup שביר, שוכח אומנים. (`artist_page_slug` = קישור לדף של אומן אחר — לשיתופי פעולה.)
+2. **בקוד הרנדור:** אם יש slug → `<a href="../../artists/${slug}/">` (הקידומת לפי עומק הדף — §5). אם null → `<div>` רגיל. אסור לקשר ל-slug שאין לו `artists/<slug>/index.html` (404).
+3. **דוגמה:** `exhibitions/how-many/` — `a.slug || _ARTIST_SLUGS[name_en]`, `artist_page_slug`, `linkable ? 'a' : 'div'`.
 
 ---
 
 ## 7. בדיקה לפני סיום (חובה)
 
 ```bash
-# כל תמונה לאומן עטופה ב-anchor?
+# כל תמונה לאומן עטופה ב-anchor? (להריץ משורש הריפו)
 python3 -c "
 import re, pathlib
+SKIP={'node_modules','trash','_staging','scratchpad'}
 for p in pathlib.Path('.').rglob('*.html'):
-    if '/pages/artists/' in str(p): continue
+    if SKIP & set(p.parts): continue
+    if p.parts[0]=='artists' and len(p.parts)==3: continue   # artists/<slug>/index.html — הדף של האומן עצמו (§8)
     h=p.read_text(encoding='utf-8')
     for m in re.finditer(r'<img[^>]+src=\"([^\"]*(?:/artists/[a-z-]+/|/works/grid/|/exhibitions/[a-z-]+/artists/)[^\"]*)\"[^>]*>', h):
         pre=h[max(0,m.start()-400):m.start()]
@@ -120,13 +117,15 @@ for p in pathlib.Path('.').rglob('*.html'):
 # שמות עבריים בלי anchor — eyeball test על דף חדש.
 ```
 
+⚠️ הבדיקה רואה HTML סטטי בלבד, ורק תמונות מ-`images/artists/`, `images/works/grid/` ו-`images/exhibitions/<slug>/artists/`. לא נבדקים: כרטיסים שמרונדרים ב-JS (גרידי `/artists/` ו-`/works/`, רצועות how-many/loneliness), `data-artist-href` של הקרוסלה, ו-thumbs מתיקיות אחרות (למשל `images/events/<slug>/artist-thumb.webp`) — אותם לבדוק בעין.
+
 ---
 
 ## 8. חריגים יחידים
 
-- שם אומן בתוך עצם דף האומן (`pages/artists/<slug>.html`) — לא מקשר לעצמו.
-- אומן placeholder ללא תוכן (`dan ben-ary`, `racheli reuven`, `gal rotem`) — קישור מעמוד `/artists/` חובה; בתערוכות/טקסטים — לפי §1. **`raz ronen`** — יש דף (2026-06-11).
-- שם הבעלים/founder (`ארז זילינסקי רוזן`) → `pages/about.html`, לא `/artists/`.
+- שם אומן בתוך עצם דף האומן (`artists/<slug>/index.html`) — לא מקשר לעצמו.
+- אומן placeholder (`_pending_artist_pages` — היום `dan-ben-ary`, `racheli-reuven`) — קישור מעמוד `/artists/` חובה; בתערוכות/טקסטים — לפי §1.
+- שם הבעלים/founder (`ארז זילינסקי רוזן`) → `about/` (מדף בעומק 2: `../../about/`), לא `/artists/`.
 
 ---
 
