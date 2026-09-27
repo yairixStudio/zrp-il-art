@@ -863,6 +863,8 @@ bar cohen מובייל: Implement this design from Figma.
 
 > ⚠️ הכותרת שונה בין הפריימים במקף אחד בלבד: דסקטופ `1515:1997` = "bar cohen ‘akra’", מובייל `1515:1910` = "bar cohen - ‘akra’" (וכך גם כרטיס הרשימה `1532:2491`) ⇒ `.mdash` שמוצג רק ≤768. הכותרת בקוד 60/54 ולא 64/58 — ראה §4. הפריים הריק `1515:1875` = שריד תבנית.
 
+> ⚠️ **2026-09-27:** בפריימים נוספה רצועת צילומים (`1873:206` דסקטופ / `1873:212` מובייל) שהיא **העתק מדויק ברמת ה-imageRef** (כולל fills מוסתרים) של הרצועה של ג׳סיקה (`1873:132`/`1873:170`) — copy-paste של המעצבת, **לא נבנתה**. ממתינים לצילומים של בר כהן עצמה.
+
 ### עמוד אירוע Artist Talk with Maria Artamonova (`/events/maria-artamonova/`, הקולפן / כיכר המדינה 7.9.2026)
 
 maria artamonova דסקטופ: Implement this design from Figma.
@@ -871,7 +873,15 @@ maria artamonova דסקטופ: Implement this design from Figma.
 maria artamonova מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1514-1602&m=dev
 
-> ⚠️ צומת הגוף (`1514:1766`) כולו FbEzmel Light — שורת "קשר רציני עם מקרמה" **אינה** מודגשת בפיגמה; ה-`.lead` בקוד הוא הכרעת בנייה. "אמנית תחשוף" (בלי ה"א ידיעה) שוחזר verbatim — שאלה פתוחה למעצבת. הפריים הריק `1514:1625` = שריד תבנית.
+> ⚠️ צומת הגוף (`1514:1766`) כולו FbEzmel Light — שורת "קשר רציני עם מקרמה" **אינה** מודגשת בפיגמה, וה-`.lead` שהיה בקוד **הוסר 2026-08-18**. "אמנית תחשוף" (בלי ה"א הידיעה) **תוקן ל"האמנית" בהכרעת משתמש 2026-08-18** — אם הפיגמה עדיין מציגה "אמנית", לא לשחזר. הכותרת בקוד 55/50 (לא 64/58). הפריים הריק `1514:1625` = שריד תבנית.
+
+maria artamonova — רצועת צילומים דסקטופ (2026-09-27): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1886-1347&m=dev
+
+maria artamonova — רצועת צילומים מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1886-1417&m=dev
+
+> ⚠️ הצילומים = 13 nodes רופפים `1886:1434…1446` ליד הפריים; פורסמו 8 (`1434`/`1435`/`1436` = השלישייה המצוירת, ואז `1437`/`1439`/`1440`/`1442`/`1446`). הושמטו פריים וידאו מטושטש (`1438`) וארבעה קולאז׳י 2×2 אפויים של וואטסאפ (`1441`/`1443`/`1444`/`1445`). צילום המרכז `1435` הוא 720×1280 בלבד — לבקש מקור גדול יותר.
 
 ### עמוד אירוע Artist Talk with Jessica Tabarovsky (`/events/jessica-tabarovsky/`, הקולפן / כיכר המדינה 10.9.2026)
 
@@ -883,6 +893,14 @@ jessica tabarovsky מובייל: Implement this design from Figma.
 
 > ⚠️ ה-scrim כאן הוא **הגרדיאנט** `linear-gradient(0deg, rgba(0,0,0,.8), transparent)` בשני ה-breakpoints, למרות שב-Figma הוא רשום מתחת ל-image fill (מה שנראה כמוסתר) — אומת ברינדור ה-nodes שהוא נצבע. שני קרופי גיבור ⇒ `<picture>` ידני.
 
+jessica tabarovsky — רצועת צילומים דסקטופ (2026-09-27): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1873-132&m=dev
+
+jessica tabarovsky — רצועת צילומים מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1873-170&m=dev
+
+> ⚠️ 5 הצילומים = nodes `1873:186`–`1873:190` (סדר באתר: 186, 190 [מרכז], 189, 187, 188). השורה `1873:133` היא space-between ⇒ ה-peeks בקוד מוצמדים 151.5px מהקצוות. **הרצועה הזו הועתקה לפריימי bar-cohen** (`1873:206`/`1873:212`) — שם היא לא נבנתה.
+
 ### עמוד אירוע Artist Talk with Baruch Torgeman (`/events/baruch-torgeman/`, הקולפן / כיכר המדינה 6.9.2026 18:30–20:30)
 
 baruch torgeman דסקטופ: Implement this design from Figma.
@@ -893,6 +911,72 @@ baruch torgeman מובייל: Implement this design from Figma.
 
 > ⚠️ שני `{ts1}` בצומת הגוף = ריצות Copperplate בתוך העברית ("Gala Bingo", "Bring your own bottle,") — `<span class="lat">` ב-13px, UPPERCASE. הכותרת הדסקטופית ירדה ל-56/50 (ב-64 השם מתפצל לשתי שורות). ה-hero (imageRef `5d2da29d…`) נאפה **ביחס 0.75 = אספקט המובייל** ולכן קובץ אחד משרת את שני ה-breakpoints; ה-thumb הוא הפורטרט ולא תמונת הגריד (שתי תמונות שונות של האומן).
 
+### עמוד אירוע day of Niki de Saint Phalle (`/events/niki-de-saint-phalle-day/`, SUMII / כיכר דיזינגוף 25.9.2026 10:00–14:00) — בסיס וריאנט אירועי רזידנסי SUMII
+
+niki de saint phalle דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1854-2172&m=dev
+
+niki de saint phalle מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1854-2033&m=dev
+
+> ⚠️ שם הפריימים ("event- artist talk with שירה טורבוביץ") משקר — כך גם בכל ארבעת אירועי SUMII שלמטה; לזהות לפי תוכן. כרטיס הרשימה = `1471:256` (דסקטופ) / `1864:3072` (מובייל) — **`1471:256` היה כרטיס של nir-giorgio-levin-medina ושוכתב in-place**. הכרטיס הוא STRETCH לא-אחיד (0.82×0.72) ⇒ באתר קרופ cover מהמקור ולא רינדור ה-node.
+
+### עמוד אירוע opening night — ART RESIDENCY by sumii (`/events/sumii-opening/`, כיכר דיזינגוף 2.9.2026 18:00–21:00)
+
+sumii opening דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1706-2032&m=dev
+
+sumii opening מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1706-1919&m=dev
+
+sumii opening — רצועת צילומים דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1815-650&m=dev
+
+sumii opening — רצועת צילומים מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1815-622&m=dev
+
+> ⚠️ 10 הצילומים = nodes רופפים `1815:665`–`1815:674` ליד הפריים (השלישייה המצוירת = `674`/`673`/`672`). הלוקאפ הוא GROUP אבסולוטי (`1706:2456` / `1707:253`); לוגו Until Ten = `1706:2460`. ה-fill השטוח `.4` על ה-hero הדסקטופי לא נצבע ברינדור. כרטיס הרשימה הישן: `1318:3205` / `1732:237`.
+
+### עמוד אירוע hosting event — Sumii & Melani Hekimoglu (`/events/sumii-melani-hosting/`, כיכר דיזינגוף 8–11.9.2026)
+
+sumii × melani hosting דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1811-270&m=dev
+
+sumii × melani hosting מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1811-128&m=dev
+
+> ⚠️ אירוע רב-יומי (`date_end`). הנקודה 1×1 `1811:311` אחרי התאריך = leftover. כרטיס הרשימה: `1816:916` בתוך פריים המובייל של `/press/` (`1323:528`).
+
+### עמוד אירוע Yom Kippur Event // wish tree (`/events/yom-kippur-wish-tree/`, כיכר דיזינגוף 17–18.9.2026)
+
+yom kippur wish tree דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1847-1614&m=dev
+
+yom kippur wish tree מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1847-1389&m=dev
+
+> ⚠️ אירוע רב-יומי (`date_end`). הלוקאפ: `1847:1662` / `1847:1550`; הנקודה `1847:1655` = leftover. ה-hero בפיגמה נמתח (crop `318b6c` 3:4 לתוך 492×744) ⇒ באתר חלון-איחוד בלי עיוות. כרטיס הרשימה: `1864:3058` בתוך `1323:528`.
+
+### עמוד אירוע Live Studio // Sumii (`/events/sumii-live-studio/`, כיכר דיזינגוף 30.9–2.10.2026)
+
+sumii live studio דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1854-2493&m=dev
+
+sumii live studio מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1854-2353&m=dev
+
+> ⚠️ אירוע רב-יומי (`date_end`), לוקאפ שני שותפים (`1854:2543` / `1855:264`). נקודת הדסקטופ אחרי התאריך = leftover.
+
+### עמוד אירוע artist talk — התמסרות \| nir giorgio levin (`/events/nir-giorgio-levin-medina/`, הקולפן / כיכר המדינה 30.9.2026 19:00–20:30)
+
+nir giorgio levin (medina) דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1498-882&m=dev
+
+nir giorgio levin (medina) מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1498-769&m=dev
+
+> ⚠️ **לא לבלבל** עם שיחת ה-how-many/דיזינגוף שלו (`1083:1289` / `1083:1180`, `/events/nir-giorgio-levin/`). **30.9.2026 בהכרעת משתמש** (פריימי הדף, `1498:922`/`1498:836`) — כרטיס הארכיון `1864:3054` בתוך `1323:528` עם 17.9 מיושן, לא לסנכרן אליו. כרטיסי הרשימה הישנים `1471:256` (עכשיו niki) ו-`1732:732` (נמחק) כבר לא שלו. ניר חסר בפריימי הרשימה `1318:1761` / `1732:140`.
+
 ---
 
-*Last review: 2026-08-18 (ארבעת אירועי הקולפן החדשים — michael konovalenko / bar cohen / maria artamonova / jessica tabarovsky).*
+*Last review: 2026-09-27 (שישה עמודי אירוע חדשים — niki / sumii-opening / sumii-melani-hosting / yom-kippur-wish-tree / sumii-live-studio / nir-giorgio-levin-medina; רצועות צילומים ל-maria artamonova ול-jessica tabarovsky; ההעתק של הרצועה בפריימי bar-cohen).*
