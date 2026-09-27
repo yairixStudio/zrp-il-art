@@ -148,8 +148,11 @@ a.artist-card:hover .name{color:var(--ink)}
 .event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
 .event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
 .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
-.event-moments .tri-slide.is-prev{left:calc(50% - 472.5px)}
-.event-moments .tri-slide.is-next{left:calc(50% + 472.5px)}
+/* Peeks pinned to the frame edges (centre 151.5px in from each side) — same fix as
+   jessica-tabarovsky (240a5332). At 1440+ (frame 1248) this equals 50% ∓ 472.5px; in the
+   1320–1439 band the frame is only 1128–1247 wide and the old offsets clipped both peeks. */
+.event-moments .tri-slide.is-prev{left:151.5px}
+.event-moments .tri-slide.is-next{left:calc(100% - 151.5px)}
 .event-moments .tri-slide.is-hidden{width:481px;height:841px}
 
 /* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
