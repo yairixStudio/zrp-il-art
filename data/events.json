@@ -1563,7 +1563,12 @@
       "figma_node_mobile": "1864:3058",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": null,
-      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה (המשלים של פילטר /events/), date_end = הסיום; התווית בכרטיס verbatim מהפיגמה. תמונת הכרטיס = קרופ 876×487 מ-imageRef e8ec34f3… (חלון הראווה של דיזינגוף, 'HOSTING ART RESIDENCY'), ממורכז על חלון ה-cropTransform של הפיגמה. כשייבנה דף: להסיר soon, למלא route, sitemap."
+      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה (המשלים של פילטר /events/), date_end = הסיום; התווית בכרטיס verbatim מהפיגמה. תמונת הכרטיס = קרופ 876×487 מ-imageRef e8ec34f3… (חלון הראווה של דיזינגוף, 'HOSTING ART RESIDENCY'), ממורכז על חלון ה-cropTransform של הפיגמה + וריאנטי 480/768 (ה-webp 83KB). כשייבנה דף: להסיר soon, למלא route, sitemap.",
+      "widths": [
+        480,
+        768,
+        876
+      ]
     },
     {
       "id": "sumii-melani-hosting",
@@ -1587,7 +1592,12 @@
       "figma_node_mobile": "1816:916",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": null,
-      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום. קשור לרזידנסי (sponsors/sumii/) ולאומנית melani-hekimoglu. תמונת הכרטיס = קרופ 876×487 מ-imageRef 0f6be5f4… (קרמיקה + עוגה) + וריאנטי 480/768 (ה-webp 83KB). כשייבנה דף: להסיר soon, למלא route, sitemap."
+      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום. קשור לרזידנסי (sponsors/sumii/) ולאומנית melani-hekimoglu. תמונת הכרטיס = קרופ 876×487 מ-imageRef 0f6be5f4… (קרמיקה + עוגה) + וריאנטי 480/768. כשייבנה דף: להסיר soon, למלא route, sitemap.",
+      "widths": [
+        480,
+        768,
+        876
+      ]
     }
   ]
 }
