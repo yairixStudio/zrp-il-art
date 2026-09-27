@@ -21,16 +21,19 @@
   - בדיקת שלמות: `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" | wc -l` צריך להשתוות ל-`grep -c "<loc>" sitemap.xml`.
 
 ## רגנרציה (כשמוסיפים דף/יצירה/אומן)
+> 🔴 **`og_gen.py` שבור ו-`inject.py` גורף מרגרס ~90 דפים** (קרה 2026-07-26 ו-2026-08-23; ראה `docs/todo.md`). מ-2026-09-27 שני הכלים **מסרבים לרוץ גורפות** ומדפיסים את המתכון הזה. `inject.py <path>` על דף בודד עדיין אפשרי — ואז לבדוק את ה-diff של הקובץ הזה בלבד.
 ```bash
 # 1. להוסיף ידנית רשומת <url> ל-sitemap.xml (ליד שאר הדפים מאותה משפחה)
 python3 tools/seo/refresh_sitemap_lastmod.py   # ממלא lastmod אמיתי + מתריע על <loc> בלי קובץ
-python3 tools/seo/og_gen.py     # מייצר JPG חדשים ל-/og/ + tools/seo/og-dims.json
-python3 tools/seo/inject.py     # מזריק/מעדכן את בלוק ה-SEO בכל הדפים (אידמפוטנטי)
+# 2. תמונת שיתוף — ידנית:
+magick images/events/<slug>/hero.webp -resize 1200x -strip -quality 82 og/events-<slug>-hero.jpg
+# 3. בלוק ה-SEO — להעתיק <!-- SEO:auto:start -->…<!-- SEO:auto:end --> מדף-אח ולערוך
+#    (canonical/og:url, title/description, og:image + width/height, JSON-LD כולל startDate/endDate עם שעה)
 ```
 **`refresh_sitemap_lastmod.py`** (2026-08-18): לכל `<url>` לוקח את תאריך הקומיט האחרון שנגע ב-`index.html` שלו (קובץ עם שינויים לא-מקומיטים → תאריך השינוי בדיסק). אידמפוטנטי, ונוגע **רק** בטקסט שבתוך `<lastmod>` — סדר, `changefreq` ו-`priority` נשארים כמו שהם.
 - מקור התוכן: `data/*.json` (אותו schema של הדפים). שדה חסר → להוסיף ל-JSON.
 - תוכן עריכה ידני (כותרות/תיאורים מנוסחים): `tools/seo/overrides.json` (`{route: {title?, description}}`).
-- `inject.py` קורא overrides + og-dims מ-`tools/seo/` (fallback ל-`/tmp/`).
+- `inject.py` קורא overrides + og-dims מ-`tools/seo/` (fallback ל-`/tmp/`). `og-dims.json` חלקי — זו אחת מסיבות הרגרסיה.
 
 ## אימות (חובה אחרי כל ריצה)
 1. **גוף לא נגע:** לכל דף, ה-SEO block כולו בתוך `<head>`, והסרתו משאירה את הגוף byte-identical.

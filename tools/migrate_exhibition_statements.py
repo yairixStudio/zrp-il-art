@@ -28,6 +28,18 @@ Idempotent: re-running after migration rebuilds all inline mirrors from works.js
 
 Run from repo root:  python3 tools/migrate_exhibition_statements.py
 """
+
+# ---------------------------------------------------------------------------
+# RETIRED (2026-09-27). This was the one-time 2026-06-23 migration of statements into
+# works.json.exhibition_statements. Re-running it would re-extract per-work statements
+# as exhibition-level text (wrong since per-work statements exist) and it patches inline
+# artist-page copies that no longer exist (pages load data/generated/*.js).
+# Use:  python3 tools/sync_data.py
+import sys as _sys
+if "--i-know-this-is-retired" not in _sys.argv:
+    _sys.exit("migrate_exhibition_statements.py is retired — run: python3 tools/sync_data.py")
+# ---------------------------------------------------------------------------
+
 import json, re, glob, sys, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

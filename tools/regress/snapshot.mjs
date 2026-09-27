@@ -23,7 +23,8 @@
  *   --label NAME         output dir .regress/NAME (required)
  *   --modes http,file    http = served by a local http.server (production-like),
  *                        file = file:// (how the site is browsed locally)
- *   --widths 390,1440
+ *   --widths 390,1440    (add e.g. 1024,1366 for layout work — family-specific bugs often live
+ *                        at 769–1100 / 1320–1439 and are invisible at the two defaults)
  *   --only a/,b/         only pages whose path starts with one of these prefixes
  *   --concurrency N      parallel tabs (default 6)
  *   --shots              also save a first-screen JPEG per page
@@ -73,8 +74,10 @@ const OUT = path.join(OUT_BASE, label);
 
 // ---------- page list: every tracked, published .html ----------
 const EXCLUDE = /^(trash|scratchpad|_staging|_originals|node_modules|newsletter-backend|lighthouse-reports|\.regress)\//;
-const pages = execFileSync('git', ['-C', ROOT, 'ls-files', '*.html'], { encoding: 'utf8' })
-  .split('\n').filter(Boolean)
+// tracked pages + new (untracked, not ignored) pages — a page you just created is included too
+const gitList = (...a) => execFileSync('git', ['-C', ROOT, 'ls-files', ...a, '*.html'], { encoding: 'utf8' }).split('\n');
+const pages = [...new Set([...gitList(), ...gitList('--others', '--exclude-standard')])].filter(Boolean)
+  .filter(p => fs.existsSync(path.join(ROOT, p)))
   .filter(p => !EXCLUDE.test(p))
   .filter(p => !ONLY || ONLY.some(pre => p.startsWith(pre)))
   .sort();

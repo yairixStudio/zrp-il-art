@@ -3,7 +3,14 @@
 """Generate JPG OG images into /og/ (top-level, NOT gitignored), capture dims -> /tmp/og_dims.json.
    dims keyed by SOURCE webp path -> {"jpg": "og/<flat>.jpg", "w":int, "h":int}.
    Also cleans up any stray sibling *.jpg under images/ created by a prior run."""
-import importlib.util, os, json, subprocess
+import importlib.util, os, json, subprocess, sys
+
+# BROKEN (see docs/todo.md): this depends on /tmp/seo_inject.py, a helper that was never
+# committed. Fail with a clear message instead of a bare FileNotFoundError.
+if not os.path.exists("/tmp/seo_inject.py"):
+    sys.exit("og_gen.py is broken (needs /tmp/seo_inject.py, never committed) - see docs/todo.md.\n"
+             "Bake the share image by hand instead, e.g.:\n"
+             "  magick images/events/<slug>/hero.webp -resize 1200x -strip -quality 82 og/events-<slug>-hero.jpg")
 
 spec = importlib.util.spec_from_file_location("seo_inject", "/tmp/seo_inject.py")
 S = importlib.util.module_from_spec(spec)
