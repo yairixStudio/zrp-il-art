@@ -1320,11 +1320,88 @@
       "homepage_visible": false,
       "figma_node_desktop": "1515:1965",
       "figma_node_mobile": "1515:1852",
+      "figma_node_photos_desktop": "1873:206",
+      "figma_node_photos_mobile": "1873:212",
+      "event_photos": [
+        {
+          "src": "images/events/bar-cohen/moment-01.webp",
+          "alt": "משתתפת במייצג, במשקפיים אדומים ובברדס סרוג, מנפחת בלון כתום על רצפת הגלריה בין בלונים צבעוניים",
+          "figma_node": "1918:1289",
+          "figma_image_ref": "1fb0a40796bff871d611297d06b19ad9c8adafeb"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-02.webp",
+          "alt": "דוגמנית בחולצה סרוגה כחולה ובחצאית תחרה לבנה יושבת על הרצפה ונוגעת באננס, ולצידה ברווזוני גומי",
+          "figma_node": "1918:1290",
+          "figma_image_ref": "b05e58754c4ce7530c472eae205682a9cb4a6ccf"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-03.webp",
+          "alt": "ארבע דוגמניות בפריטי סריגה צבעוניים מצטלמות יחד מול קיר הגלריה",
+          "figma_node": "1918:1291",
+          "figma_image_ref": "899aaa74a904e65f5f37c7e8a4b906a44b6376e9"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-04.webp",
+          "alt": "משתתפת בברדס סרוג ובחותלות כחולות יושבת על הרצפה וסורגת, מול חלון הראווה של הגלריה",
+          "figma_node": "1918:1292",
+          "figma_image_ref": "21cd1c432059204124162f1c66caaa4d34e52b90"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-05.webp",
+          "alt": "דוגמנית בחולצה סרוגה צהובה יושבת על ספה אפורה בין פריטי סריגה, מתחת לצילום גדול של דג",
+          "figma_node": "1918:1293",
+          "figma_image_ref": "939b44f96124237893e398f7aba3b3ee17cb7b57"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-06.webp",
+          "alt": "דוגמנית בגופייה לבנה עם כתפייה סרוגה צבעונית מביטה למצלמה, וברווזון גומי על ראשה",
+          "figma_node": "1918:1294",
+          "figma_image_ref": "66ad2318dcf0f74129f967cfe408126faf7694ce"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-07.webp",
+          "alt": "יד טובלת בקערת אורז על הרצפה, בין פריטי סריגה ורודים, אדומים, כחולים וצהובים",
+          "figma_node": "1918:1295",
+          "figma_image_ref": "09db722540df19774be1946a7fe840ff68b7f1e3"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-08.webp",
+          "alt": "שתי דוגמניות בפריטי סריגה, צהוב ואדום־זהב, ואחת מהן מחזיקה ברווזון גומי",
+          "figma_node": "1918:1296",
+          "figma_image_ref": "537b7870537ce71be3c8573d1a27510b20d6a1f2"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-09.webp",
+          "alt": "תקריב של חולצה סרוגה כחולה וחגורה סרוגה ירוקה על שמלה לבנה",
+          "figma_node": "1918:1297",
+          "figma_image_ref": "9bb33bf488d9d7c9d876af71a8457fda3b3c0a23"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-10.webp",
+          "alt": "דוגמנית בגופייה לבנה מסדרת על עצמה פריט סריגה בצבעי פסטל",
+          "figma_node": "1918:1298",
+          "figma_image_ref": "47e5d117bed791f91171512e93c70a46e7ceb6d2"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-11.webp",
+          "alt": "דוגמנית בטופ לבן ובשרוול סרוג ארוך בצהוב ושחור, ומאחוריה ציור צבעוני על קיר הגלריה",
+          "figma_node": "1918:1299",
+          "figma_image_ref": "fe53175388f715140b349aa6706775e1ee003975"
+        },
+        {
+          "src": "images/events/bar-cohen/moment-12.webp",
+          "alt": "משתתפת בחולצה סגולה מסדרת חולצה סרוגה צהובה על דוגמנית",
+          "figma_node": "1918:1300",
+          "figma_image_ref": "24bfb6bdeaf3d0e726aa32bad75aaf7ee9443265"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/zohar-ron-medina): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"bar cohen ‘akra’\"), אבל המעצבת הוסיפה מקף לפני שם הסטודיו רק בפריים המובייל (\"bar cohen - ‘akra’\") — מיושם כ-span ‎.mdash שמוצג רק ≤768. AKRA = שם הסטודיו של בר כהן, לא אומן/ית נוספ/ת — אין קישור. הכותרת בדסקטופ 60/54 ולא 64/58: ב-64 השורה השנייה דורשת 687px בתיבה של 676 ונשברת לשלוש (הפיגמה עצמה גולשת ל-4 שורות ב-80px). 🔴 שתי צורות לכותרת, שתיהן verbatim מהפיגמה: title_en (בלי מקף) = הפריים של הדף עצמו; list_title_en (עם מקף) = הפריים של רשימת upcoming-events (node 1532:2491) — השדה הזה הוא שמזין את המירור #events-list-data ואת הכרטיס ב-/press/, כדי שהמירור יישאר מירור נאמן של ה-JSON ולא ייראה כסטייה.",
       "_image_note": "hero = imageRef 5ca18581… (מקור 1200×1600 — טלוויזיה עטופה בניילון עם ברווז גומי, מתוך מייצג האופנה 'לא כאן'). ⚠️ שני קרופים: אספקט המקור (0.75) זהה בדיוק לכרטיס המובייל 390×520 ⇒ המובייל מציג את התמונה המלאה (hero-mobile 780×1040 + 480w) והדסקטופ חותך 71px מכל צד (hero 984×1488 + 768/480w) — <picture> ידני עם source media, ולכן לכל webp יש אח avif ידני. scrim שטוח rgba(27,27,27,.4) בשני הפריימים (RMSE ממוסך 0.37% דסקטופ / 0.36% מובייל). list-card 876×487 = קרופ רוחבי מהמקור (y 245..912, כולל את הברווז; אין frame כרטיס בפיגמה). thumb האומנית = מיחזור images/artists/bar-cohen/portrait.webp (RMSE 0.80% מול imageRef cb0c1c8a…) — ⚠️ לא תמונת הגריד, שהיא צילום אחר לגמרי (RMSE 40.7%); object-position 50% 0%.",
-      "_list_image_note": "list-card-v2 = הקרופ מהפריים של רשימת האירועים (1318:1761) — ה-fill שם הוא STRETCH עם cropTransform, ולכן הקובץ נאפה ב-876×487 מהחלון המדויק ונמתח כמו בפיגמה; list-card.webp הישן (קרופ רוחבי שנבנה לפני שהיה frame כרטיס) נשאר בדיסק — כלל-זהב 8."
+      "_list_image_note": "list-card-v2 = הקרופ מהפריים של רשימת האירועים (1318:1761) — ה-fill שם הוא STRETCH עם cropTransform, ולכן הקובץ נאפה ב-876×487 מהחלון המדויק ונמתח כמו בפיגמה; list-card.webp הישן (קרופ רוחבי שנבנה לפני שהיה frame כרטיס) נשאר בדיסק — כלל-זהב 8.",
+      "_photos_note": "רצועת צילומים (2026-09-27): 12 צילומים ממייצג האופנה 'לא כאן', שנמסרו כ-nodes רופפים 1918:1289…1918:1300 (קבצי WhatsApp, 1280×1600 / 1600×1280, sRGB) → images/events/bar-cohen/moment-01..12 (master = המקור, 1600 בצלע הארוכה, + 480/768/1080). סדר: שלישיית הפריים קודם — moment-01 = 1918:1289 (peek שמאלי, 1fb0a407), moment-02 = 1918:1290 (מרכז, b05e5875, data-tri-start=\"1\"), moment-03 = 1918:1291 (peek ימני, 899aaa74) — ואז 1918:1292…1300 בסדר ה-nodes. ⚠️ ברקטנגלים של הרצועה (1873:208–210 דסקטופ / 1873:216, 218, 223 מובייל) נשארו מתחת ה-imageRefs של jessica-tabarovsky כ-fills מוסתרים (שארית ה-copy-paste); ברינדור ה-nodes נראים רק שלושת החדשים. moment-01 ו-moment-07 רוחביים (5:4) ⇒ sizes 473/832/1052; השאר 4:5 ⇒ 303/532/673. בלי השמטות; בלי כפילויות בתוך הסט ומול תמונות האתר."
     },
     {
       "id": "maria-artamonova",

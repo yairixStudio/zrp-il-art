@@ -9,6 +9,8 @@
 <link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="preload" href="../../פונטים/Solway-Light.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css">
 <meta name="description" content="שיחת אמנים עם בר כהן — ״לא כאן״, מייצג אופנה מאת AKRA הבוחן את היחסים בין גוף, לבוש והמרחב שבו הם מתקיימים. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 27 באוגוסט 2026, 18:30–20:30.">
 <style>
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
@@ -133,6 +135,28 @@ a.ex-link:hover{opacity:.7}
 a.artist-card:hover .img img{filter:brightness(.92)}
 a.artist-card:hover .name{color:var(--ink)}
 
+/* === MOMENTS — triptych of photos from the fashion performance (Figma 1873:206 > row 1873:207
+   desktop / 1873:212 > "Image Gallery" 1873:213 mobile). Geometry identical to the
+   jessica-tabarovsky strip (the designer built this band from a copy of it): centre 481x841,
+   peeks 302x528 @ .6, row space-between inside the 1248 content box ⇒ gap 81 ⇒ peek centres at
+   ±472.5px. The right peek is drawn 303x529 and the left 302x528 — one rule serves both.
+   Neither frame draws dots or arrows, so this strip has none in either breakpoint:
+   navigation is peek-click / drag-swipe / arrow keys. Photos ⇒ cover everywhere. */
+.event-moments{padding:32px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-moments .tri{--tri-max-w:1248px;--tri-bg:transparent;width:100%;gap:0}
+.event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
+.event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
+/* Peeks are pinned to the frame edges (centre 151.5px in from each side) — Figma's row is
+   space-between, and at 1440+ (frame 1248) this is exactly 50% ∓ 472.5px. Between 1320 and 1439
+   --pad-x is already 96 and the frame is only 1128–1247 wide; 50% ∓ 472.5px offsets would push
+   both peeks up to ~60px past the frame's overflow:hidden edges. Pinning keeps them whole and
+   lets the gaps shrink instead (81 → 21.5 at 1320). */
+.event-moments .tri-slide.is-prev{left:151.5px}
+.event-moments .tri-slide.is-next{left:calc(100% - 151.5px)}
+.event-moments .tri-slide.is-hidden{width:481px;height:841px}
+
 /* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
 a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
@@ -157,6 +181,16 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 @media (max-width:1050px) and (min-width:769px){
   .h-title{font-size:34px;line-height:34px}
 }
+/* Tablet / narrow desktop — the full-size trio needs 1248px of content and only ~1223 exist at
+   1319 with --pad-x:48, so the whole triptych scales by .79 (same aspect ratios; livay-levi). */
+@media (max-width:1319px) and (min-width:769px){
+  .event-moments .tri-frame{height:665px}
+  .event-moments .tri-slide.is-center{width:380px;height:665px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:239px;height:417px}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 373.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 373.5px)}
+  .event-moments .tri-slide.is-hidden{width:380px;height:665px}
+}
 
 /* Mobile (Figma 390): hero photo first, then each block on white, full-width */
 @media (max-width:768px){
@@ -171,7 +205,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-body{order:4}
   .h-presented{order:5}
   .h-address{order:6}
-  .event-artists{order:7}
+  .event-moments{order:7}
+  .event-artists{order:8}
 
   /* Hero card — full-bleed 520h, same flat 40% scrim */
   .event-hero .card{width:100%;max-width:none;height:520px}
@@ -196,6 +231,17 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .event-hero .card .center-text .ex-name{font-size:17px;width:313px;max-width:calc(100vw - 64px)}
   .event-hero .card .center-text .ex-name.heb{font-size:29px;line-height:1}
   .ex-bar .lbl{font-size:clamp(20px,6.6vw,26px)}
+
+  /* Moments strip (Figma 1873:212 — padding 8/16, frame 358×443, centre 216×378, peeks
+     117×204.75 clipped at both edges). Identical geometry to the jessica-tabarovsky mobile band. */
+  .event-moments{padding:8px 16px;background:var(--white)}
+  .event-moments .tri{--tri-max-w:none;width:100%}
+  .event-moments .tri-frame{height:443px;max-width:none;width:100%}
+  .event-moments .tri-slide.is-center{width:216px;height:378px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .event-moments .tri-slide.is-hidden{width:216px;height:378px}
 
   /* Artists strip (Figma mobile 96×80 thumbs) */
   .event-artists{padding:32px 16px;background:var(--white)}
@@ -294,6 +340,36 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- MOMENTS — 12 photos from the fashion performance "לא כאן" (Figma strip 1873:206 desktop /
+       1873:212 mobile; loose photo nodes 1918:1289…1918:1300, delivered 2026-09-27).
+       Slide order is the Figma triple first: moment-01 = left peek (1918:1289, 1fb0a407),
+       moment-02 = centre (1918:1290, b05e5875; data-tri-start="1", 0-indexed), moment-03 = right
+       peek (1918:1291, 899aaa74) — so the opening frame matches the design; then 1918:1292…1300
+       in node order. The strip rectangles still carry jessica-tabarovsky's imageRefs as hidden
+       fills underneath (copy-paste leftovers); the node render shows only these three.
+       Photos, not artworks: no artist link on the slides; centre-click opens the lightbox
+       (docs/components.md §1.7 — event-photo sliders). -->
+  <section class="event-moments" aria-label="צילומים מהאירוע">
+    <div class="inner">
+      <div class="tri" data-tri-loop="true" data-tri-start="1" data-tri-lightbox="true" data-artwork-gallery="event-moments">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-01.webp" srcset="../../images/events/bar-cohen/moment-01-480w.webp 480w, ../../images/events/bar-cohen/moment-01-768w.webp 768w, ../../images/events/bar-cohen/moment-01-1080w.webp 1080w, ../../images/events/bar-cohen/moment-01.webp 1600w" sizes="(max-width:768px) 473px, (max-width:1319px) 832px, 1052px" width="1600" height="1280" alt="משתתפת במייצג, במשקפיים אדומים ובברדס סרוג, מנפחת בלון כתום על רצפת הגלריה בין בלונים צבעוניים" data-artwork-src="../../images/events/bar-cohen/moment-01.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-02.webp" srcset="../../images/events/bar-cohen/moment-02-480w.webp 480w, ../../images/events/bar-cohen/moment-02-768w.webp 768w, ../../images/events/bar-cohen/moment-02-1080w.webp 1080w, ../../images/events/bar-cohen/moment-02.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="דוגמנית בחולצה סרוגה כחולה ובחצאית תחרה לבנה יושבת על הרצפה ונוגעת באננס, ולצידה ברווזוני גומי" data-artwork-src="../../images/events/bar-cohen/moment-02.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-03.webp" srcset="../../images/events/bar-cohen/moment-03-480w.webp 480w, ../../images/events/bar-cohen/moment-03-768w.webp 768w, ../../images/events/bar-cohen/moment-03-1080w.webp 1080w, ../../images/events/bar-cohen/moment-03.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="ארבע דוגמניות בפריטי סריגה צבעוניים מצטלמות יחד מול קיר הגלריה" data-artwork-src="../../images/events/bar-cohen/moment-03.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-04.webp" srcset="../../images/events/bar-cohen/moment-04-480w.webp 480w, ../../images/events/bar-cohen/moment-04-768w.webp 768w, ../../images/events/bar-cohen/moment-04-1080w.webp 1080w, ../../images/events/bar-cohen/moment-04.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="משתתפת בברדס סרוג ובחותלות כחולות יושבת על הרצפה וסורגת, מול חלון הראווה של הגלריה" data-artwork-src="../../images/events/bar-cohen/moment-04.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-05.webp" srcset="../../images/events/bar-cohen/moment-05-480w.webp 480w, ../../images/events/bar-cohen/moment-05-768w.webp 768w, ../../images/events/bar-cohen/moment-05-1080w.webp 1080w, ../../images/events/bar-cohen/moment-05.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="דוגמנית בחולצה סרוגה צהובה יושבת על ספה אפורה בין פריטי סריגה, מתחת לצילום גדול של דג" data-artwork-src="../../images/events/bar-cohen/moment-05.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-06.webp" srcset="../../images/events/bar-cohen/moment-06-480w.webp 480w, ../../images/events/bar-cohen/moment-06-768w.webp 768w, ../../images/events/bar-cohen/moment-06-1080w.webp 1080w, ../../images/events/bar-cohen/moment-06.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="דוגמנית בגופייה לבנה עם כתפייה סרוגה צבעונית מביטה למצלמה, וברווזון גומי על ראשה" data-artwork-src="../../images/events/bar-cohen/moment-06.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-07.webp" srcset="../../images/events/bar-cohen/moment-07-480w.webp 480w, ../../images/events/bar-cohen/moment-07-768w.webp 768w, ../../images/events/bar-cohen/moment-07-1080w.webp 1080w, ../../images/events/bar-cohen/moment-07.webp 1600w" sizes="(max-width:768px) 473px, (max-width:1319px) 832px, 1052px" width="1600" height="1280" alt="יד טובלת בקערת אורז על הרצפה, בין פריטי סריגה ורודים, אדומים, כחולים וצהובים" data-artwork-src="../../images/events/bar-cohen/moment-07.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-08.webp" srcset="../../images/events/bar-cohen/moment-08-480w.webp 480w, ../../images/events/bar-cohen/moment-08-768w.webp 768w, ../../images/events/bar-cohen/moment-08-1080w.webp 1080w, ../../images/events/bar-cohen/moment-08.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="שתי דוגמניות בפריטי סריגה, צהוב ואדום־זהב, ואחת מהן מחזיקה ברווזון גומי" data-artwork-src="../../images/events/bar-cohen/moment-08.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-09.webp" srcset="../../images/events/bar-cohen/moment-09-480w.webp 480w, ../../images/events/bar-cohen/moment-09-768w.webp 768w, ../../images/events/bar-cohen/moment-09-1080w.webp 1080w, ../../images/events/bar-cohen/moment-09.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="תקריב של חולצה סרוגה כחולה וחגורה סרוגה ירוקה על שמלה לבנה" data-artwork-src="../../images/events/bar-cohen/moment-09.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-10.webp" srcset="../../images/events/bar-cohen/moment-10-480w.webp 480w, ../../images/events/bar-cohen/moment-10-768w.webp 768w, ../../images/events/bar-cohen/moment-10-1080w.webp 1080w, ../../images/events/bar-cohen/moment-10.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="דוגמנית בגופייה לבנה מסדרת על עצמה פריט סריגה בצבעי פסטל" data-artwork-src="../../images/events/bar-cohen/moment-10.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-11.webp" srcset="../../images/events/bar-cohen/moment-11-480w.webp 480w, ../../images/events/bar-cohen/moment-11-768w.webp 768w, ../../images/events/bar-cohen/moment-11-1080w.webp 1080w, ../../images/events/bar-cohen/moment-11.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="דוגמנית בטופ לבן ובשרוול סרוג ארוך בצהוב ושחור, ומאחוריה ציור צבעוני על קיר הגלריה" data-artwork-src="../../images/events/bar-cohen/moment-11.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/bar-cohen/moment-12.webp" srcset="../../images/events/bar-cohen/moment-12-480w.webp 480w, ../../images/events/bar-cohen/moment-12-768w.webp 768w, ../../images/events/bar-cohen/moment-12-1080w.webp 1080w, ../../images/events/bar-cohen/moment-12.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="משתתפת בחולצה סגולה מסדרת חולצה סרוגה צהובה על דוגמנית" data-artwork-src="../../images/events/bar-cohen/moment-12.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="event-artists" aria-label="האומנים באירוע">
     <div class="inner">
       <div class="head">
@@ -315,6 +391,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 <site-footer></site-footer>
 
+<script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js" defer></script>
 <script src="../../components/site-chrome.js?v=6" defer></script>
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>

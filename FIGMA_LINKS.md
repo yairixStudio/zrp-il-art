@@ -863,7 +863,13 @@ bar cohen מובייל: Implement this design from Figma.
 
 > ⚠️ הכותרת שונה בין הפריימים במקף אחד בלבד: דסקטופ `1515:1997` = "bar cohen ‘akra’", מובייל `1515:1910` = "bar cohen - ‘akra’" (וכך גם כרטיס הרשימה `1532:2491`) ⇒ `.mdash` שמוצג רק ≤768. הכותרת בקוד 60/54 ולא 64/58 — ראה §4. הפריים הריק `1515:1875` = שריד תבנית.
 
-> ⚠️ **2026-09-27:** בפריימים נוספה רצועת צילומים (`1873:206` דסקטופ / `1873:212` מובייל) שהיא **העתק מדויק ברמת ה-imageRef** (כולל fills מוסתרים) של הרצועה של ג׳סיקה (`1873:132`/`1873:170`) — copy-paste של המעצבת, **לא נבנתה**. ממתינים לצילומים של בר כהן עצמה.
+bar cohen — רצועת צילומים דסקטופ (2026-09-27): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1873-206&m=dev
+
+bar cohen — רצועת צילומים מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1873-212&m=dev
+
+> ⚠️ 12 הצילומים = nodes רופפים `1918:1289`–`1918:1300` (קבצי WhatsApp; נמסרו 2026-09-27). סדר באתר = סדר ה-nodes: 1289 [peek שמאלי], 1290 [מרכז], 1291 [peek ימני], ואז 1292…1300; בלי השמטות. ברקטנגלים של הרצועה נשארו מתחת ה-imageRefs של ג׳סיקה כ-fills מוסתרים (שארית ה-copy-paste שהייתה כאן עד שהגיעו הצילומים) — ברינדור נראים רק `1fb0a407` / `b05e5875` / `899aaa74`.
 
 ### עמוד אירוע Artist Talk with Maria Artamonova (`/events/maria-artamonova/`, הקולפן / כיכר המדינה 7.9.2026)
 
@@ -899,7 +905,7 @@ jessica tabarovsky — רצועת צילומים דסקטופ (2026-09-27): Impl
 jessica tabarovsky — רצועת צילומים מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1873-170&m=dev
 
-> ⚠️ 5 הצילומים = nodes `1873:186`–`1873:190` (סדר באתר: 186, 190 [מרכז], 189, 187, 188). השורה `1873:133` היא space-between ⇒ ה-peeks בקוד מוצמדים 151.5px מהקצוות. **הרצועה הזו הועתקה לפריימי bar-cohen** (`1873:206`/`1873:212`) — שם היא לא נבנתה.
+> ⚠️ 5 הצילומים = nodes `1873:186`–`1873:190` (סדר באתר: 186, 190 [מרכז], 189, 187, 188). השורה `1873:133` היא space-between ⇒ ה-peeks בקוד מוצמדים 151.5px מהקצוות. הרצועה הזו הועתקה לפריימי bar-cohen (`1873:206`/`1873:212`), ושם הוחלפה מאז בצילומים של בר — ה-imageRefs של ג׳סיקה נשארו שם מתחת כ-fills מוסתרים.
 
 ### עמוד אירוע Artist Talk with Baruch Torgeman (`/events/baruch-torgeman/`, הקולפן / כיכר המדינה 6.9.2026 18:30–20:30)
 
