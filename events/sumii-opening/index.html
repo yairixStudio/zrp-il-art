@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opening Night Event — Art Residency by Sumii | Kikar Dizengoff — Zielinski &amp; Rozen</title>
+<!-- Preload the woff2 files the @font-face rules actually resolve to. -->
+<link rel="preload" href="../../פונטים/Copperplate-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/Copperplate.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<link rel="stylesheet" href="../../components/triptych-gallery.css">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css">
+<meta name="description" content="ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ בגלריית כיכר דיזינגוף תל אביב — בניחוח UNTIL TEN של זילינסקי רוזן. 2 בספטמבר 2026, 18:00–21:00, בהרשמה מראש בלבד.">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+/* =====================================================================================
+   SUMII residency event variant — opening night (Figma 1706:2032 desktop / 1706:1919 mobile;
+   both frames are named "event- artist talk with שירה טורבוביץ" — the name lies, the content is
+   the residency's opening night). Base = events/niki-de-saint-phalle-day/ at HEAD.
+   Differences from that base:
+     - no scrim on the photo in either breakpoint (the desktop rect lists a flat .4 fill, but the
+       node render does not paint it — RMSE .57% without vs 4.1% with);
+     - the partner lockup reads gallery name → "hosting an art residency by" → Sumii logo over
+       the artist → "scented with [Until Ten] by zielinski rozen" → registration; Figma draws it as
+       an absolute GROUP, so the uneven gaps below are the group's y-coordinates, not a flex gap;
+     - a .event-moments photo strip (livay-levi geometry) between the panel and the artists.
+   Copperplate sizes in the lockup are verbatim: Figma sets those runs textCase UPPER (full caps),
+   and our full caps match its ink at the same px. Title + photo overlay are drawn in small caps
+   (textCase LOWER) and are calibrated against the Figma ink.
+   ===================================================================================== */
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;--black:#000000;
+  --artist:#828282;--icon-grey:#707070;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:48px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+/* Horizontal clipping lives on <html> only — overflow-x on <body> breaks the sticky
+   header and clips Copperplate caps vertically (lessons 2026-06-15 / 2026-06-16). */
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase}
+
+/* ===== EVENT PAGE SHELL (artist-talk family) ===== */
+.event{display:flex;flex-direction:column;background:var(--white)}
+
+/* HERO BAND — tinted #EEF0EF panel, two columns (Figma "Main container" 1706:2058, padding 48/96/32) */
+.event-hero{background:var(--bg-grey);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.event-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.event-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:16px;padding:0 16px}
+
+/* Title — Copperplate Regular, centered. Figma 80/72 in small caps (textCase LOWER); measured
+   against its ink (561 / 426 px for the first two lines), our full caps land at 62px (64 drew
+   582 / 435). No forced breaks: Figma keeps "by sumii" together — "RESIDENCY BY" would fit its
+   644px box, yet it breaks before BY — so "by&nbsp;sumii" is one unit, which yields its four
+   lines OPENING NIGHT / EVENT - ART / RESIDENCY / BY SUMII here and its two on mobile.
+   "event&nbsp;-&nbsp;art" likewise, so no tablet width strands the hyphen at a line start.
+   Line pitch 72 verbatim (niki precedent: 72 lands every block below on the frame). */
+.h-title{font-family:var(--cop);font-weight:400;font-size:62px;line-height:72px;text-align:center;color:var(--ink);width:100%}
+
+/* Meta — gallery (Regular), then date · time (Light, 1×1 dot — Figma). Title → meta gap 32
+   (Figma 1706:2061; the text column gap is 16, so +16 here). */
+.h-meta{display:flex;flex-direction:column;gap:8px;align-items:center;padding:0 10px 8px;margin-top:16px}
+.h-meta .row-1,.h-meta .row-2{display:flex;align-items:center;gap:8px;justify-content:center}
+.h-meta .gallery{font-family:var(--heb);font-weight:400;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.h-meta .date,.h-meta .time{font-family:var(--heb);font-weight:300;font-size:28px;color:var(--ink);direction:rtl;white-space:nowrap}
+.h-meta .dot{width:1px;height:1px;background:var(--icon-grey);border-radius:50%;display:inline-block}
+
+/* ===== SUMII LOCKUP — Figma frame 1706:2082 (padding 16) → GROUP 1706:2456 (448.63 × 301.28,
+   absolute children). Each child's margin-top = the group's y gap to the previous child:
+   gname 0–42 → host label 68.83 → logo 93.80 → name 151.48 → scent row 200.97 → registration 248.28.
+   Registration lives inside the group here (unlike niki, where it is a sibling block). ===== */
+.sumii-lockup{display:flex;flex-direction:column;align-items:center;width:100%;padding:16px 0 20.72px;color:var(--black)}
+.sumii-lockup .gname{font-family:var(--cop);font-weight:300;font-size:20.75px;line-height:21px;letter-spacing:.13em;text-align:center;transition:opacity .2s}
+.sumii-lockup a.gname:hover{opacity:.65}
+.sumii-lockup .host{margin-top:26.83px;font-family:var(--cop);font-weight:300;font-size:17.33px;line-height:18px;letter-spacing:.1em;text-align:center;white-space:nowrap}
+
+/* logo over name (Figma 1706:2468 / 1706:2481) */
+.ev-lockup-item{display:flex;flex-direction:column;align-items:center;margin-top:6.97px}
+.ev-lockup-item .logo-link{display:block;color:var(--black);transition:opacity .2s}
+.ev-lockup-item a.logo-link:hover{opacity:.65}
+/* sumii-logo (not "logo": site-chrome.css injects a global .logo for the site header) */
+.sumii-logo{display:block;color:currentColor}
+.ev-lockup-item .sumii-logo{width:111.25px;height:50.66px}
+.ev-lockup-item .name{margin-top:7.02px;font-family:var(--heb);font-weight:300;font-size:20.75px;line-height:22px;text-align:center;direction:rtl}
+
+/* "scented with [Until Ten] by zielinski rozen" — Figma frame 1706:2458: one LTR row, the
+   script logo 88.98×27.87 centred on the text line. Until Ten = the ZRP perfume (no page). */
+.ev-scent{display:flex;align-items:center;justify-content:center;margin-top:27.49px;height:35.63px;direction:ltr;font-family:var(--cop);font-weight:300;font-size:15.5px;line-height:16px;white-space:nowrap}
+.untilten-logo{display:block;flex:none;width:88.98px;height:27.87px;margin:0 17px 0 16px;color:var(--black)}
+
+/* Registration — FbEzmel Light 20.75/25.93, centred; the email is a .lat run at 1em (Figma ts1 =
+   Copperplate Light at the same size, full caps). href lowercase mailto:, display UPPERCASE. */
+.ev-reg{margin-top:11.68px;font-family:var(--heb);font-weight:300;font-size:20.75px;line-height:25.93px;text-align:center;direction:rtl;color:var(--black)}
+.ev-reg .lat{font-size:1em}
+.ev-reg a.lat{transition:opacity .2s}
+.ev-reg a.lat:hover{opacity:.65}
+
+/* Venue address — Copperplate Light, 3 explicit lines. Figma 16px small caps (textCase LOWER);
+   our full caps match its ink (337px widest line) at 14px in both breakpoints (niki measure). */
+.h-address{font-family:var(--cop);font-weight:300;font-size:14px;line-height:20px;text-align:center;max-width:100%;padding:16px 0}
+
+/* Hero card — 492×744 photo, NO scrim (see header note). */
+.event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
+.event-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
+/* picture-upgrade.js wraps the <img> in a <picture> at runtime — size both, or the image
+   collapses to its intrinsic height and the card's black background shows through. */
+.event-hero .card>picture{display:contents}
+.event-hero .card img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* ===== CO-BRAND OVERLAY — white lockup on the photo (Figma "Archive Info" 1709:286 / 1706:2189:
+   column 286.4 wide, gap 6.4; gallery name 24 small caps → 21px full caps (niki measure), X 28.8
+   verbatim (single glyph), Sumii logo 70.38×32 in both breakpoints). Decorative repeat of the
+   in-column lockup ⇒ aria-hidden, no links. ===== */
+.ev-cobrand{position:absolute;left:50%;top:51%;transform:translate(-50%,-50%);width:286.4px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:6.4px;color:var(--white);z-index:2;text-align:center;pointer-events:none}
+.ev-cobrand .gname{font-family:var(--cop);font-weight:300;font-size:21px;line-height:24px}
+.ev-cobrand .gname .ln1{letter-spacing:.05em}
+.ev-cobrand .x{font-family:var(--cop);font-weight:300;font-size:28.8px;line-height:1}
+.ev-cobrand .sumii-logo{width:70.38px;height:32px}
+
+/* === MOMENTS — photos from the opening night (Figma 1815:650 desktop / 1815:622 mobile).
+   livay-levi geometry: centre 481×841, peeks 302×528 @ .6, row space-between inside the 1248
+   content box ⇒ gap 81 ⇒ peek centres at ±472.5px. Neither frame draws dots or arrows:
+   navigation is peek-click / drag-swipe / arrow keys. Photos ⇒ cover everywhere. */
+.event-moments{padding:32px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.event-moments .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-moments .tri{--tri-max-w:1248px;--tri-bg:transparent;width:100%;gap:0}
+.event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
+.event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
+.event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
+/* Peeks pinned to the frame edges (centre 151.5px in from each side) — Figma's row is
+   space-between, and at 1440+ (frame 1248) this is exactly 50% ∓ 472.5px. Between 1320 and 1439
+   the frame is only 1128–1247 wide and 50% ∓ 472.5px would push both peeks past its
+   overflow:hidden edges; pinning keeps them whole and lets the gaps shrink instead
+   (events/jessica-tabarovsky QA precedent). */
+.event-moments .tri-slide.is-prev{left:151.5px}
+.event-moments .tri-slide.is-next{left:calc(100% - 151.5px)}
+.event-moments .tri-slide.is-hidden{width:481px;height:841px}
+
+/* ARTISTS strip */
+.event-artists{padding:32px var(--pad-x);display:flex;justify-content:center}
+.event-artists .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.event-artists .head{display:flex;justify-content:space-between;align-items:center}
+.event-artists .head .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
+.event-artists .head .more{display:flex;align-items:flex-start;padding-top:4px;color:#1A1C1C;transition:opacity .2s}
+.event-artists .head a.more:hover{opacity:.6}
+.event-artists .head .more svg{width:10.33px;height:10.33px;display:block}
+.event-artists .strip{display:flex;flex-direction:row;gap:6px}
+.event-artists .strip>a.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
+.event-artists .strip .img{width:178px;height:148px;overflow:hidden;background:#f3f1ee}
+.event-artists .strip .img picture{display:contents}
+/* Figma seats the square portrait at y:0 inside the shorter window — a top crop keeps the face */
+.event-artists .strip .img img{width:100%;height:100%;object-fit:cover;object-position:50% 0%;transition:filter .25s}
+.event-artists .strip .name{font-family:var(--cop);font-weight:300;font-size:18px;line-height:18px;color:var(--artist);text-align:center;letter-spacing:.04em}
+a.artist-card:hover .img img{filter:brightness(.92)}
+a.artist-card:hover .name{color:var(--ink)}
+
+/* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
+a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1320px){
+  :root{--pad-x:96px}
+  /* 1320–1439: the text column is 556–675px and "OPENING NIGHT" needs 564px at 62px, so the title
+     broke into five lines. Size it off the column itself (jessica-tabarovsky / baruch-torgeman
+     precedent): 9.2cqi scales every line with the column, so Figma's four-line break holds, and
+     min() pins 62/72 once the column reaches its full 676px — ≥1440 renders unchanged.
+     No cqi support ⇒ plain 62/72. */
+  .event-hero .text-col{container-type:inline-size}
+  .h-title{font-size:min(62px,9.2cqi);line-height:min(72px,1.1613em)}
+}
+
+/* Narrow desktop / tablet — shrink the photo, the display title and the lockup together */
+@media (max-width:1319px) and (min-width:769px){
+  .event-hero .row{gap:32px;min-width:0}
+  .event-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .event-hero .card{width:100%;max-width:400px;height:640px}
+  .h-title{font-size:44px;line-height:50px}
+  .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:22px}
+  /* the full trio needs 1248px of content and only ~1223 exist at 1319 ⇒ scale by .79 */
+  .event-moments .tri-frame{height:665px}
+  .event-moments .tri-slide.is-center{width:380px;height:665px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:239px;height:417px}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 373.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 373.5px)}
+  .event-moments .tri-slide.is-hidden{width:380px;height:665px}
+}
+/* The lockup's widest row (the scent line, ~446px) outgrows the text column below ~1050 —
+   step down to the mobile sizes (Figma mobile group = desktop ÷ 1.2966). */
+@media (max-width:1050px) and (min-width:769px){
+  .sumii-lockup .gname{font-size:16px;line-height:16px}
+  .sumii-lockup .host{margin-top:21.09px;font-size:13.37px;line-height:14px}
+  .ev-lockup-item{margin-top:5.26px}
+  .ev-lockup-item .sumii-logo{width:85.8px;height:39.07px}
+  .ev-lockup-item .name{margin-top:5.41px;font-size:16px;line-height:17px}
+  .ev-scent{margin-top:21.17px;height:27.48px;font-size:12px;line-height:12px}
+  .untilten-logo{width:68.62px;height:21.5px;margin:0 13px 0 12.5px}
+  .ev-reg{margin-top:9px;font-size:16px;line-height:20px}
+}
+@media (max-width:1050px) and (min-width:769px){
+  .h-title{font-size:34px;line-height:38px}
+}
+@media (max-width:900px) and (min-width:769px){
+  /* the text column drops to ~250px at 769 — let the long lockup lines wrap */
+  .sumii-lockup .host,.ev-scent{white-space:normal}
+  .ev-scent{flex-wrap:wrap;height:auto;row-gap:6px}
+  .sumii-lockup .gname{font-size:clamp(12px,1.6vw,16px);line-height:1.1;letter-spacing:.1em}
+}
+
+/* Mobile (Figma 390): hero photo first, then each block on white, full-width */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  .event-hero{display:contents}
+  .event-hero .row,.event-hero .text-col{display:contents}
+
+  .event-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
+  .h-title{order:2}
+  .h-meta{order:3}
+  .sumii-lockup{order:4}
+  .h-address{order:5}
+  .event-moments{order:6}
+  .event-artists{order:7}
+
+  /* Hero card — full-bleed 520h, no scrim */
+  .event-hero .card{width:100%;max-width:none;height:520px}
+  .ev-cobrand{top:50.2%}
+
+  /* Text blocks — white background (Figma mobile sections) */
+  /* Title 24 small caps → 19px full caps, measured against the Figma ink (306 / 221 px) */
+  .h-title{background:var(--white);padding:32px 16px 0;font-size:19px;line-height:1.3;width:100%}
+  .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
+  .h-meta .gallery{font-size:14px}
+  .h-meta .date,.h-meta .time{font-size:14px}
+
+  /* Lockup — Figma 1706:1996: white, fixed height 314, padding 16, the 346×236 group box centred
+     ⇒ 39 above the gallery name and ~42.5 under the registration. Group = desktop ÷ 1.2966. */
+  .sumii-lockup{background:var(--white);padding:39px 16px 42.5px}
+  .sumii-lockup .gname{font-size:16px;line-height:16px}
+  .sumii-lockup .host{margin-top:21.09px;font-size:13.37px;line-height:14px}
+  .ev-lockup-item{margin-top:5.26px}
+  .ev-lockup-item .sumii-logo{width:85.8px;height:39.07px}
+  .ev-lockup-item .name{margin-top:5.41px;font-size:16px;line-height:17px}
+  .ev-scent{margin-top:21.17px;height:27.48px;font-size:12px;line-height:12px}
+  .untilten-logo{width:68.62px;height:21.5px;margin:0 13px 0 12.5px}
+  .ev-reg{margin-top:9px;font-size:16px;line-height:20px}
+
+  .h-address{background:var(--white);padding:16px;width:100%}
+
+  /* Moments strip (Figma 1815:623 — frame 358×443, centre 216×378, peeks 117×204.75 clipped at
+     both edges). Figma right-aligns the 358 frame inside a 326 box, pushing it 16px left of
+     centre — a layout artefact; built centred, like livay-levi. 8 + 16 under the frame (Figma
+     1815:622 padding + 1706:2005 padding) before the artists block. */
+  .event-moments{padding:8px 16px 24px;background:var(--white)}
+  .event-moments .tri{--tri-max-w:none;width:100%}
+  .event-moments .tri-frame{height:443px;max-width:none;width:100%}
+  .event-moments .tri-slide.is-center{width:216px;height:378px}
+  .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:117px;height:204.75px;opacity:.6}
+  .event-moments .tri-slide.is-prev{left:calc(50% - 194.5px)}
+  .event-moments .tri-slide.is-next{left:calc(50% + 194.5px)}
+  .event-moments .tri-slide.is-hidden{width:216px;height:378px}
+
+  /* Artists strip (Figma mobile 96×80 thumbs) */
+  .event-artists{padding:32px 16px;background:var(--white)}
+  .event-artists .head .label{font-size:16px}
+  .event-artists .strip>a.artist-card{flex-basis:112px}
+  .event-artists .strip .img{width:96px;height:80px}
+  .event-artists .strip .name{font-size:13px;line-height:16px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/events/sumii-opening/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Opening Night Event — Art Residency by Sumii | Kikar Dizengoff — Zielinski &amp; Rozen">
+<meta property="og:description" content="ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ בגלריית כיכר דיזינגוף תל אביב — בניחוח UNTIL TEN של זילינסקי רוזן. 2 בספטמבר 2026, 18:00–21:00, בהרשמה מראש בלבד.">
+<meta property="og:url" content="https://art.zrp.co.il/events/sumii-opening/">
+<meta property="og:image" content="https://art.zrp.co.il/og/events-sumii-opening-hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1600">
+<meta property="og:image:alt" content="Opening Night Event — Art Residency by Sumii — Kikar Dizengoff">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Opening Night Event — Art Residency by Sumii | Kikar Dizengoff — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ בגלריית כיכר דיזינגוף תל אביב — בניחוח UNTIL TEN של זילינסקי רוזן. 2 בספטמבר 2026, 18:00–21:00, בהרשמה מראש בלבד.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/events-sumii-opening-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/sumii-opening/#event","url":"https://art.zrp.co.il/events/sumii-opening/","name":"Opening Night Event — Art Residency by Sumii","image":"https://art.zrp.co.il/og/events-sumii-opening-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/dizengoff/#gallery","name":"Kikar Dizengoff Gallery","url":"https://art.zrp.co.il/galleries/dizengoff/","address":{"@type":"PostalAddress","streetAddress":"1 Reines st.","addressLocality":"Tel Aviv","addressCountry":"IL"}},"startDate":"2026-09-02T18:00:00+03:00","endDate":"2026-09-02T21:00:00+03:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","description":"ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ — The Art Gallery by Erez Zielinski Rozen מארחת את הרזידנסי בגלריית כיכר דיזינגוף תל אביב, בניחוח Until Ten של זילינסקי רוזן. בהרשמה מראש בלבד."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Opening Night Event — Art Residency by Sumii","item":"https://art.zrp.co.il/events/sumii-opening/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<!-- Sumii wordmark — one inline <symbol>, used via <use> (copied verbatim from sponsors/sumii/;
+     source node 1546:3666; fills are currentColor so the same mark serves black and white). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="sumii-mark" viewBox="0 0 88 40"><path d="M42.308 20.4379C43.1623 20.0131 43.6695 19.7482 44.3216 19.0004C45.3284 17.845 45.9727 16.6534 46.4267 15.1917C46.4894 14.9904 46.4821 14.8202 46.5998 14.634C46.806 14.5714 46.7987 14.6488 46.879 14.4853C46.9413 14.3578 46.8992 14.3666 47.0087 14.3183C47.1277 14.376 47.2003 14.5141 47.4675 14.6634C47.7261 15.4752 47.4447 18.7402 47.6603 19.1129C47.7578 19.1242 47.7578 19.1029 47.8554 19.0274C48.2248 18.7416 48.4511 18.2274 48.7234 17.9086C50.1899 16.1936 51.7912 13.783 54.3534 13.9713C55.0213 14.0204 55.7468 14.331 56.1634 14.8587C57.0865 16.0275 56.9503 17.308 56.9641 18.7045C56.9649 18.7992 56.9477 19.1211 56.9834 19.1851C57.4202 19.1901 58.1947 17.961 58.4507 17.6391C59.2423 16.6231 60.1551 15.5639 61.1649 14.7785C62.3053 13.8913 64.4564 13.5523 65.5307 14.6988C66.7609 16.0118 66.5002 19.195 66.5002 20.8882L66.4959 27.3342C66.4929 27.9003 66.422 29.5361 66.629 30.0485C67.2914 31.6183 69.7118 31.8374 70.9025 30.8353C71.588 30.2584 71.6018 29.2883 71.591 28.4613C71.561 26.1717 71.5807 23.8692 71.5386 21.581C71.527 20.9553 71.3445 20.2211 70.5966 20.207C69.9635 20.1866 69.8213 21.3295 69.6186 21.8241C68.7428 22.2824 67.9838 22.1748 68.3369 20.9102C68.5418 20.1779 69.534 19.9577 69.9571 19.3721C70.7006 18.5358 71.2336 17.7785 71.7603 16.7958C72.0017 16.3447 72.5188 14.6242 72.731 14.4662C72.9496 14.4017 72.9999 14.3531 73.1889 14.4319C73.3586 14.6131 73.4226 14.8934 73.4397 15.135C73.5317 16.4459 73.4848 17.8351 73.4844 19.1541L73.4836 26.7742C73.4831 27.4296 73.3796 29.6713 73.6408 30.1623C74.6918 32.1407 78.7398 31.8311 78.6165 29.1626C78.5461 26.671 78.5894 24.207 78.5293 21.7199C78.5207 21.2931 78.4176 20.7702 78.266 20.3684C77.7437 20.1929 77.4202 20.1505 76.8885 20.3756C76.5998 21.0821 76.5479 21.243 76.1029 21.8424C75.9259 21.8788 75.7274 21.9147 75.5539 21.9566C75.4006 21.8889 75.285 21.8357 75.1244 21.7895C75.0299 21.4578 74.9392 20.9562 75.1338 20.6527C75.3984 20.2401 76.2961 19.9566 76.6844 19.6219C77.0272 19.3266 77.3558 18.9277 77.6311 18.5884C78.0615 18.0582 78.7432 16.9864 78.9752 16.3431C79.2861 15.4816 79.3415 15.175 79.7775 14.3315C79.9738 14.3959 80.177 14.4587 80.3681 14.5359C80.5352 15.3987 80.4704 17.7929 80.4686 18.7676L80.4571 26.3849C80.4493 27.9308 80.0481 29.9238 81.439 30.995C81.9716 31.4051 82.9372 31.3087 83.3427 31.5256C83.359 31.7326 83.3736 31.8661 83.3534 32.0757C83.1614 32.2366 76.7798 32.1563 75.9435 32.1554L64.8048 32.1668C64.5475 31.97 62.3839 32.3053 61.8449 31.974C61.9909 31.6927 62.085 31.7534 62.3702 31.7915C62.493 31.7395 62.4724 31.77 62.527 31.6752C62.4574 31.5828 62.28 31.6038 62.091 31.5301L62.0648 31.4289C63.0313 31.3894 63.9234 31.1278 64.3495 30.1898C64.6678 29.4884 64.5621 28.0729 64.5574 27.2766L64.5561 24.4531C64.5561 22.6997 64.575 20.9088 64.5299 19.1558C64.5089 18.5706 64.3542 17.9926 64.2275 17.4314C63.9367 16.1419 62.4505 15.8054 61.338 16.1876C59.9601 16.661 58.8751 18.3922 58.086 19.5457C57.6732 20.1721 57.0169 20.722 56.998 21.5233C56.9379 24.1139 56.9327 26.7166 56.983 29.3076C56.9933 29.8523 57.12 30.1714 57.4525 30.5788C58.0955 31.3674 59.1229 31.1986 59.8578 31.5654L59.8776 31.628L59.714 31.7603C59.7767 31.929 59.8634 31.7765 60.003 31.9942L59.9639 32.0584C59.4455 32.218 52.868 32.2134 52.274 32.0917C52.1992 31.9809 52.2332 31.6375 52.237 31.481C55.1613 31.1319 55.069 30.5068 55.0677 27.8549L55.0668 24.7886L55.0681 21.0209C55.0681 19.6372 55.1699 17.8451 54.3546 16.6874C53.6369 15.7722 51.8535 15.9357 51.006 16.5928C49.9717 17.395 49.2281 18.6417 48.452 19.6823C48.1157 20.1337 47.6238 20.7692 47.5981 21.3263C47.5646 22.0464 47.5774 22.7998 47.568 23.5292C47.5474 24.8498 47.5392 26.1705 47.5431 27.4912C47.5465 28.7011 47.3807 29.6526 48.0843 30.6289C48.6053 31.3526 50.2496 31.3566 50.4145 31.5603C50.4046 31.7824 50.3926 31.8668 50.3437 32.0838C50.1164 32.2838 41.7883 32.0418 40.7774 32.1747C40.534 32.2076 40.1945 32.1358 39.9687 32.1496C37.791 32.283 39.017 28.1538 38.5692 27.7303C38.4796 27.7483 38.4348 27.7721 38.3766 27.8526C36.8281 29.9946 34.5508 32.944 31.5175 32.0229C28.4785 31.1001 28.9559 26.4703 28.9562 23.9538L28.9609 18.6846C28.9616 18.1598 29.0179 16.7218 28.7784 16.313C27.7323 14.6017 27.0219 17.5894 25.6778 17.1091C24.2752 16.608 24.4906 15.0265 26.0491 14.9967C26.3936 14.9902 27.2093 14.9558 27.5315 14.8827C28.749 14.6063 29.5107 14.1316 30.7689 14.5563C30.9712 15.534 30.866 17.4908 30.8721 18.5859C30.8877 21.3731 30.8498 24.1955 30.8756 26.9826C30.898 27.8499 30.9608 29.4969 31.699 30.0875C33.8778 31.8306 36.5997 29.1623 37.8015 27.433C37.9768 27.1808 38.3709 26.6253 38.5468 26.4433L38.5675 26.4222C38.6256 26.4131 38.6577 26.3876 38.7078 26.3572C39.1029 25.4198 38.8711 19.6781 38.9239 18.2924C38.9324 18.0678 38.7935 16.6282 38.7028 16.3497C38.6529 16.3027 38.6091 16.2616 38.5716 16.2262C37.6093 14.8044 36.6715 17.3105 35.57 17.052C34.9821 16.9365 34.5296 16.3759 34.7105 15.7723C35.0298 14.7067 36.5419 15.0227 37.3755 14.8736C38.4393 14.6834 40.7792 13.523 40.7533 15.4779C40.7448 16.1261 40.7319 16.765 40.7287 17.4073L40.7224 23.2363C40.7158 24.6714 40.4689 29.1987 40.9203 30.2931C41.1333 30.8094 41.5281 31.0756 42.0413 31.2425C42.7649 31.4779 43.7765 31.5142 44.4689 31.1603C44.9573 30.9106 45.2829 30.4256 45.4444 29.912C45.7566 28.9181 45.6652 27.0277 45.5969 25.9741C45.5702 25.5645 45.5045 25.152 45.4989 24.7418C45.4817 23.5103 45.9456 21.7074 45.3482 20.5726C45.267 20.4183 45.1458 20.3074 44.9775 20.2573C44.7202 20.181 44.3873 20.1896 44.1493 20.3225C43.5445 20.6607 43.499 22.1793 42.6552 21.9601C42.4903 21.9172 42.2915 21.8702 42.1527 21.7697C42.08 21.6244 42.0371 21.5197 41.9791 21.3675C42.0434 20.947 42.0925 20.8088 42.308 20.4379ZM76.5113 31.7099C76.3838 31.5448 75.6703 31.5945 75.4366 31.6023C75.614 31.8231 76.3103 31.8303 76.5113 31.7099Z" fill="currentColor"/><path d="M75.4355 31.6029C75.6692 31.5951 76.3827 31.5454 76.5102 31.7105C76.3092 31.8309 75.6129 31.8236 75.4355 31.6029Z" fill="currentColor"/><path d="M10.662 26.7299C11.3297 29.5151 13.658 31.8677 16.5889 32.1189C18.4467 32.2781 20.6735 31.9594 22.1608 30.7715C23.37 29.8055 24.2654 28.4365 24.3422 26.8652C24.624 22.7691 20.0493 20.5963 17.0952 18.7975C15.3552 17.6975 13.5969 16.7144 12.211 15.1631C9.71414 12.3683 9.92577 8.72238 12.7184 6.26992C13.1833 5.86159 13.7778 5.51173 14.334 5.22477C17.4613 3.61153 21.6504 4.81733 24.0444 7.20616C24.9395 8.1119 25.5855 10.0176 25.4083 11.2988C25.2873 12.1734 24.9811 12.4058 24.3504 12.9145C23.4658 13.1229 22.4596 12.9742 22.148 11.9752C21.8604 11.0534 22.5418 10.1818 22.9695 9.39495C23.7126 8.02769 22.6573 6.90103 21.5353 6.24414C19.9647 5.409 17.7512 5.19087 16.0347 5.67736C14.1508 6.18206 12.5484 8.93781 13.199 10.7884C15.3963 16.962 23.9617 16.3709 26.2488 22.4481C26.3502 22.7433 26.4107 23.0587 26.456 23.3649C27.0466 27.2881 24.7754 31.4159 20.9654 32.6667C16.4676 34.1434 11.1726 32.6432 8.68223 28.4922C8.29496 27.8467 8.01421 27.5046 7.34242 27.1626C6.4742 27.7016 6.34929 28.4768 6.26906 29.3831C6.12301 31.0331 6.63669 32.2321 7.45638 33.5978C7.70984 34.02 7.67308 34.451 7.5507 34.9342C7.50478 34.9846 7.45736 35.0336 7.40848 35.0811C7.12538 35.3593 6.81048 35.4884 6.41136 35.4807C4.6921 35.4563 4.38151 33.5412 4.46028 32.1924C4.68085 28.4153 6.2103 24.1269 8.98977 21.4966C9.49392 21.55 10.1534 20.7449 10.6325 20.5264C11.1724 20.2802 11.8045 20.1378 12.3865 20.0338L12.2244 20.008L12.2413 19.9667L12.2027 19.9945L12.2299 20.0116L12.2439 19.9683C12.837 19.8775 14.3045 20.1229 15.1742 20.0731C16.1752 20.3153 17.1142 21.3043 17.481 22.2106C17.8285 23.0695 17.7095 24.5127 16.8666 25.0109C15.8436 25.6156 14.219 24.5875 14.684 23.3381C15.0304 22.4075 16.3261 21.6171 14.6672 21.0962C13.8556 20.8422 12.9764 20.9202 12.2222 21.3133C11.436 21.7285 11.016 22.5608 10.7676 23.3815C10.5899 23.9533 10.491 24.5468 10.4738 25.1454C10.4685 25.6646 10.4612 26.24 10.662 26.7299Z" fill="currentColor"/><path d="M78.2575 8.47962C78.5539 8.3332 78.6699 7.87765 78.8163 7.79215C79.7244 7.26175 80.7273 7.386 81.1977 8.4071C81.4923 9.04654 81.3944 9.26948 81.4331 9.89234C81.3652 10.259 80.9584 10.9592 80.6083 11.1027C78.7854 11.8505 77.7395 10.0096 78.2575 8.47962Z" fill="currentColor"/><path d="M71.3179 8.26647C71.6237 8.16924 71.7422 7.83708 71.9686 7.68902C72.3247 7.45594 73.0021 7.43051 73.3801 7.60928C73.8783 7.8553 74.0914 8.15609 74.1459 8.68653L74.1919 8.69891L74.2709 8.51613L74.2962 8.51583C74.4058 8.93014 74.298 9.6388 74.3465 10.1081C73.7288 11.9051 71.5356 11.5158 71.1503 9.83012C71.0369 9.3359 71.0468 8.70982 71.3179 8.26647Z" fill="currentColor"/><path d="M38.5705 16.2266C38.6081 16.2619 38.6518 16.303 38.7018 16.35C38.7924 16.6285 38.9313 18.0682 38.9228 18.2927C38.87 19.6785 39.1018 25.4202 38.7067 26.3575C38.6566 26.3879 38.6246 26.4134 38.5664 26.4226C38.7479 25.9754 38.6699 25.212 38.665 24.703L38.6601 22.3696L38.6623 18.9017C38.6663 18.142 38.7296 16.9197 38.5705 16.2266Z" fill="currentColor"/><path d="M8.99023 21.4939C9.29628 21.176 10.2673 20.5 10.6602 20.3265C12.0983 19.6916 13.6901 19.5442 15.1746 20.0703C14.3049 20.1202 12.8374 19.8747 12.2444 19.9655L12.2304 20.0088L12.2031 19.9917L12.2417 19.9639L12.2249 20.0052L12.387 20.031C11.805 20.135 11.1729 20.2775 10.633 20.5236C10.1539 20.7421 9.49438 21.5472 8.99023 21.4939Z" fill="currentColor"/><path d="M71.3184 8.26639C71.5323 7.80473 71.7221 7.49135 72.2371 7.29655C72.6177 7.15021 73.0408 7.16297 73.4119 7.33191C74.4699 7.82231 74.667 9.09131 74.347 10.1081C74.2985 9.63872 74.4063 8.93006 74.2968 8.51575L74.2714 8.51605L74.1924 8.69883L74.1464 8.68645C74.0919 8.15601 73.8788 7.85522 73.3806 7.6092C73.0026 7.43043 72.3252 7.45586 71.9691 7.68894C71.7427 7.837 71.6242 8.16916 71.3184 8.26639Z" fill="currentColor"/><path d="M78.2559 8.47905C78.4023 8.02178 78.6347 7.59918 79.0849 7.37379C80.6514 6.58921 81.9477 8.50586 81.4314 9.89177C81.3927 9.26891 81.4907 9.04597 81.196 8.40653C80.7257 7.38543 79.7227 7.26118 78.8147 7.79158C78.6682 7.87708 78.5522 8.33263 78.2559 8.47905Z" fill="currentColor"/><path d="M64.8051 32.1676C64.0074 32.2215 63.0848 32.1392 62.2747 32.1557C61.4822 32.1717 61.855 31.9281 61.7305 31.5221C61.855 31.428 61.8868 31.4527 62.0651 31.4297L62.0913 31.531C62.2803 31.6046 62.4577 31.5836 62.5273 31.676C62.4727 31.7709 62.4933 31.7403 62.3705 31.7923C62.0853 31.7542 61.9912 31.6935 61.8452 31.9748C62.3842 32.3061 64.5478 31.9708 64.8051 32.1676Z" fill="currentColor"/></symbol></defs></svg>
+
+<main class="event event--sumii">
+
+  <!-- HERO BAND — tinted panel: text column left, photo card right (Figma 1706:2032 desktop / 1706:1919 mobile) -->
+  <section class="event-hero">
+    <div class="row">
+
+      <div class="text-col">
+        <h1 class="h-title">opening night event&nbsp;-&nbsp;art residency by&nbsp;sumii</h1>
+
+        <div class="h-meta">
+          <div class="row-1"><span class="gallery heb">גלריית כיכר דיזינגוף</span></div>
+          <div class="row-2">
+            <span class="date heb"><bdi>2 ספטמבר 2026</bdi></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span class="time heb">21:00-18:00</span>
+          </div>
+        </div>
+
+        <!-- SUMII LOCKUP (Figma 1706:2082 desktop / 1706:1996 mobile) -->
+        <div class="sumii-lockup">
+          <a class="gname" href="../../">the art gallery by<br>erez zielinski rozen</a>
+          <div class="host">hosting an art residency by</div>
+          <div class="ev-lockup-item">
+            <a class="logo-link" href="../../sponsors/sumii/" aria-label="Sumii — pop up art residency">
+              <svg class="sumii-logo" viewBox="0 0 88 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><use href="#sumii-mark"/></svg>
+            </a>
+            <a class="name artist-link" href="../../artists/shira-turbowicz/">שירה טורבוביץ</a>
+          </div>
+          <div class="ev-scent">
+            <span>scented with</span>
+            <svg class="untilten-logo" viewBox="0 0 89 28" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Until Ten"><path d="M79.5487 0C79.9921 0.0784226 80.0596 0.186903 80.1388 0.602836C82.0692 0.437669 90.5794 -1.0464 88.7422 3.20697C88.5882 3.45358 88.1337 3.55905 87.9248 3.36297C87.6995 3.1442 87.7888 2.84391 87.8763 2.59084C88.2177 1.60777 86.7563 1.38636 86.1089 1.3293C83.8516 1.13035 81.5234 1.48685 79.2922 1.80953C78.9839 2.14714 78.4419 2.91654 78.1548 3.30239C77.3491 4.38083 76.559 5.47079 75.7848 6.57197C72.6431 11.0423 69.464 15.564 67.1187 20.5173C66.637 21.5339 65.5938 23.8416 65.9046 24.9741C65.976 25.2345 66.3198 25.255 66.4121 25.5316C66.4524 25.6526 66.465 25.802 66.4009 25.9172C66.3359 26.0333 66.2135 26.0985 66.0891 26.132C65.8303 26.2019 65.5316 26.1446 65.3019 26.011C65.0241 25.8497 64.8682 25.6067 64.7881 25.3003C63.7793 21.4498 72.3556 9.37739 74.8009 5.93811C75.3764 5.13353 75.9611 4.33589 76.5556 3.54535C76.8688 3.12462 77.3321 2.54328 77.5837 2.11609C77.3059 2.15826 77.0169 2.22929 76.7391 2.28244C72.0336 3.18292 67.3936 4.39429 62.7148 5.41264C61.3875 7.32865 60.0218 8.71472 58.1953 10.1803C55.1579 12.6178 51.8535 14.784 48.57 16.8718L45.8037 18.6245C45.2209 18.993 44.2272 19.4716 43.9533 20.0784C43.5168 21.0453 42.4709 24.1298 43.7887 24.7354L43.8154 24.7475C44.2428 24.9437 45.0402 24.4776 45.4025 24.8991C45.4865 25.1564 45.2729 25.5037 45.0499 25.6222C44.1393 26.1069 42.8431 25.8064 42.3593 24.8585C41.7239 23.6132 42.0743 22.1444 42.4361 20.8737C42.1503 21.0437 41.8986 21.2505 41.5986 21.436C40.2947 22.242 37.6813 24.1518 36.1233 23.2682C34.9708 22.4697 35.9372 20.916 36.4288 20.0197C36.8551 19.2424 37.8232 19.4528 37.5517 20.2467C37.3136 20.844 36.7173 21.4919 36.6966 22.1521C36.7491 22.5885 37.3199 22.5035 37.608 22.4127C39.2972 21.8793 40.7739 20.7772 42.2175 19.7824C42.8819 19.3246 43.235 19.1275 43.5877 18.3761C43.8965 17.718 44.2918 17.023 44.659 16.3911C44.9708 15.8494 45.2952 15.3151 45.6322 14.7888C43.4283 13.983 40.4767 14.0669 38.1427 14.0835C36.9694 15.1253 35.7846 16.3859 34.572 17.4727C33.6835 18.269 32.4412 19.2603 31.7001 20.1184C31.5854 20.2512 30.9331 21.4766 30.8209 21.6857C30.1476 22.9343 29.5211 24.2075 28.9427 25.5028C28.6703 26.1277 28.4549 26.795 28.1498 27.4027C28.0614 27.5787 27.9821 27.7211 27.8011 27.8172C27.6647 27.8896 27.5198 27.8993 27.3738 27.8476C27.2695 27.8106 27.1877 27.7368 27.1447 27.6345C26.8106 26.839 29.2046 22.5069 29.5958 21.5778C28.2818 22.4777 26.3657 23.8755 24.7133 23.8448C23.4336 23.8209 23.2109 22.6364 23.4338 21.6337C23.4697 21.4721 23.4797 21.1102 23.3645 20.9707C22.868 20.8366 20.4012 23.1984 19.73 23.537C19.5081 23.6489 19.1442 23.7834 18.8971 23.6922C18.7952 23.6546 18.7267 23.5889 18.6858 23.4872C18.5777 23.218 18.7099 22.8045 18.8165 22.5517C19.1385 21.7882 21.0694 18.7014 21.7535 18.4376C21.8643 18.395 21.97 18.3905 22.0777 18.4436C22.216 18.5117 22.3533 18.6148 22.3994 18.7685C22.512 19.1432 21.1261 20.8182 20.857 21.31C21.0588 21.144 21.2626 20.9805 21.4686 20.8196C22.3743 20.1227 24.3708 19.064 24.5882 20.9734C24.6369 21.4016 24.3828 22.4244 24.5974 22.7033C25.5714 23.3362 30.4855 19.9174 31.0196 19.0819C31.9081 17.6919 33.2072 15.6288 34.1763 14.1951C33.7237 14.1754 32.9647 14.2261 32.4924 14.2402C31.2228 14.2788 29.9534 14.3259 28.6844 14.3814C28.0914 14.4054 27.5161 14.4366 26.9112 14.4385C26.0878 14.5392 26.0885 13.4832 26.6941 13.4515C29.1715 13.3216 32.5718 13.1397 34.978 13.106C35.5658 12.3014 36.1821 11.518 36.8257 10.7573C37.6911 9.73278 41.6538 5.01061 42.8916 7.11746C43.6284 8.37187 39.9321 12.1661 39.1739 13.0055C41.8804 13.0511 43.6435 13.0039 46.2364 13.9052C48.5054 10.396 51.6102 6.82985 54.9637 4.20798C56.4838 3.01939 61.1 0.302856 63.0407 2.4536C63.4423 2.89842 63.368 3.65486 63.2757 4.23081C66.5763 3.42263 69.8865 2.65546 73.206 1.92949C75.0204 1.53771 76.8266 1.22441 78.6186 0.845809C78.9319 0.434487 79.0722 0.173494 79.5487 0ZM47.2106 14.4645C47.9459 15.3097 47.3719 15.8748 46.5773 15.3898C46.1538 16.0421 45.4885 17.0984 45.1514 17.798C45.4093 17.6459 45.6225 17.5202 45.8673 17.3442C48.5744 15.6009 51.2984 13.8651 53.9166 11.9878C56.4823 10.1484 59.0918 8.22972 61.1121 5.77711C61.6842 5.08261 63.1708 3.07988 61.4783 2.72139C61.2811 2.67956 60.9353 2.66042 60.7352 2.68709C56.7082 3.15305 51.9385 8.20917 49.5141 11.3278C48.9143 12.0993 47.7109 13.6392 47.2106 14.4645ZM36.6002 13.0549C36.9692 13.0541 37.2041 13.0488 37.5753 13.0091C38.3477 12.2169 41.8567 8.67071 41.8025 7.70152L41.7177 7.65629C40.2626 8.43683 37.5594 11.4765 36.5083 12.9774C36.5069 12.9828 36.5054 12.9882 36.504 12.9937C36.5581 13.0516 36.5365 13.0462 36.6002 13.0549ZM34.6717 15.8418C35.2329 15.2824 35.9096 14.6866 36.4368 14.1317L35.6167 14.1392C35.3574 14.4997 34.4791 15.6718 34.3539 16.0275L34.3927 16.0738C34.5279 15.9866 34.5615 15.959 34.6717 15.8418Z" fill="currentColor"/><path d="M8.88818 0.989507C9.63343 0.91349 10.5476 1.04895 11.2065 1.39443C11.7582 1.68375 12.2078 2.15729 12.3913 2.75991C12.5844 3.39387 12.4993 4.08821 12.2951 4.70784C11.4764 7.19106 8.65711 10.1099 7.00184 12.163C5.74981 13.7161 4.455 15.3115 3.51258 17.0759C3.04027 17.9601 2.46404 19.2322 2.7753 20.2386C2.86534 20.5297 3.03658 20.7668 3.31098 20.91C3.8946 21.2144 4.64994 20.9935 5.21685 20.7576C8.43477 19.4188 15.909 12.5023 18.1314 9.6702C18.7114 8.93111 19.2435 8.15538 19.7784 7.3835C20.1038 6.91404 20.4199 6.36189 20.8343 5.96823C20.9283 5.87893 21.0379 5.83079 21.1604 5.79386C21.3209 5.74552 21.4565 5.72905 21.6077 5.81145C21.7916 6.00918 21.7789 6.27678 21.7136 6.52372C21.5209 7.25281 19.9856 9.29285 19.4986 10.0335C17.7408 12.7061 12.672 20.7148 13.1695 23.6965C13.2009 23.8849 13.2675 24.0923 13.4328 24.2047C13.8065 24.4585 14.3834 24.0147 14.7759 23.95C14.9136 23.9272 15.0085 23.941 15.1218 24.0225C15.9255 25.1337 11.4707 27.0657 12.0923 22.2844C12.5449 19.7309 14.4868 16.2308 15.7405 13.931C15.0228 14.4987 14.3621 15.1755 13.6809 15.7904C11.5947 17.6738 7.8006 21.1297 5.10593 21.9043C4.29497 22.1374 3.40782 22.1875 2.64913 21.7617C2.1437 21.478 1.80131 21.0072 1.64546 20.4514C0.548167 16.5386 8.7099 8.97813 10.6892 5.47404C11.0718 4.7967 11.5049 3.8984 11.2806 3.10844C11.1804 2.75573 10.9557 2.48133 10.6363 2.30371C9.68704 1.77581 8.33167 1.97874 7.3264 2.26864C5.09815 2.91115 3.0937 4.41095 1.9693 6.45323C1.43886 7.41668 0.87759 9.03809 1.23605 10.1123C1.35048 10.4552 1.71686 10.7107 1.80845 11.0675C1.84735 11.2189 1.81544 11.2866 1.7409 11.4119C0.694497 12.13 0.00539611 10.4545 0.000151001 9.62817C-0.0299598 4.87832 4.44825 1.28706 8.88818 0.989507Z" fill="currentColor"/><path d="M80.7622 13.8459C82.3144 13.6769 80.9453 15.3112 80.6423 15.7852C80.247 16.4095 79.8808 17.0516 79.5442 17.7093C80.1222 17.1627 80.9162 16.4403 81.7486 16.4087C82.0371 16.3966 82.3183 16.5031 82.5266 16.7034C83.1371 17.2957 82.4072 18.6054 82.8516 19.0288C83.6349 19.2669 85.4241 17.0409 86.0574 17.6071C86.1404 17.6813 86.19 17.7864 86.1939 17.898C86.2172 18.5456 82.7763 20.9418 81.9094 19.7968C81.2256 18.8945 81.7001 18.392 81.6937 17.4518C80.1445 17.9781 78.2451 21.0841 77.6249 21.3301C77.4986 21.3801 77.3486 21.3941 77.2228 21.3369C77.1193 21.29 77.045 21.2124 77.0076 21.1047C76.81 20.5434 77.5865 19.2891 77.8362 18.7696C77.8842 18.6916 77.8872 18.6592 77.9051 18.5711C77.7963 18.5652 76.3102 19.6581 76.0577 19.8105C74.929 20.4907 73.3628 21.3466 72.0087 21.0035C71.6013 20.9003 71.256 20.6927 71.0374 20.3251C70.7941 19.9146 70.8276 19.3232 70.9422 18.8763C71.1851 17.9305 71.9476 16.7665 72.7955 16.2747C73.1432 16.0732 73.5599 15.9475 73.9582 16.0585C74.1835 16.1214 74.37 16.2359 74.4832 16.447C74.626 16.7137 74.6002 17.0352 74.5118 17.3153C74.2928 18.0119 73.5599 18.606 72.9276 18.9168C72.6615 19.0475 72.3633 19.1381 72.1064 19.2817C71.9951 19.344 71.9738 19.416 71.9403 19.5304C72.289 21.7671 78.7497 16.8032 79.1708 16.0173C79.434 15.5267 80.4364 14.0893 80.7622 13.8459Z" fill="currentColor"/></svg>
+            <span>by zielinski rozen</span>
+          </div>
+          <div class="ev-reg heb">בהרשמה מראש בלבד במייל<br><a class="lat" href="mailto:info@sumiiworld.com">info@sumiiworld.com</a></div>
+        </div>
+
+        <div class="h-address">
+          THE art GALLERY by erez ZiELINSKI &amp; ROZEN<br>
+          Dizengoff Square<br>
+          1 Reines st. tel aviv
+        </div>
+      </div>
+
+      <div class="img-col">
+        <div class="card">
+          <img src="../../images/sponsors/sumii/hero.webp" srcset="../../images/sponsors/sumii/hero-480w.webp 480w, ../../images/sponsors/sumii/hero-768w.webp 768w, ../../images/sponsors/sumii/hero-1080w.webp 1080w, ../../images/sponsors/sumii/hero.webp 1620w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="1620" height="2160" alt="פסל דמות נשית של SUMII בחומר שחור מבריק — ערב הפתיחה של הרזידנסי בגלריית כיכר דיזינגוף" decoding="async" fetchpriority="high">
+          <div class="ev-cobrand" aria-hidden="true">
+            <div class="gname"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</div>
+            <div class="x">X</div>
+            <svg class="sumii-logo" viewBox="0 0 88 40" fill="none" xmlns="http://www.w3.org/2000/svg"><use href="#sumii-mark"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOMENTS — 10 photos from the opening night (Figma strip 1815:651 desktop / 1815:623 mobile;
+       photos = the loose nodes 1815:665–674 next to the frame). Slide order = the Figma trio
+       first: moment-01 = left peek (1815:674), moment-02 = centre (1815:673, data-tri-start="1",
+       0-indexed), moment-03 = right peek (1815:672); then 1815:665 → 671 in node order.
+       Every photo is 4:5, so cover in the 481×841 centre renders ~673px wide (sizes below). -->
+  <section class="event-moments" aria-label="צילומים מערב הפתיחה">
+    <div class="inner">
+      <div class="tri" data-tri-loop="true" data-tri-start="1" data-tri-lightbox="true" data-artwork-gallery="event-moments">
+        <div class="tri-frame">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-01.webp" srcset="../../images/events/sumii-opening/moment-01-480w.webp 480w, ../../images/events/sumii-opening/moment-01-768w.webp 768w, ../../images/events/sumii-opening/moment-01-1080w.webp 1080w, ../../images/events/sumii-opening/moment-01.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="מבט מתוך הגלריה אל כיכר דיזינגוף — מבקרות חולפות מול חלון הראווה ופסלוני SUMII על מדף החלון" data-artwork-src="../../images/events/sumii-opening/moment-01.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-02.webp" srcset="../../images/events/sumii-opening/moment-02-480w.webp 480w, ../../images/events/sumii-opening/moment-02-768w.webp 768w, ../../images/events/sumii-opening/moment-02-1080w.webp 1080w, ../../images/events/sumii-opening/moment-02.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="פסל דמות נשית שחור של SUMII לצד בקבוק בושם לחדר של זילינסקי רוזן ומנגו התלוי על ענף" data-artwork-src="../../images/events/sumii-opening/moment-02.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-03.webp" srcset="../../images/events/sumii-opening/moment-03-480w.webp 480w, ../../images/events/sumii-opening/moment-03-768w.webp 768w, ../../images/events/sumii-opening/moment-03-1080w.webp 1080w, ../../images/events/sumii-opening/moment-03.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="חזית גלריית כיכר דיזינגוף ומדבקות חלון הראווה של הרזידנסי של SUMII" data-artwork-src="../../images/events/sumii-opening/moment-03.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-04.webp" srcset="../../images/events/sumii-opening/moment-04-480w.webp 480w, ../../images/events/sumii-opening/moment-04-768w.webp 768w, ../../images/events/sumii-opening/moment-04-1080w.webp 1080w, ../../images/events/sumii-opening/moment-04.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="פסלוני SUMII בגוני כסף ושחור על בד לבן, לצד פמוט זיגזג ונר אדום" data-artwork-src="../../images/events/sumii-opening/moment-04.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-05.webp" srcset="../../images/events/sumii-opening/moment-05-480w.webp 480w, ../../images/events/sumii-opening/moment-05-768w.webp 768w, ../../images/events/sumii-opening/moment-05-1080w.webp 1080w, ../../images/events/sumii-opening/moment-05.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="אגרטל שחור עם ענפי רימונים ומנגו על רקע בד סאטן לבן" data-artwork-src="../../images/events/sumii-opening/moment-05.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-06.webp" srcset="../../images/events/sumii-opening/moment-06-480w.webp 480w, ../../images/events/sumii-opening/moment-06-768w.webp 768w, ../../images/events/sumii-opening/moment-06-1080w.webp 1080w, ../../images/events/sumii-opening/moment-06.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="מבט על המיצב — פסלוני SUMII קטנים פזורים על בד לבן, עם נרות אדומים וענפי פרי" data-artwork-src="../../images/events/sumii-opening/moment-06.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-07.webp" srcset="../../images/events/sumii-opening/moment-07-480w.webp 480w, ../../images/events/sumii-opening/moment-07-768w.webp 768w, ../../images/events/sumii-opening/moment-07-1080w.webp 1080w, ../../images/events/sumii-opening/moment-07.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="אגרטל לבן בצורת טורסו נשי עם ענפים יבשים על רקע שרכים ירוקים" data-artwork-src="../../images/events/sumii-opening/moment-07.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-08.webp" srcset="../../images/events/sumii-opening/moment-08-480w.webp 480w, ../../images/events/sumii-opening/moment-08-768w.webp 768w, ../../images/events/sumii-opening/moment-08-1080w.webp 1080w, ../../images/events/sumii-opening/moment-08.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="מפזר ריח שחור של זילינסקי רוזן, פסלון על קני הריח, מאחורי זכוכית חלון הראווה" data-artwork-src="../../images/events/sumii-opening/moment-08.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-09.webp" srcset="../../images/events/sumii-opening/moment-09-480w.webp 480w, ../../images/events/sumii-opening/moment-09-768w.webp 768w, ../../images/events/sumii-opening/moment-09-1080w.webp 1080w, ../../images/events/sumii-opening/moment-09.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="פסל דמות כסוף של SUMII ולימון ירוק בין קפלי בד לבן וענפים" data-artwork-src="../../images/events/sumii-opening/moment-09.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/sumii-opening/moment-10.webp" srcset="../../images/events/sumii-opening/moment-10-480w.webp 480w, ../../images/events/sumii-opening/moment-10-768w.webp 768w, ../../images/events/sumii-opening/moment-10-1080w.webp 1080w, ../../images/events/sumii-opening/moment-10.webp 1280w" sizes="(max-width:768px) 303px, (max-width:1319px) 532px, 673px" width="1280" height="1600" alt="פסל טורסו שחור של SUMII מתחת לסידור ענפים עם רימונים ומנגו, לצד נר אדום" data-artwork-src="../../images/events/sumii-opening/moment-10.webp" data-artwork-title="moments from the opening night" draggable="false" decoding="async" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="event-artists" aria-label="האומנים באירוע">
+    <div class="inner">
+      <div class="head">
+        <div class="label">artists</div>
+        <span class="more" aria-hidden="true">
+          <svg viewBox="0 0 11 11" fill="none" aria-hidden="true"><path d="M0.926778 11.0004L0 10.0736L8.73379 1.33128H0.793662V0H11.0004V10.2067H9.6691V2.2666L0.926778 11.0004Z" fill="currentColor"/></svg>
+        </span>
+      </div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../artists/shira-turbowicz/" aria-label="shira turbowicz">
+          <div class="img"><img src="../../images/artists/grid/shira-turbowicz.webp" srcset="../../images/artists/grid/shira-turbowicz-480w.webp 480w, ../../images/artists/grid/shira-turbowicz.webp 810w" sizes="(max-width:768px) 96px, 178px" width="810" height="810" alt="shira turbowicz" decoding="async" loading="lazy"></div>
+          <div class="name">shira<br>turbowicz</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/triptych-gallery.js" defer></script>
+<script src="../../components/artwork-lightbox.js" defer></script>
+<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>
