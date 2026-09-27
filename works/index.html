@@ -1938,7 +1938,7 @@ body{text-transform:uppercase}
   {
     "id": "shira-turbowicz-1",
     "artist_slug": "shira-turbowicz",
-    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_he": "שירה טורבוביץ | sumii",
     "artist_en": "shira turbowicz",
     "title_he": "גאיה, אלת האדמה",
     "title_en": "Gaia",
@@ -1964,7 +1964,7 @@ body{text-transform:uppercase}
   {
     "id": "shira-turbowicz-2",
     "artist_slug": "shira-turbowicz",
-    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_he": "שירה טורבוביץ | sumii",
     "artist_en": "shira turbowicz",
     "title_he": "סוניה דלונה | 1885–1979",
     "title_en": "Sonia Delaunay",
@@ -1990,7 +1990,7 @@ body{text-transform:uppercase}
   {
     "id": "shira-turbowicz-3",
     "artist_slug": "shira-turbowicz",
-    "artist_he": "שירה טורבוביץ׳ | sumii",
+    "artist_he": "שירה טורבוביץ | sumii",
     "artist_en": "shira turbowicz",
     "title_he": "ניקי דה סן פאל | 1930–2002",
     "title_en": "Niki de Saint Phalle",
@@ -4037,7 +4037,7 @@ body{text-transform:uppercase}
     var href = '../artists/'+w.artist_slug+'/';
     var cls  = w.artist_he ? 'is-he' : 'is-en';
     var name = w.artist_he || w.artist_en;
-    /* mixed Hebrew+Latin credit (e.g. "שירה טורבוביץ׳ | sumii") → Latin run in Copperplate (golden rule 4) */
+    /* mixed Hebrew+Latin credit (e.g. "שירה טורבוביץ | sumii") → Latin run in Copperplate (golden rule 4) */
     var inner = (w.artist_he && /[A-Za-z]/.test(w.artist_he)) ? latHtml(w.artist_he) : esc(name);
     return '<a class="artist '+cls+'" href="'+href+'">'+inner+'</a>';
   }

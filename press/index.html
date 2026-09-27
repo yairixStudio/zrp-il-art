@@ -60,7 +60,7 @@ body{text-transform:uppercase}
    The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
    the static repeat(16,…) is only the no-JS fallback for all 31 cards.
    ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(18,auto));grid-auto-flow:column;gap:48px;direction:rtl}
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(19,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -186,8 +186,35 @@ body{text-transform:uppercase}
      the-space-between (3.9) postdates the frame and was added at the top. -->
 <section class="cards" id="press-list" aria-label="press and events archive">
 
+  <a class="pcard" data-kind="event" data-date="2026-09-24" href="../events/zohar-ron-medina/">
+    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk<br>with zohar ron</p>
+      <span class="date">24.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-17" href="#">
+    <div class="img"><img src="../images/events/nir-giorgio-levin-medina/list-card.webp" srcset="../images/events/nir-giorgio-levin-medina/list-card-480w.webp 480w, ../images/events/nir-giorgio-levin-medina/list-card-768w.webp 768w, ../images/events/nir-giorgio-levin-medina/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk with nir giorgio levin</p>
+      <span class="date">17.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-17" href="#">
+    <div class="img"><img src="../images/events/yom-kippur-wish-tree/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">yom kippur event // wish tree</p>
+      <span class="date"><bdi dir="ltr">17.09.26 - 18.09.26</bdi></span>
+    </div>
+  </a>
+
   <a class="pcard" data-kind="event" data-date="2026-09-10" href="../events/jessica-tabarovsky/">
-    <div class="img"><img src="../images/events/jessica-tabarovsky/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="img"><img src="../images/events/jessica-tabarovsky/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk<br>with jessica tabarovsky</p>
@@ -195,21 +222,12 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard" data-kind="event" data-date="2026-09-24" href="../events/zohar-ron-medina/">
-    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
-    <div class="info">
-      <span class="tag en">gallery event</span>
-      <p class="ttl en">artist talk<br>with zohar ron</p>
-      <span class="date">9.9.2026</span>
-    </div>
-  </a>
-
   <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-08" href="#">
-    <div class="img"><img src="../images/events/nir-giorgio-levin-medina/list-card.webp" srcset="../images/events/nir-giorgio-levin-medina/list-card-480w.webp 480w, ../images/events/nir-giorgio-levin-medina/list-card-768w.webp 768w, ../images/events/nir-giorgio-levin-medina/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="img"><img src="../images/events/sumii-melani-hosting/list-card.webp" srcset="../images/events/sumii-melani-hosting/list-card-480w.webp 480w, ../images/events/sumii-melani-hosting/list-card-768w.webp 768w, ../images/events/sumii-melani-hosting/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
-      <p class="ttl en">artist talk with nir giorgio levin</p>
-      <span class="date">8.9.2026</span>
+      <p class="ttl en">hosting event sumii &amp; melani hekimoglu</p>
+      <span class="date"><bdi dir="ltr">8.9.2026 - 11.9.2026</bdi></span>
     </div>
   </a>
 

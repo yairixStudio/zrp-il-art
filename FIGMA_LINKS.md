@@ -362,7 +362,7 @@ tali-zelnik מובייל: Implement this design from Figma.
 
 ### shira-turbowicz — דף אומנית מלא (2026-08-20, `landing`)
 
-> אומנית חדשה **ללא תערוכה** — שירה טורבוביץ׳ / המותג **SUMII** (POP UP ART RESIDENCY בכיכר דיזינגוף, אוצרות קורין אברהם). פריים מובייל 390px בלבד (⚠️ שם ה-node "artist5" = תבנית טלי זלניק שמוחזרה; הכרטיסים נושאים fills-leftover של tali-zelnik-1 מתחת לתמונות האמיתיות — זוהו ברינדור-node). ביו 5 פסקאות + 3 יצירות (`1608:5782/5773`, `1609:5896`) + רצועת `the curator` (`1609:5935`). הכתיב **"טורבוביץ׳"** (כאן, ×5) הוא הקנוני — בפריימי `/sponsors/sumii/` נכתב "טורוביץ׳".
+> אומנית חדשה **ללא תערוכה** — שירה טורבוביץ / המותג **SUMII** (POP UP ART RESIDENCY בכיכר דיזינגוף, אוצרות קורין אברהם). פריים מובייל 390px בלבד (⚠️ שם ה-node "artist5" = תבנית טלי זלניק שמוחזרה; הכרטיסים נושאים fills-leftover של tali-zelnik-1 מתחת לתמונות האמיתיות — זוהו ברינדור-node). ביו 5 פסקאות + 3 יצירות (`1608:5782/5773`, `1609:5896`) + רצועת `the curator` (`1609:5935`). הכתיב **"טורבוביץ"** (כאן, ×5) הוא הקנוני — בפריימי `/sponsors/sumii/` נכתב "טורוביץ׳".
 
 shira-turbowicz מובייל: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1608-5728&m=dev

@@ -99,7 +99,7 @@
       "tag_en": "gallery event",
       "title_he": "קָמִיעַ — שיח גלריה עם זוהר רון",
       "title_en": "artist talk with zohar ron",
-      "date": "2026-09-09",
+      "date": "2026-09-24",
       "cover_image": "images/events/zohar-ron-medina/list-card.webp",
       "exhibition_id": "the-peeler",
       "homepage_visible": false,
@@ -505,12 +505,40 @@
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — כיכר המדינה",
       "title_en": "artist talk with nir giorgio levin",
-      "date": "2026-09-08",
+      "date": "2026-09-17",
       "cover_image": "images/events/nir-giorgio-levin-medina/list-card.webp",
       "exhibition_id": "the-peeler",
       "homepage_visible": false,
       "route": null,
       "_route_note": "אין דף אירוע (אין פריימי דף בפיגמה — רק כרטיס רשימה) ⇒ כרטיס pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray. ה-id וה-slug נושאים סיומת -medina כי nir-giorgio-levin תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026)."
+    },
+    {
+      "id": "event-yom-kippur-wish-tree",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "אירוע יום כיפור — עץ המשאלות",
+      "title_en": "yom kippur event // wish tree",
+      "date": "2026-09-17",
+      "date_end": "2026-09-18",
+      "cover_image": "images/events/yom-kippur-wish-tree/list-card.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "route": null,
+      "_route_note": "אין דף אירוע (רק כרטיס רשימה בפריים /press/ 1323:528) ⇒ pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray/sumii-opening. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, sitemap."
+    },
+    {
+      "id": "event-sumii-melani-hosting",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "אירוח — SUMII ומלאני הקימוגלו",
+      "title_en": "hosting event sumii & melani hekimoglu",
+      "date": "2026-09-08",
+      "date_end": "2026-09-11",
+      "cover_image": "images/events/sumii-melani-hosting/list-card.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "route": null,
+      "_route_note": "אין דף אירוע (רק כרטיס רשימה בפריים /press/ 1323:528) ⇒ pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray/sumii-opening. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, sitemap."
     }
   ]
 }
