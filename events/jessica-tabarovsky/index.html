@@ -137,8 +137,13 @@ a.artist-card:hover .name{color:var(--ink)}
 .event-moments .tri-frame{height:841px;aspect-ratio:auto;max-width:1248px}
 .event-moments .tri-slide.is-center{width:481px;height:841px;object-fit:cover}
 .event-moments .tri-slide.is-prev,.event-moments .tri-slide.is-next{width:302px;height:528px;opacity:.6;object-fit:cover}
-.event-moments .tri-slide.is-prev{left:calc(50% - 472.5px)}
-.event-moments .tri-slide.is-next{left:calc(50% + 472.5px)}
+/* Peeks are pinned to the frame edges (centre 151.5px in from each side) — Figma's row is
+   space-between, and at 1440+ (frame 1248) this is exactly 50% ∓ 472.5px. Between 1320 and 1439
+   --pad-x is already 96 and the frame is only 1128–1247 wide; the old 50% ∓ 472.5px offsets
+   pushed both peeks up to ~60px past the frame's overflow:hidden edges. Pinning keeps them whole
+   and lets the gaps shrink instead (81 → 21.5 at 1320). */
+.event-moments .tri-slide.is-prev{left:151.5px}
+.event-moments .tri-slide.is-next{left:calc(100% - 151.5px)}
 .event-moments .tri-slide.is-hidden{width:481px;height:841px}
 
 /* artist-link injected: every artist mention links to its page (docs/artist-linking.md) */
@@ -146,7 +151,16 @@ a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba
 a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 /* ===== RESPONSIVE ===== */
-@media (min-width:1320px){ :root{--pad-x:96px} }
+@media (min-width:1320px){
+  :root{--pad-x:96px}
+  /* 1320–1439: the text column is 556–675px, but "jessica tabarovsky" needs 669px at 53px, so
+     the name broke onto a third line (baruch-torgeman precedent, same band). Size the title off
+     the column itself: 7.85cqi keeps the name ~1% inside it, and min() pins exactly 53/48 once
+     the column reaches its full 676px — ≥1440 renders unchanged. Container units also absorb a
+     classic (Windows) scrollbar, which a vw formula cannot. No cqi support ⇒ plain 53/48. */
+  .event-hero .text-col{container-type:inline-size}
+  .h-title{font-size:min(53px,7.85cqi);line-height:min(48px,.9057em)}
+}
 
 /* Narrow desktop / tablet — shrink the photo and the display title together */
 @media (max-width:1319px) and (min-width:769px){
@@ -256,7 +270,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta name="twitter:title" content="Artist Talk with Jessica Tabarovsky | Kikar Hamedina — Zielinski &amp; Rozen">
 <meta name="twitter:description" content="שיחת אמנים עם ג׳סיקה טברובסקי — בין השפה המדוברת, שפת הציור ושפת הגוף, מפגש דו-כיווני של השראה בין האומנית לבין הקהל. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב, 10 בספטמבר 2026, 19:00–20:30.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/events-jessica-tabarovsky-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/jessica-tabarovsky/#event","url":"https://art.zrp.co.il/events/jessica-tabarovsky/","name":"Artist Talk with Jessica Tabarovsky — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-jessica-tabarovsky-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@id":"https://art.zrp.co.il/#org"},"startDate":"2026-09-10T19:00:00+03:00","endDate":"2026-09-10T20:30:00+03:00","description":"בין השפה המדוברת, שפת הציור, ושפת הגוף. מפגש דו-כיווני של השראה בין האומנית לבין הקהל כיוצר. מלווה ביין וגבינות. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Jessica Tabarovsky — Kikar Hamedina","item":"https://art.zrp.co.il/events/jessica-tabarovsky/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/jessica-tabarovsky/#event","url":"https://art.zrp.co.il/events/jessica-tabarovsky/","name":"Artist Talk with Jessica Tabarovsky — Kikar Hamedina","image":"https://art.zrp.co.il/og/events-jessica-tabarovsky-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/medina/#gallery","name":"Kikar Hamedina Gallery","url":"https://art.zrp.co.il/galleries/medina/","address":{"@type":"PostalAddress","streetAddress":"Jabotinsky 131","addressLocality":"Tel Aviv","addressCountry":"IL"}},"startDate":"2026-09-10T19:00:00+03:00","endDate":"2026-09-10T20:30:00+03:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","performer":{"@type":"Person","name":"Jessica Tabarovsky","url":"https://art.zrp.co.il/artists/jessica-tabarovsky/"},"description":"בין השפה המדוברת, שפת הציור, ושפת הגוף. מפגש דו-כיווני של השראה בין האומנית לבין הקהל כיוצר. מלווה ביין וגבינות. במסגרת תערוכת הקולפן, גלריית כיכר המדינה תל אביב."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artist Talk with Jessica Tabarovsky — Kikar Hamedina","item":"https://art.zrp.co.il/events/jessica-tabarovsky/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -277,7 +291,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
           <div class="row-2">
             <span class="date heb"><bdi>10 ספטמבר 2026</bdi></span>
             <span class="dot" aria-hidden="true"></span>
-            <span class="time heb"><bdi>20:30-19:00</bdi></span>
+            <span class="time heb">20:30-19:00</span>
           </div>
         </div>
 
