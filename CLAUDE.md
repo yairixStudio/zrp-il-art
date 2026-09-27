@@ -153,7 +153,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 - **גנרטור:** `/tmp/.../gen_event_pages.py` (לא בריפו) — CSS משותף + בלוקי תוכן לכל עמוד.
 - ~~`homepage_visible:false`~~ **עודכן בהמשך אותו יום: `homepage_visible:true` בכל החמישה** — נוספו ככרטיסים בראש סקשן `#press` בעמוד הבית (3 שורות חדשות: risa+zohar / nir+liel / natasha יחיד), + רשומות `press.json` (type event) + `homepage.json item_ids` + sitemap.xml (בקשת המשתמש 2026-07-09 ערב).
 
-### 🆕 וריאנט "אירועי רזידנסי SUMII" (2026-09-27; בסיס `events/niki-de-saint-phalle-day/`)
+**🆕 וריאנט "אירועי רזידנסי SUMII" (2026-09-27; בסיס `events/niki-de-saint-phalle-day/`):**
 
 `niki-de-saint-phalle-day`, `sumii-opening`, `sumii-melani-hosting`, `yom-kippur-wish-tree`, `sumii-live-studio` — מעטפת artist-talk **בלי תערוכה** (כיכר דיזינגוף). את `.h-body`/`.h-presented` מחליפים בלוקים לשימוש חוזר; **להעתיק מעמוד הבסיס verbatim** ואז למדוד מחדש (שמות הפריימים בפיגמה — "event- artist talk with שירה טורבוביץ" — משקרים בכולם).
 
