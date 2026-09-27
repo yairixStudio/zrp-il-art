@@ -342,12 +342,17 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
-  <!-- MOMENTS — 8 photos from the evening itself (Figma 1886:1347 desktop / 1886:1417 mobile).
+  <!-- MOMENTS — all 13 supplied photos (Figma carousel 1886:1347 desktop / 1886:1417 mobile draws
+       only the first 3; the rest are the loose nodes 1886:1434–1446, per user decision 2026-09-27
+       to include everything rather than omit the low-quality ones).
        Slide order is the Figma triple first: moment-01 = left peek (1886:1434 / f6f76848),
        moment-02 = centre (data-tri-start="1", 0-indexed; 1886:1435 / 1efc0fbc — the visible fill,
        RMSE 1.0% vs 28–36% for the hidden leftovers), moment-03 = right peek (1886:1436 / 55c2d621);
-       the rest follow the order the photos were supplied in. Omitted: the blurry video still
-       (1886:1438) and the four baked 2×2 collages (1886:1441/1443/1444/1445).
+       moment-04..08 follow the order the photos were supplied in (1886:1437/1439/1440/1442/1446).
+       moment-09..12 = the four baked 2×2 WhatsApp collages (1886:1441/1443/1444/1445) — each is a
+       SINGLE image with 4 photos already baked into the pixels, not 4 separate slides; shown as-is
+       (no cropping into quadrants). moment-13 = the blurry 464×832 video still (1886:1438), kept at
+       its native resolution — no upscale, no responsive variants below that width.
        Photos, not artworks: no artist link on the slides; centre-click opens the lightbox
        (docs/components.md §1.7 — event-photo sliders). -->
   <section class="event-moments" aria-label="צילומים מהאירוע">
@@ -362,6 +367,11 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
           <img class="tri-slide" src="../../images/events/maria-artamonova/moment-06.webp" srcset="../../images/events/maria-artamonova/moment-06-480w.webp 480w, ../../images/events/maria-artamonova/moment-06-768w.webp 768w, ../../images/events/maria-artamonova/moment-06.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="משתתפת מצלמת במראה כוס יין בנרתיק מקרמה התלויה על צווארה" data-artwork-src="../../images/events/maria-artamonova/moment-06.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
           <img class="tri-slide" src="../../images/events/maria-artamonova/moment-07.webp" srcset="../../images/events/maria-artamonova/moment-07-480w.webp 480w, ../../images/events/maria-artamonova/moment-07-768w.webp 768w, ../../images/events/maria-artamonova/moment-07.webp 888w" sizes="(max-width:768px) 216px, 481px" width="888" height="1600" alt="שלוש משתתפות מצטלמות מול קיר המקרמה ומדפי הבשמים" data-artwork-src="../../images/events/maria-artamonova/moment-07.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
           <img class="tri-slide" src="../../images/events/maria-artamonova/moment-08.webp" srcset="../../images/events/maria-artamonova/moment-08-480w.webp 480w, ../../images/events/maria-artamonova/moment-08-768w.webp 768w, ../../images/events/maria-artamonova/moment-08.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="משתתפת מחזיקה בקבוק בושם עטוף מקרמה ונשענת על עמוד החוטים הצבעוני" data-artwork-src="../../images/events/maria-artamonova/moment-08.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/maria-artamonova/moment-09.webp" srcset="../../images/events/maria-artamonova/moment-09-480w.webp 480w, ../../images/events/maria-artamonova/moment-09-768w.webp 768w, ../../images/events/maria-artamonova/moment-09.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="קולאז׳ ארבע תמונות: כוסות מקרמה תלויות, מריה עם חברה, מריחת בושם וקרוב מצמוד מקרמה" data-artwork-src="../../images/events/maria-artamonova/moment-09.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/maria-artamonova/moment-10.webp" srcset="../../images/events/maria-artamonova/moment-10-480w.webp 480w, ../../images/events/maria-artamonova/moment-10-768w.webp 768w, ../../images/events/maria-artamonova/moment-10.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="קולאז׳ ארבע תמונות של זוגות מצטלמים מול קיר המקרמה" data-artwork-src="../../images/events/maria-artamonova/moment-10.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/maria-artamonova/moment-11.webp" srcset="../../images/events/maria-artamonova/moment-11-480w.webp 480w, ../../images/events/maria-artamonova/moment-11-768w.webp 768w, ../../images/events/maria-artamonova/moment-11.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="קולאז׳ ארבע תמונות של משתתפות צוחקות ומצטלמות בערב האירוע" data-artwork-src="../../images/events/maria-artamonova/moment-11.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/maria-artamonova/moment-12.webp" srcset="../../images/events/maria-artamonova/moment-12-480w.webp 480w, ../../images/events/maria-artamonova/moment-12-768w.webp 768w, ../../images/events/maria-artamonova/moment-12.webp 900w" sizes="(max-width:768px) 216px, 481px" width="900" height="1600" alt="קולאז׳ ארבע תמונות קבוצתיות של המבקרות בערב האירוע" data-artwork-src="../../images/events/maria-artamonova/moment-12.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
+          <img class="tri-slide" src="../../images/events/maria-artamonova/moment-13.webp" width="464" height="832" alt="כוסות מקרמה ורודות וצהובות בחלון הראווה בשעת בין ערביים, עם רחוב ואופניים ברקע" data-artwork-src="../../images/events/maria-artamonova/moment-13.webp" data-artwork-title="moments from the artist talk" draggable="false" decoding="async" loading="lazy">
         </div>
       </div>
     </div>
