@@ -67,7 +67,9 @@ body{text-transform:uppercase}
 .ex-hero .badge.status-badge{font-family:var(--cop);font-weight:300;font-size:18px;letter-spacing:.04em}
 .ex-hero .letter-heading{font-family:var(--cop);font-weight:400;font-size:36px;line-height:1.25;text-align:right;color:var(--ink);letter-spacing:.04em;width:100%;word-break:break-word}
 /* Peeler — single-line letter heading on desktop (fit script below), with a left safety inset. */
-.ex-hero.ex-hero--overlay-hide-en .letter-heading{font-size:32px;line-height:1.32;letter-spacing:.02em;word-break:normal;overflow-wrap:normal;hyphens:none;white-space:nowrap;width:100%;max-width:100%;margin-inline-start:0;padding:.12em 0 .08em 24px;box-sizing:border-box;overflow:hidden}
+.ex-hero.ex-hero--overlay-hide-en .letter-heading{font-size:32px;line-height:1.32;letter-spacing:.02em;word-break:normal;overflow-wrap:normal;hyphens:none;white-space:nowrap;width:100%;max-width:100%;margin-inline-start:0;padding:.12em 0 .08em 24px;box-sizing:border-box;overflow:visible}
+/* Fit script gave up on one line (column too narrow for a readable size) → wrap, never clip. */
+.ex-hero.ex-hero--overlay-hide-en .letter-heading.is-wrapped{white-space:normal;text-wrap:balance}
 .ex-hero .letter-heading[hidden]{display:none !important}
 .ex-hero .descblock{display:flex;flex-direction:column;gap:0;align-items:flex-end;width:100%;container-type:inline-size}
 .ex-hero .descblock .desc{width:100%;font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.45;text-align:right;direction:rtl;color:var(--ink)}
@@ -424,8 +426,12 @@ avraham</div></a></div>
   function fitLetterHeading(){
     var el=document.querySelector('.ex-hero.ex-hero--overlay-hide-en .letter-heading');
     if(!el)return;
-    if(window.matchMedia('(max-width:768px)').matches){el.style.fontSize='';return;}
-    var maxPx=32,minPx=20,size=maxPx;
+    /* Reset to the CSS state for this breakpoint; only the single-line (nowrap) desktop
+       layout is fitted — tablet/mobile CSS already wraps at its own size. */
+    el.classList.remove('is-wrapped');
+    el.style.fontSize='';
+    if(getComputedStyle(el).whiteSpace!=='nowrap')return;
+    var maxPx=32,minPx=26,size=maxPx;
     el.style.fontSize=size+'px';
     var limit=el.clientWidth;
     if(limit<1)return;
@@ -433,6 +439,8 @@ avraham</div></a></div>
       size-=0.25;
       el.style.fontSize=size+'px';
     }
+    /* Still too wide at the smallest readable size → wrap instead of truncating. */
+    if(el.scrollWidth>limit){el.style.fontSize='';el.classList.add('is-wrapped');}
   }
   function init(){
     fitLetterHeading();
