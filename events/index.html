@@ -60,9 +60,13 @@ body{text-transform:uppercase}
      NOTE 2026-08-28: amnon-lipkin was deleted from the site by request. The 8.9 slot is now
      nir-giorgio-levin-medina — a DIFFERENT event (imageRef 99781a55…, added 2026-09-01 by
      user decision); do NOT restore amnon-lipkin on the next sync.
-     2026-09-27: nir-giorgio-levin-medina moved to 17.9 and zohar-ron-medina to 24.9, and two
-     dizengoff events were added (sumii-melani-hosting 8–11.9, yom-kippur-wish-tree 17–18.9) —
-     all per the /press/ mobile frame 1323:528. All are past by now, so this list is currently empty.
+     2026-09-27: zohar-ron-medina moved to 24.9 and two dizengoff events were added
+     (sumii-melani-hosting 8–11.9, yom-kippur-wish-tree 17–18.9) per the /press/ mobile frame
+     1323:528. Later that day every SUMII-residency event got its page (sumii-opening,
+     sumii-melani-hosting, yom-kippur-wish-tree, niki-de-saint-phalle-day 25.9, sumii-live-studio
+     30.9–2.10) and nir-giorgio-levin-medina got its page with the date fixed to 30.9 (user
+     decision — the archive card 1864:3054 saying 17.9 is stale). No soon cards remain.
+     Multi-day events stay listed through their last day (date_end).
      JS sets the exact row count (ceil(n/2)); repeat(3,auto) is only a no-JS fallback. */
   grid-auto-flow:column;direction:rtl;grid-template-rows:var(--ev-rows,repeat(3,auto));
   gap:48px;
@@ -96,8 +100,8 @@ body{text-transform:uppercase}
 .ev-card .date--tbd{font-family:var(--heb);font-weight:400;font-size:14px;direction:rtl;text-transform:none;letter-spacing:0}
 
 /* `soon:true` in the mirror — event without a page yet: non-clickable + "בקרוב" toast
-   (press/homepage precedent). No card uses it right now (zohar-ron-medina got its page
-   on 2026-08-06); kept for the next event announced before its page exists. */
+   (press/homepage precedent). No card uses it right now (the last five soon cards got their
+   pages on 2026-09-27); kept for the next event announced before its page exists. */
 .ev-card--soon{cursor:default}
 .ev-card--soon:hover .im img{transform:none}
 .soon-toast{position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(8px);background:var(--ink);color:#fff;font-family:var(--heb);font-size:16px;font-weight:400;text-transform:none;padding:10px 28px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:300}
@@ -168,16 +172,20 @@ body{text-transform:uppercase}
 </section>
 
 <!-- EVENTS LIST — rendered from inline data (file:// can't fetch JSON).
-     Mirrors data/events.json; date >= today (or date_tbd, or pinned) survives the filter,
-     sorted ascending (TBD events, if any, last). Desktop: chronological order flows
+     Mirrors data/events.json — ALL events, past ones included; the renderer filters.
+     (date_end || date) >= today-in-Israel (or TBD — date_tbd / no valid date — or pinned)
+     survives the filter, sorted ascending by start date (TBD events, if any, last); a multi-day
+     event shows "d.m.yyyy - d.m.yyyy". Adding an event = add it here AND to data/events.json
+     (+ its /press/ card, which the archive filter there hides until the day after its last day).
+     Desktop: chronological order flows
      down the RIGHT column first via RTL column grid — matches Figma 1318:1761, whose 8 cards read
      right column 2.9→6.9 (sumii-opening/the-space-between/elsa/baruch), left column 7.9→10.9
      (maria/nir-giorgio-levin-medina/zohar-ron-medina/jessica); mobile = same order, one column
      (1732:140 — the current mobile frame, replacing 1318:2012).
      Synced 2026-09-01: michael/livay lost their `pinned` flag (the designer dropped them from the
      frame — they now live in /press/), and the two 2.9 / 8.9 cards were added as soon:true
-     list-only entries (no event page exists for either). amnon-lipkin was deleted 2026-08-28 and
-     must NOT be restored; the 8.9 slot is a different event.
+     list-only entries. Both got pages on 2026-09-27 (sumii-opening; nir-giorgio-levin-medina,
+     now 30.9). amnon-lipkin was deleted 2026-08-28 and must NOT be restored.
      `title_en` here mirrors events.json `list_title_en` when that field exists, else `title_en` —
      the designer sometimes words the card differently from the event page's own frame
      (bar-cohen: "…bar cohen - ‘akra’" on the card, no dash on the page). -->
@@ -204,16 +212,18 @@ body{text-transform:uppercase}
  {"slug":"noemi-safir","date":"2026-08-19","title_en":"artist talk with noemi safir","gallery_id":"medina","img":"images/events/noemi-safir/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם נעמי ספיר — גלריית כיכר המדינה"},
  {"slug":"bar-cohen","date":"2026-08-27","title_en":"artist talk with bar cohen - ‘akra’","gallery_id":"medina","img":"images/events/bar-cohen/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם בר כהן — גלריית כיכר המדינה"},
  {"slug":"hadas-tuval","date":"2026-08-28","title_en":"artist talk with hadas tuval","gallery_id":"medina","img":"images/events/hadas-tuval/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם הדס טובל — גלריית כיכר המדינה"},
- {"slug":"sumii-opening","date":"2026-09-02","soon":true,"title_en":"opening night event - ART RESIDENCY by sumii","gallery_id":"dizengoff","img":"images/events/sumii-opening/list-card.webp","w":876,"h":487,"alt":"ערב הפתיחה של הרזידנסי של SUMII — גלריית כיכר דיזינגוף"},
+ {"slug":"sumii-opening","date":"2026-09-02","title_en":"opening night event - ART RESIDENCY by sumii","gallery_id":"dizengoff","img":"images/events/sumii-opening/list-card.webp","w":876,"h":487,"alt":"ערב הפתיחה של הרזידנסי של SUMII — גלריית כיכר דיזינגוף"},
  {"slug":"the-space-between","date":"2026-09-03","title_he":"מור צופיה געש | מה אנחנו באמת זוכרים ממקום?","title_en":"the space between — a conversation about art, materials and human experience","gallery_id":"medina","img":"images/events/the-space-between/hero-480w.webp","w":480,"h":726,"alt":"ערב שיח עם מור צופיה געש — גלריית כיכר המדינה"},
  {"slug":"elsa-ars-brush","date":"2026-09-06","title_en":"artist talk with elsa ers brosh","gallery_id":"medina","img":"images/events/elsa-ars-brush/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם אלסה ארס ברוש — גלריית כיכר המדינה"},
  {"slug":"baruch-torgeman","date":"2026-09-06","title_en":"artist talk with baruch torgeman","gallery_id":"medina","img":"images/events/baruch-torgeman/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם ברוך תורג׳מן — גלריית כיכר המדינה"},
  {"slug":"maria-artamonova","date":"2026-09-07","title_en":"artist talk with maria artamonova","gallery_id":"medina","img":"images/events/maria-artamonova/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם מריה ארטמונובה — גלריית כיכר המדינה"},
- {"slug":"nir-giorgio-levin-medina","date":"2026-09-17","soon":true,"title_en":"artist talk with nir giorgio levin","gallery_id":"medina","img":"images/events/nir-giorgio-levin-medina/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר המדינה"},
  {"slug":"zohar-ron-medina","date":"2026-09-24","title_en":"artist talk with zohar ron","gallery_id":"medina","img":"images/events/zohar-ron-medina/list-card.webp","w":876,"h":487,"alt":"שיחת אמנים עם זוהר רון — גלריית כיכר המדינה"},
+ {"slug":"niki-de-saint-phalle-day","date":"2026-09-25","title_en":"day of niki de saint phalle","gallery_id":"dizengoff","img":"images/events/niki-de-saint-phalle-day/list-card.webp","w":876,"h":487,"alt":"יום ניקי דה סן פאל — גלריית כיכר דיזינגוף"},
+ {"slug":"nir-giorgio-levin-medina","date":"2026-09-30","title_en":"artist talk with nir giorgio levin","gallery_id":"medina","img":"images/events/nir-giorgio-levin-medina/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר המדינה"},
  {"slug":"jessica-tabarovsky","date":"2026-09-10","title_en":"artist talk with jessica tabarovsky","gallery_id":"medina","img":"images/events/jessica-tabarovsky/list-card-v2.webp","w":876,"h":487,"alt":"שיחת אמנים עם ג׳סיקה טברובסקי — גלריית כיכר המדינה"},
- {"slug":"sumii-melani-hosting","date":"2026-09-08","date_end":"2026-09-11","soon":true,"title_en":"Hosting event Sumii & Melani Hekimoglu","gallery_id":"dizengoff","img":"images/events/sumii-melani-hosting/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"אירוח של SUMII ומלאני הקימוגלו — גלריית כיכר דיזינגוף"},
- {"slug":"yom-kippur-wish-tree","date":"2026-09-17","date_end":"2026-09-18","soon":true,"title_en":"Yom Kippur Event // wish tree","gallery_id":"dizengoff","img":"images/events/yom-kippur-wish-tree/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"אירוע יום כיפור, עץ המשאלות — גלריית כיכר דיזינגוף"}
+ {"slug":"sumii-melani-hosting","date":"2026-09-08","date_end":"2026-09-11","title_en":"Hosting event Sumii & Melani Hekimoglu","gallery_id":"dizengoff","img":"images/events/sumii-melani-hosting/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"אירוח של SUMII ומלאני הקימוגלו — גלריית כיכר דיזינגוף"},
+ {"slug":"yom-kippur-wish-tree","date":"2026-09-17","date_end":"2026-09-18","title_en":"Yom Kippur Event // wish tree","gallery_id":"dizengoff","img":"images/events/yom-kippur-wish-tree/list-card.webp","w":876,"h":487,"widths":[480,768,876],"alt":"אירוע יום כיפור, עץ המשאלות — גלריית כיכר דיזינגוף"},
+ {"slug":"sumii-live-studio","date":"2026-09-30","date_end":"2026-10-02","title_en":"live studio // sumii","gallery_id":"dizengoff","img":"images/events/sumii-live-studio/list-card.webp","w":876,"h":487,"alt":"סטודיו LIVE של SUMII — גלריית כיכר דיזינגוף"}
 ]
 </script>
 <script>
@@ -224,29 +234,60 @@ body{text-transform:uppercase}
   if(!list||!src) return;
   var all; try{all=JSON.parse(src.textContent);}catch(e){return;}
   var GALLERY={medina:'kikar hamedina',dizengoff:'dizengoff square','flea-market':'flea market'};
-  var n=new Date(), today=new Date(n.getFullYear(),n.getMonth(),n.getDate()).getTime();
-  var up=all.filter(function(e){
-    if(e.date_tbd) return true;               // date TBD ("פרטים ותאריך בהמשך") — always upcoming
+  /* Dates are compared as 'YYYY-MM-DD' strings against TODAY IN ISRAEL (the galleries' calendar),
+     not the visitor's local date — a visitor abroad must see the same list. Same helper in
+     press/index.html; the two filters are exact complements. */
+  function isISO(s){return typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s);}
+  function todayIL(){
+    var now=new Date();
+    try{
+      var p={};
+      new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jerusalem',year:'numeric',month:'2-digit',day:'2-digit'})
+        .formatToParts(now).forEach(function(x){p[x.type]=x.value;});
+      var s=p.year+'-'+p.month+'-'+p.day;
+      if(isISO(s)) return s;
+    }catch(err){}
+    try{
+      var c=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jerusalem'}).format(now);
+      if(isISO(c)) return c;
+    }catch(err){}
+    function z(v){return (v<10?'0':'')+v;}     // last resort: the visitor's local date
+    return now.getFullYear()+'-'+z(now.getMonth()+1)+'-'+z(now.getDate());
+  }
+  var TODAY=todayIL();
+  /* no valid date (date_tbd, or date null/malformed) = TBD: kept, sorted last, "details later" label */
+  function isTBD(e){return !!e.date_tbd||!isISO(e.date);}
+  /* multi-day events (date_end) stay listed through their LAST day */
+  function lastDay(e){return isISO(e.date_end)&&e.date_end>e.date?e.date_end:e.date;}
+  var up=all.map(function(e,i){e._i=i;return e;}).filter(function(e){
+    if(isTBD(e)) return true;                 // date TBD ("פרטים ותאריך בהמשך") — always upcoming
     if(e.pinned) return true;                 // still listed in the designer's frame (1318:1761/2012)
                                               // even though the date passed — drop the flag (here and
                                               // in data/events.json, and un-pin the /press/ card) when
                                               // she removes it from Figma
-    var p=String(e.date).split('-');
-    return new Date(+p[0],+p[1]-1,+p[2]).getTime()>=today;
+    return lastDay(e)>=TODAY;
   }).sort(function(a,b){
-    if(a.date_tbd&&b.date_tbd) return 0;       // dated events first (ascending), TBD events last
-    if(a.date_tbd) return 1;
-    if(b.date_tbd) return -1;
-    return a.date<b.date?-1:a.date>b.date?1:0;
+    var ta=isTBD(a), tb=isTBD(b);
+    if(ta!==tb) return ta?1:-1;               // dated events first (ascending), TBD events last
+    if(!ta){
+      if(a.date!==b.date) return a.date<b.date?-1:1;
+      var la=lastDay(a), lb=lastDay(b);       // same start: the one that ends sooner first
+      if(la!==lb) return la<lb?-1:1;
+    }
+    return a._i-b._i;                         // stable
   });
   if(!up.length){ if(none) none.hidden=false; return; }
   /* desktop reads down the right column first (RTL column flow) — exact row count per item total */
   list.style.setProperty('--ev-rows','repeat('+Math.ceil(up.length/2)+',auto)');
   function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   list.innerHTML=up.map(function(e,i){
-    var dateHtml=e.date_tbd
+    /* single day "d.m.yyyy"; multi-day "d.m.yyyy - d.m.yyyy" (the /press/ range-card format) */
+    function dm(iso){var d=iso.split('-');return (+d[2])+'.'+(+d[1])+'.'+d[0];}
+    var dateHtml=isTBD(e)
       ? '<div class="date date--tbd">פרטים ותאריך בהמשך</div>'
-      : (function(){var d=String(e.date).split('-');return '<div class="date">'+esc((+d[2])+'.'+(+d[1])+'.'+d[0])+'</div>';})();
+      : (lastDay(e)!==e.date
+          ? '<div class="date"><bdi dir="ltr">'+esc(dm(e.date)+' - '+dm(lastDay(e)))+'</bdi></div>'
+          : '<div class="date">'+esc(dm(e.date))+'</div>');
     var load=i?' loading="lazy" decoding="async"':' fetchpriority="high" decoding="async"';
     /* optional `widths` — heavy card image that trips golden rule 12 (>=80KB and >=800px).
        Variants live beside the master as <name>-<w>w.webp (+ avif siblings, which

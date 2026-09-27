@@ -303,11 +303,13 @@ body{text-transform:uppercase}
 
 <!-- MIRROR SLICE — exhibitions of THIS gallery, from data/exhibitions.json (gallery_id=dizengoff).
      שדות תאריך start_date/end_date = מהכרטיס ב-Figma (26.05.2026-15.08.2026); יש לסנכרן גם ל-exhibitions.json.
-     תערוכה חדשה בדיזינגוף = הוסף רשומה ל-exhibitions.json וגם כאן. הסקשן נחשף רק אם יש current/upcoming. -->
+     תערוכה חדשה בדיזינגוף = הוסף רשומה ל-exhibitions.json וגם כאן. הסקשן מציג את כל הרשומות של הגלריה
+     (current + archived, בלי סינון סטטוס/תאריך — כמו דף מדינה) ונשאר מוסתר רק כשאין אף רשומה;
+     status הוא מידע בלבד (הרזידנסי 31.08–05.10.2026 = current). -->
 <script type="application/json" id="g-exhibitions-data">
 [
  {"slug":"how-many","gallery_id":"dizengoff","status":"current","title_en":"How many partners have you had?","start_date":"2026-05-26","end_date":"2026-08-15","img":"images/exhibitions/how-many/hero.webp","w":1068,"h":1600,"alt":"כמה שותפים היו לך? — תמונת המפתח של התערוכה בגלריית כיכר דיזינגוף"},
- {"slug":"sumii","kind":"residency","route":"sponsors/sumii/","gallery_id":"dizengoff","status":"upcoming","title_en":"pop up art residency","start_date":"2026-08-31","end_date":"2026-10-05","dates_text":"05.10.2026 - 31.08.2026","img":"images/sponsors/sumii/hero-768w.webp","w":768,"h":1024,"alt":"פסל דמות נשית שחור של SUMII — פופ-אפ ארט רזידנסי בגלריית כיכר דיזינגוף"}
+ {"slug":"sumii","kind":"residency","route":"sponsors/sumii/","gallery_id":"dizengoff","status":"current","title_en":"pop up art residency","start_date":"2026-08-31","end_date":"2026-10-05","dates_text":"05.10.2026 - 31.08.2026","img":"images/sponsors/sumii/hero-768w.webp","w":768,"h":1024,"alt":"פסל דמות נשית שחור של SUMII — פופ-אפ ארט רזידנסי בגלריית כיכר דיזינגוף"}
 ]
 </script>
 

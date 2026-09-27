@@ -1364,6 +1364,58 @@
       "homepage_visible": false,
       "figma_node_desktop": "1514:1715",
       "figma_node_mobile": "1514:1602",
+      "figma_node_photos_desktop": "1886:1347",
+      "figma_node_photos_mobile": "1886:1417",
+      "event_photos": [
+        {
+          "src": "images/events/maria-artamonova/moment-01.webp",
+          "alt": "שתי משתתפות מצטלמות בפינת הגלריה, לצד קיר המקרמה הצבעוני ומדפי הבשמים",
+          "figma_node": "1886:1434",
+          "figma_image_ref": "f6f7684880f7b4aa6ef80e4f5140a7970b83de0c"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-02.webp",
+          "alt": "שתי משתתפות מחזיקות בקבוקי בושם מול קיר המקרמה ומדפי הבשמים",
+          "figma_node": "1886:1435",
+          "figma_image_ref": "1efc0fbcb94b3f9d44a016c219df879a96825349"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-03.webp",
+          "alt": "כוסות יין עטופות ברשתות מקרמה צבעוניות תלויות בחלון הגלריה",
+          "figma_node": "1886:1436",
+          "figma_image_ref": "55c2d621b0a0aaa7165de5a18fca5690eca6c573"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-04.webp",
+          "alt": "קבוצת מבקרות מצטלמת יחד בחלל הגלריה בערב האירוע",
+          "figma_node": "1886:1437",
+          "figma_image_ref": "971ed3e82648842f67ba8dc6665a80c490944c09"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-05.webp",
+          "alt": "משתתפת מריחה בקבוק בושם עטוף מקרמה, נשענת על עמוד חוטים צבעוני לצד קיר המקרמה",
+          "figma_node": "1886:1439",
+          "figma_image_ref": "107a9b35572a65b6cfb0dd63fa7ccd91bc205a17"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-06.webp",
+          "alt": "משתתפת מצלמת במראה כוס יין בנרתיק מקרמה התלויה על צווארה",
+          "figma_node": "1886:1440",
+          "figma_image_ref": "c9541ca386e41bb9195bf1cfe9fb2a296ea024c8"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-07.webp",
+          "alt": "שלוש משתתפות מצטלמות מול קיר המקרמה ומדפי הבשמים",
+          "figma_node": "1886:1442",
+          "figma_image_ref": "9e2ac9f168c63c57bb334272da8d42c2d7467055"
+        },
+        {
+          "src": "images/events/maria-artamonova/moment-08.webp",
+          "alt": "משתתפת מחזיקה בקבוק בושם עטוף מקרמה ונשענת על עמוד החוטים הצבעוני",
+          "figma_node": "1886:1446",
+          "figma_image_ref": "2dc9f8523ffdca91ac8f529bdf9c016fd94b7ad1"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/zohar-ron-medina): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני ה-breakpoints (\"artist talk with\" / \"maria artamonova\") ⇒ <br> רגיל, בלי .dbr/.mbr; בדסקטופ ב-64px השם נשבר לבדו לשורה שלישית (בפיגמה 80px גולשים ל-4 שורות בתיבת 644 — הכיול האופטי נשמר, לא הומצא גודל ייעודי). שורת הפתיחה \"קשר רציני עם מקרמה\" מסומנת <span class=\"lead\"> (FbEzmel Regular 400) בתוך גוף Light — ⚠️ בפיגמה כל הבלוק Light אחיד; ההדגשה היא הכרעת בנייה, מבוטלת במחיקת ה-span. ⚠️ הטקסט בפיגמה כתוב \"אמנית תחשוף\" בלי ה\"א הידיעה — שוחזר verbatim.",
@@ -1408,6 +1460,40 @@
       "homepage_visible": false,
       "figma_node_desktop": "1499:1372",
       "figma_node_mobile": "1499:1259",
+      "figma_node_photos_desktop": "1873:132",
+      "figma_node_photos_mobile": "1873:170",
+      "event_photos": [
+        {
+          "src": "images/events/jessica-tabarovsky/moment-01.webp",
+          "alt": "הדוברת יושבת בכיסא נדנדה מעץ מול הציורים התלויים על קיר הגלריה",
+          "figma_node": "1873:186",
+          "figma_image_ref": "31473b54849a53ac8abe2d8fe9951afa66110ad1"
+        },
+        {
+          "src": "images/events/jessica-tabarovsky/moment-02.webp",
+          "alt": "משתתפת מרימה כוסית ליד שולחן הכיבוד — גבינות ויין — מול חלון הראווה של הגלריה",
+          "figma_node": "1873:190",
+          "figma_image_ref": "ae28e304b756057df6c42a3ac22d44eee74ce89e"
+        },
+        {
+          "src": "images/events/jessica-tabarovsky/moment-03.webp",
+          "alt": "קהל המשתתפים יושב ועומד בחלל הגלריה במהלך השיחה",
+          "figma_node": "1873:189",
+          "figma_image_ref": "421b66f0ea71d63b2fef92b019803d8cf339c52d"
+        },
+        {
+          "src": "images/events/jessica-tabarovsky/moment-04.webp",
+          "alt": "הדוברת מדברת מכיסא העץ ולצידה משתתפים עומדים מול חלון הראווה",
+          "figma_node": "1873:187",
+          "figma_image_ref": "776175d8474a47576e38cfddcf41fcd789dcaec4"
+        },
+        {
+          "src": "images/events/jessica-tabarovsky/moment-05.webp",
+          "alt": "הדוברת בכיסא הנדנדה ומשתתפים יושבים על הרצפה בחלל הגלריה",
+          "figma_node": "1873:188",
+          "figma_image_ref": "9efca9088d56bd9450df4067f4bff216a10b5051"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
       "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi): פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה, רצועת אומנית בודדת. שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ⇒ <br> רגיל, בלי .dbr/.mbr. הגוף = פסקה אחת עם שני <br> verbatim מהפיגמה, בלי שורת lead. מטא: גלריה FbEzmel Regular, תאריך+שעה Light בשני ה-breakpoints. אוברליי מובייל top:47.4% (Figma group y:189 מתוך 520), דסקטופ 50%. ⚠️ בפריים הדסקטופ הכותרת גולשת ל-4 שורות כי 80px לא נכנסים בתיבת ה-644; באתר ב-64px (הכיול האופטי) היא יוצאת 3 שורות — השבירה שהמעצבת כתבה נשמרת ושם האומנית נשבר לבדו.",
@@ -1506,40 +1592,140 @@
       "exhibition_id": null,
       "date": "2026-09-02",
       "date_he": "2 ספטמבר 2026",
+      "time_start": "18:00",
+      "time_end": "21:00",
+      "time_label": "21:00-18:00",
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
-      "cover_image": null,
+      "cover_image": "images/sponsors/sumii/hero.webp",
       "list_image": "images/events/sumii-opening/list-card.webp",
-      "route": null,
-      "soon": true,
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Reines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "shira turbowicz",
+          "slug": "shira-turbowicz",
+          "image": "images/artists/grid/shira-turbowicz.webp"
+        }
+      ],
+      "route": "events/sumii-opening/",
       "homepage_visible": false,
-      "figma_node_desktop": null,
-      "figma_node_mobile": null,
+      "figma_node_desktop": "1706:2032",
+      "figma_node_mobile": "1706:1919",
+      "figma_node_photos_desktop": "1815:651",
+      "figma_node_photos_mobile": "1815:623",
+      "event_photos": [
+        {
+          "src": "images/events/sumii-opening/moment-01.webp",
+          "alt": "מבט מתוך הגלריה אל כיכר דיזינגוף — מבקרות חולפות מול חלון הראווה ופסלוני SUMII על מדף החלון",
+          "figma_node": "1815:674",
+          "figma_image_ref": "a6784abf88025884a9d9c75bd0043ff12468c410"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-02.webp",
+          "alt": "פסל דמות נשית שחור של SUMII לצד בקבוק בושם לחדר של זילינסקי רוזן ומנגו התלוי על ענף",
+          "figma_node": "1815:673",
+          "figma_image_ref": "27f3c765e58e58c41b89a076e3338fdac59bb6a5"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-03.webp",
+          "alt": "חזית גלריית כיכר דיזינגוף ומדבקות חלון הראווה של הרזידנסי של SUMII",
+          "figma_node": "1815:672",
+          "figma_image_ref": "f74b8988c967ae5baed9aa6d617758033b1e175f"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-04.webp",
+          "alt": "פסלוני SUMII בגוני כסף ושחור על בד לבן, לצד פמוט זיגזג ונר אדום",
+          "figma_node": "1815:665",
+          "figma_image_ref": "767b99a4a958a1fbeefc5fafd6cdb810ee50532a"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-05.webp",
+          "alt": "אגרטל שחור עם ענפי רימונים ומנגו על רקע בד סאטן לבן",
+          "figma_node": "1815:666",
+          "figma_image_ref": "2ee986a2178976981516a66c5b116952c5ef4c73"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-06.webp",
+          "alt": "מבט על המיצב — פסלוני SUMII קטנים פזורים על בד לבן, עם נרות אדומים וענפי פרי",
+          "figma_node": "1815:667",
+          "figma_image_ref": "d976c68d12c832cc788c9f48e649a714d060521b"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-07.webp",
+          "alt": "אגרטל לבן בצורת טורסו נשי עם ענפים יבשים על רקע שרכים ירוקים",
+          "figma_node": "1815:668",
+          "figma_image_ref": "86a1c801badef6ec2d3588c527e219f61fcb55fd"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-08.webp",
+          "alt": "מפזר ריח שחור של זילינסקי רוזן, פסלון על קני הריח, מאחורי זכוכית חלון הראווה",
+          "figma_node": "1815:669",
+          "figma_image_ref": "f576f7ebcdb2e75f528a7aaac0c7da026059f13f"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-09.webp",
+          "alt": "פסל דמות כסוף של SUMII ולימון ירוק בין קפלי בד לבן וענפים",
+          "figma_node": "1815:670",
+          "figma_image_ref": "a7675ba0390285af5b1059e17d1ef77ef9dba28f"
+        },
+        {
+          "src": "images/events/sumii-opening/moment-10.webp",
+          "alt": "פסל טורסו שחור של SUMII מתחת לסידור ענפים עם רימונים ומנגו, לצד נר אדום",
+          "figma_node": "1815:671",
+          "figma_image_ref": "59a2417baebe65f175d5429e8897252f1f4ee3ef"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": null,
-      "_note": "אירוע ללא דף — כרטיס רשימה בלבד (soon:true ⇒ טוסט \"בקרוב\"; תקדים tal-nehoray ו-zohar-ron-medina לפני שנבנה לו דף). מקור: כרטיס הרשימה בלבד — Figma 1318:3205 דסקטופ / 1732:237 מובייל; אין פריימי דף אירוע. ערב הפתיחה של ה-POP UP ART RESIDENCY של SUMII (31.08–05.10.2026) בגלריית כיכר דיזינגוף — ראה sponsors/sumii/. תמונת הכרטיס = רינדור-node אפוי 876×487: בפיגמה ההירו של sumii מוצג ב-FIT/contain על #FAFAFA (לא cover), ולכן נאפה הרינדור ולא קרופ מהמקור. כשייבנה לו דף: להסיר soon, למלא route, ולהוסיף ל-sitemap."
+      "_note": "דף נבנה 2026-09-27 (Figma 1706:2032 דסקטופ / 1706:1919 מובייל; ⚠️ שם הפריימים 'event- artist talk with שירה טורבוביץ' משקר — התוכן הוא ערב הפתיחה). וריאנט אירועי רזידנסי SUMII (בסיס niki-de-saint-phalle-day): לוקאפ שותפים (the art gallery by / hosting an art residency by / Sumii + שירה טורבוביץ / scented with Until Ten by zielinski rozen / הרשמה info@sumiiworld.com), hero = מיחזור images/sponsors/sumii/hero.webp בלי scrim. רצועת event-moments: 10 צילומים = ה-nodes הרופפים 1815:665–674 שליד הפריים; השלישייה המצוירת (1815:652/653/654 = refs a6784abf/27f3c765/f74b8988 = nodes 674/673/672) ראשונה, ואז 665→671. list_image נשאר list-card.webp (רינדור-node 876×487). ⚠️ מחק את מפתח soon (אל תשאיר null)."
     },
     {
       "id": "nir-giorgio-levin-medina",
       "slug": "nir-giorgio-levin-medina",
       "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — כיכר המדינה",
       "title_en": "artist talk with nir giorgio levin",
-      "subtitle_he": null,
+      "subtitle_he": "הקולפן",
       "exhibition_id": "the-peeler",
-      "date": "2026-09-17",
-      "date_he": "17 ספטמבר 2026",
+      "exhibition_volume": 2,
+      "date": "2026-09-30",
+      "date_he": "30 ספטמבר 2026",
+      "time_start": "19:00",
+      "time_end": "20:30",
+      "time_label": "20:30-19:00",
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
-      "cover_image": null,
+      "cover_image": "images/events/nir-giorgio-levin-medina/hero.webp",
       "list_image": "images/events/nir-giorgio-levin-medina/list-card.webp",
-      "route": null,
-      "soon": true,
+      "description_he": [
+        "התמסרות",
+        "האם אפשר להתמסר מבלי לאבד משהו מעצמנו?",
+        "ערב אינטימי ושיחה פתוחה עם האמן על קרבה, אמון והגבול שבין התמסרות לאובדן, ועל מה שקורה מאחורי התערוכה כשהגבולות בין החיים האישיים ליצירה מתחילים להיטשטש.",
+        "לצד השיחה יוצעו למכירה עבודות נבחרות במחירי סטודיו מיוחדים לערב בלבד."
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "nir giorgio levin",
+          "slug": "nir-giorgio-levin",
+          "image": "images/artists/grid/nir-giorgio-levin.webp"
+        }
+      ],
+      "route": "events/nir-giorgio-levin-medina/",
       "homepage_visible": false,
-      "figma_node_desktop": null,
-      "figma_node_mobile": null,
+      "figma_node_desktop": "1498:882",
+      "figma_node_mobile": "1498:769",
       "figma_file": "XhGH289YTRcW811wrufRJz",
-      "card_title_en": null,
-      "_note": "אירוע ללא דף — כרטיס רשימה בלבד (soon:true ⇒ טוסט \"בקרוב\"). 🔴 ה-slug לפי הגלריה ולא לפי האומן: `nir-giorgio-levin` תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026) — תקדים zohar-ron-medina. מקור: כרטיס הרשימה בלבד — Figma 1471:256 דסקטופ / 1732:732 מובייל; אין פריימי דף אירוע. ⚠️ הכרטיס נופל בדיוק על משבצת התאריך+הגלריה של events/amnon-lipkin/ שנמחק ב-2026-08-28, אבל זהו אירוע אחר (imageRef 99781a55… ולא התמונה של אמנון) והוא נוסף בהכרעת משתמש 2026-09-01 — **אין להחזיר את amnon-lipkin**. תמונת הכרטיס = רינדור-node אפוי 876×487 (בפיגמה STRETCH עם cropTransform ⇒ מתיחה לא-אחידה, כמו maria/jessica/hadas/bar-cohen ב-2026-08-19) + וריאנטי 480/768 ו-srcset, כי ה-webp במקור 201KB (הליטוגרפיה המנוקדת לא נדחסת); הענף האופציונלי `widths` נוסף לרנדרר של /events/ באותו יום. 🔴 2026-09-27: התאריך הוזז מ-8.9 ל-17.9.2026 לפי פריים המובייל של /press/ (Figma 1323:528, node 1864:3054)."
+      "card_title_en": "artist talk",
+      "_note": "30.9 by user decision 2026-09-27; the Figma archive card 1864:3054 saying 17.9 is stale — do not re-sync. משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית livay-levi/baruch-torgeman בלי רצועת moments): פס EXHIBITION • VOLUME 2 + הקולפן, scrim שטוח rgba(27,27,27,.4) בשני ה-breakpoints, בלי LINGER ובלי הערת הרשמה, רצועת אומן בודד. אותו אירוע שהיה 8.9 ואז 17.9 — נדחה ל-30.9 (אותה גלריה, אותה שעה, אותו imageRef 99781a55…); פריימי הדף 1498:882/1498:769 מציגים 30 ספטמבר 2026 · 20:30-19:00. 🔴 ה-slug לפי הגלריה ולא לפי האומן: `nir-giorgio-levin` תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026) — תקדים zohar-ron-medina (כלל-זהב 6). פריימי כרטיס-הרשימה הישנים 1471:256/1732:732 כבר לא של האירוע הזה (1471:256 שוכתב in-place ל-day of Niki de Saint Phalle, 1732:732 נמחק). 🔴 כותרת דסקטופ 60/54 (em) ולא 64/58: ב-64px \"NIR GIORGIO LEVIN\" דורש 688px בעמודת ה-676 ונשבר לשלוש שורות (תקדים bar-cohen); רצועת 1320–1440 = calc(8.75vw - 66px). ⚠️ המשבצת 8.9/כיכר המדינה הייתה בעבר של events/amnon-lipkin/ שנמחק 2026-08-28 — **אין להחזיר את amnon-lipkin**.",
+      "_image_note": "hero = imageRef 99781a55… (מקור 1273×1707 sRGB, אספקט .746 — יצירת הסריגה של ניר, שתי דמויות בחיבוק) → **קובץ אחד לא-חתוך** 1110×1488 (+768/480, webp q70 / avif q55 — המרקם המנוקד לא נדחס; תקדים events/nir-giorgio-levin/hero 596KB). האספקט יושב בין חלון הדסקטופ (492/744=.661) לחלון המובייל (390/520=.75) ⇒ object-fit:cover משחזר את שני קרופי הפיגמה בלי <picture> ידני (תקדים elsa-ars-brush). ⚠️ לא לאפות 984×1488 — היה חותך את צדי המובייל. אומת RMSE (טשטוש σ4) מול רינדורי 1498:945 / 1498:791 עם scrim α.40: 0.39% דסקטופ / 0.34% מובייל (α.35 → 0.93%, α.45 → 1.32%). thumb האומן = מיחזור images/artists/grid/nir-giorgio-levin.webp (RMSE 0.62% מול imageRef d0ff0011…), object-position 50% 0% (בפיגמה הריבוע מוצמד לראש חלון 178×148 / 96×80). list-card = הרינדור האפוי הקיים 876×487 (STRETCH מ-1471:256 — מעוות מעט; ראה docs/todo.md)."
     },
     {
       "id": "yom-kippur-wish-tree",
@@ -1552,18 +1738,38 @@
       "date_end": "2026-09-18",
       "date_label": "17.09.26 - 18.09.26",
       "date_he": "17–18 ספטמבר 2026",
+      "time_start": "10:00",
+      "time_end": "14:00",
+      "time_label": "10:00-14:00",
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
-      "cover_image": null,
+      "cover_image": "images/events/yom-kippur-wish-tree/hero.webp",
       "list_image": "images/events/yom-kippur-wish-tree/list-card.webp",
-      "route": null,
-      "soon": true,
+      "description_he": [
+        "לקראת יום כיפור, הגלריה בכיכר דיזנגוף מתמלאת בווידויים ומשאלות, בהשראת \"עץ המשאלות\" של יוקו אונו.",
+        "בואו לכתוב, לבקש, להתוודות.",
+        "חמישי–שישי: 10:00-14:00",
+        "הכניסה חופשית"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Reines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "shira turbowicz",
+          "slug": "shira-turbowicz",
+          "image": "images/artists/grid/shira-turbowicz.webp"
+        }
+      ],
+      "route": "events/yom-kippur-wish-tree/",
       "homepage_visible": false,
-      "figma_node_desktop": null,
-      "figma_node_mobile": "1864:3058",
+      "figma_node_desktop": "1847:1614",
+      "figma_node_mobile": "1847:1389",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": null,
-      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה (המשלים של פילטר /events/), date_end = הסיום; התווית בכרטיס verbatim מהפיגמה. תמונת הכרטיס = קרופ 876×487 מ-imageRef e8ec34f3… (חלון הראווה של דיזינגוף, 'HOSTING ART RESIDENCY'), ממורכז על חלון ה-cropTransform של הפיגמה + וריאנטי 480/768 (ה-webp 83KB). כשייבנה דף: להסיר soon, למלא route, sitemap.",
+      "_note": "דף נבנה 2026-09-27 (Figma 1847:1614 דסקטופ / 1847:1389 מובייל) — וריאנט אירועי רזידנסי SUMII (בסיס events/niki-de-saint-phalle-day/): טווח תאריכים רב-יומי במטא, התאריך 17.09.26 - 18.09.26 בלוקאפ (verbatim), השעות בתוך הגוף verbatim, 'הכניסה חופשית', רצועת אומנים = shira-turbowicz. אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום; date_label = התווית verbatim של כרטיס /press/. כרטיס הרשימה: Figma 1864:3058 בפריים המובייל של /press/ (1323:528); תמונת הכרטיס = קרופ 876×487 מ-imageRef e8ec34f3… (חלון הראווה של דיזינגוף, 'HOSTING ART RESIDENCY') + וריאנטי 480/768. hero = חלון-איחוד 795×1202 מהמקור 900×1600 (+480).",
       "widths": [
         480,
         768,
@@ -1581,23 +1787,141 @@
       "date_end": "2026-09-11",
       "date_label": "8.9.2026 - 11.9.2026",
       "date_he": "8–11 ספטמבר 2026",
+      "time_start": "10:00",
+      "time_end": "14:00",
       "gallery_id": "dizengoff",
       "gallery_label_he": "גלריית כיכר דיזינגוף",
-      "cover_image": null,
+      "cover_image": "images/events/sumii-melani-hosting/hero.webp",
       "list_image": "images/events/sumii-melani-hosting/list-card.webp",
-      "route": null,
-      "soon": true,
+      "description_he": [
+        "לקראת ראש השנה הגלריה משנה את פניה. יחד נלביש את המרחב בשולחן חג ייחודי המשלב פיסול, קרמיקה ופרחים.",
+        "שעות פתיחה",
+        "שלישי | 10:00–14:00",
+        "Live Installation",
+        "רביעי–חמישי | 14:00–18:00",
+        "שישי | 10:00–14:00",
+        "הכניסה חופשית"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Reines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "shira turbowicz",
+          "slug": "shira-turbowicz",
+          "image": "images/artists/grid/shira-turbowicz.webp"
+        },
+        {
+          "name_en": "melani hekimoglu",
+          "slug": "melani-hekimoglu",
+          "image": "images/artists/grid/melani-hekimoglu.webp"
+        }
+      ],
+      "route": "events/sumii-melani-hosting/",
       "homepage_visible": false,
-      "figma_node_desktop": null,
-      "figma_node_mobile": "1816:916",
+      "figma_node_desktop": "1811:270",
+      "figma_node_mobile": "1811:128",
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": null,
-      "_note": "מקור: כרטיס רשימה בלבד בפריים המובייל של /press/ (Figma 1323:528, 2026-09-27); אין פריימי דף אירוע. אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום. קשור לרזידנסי (sponsors/sumii/) ולאומנית melani-hekimoglu. תמונת הכרטיס = קרופ 876×487 מ-imageRef 0f6be5f4… (קרמיקה + עוגה) + וריאנטי 480/768. כשייבנה דף: להסיר soon, למלא route, sitemap.",
+      "_note": "דף נבנה 2026-09-27 (Figma 1811:270 דסקטופ / 1811:128 מובייל) — וריאנט אירועי רזידנסי SUMII (בסיס events/niki-de-saint-phalle-day/): לוקאפ שותפים (the art gallery by → hosting event 08.09-11.09 → לוגו Sumii + שירה טורבוביץ, לוגו מלאני + מלאני הקימוגלו), פסקת ראש השנה, בלוק 'שעות פתיחה', 'הכניסה חופשית', co-brand לבן על התמונה, רצועת אומנים (shira + melani). אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום (פילטר /events/ מחזיק אותו עד date_end). השעות משתנות לפי יום (שלישי 10:00–14:00 Live Installation / רביעי–חמישי 14:00–18:00 / שישי 10:00–14:00) ⇒ time_start/time_end = גבולות ה-JSON-LD של הדף (10:00 ב-8.9 → 14:00 ב-11.9), בלי time_label. כרטיס הרשימה: Figma 1816:916 בפריים המובייל של /press/ (1323:528); תמונת הכרטיס = קרופ 876×487 מ-imageRef 0f6be5f4… + וריאנטי 480/768. hero = images/events/sumii-melani-hosting/hero.webp 1279×1600 (+480/768/1080).",
       "widths": [
         480,
         768,
         876
       ]
+    },
+    {
+      "id": "niki-de-saint-phalle-day",
+      "slug": "niki-de-saint-phalle-day",
+      "title_he": "יום ניקי דה סן פאל",
+      "title_en": "day of Niki de Saint Phalle",
+      "subtitle_he": null,
+      "exhibition_id": null,
+      "date": "2026-09-25",
+      "date_he": "25 ספטמבר 2026",
+      "time_start": "10:00",
+      "time_end": "14:00",
+      "time_label": "14:00-10:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/niki-de-saint-phalle-day/hero.webp",
+      "list_image": "images/events/niki-de-saint-phalle-day/list-card.webp",
+      "description_he": [
+        "יום ניקי דה סן פאל — ליום אחד,",
+        "הגלריה נכנסת לעולמה של האמנית האייקונית והמרדנית, שהעניקה את שמה ל־Niki, הפסל הראשון בקולקציית Figures של SUMII.",
+        "",
+        "כניסה חופשית בהרשמה מראש בלבד",
+        "info@sumiiworld.com"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Reines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "shira turbowicz",
+          "slug": "shira-turbowicz",
+          "image": "images/artists/grid/shira-turbowicz.webp"
+        }
+      ],
+      "route": "events/niki-de-saint-phalle-day/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1854:2172",
+      "figma_node_mobile": "1854:2033",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": null,
+      "_note": "אירוע יום אחד של רזידנסי SUMII (POP UP ART RESIDENCY, sponsors/sumii/) בגלריית כיכר דיזינגוף — אין תערוכה (exhibition_id:null ⇒ אין פס presented). העמוד הזה הוא **הבסיס של וריאנט 'אירועי רזידנסי SUMII'** במשפחת artist-talk: במקום .h-body/.h-presented יש לוקאפ שותפים (.sumii-lockup: שם הגלריה → לוגו Sumii + שירה טורבוביץ → פסקה), הערת הרשמה (.ev-reg, info@sumiiworld.com → mailto), ולוקאפ co-brand לבן על התמונה (.ev-cobrand). שמות ה-frames בפיגמה ('event- artist talk with שירה טורבוביץ') משקרים — זה לא artist talk. כתובת: 'Raines' בפיגמה → 'Reines' (הוכרע 2026-08-13). האירוע כבר עבר (25.9) ⇒ חי ב-/press/ בלבד, אלא אם יוחלט pinned (גם zohar-ron-medina 24.9 עדיין בפריימי הרשימה של המעצבת).",
+      "_image_note": "hero = imageRef f27f37e5… (פסל ה-Niki של SUMII עם גבעול פרח לבן, מקור 1066×1600) — קובץ יחיד לא-חתוך + 480/768: אספקט המקור (.66625) בין חלון הדסקטופ (492/744) לחלון המובייל (390/520) ⇒ object-fit:cover משחזר את שני הקרופים (תקדים elsa-ars-brush). אינו מיחזור: shira-turbowicz-3 = אותו פסל בצילום אחר (RMSE 49%). scrim = linear-gradient(0deg, rgba(0,0,0,.5), transparent) בשני ה-breakpoints (אומת ברינדור). list-card 876×487 = קרופ cover מיושר-לתחתית (שורות 846–1439 של המקור) ולא רינדור ה-node: ב-Figma הכרטיס (1471:256 דסקטופ / image 1471:267; מובייל 1864:3072 / 1864:3085) הוא STRETCH עם crop 4edfac שמותח לא-אחיד (0.82 × 0.72) — כלל 'לא מעוותים צילום'. ⚠️ node 1471:256 היה בעבר כרטיס nir-giorgio-levin-medina — המעצבת דרסה אותו in-place. ה-fill השני בכרטיס (e8ec34f3…, חלון הראווה) = leftover מוסתר. thumb = מיחזור images/artists/grid/shira-turbowicz (RMSE 0.92%), ה-fill השני (d0ff0011…) leftover. לוגו Sumii = ה-<symbol id=\"sumii-mark\"> של sponsors/sumii (currentColor)."
+    },
+    {
+      "id": "sumii-live-studio",
+      "slug": "sumii-live-studio",
+      "title_he": "סטודיו LIVE — SUMII ומלאני הקימוגלו",
+      "title_en": "Live Studio // Sumii",
+      "subtitle_he": null,
+      "exhibition_id": null,
+      "date": "2026-09-30",
+      "date_end": "2026-10-02",
+      "date_label": "30.9.2026 - 2.10.2026",
+      "date_he": "30 ספטמבר – 2 אוקטובר 2026",
+      "time_start": "10:00",
+      "time_end": "14:00",
+      "time_label": "10:00-14:00",
+      "gallery_id": "dizengoff",
+      "gallery_label_he": "גלריית כיכר דיזינגוף",
+      "cover_image": "images/events/sumii-live-studio/hero.webp",
+      "list_image": "images/events/sumii-live-studio/list-card.webp",
+      "description_he": [
+        "סטודיו LIVE",
+        "במשך שלושה ימים, הגלריה הופכת למרחב של מחקר בחימר בפיסול חי בחלל, בהם SUMII מארחת את מלאני לעבודה משותפת בחימר, ללא ידיעה כיצד העבודה תיראה בסופם.",
+        "30.09 | 10:00-14:00 | סטודיו חימר לייב סומי ומלאני קרמיקה",
+        "01.10 | 10:00-14:00 | סטודיו לייב סומי",
+        "02.10 | 10:00-14:00 | סטודיו לייב סומי",
+        "כניסה חופשית בהרשמה מראש בלבד",
+        "info@sumiiworld.com"
+      ],
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "Dizengoff Square",
+        "1 Reines st. tel aviv"
+      ],
+      "artists": [
+        {
+          "name_en": "shira turbowicz",
+          "slug": "shira-turbowicz",
+          "image": "images/artists/grid/shira-turbowicz.webp"
+        }
+      ],
+      "route": "events/sumii-live-studio/",
+      "homepage_visible": false,
+      "figma_node_desktop": "1854:2493",
+      "figma_node_mobile": "1854:2353",
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": null,
+      "_note": "דף נבנה 2026-09-27 (Figma 1854:2493 דסקטופ / 1854:2353 מובייל) — וריאנט אירועי רזידנסי SUMII (בסיס events/niki-de-saint-phalle-day/): לוקאפ שני שותפים (Sumii → sponsors/sumii + שירה טורבוביץ → artists/shira-turbowicz; לוגו מלאני + מלאני הקימוגלו → artists/melani-hekimoglu), לו\"ז תלת-יומי בגוף, הרשמה info@sumiiworld.com, co-brand לבן על התמונה. רצועת האומנים בדף = shira-turbowicz בלבד (מלאני מקושרת בלוקאפ ובגוף) — artists[] משקף את הרצועה. אירוע רב-יומי — date = יום ההתחלה, date_end = הסיום (פילטר /events/ מחזיק אותו עד 2.10 כולל). hero = קובץ יחיד לא-חתוך 1086×1448 (+480/768) ב-cover עם scrim 0→.5; list-card 876×487 (28KB, בלי widths)."
     }
   ]
 }

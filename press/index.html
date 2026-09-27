@@ -54,13 +54,14 @@ body{text-transform:uppercase}
    DOM order = chronological, newest→oldest (= the mobile column order).
    Desktop: grid-auto-flow:column + direction:rtl → cards 1-10 run down the RIGHT column,
    11-20 down the LEFT column — exactly the Figma placement (chronology flows down each column).
-   This page is the ARCHIVE: event cards dated today or later are dropped at runtime — those
-   live on /events/ (upcoming). The filter is the exact complement of the one there (`date>=today`),
-   so an event moves from /events/ to /press/ on its own the day after it happens.
+   This page is the ARCHIVE: event cards whose last day (data-date-end, else data-date) is today
+   or later — in Israel's calendar — are dropped at runtime; those live on /events/ (upcoming).
+   The filter is the exact complement of the one there (`(date_end||date) >= today`), so an event
+   moves from /events/ to /press/ on its own the day after it ends.
    The row count is therefore computed in JS (`--pc-rows`) from the cards that survived;
-   the static repeat(16,…) is only the no-JS fallback for all 31 cards.
+   the static repeat(20,…) is only the no-JS fallback for all 39 cards.
    ⚠️ Adding a card: bump that fallback to ceil(cards/2), else a 3rd column appears without JS. */
-.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(19,auto));grid-auto-flow:column;gap:48px;direction:rtl}
+.cards{max-width:var(--max);margin:0 auto;padding:48px var(--pad-x);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:var(--pc-rows,repeat(20,auto));grid-auto-flow:column;gap:48px;direction:rtl}
 .pcard{display:flex;gap:16px;min-width:0;direction:rtl;color:inherit;text-decoration:none;transition:opacity .2s}
 .pcard:hover{opacity:.75}
 .pcard--soon{cursor:default}
@@ -186,8 +187,35 @@ body{text-transform:uppercase}
      the-space-between (3.9) postdates the frame and was added at the top. -->
 <section class="cards" id="press-list" aria-label="press and events archive">
 
+  <a class="pcard" data-kind="event" data-date="2026-09-30" data-date-end="2026-10-02" href="../events/sumii-live-studio/">
+    <div class="img"><img src="../images/events/sumii-live-studio/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">live studio // sumii</p>
+      <span class="date"><bdi dir="ltr">30.9.2026 - 2.10.2026</bdi></span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-09-30" href="../events/nir-giorgio-levin-medina/">
+    <div class="img"><img src="../images/events/nir-giorgio-levin-medina/list-card.webp" srcset="../images/events/nir-giorgio-levin-medina/list-card-480w.webp 480w, ../images/events/nir-giorgio-levin-medina/list-card-768w.webp 768w, ../images/events/nir-giorgio-levin-medina/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">artist talk with nir giorgio levin</p>
+      <span class="date">30.9.2026</span>
+    </div>
+  </a>
+
+  <a class="pcard" data-kind="event" data-date="2026-09-25" href="../events/niki-de-saint-phalle-day/">
+    <div class="img"><img src="../images/events/niki-de-saint-phalle-day/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="info">
+      <span class="tag en">gallery event</span>
+      <p class="ttl en">day of niki de saint phalle</p>
+      <span class="date">25.9.2026</span>
+    </div>
+  </a>
+
   <a class="pcard" data-kind="event" data-date="2026-09-24" href="../events/zohar-ron-medina/">
-    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" fetchpriority="high" decoding="async"></div>
+    <div class="img"><img src="../images/events/zohar-ron-medina/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
       <p class="ttl en">artist talk<br>with zohar ron</p>
@@ -195,16 +223,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-17" href="#">
-    <div class="img"><img src="../images/events/nir-giorgio-levin-medina/list-card.webp" srcset="../images/events/nir-giorgio-levin-medina/list-card-480w.webp 480w, ../images/events/nir-giorgio-levin-medina/list-card-768w.webp 768w, ../images/events/nir-giorgio-levin-medina/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
-    <div class="info">
-      <span class="tag en">gallery event</span>
-      <p class="ttl en">artist talk with nir giorgio levin</p>
-      <span class="date">17.9.2026</span>
-    </div>
-  </a>
-
-  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-17" href="#">
+  <a class="pcard" data-kind="event" data-date="2026-09-17" data-date-end="2026-09-18" href="../events/yom-kippur-wish-tree/">
     <div class="img"><img src="../images/events/yom-kippur-wish-tree/list-card.webp" srcset="../images/events/yom-kippur-wish-tree/list-card-480w.webp 480w, ../images/events/yom-kippur-wish-tree/list-card-768w.webp 768w, ../images/events/yom-kippur-wish-tree/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -222,7 +241,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-08" href="#">
+  <a class="pcard" data-kind="event" data-date="2026-09-08" data-date-end="2026-09-11" href="../events/sumii-melani-hosting/">
     <div class="img"><img src="../images/events/sumii-melani-hosting/list-card.webp" srcset="../images/events/sumii-melani-hosting/list-card-480w.webp 480w, ../images/events/sumii-melani-hosting/list-card-768w.webp 768w, ../images/events/sumii-melani-hosting/list-card.webp 876w" sizes="(max-width:768px) 171px, 292px" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -267,7 +286,7 @@ body{text-transform:uppercase}
     </div>
   </a>
 
-  <a class="pcard pcard--soon" data-kind="event" data-date="2026-09-02" href="#">
+  <a class="pcard" data-kind="event" data-date="2026-09-02" href="../events/sumii-opening/">
     <div class="img"><img src="../images/events/sumii-opening/list-card.webp" width="876" height="487" alt="" loading="lazy" decoding="async"></div>
     <div class="info">
       <span class="tag en">gallery event</span>
@@ -534,30 +553,60 @@ body{text-transform:uppercase}
 <script src="../components/site-chrome.js?v=6" defer></script>
 
 <!-- ARCHIVE FILTER — /press/ shows PAST events only; today's and upcoming ones live on /events/.
-     Exact complement of the `date >= today` filter in events/index.html, so an event crosses over
-     by itself the day after it happens. `data-pinned` mirrors the `pinned` flag in that page's data
-     (an event the designer still lists in her /events/ frame after its date) — it stays there, so it
-     is removed here too, keeping exactly one home per event. Press articles carry no data-kind and
-     are never filtered.
+     Exact complement of the `(date_end || date) >= today` filter in events/index.html, both on
+     Israel's calendar date (todayIL — same helper there), so an event crosses over by itself the day
+     after its LAST day (multi-day cards carry data-date-end). An event card with no valid
+     data-date is TBD — that belongs to /events/, so it is removed here. `data-pinned` mirrors the
+     `pinned` flag in that page's data (an event the designer still lists in her /events/ frame after
+     its date) — it stays there, so it is removed here too, keeping exactly one home per event.
+     Press articles carry no data-kind and are never filtered.
+     Then the first surviving card image is promoted to the LCP (fetchpriority=high, eager): the
+     static fetchpriority sits on the newest card that is already past, and future cards above it
+     stay loading=lazy so the preload scanner never fetches an image that is about to be removed.
      Runs before the toast binder so it never binds a card that is about to be removed. -->
 <script>
 (function(){
   var grid=document.getElementById('press-list');
   if(!grid) return;
-  var today=new Date(); today.setHours(0,0,0,0);
-  Array.prototype.forEach.call(grid.querySelectorAll('.pcard[data-kind="event"][data-date]'),function(c){
+  function isISO(s){return typeof s==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(s);}
+  function todayIL(){
+    var now=new Date();
+    try{
+      var p={};
+      new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Jerusalem',year:'numeric',month:'2-digit',day:'2-digit'})
+        .formatToParts(now).forEach(function(x){p[x.type]=x.value;});
+      var s=p.year+'-'+p.month+'-'+p.day;
+      if(isISO(s)) return s;
+    }catch(err){}
+    try{
+      var c=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Jerusalem'}).format(now);
+      if(isISO(c)) return c;
+    }catch(err){}
+    function z(v){return (v<10?'0':'')+v;}     // last resort: the visitor's local date
+    return now.getFullYear()+'-'+z(now.getMonth()+1)+'-'+z(now.getDate());
+  }
+  var TODAY=todayIL();
+  Array.prototype.forEach.call(grid.querySelectorAll('.pcard[data-kind="event"]'),function(c){
     if(c.hasAttribute('data-pinned')){ c.remove(); return; }
-    var p=c.getAttribute('data-date').split('-');
-    var d=new Date(+p[0],+p[1]-1,+p[2]);
-    if(d>=today) c.remove();
+    var d=c.getAttribute('data-date'), e=c.getAttribute('data-date-end');
+    if(!isISO(d)){ c.remove(); return; }       // TBD event — lives on /events/
+    var last=isISO(e)&&e>d?e:d;
+    if(last>=TODAY) c.remove();
   });
   // grid-auto-flow:column needs an explicit row count, or the survivors spill into a 3rd column
   var n=grid.querySelectorAll('.pcard').length;
   grid.style.setProperty('--pc-rows','repeat('+Math.max(1,Math.ceil(n/2))+',auto)');
+  // LCP = the first surviving card image
+  var imgs=grid.querySelectorAll('.pcard .img img');
+  Array.prototype.forEach.call(imgs,function(im,i){
+    if(i===0){ im.setAttribute('fetchpriority','high'); im.setAttribute('loading','eager'); }
+    else if(im.getAttribute('fetchpriority')==='high'){ im.removeAttribute('fetchpriority'); }
+  });
 })();
 </script>
 
-<!-- "בקרוב" toast — cards for events without a page yet (homepage precedent) -->
+<!-- "בקרוב" toast — cards for events without a page yet (homepage precedent). Binds only the
+     --soon cards that survived the archive filter above (today: tal-nehoray). -->
 <script>
 (function(){
   var cards=document.querySelectorAll('.pcard--soon');

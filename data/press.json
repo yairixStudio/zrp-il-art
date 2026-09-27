@@ -3,6 +3,33 @@
   "_note": "Press articles + gallery events. Article bodies live inline in press/<slug>/index.html (long-form Hebrew copy is too verbose to round-trip JSON). This file holds metadata + cover only.",
   "items": [
     {
+      "id": "event-sumii-live-studio",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "סטודיו LIVE — SUMII ומלאני הקימוגלו",
+      "title_en": "live studio // sumii",
+      "date": "2026-09-30",
+      "date_end": "2026-10-02",
+      "cover_image": "images/events/sumii-live-studio/list-card.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "route": "events/sumii-live-studio/",
+      "_note": "אירוע רב-יומי של רזידנסי SUMII (שירה טורבוביץ × מלאני הקימוגלו) בגלריית כיכר דיזינגוף, 30.9–2.10.2026 — כרטיס בראש /press/ (data-date-end), מוסתר בזמן ריצה עד 3.10 (הפילטר המשלים של /events/). לא בגריד #press בהומפייג'."
+    },
+    {
+      "id": "event-niki-de-saint-phalle-day",
+      "type": "event",
+      "tag_en": "gallery event",
+      "title_he": "יום ניקי דה סן פאל",
+      "title_en": "day of niki de saint phalle",
+      "date": "2026-09-25",
+      "cover_image": "images/events/niki-de-saint-phalle-day/list-card.webp",
+      "exhibition_id": null,
+      "homepage_visible": false,
+      "route": "events/niki-de-saint-phalle-day/",
+      "_note": "אירוע יום אחד של רזידנסי SUMII (שירה טורבוביץ) בגלריית כיכר דיזינגוף — כרטיס בראש /press/ (הכי חדש, 25.9.2026). לא בגריד #press בהומפייג' (רה-דיזיין 2026-08: שם רק כתבות + פתיחות)."
+    },
+    {
       "id": "event-jessica-tabarovsky-talk",
       "type": "event",
       "tag_en": "gallery event",
@@ -496,8 +523,7 @@
       "cover_image": "images/events/sumii-opening/list-card.webp",
       "exhibition_id": null,
       "homepage_visible": false,
-      "route": null,
-      "_route_note": "אין דף אירוע (אין פריימי דף בפיגמה — רק כרטיס רשימה) ⇒ כרטיס pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray. הכרטיס יופיע ב-/press/ מ-3.9.2026, ובינתיים הוא חי ב-/events/. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, ולהוסיף ל-sitemap."
+      "route": "events/sumii-opening/"
     },
     {
       "id": "event-nir-giorgio-levin-medina-talk",
@@ -505,12 +531,12 @@
       "tag_en": "gallery event",
       "title_he": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — כיכר המדינה",
       "title_en": "artist talk with nir giorgio levin",
-      "date": "2026-09-17",
+      "date": "2026-09-30",
       "cover_image": "images/events/nir-giorgio-levin-medina/list-card.webp",
       "exhibition_id": "the-peeler",
       "homepage_visible": false,
-      "route": null,
-      "_route_note": "אין דף אירוע (אין פריימי דף בפיגמה — רק כרטיס רשימה) ⇒ כרטיס pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray. ה-id וה-slug נושאים סיומת -medina כי nir-giorgio-levin תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026)."
+      "route": "events/nir-giorgio-levin-medina/",
+      "_note": "30.9 by user decision 2026-09-27; the Figma archive card 1864:3054 saying 17.9 is stale — do not re-sync. האירוע השני של ניר ג׳ורג׳יו לוין (הקולפן / כיכר המדינה) — כרטיס בראש /press/, מוסתר בזמן ריצה עד 1.10 (הפילטר המשלים של /events/). ה-id וה-slug נושאים סיומת -medina כי nir-giorgio-levin תפוס ע\"י שיחת האמנים שלו ב-how-many/דיזינגוף (17.7.2026). לא בגריד #press בהומפייג'."
     },
     {
       "id": "event-yom-kippur-wish-tree",
@@ -523,8 +549,7 @@
       "cover_image": "images/events/yom-kippur-wish-tree/list-card.webp",
       "exhibition_id": null,
       "homepage_visible": false,
-      "route": null,
-      "_route_note": "אין דף אירוע (רק כרטיס רשימה בפריים /press/ 1323:528) ⇒ pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray/sumii-opening. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, sitemap."
+      "route": "events/yom-kippur-wish-tree/"
     },
     {
       "id": "event-sumii-melani-hosting",
@@ -537,8 +562,7 @@
       "cover_image": "images/events/sumii-melani-hosting/list-card.webp",
       "exhibition_id": null,
       "homepage_visible": false,
-      "route": null,
-      "_route_note": "אין דף אירוע (רק כרטיס רשימה בפריים /press/ 1323:528) ⇒ pcard--soon עם href=\"#\" וטוסט \"בקרוב\", תקדים tal-nehoray/sumii-opening. כשייבנה דף: להסיר soon כאן וב-events.json, למלא route, sitemap."
+      "route": "events/sumii-melani-hosting/"
     }
   ]
 }
