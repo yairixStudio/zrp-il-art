@@ -647,6 +647,14 @@ opencall how-many דסקטופ: Implement this design from Figma.
 opencall how-many מובייל: Implement this design from Figma.
 @https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2263&m=dev
 
+### obsession — OBSESSION (קול קורא פתוח, דדליין 16.10.2026, גלריית כיכר המדינה; 2026-09-27)
+
+**אין עיצוב לדף עדיין** (אין פריימי desktop/mobile; `opencalls/obsession/` לא נבנה). הפוסטר מופיע רק בפריימי הקול הקורא של ההומפייג' (`1124:792` / `1318:401` — בסקשן "קול קורא" למטה):
+- imageRef `77075862…` — 4:5, השקופית המרכזית ב-`1318:401` — **בשימוש** (`images/opencalls/obsession-card.*`, בשני ה-breakpoints).
+- imageRef `8f00a7f8…` — 9:16, הכרטיס ב-`1124:792` — **לא בשימוש** (הכרעת משתמש: תיבות 4:5, ראה `docs/routes/homepage.md`).
+
+כשיגיעו פריימי הדף — להוסיף כאן `opencall obsession דסקטופ: Implement this design from Figma. @…` + מובייל.
+
 ---
 
 ## 🧩 קומפוננטות (לא דפים — sections / states)
@@ -662,12 +670,24 @@ lightbox state 2 (mobile w/ caption): Implement this design from Figma.
 lightbox state 3 (mobile no-caption): Implement this design from Figma.
 @https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2854&m=dev
 
-### "קול קורא" / "the open call" — sections מובלעים בעמוד הבית
+### "קול קורא" / "the open call" — sections מובלעים בעמוד הבית (3 קולות קוראים; 2026-09-27) ✅ המצב הנוכחי
 
-קול קורא דסקטופ — "the open call" cards: Implement this design from Figma.
+קול קורא דסקטופ — "the open call", 3 כרטיסים (obsession · the-peeler · how-many; **באתר תיבות התמונה 4:5 — הכרעת משתמש, לא 290×502 של הפריים**): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-792&m=dev
+
+קול קורא מובייל — קרוסלת 3 שקופיות (obsession במרכז; באתר = `.tri`) + info bar: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-401&m=dev
+
+פס ה-announcement מובייל — "קול קורא חדש באוויר !" (באתר בכל ה-breakpoints): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-397&m=dev
+
+פס ה-announcement דסקטופ — ⚠️ עדיין הנוסח האנגלי הישן "coming soon our europe galleries"; לא בשימוש (האתר מציג את העברית):
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-789&m=dev
+
+legacy (2 כרטיסים, הוחלף 2026-09-27) — דסקטופ:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-355&m=dev
 
-קול קורא מובייל — multistate gallery: Implement this design from Figma.
+legacy (multistate stacked gallery, הוחלף 2026-09-27) — מובייל:
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=144-38&m=dev
 
 ---

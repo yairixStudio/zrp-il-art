@@ -10,7 +10,6 @@
 <link rel="preload" href="פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
 <link rel="stylesheet" href="components/site-boot.css">
 <link rel="stylesheet" href="components/artwork-lightbox.css?v=4">
-<link rel="stylesheet" href="components/stacked-gallery.css">
 <link rel="stylesheet" href="components/triptych-gallery.css">
 <style>
 /* ===== LOCAL FONTS ===== */
@@ -139,13 +138,17 @@ body{text-transform:uppercase}
 .announce-item{flex:0 0 auto;padding-right:var(--announce-gap);white-space:nowrap}
 @keyframes announce-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.announce{text-align:center;padding:32px 16px}.announce-track{animation:none;width:100%;justify-content:center}.announce-item:not(:first-child){display:none}.announce-item{padding-right:0}}
+/* Hebrew announcement — Figma landing::1318:397: FbEzmel Regular 20 verbatim, line box 22, padding 32, on every breakpoint
+   (.announce.announce--he outranks the 13px/12px/20px-padding .announce rules in the ≤768/≤400 blocks).
+   Short text ⇒ 20 items so half the track (~2680px desktop) still covers wide screens; durations keep today's ~42px/s. */
+.announce.announce--he{font-family:var(--heb);font-size:20px;letter-spacing:0;line-height:22px;padding:32px 0;--announce-duration:63s}
 
 /* ===== SECTION HEADERS ===== */
 .section-header{font-family:var(--cop);font-size:36px;font-weight:400;letter-spacing:.02em;line-height:1.1}
 .section-header .b{font-weight:700;display:block}
 .section-header .l{font-weight:300;display:block}
 
-/* ===== MOBILE-ONLY: קול קורא CTA — multistate gallery (per Figma 144:38) ===== */
+/* ===== MOBILE-ONLY: קול קורא CTA — open-call carousel (Figma landing::1318:401) ===== */
 .mobile-cta{display:none;flex-direction:column;gap:24px;padding:32px 16px;background:var(--white)}
 .mobile-cta .cta-head{display:flex;flex-direction:column;align-items:center;gap:16px}
 .mobile-cta .cta-head .label{
@@ -154,25 +157,47 @@ body{text-transform:uppercase}
 }
 .mobile-cta .cta-head .sep{height:1px;background:var(--sep);width:100%}
 
-/* Mobile-CTA stacked gallery uses the shared component (components/stacked-gallery.{css,js}).
-   Override: center main horizontally and anchor peek to it, so on wider viewports
-   (~520-768px tablets) the main stays centered instead of stuck at left:62px.
-   Math preserves the Figma composition at 390px (sub-px diff) and scales upward. */
-.mobile-cta .stacked-gallery{
-  --sg-main-x: calc((100% - var(--sg-main-w)) / 2);
-  --sg-peek-x: calc((100% - var(--sg-main-w)) / 2 - var(--sg-peek-w) - 31.09px);
+/* Carousel = the shared .tri triptych (components/triptych-gallery.{css,js}): 3 open calls, centre + a peek on each side.
+   Stage 380.05 tall and full-bleed (the Figma peeks run out to the screen edges, not the 16px content box).
+   Centre 234.58×292.05, peeks 147.91×184.15, all vertically centred; gaps 31.09 (left) / 31.42 (right) ⇒
+   peek centres at 50% − (117.29 + 31.09 + 73.955) and 50% + (117.29 + 31.42 + 73.955). Peeks undimmed (Figma). */
+.mobile-cta .tri{
+  --tri-max-w:none;
+  --tri-center-w:234.58px;--tri-center-h:292.05px;
+  --tri-peek-w:147.91px;--tri-peek-h:184.15px;
+  --tri-peek-left:calc(50% - 222.335px);--tri-peek-right:calc(50% + 222.665px);
+  --tri-peek-opacity:1;--tri-peek-opacity-hover:1;
+  margin:0 -16px;gap:0;
 }
+.mobile-cta .tri-frame{height:380.05px;aspect-ratio:auto;max-width:none}
+.mobile-cta a>.tri-slide.is-center,.mobile-cta a>picture>.tri-slide.is-center{cursor:pointer}
+/* With only 3 slides one of them always jumps peek→peek across the stage; the #mobile-cta script flags it so it
+   moves instantly while invisible and then fades in at its new side (instead of sliding through the other two). */
+.mobile-cta .tri-slide.is-wrapping{transition:none;opacity:0}
 
-/* ===== OPEN CALL (desktop — Figma 144:355) ===== */
+/* Info bar — status / date / location of the centred card (Figma "Art Info Bar": Copperplate Light 16,
+   three 80px boxes space-between ⇒ date truly centred). Synced by the #mobile-cta script at the end of <body>. */
+.mobile-cta .oc-info{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-family:var(--cop);font-weight:300;font-size:16px;line-height:normal;color:var(--ink);transition:opacity .25s}
+.mobile-cta .oc-info>span{white-space:nowrap}
+.mobile-cta .oc-info .dt{text-align:center}
+.mobile-cta .oc-info .loc{text-align:right}
+.mobile-cta .oc-info.is-changing{opacity:.35}
+
+/* ===== OPEN CALL (desktop — Figma landing::1124:792: 3 cards 290/290/288, gap 64) =====
+   🔴 User decision (2026-09-27): the image boxes are 4:5 like the mobile cards — NOT Figma's 290×502 — so the whole
+   poster (logo, text, dates) shows at every width; 4:5 = the card images' own ratio ⇒ no crop. Both sizes get the same
+   height (362.5). One row on every desktop width: cards shrink (flex) and keep the ratio, so nothing wraps.
+   The obsession card has no page yet ⇒ a <div>, and the hover zoom is for links only. */
 .opencall{display:flex;flex-direction:column;align-items:center;gap:24px;padding:64px var(--pad-x);background:var(--white)}
 .opencall .section-header{display:flex;justify-content:center;align-self:stretch;text-align:left}
-.opencall-grid{display:flex;gap:64px;justify-content:center;flex-wrap:wrap}
-.opencall-card{display:flex;flex-direction:column;gap:16px;max-width:100%}
+.opencall-grid{display:flex;gap:64px;justify-content:center;flex-wrap:nowrap;max-width:100%}
+.opencall-card{display:flex;flex-direction:column;gap:16px;max-width:100%;flex:0 1 auto;min-width:0}
 .opencall-card.size-a{width:290px}
 .opencall-card.size-b{width:288px}
-.opencall-card .img{width:100%;height:502px;overflow:hidden;background:#f3f1ee}
+.opencall-card .img{width:100%;aspect-ratio:4/5;overflow:hidden;background:#f3f1ee}
+.opencall-card.size-b .img{aspect-ratio:288/362.5}
 .opencall-card .img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.opencall-card:hover .img img{transform:scale(1.03)}
+a.opencall-card:hover .img img{transform:scale(1.03)}
 .opencall-card .info{display:grid;grid-template-columns:1fr 1fr 1fr;padding:0 16px;font-family:var(--cop);font-weight:300;font-size:14px;color:var(--ink)}
 .opencall-card.size-b .info .date{font-size:16px}
 .opencall-card .info .status{text-align:left}
@@ -661,8 +686,11 @@ a.sumii-strip:hover{opacity:.85}
   .hero-titles h1,.hero-titles h2{font-size:clamp(40px,5.5vw,56px)}
   .hero-desc{padding:0}
   .hero-image .img-frame{width:min(560px,100%)}
-  .opencall-card{width:280px}
-  .opencall-card .img{height:420px}
+  /* open call: gap 32 so the 3 cards stay in one row; the info row scales down with the narrower cards
+     (769px ⇒ ~203px cards) and never wraps — date column stays centred */
+  .opencall-grid{gap:32px}
+  .opencall-card .info{grid-template-columns:1fr auto 1fr;column-gap:4px;padding:0 clamp(4px,1.5vw,16px);font-size:clamp(11px,1.4vw,14px);white-space:nowrap}
+  .opencall-card.size-b .info .date{font-size:clamp(12px,1.6vw,16px)}
 }
 
 /* ============================================================
@@ -719,8 +747,9 @@ a.sumii-strip:hover{opacity:.85}
 
   /* ANNOUNCEMENT */
   .announce{font-size:13px;letter-spacing:.01em;padding:20px 0;--announce-duration:25s;--announce-gap:48px}
+  .announce.announce--he{--announce-duration:52s}
 
-  /* MOBILE-ONLY קול קורא (multistate) */
+  /* MOBILE-ONLY קול קורא (open-call carousel, .tri) */
   .mobile-cta{display:flex}
 
   /* OPEN CALL */
@@ -992,59 +1021,59 @@ a.sumii-strip:hover{opacity:.85}
   </div>
 </section>
 
-<!-- ANNOUNCEMENT -->
-<div class="announce" role="marquee" aria-label="coming soon our europe galleries">
+<!-- ANNOUNCEMENT — Hebrew marquee (Figma landing::1318:397); 20 identical items, see .announce--he -->
+<div class="announce announce--he" role="marquee" aria-label="קול קורא חדש באוויר !">
   <div class="announce-track" aria-hidden="true">
-    <span class="announce-item">coming soon our europe galleries</span>
-    <span class="announce-item">coming soon our europe galleries</span>
-    <span class="announce-item">coming soon our europe galleries</span>
-    <span class="announce-item">coming soon our europe galleries</span>
-    <span class="announce-item">coming soon our europe galleries</span>
-    <span class="announce-item">coming soon our europe galleries</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
+    <span class="announce-item heb">קול קורא חדש באוויר !</span>
   </div>
 </div>
 
-<!-- MOBILE-ONLY: קול קורא — multistate stacked gallery (Figma landing::144:38).
-     Uses the shared stacked-gallery component in `swap` mode:
-     tap the peek (left) to swap it to main; tap the main to navigate. -->
+<!-- MOBILE-ONLY: קול קורא — open-call carousel (Figma landing::1318:401) on the shared .tri triptych.
+     DOM order = newest first: slide 0 (obsession) opens centred, the-peeler peeks right, how-many peeks left.
+     Tap a peek or swipe to rotate; tap the centre to open that open call's page (obsession has no page yet ⇒ plain <img>, not a link).
+     The info bar follows the centred slide's data-info-* (script at the end of <body>). -->
 <section class="mobile-cta" id="mobile-cta">
   <div class="cta-head">
     <div class="label heb">קול קורא</div>
     <div class="sep"></div>
   </div>
-  <div class="stacked-gallery sg-mode-swap" data-active="the-peeler">
-    <div class="sg-stack">
-      <a class="sg-item is-main"
-         href="opencalls/the-peeler/"
-         data-id="the-peeler"
-         data-info-status="archived"
-         data-info-date="23.4.2026"
-         data-info-location="tel aviv"
-         aria-label="open call: the peeler">
-        <img src="images/opencalls/the-peeler-card.webp" srcset="images/opencalls/the-peeler-card-480w.webp 480w, images/opencalls/the-peeler-card-768w.webp 768w, images/opencalls/the-peeler-card-1080w.webp 1080w, images/opencalls/the-peeler-card.webp 1281w" sizes="100vw" width="1281" height="1600" alt="the peeler — open call" decoding="async" loading="lazy">
-      </a>
-      <a class="sg-item is-peek"
-         href="opencalls/how-many/"
-         data-id="how-many"
-         data-info-status="archived"
-         data-info-date="17.2.2026"
-         data-info-location="tel aviv"
-         aria-label="open call: how many partners have you had?">
-        <img src="images/opencalls/how-many-card.webp" srcset="images/opencalls/how-many-card-480w.webp 480w, images/opencalls/how-many-card-768w.webp 768w, images/opencalls/how-many-card-1080w.webp 1080w, images/opencalls/how-many-card.webp 1280w" sizes="100vw" width="1280" height="1600" alt="how many partners — open call" decoding="async" loading="lazy">
-      </a>
-    </div>
-    <div class="sg-info">
-      <span data-info="status"></span>
-      <span data-info="date"></span>
-      <span data-info="location"></span>
+  <div class="tri" data-tri-loop="true" data-tri-start="0">
+    <div class="tri-frame">
+      <img class="tri-slide" src="images/opencalls/obsession-card.webp" srcset="images/opencalls/obsession-card-480w.webp 480w, images/opencalls/obsession-card-768w.webp 768w, images/opencalls/obsession-card.webp 1080w" sizes="235px" width="1080" height="1350" alt="obsession — open call" draggable="false" decoding="async" loading="lazy" data-info-status="online" data-info-date="16.10.2026" data-info-location="tel aviv">
+      <a href="opencalls/the-peeler/" aria-label="open call: the peeler" draggable="false"><img class="tri-slide" src="images/opencalls/the-peeler-card.webp" srcset="images/opencalls/the-peeler-card-480w.webp 480w, images/opencalls/the-peeler-card-768w.webp 768w, images/opencalls/the-peeler-card-1080w.webp 1080w, images/opencalls/the-peeler-card.webp 1281w" sizes="235px" width="1281" height="1600" alt="the peeler — open call" draggable="false" decoding="async" loading="lazy" data-info-status="archived" data-info-date="23.4.2026" data-info-location="tel aviv"></a>
+      <a href="opencalls/how-many/" aria-label="open call: how many partners have you had?" draggable="false"><img class="tri-slide" src="images/opencalls/how-many-card.webp" srcset="images/opencalls/how-many-card-480w.webp 480w, images/opencalls/how-many-card-768w.webp 768w, images/opencalls/how-many-card-1080w.webp 1080w, images/opencalls/how-many-card.webp 1280w" sizes="235px" width="1280" height="1600" alt="how many partners — open call" draggable="false" decoding="async" loading="lazy" data-info-status="archived" data-info-date="17.2.2026" data-info-location="tel aviv"></a>
     </div>
   </div>
+  <div class="oc-info" aria-live="polite"><span class="st">online</span><span class="dt">16.10.2026</span><span class="loc">tel aviv</span></div>
 </section>
 
-<!-- OPEN CALL (desktop primary — Figma landing::144:355) -->
+<!-- OPEN CALL (desktop primary — Figma landing::1124:792; 4:5 image boxes = user decision): obsession (open; no page yet ⇒ <div>, not a link) · the-peeler · how-many -->
 <section class="opencall only-desktop" id="opencall">
   <h2 class="section-header">the open call</h2>
   <div class="opencall-grid">
+    <div class="opencall-card size-a">
+      <div class="img"><img src="images/opencalls/obsession-card.webp" srcset="images/opencalls/obsession-card-480w.webp 480w, images/opencalls/obsession-card-768w.webp 768w, images/opencalls/obsession-card.webp 1080w" sizes="290px" width="1080" height="1350" alt="obsession — open call" decoding="async" loading="lazy"></div>
+      <div class="info"><span class="status">online</span><span class="date">16.10.2026</span><span class="location">tel aviv</span></div>
+    </div>
     <a class="opencall-card size-a" href="opencalls/the-peeler/">
       <div class="img"><img src="images/opencalls/the-peeler-card.webp" srcset="images/opencalls/the-peeler-card-480w.webp 480w, images/opencalls/the-peeler-card-768w.webp 768w, images/opencalls/the-peeler-card-1080w.webp 1080w, images/opencalls/the-peeler-card.webp 1281w" sizes="100vw" width="1281" height="1600" alt="" decoding="async" loading="lazy"></div>
       <div class="info"><span class="status">archived</span><span class="date">23.4.2026</span><span class="location">tel aviv</span></div>
@@ -1844,8 +1873,7 @@ porta</div></a>
 <!-- Site chrome: shared header + footer (single source of truth) -->
 <script src="components/site-chrome.js?v=6" defer></script>
 
-<!-- Stacked gallery component (homepage mobile-cta uses sg-mode-swap) -->
-<script src="components/stacked-gallery.js" defer></script>
+<!-- Triptych gallery component (.tri — #mobile-cta open calls + #x-our-artists) -->
 <script src="components/triptych-gallery.js" defer></script>
 <script>
 /* x-our-artists desktop arrows → forward to the shared .tri keyboard handler */
@@ -1857,6 +1885,42 @@ porta</div></a>
   var n=document.querySelector('#x-our-artists .xa-next');
   if(p) p.addEventListener('click', function(){ nav('ArrowLeft'); });
   if(n) n.addEventListener('click', function(){ nav('ArrowRight'); });
+})();
+</script>
+<script>
+/* #mobile-cta — info bar follows the centred open call. tri:change doesn't bubble ⇒ listen on the .tri itself;
+   this inline script runs before the deferred triptych init, so the first render is caught too. */
+(function(){
+  var tri=document.querySelector('#mobile-cta .tri');
+  var info=document.querySelector('#mobile-cta .oc-info');
+  if(!tri||!info) return;
+  var out={status:info.querySelector('.st'),date:info.querySelector('.dt'),location:info.querySelector('.loc')};
+  var timer=null, last=null;
+  tri.addEventListener('tri:change', function(e){
+    var slides=tri.querySelectorAll('.tri-slide'), n=e.detail.count, idx=e.detail.index;
+    /* 3-slide ring: the slide that goes prev↔next is hidden during the move and fades in on arrival */
+    if(last!==null && n===3){
+      Array.prototype.forEach.call(slides, function(s,i){
+        var was=(i-last+n)%n, now=(i-idx+n)%n;
+        if(was+now===3){
+          s.classList.add('is-wrapping');
+          void s.offsetWidth;               /* commit the instant, invisible jump… */
+          s.classList.remove('is-wrapping'); /* …then fade in where it landed */
+        }
+      });
+    }
+    last=idx;
+    var slide=slides[idx];
+    if(!slide) return;
+    var next={status:slide.dataset.infoStatus||'',date:slide.dataset.infoDate||'',location:slide.dataset.infoLocation||''};
+    if(out.status.textContent===next.status&&out.date.textContent===next.date&&out.location.textContent===next.location) return;
+    info.classList.add('is-changing');
+    clearTimeout(timer);
+    timer=setTimeout(function(){
+      out.status.textContent=next.status; out.date.textContent=next.date; out.location.textContent=next.location;
+      info.classList.remove('is-changing');
+    },180);
+  });
 })();
 </script>
 

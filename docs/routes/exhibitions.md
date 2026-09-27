@@ -20,6 +20,7 @@
   - רשימת מעוררי הרגש (שבירות השורות): `XhGH...::119:2587`
 - `/opencalls/how-many/` → `opencalls/how-many/index.html` · ✅ data-driven
   - Figma desktop `Zn3N...::1213:2340` · mobile `Zn3N...::1213:2263`
+- `/opencalls/obsession/` → ⏳ לא נבנה, ואין לו עיצוב עדיין. הקול הקורא (OBSESSION, דדליין 16.10.2026, גלריית כיכר המדינה, `status:"open"`) חי היום רק בהומפייג' (`#mobile-cta` / `#opencall`, לא קליקאבילי — `docs/routes/homepage.md`).
 - קישורי Figma מלאים: `FIGMA_LINKS.md` § "תערוכות יחידות", "אוצרת — קורין אברהם", "קולות קוראים". ⚠️ שם הסקשן שם הוא `/opencall/:slug`, אבל ה-route בפועל הוא `opencalls/` (ברבים).
 
 ## מפת הדאטה (מי קורא מאיפה)
@@ -36,7 +37,7 @@
 - כל שאר העותקים ב-family הזה מתוחזקים ביד (Mirror registry ב-`docs/data-contracts.md`). שינוי ב-JSON מחייב לעדכן גם אותם, אחרת file:// מציג תוכן ישן.
 - 🔴 **כל עותק מכיל את כל הרשומות, לא רק את זו של הדף:**
   - `#fallback-exhibitions` בשני דפי התבנית מכיל את loneliness **וגם** את how-many.
-  - `#fallback-opencalls` בשני דפי הקול הקורא מכיל את the-peeler **וגם** את how-many.
+  - `#fallback-opencalls` בשני דפי הקול הקורא מכיל את כל שלוש הרשומות: obsession (בלי דף), the-peeler ו-how-many.
   - לכן שינוי ברשומה אחת = עדכון בשני הקבצים.
 - 🔴 **`#fallback-site` — מה חייב להישאר בעותק:**
   - **בדפי התבנית (loneliness/how-many):** `footer.newsletter` (`title`/`placeholder`/`cta`) ו-`footer.links_he`. הרנדרר ניגש ל-`site.footer.newsletter.*` ול-`site.footer.links_he.slice()` בלי בדיקה. הוא קורא גם `site.footer.copyright`; אם הוא חסר הדף לא קורס, אבל הערך יוצא `undefined`.
@@ -316,10 +317,11 @@
   - ⚠️ `docs/components.md` §3.5 אומר ש"וידאו + `sg-mode-lightbox` = לא יציג". כאן זה עובד, כי פריטי הווידאו מסומנים `data-artwork-skip` ומתנגנים inline. לא להסיר את ה-skip.
 
 ### דאטה
-- `opencalls.json`: `status` (שניהם `archived`), `submission_status_he` ("ההגשה נגמרה"), `deadline`/`deadline_he`, `gallery_id`/`gallery_label_he`, `hero_image`, `card_image`, `contact`, `figma_node_*`.
+- `opencalls.json`: `status` (the-peeler ו-how-many `archived`; obsession `open`), `submission_status_he` ("ההגשה נגמרה"), `deadline`/`deadline_he`, `gallery_id`/`gallery_label_he`, `hero_image`, `card_image`, `contact`, `figma_node_*`.
+- **obsession:** הרשומה (ראשונה במערך — הוא חדש→ישן) קיימת בשביל כרטיסי ההומפייג' (`card_image`, סטטוס, דדליין). שדות הדף שלה `null` עד שייבנה דף — ואז: למלא אותם ב-JSON ובכל עותקי `#fallback-opencalls`, שורה ב-`HERO_DIMS` (בשני הקבצים הקיימים ובעותק החדש), sitemap, OG, ולהפוך את כרטיסי ההומפייג' לקישורים. הרשימה המלאה: `docs/todo.md`. **הסטטוס ידני** — אחרי הדדליין (16.10.2026) לשאול את המשתמש לפני העברה ל-`archived`.
 - `card_image` (`images/opencalls/<slug>-card*.webp`) לא משמש את הדפים. הוא התמונה של כרטיסי הקול הקורא בהומפייג' (`#opencall` / `#mobile-cta`, `docs/routes/homepage.md`).
-- שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשני** הקבצים (כל אחד מכיל את שתי הרשומות). `sync_data.py` לא מטפל בזה.
-- קול קורא חדש: הרשומה = העתק של רשומת אחות מ-`opencalls.json` ועריכה (קודם `docs/data-contracts.md` §8), גם בכל עותקי `#fallback-opencalls`, + שורה ב-`HERO_DIMS` (למעלה).
+- שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשני** הקבצים (כל אחד מכיל את כל שלוש הרשומות). `sync_data.py` לא מטפל בזה.
+- קול קורא חדש: הרשומה = העתק של רשומת אחות מ-`opencalls.json` ועריכה (קודם `docs/data-contracts.md` §8), **בראש המערך**, גם בכל עותקי `#fallback-opencalls`, + שורה ב-`HERO_DIMS` (למעלה).
 
 ## נקודות מגע: הוספת תערוכה או שינוי בה
 

@@ -7,26 +7,31 @@
   "description_he": "ארז זילינסקי־רוזן, קודם כול אמן.\nעולם הבישום עבורו הוא קנבס בלתי נראה שנבנה משכבות של רגש וזיכרון."
  },
  "mobile_cta": {
-  "_note": "Mobile only — Figma section #3",
+  "_note": "Mobile only — Figma landing::1318:401. Shared .tri triptych carousel of the open calls; card_ids[0] is centered on load (obsession), the-peeler peeks right, how-many peeks left. info[] = the centered card's status / date / location.",
   "label_he": "קול קורא",
   "info": [
    {
     "label": "online"
    },
    {
-    "label": "23.4.2026"
+    "label": "16.10.2026"
    },
    {
     "label": "tel aviv"
    }
   ],
-  "linked_opencall_id": null
+  "card_ids": [
+   "obsession",
+   "the-peeler",
+   "how-many"
+  ]
  },
  "open_call_section": {
-  "_note": "Desktop primary — 'the open call' grid with two cards",
+  "_note": "Desktop primary — 'the open call' grid with three cards (Figma landing::1124:792; image boxes 4:5 like mobile, not Figma's 290×502 — user decision 2026-09-27)",
   "header_en": "the open call",
   "header_he_mobile": "קול קורא",
   "card_ids": [
+   "obsession",
    "the-peeler",
    "how-many"
   ]

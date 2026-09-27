@@ -4,7 +4,7 @@
 
 > **מפת החלטה לפי Figma:**
 > - תמונה אחת + נקודות ניווט (1 visible) → `<image-gallery>` (§2).
-> - תמונה מרכזית גדולה + 2 peek בצדדים + dots → `.tri` triptych (§4).
+> - תמונה מרכזית גדולה + 2 peek בצדדים (+ dots — אופציונלי) → `.tri` triptych (§4).
 > - 2 פריטים, אחד גדול אחד קטן/חתוך, swap בלחיצה → `.stacked-gallery` (§3).
 > - לחיצה על artwork פותחת תמונה במסך מלא → `data-artwork-*` + lightbox (§1).
 
@@ -183,7 +183,7 @@ g.addEventListener('gallery:change', e => console.log(e.detail.index));
 
 ## 3. STACKED GALLERY — `.stacked-gallery` (peek/main 3D) ✅
 
-קומפוננטה ל-stack של 2 פריטים — אחד "main" (קדמי, גדול) ואחד "peek" (אחורי, קטן, חתוך משמאל). משמשת ל-`קול קורא` בהומפייג' ול-mobile gallery ב-opencall. **תמיד תוריד את ה-`--sg-*` vars** להתאמה.
+קומפוננטה ל-stack של 2 פריטים — אחד "main" (קדמי, גדול) ואחד "peek" (אחורי, קטן, חתוך משמאל). משמשת היום **רק** ל-mobile gallery בדפי `opencalls/<slug>/` (`sg-mode-lightbox`); ה-`קול קורא` בהומפייג' (`#mobile-cta`) עבר ל-`.tri` ב-2026-09-27 (§4.6). **תמיד תוריד את ה-`--sg-*` vars** להתאמה.
 
 ### 3.1 קבצים
 
@@ -220,7 +220,7 @@ g.addEventListener('gallery:change', e => console.log(e.detail.index));
 
 ### 3.4 קסטומיזציה (CSS vars)
 
-ברירת מחדל ל-homepage. לדפים אחרים — vars scoped:
+ברירות המחדל ב-CSS נגזרו מפריים הקול הקורא הישן של ההומפייג' (`landing::144:38`), שכבר לא משתמש בקומפוננטה — כל שימוש קובע vars scoped:
 
 ```css
 .oc-mobile-gallery{
@@ -258,8 +258,9 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 
 | דף | מצב |
 |---|---|
-| `index.html` (mobile-cta) | `sg-mode-swap`, 2 opencalls + info bar |
 | `opencalls/<slug>/index.html` (mobile) | `sg-mode-lightbox`, gallery images, ללא info bar, `.oc-mobile-gallery` |
+
+> `index.html` `#mobile-cta` השתמש ב-`sg-mode-swap` + `.sg-info` (2 קולות קוראים) עד 2026-09-27 — הוחלף ב-`.tri` (§4.6). היום **אין צרכן** ל-`sg-mode-swap` ול-`.sg-info`; הם נשארו בקומפוננטה (לא למחוק — הקבצים חיים בדפי הקול הקורא).
 
 ### 3.9 אסור
 
@@ -304,10 +305,12 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 
 - **קליק על peek** = move to prev/next.
 - **קליק על main** = ללא פעולה (`cursor:default`) — **אלא אם:** (א) לשקופית יש `data-artist-href` → ניווט; (ב) ל-`.tri` יש `data-tri-lightbox="true"` ולשקופית `data-artwork-*` → נפתח artwork-lightbox (§1). במצב לייטבוקס מוסיפים גם `data-artwork-gallery` על ה-`.tri` (scope ל-prev/next) ו-CSS `cursor:zoom-in` ל-`.is-center`. ה-tap מדוכא (`noClick`) ולכן קליק על peek לא מגיע ל-delegation של הלייטבוקס — רק המרכז נפתח.
+  - (ג) שקופית עטופה ב-`<a>` (`events/close-look`, `#mobile-cta` בהומפייג') = ניווט טבעי של הקישור: בטאפ במרכז הקומפוננטה לא מדכאת את ה-click; בטאפ על peek או ב-swipe היא מבטלת אותו (`noClick` → `preventDefault`) ⇒ סיבוב בלי ניווט. על ה-`<a>` — `draggable="false"`.
 - **dots** = jump.
 - **swipe / drag** = prev/next, threshold 12% או 40px.
 - **חיצים במקלדת** (← → Home End) — צריך focus.
 - **loop** = ברירת מחדל true. `data-tri-loop="false"` לעצירה בקצוות.
+- ⚠️ **3 שקופיות בדיוק:** אין שקופית `is-hidden`, ולכן בכל סיבוב שקופית אחת עוברת ישירות `is-prev`↔`is-next`, וה-transition של `left` מחליק אותה לרוחב כל הבמה מאחורי המרכז. הפתרון page-local (לא בקומפוננטה): במאזין `tri:change` לסמן את השקופית הזו `.is-wrapping` (`transition:none; opacity:0`), לאלץ reflow ולהסיר — היא קופצת בלתי-נראית ונכנסת ב-fade בצד השני. תקדים: `#mobile-cta` ב-`index.html` (`docs/routes/homepage.md`).
 
 ### 4.4 קסטומיזציה (CSS vars)
 
@@ -335,8 +338,10 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 ```js
 window.TriptychGallery.refresh();   // re-boot all .tri (after dynamic injection)
 window.TriptychGallery.init(elem);  // boot specific .tri
-elem.addEventListener('tri:change', e => console.log(e.detail.index));
+elem.addEventListener('tri:change', e => console.log(e.detail.index, e.detail.count)); // elem = ה-.tri עצמו
 ```
+
+🔴 **`tri:change` לא עושה bubble** (`new CustomEvent('tri:change',{detail:{index,count}})` בלי `bubbles`) — להאזין על אלמנט ה-`.tri` עצמו, לא על הורה או `document`. **ולרשום את המאזין בסקריפט inline (לא `defer`) שבא אחרי ה-markup:** `triptych-gallery.js` נטען `defer` ורץ אחרי ה-parse כש-`readyState==='interactive'`, ולכן `bootAll()` מרנדר (ומשגר את ה-`tri:change` הראשון) מיד. מאזין שנרשם מסקריפט `defer` מאוחר יותר או ב-`DOMContentLoaded` מפספס את הרינדור הראשון. תקדים: ה-info bar של `#mobile-cta` בהומפייג'.
 
 ### 4.6 שילובים
 
@@ -345,6 +350,8 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index));
 | `about/index.html` | 7 פורטרטים של ארז (Section 2) — peek-main-peek קלאסי |
 | `events/ktuba/index.html` | slideshow band — 3 צילומים אמיתיים + 4 dots placeholder (סך 7 dots) |
 | `events/close-look/` | **שתיים בעמוד אחד** — `the artworks` (9 יצירות, שקופיות עטופות `<a>`) + `.event-moments` (11 צילומים מהמפגש, `data-tri-start="1"` כדי שהשלישייה הפותחת תהיה זו של הפיגמה; דוטים מוסתרים ≤768 per Figma) |
+| `index.html` `#mobile-cta` (מובייל) | 3 קולות קוראים (obsession · the-peeler · how-many), `data-tri-start="0"`, full-bleed, peeks בלי עמעום, **בלי dots**; שקופיות עטופות `<a>` לדף הקול הקורא (obsession = `<img>` בלי קישור — אין דף); info bar `.oc-info` מסונכרן ע"י מאזין `tri:change` על ה-`.tri` (§4.5); fade `.is-wrapping` ל-wrap של 3 שקופיות (§4.3). פרטים: `docs/routes/homepage.md` |
+| `index.html` `#x-our-artists` | 39 שקופיות, `data-tri-start="13"`, כיתובים (`data-caption`/`data-caption-href`) + `data-artist-href` (קליק במרכז → דף האומן); חיצי הדסקטופ (`.xa-prev`/`.xa-next`) משגרים `keydown` ArrowLeft/Right על ה-`.tri`. dots מוסתרים ב-CSS — ב-markup נשארו 38 כפתורים ל-39 שקופיות (מוסתרים, ולכן לא מפר את §4.7; אם מחזירים dots — לסנכרן, `docs/routes/homepage.md`) |
 
 ### 4.7 אסור
 
