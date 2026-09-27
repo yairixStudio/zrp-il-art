@@ -119,8 +119,10 @@ body{text-transform:uppercase}
 .ev-reg{font-family:var(--heb);font-weight:300;font-size:16px;line-height:20px;text-align:center;direction:rtl;color:var(--black)}
 
 /* Venue address — Copperplate Light, 3 explicit lines. Figma 16px is drawn in small caps
-   (textCase LOWER); our full caps match its ink (337px widest line) at 14px — both breakpoints. */
-.h-address{font-family:var(--cop);font-weight:300;font-size:14px;line-height:20px;text-align:center;max-width:100%;padding:16px 0}
+   (textCase LOWER); our full caps match its ink (337px widest line) at 14px — both breakpoints.
+   Where line 1 can't fit (narrow tablet column, phones under ~375) balance splits it
+   "THE ART GALLERY BY" / "EREZ ZIELINSKI & ROZEN" instead of orphaning "ROZEN". */
+.h-address{font-family:var(--cop);font-weight:300;font-size:14px;line-height:20px;text-align:center;max-width:100%;padding:16px 0;text-wrap:balance}
 
 /* Hero card — 492×744 photo. Figma stacks linear-gradient(0deg, rgba(0,0,0,.5), transparent)
    on the fill in BOTH frames (desktop 1847:1699 / mobile 1847:1411).
@@ -197,6 +199,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .ev-lockup-item .sumii-logo{width:85.8px;height:39.07px}
   .ev-lockup-item .name{font-size:18px}
   .ev-lockup-body{font-size:16px;line-height:20px}
+  /* 769–794: the ~209px column wraps two body lines; balance (+ the nbsp inside "יוקו אונו")
+     keeps them from orphaning "דיזנגוף" / "אונו." */
+  .ev-lockup-body p{text-wrap:balance}
 }
 
 /* Mobile (Figma 390): hero photo first, then each block on white, full-width */
@@ -221,8 +226,10 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
   /* Text blocks — white background (Figma mobile sections) */
   /* Title 24 → 18px: measured against the Figma ink (349px, small caps) — one line in 358
-     (niki's 19px would wrap this longer title) */
-  .h-title{background:var(--white);padding:32px 16px 0;font-size:18px;line-height:1.3;width:100%}
+     (niki's 19px would wrap this longer title). Below ~390 it no longer fits: unbalanced it
+     orphaned "TREE" (375) or left "//" dangling (320). balance + the nbsp glued to "event"
+     give "YOM KIPPUR" / "EVENT // WISH TREE" instead; at 390+ it stays one line. */
+  .h-title{background:var(--white);padding:32px 16px 0;font-size:18px;line-height:1.3;width:100%;text-wrap:balance}
   .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
   .h-meta .gallery{font-size:14px}
   .h-meta .date{font-size:14px}
@@ -291,7 +298,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     <div class="row">
 
       <div class="text-col">
-        <h1 class="h-title">yom kippur<br class="dbr"> event // wish<br class="dbr"> tree</h1>
+        <h1 class="h-title">yom kippur<br class="dbr"> event&nbsp;// wish<br class="dbr"> tree</h1>
 
         <div class="h-meta">
           <div class="row-1"><span class="gallery heb">גלריית כיכר דיזינגוף</span></div>
@@ -315,7 +322,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
             </div>
           </div>
           <div class="ev-lockup-body heb">
-            <p>לקראת יום כיפור, הגלריה בכיכר דיזנגוף<br>מתמלאת בווידויים ומשאלות,<br>בהשראת "עץ המשאלות" של יוקו אונו.<br><br>בואו לכתוב, לבקש, להתוודות.<br><br>חמישי–שישי: 10:00-14:00</p>
+            <p>לקראת יום כיפור, הגלריה בכיכר דיזנגוף<br>מתמלאת בווידויים ומשאלות,<br>בהשראת "עץ המשאלות" של יוקו&nbsp;אונו.<br><br>בואו לכתוב, לבקש, להתוודות.<br><br>חמישי–שישי: 10:00-14:00</p>
           </div>
         </div>
 
