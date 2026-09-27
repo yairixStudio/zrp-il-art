@@ -307,7 +307,7 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 - **קליק על main** = ללא פעולה (`cursor:default`) — **אלא אם:** (א) לשקופית יש `data-artist-href` → ניווט; (ב) ל-`.tri` יש `data-tri-lightbox="true"` ולשקופית `data-artwork-*` → נפתח artwork-lightbox (§1). במצב לייטבוקס מוסיפים גם `data-artwork-gallery` על ה-`.tri` (scope ל-prev/next) ו-CSS `cursor:zoom-in` ל-`.is-center`. ה-tap מדוכא (`noClick`) ולכן קליק על peek לא מגיע ל-delegation של הלייטבוקס — רק המרכז נפתח.
   - (ג) שקופית עטופה ב-`<a>` (`events/close-look`, `#mobile-cta` בהומפייג') = ניווט טבעי של הקישור: בטאפ במרכז הקומפוננטה לא מדכאת את ה-click; בטאפ על peek או ב-swipe היא מבטלת אותו (`noClick` → `preventDefault`) ⇒ סיבוב בלי ניווט. על ה-`<a>` — `draggable="false"`.
 - **dots** = jump.
-- **swipe / drag** = prev/next, threshold 12% או 40px.
+- **swipe / drag** = prev/next, threshold 8% או 40px.
 - **חיצים במקלדת** (← → Home End) — צריך focus.
 - **loop** = ברירת מחדל true. `data-tri-loop="false"` לעצירה בקצוות.
 - ⚠️ **3 שקופיות בדיוק:** אין שקופית `is-hidden`, ולכן בכל סיבוב שקופית אחת עוברת ישירות `is-prev`↔`is-next`, וה-transition של `left` מחליק אותה לרוחב כל הבמה מאחורי המרכז. הפתרון page-local (לא בקומפוננטה): במאזין `tri:change` לסמן את השקופית הזו `.is-wrapping` (`transition:none; opacity:0`), לאלץ reflow ולהסיר — היא קופצת בלתי-נראית ונכנסת ב-fade בצד השני. תקדים: `#mobile-cta` ב-`index.html` (`docs/routes/homepage.md`).
