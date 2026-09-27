@@ -70,9 +70,13 @@ body{text-transform:uppercase}
    582 / 435). No forced breaks: Figma keeps "by sumii" together — "RESIDENCY BY" would fit its
    644px box, yet it breaks before BY — so "by&nbsp;sumii" is one unit, which yields its four
    lines OPENING NIGHT / EVENT - ART / RESIDENCY / BY SUMII here and its two on mobile.
-   "event&nbsp;-&nbsp;art" likewise, so no tablet width strands the hyphen at a line start.
+   "event - art" is a nowrap span (.nw) — Figma's second line. An &nbsp; around the hyphen is
+   not enough: UAX #14 still allows a break AFTER a hyphen even before an NBSP, which stranded
+   "ART" on its own line at 789–818 (QA 2026-09-27). The span keeps EVENT - ART whole at every
+   width; ≥1440 still breaks OPENING NIGHT / EVENT - ART / RESIDENCY / BY SUMII.
    Line pitch 72 verbatim (niki precedent: 72 lands every block below on the frame). */
 .h-title{font-family:var(--cop);font-weight:400;font-size:62px;line-height:72px;text-align:center;color:var(--ink);width:100%}
+.h-title .nw{white-space:nowrap}
 
 /* Meta — gallery (Regular), then date · time (Light, 1×1 dot — Figma). Title → meta gap 32
    (Figma 1706:2061; the text column gap is 16, so +16 here). */
@@ -113,8 +117,11 @@ body{text-transform:uppercase}
 .ev-reg a.lat:hover{opacity:.65}
 
 /* Venue address — Copperplate Light, 3 explicit lines. Figma 16px small caps (textCase LOWER);
-   our full caps match its ink (337px widest line) at 14px in both breakpoints (niki measure). */
-.h-address{font-family:var(--cop);font-weight:300;font-size:14px;line-height:20px;text-align:center;max-width:100%;padding:16px 0}
+   our full caps match its ink (337px widest line) at 14px in both breakpoints (niki measure).
+   Where line 1 can't fit (phones under ~375, the 769–898 tablet column) balance splits it
+   "THE ART GALLERY BY" / "EREZ ZIELINSKI & ROZEN" instead of orphaning "ROZEN" / "& ROZEN"
+   (yom-kippur-wish-tree QA precedent). */
+.h-address{font-family:var(--cop);font-weight:300;font-size:14px;line-height:20px;text-align:center;max-width:100%;padding:16px 0;text-wrap:balance}
 
 /* Hero card — 492×744 photo, NO scrim (see header note). */
 .event-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
@@ -223,6 +230,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-title{font-size:28px;line-height:32px}
   .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:18px}
   .sumii-lockup .host,.ev-scent{white-space:normal}
+  /* balance: "HOSTING AN ART / RESIDENCY BY", never a lone "BY" (794–818 before QA) */
+  .sumii-lockup .host{text-wrap:balance}
   .ev-scent{flex-wrap:wrap;height:auto;row-gap:6px}
   .sumii-lockup .gname{font-size:clamp(12px,1.6vw,16px);line-height:1.1;letter-spacing:.1em}
 }
@@ -310,7 +319,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta name="twitter:title" content="Opening Night Event — Art Residency by Sumii | Kikar Dizengoff — Zielinski &amp; Rozen">
 <meta name="twitter:description" content="ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ בגלריית כיכר דיזינגוף תל אביב — בניחוח UNTIL TEN של זילינסקי רוזן. 2 בספטמבר 2026, 18:00–21:00, בהרשמה מראש בלבד.">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/events-sumii-opening-hero.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/sumii-opening/#event","url":"https://art.zrp.co.il/events/sumii-opening/","name":"Opening Night Event — Art Residency by Sumii","image":"https://art.zrp.co.il/og/events-sumii-opening-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/dizengoff/#gallery","name":"Kikar Dizengoff Gallery","url":"https://art.zrp.co.il/galleries/dizengoff/","address":{"@type":"PostalAddress","streetAddress":"1 Reines st.","addressLocality":"Tel Aviv","addressCountry":"IL"}},"startDate":"2026-09-02T18:00:00+03:00","endDate":"2026-09-02T21:00:00+03:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","description":"ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ — The Art Gallery by Erez Zielinski Rozen מארחת את הרזידנסי בגלריית כיכר דיזינגוף תל אביב, בניחוח Until Ten של זילינסקי רוזן. בהרשמה מראש בלבד."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Opening Night Event — Art Residency by Sumii","item":"https://art.zrp.co.il/events/sumii-opening/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Event","@id":"https://art.zrp.co.il/events/sumii-opening/#event","url":"https://art.zrp.co.il/events/sumii-opening/","name":"Opening Night Event — Art Residency by Sumii","image":"https://art.zrp.co.il/og/events-sumii-opening-hero.jpg","organizer":{"@id":"https://art.zrp.co.il/#org"},"location":{"@type":"ArtGallery","@id":"https://art.zrp.co.il/galleries/dizengoff/#gallery","name":"Kikar Dizengoff Gallery","url":"https://art.zrp.co.il/galleries/dizengoff/","address":{"@type":"PostalAddress","streetAddress":"1 Reines st.","addressLocality":"Tel Aviv","addressCountry":"IL"}},"startDate":"2026-09-02T18:00:00+03:00","endDate":"2026-09-02T21:00:00+03:00","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","eventStatus":"https://schema.org/EventScheduled","performer":[{"@type":"Person","name":"Shira Turbowicz","url":"https://art.zrp.co.il/artists/shira-turbowicz/"}],"description":"ערב הפתיחה של ה־POP UP ART RESIDENCY של SUMII מאת שירה טורבוביץ — The Art Gallery by Erez Zielinski Rozen מארחת את הרזידנסי בגלריית כיכר דיזינגוף תל אביב, בניחוח Until Ten של זילינסקי רוזן. בהרשמה מראש בלבד."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Opening Night Event — Art Residency by Sumii","item":"https://art.zrp.co.il/events/sumii-opening/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body>
@@ -328,7 +337,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     <div class="row">
 
       <div class="text-col">
-        <h1 class="h-title">opening night event&nbsp;-&nbsp;art residency by&nbsp;sumii</h1>
+        <h1 class="h-title">opening night <span class="nw">event - art</span> residency by&nbsp;sumii</h1>
 
         <div class="h-meta">
           <div class="row-1"><span class="gallery heb">גלריית כיכר דיזינגוף</span></div>
@@ -366,7 +375,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
       <div class="img-col">
         <div class="card">
-          <img src="../../images/sponsors/sumii/hero.webp" srcset="../../images/sponsors/sumii/hero-480w.webp 480w, ../../images/sponsors/sumii/hero-768w.webp 768w, ../../images/sponsors/sumii/hero-1080w.webp 1080w, ../../images/sponsors/sumii/hero.webp 1620w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="1620" height="2160" alt="פסל דמות נשית של SUMII בחומר שחור מבריק — ערב הפתיחה של הרזידנסי בגלריית כיכר דיזינגוף" decoding="async" fetchpriority="high">
+          <img src="../../images/sponsors/sumii/hero.webp" srcset="../../images/sponsors/sumii/hero-480w.webp 480w, ../../images/sponsors/sumii/hero-768w.webp 768w, ../../images/sponsors/sumii/hero-1080w.webp 1080w, ../../images/sponsors/sumii/hero.webp 1620w" sizes="(max-width:768px) 100vw, (max-width:1319px) 480px, 558px" width="1620" height="2160" alt="פסל דמות נשית של SUMII בחומר שחור מבריק — ערב הפתיחה של הרזידנסי בגלריית כיכר דיזינגוף" decoding="async" fetchpriority="high">
           <div class="ev-cobrand" aria-hidden="true">
             <div class="gname"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</div>
             <div class="x">X</div>
