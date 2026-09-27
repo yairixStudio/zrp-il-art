@@ -188,7 +188,11 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .ev-lockup-body{font-size:18px;line-height:22px}
 }
 @media (max-width:1050px) and (min-width:769px){
-  .h-title{font-size:34px;line-height:38px}
+  /* The text column is (100vw − 528) wide here and "DAY OF NIKI DE" needs 8.5 × font-size (measured);
+     at a fixed 34px it wrapped to 4 lines below ~850. Track the column so the .dbr break stays the
+     only one: 34px from ~870 up, ~22px at 769 (next to the 19px mobile title). The −577 keeps
+     17px of slack for a classic scrollbar, which 100vw includes. */
+  .h-title{font-size:min(34px,calc((100vw - 577px) / 8.6));line-height:1.12}
   /* the text column drops to ~209px at 769 — keep each gallery-name line on one line */
   .sumii-lockup .gname{font-size:clamp(13px,1.6vw,16px);line-height:1.1;letter-spacing:.1em}
   .ev-lockup-item .sumii-logo{width:85.8px;height:39.07px}
