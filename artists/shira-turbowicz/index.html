@@ -406,7 +406,9 @@ a.artist-card:hover .name{color:var(--ink)}
   }
   /* JSON text can be Hebrew, English, or mixed. Preserve approved inline spans,
      and auto-route bare Latin fragments to Copperplate. */
-  function mixedHtml(s){ return wrapLatinRuns(restoreLatSpans(s)); }
+  // shira-turbowicz: a sentence-final period swallowed into a Latin run ("LVMH.") renders on the
+  // wrong side inside the LTR isolate — move it out so it trails the run in the Hebrew sentence.
+  function mixedHtml(s){ return wrapLatinRuns(restoreLatSpans(s)).replace(/([A-Za-z0-9])\.<\/span>(?=\s|$)/g,'$1</span>.'); }
   /* Bio intro "name line": wrap a "(Latin name)" group — parentheses INCLUDED — as one
      isolated LTR island, so RTL bidi can't orphan/mirror the parens around the name.
      (Figma intro: "ענת ויז׳ייה (ANAT WÉGIER), 43, תל אביב") */
