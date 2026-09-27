@@ -27,6 +27,7 @@ events/**/*.png
 *.log
 .tmp/
 tmp/
+.regress/
 .local-server.pid
 
 # Node / Lighthouse (dev tooling only — not part of the published site)
