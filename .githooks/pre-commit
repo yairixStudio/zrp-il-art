@@ -1,0 +1,8 @@
+#!/bin/sh
+# Keep the header search index in sync with the committed pages.
+# Rebuilds search-index.js from the staged index.html files and stages it.
+# (Enabled with: git config core.hooksPath .githooks)
+ROOT="$(git rev-parse --show-toplevel)" || exit 0
+command -v python3 >/dev/null 2>&1 || exit 0
+python3 "$ROOT/tools/search/build_index.py" -q || { echo "pre-commit: search index build failed" >&2; exit 1; }
+git add -- "$ROOT/search-index.js"

@@ -59,7 +59,7 @@
   if (!document.querySelector('link[data-site-chrome-css]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = abs('components/site-chrome.css?v=7');
+    link.href = abs('components/site-chrome.css?v=8');
     link.setAttribute('data-site-chrome-css', '');
     document.head.appendChild(link);
   }
@@ -93,6 +93,9 @@
             '<svg class="hamburger-figma" viewBox="0 0 24 24" fill="#1B1B1B" aria-hidden="true"><path d="M3 4H21V6H3V4ZM3 11H15V13H3V11ZM3 18H21V20H3V18Z"/></svg>' +
             '<svg class="hamburger-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="#1B1B1B" stroke-width="1.5" fill="none"/></svg>' +
             '<span class="hamburger-bars"><span></span><span></span><span></span></span>' +
+          '</button>' +
+          '<button class="hd-search" type="button" data-search-open aria-label="search" aria-haspopup="dialog">' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>' +
           '</button>' +
           '<a href="' + abs('') + '" class="logo" aria-label="home" data-nav="home">' +
             '<img class="logo-svg" src="' + abs('images/header:footer:general/logo.svg') + '" alt="Zielinski &amp; Rozen" width="177" height="37" decoding="async">' +
@@ -731,6 +734,191 @@
     }
   }
 
+  // ---- Site search (header magnifier → modal) ----------------
+  // Index = search-index.js, generated from the committed pages by
+  // tools/search/build_index.py (pre-commit hook). Loaded lazily on first
+  // open (prefetched on hover/focus) as a <script>, so it also works on file://.
+  // Records: {u:url, t:type, n:title, k?:keywords, d?:description}.
+  const SEARCH_TYPES = {
+    artists: 'דף אומן', works: 'יצירה', events: 'אירוע', press: 'כתבה',
+    exhibitions: 'תערוכה', galleries: 'גלריה', curators: 'אוצרת',
+    sponsors: 'רזידנסי / שיתוף פעולה', opencalls: 'קול קורא', page: 'עמוד'
+  };
+  const SEARCH_RANK = ['artists', 'exhibitions', 'events', 'galleries', 'curators',
+    'sponsors', 'opencalls', 'press', 'page', 'works'];
+  const SEARCH_MAX = 30;
+  const FINALS = { 'ך': 'כ', 'ם': 'מ', 'ן': 'נ', 'ף': 'פ', 'ץ': 'צ' };
+  function searchNorm(s) {
+    return String(s || '').normalize('NFD').toLowerCase()
+      .replace(/[̀-֑ͯ-ׇ]/g, '')          // Latin accents + niqqud/te'amim
+      .replace(/['"`׳״’‘“”]/g, '')                          // geresh/gershayim/quotes
+      .replace(/[ךםןףץ]/g, function (c) { return FINALS[c]; })
+      .replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  }
+  let searchIndex = null, searchLoading = null;
+  function loadSearchIndex() {
+    if (searchIndex) return Promise.resolve(searchIndex);
+    if (searchLoading) return searchLoading;
+    searchLoading = new Promise(function (resolve, reject) {
+      const sc = document.createElement('script');
+      sc.src = abs('search-index.js');
+      sc.async = true;
+      sc.onload = function () {
+        searchIndex = (window.__SEARCH_INDEX__ || []).map(function (r) {
+          const n = searchNorm(r.n);
+          const k = searchNorm(r.k);
+          const d = searchNorm(r.d);
+          return { r: r, n: n, w: n.split(' '), k: k, kw: k ? k.split(' ') : [], d: d,
+            dw: d ? d.split(' ', 3) : [],
+            rank: Math.max(0, SEARCH_RANK.indexOf(r.t)) };
+        });
+        resolve(searchIndex);
+      };
+      sc.onerror = function () { searchLoading = null; reject(new Error('search index')); };
+      document.head.appendChild(sc);
+    });
+    return searchLoading;
+  }
+  function searchQuery(q) {
+    const nq = searchNorm(q);
+    if (!nq || !searchIndex) return [];
+    const tokens = nq.split(' ');
+    const hits = [];
+    for (let i = 0; i < searchIndex.length; i++) {
+      const e = searchIndex[i];
+      let score = 0;
+      for (let j = 0; j < tokens.length; j++) {
+        const t = tokens[j];
+        let s = 0;
+        // Word-prefix in title or keywords (JSON-LD names, e.g. the Hebrew artist
+        // name) scores highest; the first word of either scores a notch more.
+        for (let w = 0; w < e.w.length && !s; w++) if (e.w[w].indexOf(t) === 0) s = w === 0 ? 6 : 5;
+        for (let w = 0; w < e.kw.length && !s; w++) if (e.kw[w].indexOf(t) === 0) s = w === 0 ? 6 : 5;
+        if (!s && e.n.indexOf(t) !== -1) s = 3;
+        if (!s && e.k.indexOf(t) !== -1) s = 2;
+        // Descriptions usually open with the page's subject (e.g. "הקולפן — …").
+        for (let w = 0; w < e.dw.length && !s; w++) if (e.dw[w].indexOf(t) === 0) s = 4;
+        if (!s && e.d && e.d.indexOf(t) !== -1) s = 1;
+        if (!s) { score = 0; break; }
+        score += s;
+      }
+      if (!score) continue;
+      if (e.n.indexOf(nq) === 0 || e.k.indexOf(nq) === 0) score += 4;
+      hits.push({ e: e, s: score });
+    }
+    hits.sort(function (a, b) {
+      return (b.s - a.s) || (a.e.rank - b.e.rank) || (a.e.n.length - b.e.n.length);
+    });
+    return hits.slice(0, SEARCH_MAX).map(function (h) { return h.e.r; });
+  }
+
+  function searchModalHTML() {
+    return (
+      '<div class="srch-backdrop" data-search-backdrop></div>' +
+      '<div class="srch-panel" role="dialog" aria-modal="true" aria-label="search" dir="rtl">' +
+        '<div class="srch-bar">' +
+          '<svg class="srch-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>' +
+          '<input class="srch-input" type="search" dir="auto" autocomplete="off" spellcheck="false" ' +
+            'enterkeyhint="go" placeholder="חיפוש אמנים, יצירות, אירועים, כתבות…" aria-label="חיפוש באתר" ' +
+            'aria-controls="srch-results" aria-autocomplete="list">' +
+          '<button class="srch-close" type="button" data-search-close aria-label="close">' +
+            '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>' +
+          '</button>' +
+        '</div>' +
+        '<ul class="srch-results" id="srch-results" role="listbox"></ul>' +
+        '<p class="srch-empty" hidden></p>' +
+      '</div>'
+    );
+  }
+
+  function wireSearch(root) {
+    const btn = root.querySelector('[data-search-open]');
+    if (!btn) return;
+    let wrap = null, input, list, empty, active = -1, results = [], lastFocus = null;
+
+    function build() {
+      wrap = document.createElement('div');
+      wrap.className = 'srch';
+      wrap.hidden = true;
+      wrap.innerHTML = searchModalHTML();
+      document.body.appendChild(wrap);
+      input = wrap.querySelector('.srch-input');
+      list = wrap.querySelector('.srch-results');
+      empty = wrap.querySelector('.srch-empty');
+      wrap.querySelector('[data-search-backdrop]').addEventListener('click', close);
+      wrap.querySelector('[data-search-close]').addEventListener('click', close);
+      input.addEventListener('input', render);
+      input.addEventListener('keydown', onKey);
+      list.addEventListener('mousemove', function (e) {
+        const li = e.target.closest('li[data-i]');
+        if (li) setActive(Number(li.dataset.i), false);
+      });
+      list.addEventListener('click', function (e) { if (e.target.closest('a')) close(true); });
+    }
+    function render() {
+      const q = input.value;
+      if (!searchIndex) {
+        loadSearchIndex().then(render, function () {
+          empty.hidden = false;
+          empty.textContent = 'החיפוש אינו זמין כרגע';
+        });
+        return;
+      }
+      results = searchQuery(q);
+      active = results.length ? 0 : -1;
+      list.innerHTML = results.map(function (r, i) {
+        return '<li role="option" data-i="' + i + '"' + (i === 0 ? ' aria-selected="true"' : '') + '>' +
+          '<a href="' + escapeHtml(abs(r.u)) + '">' +
+            '<span class="srch-title" dir="auto">' + mixedHtml(r.n) + '</span>' +
+            '<span class="srch-type">' + (SEARCH_TYPES[r.t] || SEARCH_TYPES.page) + '</span>' +
+          '</a></li>';
+      }).join('');
+      const none = !!searchNorm(q) && !results.length;
+      empty.hidden = !none;
+      if (none) empty.textContent = 'לא נמצאו תוצאות';
+    }
+    function setActive(i, scroll) {
+      const items = list.children;
+      if (!items.length) return;
+      i = (i + items.length) % items.length;
+      if (items[active]) items[active].removeAttribute('aria-selected');
+      active = i;
+      items[i].setAttribute('aria-selected', 'true');
+      if (scroll) items[i].scrollIntoView({ block: 'nearest' });
+    }
+    function onKey(e) {
+      if (e.key === 'ArrowDown') { e.preventDefault(); setActive(active + 1, true); }
+      else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(active - 1, true); }
+      else if (e.key === 'Enter') {
+        const a = list.children[active] && list.children[active].querySelector('a');
+        if (a) { e.preventDefault(); close(true); location.href = a.href; }
+      }
+    }
+    function open() {
+      if (!wrap) build();
+      lastFocus = document.activeElement;
+      wrap.hidden = false;
+      document.documentElement.classList.add('srch-lock');
+      input.focus();
+      input.select();
+      loadSearchIndex().then(function () { if (input.value) render(); }, function () {});
+    }
+    function close(navigating) {
+      if (!wrap || wrap.hidden) return;
+      wrap.hidden = true;
+      document.documentElement.classList.remove('srch-lock');
+      if (navigating !== true && lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    function prefetch() { loadSearchIndex().catch(function () {}); }
+    btn.addEventListener('click', open);
+    btn.addEventListener('pointerenter', prefetch, { once: true });
+    btn.addEventListener('focus', prefetch, { once: true });
+    btn.addEventListener('touchstart', prefetch, { once: true, passive: true });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && wrap && !wrap.hidden) { e.stopPropagation(); close(); }
+    }, true);
+  }
+
   // ---- Custom elements ---------------------------------------
   class SiteHeader extends HTMLElement {
     connectedCallback() {
@@ -740,6 +928,7 @@
       wireHamburger(this);
       markActive(this);
       wireBookmark(this);
+      wireSearch(this);
       wireLogoChooser(this);
       ensureSkipLink();
     }
