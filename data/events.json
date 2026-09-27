@@ -1066,9 +1066,135 @@
       "homepage_visible": true,
       "figma_node_desktop": "1468:1324",
       "figma_node_mobile": "1468:1211",
+      "figma_node_photos_desktop": "1914:1056",
+      "figma_node_photos_mobile": "1914:1062",
+      "figma_node_credits_desktop": "1918:1283",
+      "figma_node_credits_mobile": "1918:1286",
+      "performers_he": [
+        "יקי לוין",
+        "ג׳ני מיכלביץ"
+      ],
+      "photo_credit_stills": "אייל רדושינצקי",
+      "event_photos": [
+        {
+          "src": "images/events/hadas-tuval/moment-01.webp",
+          "alt": "האמנית ושני הפרפורמרים יושבים על רצפת הגלריה, וחוט אדום פרוש לידם",
+          "figma_node": "1918:1235",
+          "figma_image_ref": "cb763dd90b7cbf97a177e4a8cd5eaff317070acb"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-02.webp",
+          "alt": "האמנית מדברת בין שני הפרפורמרים מול חלון הראווה של הגלריה",
+          "figma_node": "1918:1236",
+          "figma_image_ref": "362c612371ad95f35436f7be5052c79399ddf8ee"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-03.webp",
+          "alt": "ידיים מעבירות חוט אדום בתחילת הקשירה",
+          "figma_node": "1918:1237",
+          "figma_image_ref": "58caaf1e81a5c850bf656a8e306f32fcf6175bbd"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-04.webp",
+          "alt": "כפות רגליים יחפות על רצפת העץ, כרוכות בחוט אדום",
+          "figma_node": "1918:1238",
+          "figma_image_ref": "6ee3c20f9717790b2023ceb264bc3f6867099f38"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-05.webp",
+          "alt": "הפרפורמרית מרימה את זרועותיה הכרוכות בחוט אדום מול חלון הגלריה",
+          "figma_node": "1918:1239",
+          "figma_image_ref": "3cbb55d1e6b5c644d4e128d4b09324d27f2c6f0f"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-06.webp",
+          "alt": "גבה של הפרפורמרית, ידיה מאחורי גבה וזרועותיה קשורות בחוט אדום",
+          "figma_node": "1918:1240",
+          "figma_image_ref": "cf6b4c5c1ee4a4227f95afa6cfd8ef954524644a"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-07.webp",
+          "alt": "תקריב של כתף וגב מכוסים ברשת חוטים אדומים, ויד מהדקת את הקשר",
+          "figma_node": "1918:1241",
+          "figma_image_ref": "38d1f33c1c768286ce22efb744e2babcfc65b33e"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-08.webp",
+          "alt": "האמנית מושיטה חוט אדום אל הפרפורמרית, והקהל יושב ומצלם ברקע",
+          "figma_node": "1918:1242",
+          "figma_image_ref": "27fa1cfe8fc3d48dbe1e64c111fa5e3d35524aa7"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-09.webp",
+          "alt": "הפרפורמר, ידיו מאחורי ראשו, וזרועותיו וגופו כרוכים בחוט אדום",
+          "figma_node": "1918:1243",
+          "figma_image_ref": "2d4220c7f58e342254a7084b2fc9a8a0ff75d190"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-10.webp",
+          "alt": "האמנית קושרת את הפרפורמר בחוט אדום, והפרפורמרית ברקע",
+          "figma_node": "1918:1244",
+          "figma_image_ref": "5093c5208de11eb387fc17878957b796ecdd1469"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-11.webp",
+          "alt": "תקריב של זרוע וגב עטופים ברשת חוטים אדומים",
+          "figma_node": "1918:1245",
+          "figma_image_ref": "574735d3fbd00dac5ad6626f1dd5628d274a551a"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-12.webp",
+          "alt": "הפרפורמר רוכן מעל גבה של הפרפורמרית, שניהם כרוכים בחוט אדום",
+          "figma_node": "1918:1246",
+          "figma_image_ref": "e63f966cd3014e455c1a8ec923a1a3c24a4446f5"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-13.webp",
+          "alt": "יד מותחת חוט אדום אל כתפו של הפרפורמר",
+          "figma_node": "1918:1247",
+          "figma_image_ref": "e2c4cf2ee9d64191ca44072a6269e96f37c703c6"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-14.webp",
+          "alt": "הפרפורמרית והפרפורמר קשורים בחוט אדום מול עבודות ממוסגרות בגלריה",
+          "figma_node": "1918:1248",
+          "figma_image_ref": "61ef0c41a246cb529ae0b70a08dcac119604f050"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-15.webp",
+          "alt": "האמנית בוחנת את הפרפורמרים הקשורים בין העבודות הממוסגרות, והקהל ברקע",
+          "figma_node": "1918:1249",
+          "figma_image_ref": "cc5c3e2c3c1cf9ad252f18df1e64ee14dcd5d65a"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-16.webp",
+          "alt": "תקריב של ידיים קושרות חוט אדום סביב ראשו של הפרפורמר",
+          "figma_node": "1918:1250",
+          "figma_image_ref": "bd9a0abbf8b0f68d31ceea79cc144b56910f7354"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-17.webp",
+          "alt": "הפרפורמרית מתכופפת, והאמנית כורעת לצידה ומהדקת את החוט",
+          "figma_node": "1918:1251",
+          "figma_image_ref": "52aa1e5d187f03ea50bd4d72e0bb8eb72efb43fd"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-18.webp",
+          "alt": "האמנית כורכת חוט אדום סביב הפרפורמר, שידיו מאחורי ראשו",
+          "figma_node": "1918:1252",
+          "figma_image_ref": "8af70fede167671628d1e2adf57cd6099d2e4d61"
+        },
+        {
+          "src": "images/events/hadas-tuval/moment-19.webp",
+          "alt": "האמנית והפרפורמרים בזרועות מורמות, מחוברים בחוט אדום מול חלון הגלריה",
+          "figma_node": "1918:1253",
+          "figma_image_ref": "36cd51f9ccad4b313fe1160bc3e185759b4751e5"
+        }
+      ],
       "figma_file": "XhGH289YTRcW811wrufRJz",
       "card_title_en": "artist talk",
-      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina: פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה). שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ולכן <br> רגיל, בלי .dbr/.mbr. במטא של המובייל התאריך והשעה ב-FbEzmel Light (בשאר המשפחה Regular).",
+      "_note": "משפחת artist-talk, וריאנט הקולפן הרגיל (תבנית zohar-ron-medina: פס EXHIBITION • VOLUME 2 + הקולפן, בלי LINGER ובלי הערת הרשמה). שבירת הכותרת זהה בשני הפריימים (אחרי \"with\") ולכן <br> רגיל, בלי .dbr/.mbr. מטא: גלריה FbEzmel Regular, תאריך+שעה Light בשני ה-breakpoints (בסיס המשפחה).",
+      "_photos_note": "רצועת צילומים מהמיצג (2026-09-27): 19 צילומים שנמסרו כ-nodes רופפים 1918:1235…1918:1253 (קבצי WhatsApp של אייל רדושינצקי; 1600×1067 / 1280×854, שניים לאורך — 1067×1600 ו-854×1280) → images/events/hadas-tuval/moment-01..19 (master = המקור, בלי הגדלה, + 480/768/1080 רק עד 90% מרוחב ה-master). סדר: שלישיית הפריים קודם — moment-01 = 1918:1235 (peek שמאלי, cb763dd9), moment-02 = 1918:1236 (מרכז, 362c6123, data-tri-start=\"1\"), moment-03 = 1918:1237 (peek ימני, 58caaf1e) — ואז 1918:1238…1253 בסדר ה-nodes (moment-04..19). **אל תשחזר את סדר ההדבקה של המעצבת.** בלי השמטות ובלי כפילויות (RMSE מינימלי בין זוגות 24%). לכל רקטנגל ברצועה 2–3 image fills; ברינדור נראה רק הראשון (שלושת ה-imageRefs של השלישייה, RMSE 0.5%–2%), והשאר (e8a46ebf, dd412a55, 6db7324e, 482f5f95, 18b6fa7c, 6e2fdc9d, 75c3dce9, 8eb2d8fc) = leftovers. 17 מתוך 19 רוחביים (3:2) ⇒ ב-cover בשקופית לאורך נראה ~38% מהרוחב; החיתוך ממורכז כמו ה-FILL של פיגמה. קרדיט מתחת לרצועה (1918:1283 / 1918:1286): \"פרפורמנס: יקי לוין וג׳ני מיכלביץ\" / \"קרדיט צילום: אייל רדושינצקי\" — אורחים, לא אומני האתר ⇒ בלי קישור.",
       "_image_note": "hero = imageRef bcfaadef… (מיצב שיבארי של הדס טובל; המקור 945×2048 עם פסים שחורים למעלה/למטה — תצלום מסך). נאפה חלון ה-cover של הדסקטופ (y 309..1738 מהמקור, מחוץ לפסים) ל-984×1488, ולכן object-fit:cover משחזר גם את קרופ המובייל (390×520) בדיוק. **scrim rgba(27,27,27,.7) — כבד מהרגיל במשפחה (.4) ואומת שהוא באמת מרונדר**: אלפא נגזרת 0.698 בשתי רצועות מדידה מול רינדורי ה-nodes. thumb האומנית = מיחזור images/artists/grid/hadas-tuval.webp (אומת RMSE 0.5% מול imageRef 2249c4b3), מיושר לראש (object-position 50% 0%) כמו ב-Figma; ה-fill השני בכרטיס הדסקטופ (1214412249 — הפורטרט של נעמי ספיר) הוא leftover מוסתר מתחת.",
       "_list_image_note": "list-card-v2 = הקרופ מהפריים של רשימת האירועים (1318:1761) — ה-fill שם הוא STRETCH עם cropTransform, ולכן הקובץ נאפה ב-876×487 מהחלון המדויק ונמתח כמו בפיגמה; list-card.webp הישן (קרופ רוחבי שנבנה לפני שהיה frame כרטיס) נשאר בדיסק — כלל-זהב 8."
     },

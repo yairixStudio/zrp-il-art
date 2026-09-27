@@ -819,6 +819,13 @@ hadas tuval מובייל: Implement this design from Figma.
 
 > ⚠️ ה-scrim על תמונת הגיבור כאן הוא `rgba(27,27,27,.7)` — כפול מהמקובל במשפחה (.4), ואומת שהוא באמת מרונדר (אלפא נגזרת 0.698 מול רינדורי ה-nodes). ה-fill השני בכרטיס האומנית (`1214412249…`) = הפורטרט של נעמי ספיר, leftover מוסתר.
 
+> **2026-09-27 — רצועת צילומים + קרדיט:** שני הפריימים למעלה עודכנו in-place. בתוכם: רצועה `1914:1056` (דסקטופ, שורה `1914:1057`) / `1914:1062` (מובייל, "Image Gallery" `1914:1063`), וקרדיט מתחתיה `1918:1283` / `1918:1286` ("פרפורמנס: יקי לוין וג׳ני מיכלביץ" / "קרדיט צילום: אייל רדושינצקי").
+
+hadas tuval — 19 הצילומים (nodes רופפים, קבצי WhatsApp; נמסרו 2026-09-27): Implement these designs from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1918-1235&m=dev … @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1918-1253&m=dev (רצף מלא `1918:1235`–`1918:1253`)
+
+> ⚠️ סדר באתר: 1235 [peek שמאלי], 1236 [מרכז], 1237 [peek ימני] — שלושת ה-imageRefs הנראים ברינדור הרצועה — ואז 1238…1253 בסדר ה-nodes. בלי השמטות ובלי כפילויות. לכל רקטנגל ברצועה 2–3 fills; השכבות שאינן נראות ברינדור = leftovers.
+
 ### עמוד אירוע Artist Talk with Livay Levi (`/events/livay-levi/`, הקולפן / כיכר המדינה 18.8.2026)
 
 livay levi דסקטופ: Implement this design from Figma.
