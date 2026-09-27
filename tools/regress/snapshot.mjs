@@ -20,7 +20,7 @@
  *   node tools/regress/diff.mjs before after
  *
  * Options:
- *   --label NAME         output dir .regress/NAME (required)
+ *   --label NAME         output dir $REGRESS_OUT/NAME (required; see "Output" below)
  *   --modes http,file    http = served by a local http.server (production-like),
  *                        file = file:// (how the site is browsed locally)
  *   --widths 390,1440    (add e.g. 1024,1366 for layout work — family-specific bugs often live
@@ -65,7 +65,7 @@ const CONC = Number(opt('concurrency', 6));
 const SHOTS = !!opt('shots', false);
 const FULL = !!opt('full', false);
 // --root DIR: snapshot another checkout of the site (e.g. a pristine clone of HEAD)
-// while keeping the harness, node_modules and the .regress/ output here.
+// while the harness and node_modules stay in this repo.
 const ROOT = path.resolve(opt('root', HARNESS_ROOT) === true ? HARNESS_ROOT : opt('root', HARNESS_ROOT));
 // Output lives OUTSIDE the repo by default (the repo sits in iCloud, which spawns "name 2.json"
 // conflict copies inside rapidly rewritten folders). Override with REGRESS_OUT.
