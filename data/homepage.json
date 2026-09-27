@@ -32,12 +32,12 @@
   ]
  },
  "exhibitions_now": {
-  "_note": "Figma 'exhibitions/now' — current/upcoming cards + artists row. loneliness stays visible with status_label_en previous.",
+  "_note": "2026-09-27 — grouped by city (Figma 1124:819 desktop / 1318:418 mobile). Static HTML; this block is declarative.",
   "title_b": "exhibitions",
   "title_l": "now",
   "exhibition_ids": [
-   "how-many",
-   "loneliness"
+   "the-peeler",
+   "how-many"
   ],
   "artists_label": "our artists",
   "artist_ids": [
@@ -63,7 +63,46 @@
    "costa-magarakis",
    "maya-nachum-levy",
    "la-raz-porta"
-  ]
+  ],
+  "groups": [
+   {
+    "city_en": "tel aviv",
+    "cards": [
+     {
+      "kind": "residency",
+      "gallery_id": "dizengoff",
+      "route": "sponsors/sumii/",
+      "title_en": "pop up art residency",
+      "image": "images/sponsors/sumii/hero.webp",
+      "logos": [
+       "images/homepage/ex-now/sumii-mark-white.svg",
+       "images/homepage/ex-now/melani-mark-white.svg"
+      ]
+     },
+     {
+      "kind": "exhibition",
+      "gallery_id": "medina",
+      "exhibition_id": "the-peeler",
+      "route": "exhibitions/the-peeler/"
+     }
+    ]
+   },
+   {
+    "city_en": "berlin",
+    "cards": [
+     {
+      "kind": "exhibition",
+      "gallery_id": "berlin",
+      "gallery_name_en": "the art gallery berlin",
+      "exhibition_id": "how-many",
+      "route": "exhibitions/how-many/",
+      "image": "images/homepage/ex-now/berlin-how-many.webp"
+     }
+    ]
+   }
+  ],
+  "figma_node_desktop": "1124:819",
+  "figma_node_mobile": "1318:418"
  },
  "exhibitions_archive": {
   "title_b": "exhibitions",
