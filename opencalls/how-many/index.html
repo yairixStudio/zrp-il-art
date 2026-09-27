@@ -143,6 +143,11 @@ body{text-transform:uppercase}
   .oc-hero .img-frame{width:380px;height:560px}
   .oc-gallery .frame{width:340px;height:520px}
 }
+@media (min-width:769px) and (max-width:1100px){
+  .oc-hero .text-col{min-width:0}
+  /* the email is one unbreakable Copperplate word (16.1em) — shrink it to fit the column */
+  .oc-hero .block .text .email{font-size:clamp(14px,calc((100vw - 552px) / 16.1),18px)}
+}
 
 /* ============================================================
    MOBILE (≤768px) — different section order + full-width banner

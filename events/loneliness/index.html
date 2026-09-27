@@ -145,6 +145,21 @@ body.menu-open{overflow:hidden}
 .footer-icons svg{width:20px;height:20px;fill:currentColor}
 .copyright{font-family:var(--cop);font-weight:300;font-size:11px;line-height:16px;letter-spacing:.04em;color:var(--copy-grey);text-align:right;text-transform:uppercase}
 
+/* ===== TABLET 769–1100px — same card ramp as events/how-many; without it the 492px
+   card and the nowrap date line pushed the hero past the viewport edge ===== */
+@media (min-width:769px) and (max-width:1100px){
+  :root{--pad-x:48px}
+  .event-hero .text{min-width:0}
+  .event-hero .card{flex-basis:380px}
+  .event-hero .card .frame{width:380px;height:575px}
+  .event-hero .h-eyebrow{font-size:min(80px,calc((100vw - 576px) / 3.02))}
+  .event-hero .gallery{font-size:22px}
+  .event-hero .when{font-size:clamp(16px,calc((100vw - 576px) / 11.86),22px)}
+  .event-hero .banner .bar{font-size:18.5px;gap:10px}
+  .event-hero .banner .he{font-size:23px}
+  .event-hero .banner .en{font-size:9.3px}
+}
+
 /* ===== MOBILE ≤768px ===== */
 @media (max-width:768px){
   :root{--pad-x:16px}
