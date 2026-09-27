@@ -157,7 +157,7 @@
   "figma_node_mobile": "1856:433"
  },
  "x_our_artists": {
-  "_note": "Above press section — \"Zielinski Rozen x our artists\" featured grid. items[] = Figma \"mobile order\" (1124:1181, canonical 2026-07-15), 38 items row-major (3 cols x 13 rows). Desktop 3-col grid and Mobile triptych coverflow both render all 38 in this order. Images node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). Captions verbatim from Figma. work-N.webp maps 1:1 to item position N.",
+  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"mobile order\" (landing 1873:1146, canonical 2026-09-27; previously 1124:1181), 39 items in Figma row-major order. Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). 2026-09-27 sync: work-10/23/31 replaced by -v2 renders (old files kept, golden rule 8), work-39 (shira turbowicz) added.",
   "title_b": "Zielinski Rozen",
   "title_l": "x our artists",
   "items": [
@@ -208,7 +208,7 @@
    },
    {
     "name_en": "maria artamonova",
-    "image": "images/homepage/x-our-artists/work-10.webp",
+    "image": "images/homepage/x-our-artists/work-10-v2.webp",
     "slug": "maria-artamonova"
    },
    {
@@ -273,7 +273,7 @@
    },
    {
     "name_en": "yarden amir",
-    "image": "images/homepage/x-our-artists/work-23.webp",
+    "image": "images/homepage/x-our-artists/work-23-v2.webp",
     "slug": "yarden-amir"
    },
    {
@@ -313,7 +313,7 @@
    },
    {
     "name_en": "gal pollak",
-    "image": "images/homepage/x-our-artists/work-31.webp",
+    "image": "images/homepage/x-our-artists/work-31-v2.webp",
     "slug": "gal-polk"
    },
    {
@@ -350,10 +350,16 @@
     "name_en": "noemi safir",
     "image": "images/homepage/x-our-artists/work-38.webp",
     "slug": "noemi-safir"
+   },
+   {
+    "name_en": "shira turbowicz",
+    "image": "images/homepage/x-our-artists/work-39.webp",
+    "slug": "shira-turbowicz"
    }
   ],
   "figma_node_desktop": "412:334",
-  "figma_node_mobile": "640:249"
+  "figma_node_mobile": "640:249",
+  "figma_node_order": "1873:1146"
  },
  "sumii_sponsor": {
   "_note": "Section #sumii above #soos (user request 2026-08-18). Mobile = Figma 1318:316 — ⚠️ the node was rewritten in-place over the old soos-section source (same id, new identity); desktop = adaptation (thumbs 158px/gap 16 like #soos). Lockup = gallery name / X / sumii logo (inline SVG, currentColor). Thumbs object-fit:contain (Figma FIT). Clickable → sponsors/sumii/: logo, title row, strip, read more; website external; curator name → curator page.",
