@@ -218,7 +218,10 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .h-title{font-size:34px;line-height:38px}
 }
 @media (max-width:900px) and (min-width:769px){
-  /* the text column drops to ~250px at 769 — let the long lockup lines wrap */
+  /* the text column drops to ~215px at 769 — smaller title/meta (34px stranded "ART" on its
+     own line), and let the long lockup lines wrap */
+  .h-title{font-size:28px;line-height:32px}
+  .h-meta .gallery,.h-meta .date,.h-meta .time{font-size:18px}
   .sumii-lockup .host,.ev-scent{white-space:normal}
   .ev-scent{flex-wrap:wrap;height:auto;row-gap:6px}
   .sumii-lockup .gname{font-size:clamp(12px,1.6vw,16px);line-height:1.1;letter-spacing:.1em}
