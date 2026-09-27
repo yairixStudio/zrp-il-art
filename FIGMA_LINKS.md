@@ -99,6 +99,14 @@ legacy — מובייל:
 הסקשן המצומצם — 9 כרטיסים (כל העיתונות + 2 פתיחות) + כפתור "more press & events" (מובייל; דסקטופ = אנטומיית `/press/`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1322-258&m=dev
 
+### Homepage — `#exhibitions` ארכיון התערוכות (2 כרטיסים; 2026-09-27) ✅ המצב הנוכחי
+
+דסקטופ (1440): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1124-947&m=dev
+
+מובייל (390): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-487&m=dev
+
 ### Homepage — `#galleries-berlin` "the gallery / berlin" (מתחת ל-`#galleries`; 2026-09-27) ✅ המצב הנוכחי
 
 דסקטופ (1440): Implement this design from Figma.

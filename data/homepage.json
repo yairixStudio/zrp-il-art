@@ -105,10 +105,23 @@
   "figma_node_mobile": "1318:418"
  },
  "exhibitions_archive": {
+  "_note": "2026-09-27 redesign — Figma 1124:947 desktop / 1318:487 mobile. Two cards side by side in both breakpoints: how-many (dizengoff) left, loneliness (medina) right; gallery name (Hebrew) above each card, title overlay bottom-left. Static HTML. Loneliness title kept as the resolved 'בדידות בתוך סביבה תוססת' (Figma still drops 'בתוך'). Images: images/exhibitions/archive/how-many-card (imageRef a8040b35…, FILL) + loneliness-card (imageRef fb3e17bb…, crop 555719, square).",
   "title_b": "exhibitions",
   "title_l": "archive",
-  "active_gallery_id": "medina",
-  "thumbs_ref": "exhibitions.archive_thumbnails"
+  "items": [
+   {
+    "exhibition_id": "how-many",
+    "gallery_id": "dizengoff",
+    "image": "images/exhibitions/archive/how-many-card.webp"
+   },
+   {
+    "exhibition_id": "loneliness",
+    "gallery_id": "medina",
+    "image": "images/exhibitions/archive/loneliness-card.webp"
+   }
+  ],
+  "figma_node_desktop": "1124:947",
+  "figma_node_mobile": "1318:487"
  },
  "art_works_words": [
   "the",
