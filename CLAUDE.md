@@ -23,8 +23,9 @@
 13. **🔴 כל דף/פוסט חדש = רשומה ב-`sitemap.xml`, באותו קומיט** (כלל-זהב 15). בלי זה הדף לא קיים לגוגל.
 14. **בדיקה ויזואלית/טיפוגרפית — רק דרך http** (`python3 -m http.server`, מוגדר ב-`.claude/launch.json`). ב-file:// כרום **חוסם את ה-`@font-face`** (CORS, origin null) והדף מוצג בפונטי fallback — אל תשפוט טיפוגרפיה משם.
 15. **שינוי שנוגע בהרבה דפים** (הפצת תבנית, CSS/JS משותף, צנרת דאטה) → **חובה** harness הרגרסיה (§7.1) לפני קומיט.
-16. **סשנים מקבילים עובדים על אותו ריפו.** Re-Read לפני edit, וקומיט רק של הקבצים שלך (`git add <paths>`, לא `-A`).
-17. בסוף — עדכן את ה-route doc (מצב **נוכחי**, לא יומן — §7.2), את שורת ה-sitemap ב-§4 אם הסטטוס השתנה, `FIGMA_LINKS.md` אם גילית URL חדש, `docs/data-contracts.md` אם נוסף שדה, ולקח חדש ב-`docs/lessons.md §4`.
+16. **סשנים מקבילים עובדים על אותו ריפו.** Re-Read לפני edit, וקומיט רק של הקבצים שלך (`git add <paths>`, לא `-A`) — **כולל כל קובץ ש-`sync_data.py` כתב** (כלל-זהב 14).
+17. **🔴 לפני שיוצרים דף/רשומה — לחפש שאריות של אותה ישות** (כרטיס "בקרוב", רשומה עם `route:null`, id תפוס) — §7 שלב 2. קיימת ⇒ לשאול ולקדם אותה, **לא לשכפל id**.
+18. בסוף — עדכן את ה-route doc (מצב **נוכחי**, לא יומן — §7.2), את שורת ה-§4 אם הסטטוס השתנה **או שנוסף/נמחק דף במשפחה**, `FIGMA_LINKS.md` אם גילית URL חדש, `docs/data-contracts.md` אם נוסף שדה, ולקח חדש ב-`docs/lessons.md §4`.
 
 ---
 
@@ -38,10 +39,10 @@
 |---|---|
 | `index.html` (עמוד הבית, כל סקשן) | [`docs/routes/homepage.md`](./docs/routes/homepage.md) |
 | `about/` | [`docs/routes/about.md`](./docs/routes/about.md) |
-| `works/` (הגריד + 150 עמודי יצירה) | [`docs/routes/works.md`](./docs/routes/works.md) |
+| `works/` (הגריד + עמוד לכל יצירה) | [`docs/routes/works.md`](./docs/routes/works.md) |
 | `galleries/` | [`docs/routes/galleries.md`](./docs/routes/galleries.md) |
 | `exhibitions/`, `curators/`, `opencalls/` | [`docs/routes/exhibitions.md`](./docs/routes/exhibitions.md) |
-| `artists/` (הגריד + 44 דפי אומן) | [`docs/routes/artists.md`](./docs/routes/artists.md) |
+| `artists/` (הגריד + דף לכל אומן) | [`docs/routes/artists.md`](./docs/routes/artists.md) |
 | `press/` (ארכיון + כתבות) | [`docs/routes/press.md`](./docs/routes/press.md) |
 | `events/index.html`, `events/{ktuba,loneliness,close-look,artist-talk,how-many,gala-night}/`, וריאנט **אירועי רזידנסי SUMII** `events/{niki-de-saint-phalle-day,sumii-opening,sumii-melani-hosting,yom-kippur-wish-tree,sumii-live-studio}/` | [`docs/routes/events.md`](./docs/routes/events.md) |
 | כל `events/<slug>/` אחר (משפחת "artist talk") | [`docs/routes/events-talks.md`](./docs/routes/events-talks.md) |
@@ -96,14 +97,14 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 
 ## 4. SITEMAP
 
-> טבלה קומפקטית: שורה אחת לכל route/משפחה. **הפרטים (nodes, מבנה, הכרעות, gotchas) — ב-route doc.** אל תכתוב כאן יומן שינויים (§7.2).
+> טבלה קומפקטית: שורה אחת לכל route/משפחה. **הפרטים (nodes, מבנה, הכרעות, gotchas) — ב-route doc.** אל תכתוב כאן יומן שינויים (§7.2). שורת משפחה מונה את ה-slugs שלה — **דף שנוסף/נמחק = לעדכן את השורה** (בלי ספירות: הן מתיישנות).
 
 | Route | קובץ | סטטוס | route doc |
 |---|---|---|---|
 | `/` | `index.html` | ✅ רה-דיזיין אוגוסט 2026 הושלם; מקור סמכותי = פריים מובייל `1318:363` | homepage |
 | `/about/` | `about/index.html` | ✅ רה-דיזיין 2026-09-01 (landing `1699:1406`/`1699:1291`) | about |
-| `/works/` | `works/index.html` | ✅ גריד 150 יצירות, סדר = `works.json art_works[]` | works |
-| `/works/:id/` | `works/<id>/index.html` ×150 | ✅ טמפלט data-driven (`#artwork-data` מיוצר ע"י `sync_data.py`) | works |
+| `/works/` | `works/index.html` | ✅ גריד כל היצירות, סדר = `works.json art_works[]` | works |
+| `/works/:id/` | `works/<id>/index.html` (עמוד לכל יצירה) | ✅ טמפלט data-driven (`#artwork-data` מיוצר ע"י `sync_data.py`) | works |
 | `/galleries/` | — | ⏳ אין עיצוב; `#galleries` בהומפייג' משמש אינדקס | galleries |
 | `/galleries/medina/`, `/galleries/dizengoff/` | `galleries/<slug>/index.html` | ✅ (flea-market ו-berlin — בלי דף) | galleries |
 | `/exhibitions/` | — | ⏳ (כיום ארכיון בהומפייג') | exhibitions |
@@ -111,14 +112,14 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `/exhibitions/the-peeler/` | `exhibitions/the-peeler/index.html` | ✅ **סטטי קפוא** — עריכה ידנית ב-HTML | exhibitions |
 | `/curators/korin-avraham/` | `curators/korin-avraham/index.html` | ✅ | exhibitions |
 | `/opencalls/` · `/opencalls/the-peeler/` · `/opencalls/how-many/` | `opencalls/<slug>/index.html` | ⏳ · ✅ · ✅ | exhibitions |
-| `/artists/` | `artists/index.html` | ✅ גריד 43 כרטיסים | artists |
-| `/artists/:slug/` | `artists/<slug>/index.html` ×44 | ✅ תבנית משותפת + `data-slug`; דאטה מ-`data/generated/*.js` | artists |
+| `/artists/` | `artists/index.html` | ✅ גריד האומנים (`#artists-grid-data`) | artists |
+| `/artists/:slug/` | `artists/<slug>/index.html` (דף לכל אומן) | ✅ תבנית משותפת + `data-slug`; דאטה מ-`data/generated/*.js` | artists |
 | `/press/` | `press/index.html` | ✅ ארכיון **עבר** (אירועים עתידיים נושרים בזמן ריצה) | press |
-| `/press/<article>/` ×8 | walla, press-1, time-out, the-last-station, the-sixth-scent, manicure-against-darkness, peeling-a-layer, the-shared-list | ✅ | press |
+| `/press/<article>/` | walla, press-1, time-out, the-last-station, the-sixth-scent, manicure-against-darkness, peeling-a-layer, the-shared-list | ✅ | press |
 | `/events/` | `events/index.html` | ✅ אירועים **קרובים** (מירור `#events-list-data`) | events |
 | `/events/{ktuba,loneliness,close-look,artist-talk,how-many,gala-night}/` | `events/<slug>/index.html` | ✅ | events |
-| `/events/<sumii-event>/` ×5 | niki-de-saint-phalle-day, sumii-opening, sumii-melani-hosting, yom-kippur-wish-tree, sumii-live-studio | ✅ וריאנט "אירועי רזידנסי SUMII" (כיכר דיזינגוף, בלי תערוכה; בסיס = niki-de-saint-phalle-day) | events |
-| `/events/<talk>/` ×19 | natasha-zeriker, liel-salman, nir-giorgio-levin, risa-and-noemi, zohar-ron, alice-debellis, anat-wegier, the-space-between, zohar-ron-medina, noemi-safir, hadas-tuval, livay-levi, michael-konovalenko, bar-cohen, maria-artamonova, jessica-tabarovsky, elsa-ars-brush, baruch-torgeman, nir-giorgio-levin-medina | ✅ משפחת "artist talk" — עמודים סטטיים עצמאיים | events-talks |
+| `/events/<sumii-event>/` | niki-de-saint-phalle-day, sumii-opening, sumii-melani-hosting, yom-kippur-wish-tree, sumii-live-studio | ✅ וריאנט "אירועי רזידנסי SUMII" (כיכר דיזינגוף, בלי תערוכה; בסיס = niki-de-saint-phalle-day) | events |
+| `/events/<talk>/` | natasha-zeriker, liel-salman, nir-giorgio-levin, risa-and-noemi, zohar-ron, alice-debellis, anat-wegier, the-space-between, zohar-ron-medina, noemi-safir, hadas-tuval, livay-levi, michael-konovalenko, bar-cohen, maria-artamonova, jessica-tabarovsky, elsa-ars-brush, baruch-torgeman, nir-giorgio-levin-medina | ✅ משפחת "artist talk" — עמודים סטטיים עצמאיים | events-talks |
 | ~~`/events/amnon-lipkin/`~~ | — | 🗑️ נמחק 2026-08-28 (בקשת משתמש) — **הפריימים עדיין בפיגמה; אל תשחזר** | events-talks |
 | `/sponsors/soos/`, `/sponsors/sumii/` | `sponsors/<slug>/index.html` | ✅ (sumii מארח גם את סקשני הרזידנסי של מלאני הקימוגלו) | sponsors |
 | `/contact/`, `/accessibility/`, `/privacy/` | `<dir>/index.html` | ✅ סטטיים (טופס / הצהרה / מדיניות) | — |
@@ -139,7 +140,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 .
 ├── index.html                 # Homepage entry → /
 ├── about/index.html           # → /about/
-├── works/index.html           # → /works/  (+ works/<id>/index.html ×150)
+├── works/index.html           # → /works/  (+ works/<id>/index.html — one per artwork)
 ├── contact/, accessibility/, privacy/   # Static pages, each <dir>/index.html
 ├── artists/<slug>/index.html  # Per-artist pages (shared template + data-slug)
 ├── exhibitions/<slug>/index.html
@@ -191,7 +192,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `events.json` | אירועים: date, gallery_id, list_* לכרטיסים, soon/pinned, event_photos[] … |
 | `press.json` | כתבות+אירועים לכרטיסים: type, tag, route, cover, date, `homepage_visible` (גוף כתבה = HTML) |
 | `opencalls.json` | קולות קוראים |
-| `works.json` | `works[]` (שחמט ההומפייג') · `art_works[]` (150 יצירות) · `exhibition_statements[]` |
+| `works.json` | `works[]` (שחמט ההומפייג') · `art_works[]` (כל היצירות) · `exhibition_statements[]` |
 | `homepage.json` | composition layer — ids לפריטים מ-JSONs אחרים + בלוקים דקלרטיביים |
 | `curators.json`, `sponsors.json`, `instagram.json` | אוצרת · ספונסרים/רזידנסי (meta בלבד) · snapshot |
 
@@ -207,18 +208,18 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 ## 7. WORKFLOW לדף חדש
 
 1. קרא `CLAUDE.md` + **ה-route doc של המשפחה** (§1.1).
-2. בדוק ב-§4 אם הדף כבר רשום. אם לא — תוסיף שורה (קומפקטית) + סקשן ב-route doc.
+2. בדוק ב-§4 אם הדף כבר רשום. אם לא — הוסף אותו לשורה (או שורה קומפקטית) + סקשן ב-route doc. **🔴 חיפוש שאריות לפני יצירה:** `grep -rn -i -e '<slug>' -e '<name_en>' -e '<שם בעברית>' data/*.json index.html press/index.html events/index.html docs/todo.md` — וודא שה-ids שתיצור פנויים (למשל `event-<slug>-talk` ב-`press.json`). כרטיס `--soon`/`soon:true`, רשומה עם `route:null` או id קיים ⇒ **לשאול את המשתמש** אם זו אותה ישות; אותה ⇒ לקדם את הקיים (אותו id, להסיר את ה-soon), אחרת ⇒ id חדש וייחודי. (היום: tal-nehoray — `press.json::event-tal-nehoray-talk` + כרטיס `pcard--soon` ב-`/press/`, בלי דף.)
 3. קבל URLs מ-`FIGMA_LINKS.md` (או הוסף אם חסרים).
 4. ספאון 2 subagents במקביל (desktop + mobile) לקרוא Figma. Prompt:
    > "קרא את הקובץ `<path>` ב-chunks של 600 שורות. החזר blueprint מובנה: dimensions, sections (top→bottom), כל הטקסטים verbatim (כולל עברית), צבעים, imageRefs, layout (gap/padding/justify/align). אל תסכם."
 5. אסוף imageRefs **ייחודיים**. **`ls images/<category>/<slug>/` קודם.** הורד ב-batches מקבילים.
-6. **לפני HTML — עדכן JSONs.** הוסף entity חדש לקובץ המתאים, ואז `python3 tools/sync_data.py`.
+6. **לפני HTML — עדכן JSONs.** קרא את סעיף החוזה ב-`docs/data-contracts.md`, ו**העתק רשומת-אחות מאותו קובץ/תערוכה וערוך אותה — לא לבנות רשומה מרשימת שדות** (צורות שגויות שוברות רנדררים בשקט: `img` ולא `image`, `statement_he` = מערך פסקאות). ואז `python3 tools/sync_data.py`.
 7. בנה HTML יחיד עם CSS מוטמע. Pattern: `font-face → tokens → sections → media queries → casing block (conventions.md §5)`. בדרך כלל: העתק דף-אח מאותה משפחה (ה-route doc אומר מאיזה).
 8. הוסף לינק לדף ב-nav אם צריך (nav/footer גלובליים ב-`components/site-chrome.js`).
 9. **לפני סיום:** עבור על `docs/artist-linking.md §7` (בדיקת anchors), וודא `text-transform`/font compliance (`conventions.md §5`), **בדוק חיתוך כותרות מלמעלה** (Copperplate caps ב-`line-height ≤1.2`; **אסור `overflow-x` על `body`** — רק על `html` — ראה `lessons.md` 2026-06-16/06-15), והרץ perf checklist (כלל-זהב 12): כל `<img>` עם `src="*.webp"` + `width`/`height` + `loading="lazy" decoding="async"` (חוץ מה-LCP שמקבל `fetchpriority="high"`). בדוק ויזואלית דרך http, לא file:// (TL;DR 14).
-10. **🔴 הוסף את הדף ל-`sitemap.xml`** (כלל-זהב 15) ואז `python3 tools/seo/refresh_sitemap_lastmod.py`. **SEO/OG ידני:** `magick <hero>.webp -resize 1200x -strip -quality 82 og/<family>-<slug>-hero.jpg` + העתקת בלוק `SEO:auto` מדף-אח ועריכתו. **אל תריץ `og_gen.py`/`inject.py` גורפות** (שבורים — ראה כלל 15).
+10. **🔴 הוסף את הדף ל-`sitemap.xml`** (כלל-זהב 15) ואז `python3 tools/seo/refresh_sitemap_lastmod.py`. **SEO/OG ידני — לפי המתכון במסמך המשפחה:** אירועים/ספונסרים `magick <hero>.webp -resize 1200x -strip -quality 82 og/<family>-<slug>-hero.jpg` (~≤300KB); יצירות/כתבות `-resize '1200x1200>'` (כתבה — מתמונת הכרטיס `cover_image`) + העתקת בלוק `SEO:auto` מדף-אח ועריכתו. **אל תריץ `og_gen.py`/`inject.py` גורפות** (שבורים — ראה כלל 15).
 11. `python3 tools/sync_data.py --check` → exit 0.
-12. עדכן: ה-route doc (מצב נוכחי — §7.2), §4 אם צריך, `docs/data-contracts.md` אם הוספת שדה, `docs/lessons.md §4` אם יש לקח חדש. קומיט של הקבצים שלך בלבד.
+12. עדכן: ה-route doc (מצב נוכחי — §7.2), שורת §4 (סטטוס / דף שנוסף במשפחה), `docs/data-contracts.md` אם הוספת שדה, `docs/lessons.md §4` אם יש לקח חדש. קומיט של הקבצים שלך בלבד — `git status --short` ולהוסיף **בשמם** גם את כל מה ש-`sync_data.py` ו-hook ה-pre-commit כתבו.
 
 **שיתוף קבצים:** לפני edit ל-`index.html`, `data/*.json`, `CLAUDE.md`, `docs/routes/*`, או כל קובץ shared — **Re-Read קודם**. סוכנים/סשנים מקבילים יוצרים race conditions.
 
@@ -265,10 +266,11 @@ node tools/regress/diff.mjs before after                  # exit 0 = זהה
     - `width="N" height="N"` (מהפיקסלים האמיתיים, מונע CLS).
     - `loading="lazy" decoding="async"` — חוץ מה-img הראשון בדף.
     - ה-img הראשון בדף = ה-LCP, מקבל `fetchpriority="high"` במקום `loading="lazy"`.
-    - **תמונה ≥80KB וגם ≥800px רוחב → חובה srcset:** צור וריאנטים `<name>-{480,768,1080}w.webp+avif` (רק רחבים מ-90% מהמקור: `magick src.webp -resize 480x -strip -quality 85 out.webp`, avif עם `-quality 60`), והוסף `srcset="...-480w.webp 480w, ..., <name>.webp <naturalW>w" sizes="100vw"`. `picture-upgrade.js` ממפה את ה-srcset ל-AVIF אוטומטית — חובה ש**כל** וריאנט webp יהיה לו אח avif.
+    - **עיבוד מקור:** `magick src -auto-orient -colorspace sRGB -resize '1600x1600>' -strip -quality 85 out.webp` — `-auto-orient` (סיבוב EXIF של צילומי טלפון) והמרה ל-sRGB **לפני** `-strip` (מקורות Display P3); **גאומטריה עם `>` תמיד בגרשיים** (בלי — zsh מפנה לקובץ בשם `-strip`, מדלג על ה-strip ומגדיל). בלי upscale.
+    - **תמונה ≥80KB וגם ≥800px רוחב → חובה srcset:** צור וריאנטים `<name>-{480,768,1080}w.webp+avif` (וריאנט קיים כשרוחבו ≤90% מרוחב המקור — למשל `-1080w` לכל master ≥1200: `magick src.webp -resize 480x -strip -quality 85 out.webp`, avif עם `-quality 60`), והוסף `srcset="...-480w.webp 480w, ..., <name>.webp <naturalW>w" sizes="100vw"`. `picture-upgrade.js` ממפה את ה-srcset ל-AVIF אוטומטית — חובה ש**כל** וריאנט webp יהיה לו אח avif.
     - **🔴 `picture-upgrade.js` מדלג על `<img>` שכבר בתוך `<picture>`** — ב-`<picture>` ידני (למשל `source media` לקרופ מובייל) כל webp חייב אח avif **ידני**. והוא עוטף `<img>` ב-`<picture>` בזמן ריצה — סלקטור `.x>img` מפסיק להתאים (פתרון: `.x>picture{display:contents}`).
 13. **כן** לעדכן את הקובץ הזה כש-state רוחבי משתנה (golden rules, contracts, מבנה) — ופרטי-דף ב-route doc (§7.2).
-14. **🔴 git commit אחרי כל מצב-עבודה תקין** — **רק של הקבצים שלך** (`git add <paths> && git commit`), **לא `git add -A`**: סשנים מקבילים עובדים על אותו working tree, ו-`-A` מקמט עבודה חצי-גמורה שלהם. אסור לעבוד שעות בלי commit. **הנתונים** (`data/*.json`) הם מקור-האמת; **ה-renderer/CSS בתבנית** (`artists/<slug>/index.html`) הם קוד שאפשר לאבד ב-rebuild שגוי (קרה: כל לוגיקת ה-`buildExGroups` נמחקה כי תבנית-מקור ישנה דרסה את zohar). לפני כל rebuild גורף של דפי אומנים — commit + harness (§7.1); לשחזר תבנית מ-git (HEAD), לא מקובץ-אחר-שאולי-נסוג. **push = פרסום לפרודקשן** — רק כשהמשתמש מבקש.
+14. **🔴 git commit אחרי כל מצב-עבודה תקין** — **רק של הקבצים שלך** (`git add <paths> && git commit`), **לא `git add -A`**: סשנים מקבילים עובדים על אותו working tree, ו-`-A` מקמט עבודה חצי-גמורה שלהם. **"הקבצים שלך" כוללים כל מה ש-`sync_data.py` כתב** (הוא מדפיס את הרשימה המלאה — למשל `works/index.html`, עמודי `works/<id>/` של אחיות, דף הגלריה, `data/generated/*`) ואת `search-index.js` מה-hook: קומיט בלעדיהם = אתר מיושן בפרודקשן ו-`--check` נכשל על HEAD. אסור לעבוד שעות בלי commit. **הנתונים** (`data/*.json`) הם מקור-האמת; **ה-renderer/CSS בתבנית** (`artists/<slug>/index.html`) הם קוד שאפשר לאבד ב-rebuild שגוי (קרה: כל לוגיקת ה-`buildExGroups` נמחקה כי תבנית-מקור ישנה דרסה את zohar). לפני כל rebuild גורף של דפי אומנים — commit + harness (§7.1); לשחזר תבנית מ-git (HEAD), לא מקובץ-אחר-שאולי-נסוג. **push = פרסום לפרודקשן** — רק כשהמשתמש מבקש.
 15. **🔴 כל דף/פוסט חדש נכנס ל-`sitemap.xml` — באותו קומיט.** אירוע, כתבה, דף אומן, עמוד יצירה, תערוכה, גלריה, ספונסר, עמוד אינדקס — **כולם**. דף שלא ב-sitemap פשוט לא מתגלה בגוגל. הכלל חל גם על:
     - **חשיפת דף מ-`_staging/`** — לא רק `mv`: להוסיף ל-sitemap **וגם** לתקן `canonical`/`og:url`/JSON-LD שעדיין מצביעים ל-`_staging` (קרה, ראה `docs/lessons.md` 2026-07-26).
     - **מחיקת/הסרת דף** — למחוק את רשומת ה-`<url>` שלו, אחרת נשארת כתובת מתה ב-sitemap.

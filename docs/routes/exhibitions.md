@@ -214,13 +214,14 @@
 - **הסדר = Figma desktop `980:92` verbatim:** zohar-ron, noemi-safir, elsa-ars-brush, anat-wegier, yarden-amir, nir-giorgio-levin, jessica-tabarovsky, chen-ziv, baruch-torgeman, gilad-kenan, lahav-barak, livay-levi, natasha-zeriker, talia-zoref, aharon-bas, bar-cohen, amnon-lipkin, alice-debellis, maria-artamonova, michael-konovalenko.
   - **אחריהם hadas-tuval ואז tali-zelnik** (tali נחשפה ב-2026-07-26 ונוספה בסוף).
 - **thumbs:**
-  - 21 כרטיסים ממחזרים את `images/artists/grid/<slug>.{webp,avif}` (+480w), עם `object-position:50% 40%`.
+  - כולם חוץ מ-hadas-tuval ממחזרים את `images/artists/grid/<slug>.{webp,avif}` (+480w), עם `object-position:50% 40%`.
   - **hadas-tuval** משתמשת ב-thumb ייעודי: `images/exhibitions/the-peeler/artists/hadas-tuval.{webp,avif}` (356×356, רונדר מ-Figma node `980:175`), עם `50% 45%`.
-- כל 22 הכרטיסים הם `<a class="card is-linked">`.
+- כל הכרטיסים הם `<a class="card is-linked">`.
 - השמות כתובים עם שבירת שורה אמיתית בתוך `.name` (`white-space:pre-line`), למשל "nir giorgio⏎levin" או "alice⏎de bellis".
 - **הוספת כרטיס:**
-  - להעתיק בלוק `<a class="card is-linked">` קיים (עם `<picture>`, `<source type="image/avif">` ו-`data-pic-done="1"`). אפשרות אחרת: `<img src="….webp">` חשוף, ו-`picture-upgrade.js` יעטוף אותו.
-  - במקביל להוסיף את האומן ל-`artists[]` ברשומה ב-`exhibitions.json`.
+  - להעתיק בלוק `<a class="card is-linked">` קיים (עם `<picture>`, `<source type="image/avif">` ו-`data-pic-done="1"`). אפשרות אחרת: `<img src="….webp">` חשוף, ו-`picture-upgrade.js` יעטוף אותו. `.name` **וגם** `aria-label="לדף האומן <name>"` = השם **באנגלית lowercase**, עם שבירת שורה אמיתית בין השם הפרטי לשאר (`hadas⏎tuval`), כמו השכנים — לא עברית.
+  - במקביל להוסיף את האומן ל-`artists[]` ברשומה ב-`exhibitions.json` — העתק של פריט אחות **מה-JSON** (`{name_en, thumb, slug, focus}`; `name_en` = אותו שם עם `\n`), לא נגזר מה-HTML.
+  - לעדכן את המספר בכותרת הסקשן, ולשאול על המכתב ועל שלושת תגי המטא (ראה "טקסט").
 - 🔴 **amnon-lipkin נשאר ברצועה.** דף האומן `artists/amnon-lipkin/` קיים, ויצירה שלו היא שקופית ב-hero. מה שנמחק ב-2026-08-28 הוא **דף האירוע** `events/amnon-lipkin/`, לא האומן.
 
 ### סקשן האוצרת
@@ -318,20 +319,21 @@
 - `opencalls.json`: `status` (שניהם `archived`), `submission_status_he` ("ההגשה נגמרה"), `deadline`/`deadline_he`, `gallery_id`/`gallery_label_he`, `hero_image`, `card_image`, `contact`, `figma_node_*`.
 - `card_image` (`images/opencalls/<slug>-card*.webp`) לא משמש את הדפים. הוא התמונה של כרטיסי הקול הקורא בהומפייג' (`#opencall` / `#mobile-cta`, `docs/routes/homepage.md`).
 - שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשני** הקבצים (כל אחד מכיל את שתי הרשומות). `sync_data.py` לא מטפל בזה.
+- קול קורא חדש: הרשומה = העתק של רשומת אחות מ-`opencalls.json` ועריכה (קודם `docs/data-contracts.md` §8), גם בכל עותקי `#fallback-opencalls`, + שורה ב-`HERO_DIMS` (למעלה).
 
 ## נקודות מגע: הוספת תערוכה או שינוי בה
 
 המקומות שבהם תערוכה מופיעה היום. כולם צריכים בדיקה כשמוסיפים תערוכה או משנים כותרת, תאריכים, סטטוס או תמונה:
 
-1. **`data/exhibitions.json`:** תערוכה חדשה נכנסת **בסוף המערך**. המערך כרונולוגי עולה, והוא מקור האמת ל"התערוכה החדשה למעלה" בדפי האומנים. אחר כך להריץ **`python3 tools/sync_data.py`**, שמייצר מחדש את `data/generated/ex-order.js`.
-   - 🔴 **רזידנסי או פופ-אפ אינו תערוכה** (SUMII, רזידנסי מלאני הקימוגלו וכו'). לא להוסיף אותו ל-`exhibitions.json`: המערך הוא המקור של `data/generated/ex-order.js`, שנטען ב-41 מ-44 דפי האומנים (כולם חוץ מ-alon, dan-ben-ary ו-zohar-ron-dan-ben-ari), ויצירות שיפנו לרשומה כזו ידורגו כ"תערוכה" החדשה ביותר — מעל הקולפן. כרטיס רזידנסי SUMII (`kind:"residency"`, `route:"sponsors/sumii/"`) חי **רק** ב-`#g-exhibitions-data` של `galleries/dizengoff/` ובהומפייג' (`homepage.json :: exhibitions_now.groups[]`); רזידנסי מלאני חולק איתו את `sponsors/sumii/` (רשומה ב-`sponsors.json`). יצירות רזידנסי מסומנות ב-`works.json` עם `kind:"residency"` ו-`exhibition_slug:null`, ולכן יורדות תמיד מתחת לתערוכות. ראה `docs/data-contracts.md`, `docs/routes/galleries.md` ו-`docs/routes/works.md`.
+1. **`data/exhibitions.json`:** תערוכה חדשה נכנסת **בסוף המערך**. הרשומה = העתק של רשומת אחות מהקובץ ועריכה, לא בנייה מרשימת שדות; קודם `docs/data-contracts.md` §5. 🔴 `hero_overlay_en_only` (how-many), `hero_overlay_hide_en` ו-`curator_card_image` (the-peeler) הם הכרעות של תערוכה אחת — **לא להעתיק** (הם משנים את אוברליי ה-hero בתבנית ואת כרטיס עמוד האוצרת); האחות הנקייה = `loneliness`. המערך כרונולוגי עולה, והוא מקור האמת ל"התערוכה החדשה למעלה" בדפי האומנים. אחר כך להריץ **`python3 tools/sync_data.py`**, שמייצר מחדש את `data/generated/ex-order.js`.
+   - 🔴 **רזידנסי או פופ-אפ אינו תערוכה** (SUMII, רזידנסי מלאני הקימוגלו וכו'). לא להוסיף אותו ל-`exhibitions.json`: המערך הוא המקור של `data/generated/ex-order.js`, שנטען בכל דפי האומנים חוץ מ-alon, dan-ben-ary ו-zohar-ron-dan-ben-ari, ויצירות שיפנו לרשומה כזו ידורגו כ"תערוכה" החדשה ביותר — מעל הקולפן. כרטיס רזידנסי SUMII (`kind:"residency"`, `route:"sponsors/sumii/"`) חי **רק** ב-`#g-exhibitions-data` של `galleries/dizengoff/` ובהומפייג' (`homepage.json :: exhibitions_now.groups[]`); רזידנסי מלאני חולק איתו את `sponsors/sumii/` (רשומה ב-`sponsors.json`). יצירות רזידנסי מסומנות ב-`works.json` עם `kind:"residency"` ו-`exhibition_slug:null`, ולכן יורדות תמיד מתחת לתערוכות. ראה `docs/data-contracts.md`, `docs/routes/galleries.md` ו-`docs/routes/works.md`.
 2. **הדף עצמו:** עותק של התבנית (how-many) עם `data-slug`, או דף סטטי כמו הקולפן (לשאול את המשתמש איזה). בגרסת התבנית: הרשומה חייבת להיכנס ל-`#fallback-exhibitions` של העותק החדש; הנוהג הקיים הוא שכל עותק מחזיק את כל רשומות התבנית, כך שמוסיפים אותה גם לשני הקיימים.
-3. **עמוד האוצרת:** `curators.json :: exhibition_slugs`, **וגם** אותו מערך ב-`#fallback-curators` של עמוד האוצרת (ביד; ממנו נבנים הכרטיסים ב-file://). בנוסף: הרשומה ב-`#fallback-exhibitions-min` (ביד), מידות הכרטיס ב-`buildCard`, וכלל ה-`order` במובייל.
-4. **דף הגלריה:** `#g-exhibitions-data` (ביד), ובמדינה גם קרופ כרטיס. ראה `docs/routes/galleries.md`. (דוגמה: שינוי תאריך סיום = `exhibitions.json` + `#g-exhibitions-data` בדף הגלריה, כמו בקומיט `bd82b1c9`.)
+3. **עמוד האוצרת:** `curators.json :: exhibition_slugs`, **וגם** אותו מערך ב-`#fallback-curators` של עמוד האוצרת (ביד; ממנו נבנים הכרטיסים ב-file://). בנוסף: הרשומה ב-`#fallback-exhibitions-min` (ביד — העתק של רשומה שכנה שם, בסט השדות המצומצם שלו; אותם דגלים מהשלב 1 — רק אם הוכרעו לתערוכה החדשה), מידות הכרטיס ב-`buildCard`, וכלל ה-`order` במובייל.
+4. **דף הגלריה:** `#g-exhibitions-data` (ביד — העתק של רשומת תערוכה שכנה שם; לא של `sumii` בדיזינגוף, ש-`kind:"residency"` שלה מרנדר כרטיס רזידנסי), ובמדינה גם קרופ כרטיס. ראה `docs/routes/galleries.md`. (דוגמה: שינוי תאריך סיום = `exhibitions.json` + `#g-exhibitions-data` בדף הגלריה, כמו בקומיט `bd82b1c9`.)
 5. **הומפייג':** `#exhibitions-now`, הארכיון `#exhibitions` (`homepage.json :: exhibitions_archive.items[]`) וכרטיסי הקול הקורא. ראה `docs/routes/homepage.md`.
-6. **יצירות:** `exhibition_slug` / `exhibition_title_he` / `exhibition_route` ב-`works.json :: art_works[]` ו-`exhibition_statements[]`, ואז `sync_data.py`. ראה `docs/routes/works.md` ו-`docs/routes/artists.md`.
+6. **יצירות:** `exhibition_slug` / `exhibition_title_he` / `exhibition_route` ב-`works.json :: art_works[]` ו-`exhibition_statements[]`, ואז `sync_data.py`. רשומות חדשות = העתק של אחות (מתכון ההוספה ב-`docs/routes/works.md`); ראה גם `docs/routes/artists.md`.
 7. **SEO:** רשומה ב-`sitemap.xml` (כלל-זהב 15) + `python3 tools/seo/refresh_sitemap_lastmod.py`. OG `og/exhibitions-<slug>-hero.jpg` נאפה ביד. בלוק `SEO:auto` מועתק מדף אחות.
-8. **לפני קומיט:** `python3 tools/sync_data.py --check` (exit 0), ורתמת הרגרסיה אם נגעת ביותר מדף אחד (ראה Shared rules).
+8. **לפני קומיט:** `python3 tools/sync_data.py --check` (exit 0), ורתמת הרגרסיה אם נגעת ביותר מדף אחד (ראה Shared rules). הריצות של `sync_data.py` בשלבים 1 ו-6 מדפיסות את הרשימה המלאה של הקבצים שנכתבו (למשל `data/generated/ex-order.js`) — כולם נכנסים לאותו קומיט, ב-`git add` בשמם (`git status --short`; לא `-A`).
    - הרתמה מוכיחה *אי-שינוי*, ולכן בשינוי תוכן מכוון היא תחזיר exit 1. לעבור על הדו"ח ולוודא שההבדלים היחידים הם הצפויים (הכרטיס או הרשומה החדשים בעמוד האוצרת, בדף הגלריה ובהומפייג'). שאר הדפים חייבים לצאת זהים.
    - להרחיב את `--only` לכל מה שצפוי להשתנות, למשל `galleries/`, וההומפייג' = `index.html` (ההתאמה היא לפי תחילת הנתיב). אותם `--only`/`--widths` בשני הצילומים.
    - דף חדש נכלל בצילום גם לפני `git add`: `snapshot.mjs` לוקח את כל ה-`*.html` שב-git **וגם** קבצים חדשים שאינם ב-`.gitignore` (`_staging/`, `trash/` וכו' מוחרגים). דף שנוצר בין שני הצילומים יסומן `only in after` ונספר כהבדל — צפוי כשמוסיפים דף.

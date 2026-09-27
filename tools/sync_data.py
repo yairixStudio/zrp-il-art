@@ -24,7 +24,8 @@ Usage (repo root or anywhere):
   python3 tools/sync_data.py --check  # write nothing; exit 1 and list what is stale
 
 Run it after ANY change to artists.json / works.json / exhibitions.json / galleries.json.
-Idempotent: a second run changes nothing.
+Idempotent: a second run changes nothing. Every file it lists as updated belongs in the SAME
+commit as the JSON change (the pages carry inline-only copies — leaving one out ships a stale site).
 """
 import json, re, glob, os, sys
 
@@ -204,7 +205,9 @@ def main():
             sys.exit(1)
         print("sync_data --check: all generated data is up to date.")
         return
-    print("sync_data: %d file(s) updated%s" % (len(written), (": " + ", ".join(written[:8]) + (" …" if len(written) > 8 else "")) if written else ""))
+    print("sync_data: %d file(s) updated%s" % (len(written), ":" if written else "."))
+    for w in written:          # the FULL list — every one of these must go into the same commit
+        print("  " + w)
     if problems:
         sys.exit(1)
 

@@ -27,7 +27,7 @@
 
 **לפני כל הורדה — `ls images/<category>/<slug>/` קודם.** רוב התמונות הקיימות מ-press/about/events כבר במקום.
 
-### 1.1 Perf checklist ל-`<img>` (חובה, ראה CLAUDE.md §8.11)
+### 1.1 Perf checklist ל-`<img>` (חובה, ראה CLAUDE.md §8 כלל-זהב 12)
 
 ```html
 <!-- LCP (img ראשון בדף) -->
@@ -174,7 +174,7 @@ function langClass(s){ return HEB_LETTERS.test(s||"") ? "is-he" : "is-en"; }
 .title.is-en{font-family:var(--cop);direction:ltr;text-transform:uppercase;letter-spacing:.04em}
 ```
 
-**מימושים קיימים:** `pages/artists/artist.html` (`.work .title/.sub`), `components/artwork-lightbox.{js,css}` (`.alb-title`, `.alb-alt`), `components/site-chrome.{js,css}` (`.bm-title`). אם נדבק אתר רנדר חדש מ-JSON עם content שעלול להיות אנגלית — השתמש באותו דפוס.
+**מימושים קיימים:** `artists/<slug>/index.html` (`.work .title/.sub`), `components/artwork-lightbox.{js,css}` (`.alb-title`, `.alb-alt`), `components/site-chrome.{js,css}` (`.bm-title`). אם נדבק אתר רנדר חדש מ-JSON עם content שעלול להיות אנגלית — השתמש באותו דפוס.
 
 **גרשיים עבריים `״` `׳`** (U+05F4 / U+05F3) — לא letters. כותרת `״DON'T LOSE YOUR HEAD״` תזוהה כ-`is-en` והעטיפה הגרפית תישמר. זה הנכון: התוכן הוא אנגלי.
 

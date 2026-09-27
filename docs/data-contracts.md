@@ -11,7 +11,7 @@
 - **שדה חסר → מוסיפים ל-JSON לפני השימוש.** **שדה חדש → לכל הרשומות בקובץ** (`null` אם לא ידוע) ומתעדים אותו כאן באותו קומיט.
   - **חריג — דגלים ושדות אופציונליים** (ב-`events.json`: `soon`, `pinned`, `date_tbd`, `date_end`/`date_label`, `widths`, `list_*`, `event_photos`…; ב-`press.json`: `date_end`) קיימים **רק ברשומות שמשתמשות בהם**, והיעדר = ברירת המחדל (כרטיס רגיל, אירוע של יום אחד). לא להוסיף להם `null` לכל הרשומות; את `soon` **מוחקים** (לא `null`) כשנבנה דף (§6.2).
 - **אחרי כל שינוי ב-JSON:** `python3 tools/sync_data.py`. **לפני קומיט:** `python3 tools/sync_data.py --check` ⇒ exit 0. אם ל-JSON ששינית יש עותק ידני (§1.4) או טקסט שמופיע ב-`<head>` של דף (§1.2) — לעדכן גם אותו, באותו קומיט.
-  - 🔴 **הקבצים ש-`sync_data.py` כתב הם קבצי פרודקשן — לקמט אותם באותו קומיט עם ה-JSON:** `data/generated/*.js` וכל דף שהסקריפט כתב אליו (`works/index.html`, `works/<id>/`, `galleries/<slug>/`, `curators/korin-avraham/`). הסקריפט מדפיס רק את 8 הראשונים (ואז `…`) — **`git status` / `git diff --name-only` הם הבדיקה**: להוסיף **בשמם** את ה-JSON, את `data/generated/*.js` ואת כל דף שהסקריפט כתב אליו (למשל `git add data/<x>.json data/generated/ works/index.html works/<id>/index.html galleries/<slug>/index.html curators/korin-avraham/index.html`), לא רק `git add data/<x>.json`. 🔴 **לא `git add -A`** (כלל-זהב 14): סשנים מקבילים משאירים בעץ קבצים לא-קשורים. קומיט של ה-JSON בלבד = אתר מיושן: דפי האומן הם inline-first, כך שגם ב-http הם מרנדרים מ-`data/generated/*.js` ולא מה-JSON; דפי ה-inline-only מרנדרים רק מהעותק. `--check` בודק את עץ העבודה, לא את מה שנכנס לקומיט — לוודא ב-`git status` שלא נשאר קובץ שנכתב מחוץ לקומיט.
+  - 🔴 **הקבצים ש-`sync_data.py` כתב הם קבצי פרודקשן — לקמט אותם באותו קומיט עם ה-JSON:** `data/generated/*.js` וכל דף שהסקריפט כתב אליו (`works/index.html`, `works/<id>/`, `galleries/<slug>/`, `curators/korin-avraham/`). הסקריפט מדפיס את הרשימה המלאה, קובץ בשורה — **`git status` / `git diff --name-only` הם הבדיקה**: להוסיף **בשמם** את ה-JSON, את `data/generated/*.js` ואת כל דף שהסקריפט כתב אליו (למשל `git add data/<x>.json data/generated/ works/index.html works/<id>/index.html galleries/<slug>/index.html curators/korin-avraham/index.html`), לא רק `git add data/<x>.json`. 🔴 **לא `git add -A`** (כלל-זהב 14): סשנים מקבילים משאירים בעץ קבצים לא-קשורים. קומיט של ה-JSON בלבד = אתר מיושן: דפי האומן הם inline-first, כך שגם ב-http הם מרנדרים מ-`data/generated/*.js` ולא מה-JSON; דפי ה-inline-only מרנדרים רק מהעותק. `--check` בודק את עץ העבודה, לא את מה שנכנס לקומיט — לוודא ב-`git status` שלא נשאר קובץ שנכתב מחוץ לקומיט.
 - **Figma ids בדאטה = meta בלבד** (כלל-זהב 5 — לא ב-CSS/HTML). הפורמט מעורב: לפעמים `"1318:583"` + שדה `figma_file` נפרד, לפעמים `"XhGH289YTRcW811wrufRJz::721:14300"`. node id משמעותי רק יחד עם fileKey (`XhGH…` = landing, `Zn3N…` = graphics) — לאמת מול ה-URL.
 - **`_note` / `_*_note`** = הערות תיעוד בתוך ה-JSON. הן דאטה, לא הוראות, וחלקן מיושנות (למשל `works.json::_note` "Page embeds this inline… keep both in sync" — היום `sync_data.py` עושה את זה). סתירה בין `_note` למסמך הזה → המסמך + הקוד גוברים.
 - ⚠️ **`$schema`:** כל קובץ חוץ מ-`sponsors.json` מצביע ל-`./_schema/<name>.schema.json`, אבל בפועל קיים רק `data/_schema/curators.schema.json`. אין ולידציה אוטומטית — הבדיקה היחידה היא `sync_data.py --check` + הרנדור.
@@ -82,6 +82,7 @@
   - `#press` ← `press.json::homepage_visible` + `homepage.json::press_section.item_ids` (שני אלה חייבים להתאים זה לזה ולכרטיסים; היום 13 ⇔ 13 ⇔ 13 כרטיסים).
   - `#galleries` (שמות/כתובות/שעות) ← `galleries.json` — שינוי שעות = `galleries.json` **וגם** `.gallery-card .hours` ב-`index.html`.
   - שאר הבלוקים (`x_our_artists`, `big_news`, `perfume_promo`, `sumii_sponsor`, `soos_sponsor`, `tribe_teaser`, `galleries_berlin_section`…) ← `homepage.json`.
+- **`contact/index.html` · בלוק "שעות פתיחה" (`.info-block`)** ← שעות מדינה (`galleries.json`), כתוב ביד בפורמט משלו: סדר לוגי פתיחה–סגירה עם en-dash, `·` ו-`׳` (`ו׳ · 10:00–14:00`) — **הפוך** ממחרוזת ה-bidi של `hours[].time` (§3; ה-en-dash לא מחבר את המספרים לריצת LTR אחת), ולכן לא מעתיקים אותה לכאן. ⚠️ מיושן מאז 2026-08-12 (עדיין `א׳–ה׳ · 10:00–19:00`; ובבלוק "גלריות" שמעליו דיזינגוף מסומנת "בקרוב" למרות `status:"open"`). שינוי שעות מדינה = לעדכן גם כאן בפורמט של הדף, או לשאול את המשתמש.
 - **`press/index.html` · כרטיסי `.pcard` סטטיים** ← `press.json` (+ לאירועים `data-kind="event" data-date="YYYY-MM-DD"`; לאירוע רב-יומי גם `data-date-end` ותווית `<bdi>` = `date_label`; `data-pinned` כשרלוונטי). כתובים ביד. כרטיס `.pcard--soon` (`href="#"` + טוסט "בקרוב") — היום רק tal-nehoray. פרטים: `docs/routes/press.md`.
 - 🔴 **`sponsors/sumii/index.html` · כרטיסי FIGURES + PRODUCTS (HTML סטטי)** ← `works.json::art_works` — `shira-turbowicz-1..3` (FIGURES) ו-`melani-hekimoglu-1..5` (PRODUCTS). כל כרטיס מעתיק ביד: נתיב `img` (`images/works/v2/<img>.webp`), `width`/`height`, רוחבי ה-srcset (`widths`), הכותרת (FIGURES: `title_he | <span class="lat">title_en</span>`, כשהשנים שבתוך `title_he` עטופות `<bdi dir="ltr">…</bdi>` — shira-turbowicz-2/3, לא להעתיק את `title_he` כמו-שהוא; PRODUCTS: `title_en` בלבד) והקישור `../../works/<id>/`. בעמוד אין script דאטה ⇒ **`sync_data.py` לא נוגע בו**. שינוי באחת מ-8 הרשומות (כותרת, תמונה/ממדים, id, מחיקה) = `python3 tools/sync_data.py` **וגם** עריכה ידנית של הכרטיס בעמוד, באותו קומיט. טקסטי התיאור בכרטיסים: FIGURES — קיימים רק בעמוד (לא נגזרים מ-`details_he`); PRODUCTS — זהים ל-`details_he` חוץ מ-melani-hekimoglu-5 (בעמוד נקודה אחרי "Flow") — שינוי `details_he` = לעדכן גם את הכרטיס. פרטים: `docs/routes/sponsors.md`.
 - **טבלאות lookup ידניות בקוד** שמצלות על דאטה של אומנים: `FOCAL_POINTS` (object-position לפורטרט) בכל 44 דפי האומן; `_ARTIST_FOCAL` ב-`events/ktuba/` ובתבנית `exhibitions/how-many|loneliness/`; `_ARTIST_SLUGS` (שם→slug) באותה תבנית; `CURATORS` (slug→שם+thumb של האוצרת) ו-`NAME_LINKS` (שם→קישור בתוך הסטייטמנט) ב-`artists/shira-turbowicz/` וב-`artists/melani-hekimoglu/` (`NAME_LINKS` גם ב-`works/melani-hekimoglu-1..5/`). **הדרך המועדפת = שדות הדאטה** (`artists.json::portrait_focus`, `exhibitions.json::artists[].focus` / `.slug`) — לא להרחיב את הטבלאות. בנוסף: `HERO_DIMS` (slug → ממדי ה-hero הטבעיים) ב-`opencalls/how-many/` וב-`opencalls/the-peeler/` — החלפת `opencalls.json::hero_image` או קול קורא חדש = לעדכן את הטבלה **בשני הקבצים** (+ וריאנטים 480/768/1080 ואחי avif), `docs/routes/exhibitions.md`; וטבלת `GALLERY` ב-`events/index.html` (למעלה).
@@ -116,7 +117,9 @@
 - `id`, `slug`
 - `name_he`, `name_en`; `address_he`, `address_en`; `city` (`"tel aviv"` / `"berlin"`)
 - `status`: `open` | `coming-soon` | `closed`
-- `hours[]`: `{days_he, days_en, time}` — `time` nullable ("שבת סגור"). ⚠️ **`time` שמור בקונבנציית bidi `"18:00-11:00"`** — הכרעת משתמש: ספרות נשמרות/מוצגות LTR כמו בטקסט הגולמי של Figma, **לא "לתקן" את הסדר**. `[]` = אין בלוק שעות.
+- `hours[]`: `{days_he, days_en, time}` — `time` nullable ("שבת סגור"); `[]` = אין בלוק שעות. ⚠️ **`time` שמור בקונבנציית bidi `"18:00-11:00"`** — הכרעת משתמש: ספרות נשמרות/מוצגות LTR כמו בטקסט הגולמי של Figma, **לא "לתקן" את הסדר**.
+  - דוגמה: המשתמש מוסר ליום ו' פתיחה 10:00 וסגירה 15:00 ⇒ `"time":"15:00-10:00"` (סגירה-פתיחה). על המסך המספרים מופיעים כמו במחרוזת, ושעת הפתיחה צמודה מימין לתווית היום — כמו בשורת א'-ה'; `10:00-15:00` על המסך = מחרוזת הפוכה. JSON-LD (`opens`/`closes`) = סדר לוגי רגיל.
+  - עותקים ידניים: `.gallery-card .hours` בהומפייג', ה-JSON-LD בשני דפי הגלריה, ו-`contact/` (מדינה בלבד, פורמט אחר — §1.4).
 - `image_hero` — תמונת כרטיס ההומפייג' (null לפשפשים — כרטיס ירוק שטוח).
 - `route` (nullable) — `galleries/<slug>/`; null = אין דף (פשפשים, ברלין).
 - `image_page_hero` — hero של דף הגלריה, **נפרד** מ-`image_hero`.
@@ -139,14 +142,14 @@
 - ⚠️ פער פתוח: בכרטיס הפשפשים ב-`index.html` השם = "גלריית יפו, שוק הפשפשים" והכתובת = "שוק הפשפשים, יפו"; ב-JSON: `name_he` "גלריית שוק הפשפשים", `address_he` "שוק הפשפשים, תל אביב" (הכתובת — כך גם ב-Figma). בכרטיס מדינה בפיגמה אין כתובת רחוב (האתר מציג). לא הוכרע — `docs/todo.md`.
 
 ## 4. `artists.json`
-`{ artists: [...] (44), _pending_artist_pages: [...], _note }`
+`{ artists: [...], _pending_artist_pages: [...], _note }`
 - `id`, `slug` (= שם התיקייה `artists/<slug>/`)
 - `name_he`, `name_en` — כתיב קנוני. כתיב עברי של אומן בכל מקום אחר באתר (כולל `works.json::artist_he`) = הכתיב של הקובץ הזה.
 - `portrait` (נתיב); `portrait_focus` (אופציונלי, object-position לפורטרט; עדיפות ברנדרר: `portrait_focus` → טבלת `FOCAL_POINTS[slug]` שבכל עותק תבנית → `center 25%`. לאומן חדש — להעדיף את השדה, בלי הפצה).
 - `work_image` — התמונה שמוצגת **רק בדף placeholder** (כש-`bio_he` ריק וגם `works[]` ריק): `work_image || portrait`. ה-hero הרגיל לא קורא אותו.
 - `bio_he`, `bio_en` (nullable). פסקאות מופרדות ב**שורה ריקה** (`\n\n`); `\n` יחיד בתוך פסקה = `<br>`; שורה בלי עברית = `.en-line` (Copperplate). **הפסקה הראשונה = intro** (מוצגת בנפרד מהגוף, לפני ה-divider — כשיש יותר מפסקה אחת).
 - `works[]` — אובייקטים **inline** `{id, title, image, year?, medium?}` (לא ref ל-`works.json`). משמשים רק כ-fallback: דף האומן מציג את `works.json::art_works` המסוננים (`artist_slug === slug || artist_pages.includes(slug)`); **רק אם אין אף רשומה** → `artists.json works[]` (שם+כותרת+medium).
-- `instagram_handle` (nullable). כש-handle בפיגמה הוא leftover של אומן אחר → `null` (תקדים gal-rotem/raz-ronen).
+- `instagram_handle` (nullable) — נשמר **עם `@` מוביל** (כך בכל ה-handles בקובץ, למשל `"@galro.art"`); מוצג כפי שנשמר, ו-`heroHandleLink` (דף האומן) ו-`inject.py` (`sameAs`) מסירים את ה-`@` רק לבניית ה-URL. (לא כלל גלובלי: `curators.json` שומר בלי `@`.) handle בפיגמה שהוא leftover של אומן אחר → `null` עד שיש handle אמיתי (כך היו gal-rotem/raz-ronen, שקיבלו אחר-כך handle). היום `null` רק ב-`dan-ben-ary`.
 - `hero_images[]` — דואו תמונות hero; `hero_image_focus[]` — object-position לכל תמונה בדואו (אינדקס מקביל).
 - `hero_collab` — hero שיתופי: `{artists:[{name_en:[שורות], bio_he_short, instagram}]}` (≥2; `name_en` הוא **מערך שורות**, לא מחרוזת), Figma מובייל `119:3917` (⚠️ fileKey לא מתועד). היום רק `zohar-ron-dan-ben-ari`.
 - `figma_artist_page_desktop` / `figma_artist_page_mobile`. ⚠️ `homepage_featured` (בכל 44) — אין צרכן בקוד; ההומפייג' כתוב ביד (`homepage.json` + HTML).
@@ -238,12 +241,12 @@
 ### 9.1 `works[]` — 3 אריחי התמונה של שחמט ההומפייג'
 - `{id: "aw-1..3", image, figma_image_ref, artist_id}` (רה-דיזיין 2026-08). אריחי הטקסט (the / art works / more) = HTML סטטי. `components/artwork-lightbox.js` מחפש `data-artwork-id` ב-`works[]` (fetch, HTTP בלבד).
 
-### 9.2 `art_works[]` — כל היצירות (150)
+### 9.2 `art_works[]` — כל היצירות
 - **סדר המערך = סדר התצוגה ב-`/works/`** (1:1 מול Figma `542:500`; `542:499` = legacy). הכרעות מיקום (רזידנסי באמצע, יצירות שאינן בגריד הפיגמה בסוף) — `docs/routes/works.md`.
 - `id` (= `works/<id>/`), `artist_slug` (→ קישור לדף האומן).
 - `artist_he` / `artist_en` — אם `artist_he` = null → השם הלטיני מוצג (la-raz-porta). קרדיט מעורב אפשרי (`"שירה טורבוביץ | sumii"` — Latin עטוף `.lat`).
 - `title_he` / `title_en` — אופציונלי, דו-לשוני.
-- `gallery_slug` + `gallery_en` (→ `/#galleries`) — `medina` | `dizengoff`.
+- `gallery_slug` + `gallery_en` (→ `/#galleries`) — ערכים קנוניים, verbatim: `medina` ⇒ `"Hamedina Square Gallery"`, `dizengoff` ⇒ `"Dizengoff Square Gallery"` (**לא** `galleries.json::name_en` — "Kikar … Gallery"). `gallery_slug` קובע גם באיזה דף גלריה היצירה מופיעה (`#g-artworks-data`, §1.2).
 - `sold` (bool → תג "נמכר").
 - `details_he` — טקסט אפור אופציונלי; `\n` נשמר (`white-space:pre-line`); גרשיים מנורמלים ל-`ס"מ`.
 - `img` (שם בסיס תחת `images/works/v2/`), `w` / `h`, `widths[]` — לבניית srcset; **האחרון = רוחב הקובץ הראשי `<img>.webp`**, השאר `<img>-<w>w.webp` + אח avif לכל אחד.
@@ -260,7 +263,8 @@
 - **קבוצה = `exhibition_title_he` (מחרוזת מדויקת)**, לא slug. לכן שתי קבוצות באותה תערוכה אפשריות (`הקולפן` + `הקולפן | interdependence`), וכל הבדל כתיב יוצר קבוצה נפרדת (למשל `'מרחק שקט'` עם גרשיים אצל נעמי מול `מרחק שקט` אצל ליוואי — verbatim, מכוון). `\n` בתוך הכותרת קיים היום (yarden-amir-1/2: `הקולפן | רגש נבחר – נשארתי\nלמרות שידעתי`) והוא **חלק ממפתח ה-join** — לשמור זהה בדיוק ב-`art_works` וב-`exhibition_statements`. ⚠️ הוא **לא** מרונדר כשבירת שורה: ל-`.ex-heading` (דף האומן) ול-`.aw-ex-title` (עמוד היצירה) אין `white-space:pre-line`, ו-`mixedHtml`/`latHtml` לא ממירים `\n` ⇒ מוצג כרווח. שבירה אמיתית = שינוי renderer.
 - **דירוג הקבוצות:** `exRank(exhibition_slug)` = האינדקס ב-`__EX_ORDER_INLINE__`, ממוין יורד (החדשה למעלה). slug לא מוכר / `null` ⇒ `-1` ⇒ תמיד מתחת לתערוכות אמיתיות. שוויון (אותה תערוכה) ⇒ סדר ההופעה הראשונה לפי `artist_page_pos` — כלומר **הקבוצה שה-pos הנמוך ביותר שלה קטן יותר עולה ראשונה**; הפיגמה קובעת בתוך תערוכה דרך ה-pos.
 - **`exhibition_statements[]`** (top-level, מ-2026-06-23) — טקסט-האומן-על-התערוכה, רשומה לכל `(artist, group)`:
-  - `{artist_slug, exhibition_title_he, exhibition_slug, exhibition_route, statement_he[]}`.
+  - `{artist_slug, exhibition_title_he, exhibition_slug, exhibition_route, statement_he[]}` — כל 5 המפתחות, כמו בכל הרשומות הקיימות (רשומה חדשה = להעתיק רשומה אחות); 3 מהם חובה ל-`sync_data.py` (למטה). `exhibition_slug`/`exhibition_route` כאן לא נקראים ע"י קוד — הכותרת והקישור שלה מגיעים מהיצירות.
+  - 🔴 `statement_he` = **מערך פסקאות** (`["¶1","¶2"]`), לעולם לא מחרוזת — וכך גם `art_works[].statement_he` (§9.4). על מחרוזת `statementHtml()` בדף האומן ו-`(w.statement_he||[]).map` בעמוד היצירה זורקים (`.map is not a function`) והרינדור נופל; `sync_data.py --check` לא תופס.
   - **מפתח לוגי = `(artist_slug, exhibition_title_he)`**; ה-lookup בדף האומן (`exStatement`) הוא `===` על שניהם.
   - מרונדר בראש הקבוצה (`.ex-group-head`: `h3.ex-heading` מקושר ל-`exhibition_route` + `.ex-statement`).
   - קבוצה בלי רשומה = קבוצה בלי סטייטמנט (לגיטימי — היום: zohar-ron, raz-ronen ו-racheli-reuven בקבוצת `How Many Partners Have You Had?`). ⚠️ ל-hadas-tuval **יש** רשומה לקבוצת `הקולפן | מעורר רגש: החזקה והרפיה` (מ-2026-07-09) — לא דוגמה לקבוצה בלי סטייטמנט.

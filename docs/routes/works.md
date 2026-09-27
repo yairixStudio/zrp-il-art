@@ -1,13 +1,13 @@
 # Works — route notes
 
-> **קרא לפני עריכה של:** `works/index.html`, `works/<id>/index.html` (150 עמודים), ולפני שינוי ב-`data/works.json` (`art_works[]`, `exhibition_statements[]`).
+> **קרא לפני עריכה של:** `works/index.html`, `works/<id>/index.html` (עמוד לכל יצירה), ולפני שינוי ב-`data/works.json` (`art_works[]`, `exhibition_statements[]`).
 > מצב נוכחי + כללים פעילים (2026-09-27). היסטוריה: `docs/history/CLAUDE-2026-09-27.md` §4. חוזה השדות המלא: `docs/data-contracts.md`.
 
 ## Pages
 - **`/works/`** → `works/index.html` · desktop `XhGH...::542:467` (עמוד מלא; **הגריד הקנוני = `542:500`**, מ-2026-06-11) · mobile `XhGH...::542:1365` (גריד `542:1390`) · ✅
   - ⚠️ **בפיגמה סדר היצירות במובייל שונה מהדסקטופ.** לאתר data אחד ⇒ **הדסקטופ `542:500` קובע את הסדר.** בבדיקת "1:1 מול פיגמה" — לציין מול איזה frame.
   - legacy (לא לעבוד מהם): `542:499` (היה הקישור לפני המובייל החדש; היום זה עוטף-הסקשן של `542:500` בתוך `542:467` — לעבוד מ-`542:467`/`542:500`; הערות CSS עדיין מזכירות אותו ואת `489:4`), `491:928`, `489:4`, `Zn3N...::1213:2615`.
-- **`/works/:id/`** → `works/<id>/index.html` × **150** (= כל `art_works[]`, כולן `page:true`) · desktop `XhGH...::674:14072` · mobile `XhGH...::674:14022` · ✅
+- **`/works/:id/`** → `works/<id>/index.html` — עמוד לכל רשומה ב-`art_works[]` (כולן `page:true`) · desktop `XhGH...::674:14072` · mobile `XhGH...::674:14022` · ✅
 - **`/works/livay-levi-3/`** (collab "interdependence", ליוואי לוי × הדס טובל) · desktop `XhGH...::668:13584` · mobile — · ✅ (2026-08-12)
 - **Node ids בלי prefix במסמך הזה הם בקובץ `XhGH...` (landing)**; `1213:*` = `Zn3N...` (graphics) — כמו ב-`docs/routes/artists.md`.
 
@@ -26,7 +26,7 @@
 
 ### סדר, תצוגה, כתיב
 - **סדר המערך = סדר הגריד ב-`/works/`**; `artist_page_pos` נצרך רק בדפי האומנים (כללי ה-pos: `docs/routes/artists.md`).
-- `hidden:true` מסונן **רק** בגריד `/works/` (JS `!w.hidden`) וב-`#g-artworks-data` (`sync_data.py`). 🔴 **לא מסתיר את עמוד היצירה ולא את הכרטיס בדף האומן**: `data/generated/art-works.js` כולל את הרשומה ורנדררי דפי האומן (44 עותקים) לא בודקים `hidden` — הכרטיס ממשיך לקשר (`data-artwork-page`) לעמוד היצירה, שב-`_staging` = 404. כך גם הכרטיסים הידניים ב-`sponsors/sumii/` (shira/melani).
+- `hidden:true` מסונן **רק** בגריד `/works/` (JS `!w.hidden`) וב-`#g-artworks-data` (`sync_data.py`). 🔴 **לא מסתיר את עמוד היצירה ולא את הכרטיס בדף האומן**: `data/generated/art-works.js` כולל את הרשומה ורנדררי דפי האומן (כל העותקים) לא בודקים `hidden` — הכרטיס ממשיך לקשר (`data-artwork-page`) לעמוד היצירה, שב-`_staging` = 404. כך גם הכרטיסים הידניים ב-`sponsors/sumii/` (shira/melani).
   - הסתרה אמיתית: תיקייה ל-`_staging/works-<id>/` (gitignored ⇒ 404), הוצאה מ-sitemap, `robots:noindex`. הסתרת אומן שלם = גם דף האומן ל-`_staging` (תקדים tali-zelnik, `docs/routes/artists.md`).
   - ⚠️ ליצירה בודדת של אומן גלוי אין היום מנגנון הסתרה בדף האומן. אפשרויות (לא נוסו — טעון הכרעה לפני שימוש): להוציא את הרשומה מ-`art_works[]` לזמן ההסתרה (לשמור בצד), או להוסיף סינון `!w.hidden` לכל וריאנטי הרנדרר בדפי האומן + regress.
   - בחשיפה: `mv` חזרה, הסרת `hidden`/החזרת הרשומה, `sync_data.py`, sitemap, ולוודא ש-canonical/`og:url`/JSON-LD לא מצביעים ל-`_staging`. (כרגע אין `hidden`.)
@@ -41,7 +41,7 @@
 - כל טקסט מ-JSON שעשוי להכיל לטינית → `.lat`/Copperplate (`latHtml()`; בפרטים `detailsHtml()`→`.det-en`). `esc()` לבד = באג פונט. לבדוק **כל** שדה: כותרת/אמן/פרטים/גלריה/תערוכה/statement.
 - כל אזכור אומן = קישור (`docs/artist-linking.md`).
 - תמונות `images/works/v2/<img>.{webp,avif}`. `widths[]`: **האחרון = רוחב `<img>.webp` הראשי**, השאר `<img>-<w>w.webp` + אח avif לכל אחד. `w`/`h` = הקובץ הראשי.
-  - וריאנטים **חובה** כש-≥80KB וגם ≥800px (כלל-זהב 12). מתחת לסף — רשות, אבל בפועל **כל** יצירה ברוחב ≥480 נושאת `480w` (למשל `zohar-ron-1..4` ב-690, `melani-hekimoglu-1` ב-548). ל-`livay-levi-4` (406) ול-`alice-debellis-1` (238) יש `widths:[<natural>]` רק כי הן צרות מ-480 (וריאנט 480w = הגדלה) — לא תקדים לדלג על 480w ביצירה רחבה יותר.
+  - וריאנטים **חובה** כש-≥80KB וגם ≥800px (כלל-זהב 12). אילו רוחבים: כל אחד מ-480/768/1080 שצר מ-90% מהראשי ⇒ ראשי רחב מ-1200 נושא גם `1080w` (`amnon-lipkin-3..7`, `michael-konovalenko-1`). מתחת לסף — רשות, אבל בפועל **כל** יצירה ברוחב ≥480 נושאת `480w` (למשל `zohar-ron-1..4` ב-690, `melani-hekimoglu-1` ב-548). ל-`livay-levi-4` (406) ול-`alice-debellis-1` (238) יש `widths:[<natural>]` רק כי הן צרות מ-480 (וריאנט 480w = הגדלה) — לא תקדים לדלג על 480w ביצירה רחבה יותר.
 - לא לדרוס תמונה — צילום חדש = `<img>-v2` + עדכון `img` (תקדים `hadas-tuval-2-v2`).
   - OG: יצירה חדשה = `og/works-v2-<id>.jpg`. צילום חדש ליצירה קיימת = לאפות מחדש **את הקובץ שה-head כבר מפנה אליו** + לעדכן מידות. שני המקרים הקיימים שונים: `hadas-tuval-2` → לפי id (`og/works-v2-hadas-tuval-2.jpg`, נאפה מחדש 998×1330); `zohar-ron-dan-ben-ari-1` → לפי img (`og/works-v2-zohar-ron-dan-ben-ari-1-v2.jpg`).
 - `images/works/v2/*` ממוחזרות מחוץ ל-`works/`/`artists/` — `grep -r` לפני שינוי שם/תוכן:
@@ -52,7 +52,7 @@
   - קרוסלות הגלריות (`#g-artworks-data`); `tools/seo/og-dims.json`.
 
 ### קישורים נכנסים (לכן לא משנים id — כלל-זהב 6)
-- גריד `/works/`; כל 44 דפי האומנים (לייטבוקס עם `data-artwork-page` ⇒ קליק על התמונה / "לעמוד היצירה"); שקופית המרכז בקרוסלת `galleries/<slug>/`; `sponsors/sumii/` (FIGURES → `shira-turbowicz-1..3`; PRODUCTS → melani: plates=4, vases=1, dessert-bowl=2, lamp=5, planter=3); `press/peeling-a-layer/` → `jessica-tabarovsky-1`.
+- גריד `/works/`; כל דפי האומנים (לייטבוקס עם `data-artwork-page` ⇒ קליק על התמונה / "לעמוד היצירה"); שקופית המרכז בקרוסלת `galleries/<slug>/`; `sponsors/sumii/` (FIGURES → `shira-turbowicz-1..3`; PRODUCTS → melani: plates=4, vases=1, dessert-bowl=2, lamp=5, planter=3); `press/peeling-a-layer/` → `jessica-tabarovsky-1`.
 
 ### בדיקה
 - שינוי renderer/CSS בהרבה עמודים = חובה:
@@ -62,7 +62,7 @@
   4. `node tools/regress/diff.mjs before after` (exit 0 = זהה)
   - `--only`/`--widths` הם דגלים של `snapshot.mjs`, לא של `diff.mjs` — **אותם ערכים בשתי הריצות** (דף או רוחב שקיים רק בצילום אחד נספר כהבדל). ברירת המחדל 390,1440; לעבודת layout/טיפוגרפיה `--widths 390,1024,1366,1440`.
   - שינוי שנועד לשנות פלט (למשל הפצת `linkNames()`) יוצא ב-exit 1 — לקרוא את ה-diff ולוודא שהשתנו רק העמודים/האלמנטים המכוונים. דף חדש נכלל בצילום גם לפני `git add` (כל `*.html` שאינו ב-`.gitignore`), ולכן עמוד יצירה חדש יופיע כ-`only in after` — צפוי.
-- טיפוגרפיה בודקים **רק ב-http** (`python3 -m http.server`); ב-file:// כרום חוסם `@font-face`.
+- טיפוגרפיה בודקים **רק ב-http** (`python3 -m http.server`); ב-file:// כרום חוסם `@font-face`. 🔴 אבל **טעינת הדאטה בדף האומן** שבו היצירה מופיעה — **גם ב-file://**, או ברתמה (`--only artists/<slug>/`; ברירת המחדל `--modes http,file`): ב-http `data/generated/artists.js` חסר/שבור נבלע ב-`fetch("../../data/artists.json")` והדף נראה תקין (`docs/routes/artists.md` → Data flow).
 
 ## `/works/` — הגריד
 - hero אפור `#EEF0EF`: `THE ART` (Bold) / `works` (Light), 80px (60 ≤1100, מובייל ממורכז `clamp`).
@@ -71,10 +71,10 @@
 - קליק על התמונה: `page:true` ⇒ `<a href="<id>/">`. לייטבוקס כ-fallback לרשומה בלי `page` (אותה קומפוננטה, scope יחיד לכל כרטיס — `data-artwork-gallery` על כל `<article>`, בלי prev/next) — **בגריד הזה בלבד**: דפי האומן (`data-artwork-page`) ושקופית המרכז בקרוסלות `galleries/<slug>/` מקשרים ל-`works/<id>/` **תמיד**, בלי לבדוק `page` (ולכן `page:false` לא מונע קישור שבור — ראה מתכון ההוספה).
 - **טעינה מדורגת:** 12 ואז צ'אנקים של 18, IntersectionObserver על sentinel (`rootMargin:'1800px 0px'`). כל צ'אנק (`appendChunk`) מריץ מיד אחרי ההזרקה `ArtworkLightbox.refreshFocusable()` + `PictureUpgrade.refresh(grid)`; ואז 🔴 re-arm (`unobserve`+`observe`) של ה-sentinel — אחרת נתקע. בלי IO ⇒ רינדור מלא. כרטיס ראשון `fetchpriority="high"`.
 
-### סדר הגריד (150 פריטים)
+### סדר הגריד
 - 1–70 ו-79–122 = סדר `542:500` ברצף אחד, בלי היסט בראש (אימות מלא אחרון 2026-06-11 — מיקום+תמונה+טקסט גלוי; הוספות מאוחרות כמו `aharon-bas-1` בראש, `bar-cohen-1`, `talia-zoref-2/3`, `elsa-ars-brush-6` שובצו בתוכו — ⚠️ unverified מול הפריים הנוכחי).
 - 🔴 **71–78 = בלוק הרזידנסי** (`shira-turbowicz-1..3`, ואז `melani-hekimoglu-1..5`) — הכרעת המעצבת 2026-08-23 "לשים באמצע… שלא תהיה ראשונה". **לא להחזיר לראש.**
-- 123–150 = יצירות שאינן ב-`542:500`, בסוף לפי סדר הוספה (the-peeler ×17, noemi-safir-11/12, amnon-lipkin-12/13, tali-zelnik, jessica-tabarovsky-2, hadas-tuval, livay-levi-3, **livay-levi-4 = 150**). **יצירה חדשה שלא בפריים ⇒ לסוף.**
+- 123 והלאה = יצירות שאינן ב-`542:500`, בסוף לפי סדר הוספה (the-peeler ×17, noemi-safir-11/12, amnon-lipkin-12/13, tali-zelnik, jessica-tabarovsky-2, hadas-tuval, livay-levi-3, livay-levi-4). **יצירה חדשה שלא בפריים ⇒ לסוף.**
 - סדר ויזואלי של `542:500`: היום ה-API מחזיר אותו כ-`mode:grid` (3×37, `gridRow`/`gridColumn` על כל כרטיס) ⇒ למיין לפי (gridRow, gridColumn). ב-2026-06-11 הוא היה `layoutMode:none` (אבסולוטי) ⇒ מיון לפי (y, x).
 
 ### הכרעות מול הפיגמה
@@ -88,19 +88,19 @@
 ### מבנה
 - `<html data-artwork-id>` + `#artwork-data` + IIFE שמרנדר ל-`#aw-media`/`#aw-info`. 🔴 שם התיקייה = `data-artwork-id` = `id` בתוך `#artwork-data` (`sync_data.py` לא בודק — סקריפט הבדיקה במתכון ההוספה).
 - דסקטופ: תמונה `contain` משמאל (`max-height:640px`), מידע 360px מימין (320 ≤1100); `.aw-info` נשאר LTR (`flex-end` = ימין), `rtl` רק על הטקסט. מובייל: עמודה; 🔴 `.aw-media{flex:0 0 auto}` (לא `flex:1 1 0` — קורס לגובה 0); כפתורים `row-reverse` + `justify-content:flex-start` = ימין.
-- תמונה = LCP (`fetchpriority="high"`, `sizes="(max-width:768px) 100vw, 55vw"`), קליק ⇒ לייטבוקס `components/artwork-lightbox.{js,css}` (`[data-artwork-src]`, לא מנווט).
-- **contact us** = `mailto:` לקורין אברהם (אוצרת כל התערוכות; הכתובת hard-coded ב-renderer בכל 150 העמודים, מקורה `data/opencalls.json`), נושא+גוף ממולאים (יצירה, אמן, תערוכה, פרטים, קישור). **share** = `[data-share-btn]` (`site-chrome.js`).
+- תמונה = LCP (`fetchpriority="high"`, `sizes="(max-width:768px) 100vw, 55vw"`; **לא** `loading="lazy"` — הרנדרר פולט אותה כך בכוונה), קליק ⇒ לייטבוקס `components/artwork-lightbox.{js,css}` (`[data-artwork-src]`, לא מנווט).
+- **contact us** = `mailto:` לקורין אברהם (אוצרת כל התערוכות; הכתובת hard-coded ב-renderer בכל עמודי היצירה, מקורה `data/opencalls.json`), נושא+גוף ממולאים (יצירה, אמן, תערוכה, פרטים, קישור). **share** = `[data-share-btn]` (`site-chrome.js`).
 - מטא: כותרת אחת (`title_he`, אחרת `title_en` ב-Copperplate), אמן → `../../artists/<artist_slug>/`, פרטים, גלריה → `../../#galleries` **בשורה אחת**.
 - **divider + סקשן תערוכה רק אם יש `exhibition_title_he` או `statement_he`.** הכותרת מקושרת ל-`../../<w.exhibition_route>/` (Audit 2026-07-09 — לא hardcode `opencalls/`). routes: הקולפן `exhibitions/the-peeler` (**לא** `opencalls/…`), `exhibitions/how-many`, `exhibitions/loneliness`, shira `sponsors/sumii`, melani `null`; ל-`alon-1/2` אין מפתחות `exhibition_*`.
 - שדות אופציונליים שהרנדרר של עמוד היצירה קורא: `exhibition_title_he`, `exhibition_route`, `statement_he[]`, `collab[]`/`collab_connector_he`. `page` — רק הגריד `/works/`; `exhibition_slug` — רק דפי האומן (`exRank`); `art_works[].kind` — מידע בלבד, אף רנדרר לא קורא (ה-`kind:"residency"` שנקרא ב-`galleries/dizengoff/` הוא של רשומת `#g-exhibitions-data`, לא של `art_works`).
 
 ### וריאנטי renderer (5)
 העמודים זהים פרט ל-data/head ולהבדלי ה-JS וה-CSS האלה. שינוי renderer/CSS = בכל הוריאנטים הרלוונטיים + regress. לזיהוי: `grep -l 'w.collab' / 'wrapDimRuns' / 'NAME_LINKS' / '.aw-artist a{' works/*/index.html`.
-- **A** (114): בסיס — בלי collab, בלי `wrapDimRuns`/`.dim`, בלי כלל `.aw-artist a`.
-- **Z** (2: `zohar-ron-5/9`): + `wrapDimRuns` + CSS `.dim{direction:ltr;unicode-bidi:isolate}`; בלי `.aw-artist a`.
-- **B** (28 — aharon-bas-1, alice-debellis, amnon-lipkin, bar-cohen-1, hadas-tuval, maria-artamonova, michael-konovalenko, shira-turbowicz, tali-zelnik): + `wrapDimRuns`/`.dim` + ענף collab ב-`artistHtml` + CSS `.aw-artist a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}` + `:hover{opacity:.6}`. ⚠️ הסלקטור תופס רק `<a>` **מקונן** בתוך `span.aw-artist` = שמות collab בלבד. ביצירת אמן יחיד (כל 28 העמודים היום) הקרדיט הוא `<a class="aw-artist">` עצמו ⇒ **בלי** קו תחתון, זהה ל-A.
-- **M** (5: `melani-hekimoglu-*`): B (כולל ה-CSS) + `exHead` ריק כשאין כותרת + `linkNames()` (`NAME_LINKS`: "ארז זילינסקי רוזן"→`../../about/`, "קורין אברהם"→`../../curators/korin-avraham/`, CSS `.aw-ex-body a.artist-link`).
-- **L** (1: `livay-levi-3`): בסיס + ענף collab + CSS `.aw-artist a{transition:opacity .2s}` + `:hover{opacity:.6}` בלבד — **בלי קו תחתון** על שמות ה-collab, ובלי `wrapDimRuns`/`.dim`.
+- **A** (כל השאר): בסיס — בלי collab, בלי `wrapDimRuns`/`.dim`, בלי כלל `.aw-artist a`.
+- **Z** (`zohar-ron-5/9`): + `wrapDimRuns` + CSS `.dim{direction:ltr;unicode-bidi:isolate}`; בלי `.aw-artist a`.
+- **B** (aharon-bas-1, alice-debellis, amnon-lipkin, bar-cohen-1, hadas-tuval, maria-artamonova, michael-konovalenko, shira-turbowicz, tali-zelnik): + `wrapDimRuns`/`.dim` + ענף collab ב-`artistHtml` + CSS `.aw-artist a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}` + `:hover{opacity:.6}`. ⚠️ הסלקטור תופס רק `<a>` **מקונן** בתוך `span.aw-artist` = שמות collab בלבד. ביצירת אמן יחיד (כל עמודי B היום) הקרדיט הוא `<a class="aw-artist">` עצמו ⇒ **בלי** קו תחתון, זהה ל-A.
+- **M** (`melani-hekimoglu-*`): B (כולל ה-CSS) + `exHead` ריק כשאין כותרת + `linkNames()` (`NAME_LINKS`: "ארז זילינסקי רוזן"→`../../about/`, "קורין אברהם"→`../../curators/korin-avraham/`, CSS `.aw-ex-body a.artist-link`).
+- **L** (`livay-levi-3`): בסיס + ענף collab + CSS `.aw-artist a{transition:opacity .2s}` + `:hover{opacity:.6}` בלבד — **בלי קו תחתון** על שמות ה-collab, ובלי `wrapDimRuns`/`.dim`.
 - עמוד חדש — להעתיק מוריאנט שמכסה את הצרכים: collab ⇒ וריאנט עם ענף collab (B/M/L; L בלי `.dim`); בלי כותרת ⇒ M; מידות מבודדות `.dim` ⇒ Z/B/M. העתקה מ-A מאבדת בשקט את ענף ה-collab ואת `.dim` (עיצוב קישור האמן ביצירת אמן יחיד זהה בכל הוריאנטים). ⚠️ לא הוכרע: B/M מוסיפים קו תחתון לשמות collab, ואילו עמוד ה-collab החי היחיד (`livay-levi-3`, L) מציג אותם בלי ⇒ collab חדש שמועתק מ-B ייראה שונה מ-livay-levi-3. להכריע לפני שימוש (Open issues).
 
 ### רזידנסי — יצירה בלי תערוכה (גלריית דיזינגוף)
@@ -109,12 +109,18 @@
 - ⚠️ `alon-1/2` (בלי `exhibition_*`, עם `statement_he` per-work) על וריאנט A ⇒ `<span class="aw-ex-title">` ריק (קוסמטי).
 
 ### הוספת יצירה (מתכון)
-1. תמונות ל-`images/works/v2/` (כלל-זהב 12; מקור גולמי ל-`_originals/`).
-2. רשומה ב-`art_works[]` במקום הנכון, `page:true`, `artist_page_pos`, שדות תערוכה; `sold`/`details_he` רק לפי מה שגלוי. סטייטמנט-קבוצה → `exhibition_statements[]` (אותה מחרוזת `exhibition_title_he` בדיוק); `statement_he` ברשומה = **טקסט על היצירה הבודדת בלבד** (באנר מעל הכרטיס בדף האומן). 🔴 רשומת `exhibition_statements` חדשה = **חמשת המפתחות** כמו כל 50 הקיימות: `artist_slug`, `exhibition_title_he`, `exhibition_slug`, `exhibition_route`, `statement_he` (`null` מותר, מפתח חסר לא). בלי `artist_slug`/`exhibition_title_he`/`statement_he` ה-`sync_data.py` קורס ב-`KeyError`.
+1. **מקור התמונה = ה-imageRef של הכרטיס בפריים.** ה-fill הראשון ברשימה הוא בדרך כלל הנראה ומה שמתחתיו leftovers — אבל הכלל הוא **לרנדר את ה-node** (`get_figma_data` מחזיר גם שכבות מוסתרות, בלי סימון; lessons 2026-08-12/08-19/08-28). `cropTransform` על ה-fill = קרופ של המעצבת — לאפות אותו (תקדים `livay-levi-4`). התקבל רק "Artworks Section" בודד ⇒ למשוך גם את פריים דף-האומן ההורה ולגזור את ה-`artist_page_pos` של **כל** הקבוצה מקריאת LTR שלו (lessons 2026-07-15, 2026-08-28; `docs/routes/artists.md` → קריאת פריים). את ה-node לרשום בשורה/בסקשן של האומן ב-`FIGMA_LINKS.md`. תמונות ל-`images/works/v2/` (כלל-זהב 12; מקור גולמי ל-`_originals/`).
+2. **רשומה ב-`art_works[]` = להעתיק רשומת אחות מ-`data/works.json` ולערוך — לא לבנות מרשימת שדות.** קודם `docs/data-contracts.md` §9.2–9.3.
+   - אחות מאותה תערוכה (הקולפן: `maria-artamonova-1`; רזידנסי עם כותרת: `shira-turbowicz-1`; בלי כותרת: `melani-hekimoglu-1`; collab: `livay-levi-3`). 🔴 לא מ-`#artwork-data` של עמוד יצירה — שם `sync_data.py` מוסיף `statement_he` מה-fallback, ורשומה שנושאת אותו מקבלת באנר per-work כפול בדף האומן.
+   - הצורה: 16 שדות בסיס — `id, artist_slug, artist_he, artist_en, title_he, title_en, gallery_slug, gallery_en, sold, details_he, img, w, h, widths, artist_page_pos, page` (`img` = שם בסיס, בלי נתיב/סיומת) — ועוד `exhibition_title_he/slug/route`. 🔴 **לא** הצורה של `artists.json::works[]` (`image`/`year`/`medium`).
+   - מקום: **סוף המערך** (סדר המערך = סדר הגריד `/works/` וסדר הקרוסלה בדף הגלריה), אלא אם גריד `542:500` ממקם אותה (ראה "סדר הגריד"). `page:true`; `artist_page_pos` לפי `docs/routes/artists.md` (לא 0, ייחודי באומן רב-קבוצתי); `sold`/`details_he` רק לפי מה שגלוי.
+   - סטייטמנטים: טקסט-קבוצה → `exhibition_statements[]` (אותה מחרוזת `exhibition_title_he` בדיוק); `statement_he` ברשומה = **טקסט על היצירה הבודדת בלבד** (באנר מעל הכרטיס בדף האומן). בשני המקומות `statement_he` = **מערך פסקאות** (`["¶1","¶2"]`), לעולם לא מחרוזת — הרנדררים (דף האומן ועמוד היצירה) קוראים לו `.map` וקורסים. 🔴 רשומת `exhibition_statements` חדשה = העתק של רשומה קיימת, עם **חמשת המפתחות** כמו כל הקיימות: `artist_slug`, `exhibition_title_he`, `exhibition_slug`, `exhibition_route`, `statement_he` (`null` מותר, מפתח חסר לא). בלי `artist_slug`/`exhibition_title_he`/`statement_he` ה-`sync_data.py` קורס ב-`KeyError`.
+   - **2א. פריים חדש לאומן קיים** — להשוות **מילה-במילה** את כותרת הקבוצה, סטייטמנט הקבוצה והביו מול הדאטה, לא רק להוסיף את היצירה (תקדימים: `livay-levi-4` — הכותרת `הקולפן` הפכה ל-`הקולפן | מעורר רגש: מרחק שקט`; `jessica-tabarovsky-2` — הסטייטמנט הורחב והביו הוחלף). כותרת שהשתנתה = `exhibition_title_he` בכל יצירות הקבוצה **וגם** המפתח ברשומת `exhibition_statements`, באותו שינוי, ואז `sync_data.py` (אחרת הסטייטמנט נעלם בשקט). ביו שהשתנה = גם ה-`<head>` של דף האומן (`docs/routes/artists.md` → Data flow). טקסט על יצירה אחת → `statement_he` שלה (`livay-levi-4`), לא סטייטמנט הקבוצה.
 3. להעתיק תיקיית אחות ל-`works/<id>/` ולהחליף: `data-artwork-id`, **ה-`id` בתוך `#artwork-data`** (מספיק `{"id":"<id>"}` — 🔴 sync_data מזהה לפי ה-id שבפנים; id של האחות = העמוד מציג בשקט את האחות), ו**כל ה-head**: `<title>`, description, בלוק `SEO:auto` (canonical, `og:*` + `og:image:width/height`, `twitter:*`, JSON-LD `VisualArtwork`+`BreadcrumbList`) — לקח 2026-07-09: `elsa-ars-brush-6` נשא SEO שלם של talia-zoref-1.
-4. OG ידני: `magick images/works/v2/<img>.webp -resize '1200x1200>' -strip -quality 82 og/works-v2-<id>.jpg` (נכנס ב-1200×1200 ולעולם לא מגדיל — 🔴 לא `-resize 1200x` של ה-spine §7, שמגדיל יצירות צרות מ-1200 כמו `livay-levi-4`). את `og:image:width/height` ב-head למלא מ-`magick identify -format '%w %h'` של הקובץ שנוצר. 🔴 **לא להריץ `og_gen.py`/`inject.py` גורפות** (`docs/todo.md`). ⚠️ לפחות 17 מקובצי ה-OG הקיימים (הגבוהים מ-1200) נאפו ב-width-cap `-resize '1200x>'` (למשל `livay-levi-4` 406×1293, `aharon-bas-1` 596×1600). שתי הדרכים לא מגדילות; בתוך משפחה להעדיף את מה שהאחיות משתמשות בו, ובכל מקרה למלא `og:image:width/height` מה-identify.
-5. `python3 tools/sync_data.py` + `--check`: 🔴 exit 0 **וגם בלי אף שורת `!` ב-stderr** — `! artwork page id not in works.json` = `id` שגוי/לא-קיים ב-`#artwork-data` (sync_data רק מדלג; `--check` עובר), ועמוד בלי בלוק `#artwork-data` מדולג **בלי שום הודעה**. לכן גם בדיקת ה-1:1 שלמטה.
-6. `sitemap.xml` באותו קומיט + `python3 tools/seo/refresh_sitemap_lastmod.py` (כרגע 151 = אינדקס + 150).
+4. OG ידני: `magick images/works/v2/<img>.webp -resize '1200x1200>' -strip -quality 82 og/works-v2-<id>.jpg` (נכנס ב-1200×1200 ולעולם לא מגדיל — 🔴 לא `-resize 1200x` של ה-spine §7, שמגדיל יצירות צרות מ-1200 כמו `livay-levi-4`). את `og:image:width/height` ב-head למלא מ-`magick identify -format '%w %h'` של הקובץ שנוצר. 🔴 **לא להריץ `og_gen.py`/`inject.py` גורפות** (`docs/todo.md`). ⚠️ לפחות 17 מקובצי ה-OG הקיימים (הגבוהים מ-1200) נאפו ב-width-cap `-resize '1200x>'` (למשל `livay-levi-4` 406×1293, `aharon-bas-1` 596×1600). שתי הדרכים לא מגדילות; בתוך משפחה להעדיף את מה שהאחיות משתמשות בו, ובכל מקרה למלא `og:image:width/height` מה-identify. רשות (כמו לשאר היצירות): רשומה ב-`tools/seo/og-dims.json` — `"images/works/v2/<img>.webp": {"jpg": "og/works-v2-<id>.jpg", "w": …, "h": …}`; ממנה `inject.py <page>` על דף בודד לוקח jpg ומידות, ובלעדיה `og:image` נופל ל-webp.
+5. `python3 tools/sync_data.py` — מדפיס את **הרשימה המלאה** של הקבצים שכתב (נתיב יחסי לריפו, שורה לכל קובץ), ו**כל אחד מהם נכנס לאותו קומיט עם ה-JSON**. בדרך כלל: `data/generated/art-works.js` (+`ex-statements.js` כשנגעת בסטייטמנטים), `works/index.html`, `works/<id>/index.html` החדש, עמודי `works/<id>/` של אחיות שהרשומה שלהן השתנתה (למשל `artist_page_pos`) או שטקסט ה-fallback שלהן מ-`exhibition_statements` השתנה, ו-`galleries/<gallery_slug>/index.html`. בקומיט (אחרי שלב 6): `git status --short`, ו-`git add` **בשמם** — הם, ה-JSON, תיקיית העמוד החדש (`??`), התמונות, ה-OG, `sitemap.xml` וכל קובץ אחר שערכת במתכון (`FIGMA_LINKS.md`, `tools/seo/og-dims.json`, ה-`<head>` של דף האומן ב-2א); לא `-A` ולא glob. קומיט בלעדיהם = היצירה חסרה בפרודקשן ב-`/works/` ובקרוסלת הגלריה (עותקים inline-only), ו-`--check` נכשל על HEAD.
+   - `--check`: 🔴 exit 0 **וגם בלי אף שורת `!` ב-stderr** — `! artwork page id not in works.json` = `id` שגוי/לא-קיים ב-`#artwork-data` (sync_data רק מדלג; `--check` עובר), ועמוד בלי בלוק `#artwork-data` מדולג **בלי שום הודעה**. לכן גם בדיקת ה-1:1 שלמטה.
+6. `sitemap.xml` באותו קומיט + `python3 tools/seo/refresh_sitemap_lastmod.py`; בדיקת השלמות של כלל-זהב 15 (`<loc>` מול `index.html` מוגשים) חייבת לצאת **שווה בדיוק**.
    - חיפוש ההידר (`search-index.js`) נבנה מה-`<title>`/description/JSON-LD (`name`, `creator.name`) הסטטיים — ולכן head שהועתק מאחות ולא עודכן מופיע גם בחיפוש. הוא נבנה מחדש בקומיט ע"י `.githooks/pre-commit` **רק אם ה-hook מופעל** (`git config core.hooksPath .githooks`); אחרת: `git add` לעמוד, `python3 tools/search/build_index.py` (מאנדקס רק עמודים שב-git), ולכלול את `search-index.js` בקומיט. לא לערוך אותו ביד.
 - 🔴 **לכל `id` ב-`art_works[]` חייבת להיות תיקייה `works/<id>/`, ולהפך.** `page` נבדק **רק** בגריד `/works/`; דפי האומנים ושקופית המרכז בקרוסלות `galleries/<slug>/` מקשרים ל-`works/<id>/` תמיד ⇒ רשומה בלי תיקייה (sync_data לא יוצר עמודים ולא מזהיר) = 404, ותיקייה שנשארה אחרי מחיקת רשומה = עמוד יתום — וכל הבדיקות עוברות. בסוף **כל** הוספה או מחיקה להריץ (נקי = השורה `no page: set() orphan: set()` בלבד; בודק גם בלוק חסר ו-`data-artwork-id` = שם התיקייה = `id` ב-`#artwork-data`):
 
@@ -134,7 +140,7 @@ EOF
 - `/tmp/gen_artwork_pages.py` אינו בריפו ואינו זמין — לא לחפש. **מחיקה:** JSON, תיקייה, sitemap, `grep` לקישורים נכנסים, `sync_data.py`, ובדיקת ה-1:1 שלמעלה.
 
 ## `/works/livay-levi-3/` — collab
-- **המתכון המאושר ליצירה משותפת** (הכרעת פיגמה `668:13584`; השימוש החי הראשון ב-`collab[]`):
+- **המתכון המאושר ליצירה משותפת** (הכרעת פיגמה `668:13584`; השימוש החי הראשון ב-`collab[]`). רשומות חדשות = להעתיק מ-`data/works.json` את `livay-levi-3` ואת שתי רשומות ה-`exhibition_statements` שלה ולערוך (מתכון ההוספה, שלב 2):
   - **רשומה אחת** (`artist_slug:"livay-levi"`) + `artist_pages:["hadas-tuval"]` + `collab[]` (שני `{slug,name_he,name_en}`) + `collab_connector_he:"×"` ⇒ בגריד **פעם אחת**, בשני דפי האומנים, עמוד קנוני אחד. **לא לשכפל לשתי רשומות** (תמונה כפולה בגריד). ⚠️ `artist_pages` לא נתמך בשלושת דפי ה-legacy (`alon`, `dan-ben-ary`, `zohar-ron-dan-ben-ari` — מסננים לפי `artist_slug` בלבד, `docs/routes/artists.md`). collab שאחד הצדדים שלו הוא דף legacy לא יופיע שם בלי שדרוג הרנדרר של אותו דף, ואחריו regress.
   - **קבוצה ייעודית** `"הקולפן | interdependence"` — הקיבוץ לפי מחרוזת מדויקת, ולכן אי אפשר להתמזג לקבוצות הקיימות של השניים.
   - **רשומת `exhibition_statements` לכל אומן.** כרגע הנוסח מפוצל: ליוואי "…בין ליוואי לוי והדס טובל.", הדס "…בין הדס טובל לליוואי לוי." (`1502:122`); עמוד היצירה מציג את נוסח ליוואי.
@@ -151,7 +157,7 @@ EOF
 - **amnon-lipkin** (דף `798:173`) — כל 13 בקבוצה **"הקולפן | מעורר רגש: מאבק מייסר ומרגש"** (`798:203`/`798:214`). pos 1..11 לפי המספור, **13 "קולפן - מילים" = 12, 12 "קולפן - לב" = 13** (לב אחרונה ובודדת — המעצבת, 2026-07-15; לא ליישר). 12/13 = 36/66 ריקמה ידנית (`944:257`/`800:491`). פסקה 1 מסתיימת "…ומציפות את הקונפליקט שבין החלק המייסר במאבק לבין המרגש שבו." בביו: "בדיקנות"→**"בדייקנות"**.
 - **jessica-tabarovsky** — **"הקולפן | מעורר רגש: השתוקקות"** (`668:13236`); סטייטמנט 4 פסקאות על שתי היצירות (טקסט `668:13332`, בתוך הסקשן `668:13235` שכולל גם את הכותרת `668:13236`); ביו גוף שלישי (`668:11043`, בתוך הסקשן `668:11042`). **-2** "בחורה ממתינה לרכבת של 6:48" (`1050:16`) = pos 1, **-1** "התנערות" = pos 2 (`668:13241`).
 - **natasha-zeriker** — **"הקולפן | מעורר רגש: אובדן שליטה"** (ברשומה + ב-natasha-zeriker-1); סטייטמנט נוכחי = 10 פסקאות שנפתחות ב-"LINGER" (2026-08-28) — node `668:13682` (כותרת `668:13683`, טקסט `668:13708`), שהמעצבת שכתבה in-place מעל הסטייטמנט הישן.
-- **hadas-tuval** (`797:106`, יצירות `797:146`) — **"הקולפן | מעורר רגש: החזקה והרפיה"** (`797:148/149`); -1 "falling into movement" 1086×1448; **-2 "סף" = `img:"hadas-tuval-2-v2"`** 998×1330 +480/768 (`797:152`, imageRef `8dfed7d2…`). ביו `797:137`, פורטרט `images/artists/hadas-tuval/`, `@hadastuval.ayni`, דף אומנית מתבנית bar-cohen. בגריד `/artists/` (פריט 42 מתוך 43, לפני tali-zelnik) — בקשת משתמש 2026-07-06 **למרות שאין לה כרטיס ב-`523:145`**; `images/artists/grid/hadas-tuval.{webp,avif}` 810²+480w מהפורטרט.
+- **hadas-tuval** (`797:106`, יצירות `797:146`) — **"הקולפן | מעורר רגש: החזקה והרפיה"** (`797:148/149`); -1 "falling into movement" 1086×1448; **-2 "סף" = `img:"hadas-tuval-2-v2"`** 998×1330 +480/768 (`797:152`, imageRef `8dfed7d2…`). ביו `797:137`, פורטרט `images/artists/hadas-tuval/`, `@hadastuval.ayni`, דף אומנית מתבנית bar-cohen. בגריד `/artists/` (פריט 42, לפני tali-zelnik) — בקשת משתמש 2026-07-06 **למרות שאין לה כרטיס ב-`523:145`**; `images/artists/grid/hadas-tuval.{webp,avif}` 810²+480w מהפורטרט.
 - **tali-zelnik-1/2** — **"הקולפן | מעורר הרגש: שייכות"** (`854:1082`, כך בפיגמה). מחרוזת-מפתח מול רשומת ה-`exhibition_statements` שלה — שינוי = בשני הצדדים יחד + `sync_data.py`, אחרת הסטייטמנט נעלם בשקט.
 - **noemi-safir-11/12** "התמכרות רכה"/"לחץ סגול" (`943:237`/`668:12584`, דף `668:12489`) — pos 4/5 בראש How Many בדף האומן.
 - **elsa-ars-brush-6** "מושעה בזמן" `833:944`. **talia-zoref-2/3** "שלווה בסגנון | Serenity in Style" / "להתחבר | Connect" (`668:13734`/`867:1138`/`870:1148`); talia-zoref-1 = pos 2.
@@ -174,9 +180,9 @@ EOF
 - `melani-hekimoglu-3` (BLOOM PLANTER): `details_he` זהה ל-FLOW VASES (copy-paste של המעצבת, נשמר verbatim עד הכרעה).
 - "Sonia Delaun" בפיגמה → "Sonia Delaunay" ב-`shira-turbowicz-2` (+ `docs/routes/sponsors.md`).
 - כפילויות התמונה בפיגמה — לדווח למעצבת / לתקן בפיגמה (⚠️ לא רשום ב-`docs/todo.md`; מקור: `docs/lessons.md` 2026-06-10).
-- ⚠️ נצפה בקוד: `tali-zelnik-1/2` עם SEO שארית-staging (OG ברירת מחדל, JSON-LD `WebPage` בלבד, אין `og/works-v2-tali-zelnik-*.jpg`); 25 עמודים בלי `og:image:width/height` ו-3 עם מידות שגויות (`noemi-safir-11/12`, `talia-zoref-1` — קובצי ה-OG שלהם גם רחבים מה-webp של היצירה; בתיקון לאפות מחדש לפי שלב 4 במתכון); ב-`tools/seo/og-dims.json` הרשומה של `hadas-tuval-2-v2` מצביעה ל-`og/works-v2-hadas-tuval-2-v2.jpg` שאינו קיים (העמוד מפנה ל-`og/works-v2-hadas-tuval-2.jpg`).
+- ⚠️ נצפה בקוד: `tali-zelnik-1/2` עם SEO שארית-staging (OG ברירת מחדל, JSON-LD `WebPage` בלבד, אין `og/works-v2-tali-zelnik-*.jpg`); 25 עמודים בלי `og:image:width/height` ו-3 עם מידות שגויות (`noemi-safir-11/12`, `talia-zoref-1` — קובצי ה-OG שלהם גם רחבים מה-webp של היצירה; בתיקון לאפות מחדש לפי שלב 4 במתכון); ב-`tools/seo/og-dims.json` הרשומה של `hadas-tuval-2-v2` מצביעה ל-`og/works-v2-hadas-tuval-2-v2.jpg` שאינו קיים (העמוד מפנה ל-`og/works-v2-hadas-tuval-2.jpg`), ול-`livay-levi-4` אין בו רשומה (היחידה מכל היצירות; מתכון ההוספה, שלב 4).
 - ⚠️ נצפה בקוד: קו תחתון על שמות collab לא אחיד. שם של אמן יחיד לא מקבל קו תחתון באף מקום — הכללים `.aw-artist a` (B/M) ו-`.meta .artist a` (גריד) תופסים רק `<a>` מקונן = ענף ה-collab. ההבדל הנראה היחיד היום הוא ב-`livay-levi-3`: בכרטיס הגריד `/works/` שמות ה-collab עם קו תחתון, ובעמוד היצירה שלו (וריאנט L) בלי. יישור = הכרעת משתמש + הפצה + regress.
-- ⚠️ נצפה בקוד: קישור הגלריה (גריד + 150 עמודים) עדיין `/#galleries`, לא `galleries/<slug>/` — שינוי = הכרעת משתמש + הפצה לכל הוריאנטים.
+- ⚠️ נצפה בקוד: קישור הגלריה (בגריד ובכל עמודי היצירה) עדיין `/#galleries`, לא `galleries/<slug>/` — שינוי = הכרעת משתמש + הפצה לכל הוריאנטים.
 - נצפה בקוד: כותרת קבוצת loneliness ב-`works.json` (34 יצירות + 11 רשומות `exhibition_statements`) = "בדידות בסביבה תוססת" (+ סיומות), בעוד הכותרת הרשמית ב-`exhibitions.json` = "בדידות בתוך סביבה תוססת" (Audit 2026-07-09).
   - ⚠️ לא ידוע אם הפער מכוון — טעון הכרעת משתמש. מחרוזת-מפתח: אם מאחדים — כל הרשומות וכל ה-statements יחד, ואז `sync_data.py`.
   - 🔴 אם בפיגמה מופיע "בדידות בתוך בסביבה תוססת" (כפל-ב') — טעות מוכרעת, לא להעתיק ל-`exhibition_title_he`.

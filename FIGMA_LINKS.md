@@ -6,7 +6,7 @@
 > כל דף = 2 ערכים: **desktop (1440px)** + **mobile (390px)**.
 > הקישורים בפורמט מוכן להעתקה לסוכן (`Implement this design from Figma. @<URL>`).
 >
-> Sitemap מלא + סטטוסי בנייה ב-`CLAUDE.md` §3.
+> Sitemap + סטטוסי בנייה ב-`CLAUDE.md` §4; מצב והכרעות לכל דף ב-`docs/routes/<משפחה>.md`.
 
 ---
 
@@ -78,10 +78,10 @@ legacy — מובייל:
 סקשן upcoming events (מובייל בלבד — frame `1318:476` בתוך פריים ההומפייג' `1318:363`; דסקטופ = אדפטציה): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-476&m=dev
 
-פוסטר כיכר המדינה (node `1318:3259` — הטקסט אפוי בתמונה; **2026-08-28 = `poster-hamedina-v4` ספטמבר**, מקור שולחן-עבודה; `poster-hamedina-v3` נשאר בדיסק — כלל-זהב 8): Implement this design from Figma.
+פוסטר כיכר המדינה (הטקסט אפוי בתמונה; **נוכחי: `poster-hamedina-v5` מ-node `1738:347` (2026-09-27)**; קודמים — `v4` ספטמבר ממקור שולחן-עבודה, `v3` ומטה, node ישן `1318:3259` — נשארים בדיסק, כלל-זהב 8; מתכון העדכון: `docs/routes/homepage.md` → `#events-upcoming`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3259&m=dev
 
-פוסטר כיכר דיזינגוף — **אין node חי בפיגמה**. `poster-dizengoff-v2` [אוגוסט] נלקח מ-`1318:482`; **2026-09-01 = `poster-dizengoff-v3` ספטמבר (רזידנסי Sumii)**, מקור שולחן-עבודה `Instagram story - 16.jpg` שהמעצבת מסרה. עדכון לוח = החלפת קובץ, לא Figma.
+פוסטר כיכר דיזינגוף — **נוכחי: `poster-dizengoff-v4` מ-node `1873:1074` (2026-09-27)**. קודמים: `v2` [אוגוסט] מ-`1318:482`, `v3` [ספטמבר, רזידנסי Sumii] מקובץ שולחן-עבודה `Instagram story - 16.jpg` שהמעצבת מסרה. עדכון לוח = החלפת קובץ — ממקור Figma או מקובץ מעצבת (מתכון: `docs/routes/homepage.md` → `#events-upcoming`).
 
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
 
@@ -453,7 +453,7 @@ press the-shared-list מובייל (שם ה-frame "press-1-mobile"): Implement t
 
 ### artist talk family (5 events, 2026-07-09)
 
-> כל החמישה בקובץ `landing`. **אין להם סקשן artworks/triptych.** ראה CLAUDE.md §4 להערת המשפחה.
+> כל החמישה בקובץ `landing`. **אין להם סקשן artworks/triptych.** ראה `docs/routes/events-talks.md` (הכללים המשותפים של המשפחה).
 
 **artist talk — alice de bellis (הקולפן, 6.8.2026; נוסף 2026-07-23)**
 
@@ -651,7 +651,7 @@ opencall how-many מובייל: Implement this design from Figma.
 
 ## 🧩 קומפוננטות (לא דפים — sections / states)
 
-### Artwork Lightbox (3 מצבים — ראה §15 ב-CLAUDE.md)
+### Artwork Lightbox (3 מצבים — ראה `docs/components.md`)
 
 lightbox state 1 (desktop): Implement this design from Figma.
 @https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2725&m=dev
@@ -709,7 +709,7 @@ galleries dizengoff מובייל: Implement this design from Figma.
 
 ## ❌ ללא Figma (לא קיים עיצוב)
 
-הדפים הבאים מופיעים ב-sitemap (CLAUDE.md §3.1) אך **אין להם עיצוב Figma**:
+הדפים הבאים מופיעים ב-sitemap (CLAUDE.md §4) אך **אין להם עיצוב Figma**:
 
 | Route | סטטוס | הערות |
 |---|---|---|
@@ -732,12 +732,12 @@ galleries dizengoff מובייל: Implement this design from Figma.
 1. מצא את הדף בטבלה לעיל לפי ה-route.
 2. העתק את ה-2 שורות (`<page> <variant>: Implement this design from Figma. @<URL>`).
 3. הזן ל-Figma MCP / לדפדפן כדי לראות את העיצוב המקורי.
-4. אם הדף לא קיים כאן — וודא דרך CLAUDE.md §3.1 אם יש frame ID. אם לא — לבקש מהמשתמש.
+4. אם הדף לא קיים כאן — וודא ב-route doc של המשפחה (`docs/routes/`) אם יש frame ID. אם לא — לבקש מהמשתמש.
 
 **אם גילית URL חדש / שגוי:**
 
 - עדכן את הטבלה כאן.
-- עדכן את ה-node IDs ב-`CLAUDE.md` §3.1 (sitemap).
+- עדכן את ה-node IDs ב-route doc של המשפחה (`docs/routes/<משפחה>.md`).
 - הוסף לקח ב-§12.
 
 ---
@@ -834,7 +834,7 @@ livay levi מובייל: Implement this design from Figma.
 בלוק קבוצת התערוכה + כרטיס היצירה (בתוך פריים דף אומן, מובייל 390):
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=668-13584&m=dev
 
-> ההכרעה שנגזרה מהפריים: קבוצה ייעודית "הקולפן | interdependence" עם סטייטמנט משותף + כרטיס יחיד שהקרדיט שלו "ליוואי לוי × הדס טובל". המימוש = רשומה אחת עם `artist_pages`+`collab` (ראה CLAUDE.md §6).
+> ההכרעה שנגזרה מהפריים: קבוצה ייעודית "הקולפן | interdependence" עם סטייטמנט משותף + כרטיס יחיד שהקרדיט שלו "ליוואי לוי × הדס טובל". המימוש = רשומה אחת עם `artist_pages`+`collab` (ראה `docs/data-contracts.md` → `works.json`).
 
 ### סקשן היצירות של ליוואי לוי — כותרת מעודכנת + `livay-levi-4` (`/artists/livay-levi/`)
 

@@ -26,7 +26,7 @@
 ...
 <script src="<rel>/components/artwork-lightbox.js" defer></script>
 ```
-`<rel>` = `..` מ-`pages/`, `../..` מ-`pages/artists/`.
+`<rel>` = `../` × עומק הדף: `..` מ-`works/index.html`, `../..` מ-`artists/<slug>/`.
 
 ### 1.3 סימון תמונות (3 דרכים, לפי קדימות)
 
@@ -83,9 +83,9 @@ window.ArtworkLightbox.refreshFocusable()  // אחרי injection דינמי (ר�
 
 | דף | סטטוס |
 |---|---|
-| `pages/works.html` | ✅ 12 cards (`data-artwork-gallery` על `.grid`) |
-| `pages/artists/artist.html` | ✅ render dynamic של `.works-grid` |
-| `pages/exhibition.html` | ❌ thumbs = portraits |
+| `works/index.html` | ✅ 12 cards (`data-artwork-gallery` על `.grid`) |
+| `artists/<slug>/index.html` | ✅ render dynamic של `.works-grid` |
+| `exhibitions/<slug>/index.html` | ❌ thumbs = portraits |
 | `index.html` (tiles) | ❌ tiles = typography |
 | `index.html` (tribe mobile strip) | ✅ §1.4.1 — `div.tribe-thumb-card` + `data-artwork-gallery="tribe-teaser"`, בלי CTA |
 | `events/how-many/` | ✅ invitation tri (`data-tri-lightbox="true"` + `data-artwork-gallery="event-invitation"`) + רצועת moments (`data-artwork-gallery="event-moments"`, title per-img) |
@@ -165,8 +165,8 @@ g.addEventListener('gallery:change', e => console.log(e.detail.index));
 
 | דף | סטטוס | תמונות |
 |---|---|---|
-| `pages/exhibition.html?id=loneliness` | ✅ hero gallery | 8 |
-| `pages/exhibition.html?id=how-many` | ✅ hero gallery | 1 |
+| `exhibitions/loneliness/` | ✅ hero gallery | 8 |
+| `exhibitions/how-many/` | ✅ hero gallery | 1 |
 | events/*.html slideshows | ⏳ candidate (כרגע triptych) |
 
 ### 2.8 הוספת תמונות לתערוכה
@@ -259,7 +259,7 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 | דף | מצב |
 |---|---|
 | `index.html` (mobile-cta) | `sg-mode-swap`, 2 opencalls + info bar |
-| `pages/opencall.html` (mobile) | `sg-mode-lightbox`, gallery images, ללא info bar, `.oc-mobile-gallery` |
+| `opencalls/<slug>/index.html` (mobile) | `sg-mode-lightbox`, gallery images, ללא info bar, `.oc-mobile-gallery` |
 
 ### 3.9 אסור
 
@@ -298,7 +298,7 @@ if (window.ArtworkLightbox) window.ArtworkLightbox.refreshFocusable();
 <script src="<rel>/components/triptych-gallery.js" defer></script>
 ```
 
-`<rel>` = `..` מ-`pages/`, `../..` מ-`pages/events/` או `pages/press/`.
+`<rel>` = `../..` מ-`events/<slug>/` או `press/<slug>/` (`../` × עומק הדף).
 
 ### 4.3 התנהגות
 
@@ -342,8 +342,8 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index));
 
 | דף | תיאור |
 |---|---|
-| `pages/about.html` | 7 פורטרטים של ארז (Section 2) — peek-main-peek קלאסי |
-| `pages/events/ktuba.html` | slideshow band — 3 צילומים אמיתיים + 4 dots placeholder (סך 7 dots) |
+| `about/index.html` | 7 פורטרטים של ארז (Section 2) — peek-main-peek קלאסי |
+| `events/ktuba/index.html` | slideshow band — 3 צילומים אמיתיים + 4 dots placeholder (סך 7 dots) |
 | `events/close-look/` | **שתיים בעמוד אחד** — `the artworks` (9 יצירות, שקופיות עטופות `<a>`) + `.event-moments` (11 צילומים מהמפגש, `data-tri-start="1"` כדי שהשלישייה הפותחת תהיה זו של הפיגמה; דוטים מוסתרים ≤768 per Figma) |
 
 ### 4.7 אסור
