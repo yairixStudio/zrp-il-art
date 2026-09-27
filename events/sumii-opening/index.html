@@ -256,8 +256,10 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .ev-cobrand{top:50.2%}
 
   /* Text blocks — white background (Figma mobile sections) */
-  /* Title 24 small caps → 19px full caps, measured against the Figma ink (306 / 221 px) */
-  .h-title{background:var(--white);padding:32px 16px 0;font-size:19px;line-height:1.3;width:100%}
+  /* Title 24 small caps → 19px full caps, measured against the Figma ink (306 / 221 px).
+     balance: 390 keeps Figma's OPENING NIGHT EVENT - ART / RESIDENCY BY SUMII (the only 2-line
+     split, since .nw holds EVENT - ART); it stops "BY SUMII" dangling alone at 320–349 / 480–569. */
+  .h-title{background:var(--white);padding:32px 16px 0;font-size:19px;line-height:1.3;width:100%;text-wrap:balance}
   .h-meta{background:var(--white);padding:0 10px 8px;margin-top:16px;gap:8px}
   .h-meta .gallery{font-size:14px}
   .h-meta .date,.h-meta .time{font-size:14px}
