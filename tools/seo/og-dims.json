@@ -1148,5 +1148,30 @@
 "jpg": "og/sponsors-soos-hero.jpg",
 "w": 1200,
 "h": 1800
+},
+"images/events/nir-giorgio-levin-medina/hero.webp": {
+"jpg": "og/events-nir-giorgio-levin-medina-hero.jpg",
+"w": 800,
+"h": 1072
+},
+"images/events/sumii-melani-hosting/hero.webp": {
+"jpg": "og/events-sumii-melani-hosting-hero.jpg",
+"w": 1200,
+"h": 1501
+},
+"images/events/yom-kippur-wish-tree/hero.webp": {
+"jpg": "og/events-yom-kippur-wish-tree-hero.jpg",
+"w": 795,
+"h": 1202
+},
+"images/events/niki-de-saint-phalle-day/hero.webp": {
+"jpg": "og/events-niki-de-saint-phalle-day-hero.jpg",
+"w": 1200,
+"h": 1801
+},
+"images/events/sumii-live-studio/hero.webp": {
+"jpg": "og/events-sumii-live-studio-hero.jpg",
+"w": 1200,
+"h": 1600
 }
 }
