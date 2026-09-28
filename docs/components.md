@@ -373,3 +373,14 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index, e.detail.co
 לוגיקה: `localStorage["zr-bookmarks"]` = JSON array `{id,title,url,date}`. share button משתמש ב-`navigator.share()` נתיב ראשי, fallback ל-`navigator.clipboard.writeText()` עם toast "LINK COPIED".
 
 האייקון יושב ב-`position:absolute; right:100%` של `.nav-right` — דסקטופ משמאל ל-nav-links, מובייל משמאל להמבורגר. מאחר ו-absolute, show/hide לא מזיז שום אלמנט.
+
+---
+
+## 6. Newsletter popup (built into site-chrome) ✅
+
+פופאפ הרשמה לניוזלטר — Figma landing `1929:168` (דסקטופ 680w) / `1929:107` (מובייל 342w). מוזרק ל-`<body>` מ-`components/site-chrome.js` (`wireNewsletterPopup`, נקרא מ-`<site-footer>`), CSS `.nlp*` ב-`site-chrome.css`.
+- **אותו טופס ואותו endpoint כמו הפוטר** (`wireNewsletter(root, onSuccess)` — honeypot, תיבת הסכמה חובה, Wix Velo). תיבת ההסכמה **לא בפיגמה — נשמרה בכוונה** (גילוי פרטיות, ראה CLAUDE §4).
+- **טריגר:** פעם אחת — אחרי 15 שניות או בגלילה ל-50% מהדף (הראשון מביניהם). סגירה (X / רקע / Esc) = השהיה ל-30 יום; הרשמה (בפופאפ **או בפוטר**) = לעולם לא שוב. מצב ב-`localStorage['zr-nl-popup']`. קבועים `NLP_*` בראש הבלוק.
+- לא מופיע ב-`/privacy/` ובדפי `noindex`; נדחה אם חיפוש/תפריט/בוחר-לוגו/לייטבוקס פתוחים.
+- **בדיקה:** `#newsletter` ב-URL פותח אותו מיד (עוקף השהיה/דיכוי).
+- כפתור SUBSCRIBE ב-Copperplate (בפיגמה Inter — כלל-זהב 2). פוקוס ראשוני על ה-X (לא על השדה — כדי לא להקפיץ מקלדת בטלפון).

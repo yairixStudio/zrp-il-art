@@ -151,7 +151,7 @@
     return (
       '<footer class="footer">' +
         '<div class="newsletter">' +
-          '<h2>Stay Informed</h2>' +
+          '<h2 dir="rtl">לקבלת עדכונים על אירועים בגלריות השאירו מייל</h2>' +
           '<form onsubmit="event.preventDefault()" novalidate>' +
             '<textarea class="newsletter-email" name="email" rows="1" inputmode="email" autocomplete="email" placeholder="Email Address" aria-label="Email Address" spellcheck="false"></textarea>' +
             // Honeypot — hidden from humans; bots that fill it are silently dropped.
@@ -662,9 +662,9 @@
     refreshToggle();
   }
 
-  function wireNewsletter(root) {
+  function wireNewsletter(root, onSuccess) {
     var field = root.querySelector('.newsletter-email');
-    var form = root.querySelector('.newsletter form');
+    var form = field && field.form;
     var consentBox = root.querySelector('.newsletter-consent-cb');
     var statusEl = root.querySelector('[data-newsletter-status]');
     if (!field) return;
@@ -724,6 +724,8 @@
             statusEl.textContent = 'תודה — נרשמת לרשימת התפוצה.';
             field.value = '';
             if (consentBox) consentBox.checked = false;
+            markNewsletterSubscribed();
+            if (onSuccess) onSuccess();
           })
           .catch(function () {
             if (submitBtn) submitBtn.disabled = false;
@@ -919,6 +921,134 @@
     }, true);
   }
 
+  // ---- Newsletter popup (Figma landing 1929:168 desktop / 1929:107 mobile) ----
+  // Same form + endpoint as the footer (wireNewsletter). Shown once per visitor:
+  // after NLP_DELAY ms or on scrolling past NLP_SCROLL of the page, whichever
+  // comes first. Closing snoozes it for NLP_SNOOZE_DAYS; subscribing (here or in
+  // the footer) hides it for good. Force-open for QA: add #newsletter to the URL.
+  var NLP_KEY = 'zr-nl-popup';
+  var NLP_DELAY = 15000;
+  var NLP_SCROLL = 0.5;
+  var NLP_SNOOZE_DAYS = 30;
+  function nlpState() {
+    try { return JSON.parse(localStorage.getItem(NLP_KEY)) || {}; } catch (e) { return {}; }
+  }
+  function nlpSave(st) {
+    try { localStorage.setItem(NLP_KEY, JSON.stringify(st)); } catch (e) {}
+  }
+  function markNewsletterSubscribed() {
+    var st = nlpState(); st.subscribed = true; nlpSave(st);
+  }
+  function nlpSuppressed() {
+    var st = nlpState();
+    if (st.subscribed) return true;
+    return !!(st.closedAt && Date.now() - st.closedAt < NLP_SNOOZE_DAYS * 864e5);
+  }
+  function nlPopupHTML() {
+    return (
+      '<div class="nlp-backdrop" data-nlp-backdrop hidden></div>' +
+      '<div class="nlp-wrap" data-nlp-wrap hidden>' +
+        '<div class="nlp-unit" role="dialog" aria-modal="true" aria-labelledby="nlp-title">' +
+          '<button class="nlp-close" type="button" data-nlp-close aria-label="סגירה">' +
+            '<svg viewBox="0 0 32 32" width="32" height="32" aria-hidden="true"><path d="M16 15.087l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.415 1.414-4.95-4.95-4.949 4.95-1.414-1.415 4.95-4.95-4.95-4.95 1.414-1.412z" fill="currentColor"/></svg>' +
+          '</button>' +
+          '<div class="nlp">' +
+            '<h2 class="nlp-title" id="nlp-title" dir="rtl">לקבלת עדכונים על אירועים בגלריות השאירו מייל</h2>' +
+            '<form onsubmit="event.preventDefault()" novalidate>' +
+              '<textarea class="newsletter-email" name="email" rows="1" inputmode="email" autocomplete="email" placeholder="Email Address" aria-label="Email Address" spellcheck="false"></textarea>' +
+              '<div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">' +
+                '<label>Website<input type="text" class="newsletter-hp" name="website" tabindex="-1" autocomplete="off"></label>' +
+              '</div>' +
+              '<button type="submit">SUBSCRIBE</button>' +
+              '<label class="newsletter-consent">' +
+                '<input type="checkbox" class="newsletter-consent-cb" name="consent" required aria-required="true">' +
+                '<span class="newsletter-consent-text">קראתי ואני מסכים/ה ל<a href="' + abs('privacy/') + '">מדיניות הפרטיות</a> ולקבלת דיוור מ<span class="lat">Zielinski &amp; Rozen</span> (כולל אתר הבשמים <span class="lat">zrp.co.il</span>) <span class="newsletter-consent-req">(חובה)</span></span>' +
+              '</label>' +
+              '<p class="newsletter-status" data-newsletter-status role="status" aria-live="polite"></p>' +
+            '</form>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+  function wireNewsletterPopup() {
+    var forced = location.hash === '#newsletter';
+    if (!forced && nlpSuppressed()) return;
+    // Not on the page the consent text links to, nor on noindex pages (404).
+    if (!forced && (/\/privacy\/?$/.test(location.pathname) ||
+        document.querySelector('meta[name="robots"][content*="noindex"]'))) return;
+
+    var holder = document.createElement('div');
+    holder.innerHTML = nlPopupHTML();
+    var backdrop = holder.querySelector('[data-nlp-backdrop]');
+    var wrap = holder.querySelector('[data-nlp-wrap]');
+    document.body.appendChild(backdrop);
+    document.body.appendChild(wrap);
+    var unit = wrap.querySelector('.nlp-unit');
+    var lastFocus = null, shown = false, timer = null;
+
+    function otherOverlayOpen() {
+      return document.documentElement.classList.contains('srch-lock') ||
+        document.body.classList.contains('menu-open') ||
+        document.body.style.position === 'fixed' ||
+        !!document.querySelector('[data-logo-choose-wrap]:not([hidden]), .lightbox.is-open, .lb.is-open');
+    }
+    function detach() {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', onScroll);
+    }
+    function open() {
+      if (shown) return;
+      if (!forced && otherOverlayOpen()) { timer = setTimeout(open, 4000); return; }
+      shown = true;
+      detach();
+      lastFocus = document.activeElement;
+      backdrop.hidden = false;
+      wrap.hidden = false;
+      document.documentElement.classList.add('nlp-lock');
+      requestAnimationFrame(function () {
+        backdrop.classList.add('is-open');
+        wrap.classList.add('is-open');
+      });
+      // Focus the X, not the field — on phones that would pop the keyboard unasked.
+      wrap.querySelector('[data-nlp-close]').focus({ preventScroll: true });
+    }
+    function close(snooze) {
+      if (wrap.hidden) return;
+      if (snooze !== false) { var st = nlpState(); st.closedAt = Date.now(); nlpSave(st); }
+      backdrop.classList.remove('is-open');
+      wrap.classList.remove('is-open');
+      document.documentElement.classList.remove('nlp-lock');
+      setTimeout(function () { wrap.hidden = true; backdrop.hidden = true; }, 320);
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+    function onScroll() {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max >= NLP_SCROLL) open();
+    }
+
+    wireNewsletter(wrap, function () {
+      setTimeout(function () { close(false); }, 2200);
+    });
+    wrap.querySelector('[data-nlp-close]').addEventListener('click', function () { close(); });
+    backdrop.addEventListener('click', function () { close(); });
+    wrap.addEventListener('click', function (e) { if (!unit.contains(e.target)) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (wrap.hidden) return;
+      if (e.key === 'Escape') { e.stopPropagation(); close(); return; }
+      if (e.key === 'Tab') {  // keep focus inside the dialog
+        var f = unit.querySelectorAll('button, textarea, input:not([tabindex="-1"]), a[href]');
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }, true);
+
+    if (forced) { setTimeout(open, 300); return; }
+    timer = setTimeout(open, NLP_DELAY);
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
   // ---- Custom elements ---------------------------------------
   class SiteHeader extends HTMLElement {
     connectedCallback() {
@@ -940,6 +1070,7 @@
       this.dataset.rendered = '1';
       this.innerHTML = footerHTML();
       wireNewsletter(this);
+      wireNewsletterPopup();
     }
   }
 

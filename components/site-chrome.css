@@ -85,7 +85,7 @@ body.menu-open{position:fixed;width:100%;overflow:hidden !important;overscroll-b
 
 /* Left column — newsletter */
 .newsletter{width:300px;flex-shrink:0;display:flex;flex-direction:column;gap:17px}
-.newsletter h2{font-family:var(--cop);font-weight:400;font-size:24px;line-height:32px;letter-spacing:.04em}
+.newsletter h2{font-family:var(--heb);font-weight:300;font-size:20px;line-height:1.35;text-align:right;direction:rtl}
 .newsletter form{display:flex;flex-direction:column;gap:12px}
 /* Textarea avoids native email-input clipping with Copperplate while staying single-line. */
 .newsletter textarea.newsletter-email{background:transparent;border:0;border-bottom:1px solid #fff;border-radius:0;height:47px;padding:14px 0 9px;color:#fff;font-family:var(--cop);font-size:14px;line-height:20px;letter-spacing:.02em;outline:0;width:100%;box-sizing:border-box;display:block;resize:none;overflow:hidden;white-space:nowrap;text-transform:uppercase;caret-color:#fff;-webkit-appearance:none;appearance:none}
@@ -405,3 +405,38 @@ html.srch-lock,html.srch-lock body{overflow:hidden !important}
   .srch-panel{margin-top:0;width:100%;max-width:none;max-height:100dvh}
   .srch-input{font-size:17px}
 }
+
+/* ============================================================
+   NEWSLETTER POPUP — Figma landing 1929:168 (desktop 680w) / 1929:107 (mobile 342w).
+   Same layout at both sizes: X (32px, white square) above a white card, right-aligned,
+   gap 9; card padding 24; FbEzmel 24/32 heading; underline field; outlined SUBSCRIBE.
+   Backdrop = the logo chooser's blur. Consent row kept (legal; not in the Figma frame).
+   ============================================================ */
+html.nlp-lock,html.nlp-lock body{overflow:hidden !important}
+.nlp-backdrop{position:fixed;inset:0;background:rgba(234,236,235,.62);backdrop-filter:blur(14px) saturate(1.05);-webkit-backdrop-filter:blur(14px) saturate(1.05);z-index:299;opacity:0;transition:opacity .28s ease}
+.nlp-backdrop.is-open{opacity:1}
+.nlp-backdrop[hidden],.nlp-wrap[hidden]{display:none}
+.nlp-wrap{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box;overflow-y:auto;pointer-events:none}
+.nlp-wrap.is-open{pointer-events:auto}
+.nlp-unit{display:flex;flex-direction:column;align-items:flex-end;gap:9px;width:min(680px,100%);margin:auto;opacity:0;transform:translateY(8px);transition:opacity .3s ease,transform .3s cubic-bezier(.22,.61,.36,1);outline:0}
+.nlp-wrap.is-open .nlp-unit{opacity:1;transform:none}
+.nlp-close{width:32px;height:32px;padding:0;border:0;background:#fff;color:#1B1B1B;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:opacity .2s}
+.nlp-close svg{width:32px;height:32px;display:block}
+.nlp-close:hover{opacity:.72}
+.nlp-close:focus-visible{outline:1px solid #1B1B1B;outline-offset:2px}
+.nlp{align-self:stretch;background:#fff;color:#1B1B1B;padding:24px;box-sizing:border-box;display:flex;flex-direction:column;gap:14.9px;box-shadow:0 0 32px rgba(27,27,27,.06),0 0 64px rgba(27,27,27,.04)}
+.nlp-title{margin:0;font-family:var(--heb);font-weight:400;font-size:24px;line-height:32px;color:#1B1B1B;text-align:right;direction:rtl;text-transform:none}
+.nlp form{display:flex;flex-direction:column;gap:24px;padding-top:17.1px;margin:0}
+.nlp textarea.newsletter-email{background:transparent;border:0;border-bottom:1px solid #1B1B1B;border-radius:0;height:47px;padding:13px 0 14px;color:#1B1B1B;font-family:var(--cop);font-weight:400;font-size:14px;line-height:20px;letter-spacing:.02em;outline:0;width:100%;box-sizing:border-box;display:block;resize:none;overflow:hidden;white-space:nowrap;text-transform:uppercase;text-align:left;direction:ltr;caret-color:#1B1B1B;-webkit-appearance:none;appearance:none}
+.nlp textarea.newsletter-email::placeholder{color:#1B1B1B;opacity:1}
+.nlp button[type="submit"]{padding:16px 0;border:1px solid #1B1B1B;border-radius:0;background:#fff;color:#1B1B1B;font-family:var(--cop);font-weight:400;font-size:12px;line-height:16px;letter-spacing:.1em;width:100%;cursor:pointer;text-transform:uppercase;transition:background .2s,color .2s}
+.nlp button[type="submit"]:hover,.nlp button[type="submit"]:focus-visible{background:#1B1B1B;color:#fff}
+.nlp button[type="submit"]:disabled{opacity:.5;cursor:default}
+.nlp .newsletter-consent{margin-top:-8px}
+.nlp .newsletter-consent input[type="checkbox"]{border-color:#1B1B1B}
+.nlp .newsletter-consent input[type="checkbox"]:checked{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10' fill='none'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='%231B1B1B' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.nlp .newsletter-consent input[type="checkbox"]:focus-visible{outline-color:#1B1B1B}
+.nlp .newsletter-consent-text,.nlp .newsletter-consent-text a,.nlp .newsletter-status{color:#1B1B1B}
+.nlp .newsletter-status{font-size:13px;margin:-12px 0 0}
+.nlp .newsletter-status.is-ok{color:#2f7a52}
+.nlp .newsletter-status.is-err{color:#b3261e}
