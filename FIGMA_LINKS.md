@@ -649,11 +649,18 @@ opencall how-many מובייל: Implement this design from Figma.
 
 ### obsession — OBSESSION (קול קורא פתוח, דדליין 16.10.2026, גלריית כיכר המדינה; 2026-09-27)
 
-**אין עיצוב לדף עדיין** (אין פריימי desktop/mobile; `opencalls/obsession/` לא נבנה). הפוסטר מופיע רק בפריימי הקול הקורא של ההומפייג' (`1124:792` / `1318:401` — בסקשן "קול קורא" למטה):
-- imageRef `77075862…` — 4:5, השקופית המרכזית ב-`1318:401` — **בשימוש** (`images/opencalls/obsession-card.*`, בשני ה-breakpoints).
-- imageRef `8f00a7f8…` — 9:16, הכרטיס ב-`1124:792` — **לא בשימוש** (הכרעת משתמש: תיבות 4:5, ראה `docs/routes/homepage.md`).
+דף: `opencalls/obsession/` (נבנה 2026-09-28, וריאנט light — `docs/routes/exhibitions.md`).
 
-כשיגיעו פריימי הדף — להוסיף כאן `opencall obsession דסקטופ: Implement this design from Figma. @…` + מובייל.
+opencall obsession דסקטופ (1440): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1906-664&m=dev
+
+opencall obsession מובייל (390): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1906-587&m=dev
+
+תמונות:
+- imageRef `d4e1fa18…` — 1080×1350, ה-hero של הדף (`images/opencalls/obsession/hero.*`; דסקטופ 492×744, מובייל 390×520, cover).
+- imageRef `77075862…` — 4:5, השקופית המרכזית ב-`1318:401` — כרטיסי ההומפייג' (`images/opencalls/obsession-card.*`, בשני ה-breakpoints).
+- imageRef `8f00a7f8…` — 9:16, הכרטיס ב-`1124:792` — **לא בשימוש** (הכרעת משתמש: תיבות 4:5, ראה `docs/routes/homepage.md`).
 
 ---
 

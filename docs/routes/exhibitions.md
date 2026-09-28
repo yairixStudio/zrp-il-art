@@ -20,7 +20,8 @@
   - רשימת מעוררי הרגש (שבירות השורות): `XhGH...::119:2587`
 - `/opencalls/how-many/` → `opencalls/how-many/index.html` · ✅ data-driven
   - Figma desktop `Zn3N...::1213:2340` · mobile `Zn3N...::1213:2263`
-- `/opencalls/obsession/` → ⏳ לא נבנה, ואין לו עיצוב עדיין. הקול הקורא (OBSESSION, דדליין 16.10.2026, גלריית כיכר המדינה, `status:"open"`) חי היום רק בהומפייג' (`#mobile-cta` / `#opencall`, לא קליקאבילי — `docs/routes/homepage.md`).
+- `/opencalls/obsession/` → `opencalls/obsession/index.html` · ✅ data-driven, `theme:"light"` (ראה "וריאנט light" למטה)
+  - Figma desktop `XhGH...::1906:664` · mobile `XhGH...::1906:587`
 - קישורי Figma מלאים: `FIGMA_LINKS.md` § "תערוכות יחידות", "אוצרת — קורין אברהם", "קולות קוראים". ⚠️ שם הסקשן שם הוא `/opencall/:slug`, אבל ה-route בפועל הוא `opencalls/` (ברבים).
 
 ## מפת הדאטה (מי קורא מאיפה)
@@ -30,15 +31,15 @@
 | `exhibitions/loneliness/`, `exhibitions/how-many/` | fetch ל-`data/exhibitions.json` + `site.json` + `curators.json` | `#fallback-exhibitions`, `#fallback-site`, `#fallback-curators` | **ביד** |
 | `exhibitions/the-peeler/` | **ה-HTML עצמו**. אין fetch ואין JSON | — | — |
 | `curators/korin-avraham/` | fetch ל-`curators.json` + `exhibitions.json` + `galleries.json` | `#fallback-curators`, `#fallback-exhibitions-min` (ביד) · `#fallback-galleries` | ביד · **`sync_data.py`** |
-| `opencalls/the-peeler/`, `opencalls/how-many/` | fetch ל-`data/opencalls.json` + `site.json` | `#fallback-opencalls`, `#fallback-site` | **ביד** |
+| `opencalls/{obsession,the-peeler,how-many}/` | fetch ל-`data/opencalls.json` + `site.json` | `#fallback-opencalls`, `#fallback-site` | **ביד** |
 
 - ב-http ה-JSON גובר. העותק ה-inline משמש רק כשהדף נפתח ב-file://.
 - `python3 tools/sync_data.py` נוגע בדפים האלה **רק** ב-`#fallback-galleries` של עמוד האוצרת. אסור לערוך אותו ביד.
 - כל שאר העותקים ב-family הזה מתוחזקים ביד (Mirror registry ב-`docs/data-contracts.md`). שינוי ב-JSON מחייב לעדכן גם אותם, אחרת file:// מציג תוכן ישן.
 - 🔴 **כל עותק מכיל את כל הרשומות, לא רק את זו של הדף:**
   - `#fallback-exhibitions` בשני דפי התבנית מכיל את loneliness **וגם** את how-many.
-  - `#fallback-opencalls` בשני דפי הקול הקורא מכיל את כל שלוש הרשומות: obsession (בלי דף), the-peeler ו-how-many.
-  - לכן שינוי ברשומה אחת = עדכון בשני הקבצים.
+  - `#fallback-opencalls` בשלושת דפי הקול הקורא מכיל את כל שלוש הרשומות: obsession, the-peeler ו-how-many.
+  - לכן שינוי ברשומה אחת = עדכון בשלושת הקבצים.
 - 🔴 **`#fallback-site` — מה חייב להישאר בעותק:**
   - **בדפי התבנית (loneliness/how-many):** `footer.newsletter` (`title`/`placeholder`/`cta`) ו-`footer.links_he`. הרנדרר ניגש ל-`site.footer.newsletter.*` ול-`site.footer.links_he.slice()` בלי בדיקה. הוא קורא גם `site.footer.copyright`; אם הוא חסר הדף לא קורס, אבל הערך יוצא `undefined`.
   - **בדפי הקול הקורא:** הרנדרר קורא רק `site.footer.links_he || []`, ולכן מספיק ש-`site.footer` יתקיים.
@@ -272,12 +273,12 @@
 - `contact_email` (`korinalove5@gmail.com`) מופיע גם ב-`opencalls.json :: contact.email` (ובשני עותקי `#fallback-opencalls`) וב-`mailto` הכתוב ביד בכל עמודי `works/<id>/` (`docs/routes/works.md`). שינוי כתובת = לעדכן את כולם (ובדפי הקול הקורא גם לכייל מחדש את רמפת האימייל בטאבלט, ראה `.oc-hero` בסקשן הקול הקורא).
 - `credit_he` ("אוצרת התערוכה - קורין אברהם") נקרא ע"י דפי התבנית, ולכן חייב להופיע ב-`#fallback-curators` שלהם.
 
-## תבנית הקול הקורא — `opencalls/the-peeler/` + `opencalls/how-many/`
+## תבנית הקול הקורא — `opencalls/{obsession,the-peeler,how-many}/`
 
 ### איך זה עובד
-- שני הקבצים זהים, פרט למטא/SEO ול-`data-slug`.
+- שלושת הקבצים זהים, פרט למטא/SEO ול-`data-slug`.
 - renderer IIFE קורא את `opencalls.json` ו-`site.json` ומרנדר ל-`<main id="page">`, שבו מוצג "loading…" עד הרינדור.
-- CSS או renderer = לערוך אחד ולהעביר ידנית לשני.
+- CSS או renderer = לערוך אחד ולהעביר ידנית לשני האחרים (+ harness עם `--only opencalls/`).
 
 ### מבנה
 - **`.oc-hero` אפור:** טקסט RTL ומסגרת תמונה `492×744` (≤1100 `380×560`).
@@ -304,8 +305,8 @@
   - `deadline_label_he` + `deadline_he` (Copperplate, `direction:ltr`).
   - `note_he` באפור.
 - **Hero srcset:** נבנה מ-`hero-{480,768,1080}w.webp` לצד `hero.webp`.
-  - 🔴 המידות הטבעיות כתובות בקוד, בטבלת `HERO_DIMS` (`the-peeler` 1601×2000, `how-many` 1600×2000), **בשני הקבצים**.
-  - קול קורא חדש = להוסיף שורה ל-`HERO_DIMS` בשני הקבצים ולייצר את הווריאנטים (+avif), אחרת אין `width`/`height`.
+  - 🔴 המידות הטבעיות כתובות בקוד, בטבלת `HERO_DIMS` (`obsession` 1080×1350, `the-peeler` 1601×2000, `how-many` 1600×2000), **בשלושת הקבצים**.
+  - קול קורא חדש = להוסיף שורה ל-`HERO_DIMS` בכל הקבצים ולייצר את הווריאנטים (+avif), אחרת אין `width`/`height`.
 - **גלריה (`gallery_images[{image, video, poster}]`)** — the-peeler בלבד; ב-how-many `null`:
   - **דסקטופ `.oc-gallery`:** מסגרות `492×744`, צמודות לימין, `gap:48`.
     - פריט עם `video` מתנגן **inline בתוך הכרטיס**. יש עליו `data-artwork-skip`, והלייטבוקס מדלג עליו.
@@ -316,11 +317,21 @@
   - שני הפריטים הנוכחיים הם וידאו: `images/opencalls/the-peeler/gallery-0{1,2}.{mp4,webp,avif}` + `-poster.webp`.
   - ⚠️ `docs/components.md` §3.5 אומר ש"וידאו + `sg-mode-lightbox` = לא יציג". כאן זה עובד, כי פריטי הווידאו מסומנים `data-artwork-skip` ומתנגנים inline. לא להסיר את ה-skip.
 
+### וריאנט light — obsession (`theme:"light"`, Figma `1906:664` / `1906:587`)
+- מופעל ע"י `oc.theme === "light"` ⇒ `.oc-hero.is-light`. כל הכללים בבלוק ה-CSS "LIGHT THEME" (אחרי בלוק המובייל, כדי שה-media שלו יגבר). the-peeler/how-many לא מושפעים (harness נקי).
+- רקע לבן (לא `--bg-grey`), בלי scrim; `line-height:1.06` (ה-auto של FbEzmel בפיגמה) ומרווח פסקה = שורה ריקה (`1lh`); dividers של 72px בשני ה-breakpoints (דסקטופ עם inset 16 מימין; מובייל `#EFEFEF`).
+- דסקטופ: קצב 24px (סטטוס→כותרת 32), בלוקים ברוחב 390 (`Gallery Note Container` בפיגמה). מובייל: קצב 32 (סטטוס→כותרת 24, כותרת→טקסט 16), בלוקים בלי padding. נמדד מול הרינדור: סטיות ≤5px.
+- תג הסטטוס בדיו (לא אפור) כש-`status==="open"` (`.badge.status.is-open`) — גנרי לכל קול קורא פתוח.
+- שדות אופציונליים חדשים (גנריים ברנדרר, `docs/data-contracts.md` §8): `hero_mobile_ratio` (באנר מובייל 390/520), `submission_instructions_he.lead_he` (בלוק פסקאות לפני הרשימה, בלי divider ביניהם — `.block.follow`), `.items_html` (HTML גולמי — `PDF` ב-`.lat`), `.bullet:"disc"` (•), `contact.intro_he[]`, `contact.deadline_first`, `contact.label_html` (קישור לעמוד האוצרת — `curators/korin-avraham/`).
+- תאריך הדדליין בוריאנט = FbEzmel (כמו בפיגמה), לא Copperplate. `deadline_he` = `16.10.2026` (נקודות, כמו בפיגמה).
+- srcset של ה-hero מסנן וריאנטים ברוחב >90% מהמקור (ל-obsession, 1080×1350, אין `-1080w`).
+- המקור הגולמי ורינדורי הייחוס של הפריימים: `_originals/opencalls/obsession/` + `scratchpad/figma-obsession/` (מקומי בלבד).
+
 ### דאטה
 - `opencalls.json`: `status` (the-peeler ו-how-many `archived`; obsession `open`), `submission_status_he` ("ההגשה נגמרה"), `deadline`/`deadline_he`, `gallery_id`/`gallery_label_he`, `hero_image`, `card_image`, `contact`, `figma_node_*`.
-- **obsession:** הרשומה (ראשונה במערך — הוא חדש→ישן) קיימת בשביל כרטיסי ההומפייג' (`card_image`, סטטוס, דדליין). שדות הדף שלה `null` עד שייבנה דף — ואז: למלא אותם ב-JSON ובכל עותקי `#fallback-opencalls`, שורה ב-`HERO_DIMS` (בשני הקבצים הקיימים ובעותק החדש), sitemap, OG, ולהפוך את כרטיסי ההומפייג' לקישורים. הרשימה המלאה: `docs/todo.md`. **הסטטוס ידני** — אחרי הדדליין (16.10.2026) לשאול את המשתמש לפני העברה ל-`archived`.
+- **obsession:** הרשומה ראשונה במערך (חדש→ישן); משמשת גם את כרטיסי ההומפייג' (`card_image`). **הסטטוס ידני** — אחרי הדדליין (16.10.2026) לשאול את המשתמש לפני העברה ל-`archived` (+ `submission_status_he` "ההגשה נגמרה" — התג יחזור לאפור אוטומטית; הרשימה המלאה: `docs/todo.md`).
 - `card_image` (`images/opencalls/<slug>-card*.webp`) לא משמש את הדפים. הוא התמונה של כרטיסי הקול הקורא בהומפייג' (`#opencall` / `#mobile-cta`, `docs/routes/homepage.md`).
-- שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשני** הקבצים (כל אחד מכיל את כל שלוש הרשומות). `sync_data.py` לא מטפל בזה.
+- שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשלושת** הקבצים (כל אחד מכיל את כל שלוש הרשומות). `sync_data.py` לא מטפל בזה.
 - קול קורא חדש: הרשומה = העתק של רשומת אחות מ-`opencalls.json` ועריכה (קודם `docs/data-contracts.md` §8), **בראש המערך**, גם בכל עותקי `#fallback-opencalls`, + שורה ב-`HERO_DIMS` (למעלה).
 
 ## נקודות מגע: הוספת תערוכה או שינוי בה

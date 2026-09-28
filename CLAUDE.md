@@ -111,7 +111,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `/exhibitions/loneliness/`, `/exhibitions/how-many/` | `exhibitions/<slug>/index.html` | ✅ data-driven מתבנית | exhibitions |
 | `/exhibitions/the-peeler/` | `exhibitions/the-peeler/index.html` | ✅ **סטטי קפוא** — עריכה ידנית ב-HTML | exhibitions |
 | `/curators/korin-avraham/` | `curators/korin-avraham/index.html` | ✅ | exhibitions |
-| `/opencalls/` · `/opencalls/the-peeler/` · `/opencalls/how-many/` | `opencalls/<slug>/index.html` | ⏳ · ✅ · ✅ | exhibitions |
+| `/opencalls/` · `/opencalls/obsession/` · `/opencalls/the-peeler/` · `/opencalls/how-many/` | `opencalls/<slug>/index.html` | ⏳ · ✅ (light) · ✅ · ✅ | exhibitions |
 | `/artists/` | `artists/index.html` | ✅ גריד האומנים (`#artists-grid-data`) | artists |
 | `/artists/:slug/` | `artists/<slug>/index.html` (דף לכל אומן) | ✅ תבנית משותפת + `data-slug`; דאטה מ-`data/generated/*.js` | artists |
 | `/press/` | `press/index.html` | ✅ ארכיון **עבר** (אירועים עתידיים נושרים בזמן ריצה) | press |

@@ -350,7 +350,7 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index, e.detail.co
 | `about/index.html` | 7 פורטרטים של ארז (Section 2) — peek-main-peek קלאסי |
 | `events/ktuba/index.html` | slideshow band — 3 צילומים אמיתיים + 4 dots placeholder (סך 7 dots) |
 | `events/close-look/` | **שתיים בעמוד אחד** — `the artworks` (9 יצירות, שקופיות עטופות `<a>`) + `.event-moments` (11 צילומים מהמפגש, `data-tri-start="1"` כדי שהשלישייה הפותחת תהיה זו של הפיגמה; דוטים מוסתרים ≤768 per Figma) |
-| `index.html` `#mobile-cta` (מובייל) | 3 קולות קוראים (obsession · the-peeler · how-many), `data-tri-start="0"`, full-bleed, peeks בלי עמעום, **בלי dots**; שקופיות עטופות `<a>` לדף הקול הקורא (obsession = `<img>` בלי קישור — אין דף); info bar `.oc-info` מסונכרן ע"י מאזין `tri:change` על ה-`.tri` (§4.5); fade `.is-wrapping` ל-wrap של 3 שקופיות (§4.3). פרטים: `docs/routes/homepage.md` |
+| `index.html` `#mobile-cta` (מובייל) | 3 קולות קוראים (obsession · the-peeler · how-many), `data-tri-start="0"`, full-bleed, peeks בלי עמעום, **בלי dots**; שקופיות עטופות `<a>` לדף הקול הקורא (כולל obsession); info bar `.oc-info` מסונכרן ע"י מאזין `tri:change` על ה-`.tri` (§4.5); fade `.is-wrapping` ל-wrap של 3 שקופיות (§4.3). פרטים: `docs/routes/homepage.md` |
 | `index.html` `#x-our-artists` | 39 שקופיות, `data-tri-start="13"`, כיתובים (`data-caption`/`data-caption-href`) + `data-artist-href` (קליק במרכז → דף האומן); חיצי הדסקטופ (`.xa-prev`/`.xa-next`) משגרים `keydown` ArrowLeft/Right על ה-`.tri`. dots מוסתרים ב-CSS — ב-markup נשארו 38 כפתורים ל-39 שקופיות (מוסתרים, ולכן לא מפר את §4.7; אם מחזירים dots — לסנכרן, `docs/routes/homepage.md`) |
 
 ### 4.7 אסור

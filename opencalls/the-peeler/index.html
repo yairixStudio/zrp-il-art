@@ -184,6 +184,41 @@ body{text-transform:uppercase}
     background:var(--white);
   }
 
+  .oc-hero .img-frame{aspect-ratio:var(--oc-hero-m-ar,492/744)}
+
+}
+
+/* ============================================================
+   LIGHT THEME (oc.theme === "light" — obsession, Figma landing 1906:664 / 1906:587)
+   White page, no scrim, Figma auto line-height (≈1.06), blank-line paragraph gaps,
+   24px rhythm on desktop / 32px on mobile, 72px dividers on both breakpoints.
+   ============================================================ */
+.oc-hero .badge.status.is-open{border-color:var(--ink);color:var(--ink)}
+.oc-hero.is-light{background:var(--white)}
+.oc-hero.is-light .img-frame::after{display:none}
+.oc-hero.is-light .text-col{gap:24px}
+.oc-hero.is-light .status-row{margin-bottom:8px}
+.oc-hero.is-light .desc,
+.oc-hero.is-light .block .text{line-height:1.06}
+.oc-hero.is-light .desc p,
+.oc-hero.is-light .block .text p{margin:0 0 1.06em;margin:0 0 1lh}
+.oc-hero.is-light .desc p:last-child,
+.oc-hero.is-light .block .text p:last-child{margin-bottom:0}
+.oc-hero.is-light .text-col > .divider-mobile{display:none}
+.oc-hero.is-light .divider{margin-right:16px}
+.oc-hero.is-light .block{max-width:390px}
+.oc-hero.is-light .block.follow{margin-top:-2px}
+.oc-hero.is-light .block .text ul{margin:0}
+.oc-hero.is-light .block .text .deadline-val{font-family:var(--heb);font-weight:300;letter-spacing:0}
+.oc-hero .block .text ul.disc li{padding-right:28px}
+.oc-hero .block .text ul.disc li::before{content:"•";right:10px}
+@media (max-width:768px){
+  .oc-hero.is-light .text-col{gap:32px;padding-bottom:24px}
+  .oc-hero.is-light .status-row{margin-bottom:-8px;justify-content:flex-start}
+  .oc-hero.is-light .title{margin-bottom:-16px}
+  .oc-hero.is-light .block.follow{margin-top:0}
+  .oc-hero.is-light .divider{display:block;background:var(--divider-mobile);margin-right:0}
+  .oc-hero.is-light .block{padding:0;max-width:none}
 }
 
 .loading{padding:120px 24px;text-align:center;font-family:var(--cop);font-weight:300;color:var(--grey-mid);letter-spacing:.08em}
@@ -230,7 +265,7 @@ a.artist-figure-link img{transition:filter .25s}
 
 <!-- Inline JSON fallback (file:// support). Keep in sync with data/opencalls.json + data/site.json. -->
 <script type="application/json" id="fallback-site">{"brand":{"name_en":"ZIELINSKI & ROZEN","name_he":"זילינסקי & רוזן","tagline_en":"THE ART GALLERIES","founder":"Erez Zielinski-Rozen","logo":"images/header:footer:general/logo.svg"},"nav":[{"key":"opencall","label_en":"open call","href":"/opencall"},{"key":"exhibitions","label_en":"exhibitions","href":"/exhibitions"},{"key":"works","label_en":"the art works","href":"/works"},{"key":"galleries","label_en":"the galleries","href":"/galleries"},{"key":"about","label_en":"about","href":"/about"},{"key":"press","label_en":"press & events","href":"/press"}],"footer":{"newsletter":{"title":"Stay Informed","placeholder":"Email Address","cta":"SUBSCRIBE"},"links_he":[{"label":"יצירת קשר","href":"contact/"},{"label":"הצהרת נגישות","href":"accessibility/"},{"label":"מדיניות פרטיות","href":"privacy/"},{"label":"גלריית כיכר המדינה","href":"/galleries/medina"},{"label":"גלריית כיכר דיזינגוף","href":"/galleries/dizengoff"},{"label":"גלריית שוק הפשפשים","href":"/galleries/flea-market"}],"social":[{"platform":"instagram","url":"https://www.instagram.com/erezzielinskirozen/"},{"platform":"facebook","url":"https://web.facebook.com/ZielinskiRozen/"},{"platform":"youtube","url":"#"},{"platform":"tiktok","url":"#"}],"copyright":"© 2026 THE art GALLERY ZiELINSKI & ROZEN ALL RIGHTS RESERVED."},"announcement":"קול קורא חדש באוויר !","contact":{"instagram_handle":"@erezzielinskirozen"}}</script>
-<script type="application/json" id="fallback-opencalls">{"opencalls":[{"id":"obsession","slug":"obsession","title_html":null,"title_en":"obsession","status":"open","submission_status_he":null,"gallery_id":"medina","gallery_label_he":"גלריית כיכר המדינה","deadline":"2026-10-16","deadline_he":"16/10/2026","hero_image":null,"description_he":null,"emotional_triggers":null,"submission_instructions_he":null,"contact":null,"gallery_images":null},{"id":"the-peeler","slug":"the-peeler","title_html":"<span class=\"heb\">הקולפן</span> | <span class=\"lat\">exhibition volume 2</span>","title_en":"the peeler","status":"archived","submission_status_he":"ההגשה נגמרה","gallery_id":"medina","gallery_label_he":"גלריית כיכר המדינה","deadline":"2026-04-23","deadline_he":"23/4/2026","hero_image":"images/opencalls/the-peeler/hero.webp","description_he":[{"weight":"regular","lines":["הנושא: בחירה במעורר רגש אחד מתוך רשימה נתונה,","וכניסה אליו דרך זיכרון אישי."]},{"weight":"light","lines":["האמן מתבקש ליצור עבודה חדשה שנוגעת במעורר רגש ובזיכרון, ובאפשרות לכתוב את אותו זיכרון מחדש:","  · לא בהכרח לשנות את מה שקרה","  · אלא לאפשר לו לקבל צורה אחרת דרך המפגש איתו"]},{"weight":"light","lines":["לצד כל עבודה יוצג בושם אחד, שיתכתב עם הרגש ויוסיף שכבה נוספת של חוויה."]}],"emotional_triggers":{"title_he":"הקולפן- רשימת מעוררי רגש לבחירה","lines":["קנאה מתחת לפני השטח | נטישה | אובדן שליטה","אובססיה | נשארתי למרות שידעתי","אני מרגיש/ה שקופ/ה | קנאה שאני מתבייש/ת בה | התאהבתי בפנטזיה","התאמתי את עצמי כדי שישארו | מגע שלא הרגיש במקום","משיכה שלא הייתה טובה לי | לא לשחרר | פחד להישאר לבד רציתי","יותר ממה שנתנו לי | אין לי על מה להישען | ריחוק מגונן","צורך באישור | מחכה להודעה | פחד מקרבה בהמתנה","געגוע שלא נפתר | לא בחרו בי | טיפוס מרצה"],"items":["קנאה מתחת לפני השטח","נטישה","אובדן שליטה","אובססיה","נשארתי למרות שידעתי","אני מרגיש/ה שקופ/ה","קנאה שאני מתבייש/ת בה","התאהבתי בפנטזיה","התאמתי את עצמי כדי שישארו","מגע שלא הרגיש במקום","משיכה שלא הייתה טובה לי","לא לשחרר","פחד להישאר לבד","רציתי יותר ממה שנתנו לי","אין לי על מה להישען","ריחוק מגונן","צורך באישור","מחכה להודעה","פחד מקרבה","בהמתנה","געגוע שלא נפתר","לא בחרו בי","טיפוס מרצה"]},"submission_instructions_he":{"intro_html":"יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד הכולל:","items":["שם האמן","שם היצירה","פרטי התקשרות","יש לבחור ולציין מעורר רגש אחד שנבחר מתוך הרשימה","העבודה צריכה להיות חדשה ולא הוצגה בעבר","יש להגיש סקיצה / הצעה ראשונית","תיאור קצר של היצירה בהתייחס לנושא התערוכה","ניתן להגיש בכל מדיום: ציור, צילום, וידאו, פיסול, טקסט, מיצב, סאונד, שירה, עבודות משולבות"]},"contact":{"label_he":"את המייל יש לשלוח לאוצרת:","email":"korinalove5@gmail.com","deadline_label_he":"מועד אחרון להגשה:","note_he":"*שימו לב הגשות שלא יעמדו בתנאי הפורמט לא ייענו."},"gallery_images":[{"image":"images/opencalls/the-peeler/gallery-01.webp","video":"images/opencalls/the-peeler/gallery-01.mp4","poster":"images/opencalls/the-peeler/gallery-01-poster.webp"},{"image":"images/opencalls/the-peeler/gallery-02.webp","video":"images/opencalls/the-peeler/gallery-02.mp4","poster":"images/opencalls/the-peeler/gallery-02-poster.webp"}]},{"id":"how-many","slug":"how-many","title_html":"<span class=\"lat\">how many partners have you had?</span>","title_en":"how many partners have you had?","status":"archived","submission_status_he":"ההגשה נגמרה","gallery_id":"dizengoff","gallery_label_he":"גלריית כיכר דיזינגוף","deadline":"2026-02-17","deadline_he":"17/2/2026","hero_image":"images/opencalls/how-many/hero.webp","description_he":[{"weight":"regular","lines":["התערוכה תעסוק בשאלות של:","אינטימיות, חוויה אישית, זיכרון, גוף, קרבה וחשיפה.","לא כוידוי, אלא כמרחב פתוח לפרשנות,","מבט ביקורתי חברתי או אישי, רגשי, המושג ״שותפים״,","על יחסים, ועל מה שנשאר ביניהם."]},{"weight":"light","lines":["אנו מזמינים אמניות ואמנים","להגיש הצעות ליצירות קיימות או חדשות"]},{"weight":"light","lines":["מכל מדיום:","ציור, צילום, וידאו, פיסול, טקסט,","מיצב, סאונד או עבודות משולבות."]}],"emotional_triggers":null,"submission_instructions_he":{"intro_html":"יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד הכולל:","items":["שם האמן, שם היצירה, פרטי התקשרות","והתייחסות מפורשת של היצירה לנושא התערוכה — כפי שהציף אצל האמן","הצעות לעבודות חדשות יתקבלו עם פירוט וסקיצה ראשונית"],"outro_he":"כל בקשה תיבחן בהתאם לקריטריונים מקצועיים, וברלוונטיות לנושא התערוכה."},"contact":{"label_he":"את המייל יש לשלוח לאוצרת:","email":"korinalove5@gmail.com","deadline_label_he":"מועד אחרון להגשה:","note_he":"*שימו לב הגשות שלא יעמדו בתנאי הפורמט לא ייענו."},"gallery_images":null}]}</script>
+<script type="application/json" id="fallback-opencalls">{"opencalls":[{"id":"obsession","slug":"obsession","title_html":"<span class=\"lat\">obsession</span>","title_en":"obsession","status":"open","submission_status_he":"ההגשה פתוחה","gallery_id":"medina","gallery_label_he":"גלריית כיכר המדינה","deadline":"2026-10-16","deadline_he":"16.10.2026","theme":"light","hero_image":"images/opencalls/obsession/hero.webp","hero_mobile_ratio":"390/520","description_he":[{"weight":"regular","lines":["מתוך אינסוף דברים בעולם,","לפעמים דבר אחד מקבל בתוכנו","כוח לא פרופורציונלי."]},{"weight":"regular","lines":["אנחנו חוזרים אליו שוב ושוב.","הוא תופס את הקשב שלנו,","מחלחל לאופן שבו אנחנו רואים את העולם,","משפיע על הבחירות שלנו","ולעיתים גם דורש מאיתנו לפעול."]},{"weight":"regular","lines":["אנחנו חושבים שאנחנו עסוקים בו,","אבל בשלב מסוים הגבול מיטשטש:","מי מחזיק במי?","האם אנחנו בחרנו בו,","או שהוא כבר בחר בנו?"]},{"weight":"regular","lines":["אולי השאלה המעניינת באובססיה","היא לא רק במה אנחנו אובססיביים,","אלא למה דווקא זה."]},{"weight":"regular","lines":["מה קורה במפגש בין אדם לדבר אחד מסוים,","שגורם לו לקבל כל כך הרבה כוח?"]}],"emotional_triggers":null,"submission_instructions_he":{"lead_he":[{"weight":"light","lines":["האמנ.ית מתבקש.ת ליצור עבודה חדשה","במיוחד לתערוכה, המציעה אינטרפרטציה אישית למושג אובססיה, דרך נקודת המבט והשפה האמנותית שלו.ה."]},{"weight":"light","lines":["יש לקרוא בעיון את הוראות ההגשה.","הגשות שלא יתאמו לפורמט המבוקש לא ייבחנו."]}],"intro_html":null,"bullet":"disc","items_html":["יש לבחור רעיון אחד ולפתח אותו לעבודה חדשה.","יש לצרף סקיצה / הצעה ראשונית.","ניתן להגיש בכל מדיום: ציור, צילום, וידאו, פיסול, טקסט, מיצב, סאונד, שירה ועבודות משולבות.","יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד בלבד הכולל: שם האמנ.ית, קורות חיים, פרטי התקשרות, סקיצה / הצעה לעבודה, תיאור קצר של היצירה והאינטרפרטציה שלה למושג אובססיה."]},"contact":{"intro_he":["כל בקשה תיבחן בהתאם לקריטריונים מקצועיים ולרלוונטיות לנושא התערוכה.","רק עבודות מתאימות ייענו."],"deadline_first":true,"deadline_label_he":"מועד אחרון להגשה:","label_he":"לשליחת הצעות למייל האוצרת, קורין אברהם:","label_html":"לשליחת הצעות למייל האוצרת, <a class=\"artist-link\" href=\"../../curators/korin-avraham/\">קורין אברהם</a>:","email":"korinalove5@gmail.com","note_he":null},"gallery_images":null},{"id":"the-peeler","slug":"the-peeler","title_html":"<span class=\"heb\">הקולפן</span> | <span class=\"lat\">exhibition volume 2</span>","title_en":"the peeler","status":"archived","submission_status_he":"ההגשה נגמרה","gallery_id":"medina","gallery_label_he":"גלריית כיכר המדינה","deadline":"2026-04-23","deadline_he":"23/4/2026","hero_image":"images/opencalls/the-peeler/hero.webp","description_he":[{"weight":"regular","lines":["הנושא: בחירה במעורר רגש אחד מתוך רשימה נתונה,","וכניסה אליו דרך זיכרון אישי."]},{"weight":"light","lines":["האמן מתבקש ליצור עבודה חדשה שנוגעת במעורר רגש ובזיכרון, ובאפשרות לכתוב את אותו זיכרון מחדש:","  · לא בהכרח לשנות את מה שקרה","  · אלא לאפשר לו לקבל צורה אחרת דרך המפגש איתו"]},{"weight":"light","lines":["לצד כל עבודה יוצג בושם אחד, שיתכתב עם הרגש ויוסיף שכבה נוספת של חוויה."]}],"emotional_triggers":{"title_he":"הקולפן- רשימת מעוררי רגש לבחירה","lines":["קנאה מתחת לפני השטח | נטישה | אובדן שליטה","אובססיה | נשארתי למרות שידעתי","אני מרגיש/ה שקופ/ה | קנאה שאני מתבייש/ת בה | התאהבתי בפנטזיה","התאמתי את עצמי כדי שישארו | מגע שלא הרגיש במקום","משיכה שלא הייתה טובה לי | לא לשחרר | פחד להישאר לבד רציתי","יותר ממה שנתנו לי | אין לי על מה להישען | ריחוק מגונן","צורך באישור | מחכה להודעה | פחד מקרבה בהמתנה","געגוע שלא נפתר | לא בחרו בי | טיפוס מרצה"],"items":["קנאה מתחת לפני השטח","נטישה","אובדן שליטה","אובססיה","נשארתי למרות שידעתי","אני מרגיש/ה שקופ/ה","קנאה שאני מתבייש/ת בה","התאהבתי בפנטזיה","התאמתי את עצמי כדי שישארו","מגע שלא הרגיש במקום","משיכה שלא הייתה טובה לי","לא לשחרר","פחד להישאר לבד","רציתי יותר ממה שנתנו לי","אין לי על מה להישען","ריחוק מגונן","צורך באישור","מחכה להודעה","פחד מקרבה","בהמתנה","געגוע שלא נפתר","לא בחרו בי","טיפוס מרצה"]},"submission_instructions_he":{"intro_html":"יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד הכולל:","items":["שם האמן","שם היצירה","פרטי התקשרות","יש לבחור ולציין מעורר רגש אחד שנבחר מתוך הרשימה","העבודה צריכה להיות חדשה ולא הוצגה בעבר","יש להגיש סקיצה / הצעה ראשונית","תיאור קצר של היצירה בהתייחס לנושא התערוכה","ניתן להגיש בכל מדיום: ציור, צילום, וידאו, פיסול, טקסט, מיצב, סאונד, שירה, עבודות משולבות"]},"contact":{"label_he":"את המייל יש לשלוח לאוצרת:","email":"korinalove5@gmail.com","deadline_label_he":"מועד אחרון להגשה:","note_he":"*שימו לב הגשות שלא יעמדו בתנאי הפורמט לא ייענו."},"gallery_images":[{"image":"images/opencalls/the-peeler/gallery-01.webp","video":"images/opencalls/the-peeler/gallery-01.mp4","poster":"images/opencalls/the-peeler/gallery-01-poster.webp"},{"image":"images/opencalls/the-peeler/gallery-02.webp","video":"images/opencalls/the-peeler/gallery-02.mp4","poster":"images/opencalls/the-peeler/gallery-02-poster.webp"}]},{"id":"how-many","slug":"how-many","title_html":"<span class=\"lat\">how many partners have you had?</span>","title_en":"how many partners have you had?","status":"archived","submission_status_he":"ההגשה נגמרה","gallery_id":"dizengoff","gallery_label_he":"גלריית כיכר דיזינגוף","deadline":"2026-02-17","deadline_he":"17/2/2026","hero_image":"images/opencalls/how-many/hero.webp","description_he":[{"weight":"regular","lines":["התערוכה תעסוק בשאלות של:","אינטימיות, חוויה אישית, זיכרון, גוף, קרבה וחשיפה.","לא כוידוי, אלא כמרחב פתוח לפרשנות,","מבט ביקורתי חברתי או אישי, רגשי, המושג ״שותפים״,","על יחסים, ועל מה שנשאר ביניהם."]},{"weight":"light","lines":["אנו מזמינים אמניות ואמנים","להגיש הצעות ליצירות קיימות או חדשות"]},{"weight":"light","lines":["מכל מדיום:","ציור, צילום, וידאו, פיסול, טקסט,","מיצב, סאונד או עבודות משולבות."]}],"emotional_triggers":null,"submission_instructions_he":{"intro_html":"יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד הכולל:","items":["שם האמן, שם היצירה, פרטי התקשרות","והתייחסות מפורשת של היצירה לנושא התערוכה — כפי שהציף אצל האמן","הצעות לעבודות חדשות יתקבלו עם פירוט וסקיצה ראשונית"],"outro_he":"כל בקשה תיבחן בהתאם לקריטריונים מקצועיים, וברלוונטיות לנושא התערוכה."},"contact":{"label_he":"את המייל יש לשלוח לאוצרת:","email":"korinalove5@gmail.com","deadline_label_he":"מועד אחרון להגשה:","note_he":"*שימו לב הגשות שלא יעמדו בתנאי הפורמט לא ייענו."},"gallery_images":null}]}</script>
 
 <script>
 (async function(){
@@ -281,8 +316,10 @@ a.artist-figure-link img{transition:filter .25s}
     if(!o) return '';
     let html = '';
     if(o.intro_html) html += `<p class="regular">${o.intro_html}</p>`;
-    if(Array.isArray(o.items) && o.items.length){
-      html += `<ul>${o.items.map(it => `<li>${escapeHtml(it)}</li>`).join('')}</ul>`;
+    // items_html = raw HTML per item (mixed <span class="lat">); items = plain text.
+    const items = Array.isArray(o.items_html) ? o.items_html : (Array.isArray(o.items) ? o.items.map(escapeHtml) : []);
+    if(items.length){
+      html += `<ul${o.bullet ? ` class="${escapeHtml(o.bullet)}"` : ''}>${items.map(it => `<li>${it}</li>`).join('')}</ul>`;
     }
     if(o.outro_he) html += `<p>${escapeHtml(o.outro_he)}</p>`;
     return html;
@@ -312,20 +349,24 @@ a.artist-figure-link img{transition:filter .25s}
   function contactHtml(c, deadlineHe){
     if(!c) return '';
     const email = escapeHtml(c.email || '');
-    return `
-      <p>${escapeHtml(c.label_he || '')}<br>
-      <a class="email" href="mailto:${email}">${email}</a></p>
-      <p>${escapeHtml(c.deadline_label_he || '')} <span class="deadline-val">${escapeHtml(deadlineHe || '')}</span></p>
+    // Optional: intro_he[] paragraphs first, label_html (raw — curator link), deadline_first.
+    const intro = (c.intro_he || []).map(t => `<p>${escapeHtml(t)}</p>`).join('');
+    const emailP = `
+      <p>${c.label_html || escapeHtml(c.label_he || '')}<br>
+      <a class="email" href="mailto:${email}">${email}</a></p>`;
+    const deadlineP = `
+      <p>${escapeHtml(c.deadline_label_he || '')} <span class="deadline-val">${escapeHtml(deadlineHe || '')}</span></p>`;
+    return intro + (c.deadline_first ? deadlineP + emailP : emailP + deadlineP) + `
       ${c.note_he ? `<p class="note">${escapeHtml(c.note_he)}</p>` : ''}`;
   }
 
   // Hero responsive variants: hero-{480,768,1080}w.webp(+avif) live next to hero.webp.
   // Intrinsic pixel dims per opencall (real file sizes — prevents CLS).
-  const HERO_DIMS = { 'the-peeler': { w: 1601, h: 2000 }, 'how-many': { w: 1600, h: 2000 } };
+  const HERO_DIMS = { 'obsession': { w: 1080, h: 1350 }, 'the-peeler': { w: 1601, h: 2000 }, 'how-many': { w: 1600, h: 2000 } };
   const heroDims = HERO_DIMS[oc.slug || oc.id] || null;
   const heroSrc = '../../' + oc.hero_image;
   const heroSrcset = /\.webp$/.test(heroSrc)
-    ? [480, 768, 1080].map(w => heroSrc.replace(/\.webp$/, `-${w}w.webp ${w}w`)).join(', ')
+    ? [480, 768, 1080].filter(w => !heroDims || w <= heroDims.w * 0.9).map(w => heroSrc.replace(/\.webp$/, `-${w}w.webp ${w}w`)).join(', ')
       + (heroDims ? `, ${heroSrc} ${heroDims.w}w` : '')
     : '';
 
@@ -342,6 +383,7 @@ a.artist-figure-link img{transition:filter .25s}
     desc_html: paraHtml(oc.description_he),
     triggers_html: triggersHtml(oc.emotional_triggers),
     instructions_html: instructionsHtml(oc.submission_instructions_he),
+    lead_html: oc.submission_instructions_he ? paraHtml(oc.submission_instructions_he.lead_he) : '',
     contact_html: contactHtml(oc.contact, oc.deadline_he),
     has_triggers: !!oc.emotional_triggers,
     has_gallery: Array.isArray(oc.gallery_images) && oc.gallery_images.length > 0,
@@ -355,7 +397,8 @@ a.artist-figure-link img{transition:filter .25s}
     heroBlocks.push(`<div class="block triggers-block"><div class="text">${ctx.triggers_html}</div></div>`);
     heroBlocks.push(`<div class="divider"></div><div class="divider-mobile"></div>`);
   }
-  heroBlocks.push(`<div class="block"><div class="text">${ctx.instructions_html}</div></div>`);
+  if(ctx.lead_html) heroBlocks.push(`<div class="block"><div class="text">${ctx.lead_html}</div></div>`);
+  heroBlocks.push(`<div class="block${ctx.lead_html ? ' follow' : ''}"><div class="text">${ctx.instructions_html}</div></div>`);
   heroBlocks.push(`<div class="divider"></div><div class="divider-mobile"></div>`);
   heroBlocks.push(`<div class="block"><div class="text">${ctx.contact_html}</div></div>`);
 
@@ -422,11 +465,11 @@ a.artist-figure-link img{transition:filter .25s}
   }
 
   document.getElementById('page').innerHTML = `
-    <section class="oc-hero">
+    <section class="oc-hero${oc.theme === 'light' ? ' is-light' : ''}">
       <div class="row">
         <div class="text-col heb">
           <div class="status-row">
-            <span class="badge status">${escapeHtml(ctx.submission_status_he)}</span>
+            <span class="badge status${oc.status === 'open' ? ' is-open' : ''}">${escapeHtml(ctx.submission_status_he)}</span>
             <span class="badge gallery">${escapeHtml(ctx.gallery_label_he)}</span>
           </div>
           <h1 class="title">${ctx.title_html}</h1>
@@ -436,7 +479,7 @@ a.artist-figure-link img{transition:filter .25s}
           ${heroBlocks.join('')}
         </div>
         <div class="img-col">
-          <div class="img-frame"><img src="${ctx.hero_image}"${ctx.hero_srcset ? ` srcset="${ctx.hero_srcset}" sizes="${ctx.hero_sizes}"` : ''}${ctx.hero_w ? ` width="${ctx.hero_w}" height="${ctx.hero_h}"` : ''} alt="" decoding="async" fetchpriority="high"></div>
+          <div class="img-frame"${oc.hero_mobile_ratio ? ` style="--oc-hero-m-ar:${escapeHtml(oc.hero_mobile_ratio)}"` : ''}><img src="${ctx.hero_image}"${ctx.hero_srcset ? ` srcset="${ctx.hero_srcset}" sizes="${ctx.hero_sizes}"` : ''}${ctx.hero_w ? ` width="${ctx.hero_w}" height="${ctx.hero_h}"` : ''} alt="" decoding="async" fetchpriority="high"></div>
         </div>
       </div>
     </section>

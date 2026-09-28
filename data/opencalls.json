@@ -5,25 +5,107 @@
     {
       "id": "obsession",
       "slug": "obsession",
-      "title_html": null,
+      "title_html": "<span class=\"lat\">obsession</span>",
       "title_en": "obsession",
-      "title_he": null,
+      "title_he": "אובססיה",
       "status": "open",
-      "submission_status_he": null,
+      "submission_status_he": "ההגשה פתוחה",
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "deadline": "2026-10-16",
-      "deadline_he": "16/10/2026",
+      "deadline_he": "16.10.2026",
       "city": "tel aviv",
-      "hero_image": null,
+      "theme": "light",
+      "hero_image": "images/opencalls/obsession/hero.webp",
+      "hero_mobile_ratio": "390/520",
       "card_image": "images/opencalls/obsession-card.webp",
-      "description_he": null,
+      "description_he": [
+        {
+          "weight": "regular",
+          "lines": [
+            "מתוך אינסוף דברים בעולם,",
+            "לפעמים דבר אחד מקבל בתוכנו",
+            "כוח לא פרופורציונלי."
+          ]
+        },
+        {
+          "weight": "regular",
+          "lines": [
+            "אנחנו חוזרים אליו שוב ושוב.",
+            "הוא תופס את הקשב שלנו,",
+            "מחלחל לאופן שבו אנחנו רואים את העולם,",
+            "משפיע על הבחירות שלנו",
+            "ולעיתים גם דורש מאיתנו לפעול."
+          ]
+        },
+        {
+          "weight": "regular",
+          "lines": [
+            "אנחנו חושבים שאנחנו עסוקים בו,",
+            "אבל בשלב מסוים הגבול מיטשטש:",
+            "מי מחזיק במי?",
+            "האם אנחנו בחרנו בו,",
+            "או שהוא כבר בחר בנו?"
+          ]
+        },
+        {
+          "weight": "regular",
+          "lines": [
+            "אולי השאלה המעניינת באובססיה",
+            "היא לא רק במה אנחנו אובססיביים,",
+            "אלא למה דווקא זה."
+          ]
+        },
+        {
+          "weight": "regular",
+          "lines": [
+            "מה קורה במפגש בין אדם לדבר אחד מסוים,",
+            "שגורם לו לקבל כל כך הרבה כוח?"
+          ]
+        }
+      ],
       "emotional_triggers": null,
-      "submission_instructions_he": null,
-      "contact": null,
+      "submission_instructions_he": {
+        "lead_he": [
+          {
+            "weight": "light",
+            "lines": [
+              "האמנ.ית מתבקש.ת ליצור עבודה חדשה",
+              "במיוחד לתערוכה, המציעה אינטרפרטציה אישית למושג אובססיה, דרך נקודת המבט והשפה האמנותית שלו.ה."
+            ]
+          },
+          {
+            "weight": "light",
+            "lines": [
+              "יש לקרוא בעיון את הוראות ההגשה.",
+              "הגשות שלא יתאמו לפורמט המבוקש לא ייבחנו."
+            ]
+          }
+        ],
+        "intro_html": null,
+        "bullet": "disc",
+        "items_html": [
+          "יש לבחור רעיון אחד ולפתח אותו לעבודה חדשה.",
+          "יש לצרף סקיצה / הצעה ראשונית.",
+          "ניתן להגיש בכל מדיום: ציור, צילום, וידאו, פיסול, טקסט, מיצב, סאונד, שירה ועבודות משולבות.",
+          "יש לשלוח קובץ <span class=\"lat\">PDF</span> אחד בלבד הכולל: שם האמנ.ית, קורות חיים, פרטי התקשרות, סקיצה / הצעה לעבודה, תיאור קצר של היצירה והאינטרפרטציה שלה למושג אובססיה."
+        ]
+      },
+      "contact": {
+        "intro_he": [
+          "כל בקשה תיבחן בהתאם לקריטריונים מקצועיים ולרלוונטיות לנושא התערוכה.",
+          "רק עבודות מתאימות ייענו."
+        ],
+        "deadline_first": true,
+        "deadline_label_he": "מועד אחרון להגשה:",
+        "label_he": "לשליחת הצעות למייל האוצרת, קורין אברהם:",
+        "label_html": "לשליחת הצעות למייל האוצרת, <a class=\"artist-link\" href=\"../../curators/korin-avraham/\">קורין אברהם</a>:",
+        "email": "korinalove5@gmail.com",
+        "note_he": null
+      },
       "gallery_images": null,
-      "figma_node_desktop": null,
-      "figma_node_mobile": null
+      "figma_node_desktop": "1906:664",
+      "figma_node_mobile": "1906:587"
     },
     {
       "id": "the-peeler",
