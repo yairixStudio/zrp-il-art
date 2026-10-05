@@ -647,7 +647,7 @@ opencall how-many דסקטופ: Implement this design from Figma.
 opencall how-many מובייל: Implement this design from Figma.
 @https://www.figma.com/design/Zn3N3mBQkbYER7tTJMbCcz/%D7%92%D7%A8%D7%A4%D7%99%D7%A7%D7%95%D7%AA-%D7%A9%D7%95%D7%A0%D7%95%D7%AA?node-id=1213-2263&m=dev
 
-### obsession — OBSESSION (קול קורא פתוח, דדליין 16.10.2026, גלריית כיכר המדינה; 2026-09-27)
+### obsession — OBSESSION (קול קורא פתוח, דדליין 22.10.2026, גלריית כיכר המדינה; 2026-09-27)
 
 דף: `opencalls/obsession/` (נבנה 2026-09-28, וריאנט light — `docs/routes/exhibitions.md`).
 
@@ -658,8 +658,8 @@ opencall obsession מובייל (390): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1906-587&m=dev
 
 תמונות:
-- imageRef `d4e1fa18…` — 1080×1350, ה-hero של הדף (`images/opencalls/obsession/hero.*`; דסקטופ 492×744, מובייל 390×520, cover).
-- imageRef `77075862…` — 4:5, השקופית המרכזית ב-`1318:401` — כרטיסי ההומפייג' (`images/opencalls/obsession-card.*`, בשני ה-breakpoints).
+- הפוסטר (דדליין 22.10.2026 + שורת הכתובת `131 jabotinsky st.`), 1080×1350 — **אותה תמונה** ב-hero של הדף (`1906:715`; דסקטופ 492×744, מובייל 390×520, cover) ובשקופית המרכזית של `1318:401` (`1318:408`, כרטיסי ההומפייג' בשני ה-breakpoints). בריפו: `images/opencalls/obsession/hero-v2.*` ו-`images/opencalls/obsession-card-v2.*` (אותו קובץ). מקור: `_originals/opencalls/obsession/hero-v2-figma-1906-715.png`.
+- הגרסאות הקודמות (דדליין 16.10, `hero.*` / `obsession-card.*`) נשארות בדיסק ולא בשימוש.
 - imageRef `8f00a7f8…` — 9:16, הכרטיס ב-`1124:792` — **לא בשימוש** (הכרעת משתמש: תיבות 4:5, ראה `docs/routes/homepage.md`).
 
 ---

@@ -323,13 +323,13 @@
 - דסקטופ: קצב 24px (סטטוס→כותרת 32), בלוקים ברוחב 390 (`Gallery Note Container` בפיגמה). מובייל: קצב 32 (סטטוס→כותרת 24, כותרת→טקסט 16), בלוקים בלי padding. נמדד מול הרינדור: סטיות ≤5px.
 - תג הסטטוס בדיו (לא אפור) כש-`status==="open"` (`.badge.status.is-open`) — גנרי לכל קול קורא פתוח.
 - שדות אופציונליים חדשים (גנריים ברנדרר, `docs/data-contracts.md` §8): `hero_mobile_ratio` (באנר מובייל 390/520), `submission_instructions_he.lead_he` (בלוק פסקאות לפני הרשימה, בלי divider ביניהם — `.block.follow`), `.items_html` (HTML גולמי — `PDF` ב-`.lat`), `.bullet:"disc"` (•), `contact.intro_he[]`, `contact.deadline_first`, `contact.label_html` (קישור לעמוד האוצרת — `curators/korin-avraham/`).
-- תאריך הדדליין בוריאנט = FbEzmel (כמו בפיגמה), לא Copperplate. `deadline_he` = `16.10.2026` (נקודות, כמו בפיגמה).
+- תאריך הדדליין בוריאנט = FbEzmel (כמו בפיגמה), לא Copperplate. `deadline_he` = `22.10.2026` (נקודות, כמו בפיגמה). 🔴 שינוי דדליין נוגע גם ב: הפוסטר (התאריך צרוב בתמונה — `hero-v2` + כרטיס ההומפייג' `obsession-card-v2`; גרסה חדשה = `-v3`, כלל-זהב 8), `homepage.json :: mobile_cta.info` + שלושת התאריכים ב-`index.html` (`data-info-date`, `.oc-info .dt`, `.info .date`), `#fallback-opencalls` בשלושת הקבצים, התיאור ב-meta/OG/JSON-LD של הדף + `tools/seo/overrides.json`, ותמונת ה-OG (`og/opencalls-obsession-hero-v2.jpg`).
 - srcset של ה-hero מסנן וריאנטים ברוחב >90% מהמקור (ל-obsession, 1080×1350, אין `-1080w`).
-- המקור הגולמי ורינדורי הייחוס של הפריימים: `_originals/opencalls/obsession/` + `scratchpad/figma-obsession/` (מקומי בלבד).
+- המקור הגולמי ורינדורי הייחוס של הפריימים: `_originals/opencalls/obsession/` (הפוסטר הנוכחי: `hero-v2-figma-1906-715.png`) + `scratchpad/figma-obsession/` (רינדורים של גרסת 16.10; מקומי בלבד).
 
 ### דאטה
 - `opencalls.json`: `status` (the-peeler ו-how-many `archived`; obsession `open`), `submission_status_he` ("ההגשה נגמרה"), `deadline`/`deadline_he`, `gallery_id`/`gallery_label_he`, `hero_image`, `card_image`, `contact`, `figma_node_*`.
-- **obsession:** הרשומה ראשונה במערך (חדש→ישן); משמשת גם את כרטיסי ההומפייג' (`card_image`). **הסטטוס ידני** — אחרי הדדליין (16.10.2026) לשאול את המשתמש לפני העברה ל-`archived` (+ `submission_status_he` "ההגשה נגמרה" — התג יחזור לאפור אוטומטית; הרשימה המלאה: `docs/todo.md`).
+- **obsession:** הרשומה ראשונה במערך (חדש→ישן); משמשת גם את כרטיסי ההומפייג' (`card_image`). **הסטטוס ידני** — אחרי הדדליין (22.10.2026) לשאול את המשתמש לפני העברה ל-`archived` (+ `submission_status_he` "ההגשה נגמרה" — התג יחזור לאפור אוטומטית; הרשימה המלאה: `docs/todo.md`).
 - `card_image` (`images/opencalls/<slug>-card*.webp`) לא משמש את הדפים. הוא התמונה של כרטיסי הקול הקורא בהומפייג' (`#opencall` / `#mobile-cta`, `docs/routes/homepage.md`).
 - שינוי ב-`opencalls.json` = לעדכן ביד את `#fallback-opencalls` **בשלושת** הקבצים (כל אחד מכיל את כל שלוש הרשומות). `sync_data.py` לא מטפל בזה.
 - קול קורא חדש: הרשומה = העתק של רשומת אחות מ-`opencalls.json` ועריכה (קודם `docs/data-contracts.md` §8), **בראש המערך**, גם בכל עותקי `#fallback-opencalls`, + שורה ב-`HERO_DIMS` (למעלה).

@@ -12,13 +12,13 @@
       "submission_status_he": "ההגשה פתוחה",
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
-      "deadline": "2026-10-16",
-      "deadline_he": "16.10.2026",
+      "deadline": "2026-10-22",
+      "deadline_he": "22.10.2026",
       "city": "tel aviv",
       "theme": "light",
-      "hero_image": "images/opencalls/obsession/hero.webp",
+      "hero_image": "images/opencalls/obsession/hero-v2.webp",
       "hero_mobile_ratio": "390/520",
-      "card_image": "images/opencalls/obsession-card.webp",
+      "card_image": "images/opencalls/obsession-card-v2.webp",
       "description_he": [
         {
           "weight": "regular",
