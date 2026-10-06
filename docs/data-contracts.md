@@ -115,9 +115,9 @@
 - טופס הניוזלטר בפוטר = Wix Velo (`site-chrome.js` → `zrp.co.il/_functions/subscribe`), לא Firebase — לא קשור ל-JSON הזה.
 
 ## 3. `galleries.json`
-`{ galleries: [...] }` — היום 4: `medina`, `dizengoff`, `flea-market`, `berlin`.
+`{ galleries: [...] }` — היום 5: `medina`, `dizengoff`, `flea-market`, `berlin`, `barcelona`.
 - `id`, `slug`
-- `name_he`, `name_en`; `address_he`, `address_en`; `city` (`"tel aviv"` / `"berlin"`)
+- `name_he`, `name_en`; `address_he`, `address_en`; `city` (`"tel aviv"` / `"berlin"` / `"barcelona"`)
 - `status`: `open` | `coming-soon` | `closed`
 - `hours[]`: `{days_he, days_en, time}` — `time` nullable ("שבת סגור"); `[]` = אין בלוק שעות. ⚠️ **`time` שמור בקונבנציית bidi `"18:00-11:00"`** — הכרעת משתמש: ספרות נשמרות/מוצגות LTR כמו בטקסט הגולמי של Figma, **לא "לתקן" את הסדר**.
   - דוגמה: המשתמש מוסר ליום ו' פתיחה 10:00 וסגירה 15:00 ⇒ `"time":"15:00-10:00"` (סגירה-פתיחה). על המסך המספרים מופיעים כמו במחרוזת, ושעת הפתיחה צמודה מימין לתווית היום — כמו בשורת א'-ה'; `10:00-15:00` על המסך = מחרוזת הפוכה. JSON-LD (`opens`/`closes`) = סדר לוגי רגיל.

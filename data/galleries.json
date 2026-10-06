@@ -156,6 +156,32 @@
       "figma_node_mobile": "1855:226",
       "figma_page_desktop": null,
       "figma_page_mobile": null
+    },
+    {
+      "id": "barcelona",
+      "slug": "barcelona",
+      "name_he": null,
+      "name_en": "the art gallery barcelona",
+      "address_he": null,
+      "address_en": null,
+      "address_street_en": null,
+      "address_area_en": null,
+      "address_lines_en": [],
+      "address_lines_en_mobile": [],
+      "instagram_handle": "@erezrozen_artgallery",
+      "instagram_url": "https://www.instagram.com/erezrozen_artgallery/",
+      "city": "barcelona",
+      "status": "coming-soon",
+      "route": null,
+      "hours": [],
+      "image_hero": "images/galleries/barcelona/hero.webp",
+      "image_page_hero": null,
+      "manager": null,
+      "note": "Homepage section #galleries-berlin, second column next to berlin (2026-10-06). Figma 1859:2668 desktop (col 1965:21, image 1965:31) / 1964:110 mobile (image 1964:117, same raw fill 1280x1600). Photo + 55% black overlay (CSS) + 'coming soon' label over the image; no address yet. Handle shown without the space, same as berlin. No gallery page (route null).",
+      "figma_node_desktop": "1965:21",
+      "figma_node_mobile": "1964:110",
+      "figma_page_desktop": null,
+      "figma_page_mobile": null
     }
   ]
 }

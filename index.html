@@ -443,6 +443,14 @@ a.gallery-card{color:inherit;text-decoration:none}
 .berlin-card .bhandle{font-weight:300;font-size:13.5px;line-height:1.3;color:var(--ink);text-decoration:none}
 .berlin-card .bhandle:hover{opacity:.6}
 .berlin-card .only-m-inline,.berlin-card .bhandle.only-m{display:none}
+/* Figma 1859:2668 (2026-10): berlin + barcelona side by side — 2 columns of 592 (1248 content − 64 gap),
+   each = title + card. Barcelona = same card, dark 55% overlay + "coming soon" over the image, no address. */
+.galleries--berlin .abroad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;align-items:start}
+.galleries--berlin .abroad-col{display:flex;flex-direction:column;gap:24px;min-width:0}
+.galleries--berlin .berlin-card{max-width:none}
+.berlin-card .img{position:relative}
+.berlin-card--soon .img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.berlin-card--soon .coming{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--cop);font-weight:400;font-size:50px;line-height:normal;text-align:center;white-space:nowrap}
 
 /* ===== X OUR ARTISTS — Figma landing::228:67 (desktop) / 228:101 (mobile) =====
    Focus carousel on BOTH breakpoints (redesign 2026-08 task 9, Figma mobile 1318:695; desktop = scaled
@@ -871,6 +879,12 @@ a.sumii-strip:hover{opacity:.85}
   .berlin-card .only-m-inline{display:inline}
   .berlin-card .bhandle.only-d{display:none}
   .berlin-card .bhandle.only-m{display:inline}
+  /* stacked: berlin card, then barcelona title + card (Figma 1964:110: 174×210.91 image, "coming soon" 20px) */
+  .galleries--berlin .abroad{grid-template-columns:1fr;row-gap:32px}
+  .galleries--berlin .abroad-col{gap:24px}
+  .berlin-card--soon{grid-template-areas:"img txt"}
+  .berlin-card--soon .baddr{display:none}
+  .berlin-card--soon .coming{font-size:15px}
 
   /* X OUR ARTISTS — Figma 228:101 */
   .x-artists{padding:32px 0;gap:40px}
@@ -1550,6 +1564,8 @@ porta</div></a>
 
 <!-- GALLERIES — BERLIN · Figma 1859:2668 desktop / 1856:433 mobile · data: galleries.json :: berlin + homepage.json :: galleries_berlin_section (user request 2026-09-27: directly below "the galleries / tel aviv") -->
 <section class="galleries galleries--berlin" id="galleries-berlin" aria-label="the gallery berlin">
+  <div class="abroad">
+  <div class="abroad-col">
   <div class="galleries-title">
     <span class="b">the gallery</span>
     <span class="l">berlin</span>
@@ -1566,6 +1582,27 @@ porta</div></a>
         <a class="bhandle only-d" href="https://www.instagram.com/erezrozen_artgallery/" target="_blank" rel="noopener">@erezrozen_artgallery</a>
       </div>
     </div>
+  </div>
+  </div>
+  <!-- BARCELONA · Figma 1859:2668 desktop (col 1965:21) / 1964:110 mobile · coming soon: 55% black overlay + label on the photo, no address yet (galleries.json :: barcelona) -->
+  <div class="abroad-col" id="galleries-barcelona">
+  <div class="galleries-title">
+    <span class="b">the gallery</span>
+    <span class="l">barcelona</span>
+  </div>
+  <div class="berlin-card berlin-card--soon">
+    <div class="img"><picture><source type="image/avif" srcset="images/galleries/barcelona/hero-480w.avif 480w, images/galleries/barcelona/hero-768w.avif 768w, images/galleries/barcelona/hero-1080w.avif 1080w, images/galleries/barcelona/hero.avif 1280w" sizes="(max-width:768px) 174px, 592px"><img src="images/galleries/barcelona/hero.webp" srcset="images/galleries/barcelona/hero-480w.webp 480w, images/galleries/barcelona/hero-768w.webp 768w, images/galleries/barcelona/hero-1080w.webp 1080w, images/galleries/barcelona/hero.webp 1280w" sizes="(max-width:768px) 174px, 592px" width="1280" height="1600" alt="the art gallery barcelona — coming soon" decoding="async" loading="lazy"></picture><span class="coming">coming soon</span></div>
+    <div class="txt">
+      <div class="bname-wrap">
+        <div class="bname">the art gallery barcelona</div>
+        <a class="bhandle only-m" href="https://www.instagram.com/erezrozen_artgallery/" target="_blank" rel="noopener">@erezrozen_artgallery</a>
+      </div>
+      <div class="baddr">
+        <a class="bhandle only-d" href="https://www.instagram.com/erezrozen_artgallery/" target="_blank" rel="noopener">@erezrozen_artgallery</a>
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
 </section>
 

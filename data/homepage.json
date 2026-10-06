@@ -208,7 +208,8 @@
   "title_b": "the gallery",
   "title_l": "berlin",
   "gallery_ids": [
-   "berlin"
+   "berlin",
+   "barcelona"
   ],
   "figma_node_desktop": "1859:2668",
   "figma_node_mobile": "1856:433"
