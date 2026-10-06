@@ -1115,11 +1115,31 @@
   function withTimeout(p, ms) {
     return Promise.race([p, new Promise(function (r) { setTimeout(r, ms); })]);
   }
+  // Deep links (/#opencalls, /#exhibitions …): the browser jumps to the fragment while this
+  // file's stylesheet is still loading, so <site-header> is briefly ~290px of unstyled links;
+  // when it collapses the page lands far past the target. Re-align once the shell has
+  // settled — unless the visitor has already started scrolling on their own.
+  var scrolledBeforeReveal = false;
+  ['wheel', 'touchmove', 'keydown'].forEach(function (t) {
+    window.addEventListener(t, function () { scrolledBeforeReveal = true; }, { passive: true, once: true });
+  });
+  function settleHashTarget() {
+    if (scrolledBeforeReveal || location.hash.length < 2) return;
+    var id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+    var el = document.getElementById(id);
+    if (!el) return;
+    var root = document.documentElement, prev = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto';   // html is scroll-behavior:smooth — jump, don't glide
+    el.scrollIntoView({ block: 'start' }); // honours html scroll-padding-top (header)
+    root.style.scrollBehavior = prev;
+  }
   function reveal() {
     if (document.body.classList.contains('is-ready')) return;
     // Two RAFs: let freshly-rendered content lay out before opacity flips.
     requestAnimationFrame(function () {
       requestAnimationFrame(function () {
+        settleHashTarget();
         document.body.classList.add('is-ready');
       });
     });
