@@ -115,7 +115,7 @@
 - טופס הניוזלטר בפוטר = Wix Velo (`site-chrome.js` → `zrp.co.il/_functions/subscribe`), לא Firebase — לא קשור ל-JSON הזה.
 
 ## 3. `galleries.json`
-`{ galleries: [...] }` — היום 5: `medina`, `dizengoff`, `flea-market`, `berlin`, `barcelona`.
+`{ galleries: [...] }` — היום 6: `medina`, `dizengoff`, `zr-station`, `flea-market`, `berlin`, `barcelona` (סדר המערך = סדר הכרטיסים בהומפייג').
 - `id`, `slug`
 - `name_he`, `name_en`; `address_he`, `address_en`; `city` (`"tel aviv"` / `"berlin"` / `"barcelona"`)
 - `status`: `open` | `coming-soon` | `closed`
@@ -129,6 +129,7 @@
 - `manager` (nullable) — `{name_en_first, name_en_last, email, portrait{src,width,height,alt_he,figma_image_ref}, note}`. `email` נשמר **lowercase** (ל-`mailto:`); התצוגה UPPERCASE דרך הכלל הגלובלי. נטלי זיגל = אותה מנהלת במדינה ובדיזינגוף (פורטרט משותף `images/galleries/managers/natalie-zigel.webp`). ⚠️ פער Zigel/siegel באימייל — פתוח (`docs/todo.md`). ⚠️ כפילות ידנית: פרטי נטלי כתובים גם ב-`about/index.html` (פורטרט נפרד `images/about/people/`, ו-`mailto` עם N גדולה) — `docs/routes/about.md`.
 - `figma_node_desktop` / `figma_node_mobile` (כרטיס), `figma_page_desktop` / `figma_page_mobile` (דף הגלריה), `note`.
 - אופציונליים (ברלין, 2026-09-27): `address_lines_en[]`, `address_lines_en_mobile[]`, `instagram_handle`, `instagram_url`.
+- אופציונליים (zr-station, 2026-10-06): `subtitle_he` ("תחנת השידור"), `subtitle_en` — שורות המשנה מתחת לשם בכרטיס.
 - **צרכנים:** `galleries/<slug>/` (lookup לפי `slug`) ו-`curators/korin-avraham/` (lookup לפי `id`, רק `name_en` לכרטיסי התערוכות) — fetch-first; `#fallback-galleries` **generated** — `sync_data.py`; רשומה חדשה לא משפיעה על הדפים. דפי הגלריה קוראים בזמן ריצה רק: `name_he`, `address_street_en`/`address_area_en`, `hours[]`, `manager` (שם, `email`, `portrait.alt_he`). ⚠️ `image_page_hero` ו-`manager.portrait.src` **דקלרטיביים** — תמונת ה-hero ופורטרט המנהלת כתובים סטטית ב-HTML של הדף; החלפת תמונה = לערוך את ה-HTML (וגם את ה-JSON). + `inject.py`, ו**כרטיסי `#galleries`/`#galleries-berlin` בהומפייג' (HTML ידני — §1.4)**.
 - 🔴 **שינוי שם/כתובת של גלריה — עותקים ידניים מחוץ ל-`sync_data.py`:**
   - `index.html`: כרטיסי `#galleries` (`.name`/`aria-label`/`.addr`/`.hours`), `.gname` בכרטיסי `#exhibitions-now`, ה-alt של פוסטרי `#events-upcoming`, `.nb-sub-addr` (+ `homepage.json::big_news.address_he`); ב-`homepage.json` גם `exhibitions_now.groups[].cards[].gallery_name_en` (ברלין).

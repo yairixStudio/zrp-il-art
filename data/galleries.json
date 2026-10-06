@@ -124,6 +124,34 @@
       "figma_page_mobile": null
     },
     {
+      "id": "zr-station",
+      "slug": "zr-station",
+      "name_he": "כיכר דיזינגוף",
+      "name_en": "the z&r station",
+      "subtitle_he": "תחנת השידור",
+      "subtitle_en": "by erez zielinski rozen",
+      "address_he": "כיכר דיזינגוף, תל אביב",
+      "address_en": "Dizengoff Square, Tel Aviv",
+      "address_street_en": null,
+      "address_area_en": null,
+      "city": "tel aviv",
+      "status": "coming-soon",
+      "route": null,
+      "hours": [
+        { "days_he": "א'-ה'", "days_en": "Sun-Thu", "time": "18:00-11:00" },
+        { "days_he": "ו'", "days_en": "Fri", "time": "14:00-11:00" },
+        { "days_he": "שבת סגור", "days_en": "Sat closed", "time": null }
+      ],
+      "image_hero": "images/galleries/zr-station/hero.webp",
+      "image_page_hero": null,
+      "manager": null,
+      "note": "New coming-soon space at Dizengoff Square ('תחנת השידור' / the z&r station), added 2026-10-06 (designer: 'add Dizengoff Square coming soon', above the flea market on mobile). Homepage card: Figma 1856:418 desktop / 1318:683 mobile. Image = the storefront fill (520x734, the only size in Figma) under a 70% ink veil + 'coming soon'. Address + hours = the mobile frame (same as dizengoff); the desktop frame's 'ריינס 1' / 10:00 variants were not requested. Station lines shown on desktop too (user decision). No gallery page (route null).",
+      "figma_node_desktop": "1856:418",
+      "figma_node_mobile": "1318:683",
+      "figma_page_desktop": null,
+      "figma_page_mobile": null
+    },
+    {
       "id": "berlin",
       "slug": "berlin",
       "name_he": null,

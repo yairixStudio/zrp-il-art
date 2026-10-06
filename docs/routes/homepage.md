@@ -138,15 +138,19 @@ hero → `.announce` → `#mobile-cta` (מובייל) / `#opencall` (דסקטו�
 - כיתוב Copperplate Light 16 `#989898`.
 
 ## #galleries
-- "the galleries / tel aviv" (`.galleries-title`, Copperplate 36). כרטיסים (Figma `1318:657`; דסקטופ = אותם קבצים):
+- "the galleries / tel aviv" (`.galleries-title`, Copperplate 36). **4 כרטיסים, סדר: מדינה · דיזינגוף · כיכר דיזינגוף (zr-station) · פשפשים** (המעצבת 2026-10-06: התחנה "מעל שוק הפשפשים"). Figma דסקטופ `1124:1132` (גריד `1856:395`) / מובייל `1856:434`.
+  - **דסקטופ = גריד 2×2**, `gap:48px` לשני הכיוונים, עמודה 600 ב-1440 (`.gallery-cards{display:grid}`; במובייל חוזר ל-flex column). "coming soon" בדסקטופ 36→**25px** (נמדד: 219px ברינדור הפיגמה), מובייל 13px (ללא שינוי).
+  - **zr-station** `<article class="gallery-card--station">` לא-קליקאבילי: "כיכר דיזינגוף" + "תחנת השידור" + "the z&r station / by erez zielinski rozen" (`.station`; בפיגמה רק במובייל — **הכרעת משתמש: גם בדסקטופ**); תמונה `images/galleries/zr-station/hero.{webp,avif}` 520×734 (הגודל היחיד בפיגמה) מתחת לשכבת `rgba(27,27,27,.7)` (`.dim--ink`) + coming soon; כתובת "כיכר דיזינגוף, תל אביב" + שעות זהות לדיזינגוף (נוסח המובייל). **פריים הדסקטופ מציג "ריינס 1…" ושעות 10:00 בכרטיסי מדינה/דיזינגוף/התחנה — הכרעת משתמש: להתעלם (המעצבת לא ביקשה); לא "לתקן".**
+  - פשפשים: במובייל מוצגת מתחת לתמונה "שוק הפשפשים, תל אביב" (`.gallery-card--flea > .details`, Figma `1982:516`; בדסקטופ מוסתר), והכתובת "שוק הפשפשים, יפו" שב-`.info` מוסתרת במובייל.
+- כרטיסים (Figma `1318:657`; דסקטופ = אותם קבצים):
   - **מדינה** `<a>` → `galleries/medina/` — `images/galleries/medina/hero-v2.{webp,avif}` (חלון הראווה עם כיתוב הקולפן, imageRef `c937cf2f…`).
   - **דיזינגוף** `<a>` → `galleries/dizengoff/` — `images/galleries/dizengoff/hero-v2.{webp,avif}` (פנים עם חלון How Many, imageRef `a67703c8…` בקרופ Figma).
   - שתיהן 822×996 (cover ל-33/40 בשני ה-breakpoints) + `-480w` + srcset.
   - **פשפשים** — `<article>` לא-קליקאבילי, **ירוק שטוח `#2B4C39` בלי תמונה** + "coming soon" (`dim--green`), כי ב-Figma `1318:686` שכבות התמונה מוסתרות. `flea-market/hero.*` בדיסק = placeholder של dizengoff — לא לחבר. כשיהיה צילום אמיתי: hero חדש כ-`<img src="….webp">` רגיל (ש-`picture-upgrade.js` יעטוף עם AVIF) או `<picture>` עם `<source type="image/avif">` ידני — לא `<picture>` ריק כמו בכרטיסי מדינה/דיזינגוף; + `image_hero` ב-`galleries.json`, ואז `python3 tools/sync_data.py`.
 - **שעות (זהות במדינה ובדיזינגוף):** "א'-ה' 18:00-11:00" / "ו' 14:00-11:00" / "שבת סגור". 🔴 **הכרעת משתמש: verbatim כמו ב-Figma — ספרות LTR כמו אותיות לועזיות, לא "לתקן" סדר.** זהה ל-`galleries.json :: hours[].time`. הנוסח השמור (ב-`galleries.json` וב-HTML) הוא "18:00-11:00" / "14:00-11:00" — `docs/todo.md` מתאר את המשמעות (11:00-18:00), לא את מה שנשמר; לא להפוך. ⚠️ הבולט מתעד מצב נוכחי, לא ערך קבוע: שינוי שעות = לעדכן אותו (ואת `docs/routes/galleries.md` → Hero, שם גם דוגמה מעובדת לקונבנציה).
-- מובייל: גריד `174px 1fr` (תמונה 174×210 משמאל, שם מימין); `.gallery-card--flea .addr` מוסתר.
+- מובייל: גריד `174px 1fr` (תמונה 174×210 משמאל, שם מימין; ⚠️ בבלוק הטלפונים הקטנים בסוף ה-CSS — 140×170, כולל ב-390).
 - דאטה: `galleries.json` (`image_hero` = תמונת הכרטיס כאן, נפרד מ-`image_page_hero`; `figma_node_mobile` לשלושתן) + `homepage.json :: galleries_section`. הסקשן ידני — שינוי JSON = לערוך גם את `index.html`, ואז `python3 tools/sync_data.py`.
-- ⚠️ פערים פתוחים (לא התבקש לתקן, `docs/todo.md`): (1) כתובת פשפשים ב-HTML "שוק הפשפשים, **יפו**" מול "…**תל אביב**" ב-JSON וב-Figma (גם השם ב-HTML "גלריית יפו, שוק הפשפשים" ≠ `name_he`); (2) בכרטיס מדינה בפיגמה **אין שורת כתובת** — האתר מציג "ז'בוטינסקי 131, תל אביב"; טעון בירור. שאר טקסטי `1318:657` לא סונכרנו (רק תמונות ושעות).
+- ⚠️ פערים פתוחים (לא התבקש לתקן, `docs/todo.md`): (1) כתובת פשפשים: דסקטופ "שוק הפשפשים, **יפו**" (= פריים הדסקטופ `1124:1132`), מובייל "…**תל אביב**" (= פריים המובייל ו-JSON) — כל breakpoint verbatim לפריים שלו; השם ב-HTML "גלריית יפו, שוק הפשפשים" ≠ `name_he` ב-JSON; (2) בכרטיס מדינה בפיגמה **אין שורת כתובת** — האתר מציג "ז'בוטינסקי 131, תל אביב"; טעון בירור. שאר טקסטי `1318:657` לא סונכרנו (רק תמונות ושעות).
 
 ## #galleries-berlin
 - "the gallery / berlin", **מיד מתחת ל-`#galleries`** (בקשת משתמש 2026-09-27). Figma `1859:2668` / `1856:433`. הרווח מ-`#galleries` = `padding-bottom` של `#galleries` (96 / מובייל 32 — מהבלוק הראשי `@media (max-width:768px)`, שדורס את הכלל המוקדם `.galleries{padding:32px 16px 48px}`; עריכת המוקדם לא תשנה דבר) + `padding-top` של `.galleries--berlin` (56 / מובייל 32). שינוי הרווח = לגעת ב-`.galleries--berlin` בלבד.

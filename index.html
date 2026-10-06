@@ -408,10 +408,11 @@ a.opencall-card:hover .img img{transform:scale(1.03)}
 .galleries-title{width:358px;line-height:1.05}
 .galleries-title .b{font-family:var(--cop);font-weight:700;font-size:36px;display:block}
 .galleries-title .l{font-family:var(--cop);font-weight:300;font-size:36px;display:block}
-/* Figma landing::237:1453 — row gap 8px; card column ~410.667px; image 410.667×497.778, aspect 33/40 (132/160) */
-.gallery-cards{display:flex;gap:8px;align-items:stretch;justify-content:center}
+/* Figma landing::1124:1132 (2026-10, 4 cards) — 2×2 grid, 48px both ways; card = column (600 @1440), image aspect 33/40 (132/160).
+   DOM order medina · dizengoff · zr-station · flea fills it row by row: medina top-left … flea bottom-right, as drawn. */
+.gallery-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start}
 /* Desktop: 3-row grid — image (top) → name → details (addr+hours, right-aligned) */
-.gallery-card{flex:0 0 calc((100% - 16px) / 3);display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"img" "name" "details";gap:8px;min-width:0;max-width:410.667px;align-content:start}
+.gallery-card{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto;grid-template-areas:"img" "name" "details";gap:8px;min-width:0;align-content:start}
 /* medina/dizengoff cards are links to their gallery pages (flea = coming soon, stays non-clickable) */
 a.gallery-card{color:inherit;text-decoration:none}
 .gallery-card > .info{grid-area:name;display:flex;flex-direction:column;gap:4px;font-family:var(--heb);direction:rtl;text-align:right;padding:0 8px}
@@ -420,13 +421,23 @@ a.gallery-card{color:inherit;text-decoration:none}
 .gallery-card > .img img{width:100%;height:100%;object-fit:cover;display:block;position:relative}
 .gallery-card > .img.dim::after{content:"";position:absolute;inset:0;background:rgba(27,27,27,.55);pointer-events:none}
 .gallery-card > .img.dim.dim--green::after{background:#2b4c39}
-.gallery-card > .img.dim .coming{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--cop);font-size:24px;letter-spacing:.04em;z-index:1}
+.gallery-card > .img.dim .coming{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--cop);font-size:25px;letter-spacing:.04em;z-index:1}
 .gallery-card > .details{grid-area:details;display:flex;flex-direction:column;gap:4px;font-family:var(--heb);direction:rtl;text-align:right;padding:0 8px}
 .gallery-card .name{font-size:28px;font-weight:400;line-height:1.1}
 .gallery-card .sub-en{font-family:var(--cop);font-weight:300;font-size:14px;direction:ltr;text-align:right;color:var(--ink);line-height:1.25;margin-top:8px}
 .gallery-card .sub-en-loc{font-family:var(--cop);font-weight:300;font-size:14px;direction:ltr;text-align:right;color:var(--ink);line-height:1.25;margin-top:11px}
 .gallery-card .addr{font-size:18px;font-weight:400;white-space:nowrap}
 .gallery-card .hours{display:flex;flex-direction:column;gap:4px;font-size:16px;font-weight:300;color:var(--ink)}
+/* zr-station (Figma 1856:419 / 1318:686→1318:690): photo under a 70% ink veil + "coming soon"; under the name
+   "תחנת השידור" + "the z&r station / by erez zielinski rozen" (mobile frame; shown on desktop too — user decision) */
+.gallery-card > .img.dim.dim--ink::after{background:rgba(27,27,27,.7)}
+.gallery-card .station{display:flex;flex-direction:column;gap:4px;margin-top:12px}
+.gallery-card .sub-he{font-family:var(--heb);font-weight:300;font-size:16px;color:var(--ink)}
+.gallery-card .station-en{display:flex;flex-direction:column;font-family:var(--cop);font-weight:300;direction:ltr;text-align:right;color:var(--ink);line-height:1.25}
+.gallery-card .station-en .l1{font-size:14px}
+.gallery-card .station-en .l2{font-size:12px}
+/* flea: the address under the image exists only in the mobile frame (1982:516) */
+.gallery-card--flea > .details{display:none}
 
 /* ===== GALLERIES — BERLIN · Figma landing::1859:2668 (desktop) / 1856:433 (mobile) =====
    Single LTR English card below #galleries. Title reuses .galleries-title (same 36px as "the galleries / tel aviv").
@@ -850,6 +861,7 @@ a.sumii-strip:hover{opacity:.85}
   .galleries-title{width:auto;line-height:1.05}
   .gallery-cards{flex-direction:column;gap:40px}
   /* Mobile: image on the LEFT (with details below), name on the RIGHT aligned to top */
+  .gallery-cards{display:flex}
   .gallery-card{flex:1 1 auto;max-width:none;display:grid;grid-template-columns:174px 1fr;grid-template-rows:auto auto;grid-template-areas:"img name" "details name";column-gap:16px;row-gap:8px;align-items:start}
   .gallery-card > .img{width:174px;height:210px;aspect-ratio:auto}
   .gallery-card > .img picture{position:static;height:100%}
@@ -862,8 +874,11 @@ a.sumii-strip:hover{opacity:.85}
   .gallery-card .sub-en{margin-top:8px}
   .gallery-card .sub-en-loc{margin-top:11px}
   .gallery-card .addr{font-size:15px;font-family:var(--heb);font-weight:400}
-  .gallery-card--flea .addr{display:none}
+  .gallery-card--flea .info .addr{display:none}
+  .gallery-card--flea > .details{display:flex}
   .gallery-card .hours{font-size:13px;font-family:var(--heb);font-weight:300;display:flex;flex-direction:column;gap:4px}
+  .gallery-card .station{margin-top:8px}
+  .gallery-card .sub-he{font-size:15px}
 
   /* GALLERIES — BERLIN (Figma 1856:433): image+address column 174px on the left, name+handle on the right */
   .galleries--berlin{padding:32px 16px 48px}
@@ -1532,7 +1547,7 @@ porta</div></a>
   <div class="gallery-cards">
     <a class="gallery-card" href="galleries/medina/" aria-label="גלריית כיכר המדינה — לעמוד הגלריה">
       <div class="info"><div class="name">גלריית כיכר המדינה</div></div>
-      <div class="img"><picture><img src="images/galleries/medina/hero-v2.webp" srcset="images/galleries/medina/hero-v2-480w.webp 480w, images/galleries/medina/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 33vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
+      <div class="img"><picture><img src="images/galleries/medina/hero-v2.webp" srcset="images/galleries/medina/hero-v2-480w.webp 480w, images/galleries/medina/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 50vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
       <div class="details">
         <div class="addr">ז'בוטינסקי 131, תל אביב</div>
         <div class="hours">
@@ -1544,7 +1559,7 @@ porta</div></a>
     </a>
     <a class="gallery-card" href="galleries/dizengoff/" aria-label="גלריית כיכר דיזינגוף — לעמוד הגלריה">
       <div class="info"><div class="name">גלריית כיכר דיזינגוף</div></div>
-      <div class="img"><picture><img src="images/galleries/dizengoff/hero-v2.webp" srcset="images/galleries/dizengoff/hero-v2-480w.webp 480w, images/galleries/dizengoff/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 33vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
+      <div class="img"><picture><img src="images/galleries/dizengoff/hero-v2.webp" srcset="images/galleries/dizengoff/hero-v2-480w.webp 480w, images/galleries/dizengoff/hero-v2.webp 822w" sizes="(max-width:768px) 174px, 50vw" width="822" height="996" alt="" decoding="async" loading="lazy"></picture></div>
       <div class="details">
         <div class="addr">כיכר דיזינגוף, תל אביב</div>
         <div class="hours">
@@ -1554,6 +1569,25 @@ porta</div></a>
         </div>
       </div>
     </a>
+    <!-- ZR STATION · כיכר דיזינגוף, coming soon (Figma 1856:418 desktop / 1318:683 mobile; designer: "above the flea market") — not clickable, no gallery page yet -->
+    <article class="gallery-card gallery-card--station" aria-label="כיכר דיזינגוף — תחנת השידור, בקרוב">
+      <div class="info">
+        <div class="name">כיכר דיזינגוף</div>
+        <div class="station">
+          <div class="sub-he">תחנת השידור</div>
+          <div class="station-en"><span class="l1">the z&amp;r station</span><span class="l2">by erez zielinski rozen</span></div>
+        </div>
+      </div>
+      <div class="img dim dim--ink"><picture><source type="image/avif" srcset="images/galleries/zr-station/hero-480w.avif 480w, images/galleries/zr-station/hero.avif 520w" sizes="(max-width:768px) 174px, 50vw"><img src="images/galleries/zr-station/hero.webp" srcset="images/galleries/zr-station/hero-480w.webp 480w, images/galleries/zr-station/hero.webp 520w" sizes="(max-width:768px) 174px, 50vw" width="520" height="734" alt="חלון הראווה של תחנת השידור — the z&amp;r station, כיכר דיזינגוף" decoding="async" loading="lazy"></picture><span class="coming">coming soon</span></div>
+      <div class="details">
+        <div class="addr">כיכר דיזינגוף, תל אביב</div>
+        <div class="hours">
+          <span>א'-ה' 18:00-11:00</span>
+          <span>ו' 14:00-11:00</span>
+          <span>שבת סגור</span>
+        </div>
+      </div>
+    </article>
     <article class="gallery-card gallery-card--flea">
       <div class="info">
         <div class="name">גלריית יפו, שוק הפשפשים</div>
@@ -1563,6 +1597,7 @@ porta</div></a>
       </div>
       <!-- Figma 1318:686 — image fills hidden; card renders as flat #2B4C39 (dim--green) — no photo (hero.* files kept on disk, unused) -->
       <div class="img dim dim--green"><span class="coming">coming soon</span></div>
+      <div class="details"><div class="addr">שוק הפשפשים, תל אביב</div></div>
     </article>
   </div>
 </section>
