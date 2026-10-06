@@ -111,7 +111,7 @@
                   '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>' +
                 '</button>' +
               '</li>' +
-              '<li><a href="' + abs('') + '#opencall" data-nav="opencall">open call</a></li>' +
+              '<li><a href="' + abs('') + '#opencalls" data-nav="opencall">open call</a></li>' +
               '<li><a href="' + abs('') + '#exhibitions" data-nav="exhibitions">exhibitions</a></li>' +
               '<li><a href="' + abs('works/') + '" data-nav="works">the art works</a></li>' +
               '<li><a href="' + abs('artists/') + '" data-nav="artists">the artists</a></li>' +
@@ -340,13 +340,7 @@
     const btn = nav && nav.querySelector('.hamburger');
     const links = nav && nav.querySelector('.nav-links');
     const closeBtn = nav && nav.querySelector('.nav-close');
-    const openCallLink = nav && nav.querySelector('a[data-nav="opencall"]');
     if (!nav || !btn || !links) return;
-
-    function syncOpenCallHref() {
-      if (!openCallLink) return;
-      openCallLink.href = abs('') + (window.innerWidth <= 768 ? '#mobile-cta' : '#opencall');
-    }
 
     var savedScrollY = 0;
     function setOpen(open) {
@@ -366,7 +360,6 @@
         window.scrollTo(0, savedScrollY);
       }
     }
-    syncOpenCallHref();
     btn.addEventListener('click', function () {
       setOpen(!nav.classList.contains('is-open'));
     });
@@ -386,7 +379,6 @@
       setOpen(false);
     });
     window.addEventListener('resize', function () {
-      syncOpenCallHref();
       if (window.innerWidth > 768) setOpen(false);
     });
   }
@@ -1022,7 +1014,17 @@
       setTimeout(function () { wrap.hidden = true; backdrop.hidden = true; }, 320);
       if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
     }
+    // Only the visitor's own scrolling counts toward NLP_SCROLL. Arriving on a deep link
+    // (/#opencalls), scroll restoration and in-page anchor jumps also fire 'scroll' — often
+    // while the page is still short, so the ratio reads ≥ 0.5 — and opening then would lock
+    // the page under the popup before it reaches the target. Those visitors get NLP_DELAY.
+    var scrolledByUser = false;
+    function markUserScroll() { scrolledByUser = true; }
+    ['wheel', 'touchmove', 'keydown'].forEach(function (t) {
+      window.addEventListener(t, markUserScroll, { passive: true, once: true });
+    });
     function onScroll() {
+      if (!scrolledByUser) return;
       var max = document.documentElement.scrollHeight - window.innerHeight;
       if (max > 0 && window.scrollY / max >= NLP_SCROLL) open();
     }

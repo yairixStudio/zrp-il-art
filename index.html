@@ -1061,6 +1061,10 @@ a.sumii-strip:hover{opacity:.85}
   </div>
 </div>
 
+<!-- #opencalls = one share/nav anchor for both open-call sections: exactly one of them is displayed per
+     breakpoint, so the wrapper's top is the visible section's top (html scroll-padding-top clears the header).
+     No styles of its own; keep the two sections as its only children. -->
+<div id="opencalls">
 <!-- MOBILE-ONLY: קול קורא — open-call carousel (Figma landing::1318:401) on the shared .tri triptych.
      DOM order = newest first: slide 0 (obsession) opens centred, the-peeler peeks right, how-many peeks left.
      Tap a peek or swipe to rotate; tap the centre to open that open call's page (obsession has no page yet ⇒ plain <img>, not a link).
@@ -1098,6 +1102,7 @@ a.sumii-strip:hover{opacity:.85}
     </a>
   </div>
 </section>
+</div>
 
 <!-- EXHIBITIONS / NOW — Figma landing::237:1285 (desktop) / 237:935 (mobile) -->
 <section class="ex-now" id="exhibitions-now">
