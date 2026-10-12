@@ -279,6 +279,8 @@ node tools/regress/diff.mjs before after                  # exit 0 = זהה
     - **בדיקת שלמות (שנייה אחת):** מספר הרשומות ב-sitemap חייב להשתוות למספר עמודי ה-`index.html` המוגשים — `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" -not -path "./scratchpad/*" | wc -l` מול `grep -c "<loc>" sitemap.xml`.
 16. **🔴 דאטה → `python3 tools/sync_data.py`.** אחרי כל שינוי ב-`data/artists|works|exhibitions|galleries.json` — להריץ, ולפני קומיט `--check`. לעולם לא לערוך את `data/generated/*` או את `#works-data`/`#artwork-data`/`#g-artworks-data`/`#fallback-galleries` ביד.
 17. **🔴 שינוי רוחבי → harness רגרסיה** (§7.1) נקי לפני קומיט.
+18. **🔴 לא כותבים מלל.** כל טקסט, תגית, כותרת משנה או סקשן בדף חייבים להגיע מהפיגמה, מה-JSON או מהודעת המשתמש. מה שלא מופיע באף אחד מהם נמחק, או שואלים עליו. בלי שינויי פונט, גודל או סדר שלא התבקשו. (חזר ב-47 סשנים; "אתה לא איש תוכן".)
+19. **🔴 לפני "סיימתי": השוואה לפיגמה בשני הגדלים.** צילום מסך של הדף ב-1440 וב-390 (דרך http, TL;DR 14), מול שני ה-frames. אחר כך דוח קצר: מה זהה, ומה שונה ולמה. סטייה מכוונת נרשמת ב-route doc. מבנה הדוח: הסקיל `verify-done`.
 
 ---
 
