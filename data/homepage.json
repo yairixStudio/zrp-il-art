@@ -420,6 +420,49 @@
   "figma_node_mobile": "640:249",
   "figma_node_order": "1873:1146"
  },
+ "popup_designers_collab": {
+  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then two framed designer chips, then info. No images, no CTA. Chips are plain spans until the designers' artist pages exist — then they become links (artist-linking rule).",
+  "gname_en": "the art gallery by erez zielinski rozen",
+  "designers_en": [
+   "elodie k",
+   "roni liani"
+  ],
+  "artist_slugs": [
+   null,
+   null
+  ],
+  "title_en": "hosting designers pop up",
+  "dates_en": "15.10.2026 - 09.11.2026",
+  "curator_credit_he": "אוצרות: קורין אברהם",
+  "curator_slug": "korin-avraham",
+  "route": null,
+  "figma_node_mobile": "2039:2860",
+  "figma_node_desktop": null
+ },
+ "ma_ren_collab": {
+  "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). 'read more' is a non-link span until the exhibition page exists (route:null). Title verbatim from Figma incl. 'instillation' (pending user confirmation).",
+  "partner_en": "ma ren",
+  "gname_en": "the art gallery by erez zielinski rozen",
+  "x_en": "x",
+  "logo": [
+   "images/homepage/ma-ren/wordmark.svg",
+   "images/homepage/ma-ren/descriptor.svg"
+  ],
+  "title_en": "window take over (instillation)",
+  "dates_en": "19.10.2026 - 09.11.2026",
+  "website": "https://smr-store.store",
+  "curator_credit_he": "אוצרות: קורין אברהם",
+  "curator_slug": "korin-avraham",
+  "cta_en": "read more",
+  "route": null,
+  "images": [
+   "images/homepage/ma-ren/thumb-01.webp",
+   "images/homepage/ma-ren/thumb-02.webp",
+   "images/homepage/ma-ren/thumb-03.webp"
+  ],
+  "figma_node_mobile": "2039:1449",
+  "figma_node_desktop": null
+ },
  "sumii_sponsor": {
   "_note": "Section #sumii above #soos (user request 2026-08-18). Mobile = Figma 1318:316 — ⚠️ the node was rewritten in-place over the old soos-section source (same id, new identity); desktop = adaptation (thumbs 158px/gap 16 like #soos). Lockup = gallery name / X / sumii logo (inline SVG, currentColor). Thumbs object-fit:contain (Figma FIT). Clickable → sponsors/sumii/: logo, title row, strip, read more; website external; curator name → curator page.",
   "sponsor_id": "sumii",

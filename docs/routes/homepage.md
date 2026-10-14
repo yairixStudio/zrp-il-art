@@ -12,7 +12,7 @@
 ## Shared rules
 
 ### סדר הסקשנים (מאומת בקוד)
-hero → `.announce` → `#mobile-cta` (מובייל) / `#opencall` (דסקטופ) → `#exhibitions-now` → `#perfume-promo` → `#perfume-savlanut` → `#events-upcoming` → `#big-news` → `#artworks` → `#x-our-artists` → `#galleries` → `#galleries-berlin` → `#sumii` → `#soos` → `#tribe-teaser` → `#exhibitions` (ארכיון) → `.social` → `#press` → `<site-footer>`.
+hero → `.announce` → `#mobile-cta` (מובייל) / `#opencall` (דסקטופ) → `#exhibitions-now` → `#perfume-promo` → `#perfume-savlanut` → `#events-upcoming` → `#big-news` → `#artworks` → `#x-our-artists` → `#galleries` → `#galleries-berlin` → `#designers-popup` → `#ma-ren` → `#sumii` → `#soos` → `#tribe-teaser` → `#exhibitions` (ארכיון) → `.social` → `#press` → `<site-footer>`.
 
 ### דאטה
 - **כל הדף = HTML סטטי שנכתב ידנית.** `data/homepage.json` = composition layer **דקלרטיבי בלבד** (אין `fetch`). כל שינוי תוכן = לערוך את ה-HTML **וגם** לעדכן ידנית את הבלוק ב-`homepage.json` ואת ה-JSON המקורי (`press.json` / `galleries.json` / `works.json`).
@@ -163,6 +163,15 @@ hero → `.announce` → `#mobile-cta` (מובייל) / `#opencall` (דסקטו�
 - **אין דף גלריה** — הכרטיס לא קליקאבילי; רק ה-handle → אינסטגרם.
 - **ברצלונה (עמודה שנייה, Figma `1859:2668` col `1965:21` / מובייל `1964:110`):** דסקטופ = גריד 2 עמודות של 592 (1248 − gap 64), כל עמודה = כותרת "the gallery / barcelona" + כרטיס; הכרטיס של ברלין התרחב מ-410.667 ל-592 (`.galleries--berlin .berlin-card{max-width:none}`). מובייל = ערימה (ברלין ואז כותרת+כרטיס ברצלונה, רווח 32 — לא נמדד בפיגמה). `.berlin-card--soon`: תמונה `images/galleries/barcelona/hero.{webp,avif}` (1280×1600 + 480/768/1080w) + שכבת `rgba(0,0,0,.55)` ב-CSS + `<span class="coming">` (דסקטופ 66→**50px**, מובייל 20→**15px**, כיול מדוד), בלי כתובת — רק שם + handle (אותו handle כמו ברלין, בלי הרווח). רשומת `barcelona` ב-`galleries.json` (`status:"coming-soon"`, `city:"barcelona"`, מערכי כתובת ריקים) + `gallery_ids` ב-`galleries_berlin_section`. כתובת — כשתהיה, להוסיף `.addr-lines` לכרטיס וכתובת ל-JSON.
 - דאטה: רשומה `berlin` ב-`galleries.json` (`city:"berlin"`, אופציונליים `address_lines_en[]` / `address_lines_en_mobile[]` / `instagram_handle` / `instagram_url`) + `homepage.json :: galleries_berlin_section`; אחרי עריכה → `python3 tools/sync_data.py`. הרשומה מגיעה דרך `sync_data.py` גם למירורי `#fallback-galleries` (בדפי medina/dizengoff ובעמוד האוצרת). היום היא לא מזיקה, כי שם מחפשים גלריה לפי slug או id בלבד. ⚠️ ב-`berlin` השדות `name_he`/`address_he`/`route`/`image_page_hero` = null ו-`hours:[]`, ולכן קוד חדש שעובר על כל `galleries[]` חייב לטפל בזה (או לסנן לפי `city`).
+
+## #designers-popup + #ma-ren (סקשני קולאב, 2026-10-14)
+- **מקור:** פריימי מובייל בלבד בתוך `1318:363` — `2039:2860` (פופ-אפ) ו-`2039:1449` (MA REN), בסדר הזה **בין `#galleries-berlin` ל-`#sumii`** (כמו בפיגמה). שם ה-node "Exhibitions Archive" — משקר. דסקטופ = אדפטציה **באותו כיול כמו `#sumii`** (gname 30→24, title Regular 18→14, תאריכים 16→13, אתר 18→14; עברית 16 verbatim; thumbs 158/gap 16 בדסקטופ, 100.25/gap 4 במובייל).
+- CSS משותף `.collab-*` (לא `.sumii-*`). `padding-bottom:0` כמו `#sumii`; חריג: `#designers-popup` מקבל padding תחתון 32/48 (אין לו תמונות/כפתור — בלעדיו נדבק ללוקאפ של `#ma-ren`).
+- **`#designers-popup`:** gname בלבד (בלי X/לוגו) → 2 צ'יפים ממוסגרים `elodie k` · `roni liani` (`.collab-chip`, Copperplate Light 16→**14** — נמדד מול רוחב התיבות בפיגמה ~90/102px) → `hosting designers pop up` / `15.10.2026 - 09.11.2026` / "אוצרות: קורין אברהם" (→ `curators/korin-avraham/`). אין תמונות ואין כפתור.
+- **`#ma-ren`:** gname / `X` / לוגו MA REN = **2 נכסי SVG מהפיגמה** `images/homepage/ma-ren/{wordmark,descriptor}.svg` (wordmark 197.131×29.221 בהיסט 1.84px, descriptor 242×8.746 ב-top 43.08; ה-wordmark מיושר שמאלה מעל ה-descriptor — כמו בפיגמה) → `window take over (instillation)` / `19.10.2026 - 09.11.2026` / `smr-store.store` (חיצוני) / קרדיט אוצרת → רצועת 3 תמונות **cover** (FILL בפיגמה) `images/homepage/ma-ren/thumb-0{1,2,3}` (מראה · שולחן בחלון · שרפרף; + `-480w`/`-768w`) → `read more`.
+  - ⚠️ בתאי הפיגמה יש מתחת לכל תמונה שכבת FIT שארית מסקשן sumii (הפסלים) — מוסתרת ע"י שכבת ה-cover; **לא להשתמש בה**.
+- ⏳ **ממתין:** הצ'יפים = `<span>` עד שדפי האומן של אלודי K ורוני ליאני ייבנו → להפוך ל-`<a class="collab-chip" href="artists/<slug>/">` (כלל-זהב 10). `read more` של MA REN = `<span class="collab-more">` עד שדף התערוכה ייבנה → `<a>`. גם הכותרת/הלוגו יקושרו אז. "instillation" — verbatim מהפיגמה, ממתין לאישור משתמש (אולי "installation").
+- דאטה: `homepage.json :: popup_designers_collab` / `ma_ren_collab`.
 
 ## #sumii
 - טיזר רזידנסי SUMII, **מעל `#soos`** (בקשת משתמש 2026-08-18). Figma `1318:316` מובייל — ⚠️ **שוכתב in-place מעל מקור סקשן soos** (אותו id, זהות חדשה); דסקטופ = אדפטציה.

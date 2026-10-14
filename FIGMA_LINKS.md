@@ -115,6 +115,16 @@ legacy — מובייל:
 מובייל (390): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1856-433&m=dev
 
+### Homepage — סקשני קולאב `#designers-popup` + `#ma-ren` (בין `#galleries-berlin` ל-`#sumii`; 2026-10-14) ✅ המצב הנוכחי
+
+סקשן hosting designers pop up מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-2860&m=dev
+
+סקשן the art gallery × ma ren מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1449&m=dev
+
+> שני ה-nodes בתוך `homepage-mobileNew` `1318:363`; שם ה-node "Exhibitions Archive" — משקר. באותו פריים סקשן sumii יושב עכשיו ב-`2039:1782`.
+
 ### Homepage — סקשן ספונסר `#sumii` (טיזר רזידנסי SUMII, מעל `#soos`; 2026-08-18) ✅ המצב הנוכחי
 
 סקשן sumii מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.
