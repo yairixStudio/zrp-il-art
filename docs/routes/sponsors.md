@@ -1,12 +1,13 @@
 # Sponsors — route notes
 
-> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `data/sponsors.json`, `images/sponsors/**`.
+> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `data/sponsors.json`, `images/sponsors/**`.
 > כאן: המצב הנוכחי והכללים הפעילים. היסטוריה: `docs/history/CLAUDE-2026-09-27.md` §4.
 
 ## Pages
 
 - `/sponsors/soos/` → `sponsors/soos/index.html` · Figma: **🔴 אין מקור חי** (ה-nodes ההיסטוריים `XhGH...::1318:3287` / `XhGH...::1318:3480` שוכתבו לעיצוב sumii) · ✅ (2026-08-04)
 - `/sponsors/sumii/` → `sponsors/sumii/index.html` · desktop `XhGH...::1637:134` ("sumii - desktop", canonical) · mobile `XhGH...::1318:3480` ("sumii - mobile") · ✅ (2026-08-18; רה-דיזיין 2026-08-23 — מארח גם את הרזידנסי של melani-hekimoglu)
+- `/sponsors/ma-ren/` → `sponsors/ma-ren/index.html` · desktop `XhGH...::2039:1580` ("MA REN - desktop") · mobile `XhGH...::2039:1668` ("MA REN- mobile") · ✅ (2026-10-14)
 
 ## Shared rules (משפחת `sponsors/`)
 
@@ -331,6 +332,41 @@
   - טקסטי המוצרים קרובים ל-`details_he` אבל לא זהים. למשל `מנורות <span class="lat">Flow</span>.` כולל נקודה ו-span — להשוות לפני העתקה.
 - **ה-route קבוע.** היצירות `shira-turbowicz-1..3` נושאות `exhibition_route:"sponsors/sumii"` + `kind:"residency"`, ולכן כותרת הקבוצה בדף האומנית ועמודי היצירה מקשרים לכאן.
   - לעולם לא לשנות את ה-slug (כלל-זהב 6).
+
+## `/sponsors/ma-ren/`
+
+קולאב **MA REN** (סטודיו של אדם לייזנר, מעצב-מהנדס, פלדת אל-חלד) × הגלריה — **WINDOW TAKE OVER (INSTALLATION)**, גלריית כיכר המדינה, ‏19.10–09.11.2026, אוצרות קורין אברהם. בסיס = עמוד sumii (פאנל + hero + גריד + the curator), בלי פאנל שני.
+
+### Figma
+- דסקטופ `2039:1580` · מובייל `2039:1668`. תת-nodes: פאנל `2039:1606`; לוגואים בהירו `2039:2548` (דסקטופ 359×89) / `2039:2590` (מובייל 270×67); עבודות `2039:2052` (שורה 1) + `2039:2325` (שורה 2) / מובייל `2039:2079`…`2039:2115`; האוצרת `2039:1632` / `2039:1733`.
+- 🔴 **"Instillation" בפיגמה (כותרת ההירו + פסקת הפתיחה) → "installation"** — הכרעת משתמש 2026-10-14. לא להחזיר.
+
+### פאנל
+- צ'יפ "גלריית כיכר המדינה" → `../../galleries/medina/`.
+- לוקאפ: **טקסט** `ma ren` (לא לוגו; Copperplate 16 Figma → 13px, → `https://smr-store.store`) · X ‏20.112 verbatim · שם הגלריה 13px → הומפייג'.
+- גוף 8 פסקאות; **פסקת הפתיחה Regular בשני ה-breakpoints** (`p.lede` + `.lede .lat`). תאריכים ב-`<bdi dir="ltr">` התחלה→סוף (בפיגמה הפוך — לא לשחזר). בפסקה האחרונה `<br class="dbr">` = שבירת הדסקטופ (בפיגמה 2 פסקאות צמודות; במובייל אחת — `.dbr` מוסתר). "—" בפסקת הגמרים לפי הדסקטופ (במובייל "-").
+- קישורים בגוף: "ארז זילינסקי רוזן" (אזכור ראשון) → `about/`. ⏳ **אדם לייזנר — בלי קישור** (אין דף אומן; `sponsors.json :: ma-ren.founder_artist_slug:null`). אם ייבנה דף — לקשר את כל אזכורי השם המלא.
+- אחרי הגוף: divider · `smr-store.store` · קרדיט ("אוצרות:" דסקטופ / "אוצרת התערוכה -" מובייל, כמו sumii).
+
+### hero
+- תמונה = `images/sponsors/ma-ren/tempo-mini.{webp,avif}` 768×1024 (אותו קובץ בדסקטופ ובמובייל ובכרטיס TEMPO MINI) + `-480w`. **יש scrim** (`::after` gradient to-top ‏rgba(0,0,0,.4)→0 — בפיגמה).
+- לוקאפ לבן: שם הגלריה 30→**23** (מובייל 24→18) · X ‏36 (מובייל 28.8) · קבוצת הלוגואים (MA REN wordmark + descriptor + טבעת RITUAL + "RITUAL") = 4 SVG לבנים `images/sponsors/ma-ren/{ma-ren-wordmark,ma-ren-descriptor,ritual-mark,ritual-text}-white.svg` במיקום אחוזים מהפיגמה (זהה בשני הגדלים) · כותרת `window take over / (installation)` 30→23 (מובייל 24→18).
+- מיקום: ראש הקבוצה ב-`top:calc(50% − 102px)` (=y 270 ב-744), הכותרת `margin-top:44` (=y 526); מובייל `calc(50% − 107.6px)` (=y 152.4 ב-520), gap 6.4, הכותרת בזרימה.
+
+### עבודות (5)
+- גריד 3 עמודות **LTR** (portal 120 משמאל כמו בפיגמה — **בלי `direction:rtl`**, שלא כמו FIGURES של sumii); השורה השנייה (tempo mini, table) בעמודות 1–2; `row-gap:64`. סדר ה-DOM = סדר המובייל.
+- כרטיס: תמונה `aspect-ratio:94/114` cover → 24 → כותרת Copperplate Regular 18→**15.75** (מובייל 20→17.5) → 8 → תת-כותרת FbEzmel Regular 18 (מובייל 16) → 16 (מובייל 8) → תיאור Light 16 `pre-line`.
+- 🔴 **שבירות השורה בתיאורים = verbatim מהפיגמה** (באמצע משפט). לא לאחד.
+- **"70 PORTAL"** בתיאור portal 70 → `PORTAL 70` (היפוך bidi של הפיגמה). **"TALL TEMPO"** בתיאור tempo tall — verbatim (הכותרת "TEMPO TALL"); ממתין להכרעה.
+- כרטיסים **לא קליקאביליים** — אין רשומות ב-`works.json` (עיצוב/מוצר, לא יצירות גלריה).
+- קבצים: `images/sponsors/ma-ren/{portal-120,portal-70,tempo-tall,tempo-mini,inflated-legs-table}` + וריאנטים.
+
+### the curator
+- זהה ל-sumii — ממחזר `images/sponsors/sumii/curator-thumb.*` (אותו קרופ בפיגמה).
+
+### דאטה ו-SEO
+- `sponsors.json :: ma-ren` (`gallery_id:"medina"`, `cover_image` = `tempo-mini.webp`). `og/sponsors-ma-ren-hero.jpg` **768×403** (קרופ 1.91:1 בלי upscale — המקור 768 רוחב) + רשומה ב-`og-dims.json`. בלוק SEO הועתק מ-sumii ונערך ידנית.
+- הומפייג' `#ma-ren` מקשר לכאן (לוגו, כותרת, רצועה, read more).
 
 ## Related pages — מקשרים לכאן או מעתיקים מכאן
 

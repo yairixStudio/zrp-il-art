@@ -115,6 +115,14 @@ legacy — מובייל:
 מובייל (390): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1856-433&m=dev
 
+### Sponsors — `/sponsors/ma-ren/` (קולאב MA REN — WINDOW TAKE OVER, כיכר המדינה; 2026-10-14) ✅ המצב הנוכחי
+
+עמוד MA REN מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1668&m=dev
+
+עמוד MA REN דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1580&m=dev
+
 ### Homepage — סקשני קולאב `#designers-popup` + `#ma-ren` (בין `#galleries-berlin` ל-`#sumii`; 2026-10-14) ✅ המצב הנוכחי
 
 סקשן hosting designers pop up מובייל (390; דסקטופ = אדפטציה): Implement this design from Figma.

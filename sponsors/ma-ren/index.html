@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MA REN X The Art Gallery — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Light.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="גלריית ארז זילינסקי רוזן בכיכר המדינה מארחת את אדם לייזנר מהמותג MA REN ל־WINDOW TAKE OVER (INSTALLATION), 19.10–09.11.2026: PORTAL, משפחת TEMPO והשולחן בעל הרגליים המנופחות, בפלדת אל-חלד. אוצרות: קורין אברהם.">
+<style>
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;--bg-grey:#EEF0EF;--ink:#1B1B1B;--artist:#828282;
+  --divider:#D2D2D2;
+  --max:1248px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:48px;
+  --col-gap:87px;          /* Figma: 1248 − 3×358 = 174 → 87 בין עמודות */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+.heb .lat{font-family:var(--cop);font-weight:300;text-transform:uppercase;font-size:.88em;direction:ltr;unicode-bidi:isolate;letter-spacing:.02em}
+
+/* ===== SPONSOR / COLLAB PAGE — MA REN (אדם לייזנר) × THE ART GALLERY — WINDOW TAKE OVER, גלריית כיכר המדינה
+   Figma desktop 2039:1580 / mobile 2039:1668. בסיס = sponsors/sumii (פאנל + כרטיס hero + גריד עבודות + the curator).
+   סדר הסקשנים: panel → works (3 + 2) → curator ===== */
+.sponsor{display:flex;flex-direction:column;background:var(--white)}
+
+/* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
+   (Figma "Main container" 2039:1606: padding 48/96, content 1248, gap 48) */
+.sp-hero{background:var(--bg-grey);padding:48px var(--pad-x);display:flex;justify-content:center}
+.sp-hero .row{display:flex;gap:48px;align-items:stretch;width:100%;max-width:var(--max)}
+.sp-hero .text-col{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px}
+
+/* Chip — bordered gallery tag (Figma 2039:1610: 1px #1B1B1B, padding 4/8) */
+.chip-row{width:100%;display:flex;justify-content:flex-end}
+a.chip{display:inline-flex;align-items:center;padding:4px 8px;border:1px solid var(--ink);font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);direction:rtl;transition:opacity .2s}
+a.chip:hover{opacity:.65}
+
+/* Lockup — [ma ren] X [the art gallery by / erez zielinski rozen], row gap 16 (Figma 2039:1612).
+   X = 20.112 verbatim (גליף בודד); ma ren + שם הגלריה Copperplate 16 Figma (textCase LOWER) → 13px אופטי כמו sumii. */
+.lockup{display:flex;align-items:center;gap:16px}
+.lockup .x{font-family:var(--cop);font-weight:300;font-size:20.112px;line-height:1}
+.lockup .brand{font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.4;letter-spacing:.05em;transition:opacity .2s}
+.lockup .gname{font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.4;text-align:center;letter-spacing:.02em;transition:opacity .2s}
+.lockup .gname .ln1{letter-spacing:.05em}
+.lockup a.gname:hover,.lockup a.brand:hover{opacity:.65}
+
+/* Body + divider + site + credit group (Figma 2039:1616: gap 16; divider section padding 24/16/16) */
+.sp-main{display:flex;flex-direction:column;align-items:flex-end;gap:16px;width:100%}
+.sp-body{width:100%;font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;text-align:right;direction:rtl;color:var(--ink)}
+.sp-body p+p{margin-top:19.468px}
+/* פסקת הפתיחה = Regular (עברית + ריצות לועזיות) בשני הפריימים (Figma 2039:1618 / 2039:1725) */
+.sp-body p.lede,.sp-body p.lede .lat{font-weight:400}
+.sp-divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
+.sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
+a.sp-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);transition:opacity .2s}
+a.sp-site:hover{opacity:.65}
+.sp-credit{font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);text-align:right;direction:rtl}
+
+/* Hero card — 492×744, תמונה + scrim (Figma: gradient to-top rgba(0,0,0,.4)→0), לוקאפ לבן.
+   ראש הקבוצה ב-y 270 (=מרכז−102); הכותרת ב-y 526 (52px מתחת ללוגואים). */
+.sp-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
+.sp-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
+.sp-hero .card>picture{display:contents}
+.sp-hero .card img.photo{width:100%;height:100%;object-fit:cover;display:block}
+.sp-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4),rgba(0,0,0,0));z-index:1;pointer-events:none}
+.sp-hero .card .center-text{position:absolute;left:50%;top:calc(50% - 102px);transform:translateX(-50%);width:358px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;z-index:2;text-align:center}
+.center-text .gname{font-family:var(--cop);font-weight:300;font-size:23px;line-height:1.35;letter-spacing:.05em}
+.center-text .x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
+.center-text .ttl{font-family:var(--cop);font-weight:300;font-size:23px;line-height:1.35;letter-spacing:.05em;margin-top:44px}
+/* MA_REN_RITUAL_Logos (Figma 2039:2548: 359×89) — 4 נכסי SVG לבנים, מיקום באחוזים מהפיגמה (זהים במובייל 270×67) */
+.mr-logos{position:relative;width:359px;height:89px;max-width:100%;flex-shrink:0;direction:ltr}
+/* left/top/width/height = ה-insets של הפיגמה מומרים (replaced elements לא נמתחים מ-inset בלבד) */
+.mr-logos img,.mr-logos .ring{position:absolute;display:block;max-width:none}
+.mr-logos .wm{left:9.45%;top:37.57%;width:27.45%;height:16.27%}
+.mr-logos .desc{left:9.19%;top:61.56%;width:33.70%;height:4.87%}
+.mr-logos .ring{left:84.71%;top:25.72%;width:6.51%;height:25.67%}
+.mr-logos .ring img{left:-1.96%;top:-2.01%;width:103.92%;height:104.02%}
+.mr-logos .rt{left:80.68%;top:65.12%;width:14.69%;height:10.71%}
+
+/* ===== WORKS — 5 עבודות (Figma 2039:2052 + 2039:2325): גריד 3 עמודות LTR (portal 120 משמאל, כמו בפיגמה);
+   השורה השנייה בעמודות 1–2. בין השורות 64 (2×py32). ===== */
+.sp-works{background:var(--bg-grey);padding:32px var(--pad-x);display:flex;justify-content:center}
+.sp-works .works{width:100%;max-width:var(--max);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:var(--col-gap);row-gap:64px}
+
+/* כרטיס — תמונה (aspect 94/114, cover = FILL) → 24 → כותרת → 8 → תת-כותרת → 16 → טקסט */
+.wk{display:flex;flex-direction:column;min-width:0}
+.wk .shot{display:block;width:100%;aspect-ratio:94/114;overflow:hidden;background:#F4F1ED}
+.wk .shot picture{display:contents}
+.wk .shot img{width:100%;height:100%;object-fit:cover;display:block}
+/* כותרת — Copperplate Regular 18 Figma (UPPER) → 15.75px (כיול .875 כמו כותרות המוצר ב-sumii) */
+.wk .ttl{margin-top:24px;font-family:var(--cop);font-weight:400;font-size:15.75px;line-height:1.3;text-align:right;letter-spacing:.02em;color:var(--ink)}
+.wk .sub{margin-top:8px;font-family:var(--heb);font-weight:400;font-size:18px;line-height:1.2;text-align:right;direction:rtl;color:var(--ink)}
+/* 🔴 שבירות השורה ב-HTML הן תוכן (verbatim מהפיגמה) — pre-line, לא לאחד */
+.wk .txt{margin-top:16px;font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;text-align:right;direction:rtl;color:var(--ink);white-space:pre-line}
+
+/* THE CURATOR — artists-strip pattern, single card → curator page (Figma 2039:1632 / 2039:1733) */
+.sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
+.sp-curator .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.sp-curator .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
+.sp-curator .strip{display:flex;flex-direction:row;gap:6px}
+.sp-curator .strip>a.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
+.sp-curator .strip .img{width:178px;height:148px;overflow:hidden;background:#f3f1ee}
+.sp-curator .strip .img picture{display:contents}
+.sp-curator .strip .img img{width:100%;height:100%;object-fit:cover;transition:filter .25s}
+.sp-curator .strip .name{font-family:var(--cop);font-weight:300;font-size:18px;line-height:18px;color:var(--artist);text-align:center;letter-spacing:.04em}
+a.artist-card:hover .img img{filter:brightness(.92)}
+a.artist-card:hover .name{color:var(--ink)}
+
+/* artist-link: every artist/curator mention links to its page (docs/artist-linking.md) */
+a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+
+/* credit text differs per breakpoint (Figma: "אוצרות:" desktop / "אוצרת התערוכה -" mobile) */
+.only-m{display:none}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width:1320px){ :root{--pad-x:96px} }
+
+@media (max-width:1319px) and (min-width:769px){
+  :root{--col-gap:48px}
+  .sp-hero .row{gap:32px;min-width:0}
+  .sp-hero .img-col{flex:0 1 400px;min-width:0;justify-content:center}
+  .sp-hero .card{width:100%;max-width:400px;height:640px}
+  .mr-logos{width:300px;height:74.37px}
+}
+
+/* Mobile (Figma 2039:1668): hero full-bleed 390×520 under the header, then one white column.
+   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 divider/site/credit · 8-12 works · 13 curator */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  .sp-hero,.sp-hero .row,.sp-hero .text-col,.chip-row,.sp-main,
+  .sp-works,.sp-works .works{display:contents}
+
+  .sp-hero .img-col{order:1;flex:none;width:100%;justify-content:center}
+  a.chip{order:2}
+  .lockup{order:3}
+  .sp-body{order:4}
+  .sp-divider{order:5}
+  a.sp-site{order:6}
+  .sp-credit{order:7}
+  .wk:nth-child(1){order:8}
+  .wk:nth-child(2){order:9}
+  .wk:nth-child(3){order:10}
+  .wk:nth-child(4){order:11}
+  .wk:nth-child(5){order:12}
+  .sp-curator{order:13}
+
+  .only-d{display:none}
+  .only-m{display:inline}
+
+  /* Hero — full-bleed 390×520 + scrim; קבוצה ברוחב 286.4, gap 6.4, ראש הקבוצה ב-y 152.4 (=מרכז−107.6) */
+  .sp-hero .card{width:100%;max-width:none;height:520px}
+  .sp-hero .card .center-text{gap:6.4px;width:286.4px;top:calc(50% - 107.6px)}
+  .center-text .gname{font-size:18px}
+  .center-text .x{font-size:28.8px;line-height:1}
+  .center-text .ttl{font-size:18px;margin-top:0}
+  .mr-logos{width:270px;height:67px}
+
+  /* Info blocks — white background, padding 16, 24px rhythm */
+  a.chip{margin:24px 16px 0 auto;font-size:16px;line-height:17.305px}
+  .lockup{background:var(--white);padding:24px 16px 0;width:100%;justify-content:flex-end}
+  .sp-body{background:var(--white);padding:24px 16px 0;width:100%;font-size:16px;line-height:17.305px}
+  .sp-body p+p{margin-top:17.305px}
+  .sp-body .dbr{display:none}
+  .sp-divider{background:var(--white);padding:24px 32px 0;width:100%}
+  .sp-divider i{background:#EFEFEF}
+  a.sp-site{background:var(--white);padding:16px 16px 0;width:100%;text-align:right;font-size:13px}
+  .sp-credit{background:var(--white);padding:10px 16px 0;width:100%;font-size:16px;line-height:17.305px}
+
+  /* Works — כרטיס ברוחב התוכן, 24 בין כרטיסים (Figma 2039:2079…: img→24→ttl→8→sub→8→txt) */
+  .wk{background:var(--white);padding:24px 16px 0;width:100%}
+  .wk .ttl{font-size:17.5px}
+  .wk .sub{font-size:16px}
+  .wk .txt{margin-top:8px}
+
+  /* Curator strip (Figma mobile 96×80 thumb) */
+  .sp-curator{padding:32px 16px}
+  .sp-curator .label{font-size:16px}
+  .sp-curator .strip>a.artist-card{flex:0 0 112px}
+  .sp-curator .strip .img{width:96px;height:80px}
+  .sp-curator .strip .name{font-size:13px;line-height:16px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/sponsors/ma-ren/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MA REN X The Art Gallery — Zielinski &amp; Rozen">
+<meta property="og:description" content="גלריית ארז זילינסקי רוזן בכיכר המדינה מארחת את אדם לייזנר מהמותג MA REN ל־WINDOW TAKE OVER (INSTALLATION), 19.10–09.11.2026: PORTAL, משפחת TEMPO והשולחן בעל הרגליים המנופחות, בפלדת אל-חלד. אוצרות: קורין אברהם.">
+<meta property="og:url" content="https://art.zrp.co.il/sponsors/ma-ren/">
+<meta property="og:image" content="https://art.zrp.co.il/og/sponsors-ma-ren-hero.jpg">
+<meta property="og:image:width" content="768">
+<meta property="og:image:height" content="403">
+<meta property="og:image:alt" content="MA REN X The Art Gallery — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MA REN X The Art Gallery — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="גלריית ארז זילינסקי רוזן בכיכר המדינה מארחת את אדם לייזנר מהמותג MA REN ל־WINDOW TAKE OVER (INSTALLATION), 19.10–09.11.2026: PORTAL, משפחת TEMPO והשולחן בעל הרגליים המנופחות, בפלדת אל-חלד. אוצרות: קורין אברהם.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/sponsors-ma-ren-hero.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://art.zrp.co.il/sponsors/ma-ren/#webpage","url":"https://art.zrp.co.il/sponsors/ma-ren/","name":"MA REN X The Art Gallery — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"publisher":{"@id":"https://art.zrp.co.il/#org"},"description":"גלריית ארז זילינסקי רוזן בכיכר המדינה מארחת את אדם לייזנר מהמותג MA REN ל־WINDOW TAKE OVER (INSTALLATION), 19.10–09.11.2026: PORTAL, משפחת TEMPO והשולחן בעל הרגליים המנופחות, בפלדת אל-חלד. אוצרות: קורין אברהם.","about":[{"@type":"Brand","name":"MA REN","url":"https://smr-store.store"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MA REN","item":"https://art.zrp.co.il/sponsors/ma-ren/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<site-header></site-header>
+
+<main class="sponsor">
+
+  <!-- PANEL — MA REN: text column left (right-aligned content), hero card right (Figma 2039:1606 desktop / 2039:1689+2039:1717 mobile) -->
+  <section class="sp-hero">
+    <div class="row">
+
+      <div class="text-col">
+        <div class="chip-row">
+          <a class="chip heb" href="../../galleries/medina/">גלריית כיכר המדינה</a>
+        </div>
+
+        <h1 class="lockup">
+          <a class="brand" href="https://smr-store.store" target="_blank" rel="noopener">ma ren</a>
+          <span class="x">X</span>
+          <a class="gname" href="../../"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</a>
+        </h1>
+
+        <div class="sp-main">
+          <div class="sp-body heb">
+            <p class="lede">גלריית <a class="artist-link" href="../../about/">ארז זילינסקי רוזן</a> בכיכר המדינה מארחת את אדם לייזנר מהמותג <span class="lat">MA REN</span> ל־<span class="lat">Window Take Over (Installation)</span> בתאריכים <bdi dir="ltr">19.10.2026 - 09.11.2026</bdi>.</p>
+            <p>במסגרת הקולאב בין <span class="lat">MA REN</span> לגלריית האמנות של ארז זילינסקי רוזן מוצג פרק מתוך המחקר המתמשך של אדם לייזנר בפלדת אל-חלד. עבודתו נשענת על זהות בלתי נפרדת של מהנדס ומעצב: ההנדסה מגדירה מבנה, כוחות ואפשרויות ייצור; העיצוב מעניק להם כיוון, רוח ונוכחות. <span class="lat">PORTAL</span> בשני קני מידה, משפחת <span class="lat">TEMPO</span> והשולחן בעל הרגליים המנופחות בוחנים כיצד גיאומטריה, אור, משקל ותהליך יכולים לנסח נוכחות בחלל.</p>
+            <p>השפה של לייזנר נבנית מתוך מפגש בין מסורות שונות. מן הבאוהאוס מגיעה ההבנה שצורה צריכה לצמוח מתוך החומר, המבנה והשימוש; מן האסתטיקה הנורדית מגיעים הסדר, הצלילות והאיפוק; ומן הוואבי סאבי ועקרונות הזן היפני מגיעה תשומת הלב לריק, לאי־סימטריה, לשינוי וליופי שאינו מבקש להיות מושלם או אחיד. ההשפעות אינן מצוטטות כסגנון, אלא מתורגמות לדרך עבודה.</p>
+            <p>פלדת אל-חלד נתפסת כאן כשדה יצירה ולא כמעטפת גמר. לייזנר לומד ומפתח את העבודה בה דרך ניסויים בפלטות, חיתוכים, חיבורים, ריתוך, ניפוח, השחזה וליטוש. בכל פעולה נבדק מחדש מה ניתן להוציא מן המישור: כיצד יריעה שטוחה יכולה להפוך לנפח, כיצד קו חיתוך נעשה פתח, וכיצד חיבור תעשייתי יכול לשאת גם דיוק וגם עקבה חד־פעמית של היד ושל הלחץ.</p>
+            <p>סוגי הגמר הם חלק מן המבנה הרעיוני של כל עבודה. גימור מראה מכניס אל האובייקט את הצופה ואת סביבתו ומפרק אותם על פני המתכת; גימור מוברש מדגיש כיוון, מגע ורצף; וגימור מט מרכך את האור ומחדד את המסה. המעבר בין הגמרים משנה את האופן שבו האובייקט נקרא — כרהיט, כפסל או כמשטח שמארגן את החלל סביבו.</p>
+            <p>הגיאומטריה בעבודות אינה דימוי סגור. מעגל, משולש ומישור משמשים מערכת בסיסית שממנה אפשר לסטות, לגרוע, לנפח וליצור מתח. <span class="lat">PORTAL</span> מעוות את המעגל באמצעות לחץ ומחזיר את החלל כהשתקפות משתנה; <span class="lat">TEMPO</span> בונה יציבות משני נפחים משולשים ומריק פעיל ביניהם; והשולחן מעמיד משטח עגול ושקט מעל מערכת רגליים שנולדה מפלטות שטוחות. בכל אחת מן העבודות, האובייקט נבחן גם דרך ההשפעה שלו על התנועה, האור וקנה המידה של החלל.</p>
+            <p>השם <span class="lat">MA REN</span> מחבר בין <span class="lat">MA</span>, המושג היפני למרווח, להשהיה ולחלל שבין הדברים, לבין <span class="lat">REN</span>, שפירושו בדנית ובנורווגית נקי או טהור; יחד הם מבטאים צורה בהירה ומדויקת שבה החלל חשוב כחומר.</p>
+            <p>אדם לייזנר, בן 37, הוא מהנדס ומעצב, מייסד ומעצב ראשי של סטודיו <span class="lat">MA REN</span> בתל אביב-יפו. <br class="dbr">במשך כעשור עבד בתעשיות ביטחוניות בתפקידי הנדסה וניהול הנדסי. הניסיון הזה אינו פרק נפרד מן היצירה שלו, אלא אחת התשתיות המרכזיות שלה: היכולת להבין חומר, כוחות, מערכות, מגבלות ייצור ותהליך של פיתוח. לצד הזהות ההנדסית, העיצוב הוא עבורו הלב, הרוח והמרחב שבו ידע טכני הופך ליצירה בעלת עמדה ונוכחות.</p>
+          </div>
+
+          <div class="sp-divider" aria-hidden="true"><i></i></div>
+
+          <a class="sp-site" href="https://smr-store.store" target="_blank" rel="noopener">smr-store.store</a>
+
+          <div class="sp-credit heb"><span class="only-d">אוצרות: </span><span class="only-m">אוצרת התערוכה - </span><a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></div>
+        </div>
+      </div>
+
+      <div class="img-col">
+        <div class="card">
+          <img class="photo" src="../../images/sponsors/ma-ren/tempo-mini.webp" srcset="../../images/sponsors/ma-ren/tempo-mini-480w.webp 480w, ../../images/sponsors/ma-ren/tempo-mini.webp 768w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="768" height="1024" alt="TEMPO MINI של MA REN — שולחן צד מפלדת אל-חלד מול קיר בורדו, בחלון גלריית כיכר המדינה" decoding="async" fetchpriority="high">
+          <div class="center-text">
+            <div class="gname"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</div>
+            <div class="x">X</div>
+            <div class="mr-logos" role="img" aria-label="ma ren — stainless steel atelier · ritual">
+              <img class="wm" src="../../images/sponsors/ma-ren/ma-ren-wordmark-white.svg" alt="" width="99" height="14">
+              <img class="desc" src="../../images/sponsors/ma-ren/ma-ren-descriptor-white.svg" alt="" width="121" height="4">
+              <span class="ring"><img src="../../images/sponsors/ma-ren/ritual-mark-white.svg" alt="" width="24" height="24"></span>
+              <img class="rt" src="../../images/sponsors/ma-ren/ritual-text-white.svg" alt="" width="53" height="10">
+            </div>
+            <div class="ttl">window take over<br>(installation)</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WORKS — 5 עבודות (Figma 2039:2052 + 2039:2325 desktop / 2039:2079…2115 mobile). סדר ה-DOM = סדר המובייל. -->
+  <section class="sp-works" aria-label="העבודות של MA REN">
+    <div class="works">
+
+      <article class="wk">
+        <div class="shot"><img src="../../images/sponsors/ma-ren/portal-120.webp" srcset="../../images/sponsors/ma-ren/portal-120-480w.webp 480w, ../../images/sponsors/ma-ren/portal-120-768w.webp 768w, ../../images/sponsors/ma-ren/portal-120.webp 894w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="894" height="1192" alt="PORTAL 120 — פסל מראה לקיר מפלדת אל-חלד מנופחת" loading="lazy" decoding="async"></div>
+        <div class="ttl">portal 120</div>
+        <div class="sub">פסל מראה לקיר</div>
+        <div class="txt heb"><span class="lat">PORTAL</span> מתחיל במעגל מדויק ובפתח הנגרע ממנו. שתי יריעות מפלדת אל-חלד נחתכות בלייזר, מרותכות בהיקף
+ומנופחות באוויר. הלחץ מעביר את הגיאומטריה מן המישור אל הנפח ויוצר קפלים ומתיחות שאינם חוזרים בדיוק באותו
+אופן. גימור המראה קולט את החלל, את האור ואת המתבונן, ומפרק אותם על פני הגוף הקמור.
+
+מידה: קוטר 120 ס״מ עומק כ-5 ס״מ</div>
+      </article>
+
+      <article class="wk">
+        <div class="shot"><img src="../../images/sponsors/ma-ren/portal-70.webp" srcset="../../images/sponsors/ma-ren/portal-70-480w.webp 480w, ../../images/sponsors/ma-ren/portal-70.webp 754w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="754" height="1156" alt="PORTAL 70 — פסל מראה לקיר מפלדת אל-חלד על מדף עץ" loading="lazy" decoding="async"></div>
+        <div class="ttl">portal 70</div>
+        <div class="sub">פסל מראה לקיר</div>
+        <div class="txt heb"><span class="lat">PORTAL 70</span> מרכז את אותה פעולת ניפוח בקוטר אינטימי יותר. המעגל נשאר ברור מרחוק, אך מקרוב נחשפים
+המתחים שנוצרו במתכת סביב הפתח ובהיקף. קנה המידה מאפשר לעבודה לפעול כמוקד עצמאי או כחלק מקבוצה,
+כאשר ההשתקפות משתנה עם תנועת הצופה ועם המרחק מן הקיר.
+
+מידה: קוטר 70 ס״מ עומק עד כ-5 ס״מ</div>
+      </article>
+
+      <article class="wk">
+        <div class="shot"><img src="../../images/sponsors/ma-ren/tempo-tall.webp" srcset="../../images/sponsors/ma-ren/tempo-tall-480w.webp 480w, ../../images/sponsors/ma-ren/tempo-tall-768w.webp 768w, ../../images/sponsors/ma-ren/tempo-tall.webp 894w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="894" height="1192" alt="TEMPO TALL — שולחן צד פיסולי מפלדת אל-חלד בצורת שעון חול" loading="lazy" decoding="async"></div>
+        <div class="ttl">tempo tall</div>
+        <div class="sub">שולחן צד פיסולי</div>
+        <div class="txt heb"><span class="lat">TALL TEMPO</span> בנוי משני נפחים משולשים הנפגשים במותן צרה. המשולש שווה הצלעות חוזר בחלק העליון והתחתון,
+וההיצרות שבמרכז הופכת את המבנה לשעון חול גיאומטרי. כמו ברהיטי הבאוהאוס, הצורה נובעת מן המבנה ומן
+השימוש; עם זאת, שינויי האור על הפאות מעניקים לעבודה נוכחות של פסל עצמאי.
+
+מידה: גובה 90 צלע 35 מותן 7 ס״מ</div>
+      </article>
+
+      <article class="wk">
+        <div class="shot"><img src="../../images/sponsors/ma-ren/tempo-mini.webp" srcset="../../images/sponsors/ma-ren/tempo-mini-480w.webp 480w, ../../images/sponsors/ma-ren/tempo-mini.webp 768w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="768" height="1024" alt="TEMPO MINI — שולחן צד פיסולי מפלדת אל-חלד מול קיר בורדו" loading="lazy" decoding="async"></div>
+        <div class="ttl">tempo mini</div>
+        <div class="sub">שולחן צד פיסולי</div>
+        <div class="txt heb"><span class="lat">TEMPO MINI</span> מעביר את אותה גיאומטריה לקנה מידה קרוב לגוף. שתי הפירמידות הקטומות נפגשות במרכז ויוצרות
+רצף של שלוש פאות, אור וצל. העבודה יכולה לשמש כשולחן צד או כבסיס לאובייקט, אך היחסים בין המשולש, המותן
+והגובה נשארים הנושא המרכזי שלה.
+
+מידה: גובה 40 צלע 25 מותן 5 ס״מ</div>
+      </article>
+
+      <article class="wk">
+        <div class="shot"><img src="../../images/sponsors/ma-ren/inflated-legs-table.webp" srcset="../../images/sponsors/ma-ren/inflated-legs-table-480w.webp 480w, ../../images/sponsors/ma-ren/inflated-legs-table-768w.webp 768w, ../../images/sponsors/ma-ren/inflated-legs-table.webp 903w" sizes="(max-width:768px) 100vw, (max-width:1319px) 30vw, 358px" width="903" height="1204" alt="INFLATED LEGS TABLE — שולחן עגול עם רגליים מנופחות מפלדת אל-חלד" loading="lazy" decoding="async"></div>
+        <div class="ttl">inflated legs table</div>
+        <div class="sub">שולחן עגול עם רגליים מנופחות</div>
+        <div class="txt heb">השולחן מציב מישור עגול ומדויק מעל מערכת רגליים שנוצרה בלחץ. הטופ המלוטש פועל כמראה אופקית, בעוד
+הרגליים מתחילות כיריעות מפלדת אל-חלד בעובי 1 מ״מ, נחתכות, נסגרות בריתוך ומנופחות באוויר. המעגל מייצג
+סדר גיאומטרי ברור; הרגליים מכניסות אליו נפח, מתיחה ואי אחידות מבוקרת. המתח בין המישור הטהור לבין העקבות
+שהותיר תהליך הניפוח הוא לב העבודה.
+
+מידה: קוטר טופ 60 ס״מ גובה 55 ס״מ</div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- THE CURATOR — korin avraham (Figma 2039:1632 desktop / 2039:1733 mobile) -->
+  <section class="sp-curator" aria-label="אוצרת התערוכה">
+    <div class="inner">
+      <div class="label">the curator</div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../curators/korin-avraham/" aria-label="korin avraham">
+          <div class="img"><img src="../../images/sponsors/sumii/curator-thumb.webp" width="712" height="561" alt="korin avraham" loading="lazy" decoding="async"></div>
+          <div class="name">korin<br>avraham</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<site-footer></site-footer>
+
+<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>

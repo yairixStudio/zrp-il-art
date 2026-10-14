@@ -79,6 +79,31 @@
       "figma_node_mobile": "1635:348",
       "figma_logo_node": "1637:350",
       "_note": "🔴 חולק את העמוד sponsors/sumii/ (אין route משלו) — הרזידנסי השנייה בגלריית כיכר דיזינגוף, מוצגת כסקשן שני באותו דף לפי הפיגמה (1637:284 + 1637:379 דסקטופ / 1635:348 מובייל). הלוגו הוא raster (favicon.png שהמעצבת העלתה), לא SVG: images/sponsors/melani/logo.{webp,avif} = הקרופ ההדוק מ-cropTransform של 1637:350. חמשת כרטיסי FLOW/BLOOM בעמוד ממחזרים את images/works/v2/melani-hekimoglu-1..5 (אותם imageRefs) ומקשרים ל-works/melani-hekimoglu-N/ — אין קבצים כפולים תחת images/sponsors/melani/."
+    },
+    {
+      "id": "ma-ren",
+      "slug": "ma-ren",
+      "name": "MA REN",
+      "founder_he": "אדם לייזנר",
+      "title_lockup": "ma ren X the art gallery by erez zielinski rozen",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "gallery_id": "medina",
+      "curator_slug": "korin-avraham",
+      "date_start": "2026-10-19",
+      "date_end": "2026-11-09",
+      "website": "https://smr-store.store",
+      "model_credit": null,
+      "route": "sponsors/ma-ren/",
+      "cover_image": "images/sponsors/ma-ren/tempo-mini.webp",
+      "logo": "images/sponsors/ma-ren/ma-ren-wordmark-white.svg",
+      "case_exception": [],
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "2039:1580",
+      "figma_node_mobile": "2039:1668",
+      "figma_logo_node": "2039:2548",
+      "founder_artist_slug": null,
+      "_figma_note": "2026-10-14: קולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה. בפיגמה 'Instillation' — תוקן ל-installation בהחלטת משתמש. אדם לייזנר — אין דף אומן (founder_artist_slug:null)."
     }
   ]
 }

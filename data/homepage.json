@@ -440,7 +440,7 @@
   "figma_node_desktop": null
  },
  "ma_ren_collab": {
-  "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). 'read more' is a non-link span until the exhibition page exists (route:null). Title: Figma says 'instillation' — corrected to 'installation' (user decision 2026-10-14).",
+  "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). Clickable → sponsors/ma-ren/ (like #sumii): logo, title row, strip, read more; website external. Title: Figma says 'instillation' — corrected to 'installation' (user decision 2026-10-14).",
   "partner_en": "ma ren",
   "gname_en": "the art gallery by erez zielinski rozen",
   "x_en": "x",
@@ -454,7 +454,7 @@
   "curator_credit_he": "אוצרות: קורין אברהם",
   "curator_slug": "korin-avraham",
   "cta_en": "read more",
-  "route": null,
+  "route": "sponsors/ma-ren/",
   "images": [
    "images/homepage/ma-ren/thumb-01.webp",
    "images/homepage/ma-ren/thumb-02.webp",

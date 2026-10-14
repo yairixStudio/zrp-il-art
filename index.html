@@ -612,7 +612,8 @@ a.sumii-strip:hover{opacity:.85}
 .collab-gname{font-family:var(--cop);font-weight:300;font-size:24px;line-height:1.35;letter-spacing:.05em;color:var(--ink)}
 .collab-x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
 /* לוגו MA REN = 2 נכסי SVG מהפיגמה (wordmark 197.131×29.221 בהיסט 1.84, descriptor 242×8.746 ב-top 43.08) */
-.maren-logo{position:relative;width:242.001px;height:51.826px;direction:ltr}
+.maren-logo{position:relative;display:block;width:242.001px;height:51.826px;direction:ltr;transition:opacity .2s}
+.maren-logo:hover{opacity:.65}
 .maren-logo img{position:absolute;display:block;max-width:none}
 .maren-wordmark{left:1.84px;top:0;width:197.131px;height:29.221px}
 .maren-descriptor{left:0;top:43.08px;width:242.001px;height:8.746px}
@@ -621,14 +622,16 @@ a.sumii-strip:hover{opacity:.85}
 .collab-chip{display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:14px;line-height:1.3;letter-spacing:.05em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 a.collab-chip:hover{opacity:.65}
 .collab-info{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-.collab-title{font-family:var(--cop);font-weight:400;font-size:14px;line-height:1.2;letter-spacing:.04em;color:var(--ink)}
+.collab-title{font-family:var(--cop);font-weight:400;font-size:14px;line-height:1.2;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
+a.collab-title:hover{opacity:.65}
 .collab-dates{font-family:var(--cop);font-weight:300;font-size:13px;letter-spacing:.04em;color:var(--ink)}
 a.collab-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 a.collab-site:hover{opacity:.65}
 .collab-credit{font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;color:var(--ink);direction:rtl}
 .collab-credit a{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s}
 .collab-credit a:hover{text-decoration-color:currentColor}
-.collab-strip{display:flex;gap:16px;justify-content:center}
+.collab-strip{display:flex;gap:16px;justify-content:center;transition:opacity .2s}
+a.collab-strip:hover{opacity:.85}
 .collab-thumb{display:block;width:158px;aspect-ratio:100.25/121.52;overflow:hidden}
 .collab-thumb picture{display:contents}
 /* FILL בפיגמה — cover */
@@ -1721,23 +1724,23 @@ porta</div></a>
   <div class="collab-lockup">
     <div class="collab-gname">the art gallery by<br>erez zielinski rozen</div>
     <span class="collab-x">X</span>
-    <div class="maren-logo" role="img" aria-label="ma ren — stainless steel atelier">
+    <a class="maren-logo" href="sponsors/ma-ren/" aria-label="ma ren — stainless steel atelier · לעמוד הקולאב">
       <img class="maren-wordmark" src="images/homepage/ma-ren/wordmark.svg" width="197" height="29" alt="" decoding="async" loading="lazy">
       <img class="maren-descriptor" src="images/homepage/ma-ren/descriptor.svg" width="242" height="9" alt="" decoding="async" loading="lazy">
-    </div>
+    </a>
   </div>
   <div class="collab-info">
-    <div class="collab-title">window take over (installation)</div>
+    <a class="collab-title" href="sponsors/ma-ren/">window take over (installation)</a>
     <div class="collab-dates">19.10.2026 - 09.11.2026</div>
     <a class="collab-site" href="https://smr-store.store" target="_blank" rel="noopener">smr-store.store</a>
     <div class="collab-credit heb">אוצרות: <a href="curators/korin-avraham/">קורין אברהם</a></div>
   </div>
-  <div class="collab-strip">
+  <a class="collab-strip" href="sponsors/ma-ren/" aria-label="העבודות של ma ren — לעמוד הקולאב">
     <span class="collab-thumb"><img src="images/homepage/ma-ren/thumb-01.webp" srcset="images/homepage/ma-ren/thumb-01-480w.webp 480w, images/homepage/ma-ren/thumb-01-768w.webp 768w, images/homepage/ma-ren/thumb-01.webp 894w" sizes="(max-width:768px) 101px, 158px" width="894" height="1192" alt="מראת נירוסטה מעוצבת של ma ren על קיר בורדו" loading="lazy" decoding="async"></span>
     <span class="collab-thumb"><img src="images/homepage/ma-ren/thumb-02.webp" srcset="images/homepage/ma-ren/thumb-02-480w.webp 480w, images/homepage/ma-ren/thumb-02-768w.webp 768w, images/homepage/ma-ren/thumb-02.webp 903w" sizes="(max-width:768px) 101px, 158px" width="903" height="1204" alt="שולחן נירוסטה של ma ren בחלון הגלריה" loading="lazy" decoding="async"></span>
     <span class="collab-thumb"><img src="images/homepage/ma-ren/thumb-03.webp" srcset="images/homepage/ma-ren/thumb-03-480w.webp 480w, images/homepage/ma-ren/thumb-03.webp 768w" sizes="(max-width:768px) 101px, 158px" width="768" height="1024" alt="שרפרף נירוסטה גאומטרי של ma ren" loading="lazy" decoding="async"></span>
-  </div>
-  <span class="collab-more">read more</span>
+  </a>
+  <a class="collab-more" href="sponsors/ma-ren/">read more</a>
 </section>
 
 <!-- SUMII × THE ART GALLERY — sponsor teaser (pop up art residency, דיזינגוף) · Figma 1318:316 mobile (⚠️ ה-node שוכתב in-place מעל מקור סקשן soos; desktop = adaptation) · data: homepage.json :: sumii_sponsor · קליקאביליות לעמוד הספונסר: לוגו/כותרת/רצועה/כפתור (בקשת משתמש 2026-08-18) -->
