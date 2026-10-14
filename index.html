@@ -565,6 +565,9 @@ a.soos-line:hover{opacity:.65}
   .soos-teaser{padding:32px 16px}
   .soos-strip{gap:4px}
   .soos-thumb{width:100.25px}
+  /* <340px: 3×100.25+2×4 לא נכנס — האריחים מתכווצים (בלי זה הרצועה גולשת והדף זז הצידה) */
+  .soos-thumb,.sumii-thumb,.collab-thumb{flex:0 1 100.25px;min-width:0}
+  .soos-strip,a.sumii-strip,.collab-strip{max-width:100%}
 }
 
 /* ===== SUMII TEASER (sumii X the art gallery — pop up art residency, דיזינגוף) — Figma 1318:316 מובייל (⚠️ ה-node שוכתב in-place ב-2026-08-18 מעל מקור סקשן soos הישן); דסקטופ = אדפטציה (thumbs 158px/gap 16 כמו soos) · data: homepage.json :: sumii_sponsor ===== */
@@ -577,7 +580,7 @@ a.soos-line:hover{opacity:.65}
 .sumii-logo-link:hover{opacity:.65}
 .sumii-logo{width:87.97px;height:40px;display:block;color:currentColor}
 .sumii-info{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-a.sumii-title{font-family:var(--cop);font-weight:400;font-size:14px;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
+a.sumii-title{font-family:var(--cop);font-weight:400;font-size:14px;line-height:1.2;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 a.sumii-title:hover{opacity:.65}
 .sumii-dates{font-family:var(--cop);font-weight:300;font-size:13px;letter-spacing:.04em;color:var(--ink)}
 a.sumii-site{font-family:var(--cop);font-weight:300;font-size:13px;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
@@ -616,7 +619,7 @@ a.sumii-strip:hover{opacity:.85}
 .collab-chip{display:inline-flex;align-items:center;justify-content:center;padding:4px 8px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:14px;line-height:1.3;letter-spacing:.05em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 a.collab-chip:hover{opacity:.65}
 .collab-info{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
-.collab-title{font-family:var(--cop);font-weight:400;font-size:14px;letter-spacing:.04em;color:var(--ink)}
+.collab-title{font-family:var(--cop);font-weight:400;font-size:14px;line-height:1.2;letter-spacing:.04em;color:var(--ink)}
 .collab-dates{font-family:var(--cop);font-weight:300;font-size:13px;letter-spacing:.04em;color:var(--ink)}
 a.collab-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 a.collab-site:hover{opacity:.65}
@@ -635,6 +638,8 @@ a.collab-more:hover{opacity:.65}
   #designers-popup{padding-bottom:32px}
   .collab-strip{gap:4px}
   .collab-thumb{width:100.25px}
+  /* שם הגלריה: 24px עד שהשורה "erez zielinski rozen" (~12.75em) לא נכנסת — מתחת ל-~340 מתכווץ כדי לא להישבר ל-4 שורות */
+  .sumii-gname,.collab-gname{font-size:min(24px, calc((100vw - 32px) / 13))}
 }
 
 /* ===== TRIBE TEASER (loneliness × the tribe) — Figma 250:87 desktop / 363:618 mobile; data: homepage.json :: tribe_teaser ===== */
@@ -938,6 +943,14 @@ a.collab-more:hover{opacity:.65}
   .berlin-card--soon{grid-template-areas:"img txt"}
   .berlin-card--soon .baddr{display:none}
   .berlin-card--soon .coming{font-size:15px}
+}
+@media (max-width:374px){
+  /* מתחת ל-375: 174+16+handle(153) > רוחב התוכן ⇒ עמודות גמישות + שבירת ה-handle (390/375 ללא שינוי) */
+  .berlin-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .berlin-card .img{width:100%;height:auto;aspect-ratio:174/210.91}
+  .berlin-card .bhandle{overflow-wrap:anywhere}
+}
+@media (max-width:768px){
 
   /* X OUR ARTISTS — Figma 228:101 */
   .x-artists{padding:32px 0;gap:40px}

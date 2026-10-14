@@ -172,6 +172,7 @@ hero → `.announce` → `#mobile-cta` (מובייל) / `#opencall` (דסקטו�
   - ⚠️ בתאי הפיגמה יש מתחת לכל תמונה שכבת FIT שארית מסקשן sumii (הפסלים) — מוסתרת ע"י שכבת ה-cover; **לא להשתמש בה**.
 - ⏳ **ממתין:** הצ'יפים = `<span>` עד שדפי האומן של אלודי K ורוני ליאני ייבנו → להפוך ל-`<a class="collab-chip" href="artists/<slug>/">` (כלל-זהב 10). `read more` של MA REN = `<span class="collab-more">` עד שדף התערוכה ייבנה → `<a>`. גם הכותרת/הלוגו יקושרו אז. "instillation" — verbatim מהפיגמה, ממתין לאישור משתמש (אולי "installation").
 - דאטה: `homepage.json :: popup_designers_collab` / `ma_ren_collab`.
+- 🔴 **טלפונים צרים (<375):** כותרות `.collab-title`/`a.sumii-title` עם `line-height:1.2` — ב-Copperplate Regular (400) `normal` קורס ל-~8px ⇒ שורה שנשברת עולה על עצמה. רצועות 3 התמונות (`.collab-strip`/`a.sumii-strip`/`.soos-strip`) `max-width:100%` + אריחים `flex:0 1 100.25px;min-width:0` (3×100.25+8 > 268 ב-300px). שם הגלריה `.collab-gname`/`.sumii-gname` = `min(24px, (100vw − 32px)/13)` (ב-390 נשאר 24). כרטיס ברלין ב-`≤374` — עמודות `minmax(0,1fr)` ×2 + שבירת ה-handle (ה-handle הארוך הרחיב את הדף ל-359px ב-300 ⇒ כל הדף "זז שמאלה"). נבדק 280–1440 בלי גלישה.
 
 ## #sumii
 - טיזר רזידנסי SUMII, **מעל `#soos`** (בקשת משתמש 2026-08-18). Figma `1318:316` מובייל — ⚠️ **שוכתב in-place מעל מקור סקשן soos** (אותו id, זהות חדשה); דסקטופ = אדפטציה.
