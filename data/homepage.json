@@ -421,7 +421,7 @@
   "figma_node_order": "1873:1146"
  },
  "popup_designers_collab": {
-  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then two framed designer chips, then info. No images, no CTA. Chips link to each designer's pop-up page (sponsors/<slug>/) when it exists — roni liani → sponsors/roni-liani/; elodie k still a plain span.",
+  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then two framed designer chips, then info. No images, no CTA. Chips link to each designer's pop-up page (sponsors/<slug>/) when it exists — elodie k → sponsors/elodie-k/, roni liani → sponsors/roni-liani/. No artist pages for the designers (designer decision 2026-10-14).",
   "gname_en": "the art gallery by erez zielinski rozen",
   "designers_en": [
    "elodie k",
@@ -439,7 +439,7 @@
   "figma_node_mobile": "2039:2860",
   "figma_node_desktop": null,
   "designer_routes": [
-   null,
+   "sponsors/elodie-k/",
    "sponsors/roni-liani/"
   ]
  },

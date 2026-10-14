@@ -1,6 +1,6 @@
 # Sponsors — route notes
 
-> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `sponsors/roni-liani/index.html`, `data/sponsors.json`, `images/sponsors/**`.
+> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `sponsors/roni-liani/index.html`, `sponsors/elodie-k/index.html`, `data/sponsors.json`, `images/sponsors/**`.
 > כאן: המצב הנוכחי והכללים הפעילים. היסטוריה: `docs/history/CLAUDE-2026-09-27.md` §4.
 
 ## Pages
@@ -9,6 +9,7 @@
 - `/sponsors/sumii/` → `sponsors/sumii/index.html` · desktop `XhGH...::1637:134` ("sumii - desktop", canonical) · mobile `XhGH...::1318:3480` ("sumii - mobile") · ✅ (2026-08-18; רה-דיזיין 2026-08-23 — מארח גם את הרזידנסי של melani-hekimoglu)
 - `/sponsors/ma-ren/` → `sponsors/ma-ren/index.html` · desktop `XhGH...::2039:1580` ("MA REN - desktop") · mobile `XhGH...::2039:1668` ("MA REN- mobile") · ✅ (2026-10-14)
 - `/sponsors/roni-liani/` → `sponsors/roni-liani/index.html` · desktop `XhGH...::2039:2945` ("RONI LIANI - desktop") · mobile `XhGH...::2039:3129` ("RONI LIANI- mobile") · ✅ (2026-10-14)
+- `/sponsors/elodie-k/` → `sponsors/elodie-k/index.html` · desktop `XhGH...::2039:1240` ("Elodie K - desktop") · mobile `XhGH...::2039:1041` ("Elodie K - mobile") · ✅ (2026-10-14)
 
 ## Shared rules (משפחת `sponsors/`)
 
@@ -381,6 +382,15 @@
 - שתי רצועות: `the curator` (כמו ma-ren) + **`the designer`** (`2064:3860` / `2064:3847`): `designer-thumb.{webp,avif}` 712² (קרופ ריבועי מרכזי מ-`c7b30d37…` 1536×1024; מוצג `object-position:top` כמו בפיגמה). **כרטיס המעצבת לא מקושר** (`<div class="artist-card">`), ואזכורי "רוני ליאני" בגוף לא מקושרים — **הכרעת המעצבת 2026-10-14: בינתיים אין דף אומן לשתי המעצבות של הפופ-אפ (רוני ליאני, אלודי K), רק לאדם לייזנר.** לא לבנות דף ולא "לתקן" לקישור; אם ייבנה בעתיד — `<a>` + קישור האזכורים.
 - הומפייג': הצ'יפ `roni liani` ב-`#designers-popup` מקשר לכאן.
 - OG: `og/sponsors-roni-liani-hero.jpg` 813×427 (קרופ בלי upscale) + `og-dims.json`.
+
+## `/sponsors/elodie-k/`
+
+אלודי חייט, מותג האופנה **ELODIE K**, ב-**HOSTING DESIGNERS POP UP** (גלריית כיכר המדינה, ‏15.10–09.11.2026), אוצרות קורין אברהם. **בסיס = עותק `sponsors/roni-liani/`**, בלי עבודות ובלי שורת אתר.
+
+- לוקאפ: לוגו `elodie-k-logo.svg` (121×20.308, כהה; → האינסטגרם — אין אתר) · X · שם הגלריה. hero: **fill שחור בלי תמונה** (verbatim מהפיגמה — כנראה placeholder; כשתגיע תמונה: `<img class="photo">` + scrim כמו roni-liani) + לוגו לבן `elodie-k-logo-white.svg`.
+- גוף 9 פסקאות. **פתיחה + "על המייסדת" = Light בדסקטופ, Regular במובייל** (`2039:1291` מול `2039:1124`; במובייל גם `HOSTING DESIGNERS POP UP` Regular, `ELODIE K` Light — `.lede .lat:nth-of-type(2)`). השורה האחרונה "אינסטגרם: @elodiekofficial" (בפיגמה `elodiekofficial@` — היפוך bidi) → קישור. אחרי ה-divider רק קרדיט (בלי אתר).
+- רצועות: `the curator` + `the designer` (`2064:3778` / `2064:3810`) — **elodie khayat**; `designer-thumb` 712² = קרופ ריבועי של ה-layer העליון `f18d898e…` (900×1200, y 150). שני ה-fills שמתחתיו (ארז; קורין) = leftovers. כרטיס לא מקושר (אין דף אומן — הכרעת המעצבת).
+- OG: `og/sponsors-elodie-k.jpg` 900×473 (מצילום המעצבת — אין hero); `cover_image` = `designer-thumb.webp` + `og-dims.json`. הומפייג': הצ'יפ `elodie k` מקשר לכאן.
 
 ## Related pages — מקשרים לכאן או מעתיקים מכאן
 

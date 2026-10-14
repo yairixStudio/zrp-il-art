@@ -120,6 +120,14 @@ legacy — מובייל:
 דף אומן מובייל (דסקטופ = אדפטציה של התבנית): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-2222&m=dev
 
+### Sponsors — `/sponsors/elodie-k/` (אלודי חייט / ELODIE K — HOSTING DESIGNERS POP UP, כיכר המדינה; 2026-10-14) ✅ המצב הנוכחי
+
+עמוד Elodie K מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1041&m=dev
+
+עמוד Elodie K דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1240&m=dev
+
 ### Sponsors — `/sponsors/roni-liani/` (רוני ליאני — HOSTING DESIGNERS POP UP, כיכר המדינה; 2026-10-14) ✅ המצב הנוכחי
 
 עמוד רוני ליאני מובייל: Implement this design from Figma.

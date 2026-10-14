@@ -129,6 +129,31 @@
       "figma_logo_node": "2039:3619",
       "founder_artist_slug": null,
       "_figma_note": "2026-10-14: מעצבת התכשיטים רוני ליאני ב-HOSTING DESIGNERS POP UP (גלריית כיכר המדינה, 27.10–30.10.2026; כל הפופ-אפ 15.10–09.11). אין דף אומן — כרטיס THE DESIGNER לא מקושר."
+    },
+    {
+      "id": "elodie-k",
+      "slug": "elodie-k",
+      "name": "Elodie K",
+      "founder_he": "אלודי חייט",
+      "title_lockup": "elodie k X the art gallery by erez zielinski rozen",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "gallery_id": "medina",
+      "curator_slug": "korin-avraham",
+      "date_start": "2026-10-15",
+      "date_end": "2026-11-09",
+      "website": "https://www.instagram.com/elodiekofficial/",
+      "model_credit": null,
+      "route": "sponsors/elodie-k/",
+      "cover_image": "images/sponsors/elodie-k/designer-thumb.webp",
+      "logo": "images/sponsors/elodie-k/elodie-k-logo.svg",
+      "case_exception": [],
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "2039:1240",
+      "figma_node_mobile": "2039:1041",
+      "figma_logo_node": "2039:2213",
+      "founder_artist_slug": null,
+      "_figma_note": "2026-10-14: אלודי חייט (מותג האופנה ELODIE K) ב-HOSTING DESIGNERS POP UP, גלריית כיכר המדינה, 15.10–09.11.2026. ההירו בפיגמה = fill שחור בלי תמונה (verbatim). אין אתר — website = האינסטגרם. אין דף אומן (הכרעת המעצבת)."
     }
   ]
 }
