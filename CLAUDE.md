@@ -121,7 +121,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `/events/<sumii-event>/` | niki-de-saint-phalle-day, sumii-opening, sumii-melani-hosting, yom-kippur-wish-tree, sumii-live-studio | ✅ וריאנט "אירועי רזידנסי SUMII" (כיכר דיזינגוף, בלי תערוכה; בסיס = niki-de-saint-phalle-day) | events |
 | `/events/<talk>/` | natasha-zeriker, liel-salman, nir-giorgio-levin, risa-and-noemi, zohar-ron, alice-debellis, anat-wegier, the-space-between, zohar-ron-medina, noemi-safir, hadas-tuval, livay-levi, michael-konovalenko, bar-cohen, maria-artamonova, jessica-tabarovsky, elsa-ars-brush, baruch-torgeman, nir-giorgio-levin-medina | ✅ משפחת "artist talk" — עמודים סטטיים עצמאיים | events-talks |
 | ~~`/events/amnon-lipkin/`~~ | — | 🗑️ נמחק 2026-08-28 (בקשת משתמש) — **הפריימים עדיין בפיגמה; אל תשחזר** | events-talks |
-| `/sponsors/soos/`, `/sponsors/sumii/`, `/sponsors/ma-ren/` | `sponsors/<slug>/index.html` | ✅ (sumii מארח גם את סקשני הרזידנסי של מלאני הקימוגלו; ma-ren = קולאב WINDOW TAKE OVER, כיכר המדינה) | sponsors |
+| `/sponsors/soos/`, `/sponsors/sumii/`, `/sponsors/ma-ren/`, `/sponsors/roni-liani/` | `sponsors/<slug>/index.html` | ✅ (sumii מארח גם את סקשני הרזידנסי של מלאני הקימוגלו; ma-ren = קולאב WINDOW TAKE OVER; roni-liani = HOSTING DESIGNERS POP UP — שניהם כיכר המדינה) | sponsors |
 | `/contact/`, `/accessibility/`, `/privacy/` | `<dir>/index.html` | ✅ סטטיים (טופס / הצהרה / מדיניות) | — |
 | `404.html` | `404.html` | ✅ (`noindex`) | — |
 

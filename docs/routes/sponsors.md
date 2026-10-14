@@ -1,6 +1,6 @@
 # Sponsors — route notes
 
-> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `data/sponsors.json`, `images/sponsors/**`.
+> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `sponsors/roni-liani/index.html`, `data/sponsors.json`, `images/sponsors/**`.
 > כאן: המצב הנוכחי והכללים הפעילים. היסטוריה: `docs/history/CLAUDE-2026-09-27.md` §4.
 
 ## Pages
@@ -8,6 +8,7 @@
 - `/sponsors/soos/` → `sponsors/soos/index.html` · Figma: **🔴 אין מקור חי** (ה-nodes ההיסטוריים `XhGH...::1318:3287` / `XhGH...::1318:3480` שוכתבו לעיצוב sumii) · ✅ (2026-08-04)
 - `/sponsors/sumii/` → `sponsors/sumii/index.html` · desktop `XhGH...::1637:134` ("sumii - desktop", canonical) · mobile `XhGH...::1318:3480` ("sumii - mobile") · ✅ (2026-08-18; רה-דיזיין 2026-08-23 — מארח גם את הרזידנסי של melani-hekimoglu)
 - `/sponsors/ma-ren/` → `sponsors/ma-ren/index.html` · desktop `XhGH...::2039:1580` ("MA REN - desktop") · mobile `XhGH...::2039:1668` ("MA REN- mobile") · ✅ (2026-10-14)
+- `/sponsors/roni-liani/` → `sponsors/roni-liani/index.html` · desktop `XhGH...::2039:2945` ("RONI LIANI - desktop") · mobile `XhGH...::2039:3129` ("RONI LIANI- mobile") · ✅ (2026-10-14)
 
 ## Shared rules (משפחת `sponsors/`)
 
@@ -367,6 +368,19 @@
 ### דאטה ו-SEO
 - `sponsors.json :: ma-ren` (`gallery_id:"medina"`, `cover_image` = `tempo-mini.webp`). `og/sponsors-ma-ren-hero.jpg` **768×403** (קרופ 1.91:1 בלי upscale — המקור 768 רוחב) + רשומה ב-`og-dims.json`. בלוק SEO הועתק מ-sumii ונערך ידנית.
 - הומפייג' `#ma-ren` מקשר לכאן (לוגו, כותרת, רצועה, read more).
+
+## `/sponsors/roni-liani/`
+
+מעצבת התכשיטים **רוני ליאני** ב-**HOSTING DESIGNERS POP UP** (גלריית כיכר המדינה, ‏27.10–30.10.2026 — חלק מהפופ-אפ 15.10–09.11 שבהומפייג' `#designers-popup`), אוצרות קורין אברהם. **בסיס = עותק `sponsors/ma-ren/`**.
+
+### הבדלים מ-ma-ren
+- לוקאפ בפאנל: **לוגו** (`images/sponsors/roni-liani/roni-liani-logo.svg`, וקטור שחור 113×44, → `https://roniliani.com`) · X · שם הגלריה.
+- hero: `hero.{webp,avif}` 813×1017 (+480/768) + scrim; קבוצה לבנה **ממורכזת** (translate ‎-50%/‎-50%) — שם הגלריה · X · לוגו לבן `roni-liani-logo-white.svg` 191×54; **בלי כותרת**. בפריים המובייל ה-fill התחתון (`e3112f1c…` = הצילום של אדם לייזנר) = leftover.
+- גוף 7 פסקאות, פתיחה Regular; תאריכים `<bdi>` התחלה→סוף (בפיגמה "30.10.2026 - 27.10.2026" — הפוך); `Pieces of Process` ב-`.lat` (UPPERCASE), הנקודה מחוץ לריצה.
+- עבודות: 3 תכשיטים בשורה אחת (LTR: lila · eve · zorah); כרטיס = תמונה → 24 → כותרת Copperplate Regular (15.75 / מובייל 17.5; בפיגמה 18/20 לא עקבי) → 16 (מובייל 8) → תיאור Light 16 **בלי** pre-line ובלי תת-כותרת. לא קליקאביליים.
+- שתי רצועות: `the curator` (כמו ma-ren) + **`the designer`** (`2064:3860` / `2064:3847`): `designer-thumb.{webp,avif}` 712² (קרופ ריבועי מרכזי מ-`c7b30d37…` 1536×1024; מוצג `object-position:top` כמו בפיגמה). ⏳ **כרטיס המעצבת לא מקושר** (`<div class="artist-card">`) — אין דף אומן. ואזכורי "רוני ליאני" בגוף לא מקושרים מאותה סיבה. אם ייבנה דף — `<a>` + קישור האזכורים.
+- הומפייג': הצ'יפ `roni liani` ב-`#designers-popup` מקשר לכאן.
+- OG: `og/sponsors-roni-liani-hero.jpg` 813×427 (קרופ בלי upscale) + `og-dims.json`.
 
 ## Related pages — מקשרים לכאן או מעתיקים מכאן
 

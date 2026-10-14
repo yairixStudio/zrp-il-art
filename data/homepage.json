@@ -421,7 +421,7 @@
   "figma_node_order": "1873:1146"
  },
  "popup_designers_collab": {
-  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then two framed designer chips, then info. No images, no CTA. Chips are plain spans until the designers' artist pages exist — then they become links (artist-linking rule).",
+  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then two framed designer chips, then info. No images, no CTA. Chips link to each designer's pop-up page (sponsors/<slug>/) when it exists — roni liani → sponsors/roni-liani/; elodie k still a plain span.",
   "gname_en": "the art gallery by erez zielinski rozen",
   "designers_en": [
    "elodie k",
@@ -437,7 +437,11 @@
   "curator_slug": "korin-avraham",
   "route": null,
   "figma_node_mobile": "2039:2860",
-  "figma_node_desktop": null
+  "figma_node_desktop": null,
+  "designer_routes": [
+   null,
+   "sponsors/roni-liani/"
+  ]
  },
  "ma_ren_collab": {
   "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). Clickable → sponsors/ma-ren/ (like #sumii): logo, title row, strip, read more; website external. Title: Figma says 'instillation' — corrected to 'installation' (user decision 2026-10-14).",

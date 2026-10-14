@@ -104,6 +104,31 @@
       "figma_logo_node": "2039:2548",
       "founder_artist_slug": "adam-leisner",
       "_figma_note": "2026-10-14: קולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה. בפיגמה 'Instillation' — תוקן ל-installation בהחלטת משתמש. דף האומן: artists/adam-leisner/."
+    },
+    {
+      "id": "roni-liani",
+      "slug": "roni-liani",
+      "name": "Roni Liani",
+      "founder_he": "רוני ליאני",
+      "title_lockup": "roni liani X the art gallery by erez zielinski rozen",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "gallery_id": "medina",
+      "curator_slug": "korin-avraham",
+      "date_start": "2026-10-27",
+      "date_end": "2026-10-30",
+      "website": "https://roniliani.com",
+      "model_credit": null,
+      "route": "sponsors/roni-liani/",
+      "cover_image": "images/sponsors/roni-liani/hero.webp",
+      "logo": "images/sponsors/roni-liani/roni-liani-logo.svg",
+      "case_exception": [],
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "2039:2945",
+      "figma_node_mobile": "2039:3129",
+      "figma_logo_node": "2039:3619",
+      "founder_artist_slug": null,
+      "_figma_note": "2026-10-14: מעצבת התכשיטים רוני ליאני ב-HOSTING DESIGNERS POP UP (גלריית כיכר המדינה, 27.10–30.10.2026; כל הפופ-אפ 15.10–09.11). אין דף אומן — כרטיס THE DESIGNER לא מקושר."
     }
   ]
 }
