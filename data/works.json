@@ -3799,6 +3799,134 @@
         "היצירה מתקיימת במתח שבין השברירי לנצחי, בין הגוף לבין האדמה, בין הנוכחות לבין ההיעלמות. היא מבקשת לשאול מה אנחנו באמת רואים כאשר אנחנו מביטים בעצמנו - את הדמות, את החומר, את הזמן, או את כל מה שנמצא ביניהם.",
         "המראה אינה משקפת רק את האדם.\nהיא מזכירה לו שגם הוא, בסופו של דבר, עשוי מחומר."
       ]
+    },
+    {
+      "id": "adam-leisner-1",
+      "artist_slug": "adam-leisner",
+      "artist_he": "אדם לייזנר | ma ren",
+      "artist_en": "adam leisner",
+      "title_he": null,
+      "title_en": "Portal 120",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "פסל מראה לקיר. שתי יריעות בחיתוך לייזר ריתוך TIG היקפי ניפוח באוויר וגימור ידני.\n\nחומר וגימור: פלדת אל-חלד מלוטשת בגימור מראה.\nמידות: קוטר 120 ס״מ עומק כ5- ס״מ.",
+      "img": "adam-leisner-1",
+      "w": 894,
+      "h": 1192,
+      "widths": [
+        480,
+        768,
+        894
+      ],
+      "artist_page_pos": 1,
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "kind": "collab",
+      "page": true
+    },
+    {
+      "id": "adam-leisner-2",
+      "artist_slug": "adam-leisner",
+      "artist_he": "אדם לייזנר | ma ren",
+      "artist_en": "adam leisner",
+      "title_he": null,
+      "title_en": "Portal 70",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "פסל מראה לקיר. שתי יריעות בחיתוך לייזר ריתוך היקפי ניפוח באוויר וגימור ידני.\n\nחומר וגימור: פלדת אל-חלד מלוטשת בגימור מראה.\nמידות: קוטר 70 ס״מ עומק משתנה עד כ-5 ס״מ.",
+      "img": "adam-leisner-2",
+      "w": 754,
+      "h": 1156,
+      "widths": [
+        480,
+        754
+      ],
+      "artist_page_pos": 2,
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "kind": "collab",
+      "page": true
+    },
+    {
+      "id": "adam-leisner-3",
+      "artist_slug": "adam-leisner",
+      "artist_he": "אדם לייזנר | ma ren",
+      "artist_en": "adam leisner",
+      "title_he": null,
+      "title_en": "Tempo Tall",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "עמוד תצוגה פיסולי. גוף חלול ומרותך חיתוך לייזר השחזה והברשה ידנית.\n\nחומר וגימור: פלדת אל-חלד 304 בעובי 2 מ״מ גימור מט מוברש.\nמידות: גובה 90 ס״מ צלע משולש 35 ס״מ מותן 7 ס״מ.",
+      "img": "adam-leisner-3",
+      "w": 894,
+      "h": 1192,
+      "widths": [
+        480,
+        768,
+        894
+      ],
+      "artist_page_pos": 3,
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "kind": "collab",
+      "page": true
+    },
+    {
+      "id": "adam-leisner-4",
+      "artist_slug": "adam-leisner",
+      "artist_he": "אדם לייזנר | ma ren",
+      "artist_en": "adam leisner",
+      "title_he": null,
+      "title_en": "Tempo Mini",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "שולחן צד פיסולי. גוף חלול ומרותך חיתוך לייזר וגימור ידני.\n\nחומר וגימור: פלדת אל-חלד 304 בעובי\n2 מ״מ גימור מט מוברש.\nמידות: גובה 40 ס״מ משטח משולש בצלע 25 ס״מ מותן 5 ס״מ.",
+      "img": "adam-leisner-4",
+      "w": 768,
+      "h": 1024,
+      "widths": [
+        480,
+        768
+      ],
+      "artist_page_pos": 4,
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "kind": "collab",
+      "page": true
+    },
+    {
+      "id": "adam-leisner-5",
+      "artist_slug": "adam-leisner",
+      "artist_he": "אדם לייזנר | ma ren",
+      "artist_en": "adam leisner",
+      "title_he": null,
+      "title_en": "Inflated Legs Table",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "שולחן עגול עם רגליים מנופחות. פלדת אל-חלד בעובי 1 מ״מ.\n\nחומר הטופ: פלדת אל-חלד בגימור מראה. חומר הרגליים: פלדת אל-חלד בעובי 1 מ״מ.\nמידות: קוטר הטופ 60 ס״מ גובה 55 ס״מ.",
+      "img": "adam-leisner-5",
+      "w": 903,
+      "h": 1204,
+      "widths": [
+        480,
+        768,
+        903
+      ],
+      "artist_page_pos": 5,
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "kind": "collab",
+      "page": true
     }
   ],
   "exhibition_statements": [
@@ -4388,6 +4516,17 @@
         "מלאני תעבוד במקום על יצירה חדשה ותשתמש בזמן ובחלל למחקר, ניסוי ופיתוח רעיונות דרך טקסטורה, צורה, חומר ותנועה.",
         "העבודה תתרחש ותתפתח בגלריה בזמן אמת, ללא תוצאה שנקבעה מראש. גם הקהל יהפוך לחלק מהתהליך: המבקרים יוכלו להיכנס, לפגוש את מלאני בזמן העבודה, להתבונן, לשוחח ולהגיב, כשהמפגשים עצמם עשויים להשפיע על הדרך שבה העבודה מתפתחת.",
         "שבוע שבו הגלריה אינה רק המקום שבו מציגים אמנות, אלא המקום שבו היא נוצרת."
+      ]
+    },
+    {
+      "artist_slug": "adam-leisner",
+      "exhibition_title_he": "WINDOW TAKE OVER (INSTALLATION)",
+      "exhibition_slug": null,
+      "exhibition_route": "sponsors/ma-ren",
+      "statement_he": [
+        "הקולאב מציג מבחר מעבודות MA REN של אדם לייזנר, המפתח שפת יצירה בפלדת אל-חלד דרך גיאומטריה, תהליך ואור.",
+        "העבודה מחברת בין החשיבה המבנית של הבאוהאוס, הסדר הנורדי והאיפוק של הזן והוואבי סאבי. פלטות שטוחות נחתכות, מתחברות, מתנפחות ומלוטשות עד שהן הופכות לאובייקטים המצויים בין רהיט לפסל ומשנים את האופן שבו החלל משתקף ונחווה.",
+        "באוצרות: קורין אברהם"
       ]
     }
   ]

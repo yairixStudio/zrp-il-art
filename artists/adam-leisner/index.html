@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr" data-slug="adam-leisner">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>adam leisner — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../../פונטים/FbEzmel-Regular.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../../components/site-boot.css">
+<meta name="description" content="אדם לייזנר (MA REN) — מהנדס ומעצב, עבודות בפלדת אל-חלד בקולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה, באוצרות קורין אברהם.">
+<link rel="stylesheet" href="../../components/artwork-lightbox.css?v=4">
+<style>
+/* ===== LOCAL FONTS ===== */
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Heavy.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Heavy.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --grey-mid:#808080;
+  --copy-grey:#6B7280;
+  --sep:#EFEFEF;
+  --artist:#828282;
+  --divider:#D8D8D8;
+  --max:1440px;
+  --cop:"Copperplate","Times New Roman",serif;
+  --heb:"FbEzmel","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:visible}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
+
+/* ===== NAV/FOOTER moved to ../../components/site-chrome.css ===== */
+
+/* ===== HERO (artist) ===== */
+.hero{background:var(--bg-grey,#EEF0EF);padding:48px var(--pad-x) 32px;display:flex;justify-content:center}
+.hero-inner{width:100%;max-width:var(--max);display:flex;align-items:stretch;gap:48px;flex-direction:row}
+.hero-text{flex:1;display:flex;flex-direction:column;align-items:flex-end;gap:32px;padding:0 16px;min-width:0}
+.hero-info{display:flex;flex-direction:column;justify-content:center;align-items:flex-end;gap:8px;text-align:right}
+.hero-name{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-end;gap:4px;align-self:stretch;text-align:right}
+.hero-name .first{font-family:var(--cop);font-weight:700;font-size:80px;line-height:1;color:var(--ink);letter-spacing:.02em;text-transform:uppercase;text-align:right;align-self:stretch;width:100%;box-sizing:border-box}
+.hero-name .last{font-family:var(--cop);font-weight:300;font-size:80px;line-height:1;color:var(--ink);letter-spacing:.02em;text-transform:uppercase;text-align:right;align-self:stretch;width:100%;box-sizing:border-box}
+.hero-handle{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:right;align-self:flex-end;padding:0 8px;direction:ltr;cursor:pointer}
+.hero-handle:hover,.hero-handle:focus-visible{text-decoration:underline;text-underline-offset:3px}
+.hero-bio{display:flex;flex-direction:column;gap:16px;align-self:stretch}
+.hero-bio .bio-intro-row{display:flex;flex-direction:row;align-items:stretch;gap:16px}
+.hero-bio .bio-col{flex:1;display:flex;flex-direction:column;gap:16px;min-width:0}
+.hero-bio .intro{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.25;color:var(--ink);direction:rtl;text-align:right}
+.hero-bio .divider{width:1px;background:var(--divider);flex-shrink:0}
+.hero-bio .body{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.25;color:var(--ink);direction:rtl;text-align:right;display:flex;flex-direction:column;gap:12px}
+.hero-bio .body p{margin:0}
+.hero-bio .body .en-line{font-family:var(--cop);font-weight:300;text-transform:uppercase;direction:ltr;unicode-bidi:isolate;text-align:right}
+.hero-bio .lat{font-family:var(--cop);text-transform:uppercase;direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.hero-portrait{width:492px;height:492px;flex-shrink:0;background:#222;overflow:hidden;position:relative;align-self:flex-start}
+.hero-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.hero-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.0) 60%,rgba(0,0,0,.0) 100%);pointer-events:none}
+
+/* dual hero image variant (collab artists) */
+.hero-portrait.dual{display:flex;gap:8px;background:transparent;width:492px;height:492px}
+.hero-portrait.dual .pic{flex:1;height:100%;overflow:hidden;background:#222}
+.hero-portrait.dual .pic img{width:100%;height:100%;object-fit:cover}
+
+/* Collaboration hero (Figma landing mobile 119:3917) — two names + ×, no vertical divider */
+.hero.is-collab .hero-text{gap:16px}
+.hero-collab-meta{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;padding:0 0 8px}
+.hero-collab-block{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%}
+.hero-name.hero-name--collab .first,.hero-name.hero-name--collab .last{font-size:36px;line-height:1;text-align:center}
+.hero-collab-bio{font-family:var(--heb);font-weight:300;font-size:16px;line-height:normal;color:var(--ink);direction:rtl;text-align:center;padding:0 32px;text-transform:none}
+.hero-collab-x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:1;color:var(--ink);text-align:center;margin:0;width:100%}
+
+/* ===== ARTWORKS SECTION ===== */
+.works{padding:48px var(--pad-x);background:var(--white);display:flex;justify-content:center}
+.works-inner{width:100%;max-width:var(--max);display:flex;flex-direction:column;gap:24px}
+.works-head{display:flex;align-items:flex-start;justify-content:flex-start;gap:8px;text-align:left}
+.works-head h2{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);letter-spacing:.02em;text-align:right}
+.works-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:16px;row-gap:64px;direction:rtl}
+.works-grid .work{direction:ltr}.work-statement{grid-column:1/-1;direction:rtl;text-align:right;font-family:var(--heb);color:var(--ink);margin-bottom:-40px}.ws-rule{display:block;width:72px;height:1px;background:#EFEFEF;margin:0 0 16px auto}.ws-head{font-size:16px;letter-spacing:.02em;margin:0 0 8px;line-height:1.3}.ws-head .lat{font-family:var(--cop)}.ws-body{font-size:16px;line-height:1.7}.ws-body p{margin:0 0 .7em}.ws-body p:last-child{margin-bottom:0}
+.work{display:flex;flex-direction:column;align-items:stretch;min-width:0;gap:16px;height:100%}
+/* Artwork frame: full image visible (no crop), width fills cell; fixed 690/1044 frame, contain + #FAFAFA letterboxing for wide/short images */
+.work .img{
+  position:relative;width:100%;aspect-ratio:690/1044;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;background:#FAFAFA;cursor:zoom-in;
+}
+.work .img picture{display:flex;width:100%;height:100%;align-items:center;justify-content:center;line-height:0}
+.work .img img{width:100%;height:100%;object-fit:contain;object-position:center}
+.work .img::after{content:"";position:absolute;inset:0;background:rgba(27,27,27,0);transition:background .3s;pointer-events:none}
+.work:hover .img::after{background:rgba(27,27,27,.06)}
+/* per-image caption (below each artwork) */
+/* per-image meta (below each artwork) — matches /works/ card: artist · title · details · sold · gallery */
+.work-meta{display:flex;flex-direction:column;align-items:flex-end;gap:4px;text-align:right;width:100%;flex:1}
+.work-meta .artist{font-family:var(--heb);font-weight:400;font-size:20px;color:var(--ink);line-height:1.25;direction:rtl}
+.work-meta .artist.is-en{font-family:var(--cop);font-weight:700;text-transform:uppercase;letter-spacing:.03em;direction:ltr}
+.work-meta .artist a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
+.work-meta .artist + .title{margin-top:-2px}
+.work-meta .title{font-size:16px;color:var(--ink);line-height:1.3;font-weight:400}
+.work-meta .title.is-he{font-family:var(--heb);direction:rtl;text-transform:none}
+.work-meta .title.is-en{font-family:var(--cop);font-weight:300;text-transform:uppercase;letter-spacing:.03em;direction:ltr}
+.work-meta .title.is-bi{display:inline-flex;flex-direction:row;direction:rtl;align-items:baseline;justify-content:flex-end;gap:.35em;flex-wrap:wrap;max-width:100%}
+.work-meta .title.is-bi .title-he{font-family:var(--heb);direction:rtl;text-transform:none}
+.work-meta .title.is-bi .title-sep{display:inline-block;width:1.4px;height:.85em;background:var(--ink);opacity:.55;align-self:center;flex-shrink:0;direction:ltr;unicode-bidi:isolate}
+.work-meta .title.is-bi .title-en{font-family:var(--cop);font-weight:300;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
+.work-meta .details{font-family:var(--heb);font-weight:300;font-size:15px;color:var(--grey-mid);line-height:1.2;direction:rtl;max-width:100%;white-space:pre-line}
+.work-meta .lat{font-family:var(--cop);text-transform:uppercase;direction:ltr;unicode-bidi:isolate;letter-spacing:.04em}
+.work-meta .details .lat{font-weight:300;font-size:0.88em;letter-spacing:normal}
+.dim{direction:ltr;unicode-bidi:isolate}
+.work-meta-foot{display:flex;flex-direction:column;align-items:flex-end;gap:6px;margin-top:auto;padding-top:12px;width:100%}
+.work-meta .sold{font-family:var(--heb);font-weight:300;font-size:14px;color:var(--ink);border:1.4px solid var(--ink);padding:2px 10px;line-height:1.25;align-self:flex-end}
+.work-meta .gallery{font-family:var(--cop);font-weight:700;font-size:10px;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;direction:ltr;align-self:flex-end;transition:opacity .2s}
+.work-meta a.gallery:hover{opacity:.6}
+
+/* single work → right cell (RTL), left cell empty (Figma 490:1092) */
+.works-grid.single{grid-template-columns:repeat(2,1fr)}
+.works-grid.single .work{max-width:none}
+
+/* ===== ARTWORKS GROUPED BY EXHIBITION ===== */
+.ex-groups{display:flex;flex-direction:column;gap:0}
+.ex-group{display:flex;flex-direction:column;gap:28px;padding:8px 0 48px}
+.ex-group:first-child{padding-top:0}
+.ex-group-head{display:flex;flex-direction:column;align-items:flex-end;gap:18px;text-align:right}
+.ex-heading{font-family:var(--heb);font-weight:400;font-size:32px;line-height:1.2;color:var(--ink);direction:rtl;text-align:right;align-self:stretch;padding-top:.15em}
+.ex-heading a{transition:opacity .2s}
+.ex-heading a:hover,.ex-heading a:focus-visible{opacity:.6;text-decoration:underline;text-underline-offset:4px}
+.ex-heading .lat{font-family:var(--cop);font-weight:400;font-size:0.84em;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
+.ex-statement{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.35;color:var(--ink);direction:rtl;text-align:right;display:flex;flex-direction:column;gap:8px;align-self:flex-end;max-width:1040px}
+.ex-statement p{margin:0}
+.ex-statement .lat{font-family:var(--cop);font-weight:300;font-size:0.88em;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
+.ex-divider{border:0;border-top:1px solid var(--sep);margin:0;width:100%}
+
+/* ===== "PAGE COMING SOON" — for artists with no figma data ===== */
+.placeholder{padding:96px var(--pad-x);text-align:center;background:var(--bg-grey)}
+.placeholder h1{font-family:var(--cop);font-weight:700;font-size:48px;letter-spacing:.04em;margin-bottom:16px}
+.placeholder .sub{font-family:var(--heb);font-weight:300;font-size:18px;color:var(--grey-mid);direction:rtl}
+.placeholder .work-image{max-width:600px;margin:32px auto 0}
+.placeholder .work-image img{width:100%;height:auto;display:block}
+
+/* lightbox styles imported from components/artwork-lightbox.css (see <link> in head) */
+
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100px)
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  /* HERO — stack at tablet (row + long Copperplate surnames clipped off-screen before) */
+  .hero{padding:32px 0 0;background:var(--bg-grey)}
+  .hero-inner{flex-direction:column;align-items:stretch;gap:20px;padding:0 var(--pad-x)}
+  .hero-text{order:2;align-items:center;padding:0;gap:20px;min-width:0;width:100%}
+  .hero-portrait,.hero-portrait.dual{
+    order:1;
+    width:min(340px,82vw);
+    height:min(340px,82vw);
+    max-width:100%;
+    align-self:center;
+    flex-shrink:0;
+  }
+  .hero-info{width:100%;max-width:560px;margin:0 auto;align-items:center;padding:8px 12px;box-sizing:border-box}
+  .hero-name{align-items:center;text-align:center;align-self:center;width:100%;max-width:100%}
+  .hero-name .first,.hero-name .last{
+    display:block;
+    width:100%;
+    max-width:100%;
+    text-align:center;
+    box-sizing:border-box;
+    overflow-wrap:break-word;
+    word-wrap:break-word;
+    font-size:clamp(32px,5.5vw,44px);
+    line-height:1.05;
+  }
+  .hero-handle{font-size:clamp(16px,3vw,22px);text-align:center;align-self:center}
+  .hero-bio{
+    flex-direction:column;
+    gap:16px;
+    align-items:stretch;
+    background:var(--white);
+    margin:0 calc(-1 * var(--pad-x));
+    padding:20px var(--pad-x) 0;
+  }
+  .hero-bio .bio-intro-row{background:transparent;padding:0;align-items:flex-start}
+  .hero-bio .body{background:transparent}
+  .hero-bio .bio-intro-row .divider{display:block;width:1px;min-height:0;height:auto;align-self:stretch;background:var(--divider)}
+  .hero-bio .intro,.hero-bio .body{font-size:17px}
+  .hero.is-collab .hero-portrait.dual{width:100%;max-width:420px;height:240px}
+  .hero.is-collab .hero-name.hero-name--collab .first,.hero.is-collab .hero-name.hero-name--collab .last{font-size:36px;line-height:1}
+  .hero.is-collab .hero-handle{font-size:16px}
+  .works-grid{row-gap:48px}
+  .ex-heading{font-size:28px}
+  .ex-group{padding-bottom:40px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768px)
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+
+  /* HERO — tighter than ≤1100px stack */
+  .hero{padding:24px 0 0}
+  .hero-inner{gap:16px;padding:0 16px}
+  .hero-text{gap:16px}
+  .hero-portrait,.hero-portrait.dual{width:262px;height:262px}
+  .hero-info{max-width:none;padding:8px 12px}
+  .hero-name .first,.hero-name .last{font-size:36px}
+  .hero-handle{font-size:16px}
+  .hero-bio{margin:0 -16px;padding:16px 16px 0}
+  .hero-bio .intro,.hero-bio .body{font-size:16px}
+  .hero.is-collab .hero-portrait.dual{max-width:358px;height:211px;gap:16px}
+
+  /* WORKS — stay 2-col on mobile (matches /works/) */
+  .works{padding:48px 16px}
+  .works-grid{column-gap:16px;row-gap:40px}
+  .ex-group{gap:20px;padding-bottom:32px}
+  .ex-group-head{gap:14px}
+  .ex-heading{font-size:24px}
+  .ex-statement{font-size:16px;line-height:1.45;gap:8px}
+  .work{gap:12px}
+  .work-meta .artist{font-size:18px}
+  .work-meta .title{font-size:15px}
+  .work-meta .details{font-size:15px}
+  .works-head h2{font-size:20px}
+
+  /* LIGHTBOX */
+
+  /* placeholder */
+  .placeholder{padding:48px 16px}
+  .placeholder h1{font-size:32px}
+}
+
+/* ============================================================
+   SMALL MOBILE (≤400px)
+   ============================================================ */
+@media (max-width:400px){
+  .works-grid{column-gap:12px}
+  .hero-name .first,.hero-name .last{font-size:32px}
+  .hero-portrait,.hero-portrait.dual{width:240px;height:240px}
+  .hero.is-collab .hero-portrait.dual{width:100%;max-width:358px;height:200px}
+}
+
+/* Artist page: white nav from tablet up; wide collab hero only true desktop (>1100) */
+@media (min-width:769px){
+  body .nav{background:var(--white)}
+}
+@media (min-width:1101px){
+  .hero.is-collab .hero-portrait.dual{width:492px;height:492px;max-width:none;gap:8px}
+  .hero.is-collab .hero-name.hero-name--collab .first,.hero.is-collab .hero-name.hero-name--collab .last{font-size:60px;line-height:1}
+  .hero.is-collab .hero-collab-x{font-size:48px}
+  .hero.is-collab .hero-collab-bio{font-size:18px;line-height:1.35;padding:0 32px}
+  .hero.is-collab .hero-handle{font-size:20px}
+}
+
+/* ===== adam leisner (ma ren) — page-local, base = artists/shira-turbowicz (studio_en + curator strip + NAME_LINKS); Figma 2039:2222 mobile ===== */
+/* studio artist: full name stays on ONE line (.first); studio name (.last) below — same as tali-zelnik.
+   Desktop: "SHIRA TURBOWICZ" nowrap at the template's 80px (~742px) overflows the 676px text column
+   next to the 492px portrait → 64px (the site-wide 80→64 optical calibration for Copperplate). */
+.hero-name .first{white-space:nowrap}
+.hero-name .last{white-space:normal}
+@media (min-width:1101px){
+  .hero-name .first,.hero-name .last{font-size:64px}
+}
+/* all-Latin group heading ("POP UP ART RESIDENCY"): no Hebrew to balance against — calibrated to Figma (28px→22px mobile) */
+.ex-heading .lat{font-size:.93em}
+/* artist credit "שירה טורבוביץ | sumii": Latin run in Copperplate, optically matched (conventions §5.2) */
+.work-meta .artist .lat{font-size:.86em;font-weight:400}
+/* statement: curator / founder mentions are links (docs/artist-linking.md) */
+.ex-statement a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+.ex-statement a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
+/* THE CURATOR — artists-strip pattern (event pages / sponsors/sumii), single card → curator page (Figma 1609:5935) */
+.curator-strip{padding:0 var(--pad-x) 48px;display:flex;justify-content:center;background:var(--white)}
+.curator-strip .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
+.curator-strip .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
+.curator-strip .strip{display:flex;flex-direction:row;gap:6px}
+.curator-strip .strip>a.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
+.curator-strip .strip .img{width:178px;height:148px;overflow:hidden;background:#f3f1ee}
+.curator-strip .strip .img picture{display:contents}
+.curator-strip .strip .img img{width:100%;height:100%;object-fit:cover;transition:filter .25s}
+.curator-strip .strip .name{font-family:var(--cop);font-weight:300;font-size:18px;line-height:18px;color:var(--artist);text-align:center;letter-spacing:.04em}
+a.artist-card:hover .img img{filter:brightness(.92)}
+a.artist-card:hover .name{color:var(--ink)}
+@media (max-width:768px){
+  /* "SHIRA TURBOWICZ" nowrap at 36px = 334px of 358 (our Copperplate runs ~28% wider than Figma's) → 32px ≈ the ~300px the frame shows */
+  .hero-name .first,.hero-name .last{font-size:32px}
+  .curator-strip{padding:0 16px 32px}
+  .curator-strip .label{font-size:20px}
+  .curator-strip .strip>a.artist-card{flex:0 0 112px}
+  .curator-strip .strip .img{width:96px;height:80px}
+  .curator-strip .strip .name{font-size:13px;line-height:16px}
+}
+@media (max-width:400px){
+  .hero-name .first,.hero-name .last{font-size:29px}
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/artists/adam-leisner/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="adam leisner — Zielinski &amp; Rozen">
+<meta property="og:description" content="אדם לייזנר (MA REN) — מהנדס ומעצב, עבודות בפלדת אל-חלד בקולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה, באוצרות קורין אברהם.">
+<meta property="og:url" content="https://art.zrp.co.il/artists/adam-leisner/">
+<meta property="og:image" content="https://art.zrp.co.il/og/artists-adam-leisner-portrait.jpg">
+<meta property="og:image:width" content="529">
+<meta property="og:image:height" content="529">
+<meta property="og:image:alt" content="adam leisner — Zielinski &amp; Rozen">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="adam leisner — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="אדם לייזנר (MA REN) — מהנדס ומעצב, עבודות בפלדת אל-חלד בקולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה, באוצרות קורין אברהם.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/artists-adam-leisner-portrait.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://art.zrp.co.il/artists/adam-leisner/#webpage","url":"https://art.zrp.co.il/artists/adam-leisner/","name":"adam leisner — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"mainEntity":{"@id":"https://art.zrp.co.il/artists/adam-leisner/#person"}},{"@type":"Person","name":"adam leisner","alternateName":"אדם לייזנר","url":"https://art.zrp.co.il/artists/adam-leisner/","image":"https://art.zrp.co.il/images/artists/adam-leisner/portrait.webp","jobTitle":"Designer","memberOf":{"@id":"https://art.zrp.co.il/#org"},"description":"אדם לייזנר (MA REN) — מהנדס ומעצב, עבודות בפלדת אל-חלד בקולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה, באוצרות קורין אברהם.","sameAs":["https://www.instagram.com/ma_ren_tlv/"],"@id":"https://art.zrp.co.il/artists/adam-leisner/#person"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artists","item":"https://art.zrp.co.il/artists/"},{"@type":"ListItem","position":2,"name":"adam leisner","item":"https://art.zrp.co.il/artists/adam-leisner/"}]}]}</script>
+<!-- SEO:auto:end -->
+</head>
+<body class="is-loading-data">
+
+<!-- NAV -->
+<site-header></site-header>
+
+<!-- MAIN CONTENT (rendered by JS from artists.json) -->
+<main id="artist-root">
+  <section class="placeholder" id="loading-state">
+    <h1>loading…</h1>
+    <p class="sub" dir="rtl">טוען נתוני אומן</p>
+  </section>
+</main>
+
+<!-- LIGHTBOX (artwork zoom) -->
+<!-- Artwork Lightbox component (shared) — see CLAUDE.md §15 -->
+
+<!-- FOOTER -->
+<site-footer></site-footer>
+
+<script src="../../data/generated/artists.js"></script>
+<script src="../../data/generated/art-works.js"></script>
+<script src="../../data/generated/ex-statements.js"></script>
+<script src="../../data/generated/ex-order.js"></script>
+<script>
+/* ============================================================
+   Artist page — pulls slug from URL ?slug=… and renders from
+   data/artists.json. RTL Hebrew, lightbox on artwork click.
+   ============================================================ */
+(function(){
+  function getSlug(){
+    var d=document.documentElement.dataset.slug; if(d)return d;
+    var p=new URLSearchParams(location.search).get("slug");
+    if(p)return p;
+    /* fallback: derive from filename if hosted as /alon.html */
+    var m=location.pathname.match(/\/([^/]+?)\.html$/);
+    if(m && m[1]!=="artist")return m[1];
+    return null;
+  }
+  function escapeHtml(s){
+    if(s==null)return "";
+    return String(s)
+      .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+  }
+  /* @handle from JSON → link to instagram.com/<username>/ */
+  function heroHandleLink(handle){
+    if(handle==null||handle==="")return "";
+    var display=String(handle).trim();
+    var user=display.replace(/^@+/,"").trim();
+    if(!user)return "";
+    var href="https://www.instagram.com/"+encodeURIComponent(user)+"/";
+    return '<a class="hero-handle" href="'+escapeHtml(href)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(display)+'</a>';
+  }
+  /* Hebrew letters proper (alef-tav + finals); excludes punctuation like ״ ׳.
+     Use for routing JSON-driven text into the right font + direction. */
+  var HEB_LETTERS=/[א-ת]/;
+  function langClass(s){ return HEB_LETTERS.test(s||"") ? "is-he" : "is-en"; }
+  var LATIN_RUN=/["'“«(]*[A-Za-zÀ-ÖØ-öø-ÿ]{2}[A-Za-zÀ-ÖØ-öø-ÿ0-9@&'’._?!:,;()/"\u00a0 -]*[A-Za-zÀ-ÖØ-öø-ÿ0-9?!).]|[A-Za-zÀ-ÖØ-öø-ÿ]{2,}/g;
+  function restoreLatSpans(s){
+    if(!s) return "";
+    return escapeHtml(s).replace(
+      /&lt;span class=&quot;lat&quot;&gt;([\s\S]*?)&lt;\/span&gt;/g,
+      '<span class="lat">$1</span>'
+    );
+  }
+  function wrapLatinRuns(html){
+    return String(html).split(/(<span class="lat">[\s\S]*?<\/span>)/g).map(function(part){
+      if(/^<span class="lat">/.test(part)) return part;
+      var entities=[];
+      var safePart=part.replace(/&(?:[a-zA-Z]+|#\d+|#x[0-9A-Fa-f]+);/g,function(entity){
+        var token="\x00"+entities.length+"\x00";
+        entities.push(entity);
+        return token;
+      });
+      return safePart.replace(LATIN_RUN,function(match){
+        return '<span class="lat">'+match+'</span>';
+      }).replace(/\x00(\d+)\x00/g,function(_,idx){return entities[Number(idx)];})
+        .replace(/\d+(?:[.,]\d+)?(?:\s*[xX×]\s*\d+(?:[.,]\d+)?)+/g,function(m){return '<span class="dim">'+m+'</span>';});
+    }).join("");
+  }
+  /* JSON text can be Hebrew, English, or mixed. Preserve approved inline spans,
+     and auto-route bare Latin fragments to Copperplate. */
+  // shira-turbowicz: a sentence-final period swallowed into a Latin run ("LVMH.") renders on the
+  // wrong side inside the LTR isolate — move it out so it trails the run in the Hebrew sentence.
+  function mixedHtml(s){ return wrapLatinRuns(restoreLatSpans(s)).replace(/([A-Za-z0-9])\.<\/span>(?=\s|$)/g,'$1</span>.'); }
+  /* Bio intro "name line": wrap a "(Latin name)" group — parentheses INCLUDED — as one
+     isolated LTR island, so RTL bidi can't orphan/mirror the parens around the name.
+     (Figma intro: "ענת ויז׳ייה (ANAT WÉGIER), 43, תל אביב") */
+  function introHtml(s){
+    if(!s) return "";
+    /* Parenthetical handling in RTL:
+       - purely-Latin "(Samy D)" -> isolate the whole group (parens included) LTR.
+       - mixed "(המותג AKRA)" -> keep BOTH parens in the RTL flow and isolate ONLY the
+         Latin word, so the parens hug correctly and the Hebrew stays Hebrew. (Wrapping
+         "AKRA)" together would split the paren pair across bidi contexts -> "(המותג (akra".) */
+    var pre=String(s).replace(/\(([^()]*[A-Za-zÀ-ÖØ-öø-ÿ][^()]*)\)/g,function(m,inner){
+      if(/[\u0590-\u05FF]/.test(inner)){
+        var w=inner.replace(/[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ0-9'’.&-]*/g,function(lat){return '<span class="lat">'+lat+'</span>';});
+        return '('+w+')';
+      }
+      return '<span class="lat">('+inner+')</span>';
+    });
+    return mixedHtml(pre);
+  }
+  /* English-only titles: Hebrew gershayim (\u05f4) break bidi next to apostrophes. */
+  function normalizeLtrTitle(s){
+    if(!s||/[א-ת]/.test(s))return s;
+    return String(s)
+      .replace(/^\s*[\u05F4\u201C\u201D"]+/,'"')
+      .replace(/[\u05F4\u201C\u201D"]+\s*$/,'"')
+      .replace(/\u05F3/g,"'");
+  }
+  function titleHtml(s){ return mixedHtml(normalizeLtrTitle(s)); }
+  /* Figma landing::235:348 — title "EN — HE" → stacked EN lines, sep, stacked HE lines */
+  function worksSharedTitleBlock(titleStr){
+    if(!titleStr)return"";
+    var parts=String(titleStr).split(/\s+[\u2014\u2013]\s+/);
+    if(parts.length!==2){
+      return '<div class="title '+langClass(titleStr)+'">'+titleHtml(titleStr)+'</div>';
+    }
+    var en=parts[0].trim();
+    var he=parts[1].trim();
+    if(!HEB_LETTERS.test(he)){
+      return '<div class="title '+langClass(titleStr)+'">'+titleHtml(titleStr)+'</div>';
+    }
+    if(!/[A-Za-z]/.test(en)){
+      return '<div class="title '+langClass(titleStr)+'">'+titleHtml(titleStr)+'</div>';
+    }
+    var enLines="";
+    var enFor=en.match(/^([\s\S]*?)(\s+FOR\s+)([\s\S]+)$/i);
+    if(enFor){
+      enLines=
+        '<div class="works-shared-en-line">'+titleHtml(enFor[1].trim()+" FOR")+'</div>'+
+        '<div class="works-shared-en-line">'+titleHtml(enFor[3].trim())+'</div>';
+    }else{
+      enLines='<div class="works-shared-en-line">'+titleHtml(en)+'</div>';
+    }
+    var heLines="";
+    var lx=he.indexOf(" לעולמות");
+    if(lx>0){
+      heLines=
+        '<div class="works-shared-he-line">'+titleHtml(he.slice(0,lx).trim())+'</div>'+
+        '<div class="works-shared-he-line">'+titleHtml(he.slice(lx).trim())+'</div>';
+    }else{
+      heLines='<div class="works-shared-he-line">'+titleHtml(he)+'</div>';
+    }
+    return (
+      '<div class="works-shared-duo">'+
+        '<div class="works-shared-en">'+enLines+'</div>'+
+        '<div class="works-shared-sep" aria-hidden="true">-</div>'+
+        '<div class="works-shared-he">'+heLines+'</div>'+
+      '</div>'
+    );
+  }
+  function bioParagraphs(text){
+    if(!text)return "";
+    var HEB=/[֐-׿יִ-ﭏ]/;
+    function isAllEnglish(line){return line.trim().length>0&&!HEB.test(line);}
+    return text.split(/\n\s*\n/).map(function(para){
+      var lines=para.split(/\n/);
+      var out="",buf=[];
+      function flush(){if(buf.length){out+="<p>"+buf.join("<br>")+"</p>";buf=[];}}
+      lines.forEach(function(line){
+        if(isAllEnglish(line)){flush();out+='<div class="en-line">'+mixedHtml(line)+'</div>';}
+        else{buf.push(mixedHtml(line));}
+      });
+      flush();
+      return out;
+    }).join("");
+  }
+
+  function renderArtist(a){
+    var root=document.getElementById("artist-root");
+    document.title=(a.name_en?a.name_en:a.slug)+" — Zielinski & Rozen";
+
+    /* if artist has no figma page (no bio + no works), show placeholder */
+    if(!a.bio_he && (!a.works||a.works.length===0)){
+      var heroImg=a.work_image||a.portrait||"";
+      root.innerHTML=
+        '<section class="placeholder">'+
+          '<h1>'+escapeHtml(a.name_en||a.slug)+'</h1>'+
+          (a.name_he?'<p class="sub" dir="rtl">'+escapeHtml(a.name_he)+'</p>':"")+
+          '<p class="sub" style="margin-top:12px" dir="rtl">דף האומן בהכנה</p>'+
+          (heroImg?'<div class="work-image"><img src="../../'+escapeHtml(heroImg)+'" alt="'+escapeHtml(a.name_he||a.name_en)+'" decoding="async" fetchpriority="high"></div>':"")+
+        '</section>';
+      return;
+    }
+
+    /* Hero */
+    var heroHTML="";
+    function heroNameParts(nameEn){
+      /* artist with a studio/brand: full name stays on ONE line (.first), studio name
+         goes on the line below (.last) — Figma 1608:5754/5755 ("Shira Turbowicz" / "sumii") */
+      if(a.studio_en){
+        return {first:String(nameEn||"").trim(),last:String(a.studio_en).trim()};
+      }
+      var s=String(nameEn||"").trim();
+      var parts=s.split(/\s+/);
+      if(parts.length>=2&&parts[parts.length-1].replace(/[^A-Za-z0-9]/g,'').length===1){
+        return {first:s,last:""};
+      }
+      var first=parts.shift()||"";
+      return {first:first,last:parts.join(" ")};
+    }
+    var heroNp=heroNameParts(a.name_en);
+    var first=heroNp.first;
+    var last=heroNp.last;
+
+    /* split bio: first paragraph is "intro", rest is "body" — matches alon-desktop divider layout */
+    var bioBlocks=(a.bio_he||"").split(/\n\s*\n/);
+    var intro=bioBlocks.shift()||"";
+    var body=bioBlocks.join("\n\n");
+    var hasIntro=intro && body;
+
+    /* Per-artist focal points — override with a.portrait_focus from JSON, or use lookup table.
+       Values are CSS object-position (x y). Face is always the target. */
+    var FOCAL_POINTS={
+      'zohar-ron': '50% 42%',
+      'eitan-goldson': '50% 18%',
+      'tanya-shin': '50% 30%',
+      'nir-giorgio-levin': '50% 32%',
+      'elsa-ars-brush': '50% 38%',
+      'gal-polk': '50% 20%',
+      'zohar-shtrit': '50% 25%',
+      'hila-loterstein': '50% 28%',
+      'sami-david': '50% 25%',
+      'risa-oz': '50% 35%',
+      'zohar-ron-dan-ben-ari': '50% 35%',
+      'adi-duak': 'center center',
+      'alon': '58% 40%',
+      'noemi-safir': '50% 18%',
+      'yarden-amir': '50% 38%',
+      'anat-wegier': '50% 32%',
+      'liel-salman': '50% 32%',
+      'tal-nehoray': '50% 32%',
+      'holy-kadosh': '50% 30%',
+      'costa-magarakis': '58% 35%',
+      'maya-nachum-levy': '50% 25%',
+      'la-raz-porta': '50% 50%'
+    };
+    var focus=a.portrait_focus||FOCAL_POINTS[a.slug]||'center 25%';
+    var focusStyle=' style="object-position:'+focus+'"';
+
+    var portraitHTML="";
+    if(a.hero_images && a.hero_images.length>=2){
+      var f0=(a.hero_image_focus&&a.hero_image_focus[0])||"";
+      var f1=(a.hero_image_focus&&a.hero_image_focus[1])||"";
+      var s0=f0?' style="object-position:'+f0+'"':"";
+      var s1=f1?' style="object-position:'+f1+'"':"";
+      var img0Attrs=' decoding="async" fetchpriority="high"';
+      var img1Attrs=' decoding="async" loading="lazy"';
+      portraitHTML=
+        '<div class="hero-portrait dual">'+
+          '<div class="pic"><img src="../../'+escapeHtml(a.hero_images[0])+'" alt="'+escapeHtml(a.name_he||a.name_en||'')+'"'+s0+img0Attrs+'></div>'+
+          '<div class="pic"><img src="../../'+escapeHtml(a.hero_images[1])+'" alt="'+escapeHtml(a.name_he||a.name_en||'')+'"'+s1+img1Attrs+'></div>'+
+        '</div>';
+    } else if(a.portrait){
+      portraitHTML=
+        '<div class="hero-portrait">'+
+          '<img src="../../'+escapeHtml(a.portrait)+'" alt="'+escapeHtml(a.name_en||a.slug)+'"'+focusStyle+' decoding="async" fetchpriority="high">'+
+        '</div>';
+    }
+
+    function collabNameParts(art){
+      var nl=art.name_en;
+      if(Array.isArray(nl)){
+        return {first:nl[0]||"",last:nl.slice(1).join(" ")};
+      }
+      var parts=String(nl||"").split(/\s+/);
+      return {first:parts[0]||"",last:parts.slice(1).join(" ")};
+    }
+    function collabBlock(art){
+      var np=collabNameParts(art);
+      return ''+
+        '<div class="hero-collab-block">'+
+          '<div class="hero-name hero-name--collab">'+
+            '<span class="first">'+escapeHtml(np.first)+'</span>'+
+            (np.last?'<span class="last">'+escapeHtml(np.last)+'</span>':"")+
+          '</div>'+
+          (art.bio_he_short?'<div class="hero-collab-bio">'+mixedHtml(art.bio_he_short).replace(/\n/g,"<br>")+'</div>':"")+
+          (art.instagram?heroHandleLink(art.instagram):"")+
+        '</div>';
+    }
+
+    var bioHTML;
+    var heroHTML;
+    if(a.hero_collab && a.hero_collab.artists && a.hero_collab.artists.length>=2){
+      var Ac=a.hero_collab.artists;
+      var bioFlat='<div class="hero-bio hero-bio--flat"><div class="body">'+bioParagraphs(a.bio_he||"")+'</div></div>';
+      heroHTML=
+        '<section class="hero is-collab"><div class="hero-inner">'+
+          '<div class="hero-text">'+
+            '<div class="hero-collab-meta">'+
+              collabBlock(Ac[0])+
+              '<p class="hero-collab-x" aria-hidden="true">×</p>'+
+              collabBlock(Ac[1])+
+            '</div>'+
+            bioFlat+
+          '</div>'+
+          portraitHTML+
+        '</div></section>';
+    } else {
+    if(hasIntro){
+      bioHTML=
+        '<div class="hero-bio">'+
+          '<div class="bio-intro-row">'+
+            '<div class="bio-col">'+
+              '<div class="intro">'+introHtml(intro).replace(/\n/g,"<br>")+'</div>'+
+              '<div class="body">'+bioParagraphs(body)+'</div>'+
+            '</div>'+
+            '<div class="divider"></div>'+
+          '</div>'+
+        '</div>';
+    } else if(intro){
+      bioHTML=
+        '<div class="hero-bio">'+
+          '<div class="bio-intro-row">'+
+            '<div class="bio-col">'+
+              '<div class="intro">'+introHtml(intro).replace(/\n/g,"<br>")+'</div>'+
+            '</div>'+
+            '<div class="divider"></div>'+
+          '</div>'+
+        '</div>';
+    } else {
+      bioHTML=
+        '<div class="hero-bio">'+
+          '<div class="bio-intro-row">'+
+            '<div class="bio-col">'+
+              '<div class="body">'+bioParagraphs(a.bio_he||"")+'</div>'+
+            '</div>'+
+            '<div class="divider"></div>'+
+          '</div>'+
+        '</div>';
+    }
+
+    heroHTML=
+      '<section class="hero"><div class="hero-inner">'+
+        '<div class="hero-text">'+
+          '<div class="hero-info">'+
+            '<div class="hero-name">'+
+              '<span class="first">'+escapeHtml(first)+'</span>'+
+              (last?'<span class="last">'+escapeHtml(last)+'</span>':"")+
+            '</div>'+
+            (a.instagram_handle?heroHandleLink(a.instagram_handle):"")+
+          '</div>'+
+          bioHTML+
+        '</div>'+
+        portraitHTML+
+      '</div></section>';
+    }
+
+    /* Works section — card grid matching /works/. Rich cards (artist · title · details ·
+       sold · gallery) come from works.json art_works[] where this artist appears; otherwise
+       the artist's own works[] (artist · title · medium). No fabricated gallery/sold data. */
+    var worksHTML="";
+    var WV2BASE="../../images/works/v2/";
+    var rich=(window.__ART_WORKS_INLINE__||[]).filter(function(w){return w.artist_slug===a.slug || (w.artist_pages && w.artist_pages.indexOf(a.slug)>=0);});
+    /* per-artist Figma order (artist-pages frames) — falls back to array order when null */
+    rich.sort(function(x,y){return (x.artist_page_pos||1e9)-(y.artist_page_pos||1e9);});
+
+    function artistNameSpan(he,en){
+      var nm=he||en||"";
+      /* mixed Hebrew+Latin credit (e.g. "שירה טורבוביץ | sumii") → Latin run in Copperplate (golden rule 4) */
+      var inner=(he&&/[A-Za-z]/.test(he))?mixedHtml(he):escapeHtml(nm);
+      return '<span class="artist '+(he?'is-he':'is-en')+'">'+inner+'</span>';
+    }
+    /* collaborative artwork: two-way linked credit (golden rule: every artist mention is a link) */
+    function artistCreditHtml(w){
+      if(w.collab && w.collab.length){
+        var conn=w.collab_connector_he||"בשיתוף";
+        var inner=w.collab.map(function(c){
+          return '<a href="../../artists/'+escapeHtml(c.slug)+'/">'+escapeHtml(c.name_he||c.name_en||"")+'</a>';
+        }).join(' '+escapeHtml(conn)+' ');
+        return '<span class="artist is-he">'+inner+'</span>';
+      }
+      return artistNameSpan(w.artist_he,w.artist_en);
+    }
+    function biTitle(he,en){
+      if(he&&en){
+        return '<span class="title is-bi">'+
+          '<span class="title-he">'+escapeHtml(he)+'</span>'+
+          '<span class="title-sep" aria-hidden="true"></span>'+
+          '<span class="title-en">'+escapeHtml(en)+'</span>'+
+        '</span>';
+      }
+      if(he) return '<span class="title is-he">'+escapeHtml(he)+'</span>';
+      if(en) return '<span class="title is-en">'+escapeHtml(en)+'</span>';
+      return '';
+    }
+    function v2srcset(w){
+      return (w.widths||[]).map(function(width,i){
+        var last=i===w.widths.length-1;
+        var file=last?(WV2BASE+w.img+".webp"):(WV2BASE+w.img+"-"+width+"w.webp");
+        return file+" "+width+"w";
+      }).join(", ");
+    }
+
+    function buildRichCard(w,globalIdx){
+      var main=WV2BASE+w.img+".webp";
+      var _th=(w.title_he_by_artist&&w.title_he_by_artist[a.slug])||w.title_he;var _dh=(w.details_he_by_artist&&w.details_he_by_artist[a.slug])||w.details_he;var capTitle=(_th&&w.title_en)?(_th+" · "+w.title_en):(_th||w.title_en||"");
+      var alt=(w.artist_he||w.artist_en||"")+(capTitle?" — "+capTitle:"");
+      var loadAttr=globalIdx?'loading="lazy"':'fetchpriority="high"';
+      var img='<img src="'+main+'" srcset="'+v2srcset(w)+'" sizes="(max-width:768px) 46vw, 45vw" width="'+w.w+'" height="'+w.h+'" alt="'+escapeHtml(alt)+'" decoding="async" '+loadAttr+'>';
+      var details=_dh?'<span class="details">'+mixedHtml(_dh).replace(/(\d)([xX])(?=\d)/g,'$1<span class="dim-x">$2</span>')+'</span>':'';
+      var footInner=(w.sold?'<span class="sold">נמכר</span>':'')+
+        (w.gallery_en?'<a class="gallery" href="../../#galleries">'+escapeHtml(w.gallery_en)+'</a>':'');
+      var foot=footInner?('<div class="work-meta-foot">'+footInner+'</div>'):'';
+      return '<article class="work">'+
+          '<div class="img" data-artwork-src="'+main+'"'+(w.id?' data-artwork-page="../../works/'+escapeHtml(w.id)+'/"':'')+' data-artwork-title="'+escapeHtml(capTitle)+'" data-artwork-artist="'+escapeHtml(w.artist_en||"")+'">'+img+'</div>'+
+          '<div class="work-meta">'+
+            artistCreditHtml(w)+
+            biTitle(_th,w.title_en)+
+            details+
+            foot+
+          '</div>'+
+        '</article>';
+    }
+    /* Names that must link out of a JSON statement (docs/artist-linking.md §8: founder → about, curator → curator page) */
+    var NAME_LINKS=[
+      ["קורין אברהם","../../curators/korin-avraham/"],
+      ["ארז זילינסקי רוזן","../../about/"]
+    ];
+    function linkNames(h){
+      NAME_LINKS.forEach(function(p){
+        var esc=escapeHtml(p[0]);
+        h=h.replace(esc,'<a class="artist-link" href="'+p[1]+'">'+esc+'</a>');
+      });
+      return h;
+    }
+    function statementHtml(arr){
+      return (arr||[]).map(function(par){
+        return '<p>'+linkNames(mixedHtml(String(par))).replace(/\n/g,"<br>")+'</p>';
+      }).join("");
+    }
+    function exStatement(slug,title){
+      var L=window.__EX_STATEMENTS_INLINE__||[];
+      for(var i=0;i<L.length;i++){if(L[i].artist_slug===slug&&L[i].exhibition_title_he===title)return L[i].statement_he;}
+      return null;
+    }
+    /* Newest exhibition on top (user decision 2026-08-12). Rank = position in
+       data/exhibitions.json (chronological ascending) -> sorted descending here.
+       Unknown/ungrouped ranks -1 and sinks to the bottom; equal ranks keep the
+       artist_page_pos order, so Figma still decides inside a show. */
+    function exRank(slug){var L=window.__EX_ORDER_INLINE__||[];var i=L.indexOf(slug);return i<0?-1:i;}
+    function buildExGroups(list){
+      var groups=[], byKey={};
+      list.forEach(function(w){
+        var key=w.exhibition_title_he||"__ungrouped__";
+        if(!byKey[key]){byKey[key]={title:w.exhibition_title_he,route:w.exhibition_route,slug:w.exhibition_slug,statement:exStatement(a.slug,w.exhibition_title_he),items:[]};groups.push(byKey[key]);}
+        byKey[key].items.push(w);
+      });
+      groups=groups.map(function(g,i){return {g:g,i:i,r:exRank(g.slug)};})
+        .sort(function(x,y){return (y.r-x.r)||(x.i-y.i);})
+        .map(function(o){return o.g;});
+      var gi=0;
+      return groups.map(function(g){
+        var head="";
+        if(g.title){
+          var hi=mixedHtml(g.title);
+          var hh='<h3 class="ex-heading">'+(g.route?'<a href="../../'+escapeHtml(g.route)+'/">'+hi+'</a>':hi)+'</h3>';
+          var st=g.statement?('<div class="ex-statement">'+statementHtml(g.statement)+'</div>'):'';
+          head='<header class="ex-group-head">'+hh+st+'</header>';
+        }
+        var cards=g.items.map(function(w){if(w.statement_he&&w.statement_he.length){var _wt=(w.title_he||w.title_en||"");var _wh=_wt?'<div class="ws-head">'+mixedHtml(_wt)+'</div>':"";return '<div class="work-statement"><span class="ws-rule"></span>'+_wh+'<div class="ws-body">'+statementHtml(w.statement_he)+'</div></div>'+buildRichCard(w,gi++);}return buildRichCard(w,gi++);}).join("");
+        var single=g.items.length===1?' single':'';
+        return '<section class="ex-group">'+head+'<div class="works-grid'+single+'" data-artwork-gallery>'+cards+'</div></section>';
+      }).join('<hr class="ex-divider">');
+    }
+
+    var cardsHTML="", isSingle=false, hasWorks=false, groupsHTML="";
+
+    if(rich.length){
+      hasWorks=true;
+      if(rich.some(function(w){return w.exhibition_title_he;})){
+        groupsHTML=buildExGroups(rich);
+      } else {
+        isSingle=rich.length===1;
+        cardsHTML=rich.map(function(w,i){return buildRichCard(w,i);}).join("");
+      }
+    } else if(a.works && a.works.length>0){
+      hasWorks=true; isSingle=a.works.length===1;
+      cardsHTML=a.works.map(function(w){
+        var tw=(w.title&&String(w.title).trim())?String(w.title).trim():"";
+        var sub=[w.year,w.medium].filter(Boolean).join(" · ");
+        var titleBlock=tw?('<div class="title '+langClass(tw)+'">'+titleHtml(tw)+'</div>'):'';
+        var details=sub?'<span class="details">'+escapeHtml(sub)+'</span>':'';
+        var label=tw||(a.name_he||a.name_en||"");
+        return '<article class="work">'+
+            '<div class="img" data-artwork-src="../../'+escapeHtml(w.image)+'" data-artwork-title="'+escapeHtml(label)+'" data-artwork-artist="'+escapeHtml(a.name_en||"")+'">'+
+              '<img src="../../'+escapeHtml(w.image)+'" alt="'+escapeHtml(label)+'" loading="lazy" decoding="async">'+
+            '</div>'+
+            '<div class="work-meta">'+
+              artistNameSpan(a.name_he,a.name_en)+
+              titleBlock+
+              details+
+            '</div>'+
+          '</article>';
+      }).join("");
+    }
+
+    if(hasWorks){
+      var worksBody=groupsHTML
+        ? '<div class="ex-groups">'+groupsHTML+'</div>'
+        : '<div class="works-grid'+(isSingle?' single':'')+'" data-artwork-gallery>'+cardsHTML+'</div>';
+      worksHTML=
+        '<section class="works"><div class="works-inner">'+
+          '<div class="works-head"><h2>the artworks</h2></div>'+
+          worksBody+
+        '</div></section>';
+    }
+
+    /* THE CURATOR — rendered when artists.json::curator_slug is set (residency / pop-up shows
+       curated outside a regular exhibition). Thumb = the sumii residency crop of Korin's portrait. */
+    var CURATORS={
+      'korin-avraham':{name:['korin','avraham'],thumb:'images/sponsors/sumii/curator-thumb.webp',w:712,h:561}
+    };
+    var curatorHTML="";
+    if(a.curator_slug && CURATORS[a.curator_slug]){
+      var c=CURATORS[a.curator_slug];
+      curatorHTML=
+        '<section class="curator-strip" aria-label="the curator"><div class="inner">'+
+          '<div class="label">the curator</div>'+
+          '<div class="strip" role="list">'+
+            '<a class="artist-card" role="listitem" href="../../curators/'+escapeHtml(a.curator_slug)+'/" aria-label="'+escapeHtml(c.name.join(" "))+'">'+
+              '<div class="img"><img src="../../'+c.thumb+'" width="'+c.w+'" height="'+c.h+'" alt="'+escapeHtml(c.name.join(" "))+'" loading="lazy" decoding="async"></div>'+
+              '<div class="name">'+c.name.map(escapeHtml).join("<br>")+'</div>'+
+            '</a>'+
+          '</div>'+
+        '</div></section>';
+    }
+    root.innerHTML=heroHTML+worksHTML+curatorHTML;
+
+    /* lightbox: tell the shared component about freshly-injected nodes */
+    if (window.ArtworkLightbox && window.ArtworkLightbox.refreshFocusable){
+      window.ArtworkLightbox.refreshFocusable();
+    }
+    /* upgrade injected <img srcset> to AVIF where a sibling exists (rich works cards) */
+    if (window.PictureUpgrade && window.PictureUpgrade.refresh){
+      window.PictureUpgrade.refresh(root);
+    }
+    document.body.classList.remove('is-loading-data');
+  }
+
+  function renderError(msg){
+    document.getElementById("artist-root").innerHTML=
+      '<section class="placeholder">'+
+        '<h1>artist not found</h1>'+
+        '<p class="sub" dir="rtl">'+escapeHtml(msg||"")+'</p>'+
+        '<p class="sub" style="margin-top:24px"><a href="../../works/" style="text-decoration:underline">←&nbsp;the art works</a></p>'+
+      '</section>';
+    document.body.classList.remove('is-loading-data');
+  }
+
+  var slug=getSlug();
+  if(!slug){renderError("חסר slug בכתובת");return;}
+
+  function findAndRender(list){
+    var a=(list||[]).find(function(x){return x.slug===slug||x.id===slug;});
+    if(!a){renderError("האומן ׳"+slug+"׳ לא נמצא");return;}
+    renderArtist(a);
+  }
+
+  /* INLINE FIRST — works on file:// without a server. */
+  var __AI=window.__ARTISTS_INLINE__;
+  if(__AI && __AI.artists){__AI=__AI.artists;}
+  if(__AI && __AI.length){
+    findAndRender(__AI);
+    return;
+  }
+
+  /* fallback: fetch (HTTP-served only) */
+  fetch("../../data/artists.json")
+    .then(function(r){if(!r.ok)throw new Error("HTTP "+r.status);return r.json();})
+    .then(function(data){findAndRender(data.artists);})
+    .catch(function(err){
+      renderError("שגיאה בטעינת הנתונים: "+err.message+" — נסה להפעיל שרת מקומי או טען מחדש.");
+    });
+})();
+</script>
+
+<!-- Artwork Lightbox component (shared) — see CLAUDE.md §15 -->
+<script src="../../components/artwork-lightbox.js?v=6" defer></script>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../../components/site-chrome.js?v=6" defer></script>
+
+<script src="../../components/analytics.js" defer></script>
+<script src="../../components/picture-upgrade.js" defer></script>
+<script src="../../components/embed-iframe.js" defer></script>
+</body>
+</html>

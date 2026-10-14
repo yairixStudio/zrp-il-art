@@ -115,6 +115,11 @@ legacy — מובייל:
 מובייל (390): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1856-433&m=dev
 
+### Artists — `/artists/adam-leisner/` (אדם לייזנר · MA REN; 2026-10-14) ✅ המצב הנוכחי
+
+דף אומן מובייל (דסקטופ = אדפטציה של התבנית): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-2222&m=dev
+
 ### Sponsors — `/sponsors/ma-ren/` (קולאב MA REN — WINDOW TAKE OVER, כיכר המדינה; 2026-10-14) ✅ המצב הנוכחי
 
 עמוד MA REN מובייל: Implement this design from Figma.

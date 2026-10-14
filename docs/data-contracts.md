@@ -262,7 +262,7 @@
 - `page` (bool; היום `true` בכל 150) — ב-`/works/` כרטיס עם `page:true` = `<a href="<id>/">`. דפי האומן מתעלמים (הכרטיס שם = לייטבוקס).
 - `exhibition_title_he`, `exhibition_slug`, `exhibition_route` — שיוך קבוצה/תערוכה (ראה 9.3). 🔴 **`exhibition_route` של כל יצירות הקולפן = `exhibitions/the-peeler`** (לא `opencalls/…`; עמודי היצירה בונים את הקישור מהשדה, לא hardcode). אחרות: `exhibitions/how-many`, `exhibitions/loneliness`, `sponsors/sumii`.
 - `statement_he[]` — **טקסט על יצירה בודדת (per-work)**, לא טקסט-תערוכה (ראה 9.4).
-- `kind` — `"residency"` = מידע בלבד (יצירות בלי תערוכה; shira-turbowicz, melani-hekimoglu).
+- `kind` — `"residency"` = מידע בלבד (יצירות בלי תערוכה; shira-turbowicz, melani-hekimoglu); `"collab"` = מידע בלבד (קולאב בלי תערוכה, adam-leisner → `sponsors/ma-ren`).
 - `hidden` (אופציונלי, לא בשימוש היום) — `/works/` מסנן (`!w.hidden`) ו-`sync_data.py` מוציא מ-`#g-artworks-data`; **לא מסתיר את עמוד היצירה ולא את דף האומן** (להסתרה אמיתית: `_staging/`, `docs/routes/works.md`). ⚠️ `sync_data.py` לא סורק את `_staging/` — אחרי החזרת דף משם להריץ `python3 tools/sync_data.py` (ו-`--check`) לפני קומיט (§1.2).
 - collab — ראה 9.5.
 - **צרכנים:** `/works/` (`#works-data`), `works/<id>/` (`#artwork-data`), דפי אומן (`art-works.js`), דפי גלריה (`#g-artworks-data`) — כולם generated; `inject.py`; **ועותק ידני:** כרטיסי FIGURES/PRODUCTS ב-`sponsors/sumii/` (8 רשומות, §1.4).

@@ -1144,6 +1144,36 @@
 "w": 1200,
 "h": 630
 },
+"images/artists/adam-leisner/portrait.webp": {
+"jpg": "og/artists-adam-leisner-portrait.jpg",
+"w": 529,
+"h": 529
+},
+"images/works/v2/adam-leisner-1.webp": {
+"jpg": "og/works-v2-adam-leisner-1.jpg",
+"w": 894,
+"h": 1192
+},
+"images/works/v2/adam-leisner-2.webp": {
+"jpg": "og/works-v2-adam-leisner-2.jpg",
+"w": 754,
+"h": 1156
+},
+"images/works/v2/adam-leisner-3.webp": {
+"jpg": "og/works-v2-adam-leisner-3.jpg",
+"w": 894,
+"h": 1192
+},
+"images/works/v2/adam-leisner-4.webp": {
+"jpg": "og/works-v2-adam-leisner-4.jpg",
+"w": 768,
+"h": 1024
+},
+"images/works/v2/adam-leisner-5.webp": {
+"jpg": "og/works-v2-adam-leisner-5.jpg",
+"w": 900,
+"h": 1200
+},
 "images/sponsors/ma-ren/tempo-mini.webp": {
 "jpg": "og/sponsors-ma-ren-hero.jpg",
 "w": 768,

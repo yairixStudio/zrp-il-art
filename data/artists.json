@@ -1053,6 +1053,23 @@
       "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::1634:188",
       "figma_artist_page_desktop": null,
       "homepage_featured": false
+    },
+    {
+      "id": "adam-leisner",
+      "slug": "adam-leisner",
+      "name_en": "adam leisner",
+      "name_he": "אדם לייזנר",
+      "studio_en": "ma ren",
+      "portrait": "images/artists/adam-leisner/portrait.webp",
+      "work_image": null,
+      "instagram_handle": "@ma_ren_tlv",
+      "bio_he": "השם MA REN מחבר בין MA, המושג היפני למרווח, להשהיה ולחלל שבין הדברים, לבין REN, שפירושו בדנית ובנורווגית נקי או טהור; יחד הם מבטאים צורה בהירה ומדויקת שבה החלל חשוב כחומר.\n\nאדם לייזנר, בן 37, הוא מהנדס ומעצב, מייסד ומעצב ראשי של סטודיו MA REN בתל אביב-יפו. במשך כעשור עבד בתעשיות ביטחוניות בתפקידי הנדסה וניהול הנדסי. הניסיון הזה אינו פרק נפרד מן היצירה שלו, אלא אחת התשתיות המרכזיות שלה: היכולת להבין חומר, כוחות, מערכות, מגבלות ייצור ותהליך של פיתוח. לצד הזהות ההנדסית, העיצוב הוא עבורו הלב, הרוח והמרחב שבו ידע טכני הופך ליצירה בעלת עמדה ונוכחות.",
+      "bio_en": null,
+      "works": [],
+      "curator_slug": "korin-avraham",
+      "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::2039:2222",
+      "figma_artist_page_desktop": null,
+      "homepage_featured": false
     }
   ],
   "_pending_artist_pages": [

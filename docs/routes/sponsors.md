@@ -345,7 +345,7 @@
 - צ'יפ "גלריית כיכר המדינה" → `../../galleries/medina/`.
 - לוקאפ: **טקסט** `ma ren` (לא לוגו; Copperplate 16 Figma → 13px, → `https://smr-store.store`) · X ‏20.112 verbatim · שם הגלריה 13px → הומפייג'.
 - גוף 8 פסקאות; **פסקת הפתיחה Regular בשני ה-breakpoints** (`p.lede` + `.lede .lat`). תאריכים ב-`<bdi dir="ltr">` התחלה→סוף (בפיגמה הפוך — לא לשחזר). בפסקה האחרונה `<br class="dbr">` = שבירת הדסקטופ (בפיגמה 2 פסקאות צמודות; במובייל אחת — `.dbr` מוסתר). "—" בפסקת הגמרים לפי הדסקטופ (במובייל "-").
-- קישורים בגוף: "ארז זילינסקי רוזן" (אזכור ראשון) → `about/`. ⏳ **אדם לייזנר — בלי קישור** (אין דף אומן; `sponsors.json :: ma-ren.founder_artist_slug:null`). אם ייבנה דף — לקשר את כל אזכורי השם המלא.
+- קישורים בגוף: "ארז זילינסקי רוזן" (אזכור ראשון) → `about/`; **כל 3 אזכורי "אדם לייזנר"** → `artists/adam-leisner/` (`founder_artist_slug:"adam-leisner"`).
 - אחרי הגוף: divider · `smr-store.store` · קרדיט ("אוצרות:" דסקטופ / "אוצרת התערוכה -" מובייל, כמו sumii).
 
 ### hero
@@ -358,7 +358,7 @@
 - כרטיס: תמונה `aspect-ratio:94/114` cover → 24 → כותרת Copperplate Regular 18→**15.75** (מובייל 20→17.5) → 8 → תת-כותרת FbEzmel Regular 18 (מובייל 16) → 16 (מובייל 8) → תיאור Light 16 `pre-line`.
 - 🔴 **שבירות השורה בתיאורים = verbatim מהפיגמה** (באמצע משפט). לא לאחד.
 - **"70 PORTAL"** בתיאור portal 70 → `PORTAL 70` (היפוך bidi של הפיגמה). **"TALL TEMPO"** בתיאור tempo tall — verbatim (הכותרת "TEMPO TALL"); ממתין להכרעה.
-- כרטיסים **לא קליקאביליים** — אין רשומות ב-`works.json` (עיצוב/מוצר, לא יצירות גלריה).
+- כרטיסים **לא קליקאביליים** (כמו בפיגמה). היצירות קיימות מאז גם ב-`works.json` (`adam-leisner-1..5`, עם עמודי `works/<id>/`) — הטקסטים כאן שונים מ-`details_he` (נוסח עמוד הקולאב), לא לסנכרן.
 - קבצים: `images/sponsors/ma-ren/{portal-120,portal-70,tempo-tall,tempo-mini,inflated-legs-table}` + וריאנטים.
 
 ### the curator

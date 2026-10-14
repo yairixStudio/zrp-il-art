@@ -102,8 +102,8 @@
       "figma_node_desktop": "2039:1580",
       "figma_node_mobile": "2039:1668",
       "figma_logo_node": "2039:2548",
-      "founder_artist_slug": null,
-      "_figma_note": "2026-10-14: קולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה. בפיגמה 'Instillation' — תוקן ל-installation בהחלטת משתמש. אדם לייזנר — אין דף אומן (founder_artist_slug:null)."
+      "founder_artist_slug": "adam-leisner",
+      "_figma_note": "2026-10-14: קולאב WINDOW TAKE OVER (INSTALLATION) בגלריית כיכר המדינה. בפיגמה 'Instillation' — תוקן ל-installation בהחלטת משתמש. דף האומן: artists/adam-leisner/."
     }
   ]
 }
