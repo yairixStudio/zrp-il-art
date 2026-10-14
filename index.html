@@ -604,8 +604,8 @@ a.sumii-strip:hover{opacity:.85}
 
 /* ===== COLLAB TEASERS (#designers-popup — Figma 2039:2860 · #ma-ren — Figma 2039:1449) — מובייל בלבד בפיגמה; דסקטופ = אדפטציה באותו כיול כמו #sumii (gname 30→24, title 18→14, dates 16→13). מעל #sumii, padding-bottom 0 כמו #sumii · data: homepage.json :: popup_designers_collab / ma_ren_collab ===== */
 .collab-teaser{padding:48px var(--pad-x) 0;background:var(--white);display:flex;flex-direction:column;align-items:center;gap:40px;max-width:1440px;margin:0 auto;box-sizing:border-box}
-/* הפופ-אפ בלי תמונות/כפתור — מקבל padding תחתון (Figma py 32) כדי שלא יידבק ללוקאפ של #ma-ren */
-#designers-popup{padding-bottom:48px}
+/* ריווח מקוצר (בקשת משתמש 2026-10-14): הפופ-אפ בלי padding עליון (ה-padding התחתון של #galleries-berlin מספיק) ובלי תחתון — בין הסקשנים = ה-padding העליון של הבא (32/48) */
+#designers-popup{padding-top:0}
 .collab-lockup{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .collab-gname{font-family:var(--cop);font-weight:300;font-size:24px;line-height:1.35;letter-spacing:.05em;color:var(--ink)}
 .collab-x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
@@ -635,7 +635,7 @@ a.collab-site:hover{opacity:.65}
 a.collab-more:hover{opacity:.65}
 @media (max-width:768px){
   .collab-teaser{padding:32px 16px 0}
-  #designers-popup{padding-bottom:32px}
+  #designers-popup{padding-top:0}
   .collab-strip{gap:4px}
   .collab-thumb{width:100.25px}
   /* שם הגלריה: 24px עד שהשורה "erez zielinski rozen" (~12.75em) לא נכנסת — מתחת ל-~340 מתכווץ כדי לא להישבר ל-4 שורות */
@@ -1724,7 +1724,7 @@ porta</div></a>
     </div>
   </div>
   <div class="collab-info">
-    <div class="collab-title">window take over (instillation)</div>
+    <div class="collab-title">window take over (installation)</div>
     <div class="collab-dates">19.10.2026 - 09.11.2026</div>
     <a class="collab-site" href="https://smr-store.store" target="_blank" rel="noopener">smr-store.store</a>
     <div class="collab-credit heb">אוצרות: <a href="curators/korin-avraham/">קורין אברהם</a></div>

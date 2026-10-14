@@ -440,7 +440,7 @@
   "figma_node_desktop": null
  },
  "ma_ren_collab": {
-  "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). 'read more' is a non-link span until the exhibition page exists (route:null). Title verbatim from Figma incl. 'instillation' (pending user confirmation).",
+  "_note": "Section #ma-ren above #sumii (2026-10-14). Mobile = Figma 2039:1449; desktop = adaptation (thumbs 158px/gap 16 like #sumii). Lockup = gallery name / X / MA REN logo (2 Figma SVG assets: wordmark + 'stainless steel atelier' descriptor). Thumbs object-fit:cover (Figma FILL). 'read more' is a non-link span until the exhibition page exists (route:null). Title: Figma says 'instillation' — corrected to 'installation' (user decision 2026-10-14).",
   "partner_en": "ma ren",
   "gname_en": "the art gallery by erez zielinski rozen",
   "x_en": "x",
@@ -448,7 +448,7 @@
    "images/homepage/ma-ren/wordmark.svg",
    "images/homepage/ma-ren/descriptor.svg"
   ],
-  "title_en": "window take over (instillation)",
+  "title_en": "window take over (installation)",
   "dates_en": "19.10.2026 - 09.11.2026",
   "website": "https://smr-store.store",
   "curator_credit_he": "אוצרות: קורין אברהם",
