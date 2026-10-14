@@ -386,8 +386,9 @@
 ## `/sponsors/elodie-k/`
 
 אלודי חייט, מותג האופנה **ELODIE K**, ב-**HOSTING DESIGNERS POP UP** (גלריית כיכר המדינה, ‏15.10–09.11.2026), אוצרות קורין אברהם. **בסיס = עותק `sponsors/roni-liani/`**, בלי עבודות ובלי שורת אתר.
+- 🔴 **ניווט (הכרעת המעצבת 2026-10-14):** לעמודי `roni-liani` ו-`elodie-k` מגיעים **רק** מצ'יפי השמות ב-`#designers-popup` בהומפייג'. לא להוסיף קישורים/כרטיסים אליהם ממקומות אחרים (דף הגלריה, `/press/`, `/events/`, ניווט). (הם כן ב-sitemap וב-`search-index.js` האוטומטי.)
 
-- לוקאפ: לוגו `elodie-k-logo.svg` (121×20.308, כהה; → האינסטגרם — אין אתר) · X · שם הגלריה. hero: **fill שחור בלי תמונה** (verbatim מהפיגמה — כנראה placeholder; כשתגיע תמונה: `<img class="photo">` + scrim כמו roni-liani) + לוגו לבן `elodie-k-logo-white.svg`.
+- לוקאפ: לוגו `elodie-k-logo.svg` (121×20.308, כהה; → האינסטגרם — אין אתר) · X · שם הגלריה. hero: **רקע שחור פשוט, בלי תמונה** — הכרעת המעצבת 2026-10-14 (לא placeholder; לא להוסיף תמונה) + לוגו לבן `elodie-k-logo-white.svg`.
 - גוף 9 פסקאות. **פתיחה + "על המייסדת" = Light בדסקטופ, Regular במובייל** (`2039:1291` מול `2039:1124`; במובייל גם `HOSTING DESIGNERS POP UP` Regular, `ELODIE K` Light — `.lede .lat:nth-of-type(2)`). השורה האחרונה "אינסטגרם: @elodiekofficial" (בפיגמה `elodiekofficial@` — היפוך bidi) → קישור. אחרי ה-divider רק קרדיט (בלי אתר).
 - רצועות: `the curator` + `the designer` (`2064:3778` / `2064:3810`) — **elodie khayat**; `designer-thumb` 712² = קרופ ריבועי של ה-layer העליון `f18d898e…` (900×1200, y 150). שני ה-fills שמתחתיו (ארז; קורין) = leftovers. כרטיס לא מקושר (אין דף אומן — הכרעת המעצבת).
 - OG: `og/sponsors-elodie-k.jpg` 900×473 (מצילום המעצבת — אין hero); `cover_image` = `designer-thumb.webp` + `og-dims.json`. הומפייג': הצ'יפ `elodie k` מקשר לכאן.
