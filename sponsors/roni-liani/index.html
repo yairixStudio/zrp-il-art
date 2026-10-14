@@ -70,6 +70,10 @@ a.chip:hover{opacity:.65}
 .sp-body p+p{margin-top:19.468px}
 /* פסקת הפתיחה = Regular (עברית + ריצות לועזיות) בשני הפריימים (Figma 2039:1618 / 2039:1725) */
 .sp-body p.lede,.sp-body p.lede .lat{font-weight:400}
+/* פסקת הפתיחה: ריצת ה-Copperplate (UPPERCASE — בפיגמה small caps, נמוכה יותר) צופפה את השורות ⇒ ריווח שורות מעט גדול ואחיד (בקשת משתמש 2026-10-14);
+   ה-.lat בלי line-height משלה כדי שלא תזיז את קו הבסיס */
+.sp-body p.lede{line-height:1.3}
+.sp-body p.lede .lat{line-height:1}
 .sp-divider{width:100%;display:flex;justify-content:flex-end;padding:24px 16px 16px}
 .sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
 a.sp-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);transition:opacity .2s}
