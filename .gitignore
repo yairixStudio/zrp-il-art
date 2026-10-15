@@ -41,3 +41,9 @@ _staging/
 scratchpad/
 trash/
 media/
+
+# Documentation — local only, never published to GitHub (owner decision 2026-10-15)
+/docs/
+/CLAUDE.md
+/FIGMA_LINKS.md
+/README.md
