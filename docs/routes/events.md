@@ -222,6 +222,7 @@
 - קישורים: שם הגלריה → הומפייג', לוגו Sumii → `sponsors/sumii/`, "שירה טורבוביץ" → `artists/shira-turbowicz/`, `mailto:info@sumiiworld.com`.
 - JSON-LD `2026-09-02T18:00:00+03:00` → `21:00:00+03:00`, performer שירה טורבוביץ. OG `og/events-sumii-opening-hero.jpg` 1200×1600 — ⚠️ **אין לו רשומה ב-`og-dims.json` ואי אפשר להוסיף** (המפתח = תמונת המקור, ו-`images/sponsors/sumii/hero.webp` כבר ממופה ל-`og/sponsors-sumii-hero.jpg`) ⇒ `inject.py` על הדף יחליף את ה-og:image (`docs/todo.md`).
 - `list-card` = רינדור-node (ראה "תמונות כרטיס").
+- ⚠️ **באג ידוע ב-300px** (`tools/qa/sweep.mjs`, 2026-10-15; קיים ב-HEAD; לא אומת עדיין בצילום מסך): `div.ev-scent` ("scented with … by zielinski rozen") רחב מהמסך והדף נגלל הצידה. רק ב-300; מ-320 נקי.
 
 ## `/events/sumii-melani-hosting/` — hosting event — sumii & melani hekimoglu (8–11.9.2026)
 
