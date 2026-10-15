@@ -272,7 +272,9 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .ev-lockup-item{margin-top:5.26px}
   .ev-lockup-item .sumii-logo{width:85.8px;height:39.07px}
   .ev-lockup-item .name{margin-top:5.41px;font-size:16px;line-height:17px}
-  .ev-scent{margin-top:21.17px;height:27.48px;font-size:12px;line-height:12px}
+  .ev-scent{margin-top:21.17px;height:auto;min-height:27.48px;font-size:12px;line-height:12px;flex-wrap:wrap;row-gap:6px}
+  /* ↑ min-height (not height) + wrap: one row = the Figma 27.48 box as before; below ~310px the row no longer
+     fits and "by zielinski rozen" drops to a 2nd line instead of pushing the page sideways (sweep 2026-10-15) */
   .untilten-logo{width:68.62px;height:21.5px;margin:0 13px 0 12.5px}
   .ev-reg{margin-top:9px;font-size:16px;line-height:20px}
 
