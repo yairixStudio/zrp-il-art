@@ -137,10 +137,28 @@ function check(WIDTH) {
       out.clipped.push(`${name(el)} "${text(el)}" — width ${el.clientWidth} < ${el.scrollWidth}`);
     else if (clipY && el.scrollHeight > el.clientHeight + 2 && !(+cs.webkitLineClamp > 0))
       out.clipped.push(`${name(el)} "${text(el)}" — height ${el.clientHeight} < ${el.scrollHeight}`);
-    // line overlap: glyph boxes of consecutive lines intersect by more than 40% of a line
     const range = document.createRange();
     const rects = [];
     for (const n of own) { range.selectNodeContents(n); rects.push(...[...range.getClientRects()].filter(q => q.width > 1)); }
+    // text cut by a clipping ancestor (e.g. a 50px "coming soon" wider than its overflow:hidden image box).
+    // Only partial cuts count — text wholly outside its clipper is an off-screen slide, not a bug.
+    if (rects.length && !clipX) {
+      let clipper = null;
+      // nearest ancestor that clips; a scroll strip (auto/scroll) is fine — the visitor scrolls to the rest
+      for (let a = el.parentElement; a && a !== document.body; a = a.parentElement) {
+        const ox = getComputedStyle(a).overflowX;
+        if (ox === 'visible') continue;
+        if (ox === 'hidden' || ox === 'clip') clipper = a;
+        break;
+      }
+      if (clipper) {
+        const c = clipper.getBoundingClientRect();
+        const L = Math.min(...rects.map(q => q.left)), R = Math.max(...rects.map(q => q.right));
+        const partial = R > c.left && L < c.right && (L < c.left - 2 || R > c.right + 2);
+        if (partial && c.width > 0 && !clipper.closest('[aria-hidden="true"]')) out.clipped.push(`${name(el)} "${text(el)}" — cut by ${name(clipper)}`);
+      }
+    }
+    // line overlap: glyph boxes of consecutive lines intersect by more than 40% of a line
     const lines = [];
     for (const q of rects.sort((a, b) => a.top - b.top)) {
       const last = lines[lines.length - 1];
