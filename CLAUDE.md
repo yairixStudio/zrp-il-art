@@ -21,7 +21,7 @@
 11. **עברית+אנגלית באותה שורה/מחרוזת:** FbEzmel לעברית, `<span class="lat">` + Copperplate ל-Latin — **גודל ויזואלי** (em optical), לא אותו `font-size` px. פרטים: `docs/conventions.md §5.2`.
 12. **כל אזכור אומן = קישור** (`docs/artist-linking.md`). הפרה = הדף לא מוכן.
 13. **🔴 כל דף/פוסט חדש = רשומה ב-`sitemap.xml`, באותו קומיט** (כלל-זהב 15). בלי זה הדף לא קיים לגוגל.
-14. **בדיקה ויזואלית/טיפוגרפית — רק דרך http** (`python3 -m http.server`, מוגדר ב-`.claude/launch.json`). ב-file:// כרום **חוסם את ה-`@font-face`** (CORS, origin null) והדף מוצג בפונטי fallback — אל תשפוט טיפוגרפיה משם.
+14. **בדיקה ויזואלית/טיפוגרפית — רק דרך http.** ב-file:// כרום **חוסם את ה-`@font-face`** (CORS, origin null) והדף מוצג בפונטי fallback — אל תשפוט טיפוגרפיה משם. **הפעלת השרת:** ה-preview של האפליקציה **לא יכול להריץ שרת מתוך תיקיית iCloud** (`getcwd: Operation not permitted`), ולכן `.claude/launch.json` (`"Site"`) רק **מתחבר** ל-`localhost:3000`. אם `curl -s -o /dev/null localhost:3000` נכשל — הפעל ב-Bash ברקע (`run_in_background`) `python3 -m http.server 3000 --bind 127.0.0.1` משורש הריפו, ואז `preview_start {name:"Site"}`. פורט 3000 תפוס בשרת של המשתמש = מצוין, פשוט להתחבר אליו.
 15. **שינוי שנוגע בהרבה דפים** (הפצת תבנית, CSS/JS משותף, צנרת דאטה) → **חובה** harness הרגרסיה (§7.1) לפני קומיט.
 16. **סשנים מקבילים עובדים על אותו ריפו.** Re-Read לפני edit, וקומיט רק של הקבצים שלך (`git add <paths>`, לא `-A`) — **כולל כל קובץ ש-`sync_data.py` כתב** (כלל-זהב 14).
 17. **🔴 לפני שיוצרים דף/רשומה — לחפש שאריות של אותה ישות** (כרטיס "בקרוב", רשומה עם `route:null`, id תפוס) — §7 שלב 2. קיימת ⇒ לשאול ולקדם אותה, **לא לשכפל id**.
@@ -87,7 +87,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 | `XhGH289YTRcW811wrufRJz` | **landing** | homepage, exhibitions, artist, press, events (ktuba), open-call section — ורוב הפריימים החדשים |
 | `Zn3N3mBQkbYER7tTJMbCcz` | **graphics** | about (legacy), works, artist pages, events (loneliness), opencalls, lightbox states |
 
-**MCP:** `mcp__figma__get_figma_data`, `mcp__figma__download_figma_images`. `fileKey` הוא parameter — אסור hardcode.
+**MCP (מעודכן 2026-10-15):** הערוץ הראשי = **ה-MCP הרשמי של Figma** (הקונקטור של claude.ai; שמות הכלים מסתיימים ב-`get_design_context` / `get_screenshot` / `get_metadata` / `download_assets`). לפני `get_design_context` — לטעון את הסקיל `figma:figma-design-to-code`. `get_screenshot` של ה-node = המקור להשוואה ויזואלית ולספירת פריטים. **"needs you to sign in again"** ⇒ לעצור ולבקש מהמשתמש להתחבר מחדש (ב-`/mcp` או בהגדרות הקונקטורים ב-claude.ai) — לא לעבור בשקט לכלי אחר. Framelink (`get_figma_data`) — **לא בשימוש**: תוכנית הסטודנט מחזירה 429. TalkToFigma — רק לכתיבה לתוך פיגמה, ורק כשהמשתמש מבקש. `fileKey` הוא parameter — אסור hardcode. (הלקחים הישנים ב-`docs/lessons.md` שמזכירים `get_figma_data`/`download_figma_images` תקפים עקרונית — שכבות מוסתרות, סדר fills — גם בכלים החדשים.)
 
 **node-id ב-URL = `119-156`. ב-API = `119:156`.** (dash ↔ colon)
 
@@ -163,6 +163,7 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 ├── tools/
 │   ├── sync_data.py           # regenerate all generated data copies (--check to verify)
 │   ├── regress/               # snapshot.mjs + diff.mjs — before/after regression harness
+│   ├── qa/sweep.mjs           # width sweep 300–1600: sideways overflow / clipped text / overlapping lines (rule 19)
 │   ├── search/build_index.py  # search-index.js — run automatically by .githooks/pre-commit (rule 10א)
 │   └── seo/                   # refresh_sitemap_lastmod.py (safe); inject.py/og_gen.py (see rule 15)
 ├── פונטים/                    # Copperplate {300/400/700/900}, FbEzmel {300/400}, NotoSansArabic {300/400}, Solway
@@ -210,9 +211,8 @@ Stack: **HTML + CSS** (single-file per page), נתונים ב-`data/*.json`. JSO
 1. קרא `CLAUDE.md` + **ה-route doc של המשפחה** (§1.1).
 2. בדוק ב-§4 אם הדף כבר רשום. אם לא — הוסף אותו לשורה (או שורה קומפקטית) + סקשן ב-route doc. **🔴 חיפוש שאריות לפני יצירה:** `grep -rn -i -e '<slug>' -e '<name_en>' -e '<שם בעברית>' data/*.json index.html press/index.html events/index.html docs/todo.md` — וודא שה-ids שתיצור פנויים (למשל `event-<slug>-talk` ב-`press.json`). כרטיס `--soon`/`soon:true`, רשומה עם `route:null` או id קיים ⇒ **לשאול את המשתמש** אם זו אותה ישות; אותה ⇒ לקדם את הקיים (אותו id, להסיר את ה-soon), אחרת ⇒ id חדש וייחודי. (היום: tal-nehoray — `press.json::event-tal-nehoray-talk` + כרטיס `pcard--soon` ב-`/press/`, בלי דף.)
 3. קבל URLs מ-`FIGMA_LINKS.md` (או הוסף אם חסרים).
-4. ספאון 2 subagents במקביל (desktop + mobile) לקרוא Figma. Prompt:
-   > "קרא את הקובץ `<path>` ב-chunks של 600 שורות. החזר blueprint מובנה: dimensions, sections (top→bottom), כל הטקסטים verbatim (כולל עברית), צבעים, imageRefs, layout (gap/padding/justify/align). אל תסכם."
-5. אסוף imageRefs **ייחודיים**. **`ls images/<category>/<slug>/` קודם.** הורד ב-batches מקבילים.
+4. קרא את שני ה-frames (desktop + mobile) ב-MCP הרשמי (§3): `get_metadata` (מבנה + רוחב לזיהוי desktop/mobile) → `get_design_context` → `get_screenshot`. frames כבדים — subagent לכל frame, שמחזיר blueprint מובנה: sections (top→bottom), כל הטקסטים verbatim (כולל עברית), צבעים, נכסים, layout (gap/padding/justify/align), **ומספר הפריטים בכל רשימה/גריד/קרוסלה** (כלל-זהב 20). אל תסכם.
+5. אסוף נכסים **ייחודיים**. **`ls images/<category>/<slug>/` קודם.** הורד ב-batches מקבילים.
 6. **לפני HTML — עדכן JSONs.** קרא את סעיף החוזה ב-`docs/data-contracts.md`, ו**העתק רשומת-אחות מאותו קובץ/תערוכה וערוך אותה — לא לבנות רשומה מרשימת שדות** (צורות שגויות שוברות רנדררים בשקט: `img` ולא `image`, `statement_he` = מערך פסקאות). ואז `python3 tools/sync_data.py`.
 7. בנה HTML יחיד עם CSS מוטמע. Pattern: `font-face → tokens → sections → media queries → casing block (conventions.md §5)`. בדרך כלל: העתק דף-אח מאותה משפחה (ה-route doc אומר מאיזה).
 8. הוסף לינק לדף ב-nav אם צריך (nav/footer גלובליים ב-`components/site-chrome.js`).
@@ -242,6 +242,7 @@ node tools/regress/diff.mjs before after                  # exit 0 = זהה
 - **route doc = מצב נוכחי, לא יומן.** כשמשהו משתנה — **ערוך את הבולט הקיים** כך שיתאר את המצב החדש. אל תוסיף פסקת "🔴 2026-xx-xx — …" מעל המצב הישן. היסטוריה = הודעת הקומיט (`git log`).
 - **מה חייב להישאר ב-route doc:** הכרעות משתמש, "אל תתקן / verbatim", סטיות מכוונות מהפיגמה, "נמחק — אל תשחזר", מה לסנכרן, gotchas, nodes של פיגמה, ערכי כיול.
 - **ה-spine (הקובץ הזה) לא מקבל פרטי-דף.** שורת §4 = שורה אחת. כל השאר → route doc. יעד: ≤ ~30KB.
+- **🔴 תקרת גודל: route doc ≤ ~40KB, `lessons.md` ≤ ~40KB.** סוכן חייב לקרוא את ה-route doc לפני כל עריכה, ולכן כל KB מיותר נשרף בכל משימה. מסמך שעבר את התקרה — בעדכון הבא שלו לכווץ: פרטי דף שלא השתנו חודשים → משפט אחד; לקח מ-`lessons.md` שהפך לכלל → לשורה אחת ב-route doc / כאן, ולמחוק את הסיפור (היסטוריה = `git log`). בדיקה: `wc -c docs/routes/*.md docs/lessons.md`.
 
 ---
 
@@ -280,7 +281,10 @@ node tools/regress/diff.mjs before after                  # exit 0 = זהה
 16. **🔴 דאטה → `python3 tools/sync_data.py`.** אחרי כל שינוי ב-`data/artists|works|exhibitions|galleries.json` — להריץ, ולפני קומיט `--check`. לעולם לא לערוך את `data/generated/*` או את `#works-data`/`#artwork-data`/`#g-artworks-data`/`#fallback-galleries` ביד.
 17. **🔴 שינוי רוחבי → harness רגרסיה** (§7.1) נקי לפני קומיט.
 18. **🔴 לא כותבים מלל.** כל טקסט, תגית, כותרת משנה או סקשן בדף חייבים להגיע מהפיגמה, מה-JSON או מהודעת המשתמש. מה שלא מופיע באף אחד מהם נמחק, או שואלים עליו. בלי שינויי פונט, גודל או סדר שלא התבקשו. (חזר ב-47 סשנים; "אתה לא איש תוכן".)
-19. **🔴 לפני "סיימתי": השוואה לפיגמה בשני הגדלים.** צילום מסך של הדף ב-1440 וב-390 (דרך http, TL;DR 14), מול שני ה-frames. אחר כך דוח קצר: מה זהה, ומה שונה ולמה. סטייה מכוונת נרשמת ב-route doc. מבנה הדוח: הסקיל `verify-done`.
+19. **🔴 לפני "סיימתי": השוואה לפיגמה בשני הגדלים.** צילום מסך של הדף ב-1440 וב-390 (דרך http, TL;DR 14), מול שני ה-frames. אחר כך דוח קצר: מה זהה, ומה שונה ולמה. סטייה מכוונת נרשמת ב-route doc. מבנה הדוח: הסקיל `verify-done`. **ואז `node tools/qa/sweep.mjs`** (בלי ארגומנטים = כל הדפים ששונו) — עובר על 22 רוחבים 300–1600 ומדווח גלישה הצידה, חיתוך בשולי המסך, טקסט חתוך ושורות שעולות זו על זו. exit 1 ⇒ לתקן או לנמק בדוח.
+20. **🔴 ספירה לפני "סיימתי".** כל רשימה בפיגמה (יצירות של אומן, תמונות בגלריה/קרוסלה, כרטיסים, כפתורים, שמות) — לספור בפיגמה ובדף ולהציג בדוח: "פיגמה 5 / דף 5". אומן חדש עם יצירות בפיגמה = גם רשומות ב-`works.json` ועמודי `works/<id>/`, לא רק דף אומן. (חזר: "למה לא הכנסת את כל התמונות של מריה", "איפה היצירות שלו? יש לו 5".)
+21. **🔴 הכרעת מעצבת/משתמש נרשמת מיד.** הודעה שמועברת מהמעצבת ("בינתיים בלי דף אומן ל-2 הנשים", "בלי תמונה") — לכתוב אותה **מיד** כבולט ב-route doc של המשפחה (סעיף הכרעות), לפני שממשיכים, ולבדוק את הסעיף לפני כל צעד בהמשך הסשן. הוראה שנאמרה פעם אחת לא נשכחת עד סוף הסשן.
+22. **🔴 כיוון השינוי — לחזור עליו לפני ביצוע** כשהבקשה עמומה ("טיפונת רווח", "יותר קצר", "תזיז"): משפט אחד בעברית — מה משתנה, לאיזה כיוון ובכמה ("מגדיל את הרווח בין הסקשנים מ-64 ל-96") — ואז לבצע. (חזר: "התכוונתי שתרחיב, לא לקצר".)
 
 ---
 
