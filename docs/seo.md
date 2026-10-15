@@ -18,7 +18,7 @@
 - `robots.txt` — מאפשר הכל, חוסם `/trash/`, מצביע ל-sitemap
 - `sitemap.xml` — **227 URLs** (כל הדפים פרט ל-404; נכון ל-2026-08-18), `lastmod` מ-git log
   - **🔴 כלל-זהב 15: כל דף/פוסט חדש נכנס ל-`sitemap.xml` באותו קומיט** — אירוע, כתבה, דף אומן, עמוד יצירה, תערוכה, גלריה, ספונסר, אינדקס. גם חשיפה מ-`_staging/` (+תיקון canonical/og:url/JSON-LD) וגם מחיקת דף (הסרת ה-`<url>`).
-  - בדיקת שלמות: `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" | wc -l` צריך להשתוות ל-`grep -c "<loc>" sitemap.xml`.
+  - בדיקת שלמות: `find . -name index.html -not -path "./node_modules/*" -not -path "./_staging/*" -not -path "./trash/*" -not -path "./scratchpad/*" | wc -l` צריך להשתוות ל-`grep -c "<loc>" sitemap.xml`.
 
 ## רגנרציה (כשמוסיפים דף/יצירה/אומן)
 > 🔴 **`og_gen.py` שבור ו-`inject.py` גורף מרגרס ~90 דפים** (קרה 2026-07-26 ו-2026-08-23; ראה `docs/todo.md`). שני הכלים **מסרבים לרוץ גורפות** ומדפיסים את המתכון הזה (בגרסת האירועים — לשאר המשפחות: כאן ובמסמך המשפחה). `inject.py <path>` על דף בודד עדיין אפשרי — ואז לבדוק את ה-diff של הקובץ הזה בלבד.

@@ -379,8 +379,12 @@ elem.addEventListener('tri:change', e => console.log(e.detail.index, e.detail.co
 ## 6. Newsletter popup (built into site-chrome) ✅
 
 פופאפ הרשמה לניוזלטר — Figma landing `1929:168` (דסקטופ 680w) / `1929:107` (מובייל 342w). מוזרק ל-`<body>` מ-`components/site-chrome.js` (`wireNewsletterPopup`, נקרא מ-`<site-footer>`), CSS `.nlp*` ב-`site-chrome.css`.
-- **אותו טופס ואותו endpoint כמו הפוטר** (`wireNewsletter(root, onSuccess)` — honeypot, תיבת הסכמה חובה, Wix Velo). תיבת ההסכמה **לא בפיגמה — נשמרה בכוונה** (גילוי פרטיות, ראה CLAUDE §4).
+- **אותו טופס ואותו endpoint כמו הפוטר** (`wireNewsletter(root, onSuccess)` — honeypot, תיבת הסכמה חובה, Wix Velo). תיבת ההסכמה **לא בפיגמה — נשמרה בכוונה** (גילוי פרטיות, ראה §6.1).
 - **טריגר:** פעם אחת — אחרי 15 שניות או בגלילה ל-50% מהדף (הראשון מביניהם). סגירה (X / רקע / Esc) = השהיה ל-30 יום; הרשמה (בפופאפ **או בפוטר**) = לעולם לא שוב. מצב ב-`localStorage['zr-nl-popup']`. קבועים `NLP_*` בראש הבלוק.
 - לא מופיע ב-`/privacy/` ובדפי `noindex`; נדחה אם חיפוש/תפריט/בוחר-לוגו/לייטבוקס פתוחים.
 - **בדיקה:** `#newsletter` ב-URL פותח אותו מיד (עוקף השהיה/דיכוי).
 - כפתור SUBSCRIBE ב-Copperplate (בפיגמה Inter — כלל-זהב 2). פוקוס ראשוני על ה-X (לא על השדה — כדי לא להקפיץ מקלדת בטלפון).
+
+### 6.1 Backend — Wix Velo (הועבר מ-CLAUDE.md §4)
+
+**📬 טופס ניוזלטר (פוטר) = Wix Velo, לא Firebase — אל תחזיר Firebase** (Spark חוסם קריאות יוצאות, Functions דורש Blaze). `components/site-chrome.js` שולח `POST https://zrp.co.il/_functions/subscribe` (אתר ה-Wix "ZIELINSKI & ROZEN", siteId `03bb4cff-b492-498b-9864-9258e743d0a2`). מקור ה-backend: `newsletter-backend/wix-velo/http-functions.js` → מדביקים ל-Backend ב-Wix ומפרסמים. כל נרשם: honeypot (שדה `website`) + rate-limit לפי IP (5/דקה, קולקשן אופציונלי `NewsletterThrottle` עם שדה `ip`; fail-open) → `appendOrCreateContact` → לייבל `custom.art-newsletter` ("Art Newsletter") → סימון SUBSCRIBED דרך REST Email Subscriptions API, שדורש **Wix API key** ("Manage Email Subscriptions") בסוד `WIX_API_KEY` ב-Wix Secrets Manager (Velo לבדו לא יכול לשנות `subscriptionStatus` — read-only; בלי הסוד איש הקשר נוצר+מתויג אך לא מסומן מנוי). נרשמים רואים ב-Wix → Contacts מסונן ל-label "Art Newsletter". **גילוי פרטיות:** ההרשמה מצרפת גם לרשימת התפוצה של אתר הבשמים (zrp.co.il) — מצוין ב-`privacy/index.html` ובטקסט ההסכמה.

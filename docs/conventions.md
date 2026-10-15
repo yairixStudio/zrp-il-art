@@ -45,6 +45,11 @@
 
 ל-imgs שנבנים ב-JS (carousels, dynamic grids) — אותו checklist מיושם ב-JS template.
 
+**עיבוד מקור, srcset ו-`<picture>` (הועבר מ-CLAUDE.md כלל-זהב 12):**
+- **עיבוד מקור:** `magick src -auto-orient -colorspace sRGB -resize '1600x1600>' -strip -quality 85 out.webp` — `-auto-orient` (סיבוב EXIF של צילומי טלפון) והמרה ל-sRGB **לפני** `-strip` (מקורות Display P3); **גאומטריה עם `>` תמיד בגרשיים** (בלי — zsh מפנה לקובץ בשם `-strip`, מדלג על ה-strip ומגדיל). בלי upscale.
+- **תמונה ≥80KB וגם ≥800px רוחב → חובה srcset:** צור וריאנטים `<name>-{480,768,1080}w.webp+avif` (וריאנט קיים כשרוחבו ≤90% מרוחב המקור — למשל `-1080w` לכל master ≥1200: `magick src.webp -resize 480x -strip -quality 85 out.webp`, avif עם `-quality 60`), והוסף `srcset="...-480w.webp 480w, ..., <name>.webp <naturalW>w" sizes="100vw"`. `picture-upgrade.js` ממפה את ה-srcset ל-AVIF אוטומטית — חובה ש**כל** וריאנט webp יהיה לו אח avif.
+- **🔴 `picture-upgrade.js` מדלג על `<img>` שכבר בתוך `<picture>`** — ב-`<picture>` ידני (למשל `source media` לקרופ מובייל) כל webp חייב אח avif **ידני**. והוא עוטף `<img>` ב-`<picture>` בזמן ריצה — סלקטור `.x>img` מפסיק להתאים (פתרון: `.x>picture{display:contents}`).
+
 ---
 
 ## 2. Naming & Slugs
