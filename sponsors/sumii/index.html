@@ -39,7 +39,7 @@ body{text-transform:uppercase}
 
 /* ===== SPONSOR PAGE — SUMII + MELANI HEKİMOĞLU (שתי רזידנסיות בכיכר דיזינגוף)
    Figma desktop 1637:134 / mobile 1318:3480. סדר הסקשנים:
-   panel(sumii) → figures → panel(melani) → melani products → curator ===== */
+   panel(sumii) → figures → panel(melani) → melani products → the artists → the curator ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
 
 /* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
@@ -135,7 +135,8 @@ a.shot:hover img{filter:brightness(.94)}
 .sp-products .prod:nth-child(4){grid-column:2}
 .sp-products .prod:nth-child(5){grid-column:3}
 
-/* THE CURATOR — artists-strip pattern (event pages), single card → curator page */
+/* THE ARTISTS / THE CURATOR — artists-strip pattern (event pages). THE ARTISTS = שני כרטיסים מקושרים (Figma 2126:2 / 2125:125), לפני THE CURATOR (1637:240 / 1546:3820) → curator page.
+   דסקטופ: כל רצועה padding 32/32. מובייל: ראה בלוק המובייל (artists 32/16/8, curator 32/16) */
 .sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
 .sp-curator .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
 .sp-curator .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
@@ -173,7 +174,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 /* Mobile (Figma 1318:3480): hero full-bleed 390×520 under the header, then one white column.
    Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 figures · 8-10 divider/site/credit ·
-          11 melani lockup · 12 melani body · 13-17 products · 18-20 divider/site/credit · 21 curator */
+          11 melani lockup · 12 melani body · 13-17 products · 18-20 divider/site/credit · 21 the artists · 22 curator */
 @media (max-width:768px){
   :root{--pad-x:16px}
 
@@ -202,7 +203,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .sp-divider--mel{order:18}
   .sp-site--mel{order:19}
   .sp-credit--mel{order:20}
-  .sp-curator{order:21}
+  .sp-curator--artists{order:21}
+  .sp-curator--curator{order:22}
 
   .only-d{display:none}
   .only-m{display:inline}
@@ -246,10 +248,15 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .prod .txt{margin-top:8px}
 
   /* Curator strip (Figma mobile 96×80 thumb) */
+  /* Strips — curator: thumb 96×80 (Figma 1546:3820), padding 32/16.
+     artists: thumb 132×110, padding 32/16/8 (Figma 2125:125) */
   .sp-curator{padding:32px 16px}
+  .sp-curator--artists{padding:32px 16px 8px}
   .sp-curator .label{font-size:16px}
   .sp-curator .strip>a.artist-card{flex:0 0 112px}
+  .sp-curator--artists .strip>a.artist-card{flex:0 0 132px}
   .sp-curator .strip .img{width:96px;height:80px}
+  .sp-curator--artists .strip .img{width:132px;height:110px}
   .sp-curator .strip .name{font-size:13px;line-height:16px}
 }
 </style>
@@ -461,8 +468,25 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- THE ARTISTS — shira turbowicz + melani hekimoglu (Figma 2126:2 desktop / 2125:125 mobile). thumbs אפויים מקרופי הפיגמה -->
+  <section class="sp-curator sp-curator--artists" aria-label="האומנים">
+    <div class="inner">
+      <div class="label">the artists</div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../artists/shira-turbowicz/" aria-label="shira turbowicz">
+          <div class="img"><img src="../../images/sponsors/sumii/artist-shira.webp" width="712" height="593" alt="shira turbowicz" loading="lazy" decoding="async"></div>
+          <div class="name">shira<br>turbowicz</div>
+        </a>
+        <a class="artist-card" role="listitem" href="../../artists/melani-hekimoglu/" aria-label="melani hekimoglu">
+          <div class="img"><img src="../../images/sponsors/sumii/artist-melani.webp" width="712" height="593" alt="melani hekimoglu" loading="lazy" decoding="async"></div>
+          <div class="name">melani<br>hekimoglu</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- THE CURATOR — korin avraham (Figma 1637:240 desktop / 1546:3820 mobile) -->
-  <section class="sp-curator" aria-label="אוצרת הרזידנסי">
+  <section class="sp-curator sp-curator--curator" aria-label="אוצרת הרזידנסי">
     <div class="inner">
       <div class="label">the curator</div>
       <div class="strip" role="list">

@@ -292,8 +292,8 @@ a.opencall-card:hover .img img{transform:scale(1.03)}
 /* ===== EVENTS / UPCOMING — Figma landing::1318:476 (redesign 2026-08; mobile frame is the source,
    desktop = adaptation). Stacked title ("upcoming" Bold over "events" Light, slight overlap) above two
    static poster cards — the posters are designer-maintained images (images/homepage/upcoming/), text is
-   baked into them. FIT fills in Figma → object-fit:contain; the Dizengoff card has a collage backdrop
-   behind the poster (second fill) covering the contain slivers. Everything links to events/. */
+   baked into them. FIT fills in Figma → object-fit:contain; both cards have a backdrop (.bg = same file, cover)
+   behind the poster covering the contain slivers (boards are 9:16, card 175/301). Everything links to events/. */
 .ev-up{padding:64px var(--pad-x);display:flex;flex-direction:column;align-items:center;gap:56px;background:var(--white);width:100%;max-width:var(--max);margin:0 auto;box-sizing:border-box}
 .ev-up-title{align-self:stretch;font-weight:400}
 .ev-up-title a{display:block;color:var(--ink);transition:opacity .2s}
@@ -459,9 +459,15 @@ a.gallery-card{color:inherit;text-decoration:none}
 .galleries--berlin .abroad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;align-items:start}
 .galleries--berlin .abroad-col{display:flex;flex-direction:column;gap:24px;min-width:0}
 .galleries--berlin .berlin-card{max-width:none}
+/* the shared .galleries-title is a fixed 358px; at 769–~830 the column is narrower (304 at 769)
+   and the title box ran 6px past the screen edge — cap it to the column (no visual change above) */
+.galleries--berlin .galleries-title{max-width:100%}
 .berlin-card .img{position:relative}
+.berlin-card--soon .img{container-type:inline-size}
 .berlin-card--soon .img::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
-.berlin-card--soon .coming{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--cop);font-weight:400;font-size:50px;line-height:normal;text-align:center;white-space:nowrap}
+.berlin-card--soon .coming{position:absolute;inset:0;z-index:1;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--cop);font-weight:400;font-size:min(50px,11cqi);line-height:normal;text-align:center;white-space:nowrap}
+/* 50px "coming soon" is 412px wide — wider than the image below ~1024 ("OMING SOO" at 769); it now scales with
+   the image (container = .img) and stays 50px from ~455px of image width up */
 
 /* ===== X OUR ARTISTS — Figma landing::228:67 (desktop) / 228:101 (mobile) =====
    Focus carousel on BOTH breakpoints (redesign 2026-08 task 9, Figma mobile 1318:695; desktop = scaled
@@ -611,11 +617,11 @@ a.sumii-strip:hover{opacity:.85}
 .collab-lockup{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
 .collab-gname{font-family:var(--cop);font-weight:300;font-size:24px;line-height:1.35;letter-spacing:.05em;color:var(--ink)}
 .collab-x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
-/* לוגו MA REN = 2 נכסי SVG מהפיגמה (wordmark 197.131×29.221 בהיסט 1.84, descriptor 242×8.746 ב-top 43.08) */
+/* לוגו MA REN = 2 נכסי SVG מהפיגמה (wordmark 197.131×29.221 בהיסט left:22 — ממורכז מעל ה-descriptor (Figma 2039:2744, עודכן 2026-10-15), descriptor 242×8.746 ב-top 43.08) */
 .maren-logo{position:relative;display:block;width:242.001px;height:51.826px;direction:ltr;transition:opacity .2s}
 .maren-logo:hover{opacity:.65}
 .maren-logo img{position:absolute;display:block;max-width:none}
-.maren-wordmark{left:1.84px;top:0;width:197.131px;height:29.221px}
+.maren-wordmark{left:22px;top:0;width:197.131px;height:29.221px}
 .maren-descriptor{left:0;top:43.08px;width:242.001px;height:8.746px}
 /* שמות המעצבות: צ'יפ ממוסגר, Figma Copperplate Light 16 / ls .8 / padding 4×8 / gap 16 */
 .collab-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
@@ -734,6 +740,12 @@ a.collab-more:hover{opacity:.65}
 /* Hebrew run inside an English title (gala night - הקולפן) — optical match, same as /press/ */
 .press-card .ttl.en .heb{font-family:var(--heb);font-size:1.23em;font-weight:400;letter-spacing:normal}
 .press-card .date{font-family:var(--cop);font-size:11.5px;font-weight:300;line-height:1.2;letter-spacing:.02em;direction:ltr;unicode-bidi:embed}
+/* Tablet 769–1100: the fixed 292px image left the text column 5px at 769 (37 at 834, 70 at 900) —
+   the text spilled over the photo and off the screen edge (tools/qa/sweep.mjs, 2026-10-15).
+   Here image and text split the card half/half; 1101+ keeps the Figma 292px. */
+@media (min-width:769px) and (max-width:1100px){
+  .press-card .img{flex-basis:calc(50% - 8px)}
+}
 /* "more press & events" button → /press/ (Figma 1323:923; same recipe as .ev-up-viewall) */
 .press-viewall{display:inline-flex;justify-content:center;align-items:center;align-self:center;margin-top:8px;padding:4px 16px;border:1px solid #000;font-family:var(--cop);font-weight:300;font-size:16px;line-height:normal;letter-spacing:.02em;color:var(--ink);text-decoration:none;transition:opacity .2s}
 .press-viewall:hover{opacity:.5}
@@ -1426,7 +1438,7 @@ porta</div></a>
   </div>
 </section>
 
-<!-- EVENTS / UPCOMING — Figma landing::1318:476 (posters updated 2026-09-27: 1873:1074 desktop / 1738:347 mobile) (redesign 2026-08; mobile frame is the source, desktop = adaptation).
+<!-- EVENTS / UPCOMING — Figma landing::1318:476 (posters updated 2026-10-15: v5 dizengoff 1979:344 / v6 hamedina 1979:345 — in frames 1873:1074 desktop / 1738:347 mobile) (redesign 2026-08; mobile frame is the source, desktop = adaptation).
      Static section: the two posters ("הרשימות") are designer-maintained images — swapping the files in
      images/homepage/upcoming/ is how the schedule gets updated (content process, not code).
      Title, posters and the view-all button all lead to events/ (designer's brief — not to a specific event). -->
@@ -1434,11 +1446,12 @@ porta</div></a>
   <h2 class="ev-up-title"><a href="events/"><span class="tb">upcoming</span><span class="tl">events</span></a></h2>
   <div class="ev-up-posters">
     <a class="ev-up-poster" href="events/">
-      <img class="bg" src="images/homepage/upcoming/poster-dizengoff-v4.webp" srcset="images/homepage/upcoming/poster-dizengoff-v4-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v4.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="" aria-hidden="true" decoding="async" loading="lazy">
-      <img src="images/homepage/upcoming/poster-dizengoff-v4.webp" srcset="images/homepage/upcoming/poster-dizengoff-v4-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v4.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="לוח האירועים ספטמבר בגלריית כיכר דיזינגוף" decoding="async" loading="lazy">
+      <img class="bg" src="images/homepage/upcoming/poster-dizengoff-v5.webp" srcset="images/homepage/upcoming/poster-dizengoff-v5-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v5.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="" aria-hidden="true" decoding="async" loading="lazy">
+      <img src="images/homepage/upcoming/poster-dizengoff-v5.webp" srcset="images/homepage/upcoming/poster-dizengoff-v5-480w.webp 480w, images/homepage/upcoming/poster-dizengoff-v5.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="לוח האירועים נובמבר בגלריית כיכר דיזינגוף" decoding="async" loading="lazy">
     </a>
     <a class="ev-up-poster" href="events/">
-      <img src="images/homepage/upcoming/poster-hamedina-v5.webp" srcset="images/homepage/upcoming/poster-hamedina-v5-480w.webp 480w, images/homepage/upcoming/poster-hamedina-v5.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="לוח האירועים ספטמבר בגלריית כיכר המדינה" decoding="async" loading="lazy">
+      <img class="bg" src="images/homepage/upcoming/poster-hamedina-v6.webp" srcset="images/homepage/upcoming/poster-hamedina-v6-480w.webp 480w, images/homepage/upcoming/poster-hamedina-v6.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="" aria-hidden="true" decoding="async" loading="lazy">
+      <img src="images/homepage/upcoming/poster-hamedina-v6.webp" srcset="images/homepage/upcoming/poster-hamedina-v6-480w.webp 480w, images/homepage/upcoming/poster-hamedina-v6.webp 760w" sizes="(max-width:768px) 76vw, 380px" width="760" height="1351" alt="לוח האירועים אוקטובר–נובמבר בגלריית כיכר המדינה" decoding="async" loading="lazy">
     </a>
   </div>
   <a class="ev-up-viewall" href="events/">view all</a>
@@ -1712,10 +1725,19 @@ porta</div></a>
     <a class="collab-chip" href="sponsors/elodie-k/">elodie k</a>
     <a class="collab-chip" href="sponsors/roni-liani/">roni liani</a>
   </div>
+  <div class="collab-chips">
+    <a class="collab-chip" href="sponsors/desert-queen/">desert queen</a>
+    <a class="collab-chip" href="sponsors/ever-after/">ever after</a>
+  </div>
   <div class="collab-info">
     <div class="collab-title">hosting designers pop up</div>
     <div class="collab-dates">15.10.2026 - 09.11.2026</div>
     <div class="collab-credit heb">אוצרות: <a href="curators/korin-avraham/">קורין אברהם</a></div>
+  </div>
+  <div class="collab-strip" aria-hidden="true">
+    <span class="collab-thumb"><img src="images/homepage/designers-popup/thumb-01.webp" srcset="images/homepage/designers-popup/thumb-01-480w.webp 480w, images/homepage/designers-popup/thumb-01-768w.webp 768w, images/homepage/designers-popup/thumb-01.webp 1068w" sizes="(max-width:768px) 101px, 158px" width="1068" height="1600" alt="" loading="lazy" decoding="async"></span>
+    <span class="collab-thumb"><img src="images/homepage/designers-popup/thumb-02.webp" srcset="images/homepage/designers-popup/thumb-02-480w.webp 480w, images/homepage/designers-popup/thumb-02-768w.webp 768w, images/homepage/designers-popup/thumb-02.webp 1024w" sizes="(max-width:768px) 101px, 158px" width="1024" height="1536" alt="" loading="lazy" decoding="async"></span>
+    <span class="collab-thumb"><img src="images/homepage/designers-popup/thumb-03.webp" srcset="images/homepage/designers-popup/thumb-03-480w.webp 480w, images/homepage/designers-popup/thumb-03-768w.webp 768w, images/homepage/designers-popup/thumb-03.webp 1078w" sizes="(max-width:768px) 101px, 158px" width="1078" height="1280" alt="" loading="lazy" decoding="async"></span>
   </div>
 </section>
 

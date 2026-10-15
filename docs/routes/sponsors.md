@@ -1,6 +1,6 @@
 # Sponsors — route notes
 
-> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `sponsors/roni-liani/index.html`, `sponsors/elodie-k/index.html`, `data/sponsors.json`, `images/sponsors/**`.
+> קרא לפני עריכה של: `sponsors/soos/index.html`, `sponsors/sumii/index.html`, `sponsors/ma-ren/index.html`, `sponsors/roni-liani/index.html`, `sponsors/elodie-k/index.html`, `sponsors/ever-after/index.html`, `sponsors/desert-queen/index.html`, `data/sponsors.json`, `images/sponsors/**`.
 > כאן: המצב הנוכחי והכללים הפעילים. היסטוריה: `docs/history/CLAUDE-2026-09-27.md` §4.
 
 ## Pages
@@ -10,6 +10,8 @@
 - `/sponsors/ma-ren/` → `sponsors/ma-ren/index.html` · desktop `XhGH...::2039:1580` ("MA REN - desktop") · mobile `XhGH...::2039:1668` ("MA REN- mobile") · ✅ (2026-10-14)
 - `/sponsors/roni-liani/` → `sponsors/roni-liani/index.html` · desktop `XhGH...::2039:2945` ("RONI LIANI - desktop") · mobile `XhGH...::2039:3129` ("RONI LIANI- mobile") · ✅ (2026-10-14)
 - `/sponsors/elodie-k/` → `sponsors/elodie-k/index.html` · desktop `XhGH...::2039:1240` ("Elodie K - desktop") · mobile `XhGH...::2039:1041` ("Elodie K - mobile") · ✅ (2026-10-14)
+- `/sponsors/ever-after/` → `sponsors/ever-after/index.html` · desktop `XhGH...::2097:4227` · mobile `XhGH...::2097:6104` ("Ever After- mobile") · ✅ (2026-10-15)
+- `/sponsors/desert-queen/` → `sponsors/desert-queen/index.html` · desktop `XhGH...::2097:5122` · mobile `XhGH...::2097:5281` · ✅ (2026-10-15)
 
 ## Shared rules (משפחת `sponsors/`)
 
@@ -22,6 +24,12 @@
   - לוקאפ `<h1 class="lockup">` בשורה, `gap:16px`.
   - גוף: FbEzmel Light 18/16, `line-height` ‎19.468/17.305.
   - divider בגודל 72×1, עם הזחה ימנית 16 (`padding 24/16/16`).
+
+### רצועות `the designer` / `the artists` / `the curator` (משותף לכל העמודים, 2026-10-15)
+- 🔴 **סדר = כמו בכל הפריימים: designer/artists קודם, `the curator` אחרון** (ב-DOM ובמובייל ב-`order`). עד 2026-10-14 ב-roni-liani וב-elodie-k האוצרת הייתה ראשונה — תוקן; לא להחזיר.
+- מחלקות: `.sp-curator` + `--designer` / `--artists` / `--curator`. דסקטופ: כל רצועה פס לבן נפרד, padding 32/`--pad-x`, label 28, כרטיס 178×148, שם 18 `#828282`.
+- מובייל: designer/artists — thumb **132×110** (כרטיס 132), padding `32px 16px 8px` (ב-roni-liani נשאר 32 למטה — כך בפריים `2064:3847`); curator — 96×80 (כרטיס 112), padding `32px 16px`. label 16, שם 13 (כיול Copperplate; בפיגמה 20/16).
+- קישורים: כרטיס מקושר רק כשיש דף (`adam-leisner`, `shira-turbowicz`, `melani-hekimoglu`, האוצרת). למעצבות הפופ-אפ אין דף — `<div class="artist-card">`.
 
 ### Breakpoints
 - **`≥1320`:** ‏`--pad-x:96px`. **מתחת:** ‏48.
@@ -180,7 +188,8 @@
   - FIGURES: `1637:213` / `1590:181` + `1589:5700` + `1589:5708`.
   - פאנל מלאני: `1637:284` / `1635:348` + `1635:365`. הלוקאפ: `1637:349`. הלוגו: `1637:350`.
   - מוצרים: `1637:379` + `1652:118` / `1652:197`.
-  - האוצרת: `1637:240` / `1546:3820`.
+  - האומנים (`the artists`): `2126:2` / `2125:125`.
+  - האוצרת: `1637:240` / `1546:3820` (רצועה `1637:239`).
   - לוגו Sumii (וקטור): `1546:3666`.
 
 ### סדר הסקשנים בדסקטופ
@@ -188,7 +197,8 @@
 2. FIGURES (אפור).
 3. פאנל מלאני (לבן).
 4. מוצרים (לבן).
-5. `the curator`.
+5. `the artists` — שירה טורבוביץ + מלאני הקימוגלו, שני כרטיסים מקושרים (`images/sponsors/sumii/artist-{shira,melani}.{webp,avif}` 712×593, קרופי הפיגמה).
+6. `the curator`.
 
 ### פאנל SUMII
 - **ההבדלים מפאנל soos:**
@@ -304,7 +314,7 @@
   - נאפה מקרופ הפיגמה `1b9e5e` של `7f582c67…` — אותו צילום של פורטרט האוצרת.
   - ה-fill השני בכרטיס (`889e3ab7…`, צילום של זוהר רון) = leftover מוסתר. **לא להשתמש בו.**
 
-### סדר המובייל (`order` 1–21)
+### סדר המובייל (`order` 1–22)
 - 1: hero.
 - 2: צ'יפ.
 - 3: לוקאפ sumii.
@@ -315,7 +325,8 @@
 - 12: גוף מלאני.
 - 13–17: חמשת המוצרים.
 - 18–20: divider / אתר / קרדיט של מלאני.
-- 21: `the curator`.
+- 21: `the artists`.
+- 22: `the curator`.
 
 ### דאטה ומה לסנכרן
 - **`sponsors.json`:**
@@ -340,7 +351,7 @@
 קולאב **MA REN** (סטודיו של אדם לייזנר, מעצב-מהנדס, פלדת אל-חלד) × הגלריה — **WINDOW TAKE OVER (INSTALLATION)**, גלריית כיכר המדינה, ‏19.10–09.11.2026, אוצרות קורין אברהם. בסיס = עמוד sumii (פאנל + hero + גריד + the curator), בלי פאנל שני.
 
 ### Figma
-- דסקטופ `2039:1580` · מובייל `2039:1668`. תת-nodes: פאנל `2039:1606`; לוגואים בהירו `2039:2548` (דסקטופ 359×89) / `2039:2590` (מובייל 270×67); עבודות `2039:2052` (שורה 1) + `2039:2325` (שורה 2) / מובייל `2039:2079`…`2039:2115`; האוצרת `2039:1632` / `2039:1733`.
+- דסקטופ `2039:1580` · מובייל `2039:1668`. תת-nodes: פאנל `2039:1606`; לוגואים בהירו `2039:2548` (דסקטופ 359×89) / `2039:2590` (מובייל 270×67); עבודות `2039:2052` (שורה 1) + `2039:2325` (שורה 2) / מובייל `2039:2079`…`2039:2115`; האוצרת `2039:1632` / `2039:1733`; המעצב (`the designer`) `2125:110` / `2125:90`.
 - 🔴 **"Instillation" בפיגמה (כותרת ההירו + פסקת הפתיחה) → "installation"** — הכרעת משתמש 2026-10-14. לא להחזיר.
 
 ### פאנל
@@ -363,8 +374,9 @@
 - כרטיסים **לא קליקאביליים** (כמו בפיגמה). היצירות קיימות מאז גם ב-`works.json` (`adam-leisner-1..5`, עם עמודי `works/<id>/`) — הטקסטים כאן שונים מ-`details_he` (נוסח עמוד הקולאב), לא לסנכרן.
 - קבצים: `images/sponsors/ma-ren/{portal-120,portal-70,tempo-tall,tempo-mini,inflated-legs-table}` + וריאנטים.
 
-### the curator
-- זהה ל-sumii — ממחזר `images/sponsors/sumii/curator-thumb.*` (אותו קרופ בפיגמה).
+### the designer + the curator
+- `the designer` (לפני האוצרת): כרטיס **adam leisner מקושר** → `artists/adam-leisner/`. `<picture>` ידני: דסקטופ `images/sponsors/ma-ren/designer-thumb-d.{webp,avif}` 528×439, מובייל (`max-width:768px`) `designer-thumb-m.{webp,avif}` 702×585 — קרופ רחב יותר בפיגמה.
+- `the curator` זהה ל-sumii — ממחזר `images/sponsors/sumii/curator-thumb.*` (אותו קרופ בפיגמה).
 
 ### דאטה ו-SEO
 - `sponsors.json :: ma-ren` (`gallery_id:"medina"`, `cover_image` = `tempo-mini.webp`). `og/sponsors-ma-ren-hero.jpg` **768×403** (קרופ 1.91:1 בלי upscale — המקור 768 רוחב) + רשומה ב-`og-dims.json`. בלוק SEO הועתק מ-sumii ונערך ידנית.
@@ -379,19 +391,39 @@
 - hero: `hero.{webp,avif}` 813×1017 (+480/768) + scrim; קבוצה לבנה **ממורכזת** (translate ‎-50%/‎-50%) — שם הגלריה · X · לוגו לבן `roni-liani-logo-white.svg` 191×54; **בלי כותרת**. בפריים המובייל ה-fill התחתון (`e3112f1c…` = הצילום של אדם לייזנר) = leftover.
 - גוף 7 פסקאות, פתיחה Regular; תאריכים `<bdi>` התחלה→סוף (בפיגמה "30.10.2026 - 27.10.2026" — הפוך); `Pieces of Process` ב-`.lat` (UPPERCASE), הנקודה מחוץ לריצה.
 - עבודות: 3 תכשיטים בשורה אחת (LTR: lila · eve · zorah); כרטיס = תמונה → 24 → כותרת Copperplate Regular (15.75 / מובייל 17.5; בפיגמה 18/20 לא עקבי) → 16 (מובייל 8) → תיאור Light 16 **בלי** pre-line ובלי תת-כותרת. לא קליקאביליים.
-- שתי רצועות: `the curator` (כמו ma-ren) + **`the designer`** (`2064:3860` / `2064:3847`): `designer-thumb.{webp,avif}` 712² (קרופ ריבועי מרכזי מ-`c7b30d37…` 1536×1024; מוצג `object-position:top` כמו בפיגמה). **כרטיס המעצבת לא מקושר** (`<div class="artist-card">`), ואזכורי "רוני ליאני" בגוף לא מקושרים — **הכרעת המעצבת 2026-10-14: בינתיים אין דף אומן לשתי המעצבות של הפופ-אפ (רוני ליאני, אלודי K), רק לאדם לייזנר.** לא לבנות דף ולא "לתקן" לקישור; אם ייבנה בעתיד — `<a>` + קישור האזכורים.
+- אחרי ה-divider: `roniliani.com` · **`@roni_liani`** (`a.sp-site.sp-ig` → `https://www.instagram.com/roni_liani/`; Figma `2097:5006` / `2097:5008`; בלי תווית "אינסטגרם:" — כמו בפריים) · קרדיט.
+- שתי רצועות: **`the designer`** (`2064:3860` / `2064:3847`) ואז `the curator` (כמו ma-ren): `designer-thumb.{webp,avif}` 712² (קרופ ריבועי מרכזי מ-`c7b30d37…` 1536×1024; מוצג `object-position:top` כמו בפיגמה). **כרטיס המעצבת לא מקושר** (`<div class="artist-card">`), ואזכורי "רוני ליאני" בגוף לא מקושרים — **הכרעת המעצבת 2026-10-14: בינתיים אין דף אומן לשתי המעצבות של הפופ-אפ (רוני ליאני, אלודי K), רק לאדם לייזנר.** לא לבנות דף ולא "לתקן" לקישור; אם ייבנה בעתיד — `<a>` + קישור האזכורים.
 - הומפייג': הצ'יפ `roni liani` ב-`#designers-popup` מקשר לכאן.
 - OG: `og/sponsors-roni-liani-hero.jpg` 813×427 (קרופ בלי upscale) + `og-dims.json`.
 
 ## `/sponsors/elodie-k/`
 
 אלודי חייט, מותג האופנה **ELODIE K**, ב-**HOSTING DESIGNERS POP UP** (גלריית כיכר המדינה, ‏15.10–09.11.2026), אוצרות קורין אברהם. **בסיס = עותק `sponsors/roni-liani/`**, בלי עבודות ובלי שורת אתר.
-- 🔴 **ניווט (הכרעת המעצבת 2026-10-14):** לעמודי `roni-liani` ו-`elodie-k` מגיעים **רק** מצ'יפי השמות ב-`#designers-popup` בהומפייג'. לא להוסיף קישורים/כרטיסים אליהם ממקומות אחרים (דף הגלריה, `/press/`, `/events/`, ניווט). (הם כן ב-sitemap וב-`search-index.js` האוטומטי.)
+- 🔴 **ניווט (הכרעת המעצבת, עודכן 2026-10-15):** לעמודי הפופ-אפ (`roni-liani`, `elodie-k`, `ever-after`, `desert-queen`) ול-`ma-ren` מגיעים מצ'יפי השמות ב-`#designers-popup` בהומפייג' **ומכרטיסי `/events/`** (המעצבת ציירה אותם בפריים `1732:140`, 2026-10-15 — גובר על ההכרעה מ-2026-10-14 "רק מהצ'יפים"). לא להוסיף קישורים ממקומות אחרים (דף הגלריה, `/press/`, ניווט) בלי פריים. (הם ב-sitemap וב-`search-index.js` האוטומטי.)
 
 - לוקאפ: לוגו `elodie-k-logo.svg` (121×20.308, כהה; → האינסטגרם — אין אתר) · X · שם הגלריה. hero: **רקע שחור פשוט, בלי תמונה** — הכרעת המעצבת 2026-10-14 (לא placeholder; לא להוסיף תמונה) + לוגו לבן `elodie-k-logo-white.svg`.
 - גוף 9 פסקאות. **פתיחה + "על המייסדת" = Light בדסקטופ, Regular במובייל** (`2039:1291` מול `2039:1124`; במובייל גם `HOSTING DESIGNERS POP UP` Regular, `ELODIE K` Light — `.lede .lat:nth-of-type(2)`). השורה האחרונה "אינסטגרם: @elodiekofficial" (בפיגמה `elodiekofficial@` — היפוך bidi) → קישור. אחרי ה-divider רק קרדיט (בלי אתר).
-- רצועות: `the curator` + `the designer` (`2064:3778` / `2064:3810`) — **elodie khayat**; `designer-thumb` 712² = קרופ ריבועי של ה-layer העליון `f18d898e…` (900×1200, y 150). שני ה-fills שמתחתיו (ארז; קורין) = leftovers. כרטיס לא מקושר (אין דף אומן — הכרעת המעצבת).
+- רצועות: `the designer` (`2064:3778` / `2064:3810`) ואז `the curator` (`2039:1410` / `2039:1211`) — **elodie khayat**; `designer-thumb` 712² = קרופ ריבועי של ה-layer העליון `f18d898e…` (900×1200, y 150). שני ה-fills שמתחתיו (ארז; קורין) = leftovers. כרטיס לא מקושר (אין דף אומן — הכרעת המעצבת).
 - OG: `og/sponsors-elodie-k.jpg` 900×473 (מצילום המעצבת — אין hero); `cover_image` = `designer-thumb.webp` + `og-dims.json`. הומפייג': הצ'יפ `elodie k` מקשר לכאן.
+
+## `/sponsors/ever-after/`
+
+**EVER AFTER** (אלה קדם ונטלי בניסטי) ב-**HOSTING DESIGNERS POP UP**, גלריית כיכר המדינה, ‏18.10–22.10.2026, אוצרות קורין אברהם. **בסיס = עותק `roni-liani`.**
+- פאנל: לוקאפ עם לוגו `images/sponsors/ever-after/ever-after-logo.svg` (125×28; מובייל `-mobile.svg` 87×19 דרך `<picture>` — יחס שונה) → `https://www.everafteratelier.net`. hero `hero.{webp,avif}` 1024×1536 (+480/768) + scrim + לוגו לבן `ever-after-logo-white.svg` 152×34, בלי כותרת.
+- גוף 7 פסקאות; פתיחה Regular, `EVER AFTER` בפתיחה Light ו-`HOSTING DESIGNERS POP UP` Regular; פסקה 2 = התגית האנגלית `We don’t set tables — we set moods.` (`p.en.tag`). תאריכים ב-`<bdi>` התחלה→סוף (בפיגמה הפוך).
+- אחרי ה-divider: אתר · `אינסטגרם: @ever_after_atelier` (→ instagram) · קרדיט.
+- עבודות: **4 אריחי תמונה בלבד** (בלי כותרות), 291 רוחב, gap 24, LTR מיושר לשמאל: table · napkins · fruit · sardines. `napkins` רק 483×604 במקור — בלי upscale (קצת רך ב-2x).
+- רצועות: `the designer` (בדסקטופ "The Designer", במובייל "The Designers" — verbatim) — `ella kedem & / natalie benisti`, `designer-thumb` 712² (קרופ ריבועי y=203 מתמונת המעצבות), **לא מקושר**; ואז `the curator`.
+- OG `og/sponsors-ever-after-hero.jpg` 1024×538 (בלי upscale) + `tools/seo/og-dims.json`. JSON-LD כולל `Event` עם `startDate`/`endDate`.
+
+## `/sponsors/desert-queen/`
+
+**DESERT QUEEN** (סוזן לזר) ב-**HOSTING DESIGNERS POP UP**, גלריית כיכר המדינה, ‏15.10–09.11.2026, אוצרות קורין אברהם. **בסיס = עותק `ever-after`.**
+- לוגו פאנל `desert-queen-logo.svg` 150×45 (מובייל `-mobile.svg` 115×35) → `https://www.desertqueen.shop`; hero `hero.*` 1236×1599 (+480/768/1080) + לוגו לבן 206×63.
+- גוף: פתיחה (`Desert Queen` Regular בדסקטופ, Light במובייל — כך בפריימים) + פסקה אנגלית אחת (`p.en`, LTR מיושרת לשמאל) עם **שבירות השורה של הפיגמה verbatim** (`br.dbr`; מוסתרות ב-769–1319 כדי למנוע שורות יתומות).
+- אחרי ה-divider: אתר · `אינסטגרם: @desertqueen___` (שלושה קווים תחתונים) · קרדיט.
+- עבודות: 2 אריחים 358 רוחב (`look-1`, `look-2` — לרוחב, מוצג cover). רצועות: `the designer` — `susan / lazar` (thumb = קרופ ריבועי של ה-hero, לא מקושר) ואז `the curator`.
+- OG `og/sponsors-desert-queen-hero.jpg` 1236×649.
 
 ## Related pages — מקשרים לכאן או מעתיקים מכאן
 

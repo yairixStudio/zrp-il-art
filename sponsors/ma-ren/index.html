@@ -39,7 +39,7 @@ body{text-transform:uppercase}
 
 /* ===== SPONSOR / COLLAB PAGE — MA REN (אדם לייזנר) × THE ART GALLERY — WINDOW TAKE OVER, גלריית כיכר המדינה
    Figma desktop 2039:1580 / mobile 2039:1668. בסיס = sponsors/sumii (פאנל + כרטיס hero + גריד עבודות + the curator).
-   סדר הסקשנים: panel → works (3 + 2) → curator ===== */
+   סדר הסקשנים: panel → works (3 + 2) → the designer → the curator ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
 
 /* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
@@ -115,7 +115,8 @@ a.sp-site:hover{opacity:.65}
 /* 🔴 שבירות השורה ב-HTML הן תוכן (verbatim מהפיגמה) — pre-line, לא לאחד */
 .wk .txt{margin-top:16px;font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;text-align:right;direction:rtl;color:var(--ink);white-space:pre-line}
 
-/* THE CURATOR — artists-strip pattern, single card → curator page (Figma 2039:1632 / 2039:1733) */
+/* THE DESIGNER / THE CURATOR — artists-strip pattern (Figma 2125:110 + 2039:1632 / מובייל 2039:1733). הסדר: המעצב לפני האוצרת → curator page.
+   דסקטופ: כל רצועה padding 32/32. מובייל: ראה בלוק המובייל (designer 32/16/8, curator 32/16) */
 .sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
 .sp-curator .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
 .sp-curator .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
@@ -147,7 +148,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 }
 
 /* Mobile (Figma 2039:1668): hero full-bleed 390×520 under the header, then one white column.
-   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 divider/site/credit · 8-12 works · 13 curator */
+   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 divider/site/credit · 8-12 works · 13 designer · 14 curator */
 @media (max-width:768px){
   :root{--pad-x:16px}
 
@@ -166,7 +167,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .wk:nth-child(3){order:10}
   .wk:nth-child(4){order:11}
   .wk:nth-child(5){order:12}
-  .sp-curator{order:13}
+  .sp-curator--designer{order:13}
+  .sp-curator--curator{order:14}
 
   .only-d{display:none}
   .only-m{display:inline}
@@ -196,11 +198,15 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .wk .sub{font-size:16px}
   .wk .txt{margin-top:8px}
 
-  /* Curator strip (Figma mobile 96×80 thumb) */
+  /* Strips — curator: thumb 96×80 (Figma 2039:1733), padding 32/16.
+     designer: thumb 132×110, padding 32/16/8 */
   .sp-curator{padding:32px 16px}
+  .sp-curator--designer{padding:32px 16px 8px}
   .sp-curator .label{font-size:16px}
   .sp-curator .strip>a.artist-card{flex:0 0 112px}
+  .sp-curator--designer .strip>a.artist-card{flex:0 0 132px}
   .sp-curator .strip .img{width:96px;height:80px}
+  .sp-curator--designer .strip .img{width:132px;height:110px}
   .sp-curator .strip .name{font-size:13px;line-height:16px}
 }
 </style>
@@ -353,8 +359,26 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
+  <!-- THE DESIGNER — adam leisner (Figma 2125:110 desktop / מובייל: קרופ רחב יותר → <picture> עם media query; לכל webp אח avif ידני) -->
+  <section class="sp-curator sp-curator--designer" aria-label="המעצב">
+    <div class="inner">
+      <div class="label">the designer</div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../artists/adam-leisner/" aria-label="adam leisner">
+          <div class="img"><picture>
+            <source media="(max-width:768px)" type="image/avif" srcset="../../images/sponsors/ma-ren/designer-thumb-m.avif">
+            <source media="(max-width:768px)" type="image/webp" srcset="../../images/sponsors/ma-ren/designer-thumb-m.webp">
+            <source type="image/avif" srcset="../../images/sponsors/ma-ren/designer-thumb-d.avif">
+            <img src="../../images/sponsors/ma-ren/designer-thumb-d.webp" width="528" height="439" alt="adam leisner" loading="lazy" decoding="async">
+          </picture></div>
+          <div class="name">adam<br>leisner</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- THE CURATOR — korin avraham (Figma 2039:1632 desktop / 2039:1733 mobile) -->
-  <section class="sp-curator" aria-label="אוצרת התערוכה">
+  <section class="sp-curator sp-curator--curator" aria-label="אוצרת התערוכה">
     <div class="inner">
       <div class="label">the curator</div>
       <div class="strip" role="list">

@@ -1218,5 +1218,15 @@
 "jpg": "og/events-sumii-live-studio-hero.jpg",
 "w": 1200,
 "h": 1600
+},
+"images/sponsors/ever-after/hero.webp": {
+"jpg": "og/sponsors-ever-after-hero.jpg",
+"w": 1024,
+"h": 538
+},
+"images/sponsors/desert-queen/hero.webp": {
+"jpg": "og/sponsors-desert-queen-hero.jpg",
+"w": 1236,
+"h": 649
 }
 }

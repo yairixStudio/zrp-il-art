@@ -39,7 +39,7 @@ body{text-transform:uppercase}
 
 /* ===== SPONSOR / COLLAB PAGE — ELODIE K (אלודי חייט, אופנה) × THE ART GALLERY — HOSTING DESIGNERS POP UP, גלריית כיכר המדינה
    Figma desktop 2039:1240 / mobile 2039:1041. בסיס = עותק sponsors/roni-liani (פאנל + כרטיס hero + רצועות), בלי עבודות ובלי שורת אתר.
-   סדר הסקשנים: panel → the curator → the designer ===== */
+   סדר הסקשנים: panel → the designer → the curator ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
 
 /* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
@@ -90,9 +90,9 @@ a.sp-site:hover{opacity:.65}
 /* לוגו לבן 121×20.308 (Figma 2039:2183 / 2039:2173) — זהה בדסקטופ ובמובייל */
 .center-text .rl-logo{width:121px;height:20.308px;display:block;max-width:100%}
 
-/* THE CURATOR / THE DESIGNER — artists-strip pattern, single card (Figma 2039:3093 + 2064:3860 / 2039:3281 + 2064:3847) */
+/* THE DESIGNER / THE CURATOR — artists-strip pattern (Figma 2064:3778 + 2039:1410 / 2064:3810 + 2039:1211). הסדר: המעצבת לפני האוצרת.
+   דסקטופ: כל רצועה padding 32/32. מובייל: ראה בלוק המובייל (designer 32/16/8, curator 32/16) */
 .sp-curator .strip>.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
-.sp-curator--designer{padding-top:0}
 .sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
 .sp-curator .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
 .sp-curator .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
@@ -127,7 +127,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 }
 
 /* Mobile (Figma 2039:1041): hero full-bleed 390×520 (שחור) under the header, then one white column.
-   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-6 divider/credit · 7 curator · 8 designer */
+   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-6 divider/credit · 7 designer · 8 curator */
 @media (max-width:768px){
   :root{--pad-x:16px}
 
@@ -139,8 +139,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .sp-body{order:4}
   .sp-divider{order:5}
   .sp-credit{order:6}
-  .sp-curator{order:7}
-  .sp-curator--designer{order:8}
+  .sp-curator--designer{order:7}
+  .sp-curator--curator{order:8}
 
   .only-d{display:none}
   .only-m{display:inline}
@@ -165,13 +165,15 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .sp-credit{background:var(--white);padding:10px 16px 0;width:100%;font-size:16px;line-height:17.305px}
 
 
-  /* Curator strip (Figma mobile 96×80 thumb) */
+  /* Strips — curator: thumb 96×80 (Figma 2039:1211), padding 32/16.
+     designer: thumb 132×110, padding 32/16/8 (Figma 2064:3810) */
   .sp-curator{padding:32px 16px}
+  .sp-curator--designer{padding:32px 16px 8px}
   .sp-curator .label{font-size:16px}
   .sp-curator .strip>.artist-card,.sp-curator .strip>a.artist-card{flex:0 0 112px}
-  .sp-curator{padding-bottom:0}
-  .sp-curator--designer{padding:32px 16px}
+  .sp-curator--designer .strip>.artist-card,.sp-curator--designer .strip>a.artist-card{flex:0 0 132px}
   .sp-curator .strip .img{width:96px;height:80px}
+  .sp-curator--designer .strip .img{width:132px;height:110px}
   .sp-curator .strip .name{font-size:13px;line-height:16px}
 }
 </style>
@@ -253,19 +255,6 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
-  <!-- THE CURATOR — korin avraham (Figma 2039:1410 desktop / 2039:1211 mobile) -->
-  <section class="sp-curator" aria-label="אוצרת התערוכה">
-    <div class="inner">
-      <div class="label">the curator</div>
-      <div class="strip" role="list">
-        <a class="artist-card" role="listitem" href="../../curators/korin-avraham/" aria-label="korin avraham">
-          <div class="img"><img src="../../images/sponsors/sumii/curator-thumb.webp" width="712" height="561" alt="korin avraham" loading="lazy" decoding="async"></div>
-          <div class="name">korin<br>avraham</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- THE DESIGNER — elodie khayat (Figma 2064:3778 desktop / 2064:3810 mobile). אין דף אומן (הכרעת המעצבת 2026-10-14) — כרטיס לא מקושר -->
   <section class="sp-curator sp-curator--designer" aria-label="המעצבת">
     <div class="inner">
@@ -275,6 +264,19 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
           <div class="img"><img class="top" src="../../images/sponsors/elodie-k/designer-thumb.webp" width="712" height="712" alt="elodie khayat" loading="lazy" decoding="async"></div>
           <div class="name">elodie<br>khayat</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CURATOR — korin avraham (Figma 2039:1410 desktop / 2039:1211 mobile) -->
+  <section class="sp-curator sp-curator--curator" aria-label="אוצרת התערוכה">
+    <div class="inner">
+      <div class="label">the curator</div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../curators/korin-avraham/" aria-label="korin avraham">
+          <div class="img"><img src="../../images/sponsors/sumii/curator-thumb.webp" width="712" height="561" alt="korin avraham" loading="lazy" decoding="async"></div>
+          <div class="name">korin<br>avraham</div>
+        </a>
       </div>
     </div>
   </section>

@@ -78,10 +78,10 @@ legacy — מובייל:
 סקשן upcoming events (מובייל בלבד — frame `1318:476` בתוך פריים ההומפייג' `1318:363`; דסקטופ = אדפטציה): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-476&m=dev
 
-פוסטר כיכר המדינה (הטקסט אפוי בתמונה; **נוכחי: `poster-hamedina-v5` מ-node `1738:347` (2026-09-27)**; קודמים — `v4` ספטמבר ממקור שולחן-עבודה, `v3` ומטה, node ישן `1318:3259` — נשארים בדיסק, כלל-זהב 8; מתכון העדכון: `docs/routes/homepage.md` → `#events-upcoming`): Implement this design from Figma.
+פוסטר כיכר המדינה (הטקסט אפוי בתמונה; **נוכחי: `poster-hamedina-v6` מ-node `1979:345` (בתוך `1738:347`; דסקטופ `1873:1082`; "OCT - NOV EVENTS", 2026-10-15)**; קודמים — `v5` מ-`1738:347` (2026-09-27), `v4` ספטמבר ממקור שולחן-עבודה, `v3` ומטה, node ישן `1318:3259` — נשארים בדיסק, כלל-זהב 8; מתכון העדכון: `docs/routes/homepage.md` → `#events-upcoming`): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-3259&m=dev
 
-פוסטר כיכר דיזינגוף — **נוכחי: `poster-dizengoff-v4` מ-node `1873:1074` (2026-09-27)**. קודמים: `v2` [אוגוסט] מ-`1318:482`, `v3` [ספטמבר, רזידנסי Sumii] מקובץ שולחן-עבודה `Instagram story - 16.jpg` שהמעצבת מסרה. עדכון לוח = החלפת קובץ — ממקור Figma או מקובץ מעצבת (מתכון: `docs/routes/homepage.md` → `#events-upcoming`).
+פוסטר כיכר דיזינגוף — **נוכחי: `poster-dizengoff-v5` מ-node `1979:344` (בתוך `1738:347`; דסקטופ `1873:1081`; "NOVEMBER EVENTS", 2026-10-15)**. קודמים: `v4` מ-`1873:1074` (2026-09-27), `v2` [אוגוסט] מ-`1318:482`, `v3` [ספטמבר, רזידנסי Sumii] מקובץ שולחן-עבודה `Instagram story - 16.jpg` שהמעצבת מסרה. עדכון לוח = החלפת קובץ — ממקור Figma או מקובץ מעצבת (מתכון: `docs/routes/homepage.md` → `#events-upcoming`).
 
 ### Homepage — `#events-upcoming` redesign v2 (כותרת מעגלית + קרוסלה, 2026-07-15) — legacy, הוחלף ב-v3
 
@@ -119,6 +119,37 @@ legacy — מובייל:
 
 דף אומן מובייל (דסקטופ = אדפטציה של התבנית): Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-2222&m=dev
+
+### Sponsors — `/sponsors/ever-after/` (אלה קדם ונטלי בניסטי / EVER AFTER — HOSTING DESIGNERS POP UP, כיכר המדינה; 2026-10-15) ✅ המצב הנוכחי
+
+עמוד Ever After מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2097-6104&m=dev
+
+עמוד Ever After דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2097-4227&m=dev
+
+### Sponsors — `/sponsors/desert-queen/` (סוזן לזר / DESERT QUEEN — HOSTING DESIGNERS POP UP, כיכר המדינה; 2026-10-15) ✅ המצב הנוכחי
+
+עמוד Desert Queen מובייל: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2097-5281&m=dev
+
+עמוד Desert Queen דסקטופ: Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2097-5122&m=dev
+
+### Sponsors — רצועות THE DESIGNER / THE ARTISTS / THE CURATOR (2026-10-15) — בכל פריים: designer/artists **לפני** curator
+
+- elodie-k — designer: מובייל `2064-3810` · דסקטופ `2064-3778`
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2064-3810&m=dev
+- ma-ren — designer (ADAM LEISNER, מקושר): מובייל `2125-90` · דסקטופ `2125-110`; curator: מובייל `2039-1733` · דסקטופ `2039-1632`
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2125-90&m=dev
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-1733&m=dev
+- sumii — the artists (SHIRA TURBOWICZ + MELANI HEKIMOGLU, מקושרים): מובייל `2125-125` · דסקטופ `2126-2`; curator: מובייל `1546-3820` · דסקטופ `1637-239`
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2125-125&m=dev
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2126-2&m=dev
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1546-3820&m=dev
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1637-239&m=dev
+- roni-liani — שורות אתר / אינסטגרם / אוצרת (מובייל `2039-3229`; `@roni_liani` = `2097:5008` מובייל / `2097:5006` דסקטופ)
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=2039-3229&m=dev
 
 ### Sponsors — `/sponsors/elodie-k/` (אלודי חייט / ELODIE K — HOSTING DESIGNERS POP UP, כיכר המדינה; 2026-10-14) ✅ המצב הנוכחי
 
@@ -820,7 +851,10 @@ galleries dizengoff מובייל: Implement this design from Figma.
 upcoming events דסקטופ: Implement this design from Figma.
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-1728&m=dev
 
-upcoming events מובייל: Implement this design from Figma.
+upcoming events מובייל (**נוכחי: `1732-140`** — שוכתב in-place 2026-10-15: 6 כרטיסים — elodie k, desert queen, ever after, roni liani, ma ren, podcast station; פריים הדסקטופ `1318:1728` לא עודכן ⇒ דסקטופ = אדפטציה): Implement this design from Figma.
+@https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1732-140&m=dev
+
+upcoming events מובייל — legacy (עד 2026-09-01):
 @https://www.figma.com/design/XhGH289YTRcW811wrufRJz/landing?node-id=1318-2012&m=dev
 
 ### עמוד press & events (`/press/`)

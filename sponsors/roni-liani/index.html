@@ -39,7 +39,7 @@ body{text-transform:uppercase}
 
 /* ===== SPONSOR / COLLAB PAGE — RONI LIANI (מעצבת תכשיטים) × THE ART GALLERY — HOSTING DESIGNERS POP UP, גלריית כיכר המדינה
    Figma desktop 2039:2945 / mobile 2039:3129. בסיס = sponsors/ma-ren (פאנל + כרטיס hero + גריד עבודות + רצועות).
-   סדר הסקשנים: panel → works (3) → the curator → the designer ===== */
+   סדר הסקשנים: panel → works (3) → the designer → the curator ===== */
 .sponsor{display:flex;flex-direction:column;background:var(--white)}
 
 /* PANEL — tinted #EEF0EF, two columns: text left (all content right-aligned, RTL), hero 492×744 right
@@ -78,6 +78,7 @@ a.chip:hover{opacity:.65}
 .sp-divider i{display:block;width:72px;height:1px;background:var(--divider)}
 a.sp-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.04em;color:var(--ink);transition:opacity .2s}
 a.sp-site:hover{opacity:.65}
+/* שורת אינסטגרם — Figma 2097:5006 / 2097:5008 ("@roni_liani" בלי תווית), אותו גודל מכויל כמו שורת האתר */
 .sp-credit{font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);text-align:right;direction:rtl}
 
 /* Hero card — 492×744, תמונה + scrim (Figma: gradient to-top rgba(0,0,0,.4)→0), לוקאפ לבן ממורכז (Figma 2039:2993 — בלי כותרת). */
@@ -105,9 +106,9 @@ a.sp-site:hover{opacity:.65}
 .wk .ttl{margin-top:24px;font-family:var(--cop);font-weight:400;font-size:15.75px;line-height:1.3;text-align:right;letter-spacing:.02em;color:var(--ink)}
 .wk .txt{margin-top:16px;font-family:var(--heb);font-weight:300;font-size:16px;line-height:17.305px;text-align:right;direction:rtl;color:var(--ink)}
 
-/* THE CURATOR / THE DESIGNER — artists-strip pattern, single card (Figma 2039:3093 + 2064:3860 / 2039:3281 + 2064:3847) */
+/* THE DESIGNER / THE CURATOR — artists-strip pattern (Figma 2064:3860 + 2039:3093 / 2064:3847 + 2039:3281). הסדר: המעצבת לפני האוצרת.
+   דסקטופ: כל רצועה padding 32/32 (301 בפיגמה). מובייל: ראה בלוק המובייל (designer 32/16/8, curator 32/16) */
 .sp-curator .strip>.artist-card{flex:0 0 178px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;color:inherit}
-.sp-curator--designer{padding-top:0}
 .sp-curator{padding:32px var(--pad-x);display:flex;justify-content:center;background:var(--white)}
 .sp-curator .inner{display:flex;flex-direction:column;gap:16px;width:100%;max-width:var(--max)}
 .sp-curator .label{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);text-align:left;letter-spacing:.02em}
@@ -140,7 +141,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 }
 
 /* Mobile (Figma 2039:1668): hero full-bleed 390×520 under the header, then one white column.
-   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-7 divider/site/credit · 8-10 works · 11 curator · 12 designer */
+   Order: 1 hero · 2 chip · 3 lockup · 4 body · 5-8 divider/site/instagram/credit · 9-11 works · 12 designer · 13 curator */
 @media (max-width:768px){
   :root{--pad-x:16px}
 
@@ -153,12 +154,13 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .sp-body{order:4}
   .sp-divider{order:5}
   a.sp-site{order:6}
-  .sp-credit{order:7}
-  .wk:nth-child(1){order:8}
-  .wk:nth-child(2){order:9}
-  .wk:nth-child(3){order:10}
-  .sp-curator{order:11}
+  a.sp-ig{order:7}
+  .sp-credit{order:8}
+  .wk:nth-child(1){order:9}
+  .wk:nth-child(2){order:10}
+  .wk:nth-child(3){order:11}
   .sp-curator--designer{order:12}
+  .sp-curator--curator{order:13}
 
   .only-d{display:none}
   .only-m{display:inline}
@@ -178,6 +180,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .sp-divider{background:var(--white);padding:24px 32px 0;width:100%}
   .sp-divider i{background:#EFEFEF}
   a.sp-site{background:var(--white);padding:16px 16px 0;width:100%;text-align:right;font-size:13px}
+  a.sp-ig{padding-top:10px}
   .sp-credit{background:var(--white);padding:10px 16px 0;width:100%;font-size:16px;line-height:17.305px}
 
   /* Works — כרטיס ברוחב התוכן, 24 בין כרטיסים (Figma 2039:3236…: img→24→ttl→8→txt) */
@@ -185,13 +188,14 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
   .wk .ttl{font-size:17.5px}
   .wk .txt{margin-top:8px}
 
-  /* Curator strip (Figma mobile 96×80 thumb) */
+  /* Strips — curator: thumb 96×80 (Figma 2039:3281), padding 32/16.
+     designer: thumb 132×110 (Figma 2064:3847). padding 32/16/32 verbatim מהפיגמה של roni (255 גובה) — בשלושת העמודים האחרים (ma-ren/elodie-k/sumii) הפריים הוא 32/16/8 */
   .sp-curator{padding:32px 16px}
   .sp-curator .label{font-size:16px}
   .sp-curator .strip>.artist-card,.sp-curator .strip>a.artist-card{flex:0 0 112px}
-  .sp-curator{padding-bottom:0}
-  .sp-curator--designer{padding:32px 16px}
+  .sp-curator--designer .strip>.artist-card,.sp-curator--designer .strip>a.artist-card{flex:0 0 132px}
   .sp-curator .strip .img{width:96px;height:80px}
+  .sp-curator--designer .strip .img{width:132px;height:110px}
   .sp-curator .strip .name{font-size:13px;line-height:16px}
 }
 </style>
@@ -256,6 +260,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
           <a class="sp-site" href="https://roniliani.com" target="_blank" rel="noopener">roniliani.com</a>
 
+          <a class="sp-site sp-ig" href="https://www.instagram.com/roni_liani/" target="_blank" rel="noopener"><bdi dir="ltr">@roni_liani</bdi></a>
+
           <div class="sp-credit heb"><span class="only-d">אוצרות: </span><span class="only-m">אוצרת התערוכה - </span><a class="artist-link" href="../../curators/korin-avraham/">קורין אברהם</a></div>
         </div>
       </div>
@@ -299,19 +305,6 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
     </div>
   </section>
 
-  <!-- THE CURATOR — korin avraham (Figma 2039:3093 desktop / 2039:3281 mobile) -->
-  <section class="sp-curator" aria-label="אוצרת התערוכה">
-    <div class="inner">
-      <div class="label">the curator</div>
-      <div class="strip" role="list">
-        <a class="artist-card" role="listitem" href="../../curators/korin-avraham/" aria-label="korin avraham">
-          <div class="img"><img src="../../images/sponsors/sumii/curator-thumb.webp" width="712" height="561" alt="korin avraham" loading="lazy" decoding="async"></div>
-          <div class="name">korin<br>avraham</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
   <!-- THE DESIGNER — roni liani (Figma 2064:3860 desktop / 2064:3847 mobile). ⏳ אין דף אומן — כרטיס לא מקושר עד שייבנה -->
   <section class="sp-curator sp-curator--designer" aria-label="המעצבת">
     <div class="inner">
@@ -321,6 +314,19 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
           <div class="img"><img class="top" src="../../images/sponsors/roni-liani/designer-thumb.webp" width="712" height="712" alt="roni liani" loading="lazy" decoding="async"></div>
           <div class="name">roni<br>liani</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE CURATOR — korin avraham (Figma 2039:3093 desktop / 2039:3281 mobile) -->
+  <section class="sp-curator sp-curator--curator" aria-label="אוצרת התערוכה">
+    <div class="inner">
+      <div class="label">the curator</div>
+      <div class="strip" role="list">
+        <a class="artist-card" role="listitem" href="../../curators/korin-avraham/" aria-label="korin avraham">
+          <div class="img"><img src="../../images/sponsors/sumii/curator-thumb.webp" width="712" height="561" alt="korin avraham" loading="lazy" decoding="async"></div>
+          <div class="name">korin<br>avraham</div>
+        </a>
       </div>
     </div>
   </section>
