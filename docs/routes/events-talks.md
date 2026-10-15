@@ -212,7 +212,7 @@ Figma של כולם: `XhGH289YTRcW811wrufRJz` (landing), מקוצר `XhGH...::`.
 
 ## zohar-ron-medina
 
-- **slug לפי הגלריה** (`zohar-ron` תפוס). שבירה לכל breakpoint: `artist talk<br class="dbr"> with<br class="mbr"> zohar ron` (דסקטופ `artist talk` / `with zohar ron`; מובייל `artist talk with` / `zohar ron`). מטא Light דסקטופ / Regular מובייל.
+- **slug לפי הגלריה** (`zohar-ron` תפוס). שבירה לכל breakpoint: `artist talk<br class="dbr"> with<br class="mbr"> zohar ron` (דסקטופ `artist talk` / `with zohar ron`; מובייל `artist talk with` / `zohar ron`); רוחב ink מול הפריים — כותרת 461/635px אצלנו מול 440/615 בפיגמה (+3-5%, בתוך סבילות המשפחה), עברית וכתובת ±1%. מטא Light דסקטופ / Regular מובייל.
 - **תאריך 24.9.2026** (הוזז מ-9.9, 2026-09-27 — לא להחזיר), מעודכן בכל המקומות (מטא, description/OG/twitter, JSON-LD, `events.json` `date`/`date_he`, `press.json`, מירור, `/press/` מתחת ל-niki 25.9).
 - **הירו:** imageRef `951e06ff…` (צילום דג, 1380×2048 Adobe98). **thumb:** `images/events/zohar-ron/artist-thumb.webp` (imageRef `889e3ab7`; `36e2f912…` leftover).
 
