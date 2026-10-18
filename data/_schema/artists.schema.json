@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "artists",
+  "type": "object",
+  "required": ["artists"],
+  "properties": {
+    "artists": { "type": "array", "items": { "$ref": "#/$defs/artist" } },
+    "_pending_artist_pages": { "$ref": "#/$defs/strings" }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "artist": {
+      "type": "object",
+      "required": ["id", "slug", "name_en", "name_he", "works", "homepage_featured"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "name_en": { "type": "string" },
+        "name_he": { "type": "string" },
+        "studio_en": { "type": "string" },
+        "curator_slug": { "type": "string" },
+        "portrait": { "type": ["string", "null"] },
+        "portrait_focus": { "type": "string" },
+        "work_image": { "type": ["string", "null"] },
+        "instagram_handle": { "type": ["string", "null"] },
+        "bio_he": { "type": ["string", "null"] },
+        "bio_en": { "type": ["string", "null"] },
+        "works": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title", "image"],
+            "properties": {
+              "id": { "type": "string" },
+              "title": { "type": "string" },
+              "image": { "type": "string" },
+              "medium": { "type": "string" },
+              "year": { "type": "integer" }
+            }
+          }
+        },
+        "works_grid_order": { "type": "integer" },
+        "works_caption_each_image": { "type": "boolean" },
+        "hero_images": { "$ref": "#/$defs/strings" },
+        "hero_image_focus": { "$ref": "#/$defs/strings" },
+        "hero_collab": {
+          "type": "object",
+          "required": ["artists"],
+          "properties": {
+            "artists": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["name_en"],
+                "properties": {
+                  "name_en": { "$ref": "#/$defs/strings" },
+                  "bio_he_short": { "type": "string" },
+                  "instagram": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "homepage_featured": { "type": "boolean" },
+        "figma_artist_page_mobile": { "type": ["string", "null"] },
+        "figma_artist_page_desktop": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

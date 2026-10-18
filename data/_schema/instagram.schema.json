@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "instagram",
+  "type": "object",
+  "required": ["handle", "posts"],
+  "properties": {
+    "handle": { "type": "string" },
+    "posts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "image"],
+        "properties": {
+          "id": { "type": "string" },
+          "image": { "type": "string" },
+          "url": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

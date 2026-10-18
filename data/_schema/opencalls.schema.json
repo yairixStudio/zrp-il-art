@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "opencalls",
+  "type": "object",
+  "required": ["opencalls"],
+  "properties": {
+    "opencalls": { "type": "array", "items": { "$ref": "#/$defs/opencall" } }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "text_block": {
+      "type": "object",
+      "required": ["weight", "lines"],
+      "properties": {
+        "weight": { "type": "string" },
+        "lines": { "$ref": "#/$defs/strings" }
+      }
+    },
+    "opencall": {
+      "type": "object",
+      "required": ["id", "slug", "title_en", "status", "gallery_id", "deadline", "hero_image", "card_image", "description_he", "contact"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "title_html": { "type": "string" },
+        "title_en": { "type": "string" },
+        "title_he": { "type": ["string", "null"] },
+        "status": { "type": "string" },
+        "submission_status_he": { "type": "string" },
+        "gallery_id": { "type": "string" },
+        "gallery_label_he": { "type": "string" },
+        "deadline": { "$ref": "#/$defs/date" },
+        "deadline_he": { "type": "string" },
+        "city": { "type": "string" },
+        "theme": { "type": "string" },
+        "hero_image": { "type": "string" },
+        "hero_mobile_ratio": { "type": "string" },
+        "card_image": { "type": "string" },
+        "description_he": { "type": "array", "items": { "$ref": "#/$defs/text_block" } },
+        "emotional_triggers": {
+          "type": ["object", "null"],
+          "properties": {
+            "title_he": { "type": "string" },
+            "lines": { "$ref": "#/$defs/strings" },
+            "items": { "$ref": "#/$defs/strings" }
+          }
+        },
+        "submission_instructions_he": {
+          "type": "object",
+          "properties": {
+            "lead_he": { "type": "array", "items": { "$ref": "#/$defs/text_block" } },
+            "intro_html": { "type": ["string", "null"] },
+            "bullet": { "type": "string" },
+            "items": { "$ref": "#/$defs/strings" },
+            "items_html": { "$ref": "#/$defs/strings" },
+            "outro_he": { "type": "string" }
+          }
+        },
+        "contact": {
+          "type": "object",
+          "required": ["email"],
+          "properties": {
+            "intro_he": { "$ref": "#/$defs/strings" },
+            "deadline_first": { "type": "boolean" },
+            "deadline_label_he": { "type": "string" },
+            "label_he": { "type": "string" },
+            "label_html": { "type": "string" },
+            "email": { "type": "string" },
+            "note_he": { "type": ["string", "null"] }
+          }
+        },
+        "gallery_images": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "required": ["image"],
+            "properties": {
+              "image": { "type": "string" },
+              "video": { "type": "string" },
+              "poster": { "type": "string" }
+            }
+          }
+        },
+        "figma_node_desktop": { "type": "string" },
+        "figma_node_mobile": { "type": "string" }
+      }
+    }
+  }
+}

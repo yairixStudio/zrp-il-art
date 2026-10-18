@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "works",
+  "type": "object",
+  "required": ["works", "art_works", "exhibition_statements"],
+  "properties": {
+    "works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "image"],
+        "properties": {
+          "id": { "type": "string" },
+          "image": { "type": "string" },
+          "figma_image_ref": { "type": "string" },
+          "artist_id": { "type": ["string", "null"] }
+        }
+      }
+    },
+    "art_works": { "type": "array", "items": { "$ref": "#/$defs/art_work" } },
+    "exhibition_statements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["artist_slug", "statement_he"],
+        "properties": {
+          "artist_slug": { "type": "string" },
+          "exhibition_title_he": { "type": ["string", "null"] },
+          "exhibition_slug": { "type": ["string", "null"] },
+          "exhibition_route": { "type": ["string", "null"] },
+          "statement_he": { "$ref": "#/$defs/strings" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "art_work": {
+      "type": "object",
+      "required": ["id", "artist_slug", "artist_en", "gallery_slug", "gallery_en", "sold", "img", "w", "h", "widths", "page"],
+      "properties": {
+        "id": { "type": "string" },
+        "artist_slug": { "type": "string" },
+        "artist_he": { "type": ["string", "null"] },
+        "artist_en": { "type": "string" },
+        "title_he": { "type": ["string", "null"] },
+        "title_en": { "type": ["string", "null"] },
+        "kind": { "type": "string" },
+        "gallery_slug": { "type": "string" },
+        "gallery_en": { "type": "string" },
+        "sold": { "type": "boolean" },
+        "details_he": { "type": ["string", "null"] },
+        "img": { "type": "string" },
+        "w": { "type": "integer", "minimum": 1 },
+        "h": { "type": "integer", "minimum": 1 },
+        "widths": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "artist_page_pos": { "type": ["integer", "null"] },
+        "artist_pages": { "$ref": "#/$defs/strings" },
+        "page": { "type": "boolean" },
+        "exhibition_title_he": { "type": ["string", "null"] },
+        "exhibition_slug": { "type": ["string", "null"] },
+        "exhibition_route": { "type": ["string", "null"] },
+        "statement_he": { "$ref": "#/$defs/strings" },
+        "collab": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["slug", "name_en"],
+            "properties": {
+              "slug": { "type": "string" },
+              "name_he": { "type": "string" },
+              "name_en": { "type": "string" }
+            }
+          }
+        },
+        "collab_connector_he": { "type": "string" }
+      }
+    }
+  }
+}

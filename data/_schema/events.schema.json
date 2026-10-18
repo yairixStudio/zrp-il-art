@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "events",
+  "type": "object",
+  "required": ["events"],
+  "properties": {
+    "events": { "type": "array", "items": { "$ref": "#/$defs/event" } }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "time": { "type": "string", "pattern": "^[0-9]{2}:[0-9]{2}$" },
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "image": {
+      "type": "object",
+      "required": ["src", "alt"],
+      "properties": {
+        "src": { "type": "string" },
+        "alt": { "type": "string" },
+        "poster": { "type": "string" },
+        "figma_node": { "type": "string" },
+        "figma_image_ref": { "type": "string" }
+      }
+    },
+    "event": {
+      "type": "object",
+      "required": ["id", "slug", "title_en", "gallery_id", "gallery_label_he", "homepage_visible"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "title_he": { "type": ["string", "null"] },
+        "title_en": { "type": "string" },
+        "subtitle_he": { "type": ["string", "null"] },
+        "card_title_en": { "type": ["string", "null"] },
+        "list_title_he": { "type": "string" },
+        "list_title_en": { "type": "string" },
+        "list_title_he_suffix": { "type": "string" },
+        "exhibition_id": { "type": ["string", "null"] },
+        "exhibition_volume": { "type": "integer" },
+        "date": { "anyOf": [{ "$ref": "#/$defs/date" }, { "type": "null" }] },
+        "date_end": { "$ref": "#/$defs/date" },
+        "date_he": { "type": ["string", "null"] },
+        "date_label": { "type": "string" },
+        "date_text": { "type": "string" },
+        "date_start_only": { "type": "boolean" },
+        "date_tbd": { "type": "boolean" },
+        "day_he": { "type": "string" },
+        "soon": { "type": "boolean" },
+        "time_start": { "anyOf": [{ "$ref": "#/$defs/time" }, { "type": "null" }] },
+        "time_end": { "anyOf": [{ "$ref": "#/$defs/time" }, { "type": "null" }] },
+        "time_label": { "type": "string" },
+        "gallery_id": { "type": "string" },
+        "gallery_label_he": { "type": "string" },
+        "gallery_label": { "type": "string" },
+        "address_en": { "$ref": "#/$defs/strings" },
+        "host_he": { "type": "string" },
+        "cover_image": { "type": ["string", "null"] },
+        "list_image": { "type": "string" },
+        "description_he": { "anyOf": [{ "$ref": "#/$defs/strings" }, { "type": ["string", "null"] }] },
+        "statement_title_en": { "type": "string" },
+        "statement_he": { "$ref": "#/$defs/strings" },
+        "poem_he": { "$ref": "#/$defs/strings" },
+        "note_en": { "$ref": "#/$defs/strings" },
+        "note_he": { "$ref": "#/$defs/strings" },
+        "artists_he": { "$ref": "#/$defs/strings" },
+        "performers_he": { "$ref": "#/$defs/strings" },
+        "artists": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name_en", "slug", "image"],
+            "properties": {
+              "name_en": { "type": "string" },
+              "slug": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        },
+        "gallery_images": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+        "gallery_videos": {
+          "type": "array",
+          "items": { "allOf": [{ "$ref": "#/$defs/image" }, { "required": ["poster"] }] }
+        },
+        "event_photos": { "type": "array", "items": { "$ref": "#/$defs/image" } },
+        "photo_credit_stills": { "type": "string" },
+        "photo_credit_video": { "type": "string" },
+        "widths": { "type": "array", "items": { "type": "integer" } },
+        "route": { "type": ["string", "null"] },
+        "homepage_visible": { "type": "boolean" },
+        "figma_file": { "type": "string" },
+        "figma_node_desktop": { "type": ["string", "null"] },
+        "figma_node_mobile": { "type": "string" },
+        "figma_node_photos_desktop": { "type": "string" },
+        "figma_node_photos_mobile": { "type": "string" },
+        "figma_node_credits_desktop": { "type": "string" },
+        "figma_node_credits_mobile": { "type": "string" }
+      }
+    }
+  }
+}
