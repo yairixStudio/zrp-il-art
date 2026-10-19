@@ -2263,6 +2263,43 @@
       "_note": "כרטיס רשימה בלבד ב-/events/ (פריים מובייל 1732:140, מצורף ב-2026-10-15) — אין דף events/<slug>/; הכרטיס מקשר ל-sponsors/ever-after/ (route נושא את היעד, והמירור #events-list-data נושא אותו כשדה route). date = יום ההתחלה, date_end = סוף הריצה האמיתית (הכרטיס נשאר ברשימה עד אז); date_start_only = מוצג רק תאריך ההתחלה (verbatim מהפיגמה). הפריים הדסקטופ 1318:1728 מיושן — לא מקור. תמונה = images/sponsors/ever-after/hero.webp 1024×1536 (זהה לרסטר של 2130:293, object-fit:cover ממורכז כמו בפיגמה) + variants 480/768."
     },
     {
+      "id": "popup-terratiles-studio",
+      "slug": "popup-terratiles-studio",
+      "title_he": null,
+      "title_en": "Hosting Designers Pop Up | Terratiles Studio",
+      "subtitle_he": null,
+      "exhibition_id": null,
+      "date": "2026-10-26",
+      "date_end": "2026-11-09",
+      "date_he": null,
+      "time_start": null,
+      "time_end": null,
+      "gallery_id": "medina",
+      "gallery_label_he": "גלריית כיכר המדינה",
+      "cover_image": null,
+      "list_image": "images/sponsors/terratiles-studio/hero.webp",
+      "description_he": null,
+      "address_en": [
+        "THE art GALLERY by erez ZiELINSKI & ROZEN",
+        "kikar hamedina",
+        "131 Jabotinsky st. tel aviv"
+      ],
+      "artists": [],
+      "route": "sponsors/terratiles-studio/",
+      "homepage_visible": false,
+      "figma_node_desktop": null,
+      "figma_node_mobile": null,
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "card_title_en": null,
+      "date_start_only": true,
+      "widths": [
+        480,
+        768,
+        1086
+      ],
+      "_note": "כרטיס רשימה בלבד ב-/events/ (בקשת משתמש 2026-10-19 — אין פריים; נבנה כמו popup-ever-after). אין דף events/<slug>/; הכרטיס מקשר ל-sponsors/terratiles-studio/. date = יום ההתחלה (26.10), date_end = סוף התצוגה בגלריה (9.11); ימי הפופ-אפ עצמם 29–31.10 ו-5–7.11 (בעמוד הספונסר). date_start_only = מוצג רק תאריך ההתחלה. תמונה = images/sponsors/terratiles-studio/hero.webp 1086×1448 + variants 480/768."
+    },
+    {
       "id": "window-takeover-ma-ren",
       "slug": "window-takeover-ma-ren",
       "title_he": null,
