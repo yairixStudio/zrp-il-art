@@ -258,6 +258,8 @@ def sync_events_list():
             cards.append((i, event_card(e, gallery_he)))
         except (ValueError, KeyError, OSError) as err:
             problems.append("data/events.json: %s — card not generated: %s" % (e.get("slug"), err))
+    if problems:    # never write a block with cards missing — leave the page as it is and fail
+        return problems
     cards = [c for _, c in sorted(cards, key=lambda p: card_order(p[1], p[0]))]
     t = open(os.path.join(ROOT, fp), encoding="utf-8").read()
     body = "\n[\n" + ",\n".join(" " + compact(c) for c in cards) + "\n]\n"
