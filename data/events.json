@@ -66,6 +66,7 @@
       "slug": "close-look",
       "title_he": "מבט מקרוב",
       "title_en": "how many partners have u had?",
+      "list_title_en": "close look — open meeting with tanya shin",
       "subtitle_he": "מפגש פתוח בתוך התערוכה",
       "exhibition_id": "how-many",
       "exhibition_volume": 2,
@@ -192,6 +193,7 @@
       "slug": "how-many",
       "title_he": "אירוע הפתיחה — כמה שותפים היו לך?",
       "title_en": "Opening — How Many Partners Have You Had?",
+      "list_title_en": "opening — how many partners have you had?",
       "exhibition_id": "how-many",
       "exhibition_volume": 2,
       "date": "2026-05-26",
@@ -340,6 +342,7 @@
       "slug": "loneliness",
       "title_he": "אירוע הפתיחה — בדידות בתוך סביבה תוססת",
       "title_en": "Opening — Loneliness in a Bubbling Environment",
+      "list_title_en": "opening — loneliness in a bubbling environment",
       "exhibition_id": "loneliness",
       "exhibition_volume": 1,
       "date": "2026-01-19",
@@ -701,6 +704,7 @@
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/zohar-ron-medina/hero.webp",
       "list_image": "images/events/zohar-ron-medina/list-card.webp",
+      "list_alt": "שיחת אמנים עם זוהר רון — גלריית כיכר המדינה",
       "description_he": [
         "קָמִיעַ | שיח גלריה עם הצלם זוהר רון",
         "",
@@ -833,6 +837,7 @@
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/the-space-between/hero.webp",
+      "list_image": "images/events/the-space-between/hero-480w.webp",
       "description_he": [
         "19:30 התכנסות וכוס יין",
         "20:00 הרצאה קצרה, שיח פתוח וסיור בתערוכה",
@@ -880,6 +885,7 @@
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/noemi-safir/hero.webp",
       "list_image": "images/events/noemi-safir/list-card.webp",
+      "list_alt": "שיחת אמנים עם נעמי ספיר — גלריית כיכר המדינה",
       "description_he": [
         "Noemi Safir מציגה את יצירותיה",
         "בשיתוף עם Idit Klaiman - יזמת, הייטקיסטית ומנטורית",
@@ -1203,6 +1209,7 @@
       "slug": "gala-night",
       "title_he": "ערב הגאלה של תערוכת הקולפן",
       "title_en": "gala night",
+      "list_title_en": "gala night — the peeler",
       "subtitle_he": "הקולפן",
       "exhibition_id": "the-peeler",
       "exhibition_volume": 2,
@@ -1214,6 +1221,7 @@
       "gallery_id": "medina",
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/gala-night/hero.webp",
+      "list_image": "images/events/gala-night/card.webp",
       "description_he": [
         "ערב הגאלה של תערוכת הקולפן — עשרים ושניים אמנים ואמניות, באוצרות קורין אברהם.",
         "המכתב האוצרותי המלא, גלריות הצילומים ורגעי הפתיחה — בדף האירוע."
@@ -1832,6 +1840,7 @@
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/sponsors/sumii/hero.webp",
       "list_image": "images/events/sumii-opening/list-card.webp",
+      "list_alt": "ערב הפתיחה של הרזידנסי של SUMII — גלריית כיכר דיזינגוף",
       "address_en": [
         "THE art GALLERY by erez ZiELINSKI & ROZEN",
         "Dizengoff Square",
@@ -1933,6 +1942,12 @@
       "gallery_label_he": "גלריית כיכר המדינה",
       "cover_image": "images/events/nir-giorgio-levin-medina/hero.webp",
       "list_image": "images/events/nir-giorgio-levin-medina/list-card.webp",
+      "list_alt": "שיחת אמנים עם ניר ג׳ורג׳יו לוין — גלריית כיכר המדינה",
+      "widths": [
+        480,
+        768,
+        876
+      ],
       "description_he": [
         "התמסרות",
         "האם אפשר להתמסר מבלי לאבד משהו מעצמנו?",
@@ -1978,6 +1993,7 @@
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/yom-kippur-wish-tree/hero.webp",
       "list_image": "images/events/yom-kippur-wish-tree/list-card.webp",
+      "list_alt": "אירוע יום כיפור, עץ המשאלות — גלריית כיכר דיזינגוף",
       "description_he": [
         "לקראת יום כיפור, הגלריה בכיכר דיזנגוף מתמלאת בווידויים ומשאלות, בהשראת \"עץ המשאלות\" של יוקו אונו.",
         "בואו לכתוב, לבקש, להתוודות.",
@@ -2026,6 +2042,7 @@
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/sumii-melani-hosting/hero.webp",
       "list_image": "images/events/sumii-melani-hosting/list-card.webp",
+      "list_alt": "אירוח של SUMII ומלאני הקימוגלו — גלריית כיכר דיזינגוף",
       "description_he": [
         "לקראת ראש השנה הגלריה משנה את פניה. יחד נלביש את המרחב בשולחן חג ייחודי המשלב פיסול, קרמיקה ופרחים.",
         "שעות פתיחה",
@@ -2070,6 +2087,7 @@
       "slug": "niki-de-saint-phalle-day",
       "title_he": "יום ניקי דה סן פאל",
       "title_en": "day of Niki de Saint Phalle",
+      "list_title_en": "day of niki de saint phalle",
       "subtitle_he": null,
       "exhibition_id": null,
       "date": "2026-09-25",
@@ -2114,6 +2132,7 @@
       "slug": "sumii-live-studio",
       "title_he": "סטודיו LIVE — SUMII ומלאני הקימוגלו",
       "title_en": "Live Studio // Sumii",
+      "list_title_en": "live studio // sumii",
       "subtitle_he": null,
       "exhibition_id": null,
       "date": "2026-09-30",
@@ -2127,6 +2146,7 @@
       "gallery_label_he": "גלריית כיכר דיזינגוף",
       "cover_image": "images/events/sumii-live-studio/hero.webp",
       "list_image": "images/events/sumii-live-studio/list-card.webp",
+      "list_alt": "סטודיו LIVE של SUMII — גלריית כיכר דיזינגוף",
       "description_he": [
         "סטודיו LIVE",
         "במשך שלושה ימים, הגלריה הופכת למרחב של מחקר בחימר בפיסול חי בחלל, בהם SUMII מארחת את מלאני לעבודה משותפת בחימר, ללא ידיעה כיצד העבודה תיראה בסופם.",
