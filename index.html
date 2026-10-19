@@ -856,7 +856,8 @@ a.collab-more:hover{opacity:.65}
   .ex-now-head{gap:128px;align-items:stretch}
   .ex-now-tail{padding-top:0;gap:16px;max-width:none}
   .ex-now .titles{line-height:.95;text-align:left;align-self:stretch;max-width:100%;overflow-x:clip}
-  .ex-now .titles .b{font-size:44px;letter-spacing:-.01em}
+  /* "exhibitions" ברוחב ~7.2em — יורד עם המסך מתחת ל-~350 כדי לא להיחתך (300 → ~37px); 44 מעל */
+  .ex-now .titles .b{font-size:min(44px, calc((100vw - 32px) / 7.3));letter-spacing:-.01em}
   .ex-now .titles .l{font-size:70px;margin-top:-6px;letter-spacing:-.01em}
   .ex-now .cards{gap:4px}
   .ex-now .card-link:first-child:not(:only-child){flex:1 1 0}
@@ -880,7 +881,8 @@ a.collab-more:hover{opacity:.65}
   .ex-now .res-logos .res-sumii{width:32.96px}
   .ex-now .res-logos .res-melani{width:43.51px}
   .ex-now .card .ttl-en--sm{font-size:11px}
-  .ex-now .card .ttl-en--res{font-size:11px;white-space:nowrap}
+  /* "pop up art residency" ~12.7em בתוך כרטיס ~0.4 מרוחב המסך — יורד עם המסך מתחת ל-~385 (300 → ~8.3px); 11 מעל */
+  .ex-now .card .ttl-en--res{font-size:min(11px, calc((100vw - 36px) * .0315));white-space:nowrap}
   .ex-now .artists-bar .lbl{font-size:20px}
   .ex-now .artists-bar svg{width:16px;height:16px}
   .ex-now .artists-list{padding-right:16px;margin-top:0}
