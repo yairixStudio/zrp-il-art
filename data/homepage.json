@@ -421,15 +421,17 @@
   "figma_node_order": "1873:1146"
  },
  "popup_designers_collab": {
-  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14; updated 2026-10-15). Mobile = Figma 2039:2860; desktop = adaptation (same scale as #sumii). Lockup = gallery name only, then four framed designer chips in two rows (elodie k, roni liani / desert queen, ever after; row gap 40), then info, then a decorative 3-image strip (NOT linked, no CTA; Figma 2104:7 / 2104:11 / 2104:15, object-fit cover). Chips link to each designer's pop-up page (sponsors/<slug>/). No artist pages for the designers (designer decision 2026-10-14).",
+  "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14; updated 2026-10-19). Mobile = Figma 2039:2860; desktop = Figma 1881:1904 for the chips (rest of the desktop section = adaptation, same scale as #sumii). Lockup = gallery name only, then five framed designer chips: desktop two rows (elodie k, roni liani / desert queen, terratiles studio, ever after; title→rows→rows gap 18), mobile three rows (elodie k, roni liani / terratiles studio / desert queen, ever after; row gap 24), then info, then a decorative 3-image strip (NOT linked, no CTA; Figma 2104:7 / 2104:11 / 2104:15, object-fit cover). Chips link to each designer's pop-up page (sponsors/<slug>/). No artist pages for the designers (designer decision 2026-10-14).",
   "gname_en": "the art gallery by erez zielinski rozen",
   "designers_en": [
    "elodie k",
    "roni liani",
    "desert queen",
+   "terratiles studio",
    "ever after"
   ],
   "artist_slugs": [
+   null,
    null,
    null,
    null,
@@ -441,11 +443,12 @@
   "curator_slug": "korin-avraham",
   "route": null,
   "figma_node_mobile": "2039:2860",
-  "figma_node_desktop": null,
+  "figma_node_desktop": "1881:1904",
   "designer_routes": [
    "sponsors/elodie-k/",
    "sponsors/roni-liani/",
    "sponsors/desert-queen/",
+   "sponsors/terratiles-studio/",
    "sponsors/ever-after/"
   ],
   "images": [

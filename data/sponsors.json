@@ -204,6 +204,31 @@
       "figma_logo_node": null,
       "founder_artist_slug": null,
       "_figma_note": "2026-10-15: סוזן לזר, מותג בגדי הנשים DESERT QUEEN, ב-HOSTING DESIGNERS POP UP (גלריית כיכר המדינה, 15.10–09.11.2026). אין דף אומן — כרטיס THE DESIGNER לא מקושר. אינסטגרם: @desertqueen___."
+    },
+    {
+      "id": "terratiles-studio",
+      "slug": "terratiles-studio",
+      "name": "Terratiles Studio",
+      "founder_he": "לירון דינצ'י ועידן מזרחי",
+      "title_lockup": "terratiles studio X the art gallery by erez zielinski rozen",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "gallery_id": "medina",
+      "curator_slug": "korin-avraham",
+      "date_start": "2026-10-26",
+      "date_end": "2026-11-09",
+      "website": "https://www.terratilestudio.com",
+      "model_credit": null,
+      "route": "sponsors/terratiles-studio/",
+      "cover_image": "images/sponsors/terratiles-studio/hero.webp",
+      "logo": "images/sponsors/terratiles-studio/terratiles-logo.svg",
+      "case_exception": [],
+      "figma_file": "XhGH289YTRcW811wrufRJz",
+      "figma_node_desktop": "2163:11",
+      "figma_node_mobile": "2163:168",
+      "figma_logo_node": null,
+      "founder_artist_slug": null,
+      "_figma_note": "2026-10-19: לירון דינצ'י ועידן מזרחי, TERRATILES STUDIO (רהיטים מחופים באריחי קרמיקה), ב-HOSTING DESIGNERS POP UP (גלריית כיכר המדינה). מציגים 26.10–9.11.2026; בפופ-אפ 29–31.10 ו-5–7.11. אין דף אומן — כרטיס THE DESIGNER לא מקושר. אינסטגרם: @terratiles_."
     }
   ]
 }
