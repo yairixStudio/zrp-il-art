@@ -91,6 +91,8 @@ body{text-transform:uppercase}
 a.aw-ex-title:hover{opacity:.6}
 .aw-ex-body{display:flex;flex-direction:column;gap:1em}
 .aw-ex-body p{font-family:var(--heb);font-weight:300;font-size:16px;line-height:1.55;color:var(--ink);direction:rtl;text-align:right}
+.aw-ex-body a.artist-link{color:inherit;text-decoration:underline;text-decoration-color:rgba(27,27,27,.25);text-underline-offset:3px;transition:text-decoration-color .2s,opacity .2s}
+.aw-ex-body a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
 /* ===== RESPONSIVE ===== */
 @media (max-width:1100px){:root{--pad-x:48px}.aw-info{flex-basis:320px}}
@@ -260,7 +262,19 @@ a.aw-ex-title:hover{opacity:.6}
   var exHead = w.exhibition_route
     ? '<a class="aw-ex-title" href="../../'+w.exhibition_route+'/">'+exHeadInner+'</a>'
     : '<span class="aw-ex-title">'+exHeadInner+'</span>';
-  var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+latHtml(p)+'</p>'; }).join('');
+  /* Golden rule 10: an artist named inside a statement is a link. Runs on the latHtml()
+     output — these names contain nothing esc() rewrites, so a plain replace is safe. */
+  var NAME_LINKS = [
+    ['ארז זילינסקי רוזן', '../../about/'],
+    ['קורין אברהם', '../../curators/korin-avraham/']
+  ];
+  function linkNames(h){
+    NAME_LINKS.forEach(function(pair){
+      h = h.split(pair[0]).join('<a class="artist-link" href="'+pair[1]+'">'+pair[0]+'</a>');
+    });
+    return h;
+  }
+  var exBody = (w.statement_he||[]).map(function(p){ return '<p>'+linkNames(latHtml(p))+'</p>'; }).join('');
   var exhibitionBlock = (w.exhibition_title_he || exBody)
     ? '<div class="aw-exhibition">'+exHead+'<div class="aw-ex-body">'+exBody+'</div></div>'
     : '';
