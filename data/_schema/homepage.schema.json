@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "homepage",
+  "description": "Homepage sections. Core sections are typed; one-off promo blocks (popup_designers_collab, ma_ren_collab, *_sponsor, tribe_teaser) are only required to be objects.",
+  "type": "object",
+  "required": ["hero", "exhibitions_now", "galleries_section"],
+  "properties": {
+    "hero": {
+      "type": "object",
+      "required": ["title_line_1", "title_line_2", "image"],
+      "properties": {
+        "title_line_1": { "type": "string" },
+        "title_line_2": { "type": "string" },
+        "image": { "type": "string" },
+        "description_he": { "type": "string" }
+      }
+    },
+    "mobile_cta": {
+      "type": "object",
+      "properties": {
+        "label_he": { "type": "string" },
+        "info": {
+          "type": "array",
+          "items": { "type": "object", "required": ["label"], "properties": { "label": { "type": "string" } } }
+        },
+        "card_ids": { "$ref": "#/$defs/strings" }
+      }
+    },
+    "open_call_section": {
+      "type": "object",
+      "properties": {
+        "header_en": { "type": "string" },
+        "header_he_mobile": { "type": "string" },
+        "card_ids": { "$ref": "#/$defs/strings" }
+      }
+    },
+    "exhibitions_now": {
+      "allOf": [{ "$ref": "#/$defs/section_title" }],
+      "type": "object",
+      "properties": {
+        "exhibition_ids": { "$ref": "#/$defs/strings" },
+        "artists_label": { "type": "string" },
+        "artist_ids": { "$ref": "#/$defs/strings" },
+        "groups": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["city_en", "cards"],
+            "properties": {
+              "city_en": { "type": "string" },
+              "cards": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["kind", "gallery_id", "route"],
+                  "properties": {
+                    "kind": { "type": "string" },
+                    "gallery_id": { "type": "string" },
+                    "gallery_name_en": { "type": "string" },
+                    "exhibition_id": { "type": "string" },
+                    "route": { "type": "string" },
+                    "title_en": { "type": "string" },
+                    "image": { "type": "string" },
+                    "logos": { "$ref": "#/$defs/strings" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "exhibitions_archive": {
+      "allOf": [{ "$ref": "#/$defs/section_title" }],
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["exhibition_id", "gallery_id", "image"],
+            "properties": {
+              "exhibition_id": { "type": "string" },
+              "gallery_id": { "type": "string" },
+              "image": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "art_works_words": { "$ref": "#/$defs/strings" },
+    "art_works_words_mobile": { "$ref": "#/$defs/strings" },
+    "big_news": { "type": "object" },
+    "perfume_promo": {
+      "type": "object",
+      "properties": {
+        "perfumes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "image", "cta_url"],
+            "properties": {
+              "id": { "type": "string" },
+              "title_en": { "type": "string" },
+              "name_he": { "type": ["string", "null"] },
+              "subtitle_he": { "type": "string" },
+              "exhibition_id": { "type": "string" },
+              "exhibition_title_en": { "type": ["string", "null"] },
+              "exhibition_bar_en": { "type": ["array", "null"], "items": { "type": "string" } },
+              "image": { "type": "string" },
+              "exclusive_he": { "type": ["string", "null"] },
+              "cta_he": { "type": "string" },
+              "cta_url": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "social_section": {
+      "type": "object",
+      "properties": {
+        "title_lines": { "$ref": "#/$defs/strings" },
+        "feed_ref": { "type": "string" }
+      }
+    },
+    "galleries_section": { "$ref": "#/$defs/gallery_section" },
+    "galleries_berlin_section": { "$ref": "#/$defs/gallery_section" },
+    "x_our_artists": {
+      "allOf": [{ "$ref": "#/$defs/section_title" }],
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name_en", "image", "slug"],
+            "properties": {
+              "name_en": { "type": "string" },
+              "image": { "type": "string" },
+              "slug": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "popup_designers_collab": { "type": "object" },
+    "ma_ren_collab": { "type": "object" },
+    "sumii_sponsor": { "type": "object" },
+    "soos_sponsor": { "type": "object" },
+    "tribe_teaser": { "type": "object" },
+    "press_section": {
+      "allOf": [{ "$ref": "#/$defs/section_title" }],
+      "type": "object",
+      "properties": {
+        "item_ids": { "$ref": "#/$defs/strings" },
+        "view_all_route": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "section_title": {
+      "type": "object",
+      "required": ["title_b", "title_l"],
+      "properties": {
+        "title_b": { "type": "string" },
+        "title_l": { "type": "string" }
+      }
+    },
+    "gallery_section": {
+      "allOf": [{ "$ref": "#/$defs/section_title" }],
+      "type": "object",
+      "required": ["gallery_ids"],
+      "properties": {
+        "gallery_ids": { "$ref": "#/$defs/strings" }
+      }
+    }
+  }
+}

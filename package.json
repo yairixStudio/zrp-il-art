@@ -4,6 +4,7 @@
   "description": "Zielinski & Rozen Art Galleries — static site (HTML + CSS, JSON data)",
   "private": true,
   "scripts": {
+    "validate:data": "python3 tools/validate_data.py",
     "lighthouse": "lighthouse http://localhost:8765/ --output html --output-path ./lighthouse-reports/report.html --view",
     "lighthouse:mobile": "lighthouse http://localhost:8765/ --output html --output-path ./lighthouse-reports/report-mobile.html --form-factor mobile --view",
     "lighthouse:desktop": "lighthouse http://localhost:8765/ --output html --output-path ./lighthouse-reports/report-desktop.html --preset desktop --view"

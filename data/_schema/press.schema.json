@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "press",
+  "type": "object",
+  "required": ["items"],
+  "properties": {
+    "items": { "type": "array", "items": { "$ref": "#/$defs/item" } }
+  },
+  "$defs": {
+    "date": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "item": {
+      "type": "object",
+      "required": ["id", "type", "date", "cover_image", "homepage_visible"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "tag_en": { "type": "string" },
+        "tag_he": { "type": "string" },
+        "title_he": { "type": ["string", "null"] },
+        "title_en": { "type": ["string", "null"] },
+        "subtitle_he": { "type": "string" },
+        "subtitle_en": { "type": "string" },
+        "author_he": { "type": ["string", "null"] },
+        "source_he": { "type": ["string", "null"] },
+        "source_en": { "type": "string" },
+        "url": { "type": ["string", "null"] },
+        "date": { "$ref": "#/$defs/date" },
+        "date_end": { "$ref": "#/$defs/date" },
+        "cover_image": { "type": "string" },
+        "exhibition_id": { "type": ["string", "null"] },
+        "event_id": { "type": "string" },
+        "gallery_id": { "type": "string" },
+        "homepage_visible": { "type": "boolean" },
+        "route": { "type": ["string", "null"] },
+        "figma_home_card": { "type": "string" },
+        "figma_home_card_desktop": { "type": "string" },
+        "figma_home_card_mobile": { "type": "string" },
+        "figma_article_desktop": { "type": "string" },
+        "figma_article_mobile": { "type": "string" }
+      }
+    }
+  }
+}

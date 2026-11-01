@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "galleries",
+  "type": "object",
+  "required": ["galleries"],
+  "properties": {
+    "galleries": { "type": "array", "items": { "$ref": "#/$defs/gallery" } }
+  },
+  "$defs": {
+    "strings": { "type": "array", "items": { "type": "string" } },
+    "gallery": {
+      "type": "object",
+      "required": ["id", "slug", "name_en", "city", "status", "hours"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "name_he": { "type": ["string", "null"] },
+        "name_en": { "type": "string" },
+        "subtitle_he": { "type": "string" },
+        "subtitle_en": { "type": "string" },
+        "address_he": { "type": ["string", "null"] },
+        "address_en": { "type": ["string", "null"] },
+        "address_street_en": { "type": ["string", "null"] },
+        "address_area_en": { "type": ["string", "null"] },
+        "address_lines_en": { "$ref": "#/$defs/strings" },
+        "address_lines_en_mobile": { "$ref": "#/$defs/strings" },
+        "city": { "type": "string" },
+        "status": { "type": "string" },
+        "route": { "type": ["string", "null"] },
+        "hours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["days_he", "days_en", "time"],
+            "properties": {
+              "days_he": { "type": "string" },
+              "days_en": { "type": "string" },
+              "time": { "type": ["string", "null"] }
+            }
+          }
+        },
+        "image_hero": { "type": ["string", "null"] },
+        "image_page_hero": { "type": ["string", "null"] },
+        "manager": {
+          "type": ["object", "null"],
+          "required": ["name_en_first", "name_en_last", "portrait"],
+          "properties": {
+            "name_en_first": { "type": "string" },
+            "name_en_last": { "type": "string" },
+            "email": { "type": "string" },
+            "note": { "type": "string" },
+            "portrait": {
+              "type": "object",
+              "required": ["src", "width", "height", "alt_he"],
+              "properties": {
+                "src": { "type": "string" },
+                "width": { "type": "integer" },
+                "height": { "type": "integer" },
+                "alt_he": { "type": "string" },
+                "figma_image_ref": { "type": "string" }
+              }
+            }
+          }
+        },
+        "instagram_handle": { "type": "string" },
+        "instagram_url": { "type": "string" },
+        "note": { "type": "string" },
+        "figma_node_desktop": { "type": ["string", "null"] },
+        "figma_node_mobile": { "type": "string" },
+        "figma_page_desktop": { "type": ["string", "null"] },
+        "figma_page_mobile": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

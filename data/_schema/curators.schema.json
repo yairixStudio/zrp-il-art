@@ -17,6 +17,11 @@
           "instagram_handle": { "type": "string" },
           "badge_en": { "type": "string" },
           "credit_he": { "type": "string" },
+          "contact_email": { "type": "string" },
+          "bio_he": {
+            "type": "array",
+            "items": { "type": "array", "items": { "type": "string" } }
+          },
           "section_heading_en": { "type": "string" },
           "portrait": {
             "type": "object",

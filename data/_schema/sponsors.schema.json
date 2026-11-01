@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "sponsors",
+  "type": "object",
+  "required": ["sponsors"],
+  "properties": {
+    "sponsors": { "type": "array", "items": { "$ref": "#/$defs/sponsor" } }
+  },
+  "$defs": {
+    "date_or_null": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "sponsor": {
+      "type": "object",
+      "required": ["id", "slug", "name", "gallery_id", "route", "cover_image", "logo"],
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "name": { "type": "string" },
+        "founder_he": { "type": "string" },
+        "founder_artist_slug": { "type": ["string", "null"] },
+        "title_lockup": { "type": "string" },
+        "exhibition_slug": { "type": ["string", "null"] },
+        "exhibition_route": { "type": ["string", "null"] },
+        "gallery_id": { "type": "string" },
+        "curator_slug": { "type": ["string", "null"] },
+        "date_start": { "$ref": "#/$defs/date_or_null" },
+        "date_end": { "$ref": "#/$defs/date_or_null" },
+        "website": { "type": "string" },
+        "model_credit": { "type": ["string", "null"] },
+        "route": { "type": "string" },
+        "cover_image": { "type": "string" },
+        "logo": { "type": "string" },
+        "case_exception": { "type": "array", "items": { "type": "string" } },
+        "figma_file": { "type": "string" },
+        "figma_node_desktop": { "type": "string" },
+        "figma_node_mobile": { "type": "string" },
+        "figma_logo_node": { "type": ["string", "null"] }
+      }
+    }
+  }
+}
