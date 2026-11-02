@@ -88,7 +88,7 @@
         "homepage_visible": { "type": "boolean" },
         "figma_file": { "type": "string" },
         "figma_node_desktop": { "type": ["string", "null"] },
-        "figma_node_mobile": { "type": "string" },
+        "figma_node_mobile": { "type": ["string", "null"] },
         "figma_node_photos_desktop": { "type": "string" },
         "figma_node_photos_mobile": { "type": "string" },
         "figma_node_credits_desktop": { "type": "string" },
