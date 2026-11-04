@@ -116,7 +116,7 @@
               '<li><a href="' + abs('works/') + '" data-nav="works">the art works</a></li>' +
               '<li><a href="' + abs('artists/') + '" data-nav="artists">the artists</a></li>' +
               '<li><a href="' + abs('') + '#galleries" data-nav="galleries">the galleries</a></li>' +
-              '<li><a href="' + abs('about/') + '" data-nav="about">about</a></li>' +
+              '<li><a href="' + abs('about/') + '" data-nav="about">about us</a></li>' +
               '<li><a href="' + abs('press/') + '" data-nav="press">press &amp; events</a></li>' +
               '<li class="nav-zrp-cta-item" role="presentation">' +
                 '<a class="nav-zrp-cta" href="https://zrp.co.il" target="_blank" rel="noopener" aria-label="the official site — zrp.co.il">' +

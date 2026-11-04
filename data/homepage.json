@@ -216,7 +216,7 @@
   "figma_node_mobile": "1856:433"
  },
  "x_our_artists": {
-  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"mobile order\" (landing 1873:1146, canonical 2026-09-27; previously 1124:1181), 39 items in Figma row-major order. Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). 2026-09-27 sync: work-10/23/31 replaced by -v2 renders (old files kept, golden rule 8), work-39 (shira turbowicz) added.",
+  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"mobile order\" (landing 1873:1146, canonical 2026-09-27; previously 1124:1181), 40 items in Figma row-major order. Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). 2026-09-27 sync: work-10/23/31 replaced by -v2 renders (old files kept, golden rule 8), work-39 (shira turbowicz) added. 2026-11-04: work-40 (adam leisner, node 2312:165) added.",
   "title_b": "Zielinski Rozen",
   "title_l": "x our artists",
   "items": [
@@ -414,6 +414,11 @@
     "name_en": "shira turbowicz",
     "image": "images/homepage/x-our-artists/work-39.webp",
     "slug": "shira-turbowicz"
+   },
+   {
+    "name_en": "adam leisner",
+    "image": "images/homepage/x-our-artists/work-40.webp",
+    "slug": "adam-leisner"
    }
   ],
   "figma_node_desktop": "412:334",

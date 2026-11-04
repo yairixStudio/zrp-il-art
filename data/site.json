@@ -12,7 +12,7 @@
     { "key": "exhibitions", "label_en": "exhibitions",     "href": "/exhibitions" },
     { "key": "works",       "label_en": "the art works",   "href": "/works" },
     { "key": "galleries",   "label_en": "the galleries",   "href": "/galleries" },
-    { "key": "about",       "label_en": "about",           "href": "/about" },
+    { "key": "about",       "label_en": "about us",        "href": "/about" },
     { "key": "press",       "label_en": "press & events",  "href": "/press" }
   ],
   "footer": {
