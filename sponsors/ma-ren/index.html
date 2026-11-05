@@ -78,13 +78,13 @@ a.sp-site{font-family:var(--cop);font-weight:300;font-size:14px;letter-spacing:.
 a.sp-site:hover{opacity:.65}
 .sp-credit{font-family:var(--heb);font-weight:300;font-size:18px;line-height:19.468px;color:var(--ink);text-align:right;direction:rtl}
 
-/* Hero card — 492×744, תמונה + scrim (Figma: gradient to-top rgba(0,0,0,.4)→0), לוקאפ לבן.
+/* Hero card — 492×744, תמונה + scrim (Figma: שכבה אחידה rgba(0,0,0,.4)), לוקאפ לבן.
    ראש הקבוצה ב-y 270 (=מרכז−102); הכותרת ב-y 526 (52px מתחת ללוגואים). */
 .sp-hero .img-col{flex:0 0 492px;display:flex;justify-content:flex-end;flex-shrink:0}
 .sp-hero .card{position:relative;width:492px;height:744px;overflow:hidden;background:#000;flex-shrink:0}
 .sp-hero .card>picture{display:contents}
 .sp-hero .card img.photo{width:100%;height:100%;object-fit:cover;display:block}
-.sp-hero .card::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.4),rgba(0,0,0,0));z-index:1;pointer-events:none}
+.sp-hero .card::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.4);z-index:1;pointer-events:none}
 .sp-hero .card .center-text{position:absolute;left:50%;top:calc(50% - 102px);transform:translateX(-50%);width:358px;max-width:calc(100% - 32px);display:flex;flex-direction:column;align-items:center;gap:8px;color:#fff;z-index:2;text-align:center}
 .center-text .gname{font-family:var(--cop);font-weight:300;font-size:23px;line-height:1.35;letter-spacing:.05em}
 .center-text .x{font-family:var(--cop);font-weight:300;font-size:36px;line-height:37.008px}
@@ -225,8 +225,8 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 <meta property="og:description" content="גלריית ארז זילינסקי רוזן בכיכר המדינה מארחת את אדם לייזנר מהמותג MA REN ל־WINDOW TAKE OVER (INSTALLATION), 19.10–09.11.2026: PORTAL, משפחת TEMPO והשולחן בעל הרגליים המנופחות, בפלדת אל-חלד. אוצרות: קורין אברהם.">
 <meta property="og:url" content="https://art.zrp.co.il/sponsors/ma-ren/">
 <meta property="og:image" content="https://art.zrp.co.il/og/sponsors-ma-ren-hero.jpg">
-<meta property="og:image:width" content="768">
-<meta property="og:image:height" content="403">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="MA REN X The Art Gallery — Zielinski &amp; Rozen">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MA REN X The Art Gallery — Zielinski &amp; Rozen">
@@ -278,7 +278,7 @@ a.artist-link:hover{text-decoration-color:currentColor;opacity:.75}
 
       <div class="img-col">
         <div class="card">
-          <img class="photo" src="../../images/sponsors/ma-ren/tempo-mini.webp" srcset="../../images/sponsors/ma-ren/tempo-mini-480w.webp 480w, ../../images/sponsors/ma-ren/tempo-mini.webp 768w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="768" height="1024" alt="TEMPO MINI של MA REN — שולחן צד מפלדת אל-חלד מול קיר בורדו, בחלון גלריית כיכר המדינה" decoding="async" fetchpriority="high">
+          <img class="photo" src="../../images/sponsors/ma-ren/hero.webp" srcset="../../images/sponsors/ma-ren/hero-480w.webp 480w, ../../images/sponsors/ma-ren/hero-780w.webp 780w, ../../images/sponsors/ma-ren/hero.webp 984w" sizes="(max-width:768px) 100vw, (max-width:1319px) 400px, 492px" width="984" height="1488" alt="המיצב של MA REN בחלון גלריית כיכר המדינה — כלי מפלדת אל-חלד עם מפזר ריח של Zielinski &amp; Rozen" decoding="async" fetchpriority="high">
           <div class="center-text">
             <div class="gname"><span class="ln1">the art gallery by</span><br>erez zielinski rozen</div>
             <div class="x">X</div>
