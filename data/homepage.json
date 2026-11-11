@@ -216,70 +216,10 @@
   "figma_node_mobile": "1856:433"
  },
  "x_our_artists": {
-  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"mobile order\" (landing 1873:1146, canonical 2026-09-27; previously 1124:1181), 40 items in Figma row-major order. Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). 2026-09-27 sync: work-10/23/31 replaced by -v2 renders (old files kept, golden rule 8), work-39 (shira turbowicz) added. 2026-11-04: work-40 (adam leisner, node 2312:165) added.",
+  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"x our artists — NEW ORDER 10.11.2026\" (landing 2395:677, Korin; replaces 1873:1146), 33 items in Figma row-major order; carousel opens on items[1] (nir giorgio levin, data-tri-start=\"1\"). Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). work-N file names are the OLD positions (no longer 1:1 with the index since 2026-11-11). Dropped as duplicate photos: work-17/30/32/34/36/37/38 (files kept, golden rule 8). work-10/23/31 = -v2 renders; work-39 shira turbowicz; work-40 adam leisner (node 2312:165).",
   "title_b": "Zielinski Rozen",
   "title_l": "x our artists",
   "items": [
-   {
-    "name_en": "lahav barak",
-    "image": "images/homepage/x-our-artists/work-1.webp",
-    "slug": "lahav-barak"
-   },
-   {
-    "name_en": "alice de bellis",
-    "image": "images/homepage/x-our-artists/work-2.webp",
-    "slug": "alice-debellis"
-   },
-   {
-    "name_en": "elsa ers brosh",
-    "image": "images/homepage/x-our-artists/work-3.webp",
-    "slug": "elsa-ars-brush"
-   },
-   {
-    "name_en": "livay levi",
-    "image": "images/homepage/x-our-artists/work-4.webp",
-    "slug": "livay-levi"
-   },
-   {
-    "name_en": "amnon lipkin",
-    "image": "images/homepage/x-our-artists/work-5.webp",
-    "slug": "amnon-lipkin"
-   },
-   {
-    "name_en": "jessica tabarovsky",
-    "image": "images/homepage/x-our-artists/work-6.webp",
-    "slug": "jessica-tabarovsky"
-   },
-   {
-    "name_en": "talia zoref",
-    "image": "images/homepage/x-our-artists/work-7.webp",
-    "slug": "talia-zoref"
-   },
-   {
-    "name_en": "michael konovalenko",
-    "image": "images/homepage/x-our-artists/work-8.webp",
-    "slug": "michael-konovalenko"
-   },
-   {
-    "name_en": "hadas tuval",
-    "image": "images/homepage/x-our-artists/work-9.webp",
-    "slug": "hadas-tuval"
-   },
-   {
-    "name_en": "maria artamonova",
-    "image": "images/homepage/x-our-artists/work-10-v2.webp",
-    "slug": "maria-artamonova"
-   },
-   {
-    "name_en": "nir giorgio levin",
-    "image": "images/homepage/x-our-artists/work-11.webp",
-    "slug": "nir-giorgio-levin"
-   },
-   {
-    "name_en": "bar cohen",
-    "image": "images/homepage/x-our-artists/work-12.webp",
-    "slug": "bar-cohen"
-   },
    {
     "name_en": "zohar ron",
     "image": "images/homepage/x-our-artists/work-13.webp",
@@ -296,24 +236,79 @@
     "slug": "gilad-kenan"
    },
    {
-    "name_en": "baruch torgeman",
-    "image": "images/homepage/x-our-artists/work-16.webp",
-    "slug": "baruch-torgeman"
+    "name_en": "maria artamonova",
+    "image": "images/homepage/x-our-artists/work-10-v2.webp",
+    "slug": "maria-artamonova"
+   },
+   {
+    "name_en": "hadas tuval",
+    "image": "images/homepage/x-our-artists/work-9.webp",
+    "slug": "hadas-tuval"
+   },
+   {
+    "name_en": "michael konovalenko",
+    "image": "images/homepage/x-our-artists/work-8.webp",
+    "slug": "michael-konovalenko"
+   },
+   {
+    "name_en": "talia zoref",
+    "image": "images/homepage/x-our-artists/work-7.webp",
+    "slug": "talia-zoref"
+   },
+   {
+    "name_en": "jessica tabarovsky",
+    "image": "images/homepage/x-our-artists/work-6.webp",
+    "slug": "jessica-tabarovsky"
+   },
+   {
+    "name_en": "amnon lipkin",
+    "image": "images/homepage/x-our-artists/work-5.webp",
+    "slug": "amnon-lipkin"
+   },
+   {
+    "name_en": "livay levi",
+    "image": "images/homepage/x-our-artists/work-4.webp",
+    "slug": "livay-levi"
+   },
+   {
+    "name_en": "elsa ers brosh",
+    "image": "images/homepage/x-our-artists/work-3.webp",
+    "slug": "elsa-ars-brush"
+   },
+   {
+    "name_en": "alice de bellis",
+    "image": "images/homepage/x-our-artists/work-2.webp",
+    "slug": "alice-debellis"
+   },
+   {
+    "name_en": "lahav barak",
+    "image": "images/homepage/x-our-artists/work-1.webp",
+    "slug": "lahav-barak"
+   },
+   {
+    "name_en": "adam leisner",
+    "image": "images/homepage/x-our-artists/work-40.webp",
+    "slug": "adam-leisner"
+   },
+   {
+    "name_en": "shira turbowicz",
+    "image": "images/homepage/x-our-artists/work-39.webp",
+    "slug": "shira-turbowicz"
+   },
+   {
+    "name_en": "yarden amir",
+    "image": "images/homepage/x-our-artists/work-35.webp",
+    "slug": "yarden-amir"
    },
    {
     "name_en": "gal pollak",
-    "image": "images/homepage/x-our-artists/work-17.webp",
+    "image": "images/homepage/x-our-artists/work-31-v2.webp",
     "slug": "gal-polk"
    },
    {
-    "name_en": "noemi safir",
-    "image": "images/homepage/x-our-artists/work-18.webp",
-    "slug": "noemi-safir"
-   },
-   {
-    "name_en": "natasha zeriker",
-    "image": "images/homepage/x-our-artists/work-19.webp",
-    "slug": "natasha-zeriker"
+    "name_en": "baruch torgeman",
+    "image": "images/homepage/x-our-artists/work-29.webp",
+    "slug": "baruch-torgeman"
    },
    {
     "name_en": "maya nachum levy",
@@ -321,9 +316,59 @@
     "slug": "maya-nachum-levy"
    },
    {
+    "name_en": "maya nachum levy",
+    "image": "images/homepage/x-our-artists/work-27.webp",
+    "slug": "maya-nachum-levy"
+   },
+   {
+    "name_en": "maya nachum levy",
+    "image": "images/homepage/x-our-artists/work-25.webp",
+    "slug": "maya-nachum-levy"
+   },
+   {
+    "name_en": "bar cohen",
+    "image": "images/homepage/x-our-artists/work-12.webp",
+    "slug": "bar-cohen"
+   },
+   {
+    "name_en": "nir giorgio levin",
+    "image": "images/homepage/x-our-artists/work-11.webp",
+    "slug": "nir-giorgio-levin"
+   },
+   {
+    "name_en": "natasha zeriker",
+    "image": "images/homepage/x-our-artists/work-19.webp",
+    "slug": "natasha-zeriker"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-18.webp",
+    "slug": "noemi-safir"
+   },
+   {
     "name_en": "anat wegier",
     "image": "images/homepage/x-our-artists/work-21.webp",
     "slug": "anat-wegier"
+   },
+   {
+    "name_en": "alon manjoch",
+    "image": "images/homepage/x-our-artists/work-24.webp",
+    "slug": "alon"
+   },
+   {
+    "name_en": "zohar ron",
+    "image": "images/homepage/x-our-artists/work-26.webp",
+    "slug": "zohar-ron"
+   },
+   {
+    "name_en": "gilad kenan",
+    "image": "images/homepage/x-our-artists/work-28.webp",
+    "slug": "gilad-kenan"
+   },
+   {
+    "name_en": "baruch torgeman",
+    "image": "images/homepage/x-our-artists/work-16.webp",
+    "slug": "baruch-torgeman"
    },
    {
     "name_en": "tanya shin",
@@ -336,94 +381,14 @@
     "slug": "yarden-amir"
    },
    {
-    "name_en": "alon manjoch",
-    "image": "images/homepage/x-our-artists/work-24.webp",
-    "slug": "alon"
-   },
-   {
-    "name_en": "maya nachum levy",
-    "image": "images/homepage/x-our-artists/work-25.webp",
-    "slug": "maya-nachum-levy"
-   },
-   {
-    "name_en": "zohar ron",
-    "image": "images/homepage/x-our-artists/work-26.webp",
-    "slug": "zohar-ron"
-   },
-   {
-    "name_en": "maya nachum levy",
-    "image": "images/homepage/x-our-artists/work-27.webp",
-    "slug": "maya-nachum-levy"
-   },
-   {
-    "name_en": "gilad kenan",
-    "image": "images/homepage/x-our-artists/work-28.webp",
-    "slug": "gilad-kenan"
-   },
-   {
-    "name_en": "baruch torgeman",
-    "image": "images/homepage/x-our-artists/work-29.webp",
-    "slug": "baruch-torgeman"
-   },
-   {
-    "name_en": "yarden amir",
-    "image": "images/homepage/x-our-artists/work-30.webp",
-    "slug": "yarden-amir"
-   },
-   {
-    "name_en": "gal pollak",
-    "image": "images/homepage/x-our-artists/work-31-v2.webp",
-    "slug": "gal-polk"
-   },
-   {
-    "name_en": "zohar ron",
-    "image": "images/homepage/x-our-artists/work-32.webp",
-    "slug": "zohar-ron"
-   },
-   {
     "name_en": "noemi safir",
     "image": "images/homepage/x-our-artists/work-33.webp",
     "slug": "noemi-safir"
-   },
-   {
-    "name_en": "gilad kenan",
-    "image": "images/homepage/x-our-artists/work-34.webp",
-    "slug": "gilad-kenan"
-   },
-   {
-    "name_en": "yarden amir",
-    "image": "images/homepage/x-our-artists/work-35.webp",
-    "slug": "yarden-amir"
-   },
-   {
-    "name_en": "zohar ron",
-    "image": "images/homepage/x-our-artists/work-36.webp",
-    "slug": "zohar-ron"
-   },
-   {
-    "name_en": "yarden amir",
-    "image": "images/homepage/x-our-artists/work-37.webp",
-    "slug": "yarden-amir"
-   },
-   {
-    "name_en": "noemi safir",
-    "image": "images/homepage/x-our-artists/work-38.webp",
-    "slug": "noemi-safir"
-   },
-   {
-    "name_en": "shira turbowicz",
-    "image": "images/homepage/x-our-artists/work-39.webp",
-    "slug": "shira-turbowicz"
-   },
-   {
-    "name_en": "adam leisner",
-    "image": "images/homepage/x-our-artists/work-40.webp",
-    "slug": "adam-leisner"
    }
   ],
   "figma_node_desktop": "412:334",
   "figma_node_mobile": "640:249",
-  "figma_node_order": "1873:1146"
+  "figma_node_order": "2395:677"
  },
  "popup_designers_collab": {
   "_note": "Section #designers-popup above #ma-ren and #sumii (2026-10-14; updated 2026-10-19). Mobile = Figma 2039:2860; desktop = Figma 1881:1904 for the chips (rest of the desktop section = adaptation, same scale as #sumii). Lockup = gallery name only, then five framed designer chips: desktop two rows (elodie k, roni liani / desert queen, terratiles studio, ever after; title→rows→rows gap 18), mobile three rows (elodie k, roni liani / terratiles studio / desert queen, ever after; row gap 24), then info, then a decorative 3-image strip (NOT linked, no CTA; Figma 2104:7 / 2104:11 / 2104:15, object-fit cover). Chips link to each designer's pop-up page (sponsors/<slug>/). No artist pages for the designers (designer decision 2026-10-14).",
