@@ -20,12 +20,15 @@ Generated targets:
   galleries/*/, curators/korin-avraham/ #fallback-galleries ← data/galleries.json
   events/index.html           #events-list-data   ← data/events.json (one card per event, past ones
                                                      included — the page filters by date at runtime)
+  x-our-artists/index.html    GENERATED:xoa-grid  ← data/homepage.json x_our_artists.items (static
+                                                     HTML cards, same order/images as the homepage carousel)
 
 Usage (repo root or anywhere):
   python3 tools/sync_data.py          # write everything that is stale
   python3 tools/sync_data.py --check  # write nothing; exit 1 and list what is stale
 
-Run it after ANY change to artists.json / works.json / exhibitions.json / galleries.json / events.json.
+Run it after ANY change to artists.json / works.json / exhibitions.json / galleries.json / events.json
+(and to homepage.json x_our_artists).
 Idempotent: a second run changes nothing. Every file it lists as updated belongs in the SAME
 commit as the JSON change (the pages carry inline-only copies — leaving one out ships a stale site).
 """
@@ -271,13 +274,52 @@ def sync_events_list():
     return problems
 
 
+# ------------------------------------------------ /x-our-artists/ bottles grid
+XOA_RE = re.compile(r'(<!-- GENERATED:xoa-grid[^>]*-->).*?[ \t]*(<!-- /GENERATED:xoa-grid -->)', re.S)
+
+
+def esc_html(s):
+    return (str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;"))
+
+
+def sync_xoa_page():
+    """Static cards for /x-our-artists/ from homepage.json :: x_our_artists.items[] — the page grid
+    and the homepage #x-our-artists carousel share one order and one set of images."""
+    fp = "x-our-artists/index.html"
+    full = os.path.join(ROOT, fp)
+    if not os.path.exists(full):
+        return []
+    problems, cards = [], []
+    for it in load("homepage.json")["x_our_artists"]["items"]:
+        try:
+            w, h = webp_size(os.path.join(ROOT, it["image"]))
+        except (OSError, ValueError, KeyError) as err:
+            problems.append("data/homepage.json x_our_artists: %s — %s" % (it.get("slug"), err))
+            continue
+        name = esc_html(it["name_en"])
+        cards.append(
+            '    <a class="bottle" href="../artists/%s/">'
+            '<span class="img"><img src="../%s" alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
+            '<span class="nm">%s</span></a>'
+            % (it["slug"], it["image"], name, w, h, name))
+    if problems:
+        return problems
+    t = open(full, encoding="utf-8").read()
+    t2, n = XOA_RE.subn(lambda m: m.group(1) + "\n" + "\n".join(cards) + "\n    " + m.group(2), t, count=1)
+    if not n:
+        return ["GENERATED:xoa-grid markers not found in " + fp]
+    emit(fp, t2)
+    return []
+
+
 def main():
     gen_scripts()
     sync_works_grid()
     sync_artwork_pages()
     sync_gallery_pages()
     sync_fallback_galleries()
-    problems = sync_events_list() + check_artist_pages()
+    problems = sync_events_list() + sync_xoa_page() + check_artist_pages()
     for p in problems:
         print("  ! " + p, file=sys.stderr)
     if CHECK:

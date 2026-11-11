@@ -59,7 +59,7 @@
   if (!document.querySelector('link[data-site-chrome-css]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = abs('components/site-chrome.css?v=8');
+    link.href = abs('components/site-chrome.css?v=9');
     link.setAttribute('data-site-chrome-css', '');
     document.head.appendChild(link);
   }
@@ -115,6 +115,7 @@
               '<li><a href="' + abs('') + '#exhibitions" data-nav="exhibitions">exhibitions</a></li>' +
               '<li><a href="' + abs('works/') + '" data-nav="works">the art works</a></li>' +
               '<li><a href="' + abs('artists/') + '" data-nav="artists">the artists</a></li>' +
+              '<li><a href="' + abs('x-our-artists/') + '" data-nav="x-our-artists">x our artists</a></li>' +
               '<li><a href="' + abs('') + '#galleries" data-nav="galleries">the galleries</a></li>' +
               '<li><a href="' + abs('about/') + '" data-nav="about">about us</a></li>' +
               '<li><a href="' + abs('press/') + '" data-nav="press">press &amp; events</a></li>' +
@@ -386,8 +387,8 @@
   // ---- Auto-mark active link based on current URL ------------
   function markActive(root) {
     // The current page key is derived from location.pathname.
-    // Returns one of: home, opencall, exhibitions, works,
-    // galleries, about, press — or null if no match.
+    // Returns one of: home, opencall, exhibitions, works, artists,
+    // x-our-artists, galleries, about, press — or null if no match.
     const path = location.pathname;
     // Normalize trailing index.html so /works/index.html matches like /works/.
     const cleaned = path.replace(/\/index\.html$/, '/');
@@ -406,6 +407,8 @@
       key = 'works';
     } else if (last === 'about' || path.indexOf('/about/') !== -1) {
       key = 'about';
+    } else if (path.indexOf('/x-our-artists/') !== -1 || last === 'x-our-artists') {
+      key = 'x-our-artists';
     } else if (path.indexOf('/artists/') !== -1) {
       // Both the /artists/ index and individual artist sub-pages highlight "the artists".
       key = 'artists';

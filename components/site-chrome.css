@@ -48,6 +48,12 @@ site-header{display:block;position:sticky;top:0;z-index:100}
    (e.g. 24px type → ~14.5px box on iOS/Android) — explicit line-height prevents top clipping. */
 .nav-links a{font-family:var(--cop);font-weight:300;font-size:14px;line-height:1.2;color:var(--ink);letter-spacing:.04em;text-transform:uppercase;transition:opacity .2s;white-space:nowrap;display:inline-block}
 .nav-links a:hover{opacity:.6}
+/* 8 items (x our artists added 2026-11-11) don't fit next to the 177px logo below ~1340px at 14px:
+   the logo got squeezed to 0. Step the type + gap down on narrow desktops only (Figma = 1440, unchanged).
+   Budget: links ≤ viewport − ~310px (paddings, logo, gaps, search). */
+@media (min-width:1025px) and (max-width:1339px){.nav-links{gap:14px}.nav-links a{font-size:13px}}
+@media (min-width:1025px) and (max-width:1259px){.nav-links{gap:12px}.nav-links a{font-size:12px}}
+@media (min-width:1025px) and (max-width:1149px){.nav-links{gap:10px}.nav-links a{font-size:10.5px}}
 /* Active: use loaded Copperplate 400 — not 500 (synthetic bold breaks uppercase "i" + metrics). */
 .nav-links a.active{font-weight:400;opacity:1}
 .hamburger{display:none;width:24px;height:24px;padding:0;background:transparent;border:0;cursor:pointer;position:relative;z-index:101}
@@ -196,6 +202,8 @@ body.menu-open{position:fixed;width:100%;overflow:hidden !important;overscroll-b
   .nav.is-open .hamburger{opacity:0;pointer-events:none}
   /* Drawer slides from LEFT — links start near the top, not vertically centered */
   .nav-links{position:fixed;inset:0;background:var(--bg-grey);flex-direction:column;justify-content:flex-start;align-items:center;gap:32px;padding:120px 24px 32px;transform:translateX(-100%);transition:transform .35s ease;z-index:99;visibility:hidden}
+  /* 8 links + the official-site CTA overflow short phones (375×667) — scroll, and tighten on low screens. */
+  .nav-links{overflow-y:auto;overscroll-behavior:contain}
   .nav.is-open .nav-links{transform:translateX(0);visibility:visible}
   .nav-links a{font-size:24px;letter-spacing:.06em;text-transform:uppercase}
   .nav-links a.active{font-weight:400}
@@ -209,6 +217,7 @@ body.menu-open{position:fixed;width:100%;overflow:hidden !important;overscroll-b
   /* ZRP home CTA — drawer only; sits directly below the last nav link. */
   .nav-zrp-cta-item{list-style:none;width:100%;display:flex;justify-content:center;margin-top:8px}
 }
+@media (max-width:1024px) and (max-height:740px){.nav-links{gap:24px;padding-top:96px}}
 
 /* Mobile lightbox (≤768): header stays visible above the panel */
 @media (max-width:768px){

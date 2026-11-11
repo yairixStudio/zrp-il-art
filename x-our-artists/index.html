@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="he" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>X Our Artists — Zielinski &amp; Rozen</title>
+<link rel="preload" href="../פונטים/Copperplate-Light.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="../פונטים/CopperplateCC-Bold.otf" as="font" type="font/otf" crossorigin>
+<link rel="preload" href="../פונטים/Copperplate.otf" as="font" type="font/otf" crossorigin>
+<link rel="stylesheet" href="../components/site-boot.css">
+<meta name="description" content="ZIELINSKI ROZEN X OUR ARTISTS — בקבוקי זילינסקי רוזן בעבודת אמני הגלריות.">
+<style>
+/* ===== LOCAL @font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2"),url("../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate.woff2") format("woff2"),url("../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Heavy.woff2") format("woff2"),url("../פונטים/CopperplateCC-Heavy.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF} ===== */
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate-Light.woff2") format("woff2"),url("../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/Copperplate.woff2") format("woff2"),url("../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Copperplate";src:url("../פונטים/CopperplateCC-Heavy.woff2") format("woff2"),url("../פונטים/CopperplateCC-Heavy.otf") format("opentype");font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"FbEzmel";src:url("../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Light.woff2") format("woff2");font-weight:300;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"Noto Sans Arabic";src:url("../פונטים/NotoSansArabic-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap;unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+08A0-08FF,U+200C-200D,U+FB50-FDFF,U+FE70-FEFF}
+
+:root{
+  --white:#FFFFFF;
+  --bg-grey:#EEF0EF;
+  --ink:#1B1B1B;
+  --artist:#828282;
+  --max:1440px;
+  --cop:"Copperplate","Noto Sans Arabic","Times New Roman",serif;
+  --heb:"FbEzmel","Noto Sans Arabic","Arial Hebrew","David Libre",serif;
+  --pad-x:96px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--white);color:var(--ink);font-family:var(--cop);-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100vw}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+
+/* GLOBAL CASING RULE — all English text renders UPPERCASE (project-wide).
+   Hebrew is exempt. See CLAUDE.md §8 rule 3 / conventions.md §5. */
+body{text-transform:uppercase}
+.heb,.heb *,[dir="rtl"],[dir="rtl"] *{text-transform:none;font-family:var(--heb)}
+
+/* ===== HERO — Figma landing 2395:901 (desktop, grey band, right-aligned) / 2395:1089 (mobile, white, centred) ===== */
+.hero{background:var(--bg-grey);padding:48px var(--pad-x) 64px}
+.hero-inner{width:100%;max-width:var(--max);margin:0 auto;text-align:right}
+/* Figma: both lines Copperplate 80px in 80px line boxes. Our Copperplate is wider (golden rule 7) —
+   calibrated to the measured line widths of the node render: bold 640px → 64px, light 530px → 70px. */
+.hero h1{display:flex;flex-direction:column;font-family:var(--cop);line-height:80px;color:var(--ink)}
+.hero h1 .b{font-weight:700;font-size:64px}
+.hero h1 .l{font-weight:300;font-size:70px}
+
+/* ===== CONTENT — poster + bottles grid (Figma 2395:904 / 2395:1092) ===== */
+.content{max-width:var(--max);margin:0 auto;padding:64px var(--pad-x) 96px;display:flex;flex-direction:column;gap:64px}
+.poster img{width:100%;height:auto;background:#FAFAFA}
+.bottles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:16px;row-gap:56px}
+.bottle{display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0}
+.bottle .img{position:relative;display:block;width:100%;aspect-ratio:405/490;overflow:hidden;background:#FAFAFA}
+.bottle .img img,.bottle .img picture{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.bottle .img::after{content:"";position:absolute;inset:0;background:rgba(27,27,27,0);transition:background .3s;pointer-events:none}
+.bottle:hover .img::after{background:rgba(27,27,27,.06)}
+/* Figma Copperplate Regular 20px #828282 → 15.4px (calibrated: "zohar ron" 101px / "nir giorgio levin" 168px wide) */
+.bottle .nm{font-family:var(--cop);font-weight:400;font-size:15.4px;line-height:20px;color:var(--artist);text-align:center;transition:color .2s}
+.bottle:hover .nm{color:var(--ink)}
+
+/* ============================================================
+   RESPONSIVE — TABLET (≤1100px) — stays 3-up
+   ============================================================ */
+@media (max-width:1100px){
+  :root{--pad-x:48px}
+  .hero h1{line-height:60px}
+  .hero h1 .b{font-size:48px}
+  .hero h1 .l{font-size:52.5px}
+  .bottle .nm{font-size:13px}
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE (≤768px) — Figma 2395:1064: white hero, 2-up grid
+   ============================================================ */
+@media (max-width:768px){
+  :root{--pad-x:16px}
+  .hero{background:var(--white);padding:32px 16px}
+  .hero-inner{text-align:center}
+  .hero h1{line-height:40px}
+  .hero h1 .b{font-size:30.7px} /* Figma 40px; calibrated: 311px line */
+  .hero h1 .l{font-size:35px}   /* Figma 40px; calibrated: 264px line */
+  .content{padding:8px 16px 48px;gap:40px}
+  .bottles{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px;row-gap:32px}
+  .bottle{gap:10px}
+  .bottle .nm{font-size:8.5px;line-height:11px}   /* Figma 11px; calibrated: 55px / 93px lines */
+}
+</style>
+<!-- SEO:auto:start -->
+<link rel="canonical" href="https://art.zrp.co.il/x-our-artists/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:site_name" content="ZIELINSKI &amp; ROZEN">
+<meta property="og:locale" content="he_IL">
+<meta property="og:type" content="website">
+<meta property="og:title" content="X Our Artists — Zielinski &amp; Rozen">
+<meta property="og:description" content="ZIELINSKI ROZEN X OUR ARTISTS — בקבוקי זילינסקי רוזן בעבודת אמני הגלריות.">
+<meta property="og:url" content="https://art.zrp.co.il/x-our-artists/">
+<meta property="og:image" content="https://art.zrp.co.il/og/x-our-artists-poster.jpg">
+<meta property="og:image:width" content="960">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="Zielinski Rozen x our artists">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="X Our Artists — Zielinski &amp; Rozen">
+<meta name="twitter:description" content="ZIELINSKI ROZEN X OUR ARTISTS — בקבוקי זילינסקי רוזן בעבודת אמני הגלריות.">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/x-our-artists-poster.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://art.zrp.co.il/x-our-artists/#webpage","url":"https://art.zrp.co.il/x-our-artists/","name":"X Our Artists — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"}}</script>
+<!-- SEO:auto:end -->
+</head>
+<body>
+
+<!-- NAV -->
+<site-header></site-header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1><span class="b">zielinski rozen</span><span class="l">x our artists</span></h1>
+  </div>
+</section>
+
+<main class="content" id="main">
+  <!-- Poster — Figma 2395:905 / 2395:1093 (source 1080×1350, original in _originals/x-our-artists/) -->
+  <div class="poster">
+    <img src="../images/x-our-artists/poster.webp" srcset="../images/x-our-artists/poster-480w.webp 480w, ../images/x-our-artists/poster-768w.webp 768w, ../images/x-our-artists/poster.webp 1080w" sizes="(max-width:768px) calc(100vw - 32px), (max-width:1100px) calc(100vw - 96px), 1248px" alt="Zielinski Rozen x our artists" width="1080" height="1350" fetchpriority="high" decoding="async">
+  </div>
+
+  <!-- Bottles grid (33) — Figma 2395:906 (3-up) / 2395:1094 (2-up). Same order + images as the homepage
+       #x-our-artists carousel. Each card links to the artist page. -->
+  <section class="bottles" aria-label="x our artists">
+    <!-- GENERATED:xoa-grid by tools/sync_data.py from data/homepage.json x_our_artists.items — do not edit by hand -->
+    <a class="bottle" href="../artists/zohar-ron/"><span class="img"><img src="../images/homepage/x-our-artists/work-13.webp" alt="zohar ron" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">zohar ron</span></a>
+    <a class="bottle" href="../artists/nir-giorgio-levin/"><span class="img"><img src="../images/homepage/x-our-artists/work-14.webp" alt="nir giorgio levin" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">nir giorgio levin</span></a>
+    <a class="bottle" href="../artists/gilad-kenan/"><span class="img"><img src="../images/homepage/x-our-artists/work-15.webp" alt="gilad kenan" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">gilad kenan</span></a>
+    <a class="bottle" href="../artists/maria-artamonova/"><span class="img"><img src="../images/homepage/x-our-artists/work-10-v2.webp" alt="maria artamonova" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">maria artamonova</span></a>
+    <a class="bottle" href="../artists/hadas-tuval/"><span class="img"><img src="../images/homepage/x-our-artists/work-9.webp" alt="hadas tuval" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">hadas tuval</span></a>
+    <a class="bottle" href="../artists/michael-konovalenko/"><span class="img"><img src="../images/homepage/x-our-artists/work-8.webp" alt="michael konovalenko" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">michael konovalenko</span></a>
+    <a class="bottle" href="../artists/talia-zoref/"><span class="img"><img src="../images/homepage/x-our-artists/work-7.webp" alt="talia zoref" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">talia zoref</span></a>
+    <a class="bottle" href="../artists/jessica-tabarovsky/"><span class="img"><img src="../images/homepage/x-our-artists/work-6.webp" alt="jessica tabarovsky" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">jessica tabarovsky</span></a>
+    <a class="bottle" href="../artists/amnon-lipkin/"><span class="img"><img src="../images/homepage/x-our-artists/work-5.webp" alt="amnon lipkin" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">amnon lipkin</span></a>
+    <a class="bottle" href="../artists/livay-levi/"><span class="img"><img src="../images/homepage/x-our-artists/work-4.webp" alt="livay levi" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">livay levi</span></a>
+    <a class="bottle" href="../artists/elsa-ars-brush/"><span class="img"><img src="../images/homepage/x-our-artists/work-3.webp" alt="elsa ers brosh" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">elsa ers brosh</span></a>
+    <a class="bottle" href="../artists/alice-debellis/"><span class="img"><img src="../images/homepage/x-our-artists/work-2.webp" alt="alice de bellis" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">alice de bellis</span></a>
+    <a class="bottle" href="../artists/lahav-barak/"><span class="img"><img src="../images/homepage/x-our-artists/work-1.webp" alt="lahav barak" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">lahav barak</span></a>
+    <a class="bottle" href="../artists/adam-leisner/"><span class="img"><img src="../images/homepage/x-our-artists/work-40.webp" alt="adam leisner" width="790" height="958" loading="lazy" decoding="async"></span><span class="nm">adam leisner</span></a>
+    <a class="bottle" href="../artists/shira-turbowicz/"><span class="img"><img src="../images/homepage/x-our-artists/work-39.webp" alt="shira turbowicz" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">shira turbowicz</span></a>
+    <a class="bottle" href="../artists/yarden-amir/"><span class="img"><img src="../images/homepage/x-our-artists/work-35.webp" alt="yarden amir" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">yarden amir</span></a>
+    <a class="bottle" href="../artists/gal-polk/"><span class="img"><img src="../images/homepage/x-our-artists/work-31-v2.webp" alt="gal pollak" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">gal pollak</span></a>
+    <a class="bottle" href="../artists/baruch-torgeman/"><span class="img"><img src="../images/homepage/x-our-artists/work-29.webp" alt="baruch torgeman" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">baruch torgeman</span></a>
+    <a class="bottle" href="../artists/maya-nachum-levy/"><span class="img"><img src="../images/homepage/x-our-artists/work-20.webp" alt="maya nachum levy" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">maya nachum levy</span></a>
+    <a class="bottle" href="../artists/maya-nachum-levy/"><span class="img"><img src="../images/homepage/x-our-artists/work-27.webp" alt="maya nachum levy" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">maya nachum levy</span></a>
+    <a class="bottle" href="../artists/maya-nachum-levy/"><span class="img"><img src="../images/homepage/x-our-artists/work-25.webp" alt="maya nachum levy" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">maya nachum levy</span></a>
+    <a class="bottle" href="../artists/bar-cohen/"><span class="img"><img src="../images/homepage/x-our-artists/work-12.webp" alt="bar cohen" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">bar cohen</span></a>
+    <a class="bottle" href="../artists/nir-giorgio-levin/"><span class="img"><img src="../images/homepage/x-our-artists/work-11.webp" alt="nir giorgio levin" width="790" height="956" loading="lazy" decoding="async"></span><span class="nm">nir giorgio levin</span></a>
+    <a class="bottle" href="../artists/natasha-zeriker/"><span class="img"><img src="../images/homepage/x-our-artists/work-19.webp" alt="natasha zeriker" width="790" height="958" loading="lazy" decoding="async"></span><span class="nm">natasha zeriker</span></a>
+    <a class="bottle" href="../artists/noemi-safir/"><span class="img"><img src="../images/homepage/x-our-artists/work-18.webp" alt="noemi safir" width="790" height="958" loading="lazy" decoding="async"></span><span class="nm">noemi safir</span></a>
+    <a class="bottle" href="../artists/anat-wegier/"><span class="img"><img src="../images/homepage/x-our-artists/work-21.webp" alt="anat wegier" width="790" height="958" loading="lazy" decoding="async"></span><span class="nm">anat wegier</span></a>
+    <a class="bottle" href="../artists/alon/"><span class="img"><img src="../images/homepage/x-our-artists/work-24.webp" alt="alon manjoch" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">alon manjoch</span></a>
+    <a class="bottle" href="../artists/zohar-ron/"><span class="img"><img src="../images/homepage/x-our-artists/work-26.webp" alt="zohar ron" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">zohar ron</span></a>
+    <a class="bottle" href="../artists/gilad-kenan/"><span class="img"><img src="../images/homepage/x-our-artists/work-28.webp" alt="gilad kenan" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">gilad kenan</span></a>
+    <a class="bottle" href="../artists/baruch-torgeman/"><span class="img"><img src="../images/homepage/x-our-artists/work-16.webp" alt="baruch torgeman" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">baruch torgeman</span></a>
+    <a class="bottle" href="../artists/tanya-shin/"><span class="img"><img src="../images/homepage/x-our-artists/work-22.webp" alt="tanya shin" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">tanya shin</span></a>
+    <a class="bottle" href="../artists/yarden-amir/"><span class="img"><img src="../images/homepage/x-our-artists/work-23-v2.webp" alt="yarden amir" width="790" height="957" loading="lazy" decoding="async"></span><span class="nm">yarden amir</span></a>
+    <a class="bottle" href="../artists/noemi-safir/"><span class="img"><img src="../images/homepage/x-our-artists/work-33.webp" alt="noemi safir" width="790" height="958" loading="lazy" decoding="async"></span><span class="nm">noemi safir</span></a>
+    <!-- /GENERATED:xoa-grid -->
+  </section>
+</main>
+
+<!-- FOOTER -->
+<site-footer></site-footer>
+
+<!-- Site chrome: shared header + footer (single source of truth) -->
+<script src="../components/site-chrome.js?v=6" defer></script>
+<script src="../components/analytics.js" defer></script>
+<script src="../components/picture-upgrade.js" defer></script>
+<script src="../components/embed-iframe.js" defer></script>
+</body>
+</html>
