@@ -116,7 +116,7 @@ body{text-transform:uppercase}
 .about-close .brandmark{width:min(446px,100%);height:auto}
 .about-close .img-frame{height:744px}
 
-/* SECTIONS 6/7 — Exhibitions curator (korin avraham) + gallery manager (natalie zigel).
+/* SECTION 6 — Exhibitions curator (korin avraham).
    Portrait boxes are 492×652 (centred in the 744 slot per Figma y:46). */
 .about-person{padding:48px var(--pad-x) 32px}
 .about-person .img-frame{aspect-ratio:492/652;height:auto}
@@ -129,7 +129,6 @@ body{text-transform:uppercase}
 .about-person .p-handle{font-family:var(--cop);font-weight:300;font-size:24px;line-height:1.1;padding:0 8px;text-align:center;color:var(--ink);transition:opacity .2s}
 .about-person a.p-handle:hover{opacity:.6}
 .about-person .p-roles{display:flex;gap:19px;align-items:stretch}
-.about-person--manager .p-roles{justify-content:center}
 .about-person .p-role{display:flex;align-items:center;justify-content:center;text-align:center;padding:8px 16px;border:1px solid var(--ink);font-family:var(--cop);font-weight:300;font-size:13px;line-height:1.2;color:var(--ink)}
 .about-person .p-role.fill{flex:1 1 0;min-width:0}
 a.p-role{transition:background .2s,color .2s}
@@ -179,14 +178,13 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
   .dbr{display:none}
 
   /* Section order per the mobile frame: hero → carousel → bio-a → photo → bio-b
-     → shop window → phone → quote → korin → natalie */
+     → shop window → phone → quote → korin */
   .about-hero{order:1}
   .about-tri{order:2}
   .about-bio{order:3}
   .about-close{order:4}
   .about-en{order:5}
   .about-person--curator{order:6}
-  .about-person--manager{order:7}
 
   .about .row{flex-direction:column;gap:16px}
   .about .img-col{flex:0 0 auto;width:100%}
@@ -254,8 +252,6 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
   .about-person .p-handle{font-size:14px;padding:0}
   .about-person .p-roles{flex-direction:column;gap:19px;align-items:stretch}
   .about-person .p-role{align-self:stretch}
-  .about-person--manager .p-roles{flex-direction:row;justify-content:center}
-  .about-person--manager .p-role{align-self:auto}
   .about-person .p-bio{gap:17px}
   .about-person .p-bio p{font-size:16px;line-height:1.06;text-align:right}
 }
@@ -436,26 +432,6 @@ a.p-role:hover,a.p-role:focus-visible{background:var(--ink);color:#fff}
           <p>אברהם עוסקת ביצירה כדרך לפגוש את עצמה.<br>העבודה שלה מתקיימת בתוך העולם גם כשהוא רועש, צפוף ורווי תפקידים.<br>עשייתה מצביעה על ידע קיים - ידע שאינו נלמד, אלא נזכר.</p>
           <p>היא אינה מחפשת תנאים של ניתוק או התבודדות, אלא תשומת לב שמתקיימת בתוך החיים עצמם.<br>מכלול העבודות בתערוכה מהוות עבור אברהם סקלה של בדידות, לפעמים כמקום של נחמה והסחת דעת, לפעמים כעמידה חשופה, לפעמים כהתמודדות.</p>
           <p>החיבור שלה אליהן נובע מהבחירה להישאר בתוך התנועה הזו, גם כשלא ברור מה מחכה בצומת הבא. זה אינו סיפור סגור, אלא תהליך חי שמבקש אומץ, הקשבה והסכמה, כאשר הבהירות נוצרת מתוך נוכחות מתמשכת, ולאו דווקא מתוך היעלמות מהעולם.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 7 — Gallery manager (natalie zigel). Figma 1699:1524 desktop / 1699:1379 mobile -->
-  <section class="about-person about-person--manager" aria-label="natalie zigel — the gallery manager">
-    <div class="row">
-      <div class="text-col">
-        <div class="p-id">
-          <div class="p-name"><span class="first">natalie</span><span class="last">zigel</span></div>
-          <a class="p-handle" href="mailto:Nataliesiegel8@gmail.com">Nataliesiegel8@gmail.com</a>
-        </div>
-        <div class="p-roles">
-          <span class="p-role">the gallery manager</span>
-        </div>
-      </div>
-      <div class="img-col">
-        <div class="img-frame">
-          <img src="../images/about/people/natalie-zigel.webp" srcset="../images/about/people/natalie-zigel-480w.webp 480w, ../images/about/people/natalie-zigel.webp 984w" sizes="(max-width:768px) 100vw, 492px" width="984" height="1100" alt="natalie zigel" decoding="async" loading="lazy">
         </div>
       </div>
     </div>

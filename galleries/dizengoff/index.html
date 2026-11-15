@@ -116,29 +116,6 @@ body{text-transform:uppercase}
 .g-art .tri-caption a:hover{opacity:.65}
 
 /* ============================================================
-   THE GALLERY MANAGER — name column + portrait (Figma 1473:404;
-   the fixed-1440 inner container overflows its 1248 parent by 96
-   each side, so its 96px padding lands the content back on the
-   normal 96px page inset — i.e., full --max width, measured on the
-   frame render)
-   ============================================================ */
-.g-mgr{padding:64px var(--pad-x);background:var(--white);display:flex;flex-direction:column;align-items:center;gap:16px}
-.g-mgr__inner{width:100%;max-width:var(--max);padding:48px 0 32px;display:flex;align-items:center;gap:48px}
-.g-mgr__info{flex:1 1 0;min-width:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:20px;padding:0 16px}
-/* natalie Bold / Zigel Light — Copperplate 80 Figma → 64 optical (artist-talk-family precedent) */
-.g-mgr__names{display:flex;flex-direction:column;align-items:center;gap:20px}
-.g-mgr__names .fn{font-family:var(--cop);font-weight:700;font-size:64px;line-height:1.1;letter-spacing:.02em;text-align:center}
-.g-mgr__names .ln{font-family:var(--cop);font-weight:300;font-size:64px;line-height:1.1;letter-spacing:.02em;text-align:center}
-/* email — Copperplate 28 Figma → 22 optical; UPPERCASE display (golden rule 3), real mailto value */
-.g-mgr__email a{font-family:var(--cop);font-weight:300;font-size:22px;letter-spacing:.02em;transition:opacity .2s}
-.g-mgr__email a:hover{opacity:.65}
-.g-mgr__pic{flex:0 0 492px;display:flex;justify-content:flex-end}
-/* 492×744 box, photo 492×652 vertically centered (46px air above/below — Figma y:46) */
-.g-mgr__pic .ph{width:492px;aspect-ratio:492/744;display:flex;align-items:center}
-.g-mgr__pic .ph picture{display:contents}
-.g-mgr__pic .ph img{width:100%;height:87.634%;object-fit:cover}
-
-/* ============================================================
    RESPONSIVE — TABLET (≤1100)
    ============================================================ */
 @media (max-width:1100px){
@@ -146,17 +123,12 @@ body{text-transform:uppercase}
   .g-hero__title{font-size:64px}
   .g-art .tri{--tri-center-w:380px;--tri-center-h:665px;--tri-peek-w:239px;--tri-peek-h:418px;--tri-peek-left:calc(50% - 374px);--tri-peek-right:calc(50% + 374px)}
   .g-art .tri-frame{height:665px}
-  .g-mgr__inner{padding:32px 0 24px}
-  .g-mgr__names .fn,.g-mgr__names .ln{font-size:48px}
-  .g-mgr__pic{flex:0 0 380px}
-  .g-mgr__pic .ph{width:380px}
 }
 
 /* ============================================================
    RESPONSIVE — MOBILE (≤768) — per Figma 1473:447 (not a shrunk
    desktop): full-bleed hero photo first on white, centered info
-   block, 177×214.55 exhibition cards, edge-bleeding tri peeks,
-   portrait-first manager block.
+   block, 177×214.55 exhibition cards, edge-bleeding tri peeks.
    ============================================================ */
 @media (max-width:768px){
   :root{--pad-x:16px}
@@ -174,8 +146,7 @@ body{text-transform:uppercase}
 
   /* section rhythm — Figma main column gap 48 */
   .g-ex{padding:48px 16px 0;gap:16px}
-  .g-art{padding:48px 16px 0;gap:16px}
-  .g-mgr{padding:48px 16px;gap:16px}
+  .g-art{padding:48px 16px;gap:16px} /* last section — 48 bottom before the footer (was the removed manager block's padding) */
   .g-sec-head{font-size:16px}
 
   /* exhibition cards — 177×214.55 (homepage .ex-now geometry), scrim starts transparent.
@@ -198,17 +169,6 @@ body{text-transform:uppercase}
   /* triptych — center 216×378, peeks 117×204.75 bleeding past the viewport edges (Figma 1473:550) */
   .g-art .tri{width:calc(100% + 32px);margin:0 -16px;--tri-center-w:216px;--tri-center-h:378px;--tri-peek-w:117px;--tri-peek-h:204.75px;--tri-peek-left:calc(50% - 194.5px);--tri-peek-right:calc(50% + 194.5px)}
   .g-art .tri-frame{height:443px}
-
-  /* manager — portrait first (358×448 cover), centered name block (Figma 1473:564) */
-  .g-mgr__inner{flex-direction:column-reverse;align-items:stretch;gap:16px;padding:0}
-  .g-mgr__pic{flex:none;width:100%;justify-content:center}
-  .g-mgr__pic .ph{width:100%;aspect-ratio:358/448;display:block}
-  .g-mgr__pic .ph img{width:100%;height:100%;object-fit:cover}
-  .g-mgr__info{padding:8px 0 0;gap:8px}
-  .g-mgr__names{gap:8px}
-  .g-mgr__names .fn{font-size:26px;line-height:1.15}
-  .g-mgr__names .ln{font-size:26px;line-height:1.15;font-weight:400}
-  .g-mgr__email a{font-size:13px}
 }
 </style>
 <!-- SEO:auto:start -->
@@ -274,32 +234,13 @@ body{text-transform:uppercase}
     </div>
   </section>
 
-  <!-- THE GALLERY MANAGER — natalie zigel (gallery manager, not an artist — no artist-linking) -->
-  <section class="g-mgr" id="g-mgr">
-    <h2 class="g-sec-head">the gallery manager</h2>
-    <div class="g-mgr__inner">
-      <div class="g-mgr__info">
-        <div class="g-mgr__names">
-          <span class="fn" id="mgr-fn"></span>
-          <span class="ln" id="mgr-ln"></span>
-        </div>
-        <p class="g-mgr__email"><a id="mgr-email" href="mailto:nataliesiegel8@gmail.com"></a></p>
-      </div>
-      <div class="g-mgr__pic">
-        <div class="ph">
-          <img id="mgr-img" src="../../images/galleries/managers/natalie-zigel.webp" srcset="../../images/galleries/managers/natalie-zigel-480w.webp 480w, ../../images/galleries/managers/natalie-zigel-768w.webp 768w, ../../images/galleries/managers/natalie-zigel.webp 1080w" sizes="(max-width:768px) 100vw, 492px" width="1080" height="1206" alt="פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </div>
-  </section>
-
 </main>
 
 <site-footer></site-footer>
 
 <!-- MIRROR — data/galleries.json (file:// can't fetch; fetch-first with this fallback, curator-page pattern).
      ⚠️ כל שינוי ב-data/galleries.json חייב סנכרון לכאן (וגם למירור בעמוד האוצרת). -->
-<script type="application/json" id="fallback-galleries">{"$schema":"./_schema/galleries.schema.json","galleries":[{"id":"medina","slug":"medina","name_he":"גלריית כיכר המדינה","name_en":"Kikar Hamedina Gallery","address_he":"ז'בוטינסקי 131, תל אביב","address_en":"Jabotinsky 131, Tel Aviv","address_street_en":"131 jabotinsky st. tel aviv","address_area_en":"kikar hamedina","city":"tel aviv","status":"open","route":"galleries/medina/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/medina/hero-v2.webp","image_page_hero":"images/galleries/medina/page-hero.webp","manager":{"name_en_first":"natalie","name_en_last":"zigel","email":"nataliesiegel8@gmail.com","portrait":{"src":"images/galleries/managers/natalie-zigel.webp","width":1080,"height":1206,"alt_he":"פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה","figma_image_ref":"56b4a5a0e8bd0fda74230421ea4fc51ed660d778"},"note":"Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."},"note":"Gallery-page hero (Figma 1467:862 desktop 1467:813) is a NEW storefront photo — imageRef 281cf78459439ea5ef843021c0443939dd2e1131, crop suffix 10b0bd — baked to images/galleries/medina/page-hero.webp (896x1194; hero.webp/hero-v2.webp untouched — golden rule 8). image_hero (hero-v2) remains the homepage #galleries card image.","figma_node_desktop":null,"figma_node_mobile":"1318:663","figma_page_desktop":"1468:305","figma_page_mobile":"1467:840"},{"id":"dizengoff","slug":"dizengoff","name_he":"גלריית כיכר דיזינגוף","name_en":"Kikar Dizengoff Gallery","address_he":"כיכר דיזינגוף, תל אביב","address_en":"Dizengoff Square, Tel Aviv","address_street_en":"1 Reines st. tel aviv","address_area_en":"dizengoff square","city":"tel aviv","status":"open","route":"galleries/dizengoff/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/dizengoff/hero-v2.webp","image_page_hero":"images/galleries/dizengoff/hero-v2.webp","manager":{"name_en_first":"natalie","name_en_last":"zigel","email":"nataliesiegel8@gmail.com","portrait":{"src":"images/galleries/managers/natalie-zigel.webp","width":1080,"height":1206,"alt_he":"פורטרט שחור-לבן של נטלי זיגל, מנהלת הגלריה","figma_image_ref":"56b4a5a0e8bd0fda74230421ea4fc51ed660d778"},"note":"Figma verbatim spelling gap: heading 'Zigel' vs email 'Nataliesiegel8@gmail.com' ('siegel') — kept as-is pending user ruling. Gallery manager, not an artist (no artist-linking). Shared portrait baked at images/galleries/managers/natalie-zigel.webp (source 1385x1547). Same manager on both medina & dizengoff pages."},"note":"Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. Street spelling 'Reines' — user ruling 2026-08-13 (Figma wrote 'Raines', typo of Reines St.; fixed site-wide).","figma_node_desktop":"237:1465","figma_node_mobile":"1318:674","figma_page_desktop":"1473:311","figma_page_mobile":"1473:447"},{"id":"flea-market","slug":"flea-market","name_he":"גלריית שוק הפשפשים","name_en":"Flea Market Gallery","address_he":"שוק הפשפשים, תל אביב","address_en":"Flea Market, Tel Aviv (Jaffa)","address_street_en":null,"address_area_en":null,"city":"tel aviv","status":"coming-soon","route":null,"hours":[],"image_hero":null,"image_page_hero":null,"manager":null,"note":"Homepage card (redesign 2026-08, Figma 1318:686) renders as a flat #2B4C39 block with \"coming soon\" — image fills are hidden in Figma, no photo. Old hero.* files remain on disk, unlinked.","figma_node_desktop":null,"figma_node_mobile":"1318:686","figma_page_desktop":null,"figma_page_mobile":null},{"id":"zr-station","slug":"zr-station","name_he":"כיכר דיזינגוף","name_en":"the z&r station","subtitle_he":"תחנת השידור","subtitle_en":"by erez zielinski rozen","address_he":"כיכר דיזינגוף, תל אביב","address_en":"Dizengoff Square, Tel Aviv","address_street_en":null,"address_area_en":null,"city":"tel aviv","status":"coming-soon","route":null,"hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/zr-station/hero.webp","image_page_hero":null,"manager":null,"note":"New coming-soon space at Dizengoff Square ('תחנת השידור' / the z&r station), added 2026-10-06 (designer: 'add Dizengoff Square coming soon', above the flea market on mobile). Homepage card: Figma 1856:418 desktop / 1318:683 mobile. Image = the storefront fill (520x734, the only size in Figma) under a 70% ink veil + 'coming soon'. Address + hours = the mobile frame (same as dizengoff); the desktop frame's 'ריינס 1' / 10:00 variants were not requested. Station lines shown on desktop too (user decision). No gallery page (route null).","figma_node_desktop":"1856:418","figma_node_mobile":"1318:683","figma_page_desktop":null,"figma_page_mobile":null},{"id":"berlin","slug":"berlin","name_he":null,"name_en":"the art gallery berlin","address_he":null,"address_en":"Hotel Amano Berlin, Auguststraße 43, Berlin Mitte","address_street_en":"auguststraße 43","address_area_en":"berlin mitte","address_lines_en":["hotel amano berlin","auguststraße 43","berlin mitte"],"address_lines_en_mobile":["hotel amano","auguststraße 43","berlin mitte"],"instagram_handle":"@erezrozen_artgallery","instagram_url":"https://www.instagram.com/erezrozen_artgallery/","city":"berlin","status":"open","route":null,"hours":[],"image_hero":"images/galleries/berlin/hero.webp","image_page_hero":null,"manager":null,"note":"Homepage section #galleries-berlin (below #galleries tel aviv), Figma 1859:2668 desktop / 1856:433 mobile (2026-09-27). Card image = node render of 1859:2678 (visible fill imageRef d287a3c13e3a3d628b245bc6133536001a442708, crop 517382), 822x996 like the Tel Aviv cards. Figma writes the handle '@erez rozen_artgallery' (with a space) while its hyperlink points at erezrozen_artgallery — displayed without the space to match the real handle. Mobile address omits 'berlin' after 'hotel amano' (Figma verbatim per breakpoint). No gallery page yet (route null).","figma_node_desktop":"1859:2677","figma_node_mobile":"1855:226","figma_page_desktop":null,"figma_page_mobile":null},{"id":"barcelona","slug":"barcelona","name_he":null,"name_en":"the art gallery barcelona","address_he":null,"address_en":null,"address_street_en":null,"address_area_en":null,"address_lines_en":[],"address_lines_en_mobile":[],"instagram_handle":"@erezrozen_artgallery","instagram_url":"https://www.instagram.com/erezrozen_artgallery/","city":"barcelona","status":"coming-soon","route":null,"hours":[],"image_hero":"images/galleries/barcelona/hero.webp","image_page_hero":null,"manager":null,"note":"Homepage section #galleries-berlin, second column next to berlin (2026-10-06). Figma 1859:2668 desktop (col 1965:21, image 1965:31) / 1964:110 mobile (image 1964:117, same raw fill 1280x1600). Photo + 55% black overlay (CSS) + 'coming soon' label over the image; no address yet. Handle shown without the space, same as berlin. No gallery page (route null).","figma_node_desktop":"1965:21","figma_node_mobile":"1964:110","figma_page_desktop":null,"figma_page_mobile":null}]}</script>
+<script type="application/json" id="fallback-galleries">{"$schema":"./_schema/galleries.schema.json","galleries":[{"id":"medina","slug":"medina","name_he":"גלריית כיכר המדינה","name_en":"Kikar Hamedina Gallery","address_he":"ז'בוטינסקי 131, תל אביב","address_en":"Jabotinsky 131, Tel Aviv","address_street_en":"131 jabotinsky st. tel aviv","address_area_en":"kikar hamedina","city":"tel aviv","status":"open","route":"galleries/medina/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/medina/hero-v2.webp","image_page_hero":"images/galleries/medina/page-hero.webp","manager":null,"note":"Gallery-page hero (Figma 1467:862 desktop 1467:813) is a NEW storefront photo — imageRef 281cf78459439ea5ef843021c0443939dd2e1131, crop suffix 10b0bd — baked to images/galleries/medina/page-hero.webp (896x1194; hero.webp/hero-v2.webp untouched — golden rule 8). image_hero (hero-v2) remains the homepage #galleries card image. Manager section removed — user ruling 2026-11-15: the former gallery manager left; the Figma page frames still show the old manager block — do not restore it on a Figma sync.","figma_node_desktop":null,"figma_node_mobile":"1318:663","figma_page_desktop":"1468:305","figma_page_mobile":"1467:840"},{"id":"dizengoff","slug":"dizengoff","name_he":"גלריית כיכר דיזינגוף","name_en":"Kikar Dizengoff Gallery","address_he":"כיכר דיזינגוף, תל אביב","address_en":"Dizengoff Square, Tel Aviv","address_street_en":"1 Reines st. tel aviv","address_area_en":"dizengoff square","city":"tel aviv","status":"open","route":"galleries/dizengoff/","hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/dizengoff/hero-v2.webp","image_page_hero":"images/galleries/dizengoff/hero-v2.webp","manager":null,"note":"Gallery-page hero = same imageRef + crop as hero-v2 (a67703c85d5ed7e4babd57832b8d856a3a6db8ee, crop 433fe0) — reuse the existing file. Figma applies a non-uniform STRETCH (~10% horizontal squeeze); do not reproduce the distortion — open decision: cover on hero-v2 vs baked stretched crop. Street spelling 'Reines' — user ruling 2026-08-13 (Figma wrote 'Raines', typo of Reines St.; fixed site-wide). Manager section removed — user ruling 2026-11-15: the former gallery manager left; the Figma page frames still show the old manager block — do not restore it on a Figma sync.","figma_node_desktop":"237:1465","figma_node_mobile":"1318:674","figma_page_desktop":"1473:311","figma_page_mobile":"1473:447"},{"id":"flea-market","slug":"flea-market","name_he":"גלריית שוק הפשפשים","name_en":"Flea Market Gallery","address_he":"שוק הפשפשים, תל אביב","address_en":"Flea Market, Tel Aviv (Jaffa)","address_street_en":null,"address_area_en":null,"city":"tel aviv","status":"coming-soon","route":null,"hours":[],"image_hero":null,"image_page_hero":null,"manager":null,"note":"Homepage card (redesign 2026-08, Figma 1318:686) renders as a flat #2B4C39 block with \"coming soon\" — image fills are hidden in Figma, no photo. Old hero.* files remain on disk, unlinked.","figma_node_desktop":null,"figma_node_mobile":"1318:686","figma_page_desktop":null,"figma_page_mobile":null},{"id":"zr-station","slug":"zr-station","name_he":"כיכר דיזינגוף","name_en":"the z&r station","subtitle_he":"תחנת השידור","subtitle_en":"by erez zielinski rozen","address_he":"כיכר דיזינגוף, תל אביב","address_en":"Dizengoff Square, Tel Aviv","address_street_en":null,"address_area_en":null,"city":"tel aviv","status":"coming-soon","route":null,"hours":[{"days_he":"א'-ה'","days_en":"Sun-Thu","time":"18:00-11:00"},{"days_he":"ו'","days_en":"Fri","time":"14:00-11:00"},{"days_he":"שבת סגור","days_en":"Sat closed","time":null}],"image_hero":"images/galleries/zr-station/hero.webp","image_page_hero":null,"manager":null,"note":"New coming-soon space at Dizengoff Square ('תחנת השידור' / the z&r station), added 2026-10-06 (designer: 'add Dizengoff Square coming soon', above the flea market on mobile). Homepage card: Figma 1856:418 desktop / 1318:683 mobile. Image = the storefront fill (520x734, the only size in Figma) under a 70% ink veil + 'coming soon'. Address + hours = the mobile frame (same as dizengoff); the desktop frame's 'ריינס 1' / 10:00 variants were not requested. Station lines shown on desktop too (user decision). No gallery page (route null).","figma_node_desktop":"1856:418","figma_node_mobile":"1318:683","figma_page_desktop":null,"figma_page_mobile":null},{"id":"berlin","slug":"berlin","name_he":null,"name_en":"the art gallery berlin","address_he":null,"address_en":"Hotel Amano Berlin, Auguststraße 43, Berlin Mitte","address_street_en":"auguststraße 43","address_area_en":"berlin mitte","address_lines_en":["hotel amano berlin","auguststraße 43","berlin mitte"],"address_lines_en_mobile":["hotel amano","auguststraße 43","berlin mitte"],"instagram_handle":"@erezrozen_artgallery","instagram_url":"https://www.instagram.com/erezrozen_artgallery/","city":"berlin","status":"open","route":null,"hours":[],"image_hero":"images/galleries/berlin/hero.webp","image_page_hero":null,"manager":null,"note":"Homepage section #galleries-berlin (below #galleries tel aviv), Figma 1859:2668 desktop / 1856:433 mobile (2026-09-27). Card image = node render of 1859:2678 (visible fill imageRef d287a3c13e3a3d628b245bc6133536001a442708, crop 517382), 822x996 like the Tel Aviv cards. Figma writes the handle '@erez rozen_artgallery' (with a space) while its hyperlink points at erezrozen_artgallery — displayed without the space to match the real handle. Mobile address omits 'berlin' after 'hotel amano' (Figma verbatim per breakpoint). No gallery page yet (route null).","figma_node_desktop":"1859:2677","figma_node_mobile":"1855:226","figma_page_desktop":null,"figma_page_mobile":null},{"id":"barcelona","slug":"barcelona","name_he":null,"name_en":"the art gallery barcelona","address_he":null,"address_en":null,"address_street_en":null,"address_area_en":null,"address_lines_en":[],"address_lines_en_mobile":[],"instagram_handle":"@erezrozen_artgallery","instagram_url":"https://www.instagram.com/erezrozen_artgallery/","city":"barcelona","status":"coming-soon","route":null,"hours":[],"image_hero":"images/galleries/barcelona/hero.webp","image_page_hero":null,"manager":null,"note":"Homepage section #galleries-berlin, second column next to berlin (2026-10-06). Figma 1859:2668 desktop (col 1965:21, image 1965:31) / 1964:110 mobile (image 1964:117, same raw fill 1280x1600). Photo + 55% black overlay (CSS) + 'coming soon' label over the image; no address yet. Handle shown without the space, same as berlin. No gallery page (route null).","figma_node_desktop":"1965:21","figma_node_mobile":"1964:110","figma_page_desktop":null,"figma_page_mobile":null}]}</script>
 
 <!-- MIRROR SLICE — exhibitions of THIS gallery, from data/exhibitions.json (gallery_id=dizengoff).
      שדות תאריך start_date/end_date = מהכרטיס ב-Figma (26.05.2026-15.08.2026); יש לסנכרן גם ל-exhibitions.json.
@@ -1133,7 +1074,7 @@ body{text-transform:uppercase}
 (function(){
   function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-  /* ---------- gallery info (name / address / hours / manager) — data/galleries.json ---------- */
+  /* ---------- gallery info (name / address / hours) — data/galleries.json ---------- */
   async function loadJson(path, embeddedId){
     try{
       var res = await fetch(path, {cache:'no-store'});
@@ -1159,17 +1100,6 @@ body{text-transform:uppercase}
       hoursEl.innerHTML = (g.hours || []).map(function(h){
         return '<span>'+esc(h.days_he + (h.time ? ' ' + h.time : ''))+'</span>';
       }).join('<i class="sq" aria-hidden="true"></i>');
-
-      var m = g.manager;
-      var mgrSec = document.getElementById('g-mgr');
-      if(!m){ if(mgrSec) mgrSec.hidden = true; return; }
-      document.getElementById('mgr-fn').textContent = m.name_en_first || '';
-      document.getElementById('mgr-ln').textContent = m.name_en_last || '';
-      var em = document.getElementById('mgr-email');
-      if(m.email){ em.textContent = m.email; em.href = 'mailto:' + String(m.email).toLowerCase(); }
-      else if(em){ em.parentElement.hidden = true; }
-      if(m.portrait && m.portrait.alt_he) document.getElementById('mgr-img').alt = m.portrait.alt_he;
-      /* portrait src stays the static baked path — swapping src under srcset does nothing (lesson 2026-07-09) */
     }catch(e){}
   })();
 
