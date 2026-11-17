@@ -39,6 +39,22 @@
       // Anonymize IP is on by default in GA4. Page_view auto-sent.
       // Add custom params here if needed later.
     });
+
+    // Clicks to the shop (www.zrp.co.il). GA4 enhanced "outbound click"
+    // skips sibling subdomains of zrp.co.il, so we send our own event.
+    // In GA4: event zrp_click, params link_url, link_text, from_path.
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+      if (!a) return;
+      var host = a.hostname || '';
+      if (host !== 'www.zrp.co.il' && host !== 'zrp.co.il') return;
+      window.gtag('event', 'zrp_click', {
+        link_url: a.href.slice(0, 300),
+        link_text: (a.textContent || '').trim().slice(0, 100),
+        from_path: location.pathname,
+        transport_type: 'beacon'
+      });
+    }, true);
   }
 
   /* ---------- Microsoft Clarity ---------- */
