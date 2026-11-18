@@ -23,6 +23,218 @@
   ],
   "art_works": [
     {
+      "id": "refael-salem-1",
+      "artist_slug": "refael-salem",
+      "artist_he": "רפאל סלם",
+      "artist_en": "refael salem",
+      "title_he": "סטיב, בכחוס ואריאדנה",
+      "title_en": null,
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "78x108 ס\"מ\nשמן על בד",
+      "img": "refael-salem-1",
+      "w": 995,
+      "h": 1400,
+      "widths": [
+        480,
+        768,
+        995
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "העבודה נולדה מתוך משיכה לציור הקלאסי ומתוך הנטייה לשהות מול יצירות לאורך זמן, עד שההתבוננות הופכת לחוויה של היטמעות. בציור נראית דמות המתבוננת ביצירתו של ג'ובאני בטיסטה פיטוני, \"בכחוס ואריאדנה\" (1716–1718) מפגש הטעון בתשוקה, חושניות והתמסרות, שבו הגבול בין הסצנה המיתולוגית לעולמו הפנימי של הצופה הולך ומיטשטש.",
+        "דרך המפגש הזה העבודה בוחנת את האובססיה כמשיכה עזה לדימוי: המבט מפסיק להיות פעולה חולפת והופך להיקסמות וכמיהה — ניסיון להיכנס אל עולם של פנטזיה, להתקרב או להשתייך למשהו שאי אפשר באמת לגעת בו, והוא נותר מעבר להישג יד."
+      ]
+    },
+    {
+      "id": "eyal-dobinsky-1",
+      "artist_slug": "eyal-dobinsky",
+      "artist_he": "אייל דובינסקי",
+      "artist_en": "eyal dobinsky",
+      "title_he": null,
+      "title_en": "i love seeing you happy",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "mix media",
+      "img": "eyal-dobinsky-1",
+      "w": 968,
+      "h": 1400,
+      "widths": [
+        480,
+        768,
+        968
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "יש כאן אמירה על אהבה מסוג אחר. אהבה שאינה מבקשת להחזיק, לשלוט או לקבל משהו בתמורה. אלא פשוט לשמוח באושרו של האחר. זו תזכורת לכך שאהבה אמיתית יכולה להתקיים גם מתוך פרגון, נדיבות ושחרור."
+      ]
+    },
+    {
+      "id": "eyal-dobinsky-2",
+      "artist_slug": "eyal-dobinsky",
+      "artist_he": "אייל דובינסקי",
+      "artist_en": "eyal dobinsky",
+      "title_he": null,
+      "title_en": "freedom",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "⁦120x80 cm⁩\noil on canvas",
+      "img": "eyal-dobinsky-2",
+      "w": 979,
+      "h": 689,
+      "widths": [
+        480,
+        768,
+        979
+      ],
+      "artist_page_pos": 2,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "לפעמים סיום של פרק הוא דווקא תחילתו של משהו חדש.",
+        "היצירה נולדה מתוך סיומה של מערכת יחסים ומתוך תחושת חופש שהתגלתה בעקבותיה. לא מתוך כאב או געגוע, אלא מתוך חזרה לעצמי, למרחב האישי וליכולת להיות פשוט מי שאני.",
+        "הארנב הכחול מייצג בעיניי חופש, רגישות, עצמאות ואת הילד הפנימי שלא מפסיק לחפש, לחלום ולשחק.",
+        "זהו רגע של שחרור, התחדשות וגילוי מחדש. ההבנה שלפעמים כדי למצוא את עצמך, צריך קודם לשחרר משהו אחר.",
+        "freedom is the courage to be yourself."
+      ]
+    },
+    {
+      "id": "elad-amsalem-1",
+      "artist_slug": "elad-amsalem",
+      "artist_he": "אלעד אמסלם",
+      "artist_en": "elad amsalem",
+      "title_he": "עגל הזהב",
+      "title_en": "the golden calf",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": null,
+      "img": "elad-amsalem-1",
+      "w": 1071,
+      "h": 1500,
+      "widths": [
+        480,
+        768,
+        1071
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "'עגל הזהב' מתאר חגיגה גופנית, מיסטית וטקסית, שמתרחשת סביב הקנבס ומתחת לראש של עגל. גופים בתנועה הרמונית נשזרים זה בזה, כמו בריקוד קדום.",
+        "על הציור מוצבים שלושה פסלי קרמיקה, שמביאים אליו אנרגיה פרימיטיבית ושבטית, כמו אלילים קטנים או קמעות שנולדו מהאדמה. החומר יוצא מן המשטח השטוח אל המרחב, והחגיגה הופכת לטקס של ממש.",
+        "כאמן אני חוקר דרך הציור, דרך החומר, את הרוח.",
+        "האובססיה כמחשבה העתיקה על חטא עגל הזהב: האובססיה האנושית לחומר, לתשוקות ולמותרות. אני לא מתאר חטא אלא חגיגה. אני מקבל את הכאוס ומנסה להוציא ממנו יופי והרמוניה."
+      ]
+    },
+    {
+      "id": "max-wert-1",
+      "artist_slug": "max-wert",
+      "artist_he": "מקס ורט",
+      "artist_en": "max wert",
+      "title_he": "דברים יקרים",
+      "title_en": null,
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "100x70 ס\"מ\nבד במדיה מעורבת",
+      "img": "max-wert-1",
+      "w": 1047,
+      "h": 1500,
+      "widths": [
+        480,
+        768,
+        1047
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "מטאפורה חזותית של אובססיה: השילוב של אלמנטים צילומיים ריאליסטיים (כלב הבורזוי, רקע קטיפתי עשיר) ואיור גרפי בסגנון קו (הנערה) יוצר אווירה סוריאליסטית חזקה. היא ממחישה את ההתמזגות של המציאות עם הקרנה נפשית, ולוכדת את המהות של אובססיה פסיכולוגית.",
+        "התמוססות הגבולות: הדרך שבה הדמות הגרפית עוטפת פיזית את הכלב וכמעט מתמזגת איתו מעבירה תחושה של היקשרות עזה וסוחפת – שבה הזהות של הסובייקט משתלבת עם אובייקט החיבה.",
+        "השפעת הגודל והטכניקה: תרגום העיצוב הזה, שנעשה בטכניקות מעורבות, לציור שמן בקנה מידה גדול מוסיף משקל מונומנטלי וערך גלריה. ביצוע האיור הקווי בעל הניגודיות הגבוהה לצד העיבוד השמנוני העשיר והמרקמי של פרוות הכלב והרקעים הקטיפתיים ייצור ניגוד מישושי בולט, אשר יהפוך את המתח הרגשי למוחשי עוד יותר עבור הצופה."
+      ],
+      "artist_page_credit_he": "מקס וקסניה ורט"
+    },
+    {
+      "id": "lera-yestrel-1",
+      "artist_slug": "lera-yestrel",
+      "artist_he": "לרה יסטרל",
+      "artist_en": "lera yestrel",
+      "title_he": null,
+      "title_en": "one more pair",
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": null,
+      "img": "lera-yestrel-1",
+      "w": 1010,
+      "h": 1500,
+      "widths": [
+        480,
+        768,
+        1010
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "העבודה “ONE MORE PAIR” נולדה מאהבה ישנה לנעליים, אהבה שבשלב מסוים הפסיקה להיות על הנעליים עצמן. ההשראה הגיעה מקארי ברדשו, ברגע שבו היא מגלה שהוציאה 40,000 דולר על נעליים ואין לה כסף לדירה.",
+        "עשרות זוגות ממלאים את הקנבס: חלקן מושלמות ונחשקות, וחלקן נמתחות, נמסות ומאבדות צורה, כמו תשוקה שתמיד יש לה עוד זוג אחד. זה מתחיל בזוג מושלם אחד, ואז הבא נראה הכרחי באותה מידה, ואז מפסיקים לספור. העבודה צוירה מעל ציור ישן: הוא נעלם, אבל עדיין שם. כך פועלת אובססיה.",
+        "לצדה שלוש עבודות קטנות: נעלי האודם מ\"הקוסם מארץ עוץ\" שנמכרו ב-32.5 מיליון דולר, נעל פטיש בהשראת LOUBOUTIN ו-LYNCH, ונעל כחולה שהפכה להצעת נישואין."
+      ]
+    },
+    {
+      "id": "ksenia-wert-1",
+      "artist_slug": "ksenia-wert",
+      "artist_he": "קסניה ורט",
+      "artist_en": "ksenia wert",
+      "title_he": "דברים יקרים",
+      "title_en": null,
+      "gallery_slug": "medina",
+      "gallery_en": "Hamedina Square Gallery",
+      "sold": false,
+      "details_he": "100x70 ס\"מ\nבד במדיה מעורבת",
+      "img": "max-wert-1",
+      "w": 1047,
+      "h": 1500,
+      "widths": [
+        480,
+        768,
+        1047
+      ],
+      "artist_page_pos": 1,
+      "page": true,
+      "exhibition_title_he": "OBSESSED.",
+      "exhibition_slug": null,
+      "exhibition_route": null,
+      "statement_he": [
+        "מטאפורה חזותית של אובססיה: השילוב של אלמנטים צילומיים ריאליסטיים (כלב הבורזוי, רקע קטיפתי עשיר) ואיור גרפי בסגנון קו (הנערה) יוצר אווירה סוריאליסטית חזקה. היא ממחישה את ההתמזגות של המציאות עם הקרנה נפשית, ולוכדת את המהות של אובססיה פסיכולוגית.",
+        "התמוססות הגבולות: הדרך שבה הדמות הגרפית עוטפת פיזית את הכלב וכמעט מתמזגת איתו מעבירה תחושה של היקשרות עזה וסוחפת – שבה הזהות של הסובייקט משתלבת עם אובייקט החיבה.",
+        "השפעת הגודל והטכניקה: תרגום העיצוב הזה, שנעשה בטכניקות מעורבות, לציור שמן בקנה מידה גדול מוסיף משקל מונומנטלי וערך גלריה. ביצוע האיור הקווי בעל הניגודיות הגבוהה לצד העיבוד השמנוני העשיר והמרקמי של פרוות הכלב והרקעים הקטיפתיים ייצור ניגוד מישושי בולט, אשר יהפוך את המתח הרגשי למוחשי עוד יותר עבור הצופה."
+      ],
+      "artist_page_credit_he": "מקס וקסניה ורט"
+    },
+    {
       "id": "aharon-bas-1",
       "artist_slug": "aharon-bas",
       "artist_he": "אהרן בס",

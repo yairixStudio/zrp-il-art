@@ -1233,5 +1233,65 @@
 "jpg": "og/sponsors-terratiles-studio-hero.jpg",
 "w": 1086,
 "h": 570
+},
+"images/artists/refael-salem/portrait.webp": {
+"jpg": "og/artists-refael-salem-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/eyal-dobinsky/portrait.webp": {
+"jpg": "og/artists-eyal-dobinsky-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/elad-amsalem/portrait.webp": {
+"jpg": "og/artists-elad-amsalem-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/lera-yestrel/portrait.webp": {
+"jpg": "og/artists-lera-yestrel-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/max-wert/portrait.webp": {
+"jpg": "og/artists-max-wert-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/ksenia-wert/portrait.webp": {
+"jpg": "og/artists-ksenia-wert-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/works/v2/refael-salem-1.webp": {
+"jpg": "og/works-v2-refael-salem-1.jpg",
+"w": 853,
+"h": 1200
+},
+"images/works/v2/eyal-dobinsky-1.webp": {
+"jpg": "og/works-v2-eyal-dobinsky-1.jpg",
+"w": 830,
+"h": 1200
+},
+"images/works/v2/eyal-dobinsky-2.webp": {
+"jpg": "og/works-v2-eyal-dobinsky-2.jpg",
+"w": 979,
+"h": 689
+},
+"images/works/v2/elad-amsalem-1.webp": {
+"jpg": "og/works-v2-elad-amsalem-1.jpg",
+"w": 857,
+"h": 1200
+},
+"images/works/v2/max-wert-1.webp": {
+"jpg": "og/works-v2-max-wert-1.jpg",
+"w": 838,
+"h": 1200
+},
+"images/works/v2/lera-yestrel-1.webp": {
+"jpg": "og/works-v2-lera-yestrel-1.jpg",
+"w": 808,
+"h": 1200
 }
 }
