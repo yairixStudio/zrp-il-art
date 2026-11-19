@@ -115,7 +115,10 @@ body{text-transform:uppercase}
   .hero h1{font-size:clamp(40px,15vw,58px)}
   .hero h2{font-size:clamp(64px,24vw,91px);margin-top:-.12em}
   .grid{grid-template-columns:repeat(2,1fr);padding:32px 16px;column-gap:16px;row-gap:40px}
-  .card{gap:12px}
+  .card{gap:12px;order:var(--o,0)}
+  /* מובייל בלבד: ksenia-wert-1 ו-aharon-bas-1 מחליפות מקום (אחרת היצירה המשותפת של מקס וקסניה יושבת אחת מתחת לשנייה) */
+  .card[data-id="ksenia-wert-1"]{order:7}
+  .card[data-id="aharon-bas-1"]{order:6}
   .meta .artist{font-size:18px}
   .meta .title{font-size:15px}
   .meta .title.is-en{font-weight:400;font-size:12px;line-height:1.2;letter-spacing:0.45px}
@@ -4413,7 +4416,7 @@ body{text-transform:uppercase}
       ? '<a class="img" href="'+esc(w.id)+'/">'+imgTag+'</a>'
       : '<div class="img" data-artwork-src="'+main+'" data-artwork-title="'+esc(captionTitle(w))+'" '+
              'data-artwork-artist="'+esc(artistName(w))+'" data-artwork-link="'+href+'">'+imgTag+'</div>';
-    return '<article class="card" data-artwork-gallery>'+
+    return '<article class="card" data-artwork-gallery data-id="'+esc(w.id)+'" style="--o:'+i+'">'+
         imgBlock+
         '<div class="meta">'+
           artistHtml(w)+
