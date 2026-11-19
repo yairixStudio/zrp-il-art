@@ -465,5 +465,6 @@ body.alb-lock{
 }
 
 /* artwork cursor hint on the source pages */
-[data-artwork-id]:not(button):not(a),
+/* :not(html):not(body) — עמודי works/<id>/ נושאים data-artwork-id על <html> כמזהה עמוד; בלי ההחרגה כל העמוד מקבל זכוכית מגדלת */
+[data-artwork-id]:not(button):not(a):not(html):not(body),
 [data-artwork-src]:not(button):not(a){cursor:zoom-in}
