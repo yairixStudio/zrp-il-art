@@ -280,7 +280,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 <meta name="twitter:title" content="risa brooke oze — Zielinski &amp; Rozen">
 <meta name="twitter:description" content="נולדה בניו יורק וכיום פועלת בתל אביב. לאחר תקופת הקורונה חלה תפנית משמעותית בעשייתה, והיא בחרה להתמסר לאמנות באופן מלא. עבודתה האוטודידקטית מתפתחת מתוך…">
 <meta name="twitter:image" content="https://art.zrp.co.il/og/artists-risa-oz-portrait.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://art.zrp.co.il/artists/risa-oz/#webpage","url":"https://art.zrp.co.il/artists/risa-oz/","name":"risa brooke oze — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"mainEntity":{"@id":"https://art.zrp.co.il/artists/risa-oz/#person"}},{"@type":"Person","name":"risa brooke oze","alternateName":"ריסה ברוק עוז","url":"https://art.zrp.co.il/artists/risa-oz/","image":"https://art.zrp.co.il/images/artists/risa-oz/portrait.webp","jobTitle":"Artist","memberOf":{"@id":"https://art.zrp.co.il/#org"},"description":"נולדה בניו יורק וכיום פועלת בתל אביב. לאחר תקופת הקורונה חלה תפנית משמעותית בעשייתה, והיא בחרה להתמסר לאמנות באופן מלא. עבודתה האוטודידקטית מתפתחת מתוך אינטואיציה וחקירה מתמשכת של צבע, צורה ורגש. היא פועלת בשפה מופשטת, הנשענת על תנועה חופשית של צבע ועל שכבות רגשיות מורכבות.","sameAs":["https://www.instagram.com/risabrookeart/"],"@id":"https://art.zrp.co.il/artists/risa-oz/#person"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artists","item":"https://art.zrp.co.il/artists/"},{"@type":"ListItem","position":2,"name":"risa brooke oze","item":"https://art.zrp.co.il/artists/risa-oz/"}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"ProfilePage","@id":"https://art.zrp.co.il/artists/risa-oz/#webpage","url":"https://art.zrp.co.il/artists/risa-oz/","name":"risa brooke oze — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"mainEntity":{"@id":"https://art.zrp.co.il/artists/risa-oz/#person"}},{"@type":"Person","name":"risa brooke oze","alternateName":"ריסה ברוק עוז","url":"https://art.zrp.co.il/artists/risa-oz/","image":"https://art.zrp.co.il/images/artists/risa-oz/portrait.webp","jobTitle":"Artist","memberOf":{"@id":"https://art.zrp.co.il/#org"},"description":"נולדה בניו יורק וכיום פועלת בתל אביב. לאחר תקופת הקורונה חלה תפנית משמעותית בעשייתה, והיא בחרה להתמסר לאמנות באופן מלא. עבודתה האוטודידקטית מתפתחת מתוך אינטואיציה וחקירה מתמשכת של צבע, צורה ורגש. היא פועלת בשפה מופשטת, הנשענת על תנועה חופשית של צבע ועל שכבות רגשיות מורכבות.","@id":"https://art.zrp.co.il/artists/risa-oz/#person"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Artists","item":"https://art.zrp.co.il/artists/"},{"@type":"ListItem","position":2,"name":"risa brooke oze","item":"https://art.zrp.co.il/artists/risa-oz/"}]}]}</script>
 <!-- SEO:auto:end -->
 </head>
 <body class="is-loading-data">
@@ -328,11 +328,15 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
       .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
   }
   /* @handle from JSON → link to instagram.com/<username>/ */
+  /* BROKEN-LINK 2026-11-19: instagram.com/risabrookeart — "Profile אינו זמין". מוצג כטקסט בלי קישור עד שקורין תשלח כתובת נכונה.
+     להחזרה: לעדכן instagram_handle ב-data/artists.json ולמחוק את IG_UNLINKED ואת השורה שמשתמשת בו. (סטייה מקומית מהתבנית המשותפת — רק בדף הזה.) */
+  var IG_UNLINKED={"risabrookeart":1};
   function heroHandleLink(handle){
     if(handle==null||handle==="")return "";
     var display=String(handle).trim();
     var user=display.replace(/^@+/,"").trim();
     if(!user)return "";
+    if(IG_UNLINKED[user.toLowerCase()])return '<span class="hero-handle" style="cursor:default;text-decoration:none">'+escapeHtml(display)+'</span>';
     var href="https://www.instagram.com/"+encodeURIComponent(user)+"/";
     return '<a class="hero-handle" href="'+escapeHtml(href)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(display)+'</a>';
   }
