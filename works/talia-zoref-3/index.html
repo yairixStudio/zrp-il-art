@@ -14,6 +14,8 @@
 /* ===== LOCAL FONTS ===== */
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate-Light.woff2") format("woff2"),url("../../פונטים/Copperplate-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
+/* CopperplateCaps = אותו קובץ, עם ascent/descent מתוקנים: בקובץ המקורי ה-ascent (0.571em) נמוך מגובה האותיות (0.698em), ולכן כרום חותך את ראשי האותיות בשורות של כותרת רב-שורתית. 75% − 17.86% = 57.14% ⇒ קו הבסיס לא זז. */
+@font-face{font-family:"CopperplateCaps";src:url("../../פונטים/Copperplate.woff2") format("woff2"),url("../../פונטים/Copperplate.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap;ascent-override:75%;descent-override:17.86%;line-gap-override:0%}
 @font-face{font-family:"Copperplate";src:url("../../פונטים/CopperplateCC-Bold.woff2") format("woff2"),url("../../פונטים/CopperplateCC-Bold.otf") format("opentype");font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Light.woff2") format("woff2"),url("../../פונטים/FbEzmel-Light.otf") format("opentype");font-weight:300;font-style:normal;font-display:swap}
 @font-face{font-family:"FbEzmel";src:url("../../פונטים/FbEzmel-Regular.woff2") format("woff2"),url("../../פונטים/FbEzmel-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
@@ -49,7 +51,7 @@ body{text-transform:uppercase}
 
 /* Media (left) */
 .aw-media{flex:1 1 0;min-width:0;display:flex;align-items:flex-start;justify-content:center;min-height:570px}
-.aw-media [data-artwork-src]{display:flex;width:100%;align-items:flex-start;justify-content:center;line-height:0}
+.aw-media [data-artwork-src]{display:flex;width:auto;max-width:100%;align-items:flex-start;justify-content:center;line-height:0}
 .aw-media picture{display:flex;width:100%;align-items:flex-start;justify-content:center;line-height:0}
 .aw-media img{max-width:100%;max-height:640px;width:auto;height:auto;object-fit:contain;cursor:zoom-in}
 
@@ -99,6 +101,7 @@ a.aw-ex-title:hover{opacity:.6}
   .aw{padding:24px 16px}
   .aw-grid{flex-direction:column;gap:24px}
   .aw-media{flex:0 0 auto;min-height:0;width:100%}
+  .aw-media [data-artwork-src]{width:100%}
   .aw-media img{max-height:none;width:100%}
   .aw-info{flex:none;width:100%;gap:24px;justify-content:flex-start}
   .aw-actions{order:2;align-self:stretch;flex-direction:row-reverse;justify-content:flex-start}
@@ -239,7 +242,7 @@ a.aw-ex-title:hover{opacity:.6}
 
   var titleHtml = w.title_he
     ? '<span class="aw-title">'+esc(w.title_he)+'</span>'
-    : '<span class="aw-title" style="direction:ltr;font-family:var(--cop);text-transform:uppercase">'+esc(w.title_en)+'</span>';
+    : '<span class="aw-title" style="direction:ltr;font-family:CopperplateCaps,var(--cop);text-transform:uppercase">'+esc(w.title_en)+'</span>';
   var artistHtml = '<a class="aw-artist" href="'+artistHref+'">'+latHtml(artistName(w))+'</a>';
   var detailsBlock = w.details_he ? '<span class="aw-details">'+detailsHtml(w.details_he).replace(/(\d)([xX])(?=\d)/g,'$1<span class="dim-x">$2</span>')+'</span>' : '';
   var galleryBlock = w.gallery_en ? '<a class="aw-gallery" href="'+galleryHref+'">'+galleryLabel(w.gallery_en)+'</a>' : '';
