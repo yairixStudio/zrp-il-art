@@ -597,7 +597,7 @@
       "slug": "holy-kadosh",
       "name_en": "tal holy kadosh",
       "name_he": "טל הולי קדוש",
-      "portrait": "images/artists/holy-kadosh/portrait.webp",
+      "portrait": "images/artists/holy-kadosh/portrait-v2.webp",
       "work_image": null,
       "instagram_handle": "@holy_kadosh",
       "bio_he": "אמנית רב תחומית היוצרת במגוון מדיות כמו אומנות דיגיטלית, ציור על רדי מיידי ויצירות קנבס באקריל ובצבעי פנדה. היצירה שלי נולדת מתוך חיבור עמוק לתת המודע, אני מרפה משליטה ונותנת לדימויים לעלות מעצמם, בהובלת זרם פנימי אינטואיטיבי ורוחני.",
@@ -619,7 +619,7 @@
           "image": "images/artists/holy-kadosh/work-03.webp"
         }
       ],
-      "figma_artist_page_mobile": "235:139",
+      "figma_artist_page_mobile": "XhGH289YTRcW811wrufRJz::2666:23422",
       "figma_artist_page_desktop": null,
       "homepage_featured": false
     },
