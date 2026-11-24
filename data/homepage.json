@@ -216,7 +216,7 @@
   "figma_node_mobile": "1856:433"
  },
  "x_our_artists": {
-  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"x our artists — NEW ORDER 10.11.2026\" (landing 2395:677, Korin; replaces 1873:1146), 33 items in Figma row-major order; carousel opens on items[1] (nir giorgio levin, data-tri-start=\"1\"). Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). work-N file names are the OLD positions (no longer 1:1 with the index since 2026-11-11). Dropped as duplicate photos: work-17/30/32/34/36/37/38 (files kept, golden rule 8). work-10/23/31 = -v2 renders; work-39 shira turbowicz; work-40 adam leisner (node 2312:165). 2026-11-19: +4 OBSESSED. bottles at the top (order frame landing 2432:5758, 37 cards): work-41 max wert x ksenia wert (2441:7224, one card for the shared work, links to max-wert), work-42 lera yestrel (2441:7220), work-43 refael salem (2432:5759), work-44 elad amsalem (2441:7216) — on /x-our-artists/ and in the homepage carousel (desktop frame 2432:4929: opens on lera yestrel, max x ksenia left, refael salem right; data-tri-start stays 1). 37 items.",
+  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"x our artists — NEW ORDER 10.11.2026\" (landing 2395:677, Korin; replaces 1873:1146), 33 items in Figma row-major order; carousel opens on items[1] (nir giorgio levin, data-tri-start=\"1\"). Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). work-N file names are the OLD positions (no longer 1:1 with the index since 2026-11-11). Dropped as duplicate photos: work-17/30/32/34/36/37/38 (files kept, golden rule 8). work-10/23/31 = -v2 renders; work-39 shira turbowicz; work-40 adam leisner (node 2312:165). 2026-11-19: +4 OBSESSED. bottles at the top (order frame landing 2432:5758, 37 cards): work-41 max wert x ksenia wert (2441:7224, one card for the shared work, links to max-wert), work-42 lera yestrel (2441:7220), work-43 refael salem (2432:5759), work-44 elad amsalem (2441:7216) — on /x-our-artists/ and in the homepage carousel (desktop frame 2432:4929: opens on lera yestrel, max x ksenia left, refael salem right; data-tri-start stays 1). 37 items. 2026-11-24: 48 items (Figma 2432:5750 / grid 2432:5758, Lev comment #380 'new bottles'): 11 new = work-45..55 at positions 4-8 and 10-15; elad amsalem moved #4 -> #9.",
   "title_b": "Zielinski Rozen",
   "title_l": "x our artists",
   "items": [
@@ -236,9 +236,64 @@
     "slug": "refael-salem"
    },
    {
+    "name_en": "polina beskrovnaya",
+    "image": "images/homepage/x-our-artists/work-45.webp",
+    "slug": "polina-beskrovnaya"
+   },
+   {
+    "name_en": "neta cohen",
+    "image": "images/homepage/x-our-artists/work-46.webp",
+    "slug": "neta-cohen"
+   },
+   {
+    "name_en": "natasha zeriker",
+    "image": "images/homepage/x-our-artists/work-47.webp",
+    "slug": "natasha-zeriker"
+   },
+   {
+    "name_en": "edan weiss",
+    "image": "images/homepage/x-our-artists/work-48.webp",
+    "slug": "edan-weiss"
+   },
+   {
+    "name_en": "noemi safir",
+    "image": "images/homepage/x-our-artists/work-49.webp",
+    "slug": "noemi-safir"
+   },
+   {
     "name_en": "elad amsalem",
     "image": "images/homepage/x-our-artists/work-44.webp",
     "slug": "elad-amsalem"
+   },
+   {
+    "name_en": "tal holy kadosh",
+    "image": "images/homepage/x-our-artists/work-50.webp",
+    "slug": "holy-kadosh"
+   },
+   {
+    "name_en": "yuval fella",
+    "image": "images/homepage/x-our-artists/work-51.webp",
+    "slug": "yuval-fella"
+   },
+   {
+    "name_en": "mai gurewitz",
+    "image": "images/homepage/x-our-artists/work-52.webp",
+    "slug": "mai-gurewitz"
+   },
+   {
+    "name_en": "aino katzir",
+    "image": "images/homepage/x-our-artists/work-53.webp",
+    "slug": "aino-katzir"
+   },
+   {
+    "name_en": "liri keren",
+    "image": "images/homepage/x-our-artists/work-54.webp",
+    "slug": "liri-keren"
+   },
+   {
+    "name_en": "michal lubell-koren",
+    "image": "images/homepage/x-our-artists/work-55.webp",
+    "slug": "michal-lubell-koren"
    },
    {
     "name_en": "zohar ron",

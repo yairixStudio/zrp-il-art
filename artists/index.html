@@ -171,11 +171,84 @@ body{text-transform:uppercase}
   },
   {
     "slug": "max-wert",
-    "name": "max\nwert"
+    "name": "max\nwert",
+    "img": "max-wert-v2"
   },
   {
     "slug": "ksenia-wert",
-    "name": "ksenia\nwert"
+    "name": "ksenia\nwert",
+    "img": "ksenia-wert-v2"
+  },
+  {
+    "slug": "edan-weiss",
+    "name": "edan\nweiss"
+  },
+  {
+    "slug": "edith-codegoni",
+    "name": "edith\ncodegoni"
+  },
+  {
+    "slug": "neta-cohen",
+    "name": "neta\ncohen"
+  },
+  {
+    "slug": "polina-beskrovnaya",
+    "name": "polina\nbeskrovnaya"
+  },
+  {
+    "slug": "aino-katzir",
+    "name": "aino\nkatzir"
+  },
+  {
+    "slug": "gila-babich",
+    "name": "gila\nbabich"
+  },
+  {
+    "slug": "liri-keren",
+    "name": "liri\nkeren"
+  },
+  {
+    "slug": "michal-lubell-koren",
+    "name": "michal\nlubell-koren"
+  },
+  {
+    "slug": "miss-geisha",
+    "name": "miss\ngeisha"
+  },
+  {
+    "slug": "yuval-fella",
+    "name": "yuval\nfella"
+  },
+  {
+    "slug": "mai-gurewitz",
+    "name": "mai\ngurewitz"
+  },
+  {
+    "slug": "anaelle-levi-zemach",
+    "name": "anaelle\nlevi zemach"
+  },
+  {
+    "slug": "adam-leisner",
+    "name": "adam\nleisner"
+  },
+  {
+    "slug": "natasha-zeriker",
+    "name": "natasha\nzeriker",
+    "img": "natasha-zeriker-v2"
+  },
+  {
+    "slug": "noemi-safir",
+    "name": "noemi\nsafir"
+  },
+  {
+    "slug": "anat-wegier",
+    "name": "anat\nwegier",
+    "img": "anat-wegier-v2"
+  },
+  {
+    "slug": "holy-kadosh",
+    "name": "tal holy\nkadosh",
+    "img": "holy-kadosh-v2"
   },
   {
     "slug": "zohar-ron",
@@ -206,16 +279,8 @@ body{text-transform:uppercase}
     "name": "lahav\nbarak"
   },
   {
-    "slug": "anat-wegier",
-    "name": "anat\nwegier"
-  },
-  {
     "slug": "elsa-ars-brush",
     "name": "elsa\ners brosh"
-  },
-  {
-    "slug": "noemi-safir",
-    "name": "noemi\nsafir"
   },
   {
     "slug": "yarden-amir",
@@ -224,10 +289,6 @@ body{text-transform:uppercase}
   {
     "slug": "livay-levi",
     "name": "livay\nlevi"
-  },
-  {
-    "slug": "natasha-zeriker",
-    "name": "natasha\nzeriker"
   },
   {
     "slug": "talia-zoref",
@@ -277,10 +338,6 @@ body{text-transform:uppercase}
   {
     "slug": "tal-nehoray",
     "name": "tal\nnehoray"
-  },
-  {
-    "slug": "holy-kadosh",
-    "name": "tal holy\nkadosh"
   },
   {
     "slug": "costa-magarakis",
@@ -349,10 +406,6 @@ body{text-transform:uppercase}
   {
     "slug": "tali-zelnik",
     "name": "tali\nzelnik"
-  },
-  {
-    "slug": "adam-leisner",
-    "name": "adam\nleisner"
   }
 ]
 </script>
@@ -367,8 +420,9 @@ body{text-transform:uppercase}
   }
   var grid = document.getElementById('artists-grid');
   grid.innerHTML = items.map(function(a,i){
-    var main = base + a.slug + '.webp';
-    var sset = base + a.slug + '-480w.webp 480w, ' + main + ' 810w';
+    var key  = a.img || a.slug; /* img: replacement photo (e.g. <slug>-v2) — golden rule 8, never overwrite */
+    var main = base + key + '.webp';
+    var sset = base + key + '-480w.webp 480w, ' + main + ' 810w';
     var alt  = a.name.replace(/\n/g,' ');
     var load = i ? 'loading="lazy"' : 'fetchpriority="high"';
     return '<a class="artist" href="../artists/' + (a.link || a.slug) + '/">' +
