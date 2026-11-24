@@ -322,6 +322,11 @@ def main():
     problems = sync_events_list() + sync_xoa_page() + check_artist_pages()
     for p in problems:
         print("  ! " + p, file=sys.stderr)
+    # Open gaps: works shown with the shared grey "בקרוב" image (img = coming-soon, image_pending:true)
+    # until the designer sends the real picture. Printed on every run so nobody forgets them.
+    pending = [w["id"] for w in WORKS["art_works"] if w.get("image_pending") or w.get("img") == "coming-soon"]
+    if pending:
+        print("  ⏳ %d work(s) still show the 'בקרוב' placeholder: %s" % (len(pending), ", ".join(pending)))
     if CHECK:
         if stale or problems:
             for s in stale:

@@ -1478,5 +1478,10 @@
 "jpg": "og/artists-ksenia-wert-portrait-v2.jpg",
 "w": 810,
 "h": 810
+},
+"images/works/v2/coming-soon.webp": {
+"jpg": "og/works-v2-coming-soon.jpg",
+"w": 990,
+"h": 1200
 }
 }
