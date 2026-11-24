@@ -603,6 +603,28 @@
     toast('SHARE NOT SUPPORTED');
   }
 
+  // Page-level toggle button (lives outside the chrome — query whole document). Idempotent:
+  // also called from wireShareButtons(), so a button rendered later by page JS (works/<id>,
+  // artists/<slug>) gets wired at boot.
+  function wireBookmarkToggle() {
+    var toggleBtn = document.querySelector('[data-bookmark-toggle]');
+    if (toggleBtn && !toggleBtn.dataset.bmWired) {
+      toggleBtn.dataset.bmWired = '1';
+      toggleBtn.addEventListener('click', function () {
+        var item = pageItem();
+        if (!item || !item.id) return;
+        var list = bmLoad();
+        var idx = bmFindIdx(list, item.id);
+        if (idx >= 0) { list.splice(idx, 1); toast('REMOVED FROM SAVED'); }
+        else { list.push(item); toast('SAVED'); }
+        bmSave(list);
+        refreshCount();
+        refreshToggle();
+        renderList();
+      });
+    }
+  }
+
   function wireShareButtons() {
     document.querySelectorAll('[data-share-btn]').forEach(function (btn) {
       if (btn.dataset.shareWired) return;
@@ -611,6 +633,8 @@
         sharePage();
       });
     });
+    wireBookmarkToggle();
+    refreshToggle();
   }
 
   function wireBookmark(root) {
@@ -635,23 +659,7 @@
         if (e.key === 'Escape') hideModal();
       });
     }
-    // Page-level toggle button (lives outside the chrome — query whole document)
-    var toggleBtn = document.querySelector('[data-bookmark-toggle]');
-    if (toggleBtn && !toggleBtn.dataset.bmWired) {
-      toggleBtn.dataset.bmWired = '1';
-      toggleBtn.addEventListener('click', function () {
-        var item = pageItem();
-        if (!item || !item.id) return;
-        var list = bmLoad();
-        var idx = bmFindIdx(list, item.id);
-        if (idx >= 0) { list.splice(idx, 1); toast('REMOVED FROM SAVED'); }
-        else { list.push(item); toast('SAVED'); }
-        bmSave(list);
-        refreshCount();
-        refreshToggle();
-        renderList();
-      });
-    }
+    wireBookmarkToggle();
     wireShareButtons();
     refreshCount();
     refreshToggle();
@@ -1167,4 +1175,6 @@
     startBoot();
   }
   window.SiteBoot = { reveal: reveal };
+  // Page JS that renders share/save buttons after boot (artists/<slug>) calls this to wire them.
+  window.ZRChrome = { wireShare: wireShareButtons };
 })();

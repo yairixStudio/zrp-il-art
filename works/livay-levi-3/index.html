@@ -65,6 +65,11 @@ body{text-transform:uppercase}
 .aw-btn--contact{font-family:var(--cop);font-weight:300;font-size:16px;text-transform:uppercase;letter-spacing:.02em;color:#000}
 .aw-btn--share{padding:8px 16px}
 .aw-btn--share svg{width:16px;height:16px;fill:var(--ink);display:block;transform:scaleX(-1)}
+.aw-btn--save{padding:8px 16px}
+.aw-btn--save svg{width:16px;height:16px;fill:none;stroke:var(--ink);stroke-width:1.25;stroke-linejoin:round;display:block}
+.aw-btn--save:hover svg{fill:none;stroke:var(--white)}
+.aw-btn--save.is-saved svg{fill:var(--ink)}
+.aw-btn--save.is-saved:hover svg{fill:var(--white)}
 
 /* Title block */
 .aw-titleblock{display:flex;flex-direction:column;align-items:stretch;gap:8px;width:312px;max-width:100%}
@@ -285,6 +290,7 @@ a.aw-ex-title:hover{opacity:.6}
     '<div class="aw-actions">'+
       '<a class="aw-btn aw-btn--contact" href="'+contactHref+'">contact us</a>'+
       '<button class="aw-btn aw-btn--share" type="button" data-share-btn aria-label="שתף">'+shareIcon+'</button>'+
+      '<button class="aw-btn aw-btn--save" type="button" data-bookmark-toggle aria-label="שמור" aria-pressed="false" data-item-id="work-'+esc(w.id)+'" data-item-title="'+esc((titleText(w)?titleText(w)+' · ':'')+artistName(w))+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h8v12l-4-3-4 3V2z"/></svg></button>'+
     '</div>'+
     '<div class="aw-titleblock">'+
       '<div class="aw-headings">'+titleHtml+artistHtml+'</div>'+
@@ -299,7 +305,7 @@ a.aw-ex-title:hover{opacity:.6}
 <site-footer></site-footer>
 
 <!-- Site chrome: shared header + footer (single source of truth) -->
-<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/site-chrome.js?v=7" defer></script>
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>
 <script src="../../components/artwork-lightbox.js?v=6" defer></script>

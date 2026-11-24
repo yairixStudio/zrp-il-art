@@ -834,10 +834,42 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 <script src="../../components/artwork-lightbox.js?v=6" defer></script>
 
 <!-- Site chrome: shared header + footer (single source of truth) -->
-<script src="../../components/site-chrome.js?v=6" defer></script>
+<script src="../../components/site-chrome.js?v=7" defer></script>
 
 <script src="../../components/analytics.js" defer></script>
 <script src="../../components/picture-upgrade.js" defer></script>
 <script src="../../components/embed-iframe.js" defer></script>
+<!-- page-actions:start (2026-11-24: share + save under the handle — same pills as works/<id>; wired by components/site-chrome.js) -->
+<style>
+.hero-actions{display:flex;gap:16px;justify-content:flex-end;align-self:flex-end;padding:0 8px;margin-top:16px;direction:ltr}
+.hero-actions .ha-btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--stroke,#d8d8d8);border-radius:100px;padding:8px 16px;line-height:1;background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+.hero-actions .ha-btn:hover{background:var(--ink);color:var(--white,#fff);border-color:var(--ink)}
+.hero-actions .ha-btn svg{width:16px;height:16px;display:block}
+.hero-actions .ha-share svg{fill:currentColor;transform:scaleX(-1)}
+.hero-actions .ha-save svg{fill:none;stroke:currentColor;stroke-width:1.25;stroke-linejoin:round}
+.hero-actions .ha-save.is-saved svg{fill:currentColor}
+@media (max-width:1100px){.hero-actions{align-self:center;justify-content:center}}
+</style>
+<script>
+(function(){
+  var slug=document.documentElement.getAttribute('data-slug'); if(!slug) return;
+  var name=(document.title||'').replace(/\s+[—-]\s+Zielinski.*$/,'');
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
+  function place(){
+    if(document.querySelector('.hero-actions')) return true;
+    var host=document.querySelector('#artist-root .hero-info')||document.querySelector('#artist-root .hero-collab-meta');
+    if(!host) return false;
+    var d=document.createElement('div'); d.className='hero-actions';
+    d.innerHTML='<button class="ha-btn ha-share" type="button" data-share-btn aria-label="שתף"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M28.88 30a1 1 0 0 1-.88-.5A15.19 15.19 0 0 0 15 22v6a1 1 0 0 1-.62.92 1 1 0 0 1-1.09-.21l-12-12a1 1 0 0 1 0-1.42l12-12a1 1 0 0 1 1.09-.21A1 1 0 0 1 15 4v6.11a17.19 17.19 0 0 1 15 17 16.34 16.34 0 0 1-.13 2 1 1 0 0 1-.79.86ZM14.5 20A17.62 17.62 0 0 1 28 26 15.31 15.31 0 0 0 13.91 12 1 1 0 0 1 13 11V6.41L3.41 16 13 25.59V21a1 1 0 0 1 1-1h.54Z"/></svg></button>'+
+      '<button class="ha-btn ha-save" type="button" data-bookmark-toggle aria-label="שמור" aria-pressed="false" data-item-id="artist-'+esc(slug)+'" data-item-title="'+esc(name)+'"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2h8v12l-4-3-4 3V2z"/></svg></button>';
+    host.appendChild(d);
+    if(window.ZRChrome) window.ZRChrome.wireShare();
+    return true;
+  }
+  if(!place()){ var mo=new MutationObserver(function(){ if(place()) mo.disconnect(); }); mo.observe(document.documentElement,{childList:true,subtree:true}); }
+  window.addEventListener('load',function(){ place(); if(window.ZRChrome) window.ZRChrome.wireShare(); });
+})();
+</script>
+<!-- page-actions:end -->
 </body>
 </html>
