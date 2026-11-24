@@ -84,7 +84,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 .works-head{display:flex;align-items:flex-start;justify-content:flex-start;gap:8px;text-align:left}
 .works-head h2{font-family:var(--cop);font-weight:300;font-size:28px;color:var(--ink);letter-spacing:.02em;text-align:right}
 .works-grid{display:grid;grid-template-columns:repeat(2,1fr);column-gap:16px;row-gap:64px;direction:rtl}
-.works-grid .work{direction:ltr}.work-statement{grid-column:1/-1;direction:rtl;text-align:right;font-family:var(--heb);color:var(--ink);margin-bottom:-40px}.ws-rule{display:block;width:72px;height:1px;background:#EFEFEF;margin:0 0 16px auto}.ws-head{font-size:16px;letter-spacing:.02em;margin:0 0 8px;line-height:1.3}.ws-head .lat{font-family:var(--cop)}.ws-body{font-size:16px;line-height:1.7}.ws-body p{margin:0 0 .7em}.ws-body p:last-child{margin-bottom:0}
+.works-grid .work{direction:ltr}.work-statement{grid-column:1/-1;direction:rtl;text-align:right;font-family:var(--heb);color:var(--ink);margin-bottom:-16px}.ws-rule{display:block;width:72px;height:1px;background:#EFEFEF;margin:0 0 16px auto}.ws-head{font-size:16px;font-weight:300;margin:0 0 8px;line-height:normal}.ws-head .lat{font-family:var(--cop)}.ws-body{font-size:16px;font-weight:300;line-height:normal}.ws-body p{margin:0 0 1lh}.ws-item+.ws-item{margin-top:24px}.works-grid .work .work-meta .title.is-bi{display:block;text-align:right}.works-grid .work .work-meta .title.is-bi .title-he,.works-grid .work .work-meta .title.is-bi .title-en{display:inline}.works-grid .work .work-meta .title.is-bi .title-sep{display:inline-block;vertical-align:-.05em;margin:0 .35em}.ws-body p:last-child{margin-bottom:0}
 .work{display:flex;flex-direction:column;align-items:stretch;min-width:0;gap:16px;height:100%}
 /* Artwork frame: full image visible (no crop), width fills cell; fixed 690/1044 frame, contain + #FAFAFA letterboxing for wide/short images */
 .work .img{
@@ -135,6 +135,10 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
 .ex-statement{font-family:var(--heb);font-weight:300;font-size:18px;line-height:1.35;color:var(--ink);direction:rtl;text-align:right;display:flex;flex-direction:column;gap:8px;align-self:flex-end;max-width:1040px}
 .ex-statement p{margin:0}
 .ex-statement .lat{font-family:var(--cop);font-weight:300;font-size:0.88em;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
+/* page-local (OBSESSED. round 2026-11-24): Latin inside the per-work banner = Copperplate Light, isolated LTR (Figma 2432:2886 / 2441:7481) */
+.ws-head .lat,.ws-body .lat{font-family:var(--cop);font-weight:300;font-size:0.88em;text-transform:uppercase;letter-spacing:.03em;direction:ltr;unicode-bidi:isolate}
+/* page-local (OBSESSED. 2026-11-24): the OBSESSED. group statement is typeset like the banners; optional statement_title_he line */
+.ex-statement.obs{font-size:16px;line-height:normal;gap:1lh}.ex-statement.obs .ws-head{margin:0}
 .ex-divider{border:0;border-top:1px solid var(--sep);margin:0;width:100%}
 
 /* ===== "PAGE COMING SOON" — for artists with no figma data ===== */
@@ -713,7 +717,7 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
         if(!byKey[key]){byKey[key]={title:w.exhibition_title_he,route:w.exhibition_route,slug:w.exhibition_slug,statement:exStatement(a.slug,w.exhibition_title_he),items:[]};groups.push(byKey[key]);}
         byKey[key].items.push(w);
       });
-      groups=groups.map(function(g,i){return {g:g,i:i,r:exRank(g.slug)};})
+      groups=groups.map(function(g,i){return {g:g,i:i,r:(g.title==="OBSESSED."&&!g.slug?1e6:exRank(g.slug))};}) /* page-local 2026-11-24: OBSESSED. (no exhibition page yet) = newest, on top */
         .sort(function(x,y){return (y.r-x.r)||(x.i-y.i);})
         .map(function(o){return o.g;});
       var gi=0;
@@ -722,10 +726,10 @@ button{font:inherit;cursor:pointer;background:none;border:0;color:inherit}
         if(g.title){
           var hi=mixedHtml(g.title);
           var hh='<h3 class="ex-heading">'+(g.route?'<a href="../../'+escapeHtml(g.route)+'/">'+hi+'</a>':hi)+'</h3>';
-          var st=g.statement?('<div class="ex-statement">'+statementHtml(g.statement)+'</div>'):'';
+          var _sr=(window.__EX_STATEMENTS_INLINE__||[]).filter(function(r){return r.artist_slug===a.slug&&r.exhibition_title_he===g.title;})[0];var _stt=_sr&&_sr.statement_title_he;var st=g.statement?('<div class="ex-statement'+(g.title==="OBSESSED."?' obs':'')+'">'+(_stt?'<div class="ws-head">'+mixedHtml(_stt)+'</div>':'')+statementHtml(g.statement)+'</div>'):'';
           head='<header class="ex-group-head">'+hh+st+'</header>';
         }
-        var cards=g.items.map(function(w){if(w.statement_he&&w.statement_he.length){var _wt=(w.title_he||w.title_en||"");var _wh=_wt?'<div class="ws-head">'+mixedHtml(_wt)+'</div>':"";return '<div class="work-statement"><span class="ws-rule"></span>'+_wh+'<div class="ws-body">'+statementHtml(w.statement_he)+'</div></div>'+buildRichCard(w,gi++);}return buildRichCard(w,gi++);}).join("");
+        var _st=g.items.filter(function(w){return w.statement_he&&w.statement_he.length;}).map(function(w){var _wt=(w.title_he&&w.title_en)?(w.title_he+" | "+w.title_en):(w.title_he||w.title_en||"");var _wh=_wt?'<div class="ws-head">'+(HEB_LETTERS.test(_wt)?mixedHtml(_wt):'<span class="lat">'+escapeHtml(_wt)+'</span>')+'</div>':"";return '<div class="ws-item">'+_wh+'<div class="ws-body">'+statementHtml(w.statement_he)+'</div></div>';}).join("");var cards=(_st?'<div class="work-statement"><span class="ws-rule"></span>'+_st+'</div>':"")+g.items.map(function(w){return buildRichCard(w,gi++);}).join("");
         var single=g.items.length===1?' single':'';
         return '<section class="ex-group">'+head+'<div class="works-grid'+single+'" data-artwork-gallery>'+cards+'</div></section>';
       }).join('<hr class="ex-divider">');

@@ -1293,5 +1293,165 @@
 "jpg": "og/works-v2-lera-yestrel-1.jpg",
 "w": 808,
 "h": 1200
+},
+"images/artists/edan-weiss/portrait.webp": {
+"jpg": "og/artists-edan-weiss-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/edith-codegoni/portrait.webp": {
+"jpg": "og/artists-edith-codegoni-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/neta-cohen/portrait.webp": {
+"jpg": "og/artists-neta-cohen-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/polina-beskrovnaya/portrait.webp": {
+"jpg": "og/artists-polina-beskrovnaya-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/aino-katzir/portrait.webp": {
+"jpg": "og/artists-aino-katzir-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/gila-babich/portrait.webp": {
+"jpg": "og/artists-gila-babich-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/liri-keren/portrait.webp": {
+"jpg": "og/artists-liri-keren-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/michal-lubell-koren/portrait.webp": {
+"jpg": "og/artists-michal-lubell-koren-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/miss-geisha/portrait.webp": {
+"jpg": "og/artists-miss-geisha-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/yuval-fella/portrait.webp": {
+"jpg": "og/artists-yuval-fella-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/mai-gurewitz/portrait.webp": {
+"jpg": "og/artists-mai-gurewitz-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/artists/anaelle-levi-zemach/portrait.webp": {
+"jpg": "og/artists-anaelle-levi-zemach-portrait.jpg",
+"w": 810,
+"h": 810
+},
+"images/works/v2/edan-weiss-1.webp": {
+"jpg": "og/works-v2-edan-weiss-1.jpg",
+"w": 1200,
+"h": 799
+},
+"images/works/v2/edith-codegoni-1.webp": {
+"jpg": "og/works-v2-edith-codegoni-1.jpg",
+"w": 430,
+"h": 1200
+},
+"images/works/v2/neta-cohen-1.webp": {
+"jpg": "og/works-v2-neta-cohen-1.jpg",
+"w": 1200,
+"h": 900
+},
+"images/works/v2/polina-beskrovnaya-1.webp": {
+"jpg": "og/works-v2-polina-beskrovnaya-1.jpg",
+"w": 942,
+"h": 1200
+},
+"images/works/v2/aino-katzir-1.webp": {
+"jpg": "og/works-v2-aino-katzir-1.jpg",
+"w": 906,
+"h": 1200
+},
+"images/works/v2/aino-katzir-2.webp": {
+"jpg": "og/works-v2-aino-katzir-2.jpg",
+"w": 910,
+"h": 1200
+},
+"images/works/v2/gila-babich-1.webp": {
+"jpg": "og/works-v2-gila-babich-1.jpg",
+"w": 800,
+"h": 1200
+},
+"images/works/v2/liri-keren-1.webp": {
+"jpg": "og/works-v2-liri-keren-1.jpg",
+"w": 960,
+"h": 1200
+},
+"images/works/v2/michal-lubell-koren-1.webp": {
+"jpg": "og/works-v2-michal-lubell-koren-1.jpg",
+"w": 1097,
+"h": 1200
+},
+"images/works/v2/miss-geisha-1.webp": {
+"jpg": "og/works-v2-miss-geisha-1.jpg",
+"w": 1086,
+"h": 1166
+},
+"images/works/v2/yuval-fella-1.webp": {
+"jpg": "og/works-v2-yuval-fella-1.jpg",
+"w": 802,
+"h": 1200
+},
+"images/works/v2/mai-gurewitz-1.webp": {
+"jpg": "og/works-v2-mai-gurewitz-1.jpg",
+"w": 1200,
+"h": 1196
+},
+"images/works/v2/natasha-zeriker-2.webp": {
+"jpg": "og/works-v2-natasha-zeriker-2.jpg",
+"w": 1200,
+"h": 889
+},
+"images/works/v2/noemi-safir-14.webp": {
+"jpg": "og/works-v2-noemi-safir-14.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/noemi-safir-13.webp": {
+"jpg": "og/works-v2-noemi-safir-13.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/noemi-safir-16.webp": {
+"jpg": "og/works-v2-noemi-safir-16.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/noemi-safir-15.webp": {
+"jpg": "og/works-v2-noemi-safir-15.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/anat-wegier-6.webp": {
+"jpg": "og/works-v2-anat-wegier-6.jpg",
+"w": 1200,
+"h": 921
+},
+"images/works/v2/anat-wegier-5.webp": {
+"jpg": "og/works-v2-anat-wegier-5.jpg",
+"w": 916,
+"h": 1200
+},
+"images/works/v2/holy-kadosh-4.webp": {
+"jpg": "og/works-v2-holy-kadosh-4.jpg",
+"w": 1021,
+"h": 1200
 }
 }
