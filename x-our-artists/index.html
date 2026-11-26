@@ -57,9 +57,8 @@ body{text-transform:uppercase}
 .hero h1 .b{font-weight:700;font-size:64px}
 .hero h1 .l{font-weight:300;font-size:70px}
 
-/* ===== CONTENT — poster + bottles grid (Figma 2395:904 / 2395:1092) ===== */
+/* ===== CONTENT — bottles grid (poster deleted 2026-11-26: not in the current Figma pages) ===== */
 .content{max-width:var(--max);margin:0 auto;padding:64px var(--pad-x) 96px;display:flex;flex-direction:column;gap:64px}
-.poster img{width:100%;height:auto;background:#FAFAFA}
 .bottles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:16px;row-gap:56px}
 .bottle{display:flex;flex-direction:column;align-items:center;gap:16px;min-width:0}
 .bottle .img{position:relative;display:block;width:100%;aspect-ratio:405/490;overflow:hidden;background:#FAFAFA}
@@ -111,14 +110,14 @@ body{text-transform:uppercase}
 <meta property="og:title" content="X Our Artists — Zielinski &amp; Rozen">
 <meta property="og:description" content="ZIELINSKI ROZEN X OUR ARTISTS — בקבוקי זילינסקי רוזן בעבודת אמני הגלריות.">
 <meta property="og:url" content="https://art.zrp.co.il/x-our-artists/">
-<meta property="og:image" content="https://art.zrp.co.il/og/x-our-artists-poster.jpg">
-<meta property="og:image:width" content="960">
-<meta property="og:image:height" content="1200">
+<meta property="og:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="995">
 <meta property="og:image:alt" content="Zielinski Rozen x our artists">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="X Our Artists — Zielinski &amp; Rozen">
 <meta name="twitter:description" content="ZIELINSKI ROZEN X OUR ARTISTS — בקבוקי זילינסקי רוזן בעבודת אמני הגלריות.">
-<meta name="twitter:image" content="https://art.zrp.co.il/og/x-our-artists-poster.jpg">
+<meta name="twitter:image" content="https://art.zrp.co.il/og/homepage-hero-landscape.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","@id":"https://art.zrp.co.il/x-our-artists/#webpage","url":"https://art.zrp.co.il/x-our-artists/","name":"X Our Artists — Zielinski & Rozen","isPartOf":{"@id":"https://art.zrp.co.il/#website"},"about":{"@id":"https://art.zrp.co.il/#org"}}</script>
 <!-- SEO:auto:end -->
 </head>
@@ -135,11 +134,6 @@ body{text-transform:uppercase}
 </section>
 
 <main class="content" id="main">
-  <!-- Poster (Figma 2395:905) removed 2026-11-26 at the owner's request: it shows only the 25 older artists. Waiting for an
-       updated poster from Lev (Figma comment on 2395:905). To restore, put back:
-       <img src="../images/x-our-artists/poster.webp" srcset="../images/x-our-artists/poster-480w.webp 480w, ../images/x-our-artists/poster-768w.webp 768w, ../images/x-our-artists/poster.webp 1080w" sizes="(max-width:768px) calc(100vw - 32px), (max-width:1100px) calc(100vw - 96px), 1248px" alt="Zielinski Rozen x our artists" width="1080" height="1350" fetchpriority="high" decoding="async">
-       inside <div class="poster"> (CSS .poster is kept). -->
-
   <!-- Bottles grid (52) — Figma 2395:906 (3-up) / 2395:1094 (2-up); order frame 2432:5758 (2026-11-26: 52). Same order + images as the homepage
        #x-our-artists carousel. Each card links to the artist page. -->
   <section class="bottles" aria-label="x our artists">
