@@ -328,9 +328,11 @@ a.opencall-card:hover .img img{transform:scale(1.03)}
 .ex-archive-titles .l{font-weight:300}
 .ex-archive-list{display:flex;flex-direction:row;gap:8px;align-items:flex-end;width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .ex-archive-list::-webkit-scrollbar{display:none}
+.ex-archive-nav{width:100%;margin-bottom:-24px}
+.ex-archive-nav button[disabled]{opacity:.25;cursor:default}
 .ex-archive-list.is-dragging{scroll-snap-type:none;cursor:grabbing}
 .ex-archive-list.is-dragging .ex-archive-item{pointer-events:none}
-.ex-archive-item{flex:0 0 calc((100% - 8px) / 2);min-width:0;display:flex;flex-direction:column;gap:18px;color:var(--ink);text-decoration:none;scroll-snap-align:start}
+.ex-archive-item{flex:0 0 calc((100% - 16px - 80px) / 2);min-width:0;display:flex;flex-direction:column;gap:18px;color:var(--ink);text-decoration:none;scroll-snap-align:start}
 .ex-archive-item:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
 .ex-archive-gal{position:absolute;top:16px;left:16px;right:16px;z-index:1;font-family:var(--heb);font-weight:300;font-size:36px;line-height:1.2;direction:rtl;text-align:left;color:#fff}
 .ex-archive .res-logos{display:flex;align-items:center;gap:43.71px}
@@ -338,7 +340,7 @@ a.opencall-card:hover .img img{transform:scale(1.03)}
 .ex-archive .res-logos .res-sumii{width:113.65px}
 .ex-archive .res-logos .res-melani{width:150.03px}
 .ex-archive-ovr--res{gap:16px}
-.ex-archive-card{position:relative;display:block;width:100%;height:693px;overflow:hidden;background:#222;color:#fff}
+.ex-archive-card{position:relative;display:block;width:100%;height:auto;aspect-ratio:620/693;overflow:hidden;background:#222;color:#fff}
 .ex-archive-card picture{display:contents}
 .ex-archive-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .ex-archive-item:hover .ex-archive-photo{transform:scale(1.04)}
@@ -922,14 +924,16 @@ a.collab-more:hover{opacity:.65}
   .ex-archive-titles .b{font-size:clamp(30px,11.95vw,47px);white-space:nowrap;letter-spacing:-.01em;max-width:100%}
   .ex-archive-titles .l{font-size:clamp(46px,19.7vw,77px);margin-top:-.08em;white-space:nowrap;letter-spacing:-.01em;max-width:100%}
   .ex-archive-list{gap:4px;align-items:flex-end}
-  .ex-archive-item{flex-basis:calc((100% - 4px) / 2)}
+  .ex-archive-item{flex-basis:calc((100% - 8px - 28px) / 2)}
+  .ex-archive-nav{display:none}
+  .ex-archive-ovr--res .en{white-space:nowrap;font-size:min(11.3px, calc((100vw - 32px) * .0265))}
   .ex-archive-item{gap:8px}
   .ex-archive-gal{font-size:14px;top:8px;left:8px;right:8px}
   .ex-archive-ovr--res{gap:6px}
   .ex-archive .res-logos{gap:12.68px}
   .ex-archive .res-logos .res-sumii{width:32.96px}
   .ex-archive .res-logos .res-melani{width:43.51px}
-  .ex-archive-card{height:214.55px}
+  .ex-archive-card{height:auto;aspect-ratio:177/214.55}
   .ex-archive-ovr{left:8px;right:18px;bottom:8px;gap:4px}
   .ex-archive-ovr .en{font-size:11.3px;line-height:1.45;letter-spacing:.03em}
   .ex-archive-ovr .bar{display:none}
@@ -1104,6 +1108,7 @@ a.collab-more:hover{opacity:.65}
   .press-card .ttl{font-size:15px}
   .press-card .ttl.en{font-size:12px}
 }
+@media (max-width:359px){.ex-archive-ovr--res .en{white-space:normal}}
 </style>
 <!-- SEO:auto:start -->
 <link rel="canonical" href="https://art.zrp.co.il/">
@@ -1835,6 +1840,10 @@ porta</div></a>
     <span class="b">exhibitions</span>
     <span class="l">archive</span>
   </div>
+  <div class="ig-nav ex-archive-nav" role="group" aria-label="exhibitions archive navigation">
+    <button type="button" class="ex-prev" aria-label="previous"><svg viewBox="0 0 24 16"><path d="M22 8H2M2 8l6-6M2 8l6 6"/></svg></button>
+    <button type="button" class="ex-next" aria-label="next"><svg viewBox="0 0 24 16"><path d="M2 8h20M22 8l-6-6M22 8l-6 6"/></svg></button>
+  </div>
   <div class="ex-archive-list" data-drag-scroll>
     <a class="ex-archive-item" href="sponsors/sumii/" aria-label="pop up art residency — גלריית כיכר דיזינגוף">
       <span class="ex-archive-card">
@@ -2263,6 +2272,11 @@ porta</div></a>
   window.addEventListener('pointerup',function(){ if(!down) return; down=false; if(moved){ el.classList.remove('is-dragging'); var w=el.querySelector('.ex-archive-item'); if(w){ var step=w.getBoundingClientRect().width+parseFloat(getComputedStyle(el).columnGap||8); el.scrollTo({left:Math.round(el.scrollLeft/step)*step,behavior:'smooth'}); } } });
   el.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); moved=false; } },true);
   el.addEventListener('dragstart',function(e){ e.preventDefault(); });
+  var prev=document.querySelector('.ex-prev'), next=document.querySelector('.ex-next');
+  function step(){ var w=el.querySelector('.ex-archive-item'); return w ? w.getBoundingClientRect().width+parseFloat(getComputedStyle(el).columnGap||8) : el.clientWidth/2; }
+  function upd(){ if(!prev) return; prev.disabled = el.scrollLeft<=2; next.disabled = el.scrollLeft>=el.scrollWidth-el.clientWidth-2; }
+  if(prev){ prev.addEventListener('click',function(){ el.scrollBy({left:-step(),behavior:'smooth'}); }); next.addEventListener('click',function(){ el.scrollBy({left:step(),behavior:'smooth'}); }); }
+  el.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); upd();
 })();
 </script>
 </body>
