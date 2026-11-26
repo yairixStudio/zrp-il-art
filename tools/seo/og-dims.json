@@ -1483,5 +1483,40 @@
 "jpg": "og/works-v2-coming-soon.jpg",
 "w": 990,
 "h": 1200
+},
+"images/works/v2/lera-yestrel-2.webp": {
+"jpg": "og/works-v2-lera-yestrel-2.jpg",
+"w": 903,
+"h": 1200
+},
+"images/works/v2/lera-yestrel-3.webp": {
+"jpg": "og/works-v2-lera-yestrel-3.jpg",
+"w": 915,
+"h": 1200
+},
+"images/works/v2/lera-yestrel-4.webp": {
+"jpg": "og/works-v2-lera-yestrel-4.jpg",
+"w": 1160,
+"h": 1200
+},
+"images/works/v2/lera-yestrel-5.webp": {
+"jpg": "og/works-v2-lera-yestrel-5.jpg",
+"w": 999,
+"h": 1200
+},
+"images/works/v2/anaelle-levi-zemach-1.webp": {
+"jpg": "og/works-v2-anaelle-levi-zemach-1.jpg",
+"w": 900,
+"h": 1200
+},
+"images/works/v2/michal-lubell-koren-1-v2.webp": {
+"jpg": "og/works-v2-michal-lubell-koren-1-v2.jpg",
+"w": 1200,
+"h": 900
+},
+"images/artists/michal-lubell-koren/portrait-v2.webp": {
+"jpg": "og/artists-michal-lubell-koren-portrait-v2.jpg",
+"w": 810,
+"h": 810
 }
 }

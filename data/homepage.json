@@ -37,13 +37,10 @@
   ]
  },
  "exhibitions_now": {
-  "_note": "2026-09-27 — grouped by city (Figma 1124:819 desktop / 1318:418 mobile). Static HTML; this block is declarative.",
+  "_note": "2026-11-26 — OBSESSED. vol 3 (Figma 2742:41321 desktop / 2742:41659 mobile, Lev 'section is updated'): tel aviv = one card, COMING SOON, no link yet (no exhibition page); berlin = OBSESSED. with Lev's placeholder image (from Korin later). SUMII + the-peeler moved to the archive. Static HTML; this block is declarative.",
   "title_b": "exhibitions",
   "title_l": "now",
-  "exhibition_ids": [
-   "the-peeler",
-   "how-many"
-  ],
+  "exhibition_ids": [],
   "artists_label": "our artists",
   "artist_ids": [
    "zohar-ron",
@@ -74,21 +71,13 @@
     "city_en": "tel aviv",
     "cards": [
      {
-      "kind": "residency",
-      "gallery_id": "dizengoff",
-      "route": "sponsors/sumii/",
-      "title_en": "pop up art residency",
-      "image": "images/sponsors/sumii/hero.webp",
-      "logos": [
-       "images/homepage/ex-now/sumii-mark-white.svg",
-       "images/homepage/ex-now/melani-mark-white.svg"
-      ]
-     },
-     {
       "kind": "exhibition",
       "gallery_id": "medina",
-      "exhibition_id": "the-peeler",
-      "route": "exhibitions/the-peeler/"
+      "title_en": "obsessed",
+      "volume": 3,
+      "status": "coming soon",
+      "route": null,
+      "image": "images/homepage/ex-now/obsessed.webp"
      }
     ]
    },
@@ -99,21 +88,34 @@
       "kind": "exhibition",
       "gallery_id": "berlin",
       "gallery_name_en": "the art gallery berlin",
-      "exhibition_id": "how-many",
-      "route": "exhibitions/how-many/",
-      "image": "images/homepage/ex-now/berlin-how-many.webp"
+      "title_en": "obsessed",
+      "volume": 3,
+      "route": null,
+      "image": "images/homepage/ex-now/berlin-obsessed.webp",
+      "image_pending": true
      }
     ]
    }
   ],
-  "figma_node_desktop": "1124:819",
-  "figma_node_mobile": "1318:418"
+  "figma_node_desktop": "2742:41321",
+  "figma_node_mobile": "2742:41659"
  },
  "exhibitions_archive": {
-  "_note": "2026-09-27 redesign — Figma 1124:947 desktop / 1318:487 mobile. Two cards side by side in both breakpoints: how-many (dizengoff) left, loneliness (medina) right; gallery name (Hebrew) above each card, title overlay bottom-left. Static HTML. Loneliness title kept as the resolved 'בדידות בתוך סביבה תוססת' (Figma still drops 'בתוך'). Images: images/exhibitions/archive/how-many-card (imageRef a8040b35…, FILL) + loneliness-card (imageRef fb3e17bb…, crop 555719, square).",
+  "_note": "2026-11-26 — 4 cards in a horizontal finger/drag scroll (Figma 2742:40637 desktop / 2742:41090 mobile / full strip 2742:40867; Lev 'added images + scroll'): SUMII residency (dizengoff) → sponsors/sumii/, the-peeler (medina) → exhibitions/the-peeler/, how-many (dizengoff), loneliness (medina). Gallery name white inside the image (top). Loneliness title kept as 'בדידות בתוך סביבה תוססת'. Static HTML.",
   "title_b": "exhibitions",
   "title_l": "archive",
   "items": [
+   {
+    "kind": "residency",
+    "gallery_id": "dizengoff",
+    "route": "sponsors/sumii/",
+    "image": "images/sponsors/sumii/hero.webp"
+   },
+   {
+    "exhibition_id": "the-peeler",
+    "gallery_id": "medina",
+    "image": "images/exhibitions/peeler-desktop.webp"
+   },
    {
     "exhibition_id": "how-many",
     "gallery_id": "dizengoff",
@@ -125,8 +127,8 @@
     "image": "images/exhibitions/archive/loneliness-card.webp"
    }
   ],
-  "figma_node_desktop": "1124:947",
-  "figma_node_mobile": "1318:487"
+  "figma_node_desktop": "2742:40637",
+  "figma_node_mobile": "2742:41090"
  },
  "art_works_words": [
   "the",
@@ -216,7 +218,7 @@
   "figma_node_mobile": "1856:433"
  },
  "x_our_artists": {
-  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"x our artists — NEW ORDER 10.11.2026\" (landing 2395:677, Korin; replaces 1873:1146), 33 items in Figma row-major order; carousel opens on items[1] (nir giorgio levin, data-tri-start=\"1\"). Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). work-N file names are the OLD positions (no longer 1:1 with the index since 2026-11-11). Dropped as duplicate photos: work-17/30/32/34/36/37/38 (files kept, golden rule 8). work-10/23/31 = -v2 renders; work-39 shira turbowicz; work-40 adam leisner (node 2312:165). 2026-11-19: +4 OBSESSED. bottles at the top (order frame landing 2432:5758, 37 cards): work-41 max wert x ksenia wert (2441:7224, one card for the shared work, links to max-wert), work-42 lera yestrel (2441:7220), work-43 refael salem (2432:5759), work-44 elad amsalem (2441:7216) — on /x-our-artists/ and in the homepage carousel (desktop frame 2432:4929: opens on lera yestrel, max x ksenia left, refael salem right; data-tri-start stays 1). 37 items. 2026-11-24: 48 items (Figma 2432:5750 / grid 2432:5758, Lev comment #380 'new bottles'): 11 new = work-45..55 at positions 4-8 and 10-15; elad amsalem moved #4 -> #9.",
+  "_note": "Focus carousel (.tri) on both breakpoints. items[] = Figma \"x our artists — NEW ORDER 10.11.2026\" (landing 2395:677, Korin; replaces 1873:1146), 33 items in Figma row-major order; carousel opens on items[1] (nir giorgio levin, data-tri-start=\"1\"). Images = node-rendered PNGs (crop/FIT/#FAFAFA-bg baked in -> object-fit:cover). work-N file names are the OLD positions (no longer 1:1 with the index since 2026-11-11). Dropped as duplicate photos: work-17/30/32/34/36/37/38 (files kept, golden rule 8). work-10/23/31 = -v2 renders; work-39 shira turbowicz; work-40 adam leisner (node 2312:165). 2026-11-19: +4 OBSESSED. bottles at the top (order frame landing 2432:5758, 37 cards): work-41 max wert x ksenia wert (2441:7224, one card for the shared work, links to max-wert), work-42 lera yestrel (2441:7220), work-43 refael salem (2432:5759), work-44 elad amsalem (2441:7216) — on /x-our-artists/ and in the homepage carousel (desktop frame 2432:4929: opens on lera yestrel, max x ksenia left, refael salem right; data-tri-start stays 1). 37 items. 2026-11-24: 48 items (Figma 2432:5750 / grid 2432:5758, Lev comment #380 'new bottles'): 11 new = work-45..55 at positions 4-8 and 10-15; elad amsalem moved #4 -> #9. 2026-11-26: 52 items (Figma 2432:5758): +work-56 lera yestrel (2nd bottle, #3), work-57 anaelle levi zemach (#10), work-58 anat wegier (2nd, #12), work-59 gila babich (#13); yuval fella ↔ tal holy kadosh (#14/#15).",
   "title_b": "Zielinski Rozen",
   "title_l": "x our artists",
   "items": [
@@ -228,6 +230,11 @@
    {
     "name_en": "lera yestrel",
     "image": "images/homepage/x-our-artists/work-42.webp",
+    "slug": "lera-yestrel"
+   },
+   {
+    "name_en": "lera yestrel",
+    "image": "images/homepage/x-our-artists/work-56.webp",
     "slug": "lera-yestrel"
    },
    {
@@ -261,19 +268,34 @@
     "slug": "noemi-safir"
    },
    {
+    "name_en": "anaelle levi zemach",
+    "image": "images/homepage/x-our-artists/work-57.webp",
+    "slug": "anaelle-levi-zemach"
+   },
+   {
     "name_en": "elad amsalem",
     "image": "images/homepage/x-our-artists/work-44.webp",
     "slug": "elad-amsalem"
    },
    {
-    "name_en": "tal holy kadosh",
-    "image": "images/homepage/x-our-artists/work-50.webp",
-    "slug": "holy-kadosh"
+    "name_en": "anat wegier",
+    "image": "images/homepage/x-our-artists/work-58.webp",
+    "slug": "anat-wegier"
+   },
+   {
+    "name_en": "gila babich",
+    "image": "images/homepage/x-our-artists/work-59.webp",
+    "slug": "gila-babich"
    },
    {
     "name_en": "yuval fella",
     "image": "images/homepage/x-our-artists/work-51.webp",
     "slug": "yuval-fella"
+   },
+   {
+    "name_en": "tal holy kadosh",
+    "image": "images/homepage/x-our-artists/work-50.webp",
+    "slug": "holy-kadosh"
    },
    {
     "name_en": "mai gurewitz",
